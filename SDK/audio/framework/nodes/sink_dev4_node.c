@@ -1,0 +1,182 @@
+#ifdef SUPPORT_MS_EXTENSIONS
+#pragma bss_seg(".sink_dev4_node.data.bss")
+#pragma data_seg(".sink_dev4_node.data")
+#pragma const_seg(".sink_dev4_node.text.const")
+#pragma code_seg(".sink_dev4_node.text")
+#endif
+
+#include "jlstream.h"
+#include "media/audio_base.h"
+#include "app_config.h"
+
+#define SINK_DEV4_MSBC_TEST_ENABLE	0		//MSBC编码输出测试
+
+#if TCFG_SINK_DEV4_NODE_ENABLE
+
+struct sink_dev4_hdl {
+    struct stream_fmt fmt;		//节点参数
+    struct stream_node *node;	//节点句柄
+};
+
+/*
+   自定义输出节点 初始化
+	hdl:节点私有句柄
+*/
+static int sink_dev4_init(struct sink_dev4_hdl *hdl)
+{
+    u8 ch_num = AUDIO_CH_NUM(hdl->fmt.channel_mode);	//声道数
+    u32 sample_rate = hdl->fmt.sample_rate;				//采样率
+    u32 coding_type = hdl->fmt.coding_type;				//数据格式
+
+    printf("sink_dev4_init,ch_num=%x,sr=%d,coding_type=%x\n", ch_num, sample_rate, coding_type);
+
+    //do something
+    return 0;
+}
+
+/*
+   自定义输出节点 关闭
+	hdl:节点私有句柄
+*/
+static int sink_dev4_exit(struct sink_dev4_hdl *hdl)
+{
+    //do something
+    return 0;
+}
+
+/*
+   自定义输出节点 运行
+	hdl:节点私有句柄
+ 	*data:输入数据地址,位宽16bit
+  	data_len :输入数据长度,byte
+*/
+static void sink_dev4_run(struct sink_dev4_hdl *hdl, void *data, int data_len)
+{
+    //do something
+
+}
+
+static void sink_dev4_handle_frame(struct stream_iport *iport, struct stream_note *note)
+{
+    struct sink_dev4_hdl *hdl = (struct sink_dev4_hdl *)iport->private_data;
+    struct stream_frame *frame;
+
+    while (1) {
+        //获取上一个节点的输出
+        frame = jlstream_pull_frame(iport, note);
+        if (!frame) {
+            break;
+        }
+        sink_dev4_run(hdl, frame->data, frame->len);
+        //释放资源
+        jlstream_free_frame(frame);
+    }
+}
+
+static int sink_dev4_bind(struct stream_node *node, u16 uuid)
+{
+    printf("sink_dev4_bind");
+    struct sink_dev4_hdl *hdl = zalloc(sizeof(*hdl));
+    hdl->node = node;
+    node->private_data = hdl;
+    return 0;
+}
+
+static void sink_dev4_open_iport(struct stream_iport *iport)
+{
+    iport->private_data = iport->node->private_data;
+    iport->handle_frame = sink_dev4_handle_frame;
+}
+
+/*
+*********************************************************************
+*                  sink_dev4_ioc_fmt_nego
+* Description: sink_dev4 参数协商
+* Arguments  : iport 输入端口句柄
+* Return	 : 节点参数协商结果
+* Note(s)    : 目的在于检查与上一个节点的参数是否匹配，不匹配则重新协商;
+   			   根据输出节点的参数特性，区分为
+   				1、固定参数, 或者通过NODE_IOC_SET_FMT获取fmt信息,
+   				协商过程会将此参数向前级节点传递, 直至协商成功;
+   				2、可变参数，继承上一节点的参数
+*********************************************************************
+*/
+static int sink_dev4_ioc_fmt_nego(struct stream_iport *iport)
+{
+    struct stream_fmt *in_fmt = &iport->prev->fmt;	//上一个节点的参数
+    /* struct sink_dev4_hdl *hdl = (struct sink_dev4_hdl *)iport->private_data; */
+
+    //1、固定节点参数, 向前级节点传递
+#if SINK_DEV4_MSBC_TEST_ENABLE
+    in_fmt->coding_type = AUDIO_CODING_MSBC;		//数据格式
+    in_fmt->sample_rate = 16000;					//采样率
+    in_fmt->channel_mode = AUDIO_CH_MIX;			//数据通道
+#endif
+    printf("sink_dev nego,type=%x,sr=%d,ch_mode=%x\n", in_fmt->coding_type, in_fmt->sample_rate, in_fmt->channel_mode);
+
+    //2、继承前一节点的参数
+    /* hdl->fmt = &in_fmt; */
+    return NEGO_STA_ACCPTED;
+}
+
+static int sink_dev4_ioc_start(struct sink_dev4_hdl *hdl)
+{
+    printf("sink_dev4_ioc_start");
+    sink_dev4_init(hdl);
+    return 0;
+}
+
+static int sink_dev4_ioc_stop(struct sink_dev4_hdl *hdl)
+{
+    printf("sink_dev4_ioc_stop");
+    sink_dev4_exit(hdl);
+    return 0;
+}
+
+static int sink_dev4_ioctl(struct stream_iport *iport, int cmd, int arg)
+{
+    struct sink_dev4_hdl *hdl = (struct sink_dev4_hdl *)iport->private_data;
+
+    switch (cmd) {
+    case NODE_IOC_OPEN_IPORT:
+        sink_dev4_open_iport(iport);
+        break;
+    case NODE_IOC_START:
+        sink_dev4_ioc_start(hdl);
+        break;
+    case NODE_IOC_STOP:
+        sink_dev4_ioc_stop(hdl);
+        break;
+    case NODE_IOC_SET_FMT:
+        //外部传参, 设置当前节点的参数
+        /* struct stream_fmt *fmt = (struct stream_fmt *)arg; */
+        /* hdl->fmt.coding_type = fmt->coding_type; */
+        break;
+    case NODE_IOC_NEGOTIATE:
+        *(int *)arg |= sink_dev4_ioc_fmt_nego(iport);
+        break;
+    case NODE_IOC_GET_DELAY:
+        break;
+    }
+
+    return 0;
+}
+
+//释放当前节点资源
+static void sink_dev4_release(struct stream_node *node)
+{
+    struct sink_dev4_hdl *hdl = (struct sink_dev4_hdl *)node->private_data;
+    printf("sink_dev4_release");
+    free(hdl);
+}
+
+REGISTER_STREAM_NODE_ADAPTER(sink_dev4_adapter) = {
+    .name       = "sink_dev4",
+    .uuid       = NODE_UUID_SINK_DEV4,
+    .bind       = sink_dev4_bind,
+    .ioctl      = sink_dev4_ioctl,
+    .release    = sink_dev4_release,
+};
+
+#endif
+

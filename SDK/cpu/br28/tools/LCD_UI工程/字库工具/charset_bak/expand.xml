@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CharSet>
+	<Char>0x0250-0x02af</Char> <!-- 国际音标扩充 -->
+	<Char>0x00e6</Char>  <!-- 音标字母扩充附加 -->
+	<Char>0x00f0</Char>
+	<Char>0x014b</Char>
+	<Char>0x025c</Char>
+	<Char>0x0283</Char>
+	<Char>0x0292</Char>
+	<Char>0x02c8</Char>
+	<Char>0x02d0</Char>
+</CharSet>

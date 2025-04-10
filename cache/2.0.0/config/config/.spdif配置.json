@@ -1,0 +1,643 @@
+﻿{
+  "fields": [{
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "HDMI ARC配置",
+      "enableUuid": "",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "template": "",
+      "span": 24,
+      "formId": 160,
+      "renderKey": "1601680072484268",
+      "children": [{
+        "__config__": {
+          "layout": "rowFormItem",
+          "tag": "group",
+          "tagIcon": "row",
+          "layoutTree": true,
+          "componentName": "row_165",
+          "enableUuid": "",
+          "showComponentName": false,
+          "dataType": ["8", "1"],
+          "template": "",
+          "span": 24,
+          "formId": 165,
+          "renderKey": "1651680072902892",
+          "children": [{
+            "__config__": {
+              "label": "源选择-模拟",
+              "showLabel": true,
+              "labelWidth": null,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 10,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["16", "string"],
+              "formId": 163,
+              "renderKey": "1631680072676032",
+              "tip": "自带内部放大",
+              "saveWay": "bin",
+              "eventField": ["device", "gpio", "spdif"],
+              "emptyValue": "0",
+              "defaultValue": "id_1647485267192_84",
+              "originValue": "id_1647485267192_84"
+            },
+            "__slot__": {
+              "options": []
+            },
+            "placeholder": "请选择源选择-模拟",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1680072676032_7",
+            "__vModel__": "field163",
+            "searchSource": true
+          }, {
+            "__config__": {
+              "label": "源选择-数字",
+              "showLabel": true,
+              "labelWidth": null,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 10,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["16", "string"],
+              "formId": 164,
+              "renderKey": "1641680072721186",
+              "eventField": ["device", "gpio"],
+              "saveWay": "bin",
+              "defaultValue": "",
+              "originValue": "",
+              "uuid": "",
+              "emptyValue": "0",
+              "tip": "需外围放大"
+            },
+            "__slot__": {
+              "options": []
+            },
+            "placeholder": "IO选择源选择-数字",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": true,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1680072721186_8",
+            "__vModel__": "field164",
+            "searchSource": true
+          }, {
+            "__config__": {
+              "label": "CEC IO",
+              "showLabel": true,
+              "labelWidth": 80,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 24,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["16", "string"],
+              "formId": 161,
+              "renderKey": "1611680072548380",
+              "eventField": ["device", "gpio"],
+              "saveWay": "bin",
+              "defaultValue": "id_1647485267192_85",
+              "originValue": "id_1647485267192_85",
+              "uuid": "",
+              "emptyValue": "0"
+            },
+            "__slot__": {
+              "options": []
+            },
+            "placeholder": "请选择CEC IO",
+            "style": {
+              "width": ""
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1680072548380_5",
+            "__vModel__": "field161",
+            "searchSource": true
+          }, {
+            "__config__": {
+              "label": "HDMI_IIC_SCL_PORT",
+              "showLabel": true,
+              "labelWidth": 140,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 8,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["16", "string"],
+              "formId": 166,
+              "renderKey": "1661680072921764",
+              "saveWay": "bin",
+              "eventField": ["device", "gpio"],
+              "emptyValue": "0",
+              "originValue": "id_1647485267192_86",
+              "defaultValue": "id_1647485267192_86"
+            },
+            "__slot__": {
+              "options": [{
+                "label": "选项一",
+                "value": 1
+              }, {
+                "label": "选项二",
+                "value": 2
+              }]
+            },
+            "placeholder": "SCL_PORT",
+            "style": {
+              "width": "80%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1680072921764_10",
+            "__vModel__": "field166",
+            "searchSource": true
+          }, {
+            "__config__": {
+              "label": "HDMI_IIC_SDA_PORT",
+              "showLabel": true,
+              "labelWidth": 140,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 8,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["16", "string"],
+              "formId": 167,
+              "renderKey": "1671680072927475",
+              "saveWay": "bin",
+              "eventField": ["device", "gpio"],
+              "emptyValue": "0",
+              "originValue": "id_1647485267192_89",
+              "defaultValue": "id_1647485267192_89"
+            },
+            "__slot__": {
+              "options": [{
+                "label": "选项一",
+                "value": 1
+              }, {
+                "label": "选项二",
+                "value": 2
+              }]
+            },
+            "placeholder": "SDA_PORT",
+            "style": {
+              "width": "80%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1680072927475_11",
+            "__vModel__": "field167",
+            "searchSource": true
+          }, {
+            "__config__": {
+              "label": "IIC NUM",
+              "showLabel": true,
+              "labelWidth": 80,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 8,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["8", "1"],
+              "formId": 168,
+              "renderKey": "1681680072953639",
+              "originValue": 0,
+              "defaultValue": 0,
+              "emptyValue": "0",
+              "saveWay": "bin"
+            },
+            "__slot__": {
+              "options": [{
+                "label": "IIC0",
+                "value": 0
+              }, {
+                "label": "IIC1",
+                "value": 1
+              }, {
+                "label": "IIC2",
+                "value": 2
+              }]
+            },
+            "placeholder": "请选择IIC NUM",
+            "style": {
+              "width": "80%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1680072953639_12",
+            "__vModel__": "field168"
+          }, {
+            "__config__": {
+              "label": "HDMI插入检测",
+              "labelWidth": 110,
+              "showLabel": true,
+              "tag": "el-radio-group",
+              "tagIcon": "radio",
+              "changeTag": true,
+              "defaultValue": 1,
+              "layout": "colFormItem",
+              "span": 23,
+              "optionType": "button",
+              "regList": [],
+              "required": false,
+              "border": false,
+              "dataType": ["8", "1"],
+              "formId": 169,
+              "renderKey": "1691680073679533",
+              "originValue": 1,
+              "emptyValue": "0",
+              "saveWay": "bin",
+              "eventField": []
+            },
+            "__slot__": {
+              "options": [{
+                "label": "HDMI-DET脚检测",
+                "value": 1
+              }, {
+                "label": "无插入检测",
+                "value": 0
+              }]
+            },
+            "style": {
+              "width": "100%"
+            },
+            "size": "medium",
+            "disabled": false,
+            "id": "id_1680073679533_13",
+            "__vModel__": "field169"
+          }, {
+            "__config__": {
+              "label": "HDMI-DET脚",
+              "showLabel": true,
+              "labelWidth": 120,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 11,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["16", "string"],
+              "formId": 170,
+              "renderKey": "1701680073924892",
+              "eventField": ["device", "gpio"],
+              "saveWay": "bin",
+              "defaultValue": "id_1647485267192_88",
+              "originValue": "id_1647485267192_88",
+              "uuid": "",
+              "emptyValue": "0"
+            },
+            "__slot__": {
+              "options": []
+            },
+            "placeholder": "请选择HDMI-DET脚",
+            "style": {
+              "width": ""
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1680073924892_14",
+            "__vModel__": "field170",
+            "searchSource": true
+          }],
+          "eventField": []
+        },
+        "type": "default",
+        "justify": "start",
+        "align": "top",
+        "style": {
+          "height": "200px",
+          "paddingLeft": "0px"
+        },
+        "id": "id_1680072902892_9",
+        "show-text": false
+      }],
+      "eventField": [],
+      "showResetBtn": false
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1680072484268_4"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "OPTIAL配置",
+      "enableUuid": "",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "template": "",
+      "span": 24,
+      "formId": 175,
+      "renderKey": "1751680075839128",
+      "children": [{
+        "__config__": {
+          "layout": "rowFormItem",
+          "tag": "group",
+          "tagIcon": "row",
+          "layoutTree": true,
+          "componentName": "row_163",
+          "enableUuid": "",
+          "showComponentName": false,
+          "dataType": ["8", "1"],
+          "template": "",
+          "span": 24,
+          "formId": 163,
+          "renderKey": "1631680076432802",
+          "children": [{
+            "__config__": {
+              "label": "源选择-模拟",
+              "showLabel": true,
+              "labelWidth": null,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 7,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["16", "string"],
+              "formId": 164,
+              "renderKey": "1641680076432802",
+              "tip": "自带内部放大",
+              "saveWay": "bin",
+              "eventField": ["device", "gpio", "spdif"],
+              "emptyValue": "0",
+              "originValue": "id_1647485267192_82",
+              "defaultValue": "id_1647485267192_82"
+            },
+            "__slot__": {
+              "options": [{
+                "label": "选项一",
+                "value": 1
+              }, {
+                "label": "选项二",
+                "value": 2
+              }]
+            },
+            "placeholder": "请选择源选择-模拟",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1680076432802_40",
+            "__vModel__": "field164",
+            "searchSource": true
+          }, {
+            "__config__": {
+              "label": "源选择-数字",
+              "showLabel": true,
+              "labelWidth": null,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 10,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["16", "string"],
+              "formId": 165,
+              "renderKey": "1651680076432802",
+              "eventField": ["device", "gpio"],
+              "saveWay": "bin",
+              "defaultValue": "",
+              "originValue": "",
+              "uuid": "",
+              "emptyValue": "0",
+              "tip": "需外围放大"
+            },
+            "__slot__": {
+              "options": []
+            },
+            "placeholder": "IO选择源选择-数字",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": true,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1680076432802_41",
+            "__vModel__": "field165",
+            "searchSource": true
+          }],
+          "eventField": []
+        },
+        "type": "default",
+        "justify": "start",
+        "align": "top",
+        "style": {
+          "height": "100px",
+          "paddingLeft": "0px"
+        },
+        "id": "id_1680076432802_39"
+      }],
+      "eventField": []
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "100px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1680075839128_19"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "COALXIAL配置",
+      "enableUuid": "",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "template": "",
+      "span": 24,
+      "formId": 172,
+      "renderKey": "1721680074373986",
+      "children": [{
+        "__config__": {
+          "layout": "rowFormItem",
+          "tag": "group",
+          "tagIcon": "row",
+          "layoutTree": true,
+          "componentName": "row_160",
+          "enableUuid": "",
+          "showComponentName": false,
+          "dataType": ["8", "1"],
+          "template": "",
+          "span": 24,
+          "formId": 160,
+          "renderKey": "1601680076431744",
+          "children": [{
+            "__config__": {
+              "label": "源选择-模拟",
+              "showLabel": true,
+              "labelWidth": null,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 7,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["16", "string"],
+              "formId": 161,
+              "renderKey": "1611680076431744",
+              "tip": "自带内部放大",
+              "saveWay": "bin",
+              "eventField": ["device", "gpio", "spdif"],
+              "emptyValue": "0",
+              "originValue": "id_1647485267192_72",
+              "defaultValue": "id_1647485267192_72"
+            },
+            "__slot__": {
+              "options": [{
+                "label": "选项一",
+                "value": 1
+              }, {
+                "label": "选项二",
+                "value": 2
+              }]
+            },
+            "placeholder": "请选择源选择-模拟源选择-模拟",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1680076431744_37",
+            "__vModel__": "field161",
+            "searchSource": true
+          }, {
+            "__config__": {
+              "label": "源选择-数字",
+              "showLabel": true,
+              "labelWidth": null,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 10,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["16", "string"],
+              "formId": 162,
+              "renderKey": "1621680076431744",
+              "eventField": ["device", "gpio"],
+              "saveWay": "bin",
+              "defaultValue": "",
+              "originValue": "",
+              "uuid": "",
+              "emptyValue": "0",
+              "tip": "需外围放大"
+            },
+            "__slot__": {
+              "options": []
+            },
+            "placeholder": "IO选择源选择-数字",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": true,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1680076431744_38",
+            "__vModel__": "field162",
+            "searchSource": true
+          }],
+          "eventField": []
+        },
+        "type": "default",
+        "justify": "start",
+        "align": "top",
+        "style": {
+          "height": "100px",
+          "paddingLeft": "0px"
+        },
+        "id": "id_1680076431744_36"
+      }],
+      "eventField": []
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "100px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1680074373986_16"
+  }],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "mini",
+  "labelPosition": "right",
+  "labelWidth": 150,
+  "formRules": "rules",
+  "gutter": 10,
+  "disabled": false,
+  "span": 10,
+  "formBtns": false
+}

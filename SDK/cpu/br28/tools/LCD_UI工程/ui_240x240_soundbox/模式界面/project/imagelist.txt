@@ -1,0 +1,2 @@
+out1.jpg|E:/daily/临时文件/br28_sounbox_lyrics/sdk/cpu/br28/tools/download/soundbox/LCD_UI工程/ui_240x240_soundbox/模式界面/project/config/计时器/out1.jpgbaskslash equal zero else
+config/计时器/out1.jpg

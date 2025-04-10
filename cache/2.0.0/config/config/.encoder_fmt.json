@@ -1,0 +1,469 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "编码器参数配置",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "status": 0,
+        "template": "",
+        "span": 24,
+        "formId": 101,
+        "renderKey": "1011682580902370",
+        "children": [
+          {
+            "__config__": {
+              "label": "声道",
+              "showLabel": true,
+              "labelWidth": null,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 24,
+              "required": false,
+              "defaultValue": 2,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "status": 0,
+              "dataType": [
+                "1",
+                "8"
+              ],
+              "formId": 106,
+              "renderKey": "1061682666755532",
+              "originValue": 2,
+              "saveWay": "bin",
+              "eventField": []
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "单声道",
+                  "value": 1,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "双声道",
+                  "value": 2,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "placeholder": "请选择声道",
+            "style": {
+              "width": "50%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1682666755532_2",
+            "__vModel__": "field106"
+          },
+          {
+            "__config__": {
+              "label": "位宽",
+              "showLabel": true,
+              "labelWidth": null,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 24,
+              "required": false,
+              "defaultValue": 0,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "status": 0,
+              "dataType": [
+                "1",
+                "8"
+              ],
+              "formId": 165,
+              "renderKey": "1651713834265905",
+              "originValue": 0,
+              "saveWay": "bin",
+              "eventField": []
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "定点16位",
+                  "value": 0,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "定点24位",
+                  "value": 1,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "定点32位",
+                  "value": 2,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "浮点32位",
+                  "value": 3,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "placeholder": "请选择位宽",
+            "style": {
+              "width": "50%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1713834265905_0",
+            "__vModel__": "field165"
+          },
+          {
+            "__config__": {
+              "label": "帧长(ms)",
+              "showLabel": true,
+              "labelWidth": null,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 24,
+              "required": false,
+              "defaultValue": 100,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "status": 0,
+              "dataType": [
+                "1",
+                "16"
+              ],
+              "formId": 154,
+              "renderKey": "1541719316377982",
+              "originValue": 100,
+              "saveWay": "bin",
+              "eventField": []
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "2.5",
+                  "value": 25,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "5",
+                  "value": 50,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "10",
+                  "value": 100,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "placeholder": "请选择帧长(ms)",
+            "style": {
+              "width": "50%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1719316377982_0",
+            "__vModel__": "field154"
+          },
+          {
+            "__config__": {
+              "label": "采样率",
+              "showLabel": true,
+              "labelWidth": null,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 24,
+              "required": false,
+              "defaultValue": 32000,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "status": 0,
+              "dataType": [
+                "32",
+                "1"
+              ],
+              "formId": 107,
+              "renderKey": "1071682666801718",
+              "originValue": 32000,
+              "saveWay": "bin",
+              "eventField": []
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "AUTO",
+                  "value": 0,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "8000",
+                  "value": 8000,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "16000",
+                  "value": 16000,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "24000",
+                  "value": 24000,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "32000",
+                  "value": 32000,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "44100",
+                  "value": 44100,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "48000",
+                  "value": 48000,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "placeholder": "请选择采样率",
+            "style": {
+              "width": "50%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1682666801718_3",
+            "__vModel__": "field107"
+          },
+          {
+            "__config__": {
+              "label": "码率",
+              "showLabel": true,
+              "labelWidth": null,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 24,
+              "required": false,
+              "defaultValue": 64000,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "status": 0,
+              "dataType": [
+                "32",
+                "1"
+              ],
+              "formId": 111,
+              "renderKey": "1111682667012781",
+              "originValue": 64000,
+              "saveWay": "bin",
+              "eventField": []
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "8000",
+                  "value": 8000,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "16000",
+                  "value": 16000,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "32000",
+                  "value": 32000,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "48000",
+                  "value": 48000,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "64000",
+                  "value": 64000,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "96000",
+                  "value": 96000,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "128000",
+                  "value": 128000,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "placeholder": "请选择码率",
+            "style": {
+              "width": "50%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1682667012781_7",
+            "__vModel__": "field111"
+          },
+          {
+            "__config__": {
+              "label": "编码格式",
+              "showLabel": true,
+              "labelWidth": null,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 24,
+              "required": false,
+              "defaultValue": 1,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "status": 0,
+              "dataType": [
+                "1",
+                "32"
+              ],
+              "formId": 102,
+              "renderKey": "1021682580918689",
+              "saveWay": "bin",
+              "eventField": [],
+              "originValue": 1,
+              "formItemWidth": ""
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "AUTO",
+                  "value": 0,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "MP3",
+                  "value": 1,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "PCM",
+                  "value": "0x100",
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "WAV",
+                  "value": 4,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "SBC",
+                  "value": "0x10",
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "JLA",
+                  "value": "0x20000000",
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "AMR",
+                  "value": "0x4000",
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "placeholder": "请选择编码格式",
+            "style": {
+              "width": "50%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1682580918689_1",
+            "__vModel__": "field102"
+          }
+        ],
+        "eventField": [],
+        "saveWay": "bin"
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "500px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1682580902370_0",
+      "show-text": false
+    }
+  ],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 24,
+  "formBtns": false
+}

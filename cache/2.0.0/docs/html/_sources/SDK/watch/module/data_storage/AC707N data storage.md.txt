@@ -1,0 +1,288 @@
+数据存储介绍
+====================
+
+## 响应RCSP命令的交互文件
+
+## 数据存储说明
+### 说明
+
+用户能够存储日常使用手表所需的数据。  
+存储管理通过FlashDB框架实现，FlashDB框架代码的路径是在apps/common/flashdb/目录下。  
+应用层会基于FlashDB封装一层，方便使用，代码在apps/watch/data_storage/目录下。  
+本章主要接受基于FlashDB封装出来的应用层接口进行介绍。
+
+### 存储应用层目录结构
+#### 目录结构图
+
+  ![data](image/data.png)
+
+
+#### 相关文件说明
+
+| 文件                 | 说明                     |
+| -------------------- | ------------------------ |
+| watch_data_storage.c | 是基于FlashDB实现封装，实现数据的存储，修改，删除功能   |
+| watch_data_call_log_storage.c | 用于通话记录功能的存储和读取   |
+| watch_data_message_storage.c | 用于消息功能的存储和读取   |
+| watch_data_phonebook_storage.c | 用于电话本功能的读取   |
+| watch_data_weather_storage.c | 用于天气功能的读取   |
+
+### 接口说明
+#### 基于FlashDB封装出来的接口说明 watch_data_storage.h
+
+```c
+/* ------------------------------------------------------------------------------------*/
+/**
+ * @brief 初始化小文件
+ *
+ * @Return flase or true
+ */
+/* ------------------------------------------------------------------------------------*/
+int watch_small_file_init(void);
+```
+
+```c
+/* ------------------------------------------------------------------------------------*/
+/**
+ * @brief 通过id,读取对应小文件内容
+ *
+ * @Params small_file_type 小文件类型
+ * @Params id 文件id
+ * @Params buf 存储要读取文件数据的buffer
+ * @Params len 要读取的数据长度
+ *
+ * @Return 读取到的字节数
+ */
+/* ------------------------------------------------------------------------------------*/
+int small_file_read(u8 small_file_type, u32 id, u32 offset, void *buf, u32 len);
+```
+
+```c
+
+/* ------------------------------------------------------------------------------------*/
+/**
+ * @brief 写入小文件数据
+ *
+ * @Params small_file_type 小文件类型
+ * @Params buf_offset 要写入数据的偏移
+ * @Params buf 存储写入文件数据的buffer
+ * @Params len 要写入数据的长度
+ *
+ * @Return 写入成功 返回u16位大小的id; 写入失败 返回id为0
+ */
+/* ------------------------------------------------------------------------------------*/
+u32  small_file_write(u8 small_file_type, u32 *id, u32 buf_offset, void *buf, u32 len, u32 total_len);
+```
+
+```c
+
+/* ------------------------------------------------------------------------------------*/
+/**
+ * @brief 通过id,更新对应小文件内容
+ *
+ * @Params small_file_type 小文件类型
+ * @Params id 文件id
+ * @Params buf_offset 要写入数据的偏移
+ * @Params buf 存储写入文件数据的buffer
+ * @Params len 要写入数据的长度
+ *
+ * @Return 0:false 1:true
+ */
+/* ------------------------------------------------------------------------------------*/
+int small_file_update_by_id(u8 small_file_type, u16 id, u32 buf_offset, void *buf, u32 len, u32 total_len);
+```
+
+```c
+
+/* ------------------------------------------------------------------------------------*/
+/**
+ * @brief 通过id,删除小文件
+ *
+ * @Params file_type 小文件类型
+ * @Params id 文件id
+ *
+ * @Return 0:false 1:true
+ */
+/* ------------------------------------------------------------------------------------*/
+int small_file_delete_by_id(u8 small_file_type, u32 id);
+```
+
+```c
+
+/* ------------------------------------------------------------------------------------*/
+/**
+ * @brief 获取小文件的id_table的大小
+ *
+ * @Params small_file_type 小文件类型
+ *
+ * @Return length of the id_table
+ */
+/* ------------------------------------------------------------------------------------*/
+int small_file_get_id_table_len(u8 small_file_type);
+```
+
+```c
+
+/* ------------------------------------------------------------------------------------*/
+/**
+ * @brief 获取小文件的id_table
+ *
+ * @Params small_file_type
+ * @Params table_data Pointer to the buffer where the id_table data will be stored.
+ * @Params data_len The length of the table_data buffer.
+ *
+ * @Return 0:false 1:true
+ */
+/* ------------------------------------------------------------------------------------*/
+int small_file_get_id_table(u8 small_file_type, u8 *table_data, u16 data_len);
+```
+
+
+#### 给功能应用使用接口说明
+
+
+```c
+/* ------------------------------------------------------------------------------------*/
+/**
+ * @brief 根据index获取通话记录数据
+ *
+ * @Params call_log 指向存储通话记录数据的buf
+ * @Params index 存储顺序
+ *
+ * @Return false or true
+ */
+/* ------------------------------------------------------------------------------------*/
+int ui_small_file_call_log_read_by_index(small_file_call_log_t *call_log, int index);
+```
+
+```c
+/* ------------------------------------------------------------------------------------*/
+/**
+ * @brief 获取通话记录数据数量
+ *
+ * @Return 通话记录数据数量
+ */
+/* ------------------------------------------------------------------------------------*/
+int ui_small_file_call_log_get_count(void);
+```
+
+```c
+/* ------------------------------------------------------------------------------------*/
+/**
+ * @brief 获取消息数据数量
+ *
+ * @Return 消息数据数量
+ */
+/* ------------------------------------------------------------------------------------*/
+int ui_small_file_message_get_count(void);
+```
+
+```c
+/* ------------------------------------------------------------------------------------*/
+/**
+ * @brief 根据index获取消息数据
+ *
+ * @Params message 指向消息数据的buf
+ * @Params index 存储顺序
+ *
+ * @Return false or true
+ */
+/* ------------------------------------------------------------------------------------*/
+int small_file_message_read_by_index(small_file_message_t *message, int index);
+```
+
+```c
+/* ------------------------------------------------------------------------------------*/
+/**
+ * @brief 获取存储的联系人数量
+ */
+/* ------------------------------------------------------------------------------------*/
+int ui_small_file_phonebook_get_count(void);
+```
+
+```c
+//* ------------------------------------------------------------------------------------*/
+/**
+ * @brief 根据index获取电话本数据
+ *
+ * @Params message 指向电话本数据的buf
+ * @Params index 存储顺序
+ *
+ * @Return false or true
+ */
+/* ------------------------------------------------------------------------------------*/
+int ui_small_file_phonebook_read_by_index(small_file_phonebook_t *phonebook, int index);
+```
+
+```c
+/* ------------------------------------------------------------------------------------*/
+/**
+ * @brief 获取天气数据数量
+ *
+ * @Return 天气数据数量
+ */
+/* ------------------------------------------------------------------------------------*/
+int ui_small_file_weather_get_count(void);
+```
+
+```c
+/* ------------------------------------------------------------------------------------*/
+/**
+ * @brief 获取天气数据大小
+ *
+ * @Params index 存储顺序
+ *
+ * @Return 天气数据大小
+ */
+/* ------------------------------------------------------------------------------------*/
+int ui_small_file_weather_get_size_by_index(int index);
+```
+
+```c
+/* ------------------------------------------------------------------------------------*/
+/**
+ * @brief 根据index获取天气数据
+ *
+ * @Params buf 指向天气数据的buf
+ * @Params len buf的长度
+ * @Params index 存储顺序
+ *
+ * @Return false or true
+ */
+/* ------------------------------------------------------------------------------------*/
+int ui_small_file_weather_read_by_index(void *buf, u32 len, int index);
+```
+
+
+
+
+
+## 数据存储接入rcsp流程
+### 说明
+
+手表上的应用数据与app进行交互通过rcsp协议，这里主要介绍如何接入rcsp的数据交互部分。
+
+### 流程说明
+
+watch_data_rcsp_interface.c实现数据存储接入rcsp流程。  
+这里注册对于rcsp的handle，来响应rcsp的处理。  
+
+
+```c
+static const rcsp_simple_trans_opt g_test_trans_opt = {
+    .get_id_table_len = simple_trans_get_id_table_len,
+    .get_id_table = simple_trans_get_id_table,
+    .read_file_by_id = simple_trans_read_file_by_id,
+    .insert_file_by_id = simple_trans_insert_file_by_id,
+    .update_file_by_id = simple_trans_update_file_by_id,
+    .delete_file_by_id = simple_trans_delete_file_by_id,
+};
+```
+
+```c
+int test_simple_trans(void)
+{
+    rcsp_register_file_simple_transfer_interface((rcsp_simple_trans_opt *)&g_test_trans_opt);
+    return 0;
+}
+```

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CharSet>
+	<Char>0x00a4</Char>
+	<Char>0x00a7-0x00a8</Char>
+	<Char>0x00b0-0x00b1</Char>
+	<Char>0x00b7</Char>
+	<Char>0x00d7</Char>
+	<Char>0x00fc</Char>
+	<Char>0x0101</Char>
+	<Char>0x0113</Char>
+	<Char>0x011b</Char>
+	<Char>0x012b</Char>
+	<Char>0x0144</Char>
+	<Char>0x0148</Char>
+	<Char>0x014d</Char>
+	<Char>0x016b</Char>
+	<Char>0x01ce</Char>
+	<Char>0x01d0</Char>
+	<Char>0x01d2</Char>
+	<Char>0x01d4</Char>
+	<Char>0x01d6</Char>
+	<Char>0x01d8</Char>
+	<Char>0x01da</Char>
+	<Char>0x01dc</Char>
+	<Char>0x0251</Char>
+	<Char>0x0261</Char>
+	<Char>0x02c7</Char>
+</CharSet>

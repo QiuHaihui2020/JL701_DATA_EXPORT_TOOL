@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FontToolOptions>
+    <Attrib>
+        <Path Value="C:\Users\ZPC23-015\Desktop\br27_soundbox_download_V3.0.0\UI工程\字库工具\Fonts\Sun-ExtA.ttf"/>
+            <FontSize Value="24"/>
+        <CodePage Value="17"/>
+        <BitDepth Value="1bpp"/>
+    </Attrib>
+	<CharSets>
+		<CharSet codepage="ascii" width="variable" font="Fonts\arial unicode ms.ttf">charset\ascii.xml</CharSet>
+		<CharSet codepage="cp874" width="valid" font="Fonts\arial unicode ms.ttf">charset\cp874.xml</CharSet>
+		<CharSet codepage="cp1250" width="variable" font="Fonts\arial unicode ms.ttf">charset\cp1250.xml</CharSet>
+		<CharSet codepage="cp1250_extra" width="variable" font="Fonts\arial unicode ms.ttf">charset\cp1250_extra.xml</CharSet>		
+		<CharSet codepage="cp1251" width="variable" font="Fonts\arial unicode ms.ttf">charset\cp1251.xml</CharSet>
+		<CharSet codepage="cp1252" width="variable" font="Fonts\arial unicode ms.ttf">charset\cp1252.xml</CharSet>
+		<CharSet codepage="cp1253" width="variable" font="Fonts\arial unicode ms.ttf">charset\cp1253.xml</CharSet>
+		<CharSet codepage="cp1254" width="variable" font="Fonts\arial unicode ms.ttf">charset\cp1254.xml</CharSet>
+		<CharSet codepage="cp1255" width="variable" font="Fonts\arial unicode ms.ttf">charset\cp1255.xml</CharSet>
+		<CharSet codepage="cp1256" width="variable" font="Fonts\arial unicode ms.ttf">charset\cp1256.xml</CharSet>
+		<CharSet codepage="cp1257" width="variable" font="Fonts\arial unicode ms.ttf">charset\cp1257.xml</CharSet>
+		<CharSet codepage="cp1258" width="variable" font="Fonts\arial unicode ms.ttf">charset\cp1258.xml</CharSet>
+		<CharSet codepage="cp1258_extra" width="variable" font="Fonts\arial unicode ms.ttf">charset\cp1258_extra.xml</CharSet>
+		<CharSet codepage="gb2312" width="fixed">charset\gb2312.xml</CharSet>
+	</CharSets>
+</FontToolOptions>

@@ -1,0 +1,150 @@
+﻿{
+  "fields": [{
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "Spectrum",
+      "enableUuid": "",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "template": "",
+      "span": 24,
+      "formId": 101,
+      "renderKey": "1011666765139448",
+      "children": [{
+        "__config__": {
+          "label": "Mode",
+          "showLabel": true,
+          "labelWidth": 200,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 24,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": ["-1", "32"],
+          "formId": 122,
+          "renderKey": "1221666860508856",
+          "eventField": [],
+          "saveWay": "bin",
+          "defaultValue": 2,
+          "tip": "模式：双声道时起作用。0： 计算的是第一声道的频谱值。1：计算的是第二声道频谱值。2：为第一声道与第二声道相加除2的频谱值",
+          "tipAlways": true,
+          "originValue": 2
+        },
+        "__slot__": {
+          "options": [{
+            "label": "0",
+            "value": 0
+          }, {
+            "label": "1",
+            "value": 1
+          }, {
+            "label": "2",
+            "value": 2
+          }]
+        },
+        "placeholder": "请选择Mode",
+        "style": {
+          "width": "25%"
+        },
+        "clearable": false,
+        "disabled": false,
+        "filterable": false,
+        "multiple": false,
+        "id": "id_1675825867879_57",
+        "__vModel__": "field122"
+      }, {
+        "__config__": {
+          "label": "Attack Factor",
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "defaultValue": 0.9,
+          "span": 24,
+          "showLabel": true,
+          "layout": "colFormItem",
+          "labelWidth": 200,
+          "required": true,
+          "regList": [],
+          "changeTag": true,
+          "dataType": ["float", "-1"],
+          "formId": 126,
+          "renderKey": "1261666861086368",
+          "saveWay": "bin",
+          "tip": "下降因子，范围[0~1）",
+          "paddingLeft": "",
+          "tipAlways": true,
+          "eventField": [],
+          "originValue": 0.9
+        },
+        "placeholder": "计数器Attack Factor",
+        "min": 0,
+        "max": 0.9,
+        "step": 0.1,
+        "step-strictly": false,
+        "controls-position": "",
+        "disabled": false,
+        "id": "id_1675825867883_199",
+        "__vModel__": "field126"
+      }, {
+        "__config__": {
+          "label": "Release Factor",
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "defaultValue": 0.2,
+          "span": 24,
+          "showLabel": true,
+          "layout": "colFormItem",
+          "labelWidth": 200,
+          "required": true,
+          "regList": [],
+          "changeTag": true,
+          "dataType": ["-1", "float"],
+          "formId": 128,
+          "renderKey": "1281666861124161",
+          "saveWay": "bin",
+          "tip": "上升因子，范围[0~1）,律动一般是能量值掉下来的慢，上升的快。所以是release 设置小点，attack 设置大点",
+          "paddingLeft": "",
+          "tipAlways": true,
+          "eventField": [],
+          "originValue": 0.2
+        },
+        "placeholder": "计数器Release Factor",
+        "min": 0,
+        "max": 0.9,
+        "step": 0.1,
+        "step-strictly": false,
+        "controls-position": "",
+        "disabled": false,
+        "id": "id_1675825867883_203",
+        "__vModel__": "field128"
+      }],
+      "eventField": [],
+      "saveWay": "",
+      "showResetBtn": false
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "400px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675825867879_68"
+  }],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 24,
+  "formBtns": false
+}

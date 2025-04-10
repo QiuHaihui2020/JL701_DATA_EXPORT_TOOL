@@ -1,0 +1,81 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "label": "通道选择",
+        "tag": "el-checkbox-group",
+        "tagIcon": "checkbox",
+        "defaultValue": [
+          1
+        ],
+        "span": 24,
+        "showLabel": true,
+        "labelWidth": null,
+        "layout": "colFormItem",
+        "optionType": "default",
+        "required": true,
+        "regList": [],
+        "changeTag": true,
+        "border": false,
+        "status": 0,
+        "dataType": [
+          "1",
+          "16"
+        ],
+        "formId": 760,
+        "renderKey": "7601711868659477",
+        "originValue": [
+          1
+        ],
+        "eventField": [],
+        "saveWay": "bin"
+      },
+      "__slot__": {
+        "options": [
+          {
+            "label": "通道0",
+            "value": 1,
+            "hide": false,
+            "disabled": false
+          },
+          {
+            "label": "通道1",
+            "value": 2,
+            "hide": false,
+            "disabled": false
+          },
+          {
+            "label": "通道2",
+            "value": 4,
+            "hide": false,
+            "disabled": false
+          },
+          {
+            "label": "通道3",
+            "value": 8,
+            "hide": false,
+            "disabled": false
+          }
+        ]
+      },
+      "style": {
+        "width": "100%"
+      },
+      "size": "medium",
+      "disabled": false,
+      "id": "id_1711868659477_1",
+      "__vModel__": "field760"
+    }
+  ],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 24,
+  "formBtns": false
+}

@@ -1,0 +1,39 @@
+# 数据流开关节点（Switch）
+
+## 功能介绍
+
+- 在数据流已创建的情况下，动态控制数据是否往后级传递。
+
+## 使用范例
+
+- **设置节点名称**
+![switch_name](./assets/switch1.png)
+
+- **将节点串在需要动态开关的数据流中**
+![switch_name](./assets/switch2.png)
+
+- **程序中配置回调函数**
+`jlstream_event_handle.c`文件中，根据节点名称匹配回调函数，通过回调函数的返回值确定节点开关状态。
+
+```c
+/*
+ * 示例：使用全局变量控制switch开关
+ * 返回1，switch节点打开，数据往后级传递
+ * 返回0，switch节点关闭，数据流阻塞
+ */
+u8 switch_en;
+int get_switch_test_state()
+{
+    return switch_en;
+}
+
+static int get_switch_node_callback(const char *arg)
+{
+    ...
+    if (!strcmp(arg, "Switch_test")) {
+        return (int)get_switch_test_state;
+    }
+    ...
+    return 0;
+}
+```

@@ -1,0 +1,209 @@
+RECORD 应用详细设计说明
+==================
+
+
+### 术语和缩写词
+
+|   解释   |         缩写和术语        |
+| :------: | :-----------------------: |
+|  Record  | 录音					 |
+|  fsn	  | 扫盘					 |
+
+
+## 总体设计
+###  需求概述
+Record 应用主要实现的功能包括：
+ 1. 支持录音、支持单曲回播或者循环回播可选，同时提供删除录音文件、暂停或者继续录音和播放、上下曲切换、回播音量控制的功能。
+ 2. 提供UI显示
+
+
+###  总体架构设计
+
+| 模块名称         | 对应文件       |
+| ---------------- | -------------- |
+| Record 录音以及相关功能   | record.c        |
+| Record UI部分  			| ui_record.c   |
+
+## Record应用相关模块描述
+### Record应用
+主要实现Record的录音功能打开、关闭；支持单曲回播或者循环回播可选，同时提供删除录音文件、暂停或者继续录音和播放、上下曲切换、回播音量控制的功能。
+### Record UI
+主要实现录制时长的显示，实现回拨文件时长的显示
+
+
+## Record应用相关API
+### Record 基础功能相关API
+#### app_recorder_start
+开启录音<br>
+原型：
+
+``` javascript
+void app_recorder_start(void)
+```
+
+参数：无
+
+
+#### app_recorder_stop
+停止录音<br>
+原型：
+``` javascript
+void app_recorder_stop();
+```
+参数：无
+
+
+
+#### is_recorder_runing
+获取是否正在录音的标志<br>
+原型：
+``` javascript
+u8 is_recorder_runing()
+```
+参数：无<br>
+返回值：1,正在录音; 0,没有在录音
+
+
+#### music_player_runing
+获取是否正在回播的标志<br>
+原型：
+``` javascript
+int music_player_runing(void)
+```
+参数：无<br>
+返回值：1,正在回播录音文件; 0,没有在回播
+
+
+#### app_recorder_file_play_stop
+停止回播并关闭对应的文件<br>
+原型：
+``` javascript
+void app_recorder_file_play_stop(void);
+```
+参数：无
+
+
+#### app_recorder_del_cur_play_file
+仅供循环回播下使用，删除最近播放的文件<br>
+原型：
+``` javascript
+void app_recorder_del_cur_play_file(void);
+```
+参数：无
+
+
+#### app_recorder_del_latest_file
+删除录音文件夹最后的文件，单独回播或者循环回播都会用到<br>
+原型：
+``` javascript
+void app_recorder_del_latest_file(void);
+```
+参数：无
+
+#### app_recorder_file_play_start
+开始播放文件，录音结束后调用开启回播<br>
+原型：
+``` javascript
+struct file_player *app_recorder_file_play_start(void);
+```
+参数：无<br>
+返回值：file_player 结构体
+
+
+#### app_recorder_pause
+暂停、恢复录音或者暂停、恢复回播<br>
+原型：
+``` javascript
+void app_recorder_pause(void);
+```
+参数：无
+
+#### app_recorder_file_play_next
+播放下一曲录音文件<br>
+原型：
+``` javascript
+void app_recorder_file_play_next(void);
+```
+参数：无
+
+#### app_recorder_file_play_prev
+播放上一曲录音文件<br>
+原型：
+``` javascript
+void app_recorder_file_play_prev(void);
+```
+参数：无
+
+#### app_recorder_file_play_vol_up
+增大回播音量<br>
+原型：
+``` javascript
+void app_recorder_file_play_vol_up(void);
+```
+参数：无
+
+#### app_recorder_file_play_vol_down
+减小回播音量<br>
+原型：
+``` javascript
+void app_recorder_file_play_vol_down(void);
+```
+参数：无
+
+
+
+### Record UI 相关 API
+#### app_recorder_get_enc_time
+获取录音的编码时间，供ui使用<br>
+原型：
+``` javascript
+int app_recorder_get_enc_time(void);
+```
+参数：无<br>
+返回值：当前编码的时间
+
+
+#### app_recorder_get_play_file_time
+实时获取播放录音文件的时间，供ui使用<br>
+原型：
+``` javascript
+int app_recorder_get_play_file_time(void);
+```
+参数：无<br>
+返回值：当前正在进行文件解码的时间
+
+
+### Record 其它相关API介绍
+#### record_device_msg_handler
+record录音设备事件响应接口<br>
+在此函数里会完成：插拔录音设备，退出录音模式的动作。<br>
+原型：
+``` javascript
+int record_device_msg_handler(int *msg);
+```
+参数：无<br>
+返回值：1代表事件已经处理, 0表示还未处理.
+
+
+#### app_recorder_fsn_scan
+扫描录音文件夹，获取对应的盘符。<br>
+需要注意的是，涉及文件数量的变化的操作，下一次都需要重新扫描盘符<br>
+原型：
+``` javascript
+void app_recorder_fsn_scan(void);
+```
+参数：无<br>
+
+
+#### app_recorder_fsn_scan
+播放结束的回调函数，在回调里通过不同操作区分开单独回播和循环回播的功能.<br>
+原型：
+``` javascript
+int recorde_file_play_callback(void *_priv, int parm, enum stream_event event);
+```
+
+
+
+
+
+

@@ -1,0 +1,678 @@
+APP固件通信流程介绍
+====================
+
+## 响应RCSP命令的交互文件
+
+### 说明
+
+杰理APP是通过RCSP协议与小机进行通讯，通讯时的交互代码都是在apps/common/third_party_profile/jieli/rcsp/目录下，本章会简单介绍这个文件目录。另外，本文档会对RCSP传输协议中的大文件传输、小文件传输、消息推送和OTA升级的流程结合代码进行一个简单的描述。
+
+### 交互文件的目录结构
+
+#### 目录结构图
+
+RCSP整体结构:  
+  ![RCSP](image/RCSP.png)
+
+RCSP从机目录结构:  
+  ![RCSP_s](image/RCSP_s.png)
+
+
+
+#### 目录结构说明
+
+- RCSP整体目录结构说明  
+
+| 目录名                | 介绍                     |
+| -------------------- | ------------------------ |
+| adv | 组装rcsp广播包       |
+| client | 设备端作rcsp的主机时候 数据命令交互       |
+| rcsp_functions | rcsp初始化、退出、蓝牙状态处理、事件处理等       |
+| server | 设备端作rcsp的主机时候 数据命令交互       |
+
+
+
+- RCSP作从机 目录结构  
+
+| 目录名                | 介绍                     |
+| -------------------- | ------------------------ |
+| browser | 文件浏览相关处理    |
+| device_info | 获取相关设备信息    |
+| external_flash | 外挂flash操作相关处理（表盘传输）    |
+| file_transfer | 	文件传输相关处理（传输音乐、表盘、联系人等）    |
+| mass_data | 大数据传输    |
+| rcsp_settint_opt | 各种公共的功能命令响应的统一处理（二级命令属于功能命令）    |
+| rcsp_update | APP升级的相关处理    |
+| Sensors | 与传感器交互的相关处理    |
+| watch_expand | 表盘扩展参数    |
+
+
+
+## 大文件传输（歌曲、表盘）
+
+### 相关命令
+
+
+- 传输歌曲相关命令:  
+
+| 命令                 | 说明                     |
+| -------------------- | ------------------------ |
+| 0x01 | 数据传输命令  |
+| 0x21 | 通知固件进入环境准备  |
+| 0x27 | 设备相关参数拓展  |
+| 0x1B | 开始大文件传输  |
+| 0x1C | 结束大文件传输  |
+| 0x1D | 文件数据拉取  |
+| 0x1E | 取消文件传输  |
+| 0x1F | 删除文件  |
+| 0x20 | 获取文件名称  |
+
+
+- 传输表盘相关命令:  
+
+| 命令                 | 说明                     |
+| -------------------- | ------------------------ |
+| 0x01 | 数据传输命令   |
+| 0x1A | 外挂FLASH操作命令   |
+| 0x21 | 通知固件进入环境准备   |
+| 0x27 | 设备相关参数拓展   |
+| 0x1B | 开始大文件传输   |
+| 0x1C | 结束大文件传输   |
+| 0x1D | 文件数据拉取   |
+| 0x20 | 获取文件名   |
+
+
+### 大文件传输流程
+
+  ![file](image/file_tx.png)
+
+#### 添加歌曲流程
+
+##### APP发送通知固件进入环境准备命令（0x21）  
+
+```c
+// 响应通知固件进入环境命令
+app_rcsp_task_prepare   //rcsp_task.c
+ |  // 切换到下载模式
+ | - app_task_switch_to
+// 进入下载模式
+app_enter_rcsp_mode   //rcsp_task.c
+ |  // 模式初始化
+ | - app_rcsp_task_start 
+ |  // 初始化文件传输流程，记录回调函数
+app_rcsp_action_end_callback
+ | -- rcsp_file_transfer_init   //file_transfer.c
+```
+
+##### APP发送设备相关参数拓展命令（0x27）  
+
+```c
+// 响应设备相关参数拓展命令
+rcsp_device_parm_extra   //rcsp_cmd_recieve.c
+ |  // 记录APP传下来的设备号
+ | - rcsp_file_transfer_download_parm_extra   //file_transfer.c
+```
+
+##### APP发送开始大文件传输命令（0x1B）  
+
+```c
+// 响应开始大文件传输命令
+rcsp_file_transfer_download_start   //file_transfer.c
+ |  // 根据上一步接收到的参数获取目标设备
+ | - dev = dev_manager_find_spec
+ |  // 根据目标设备获取对应的根目录
+ | - char *root_path = dev_manager_get_root_path
+ |  // 根据APP传下来的文件名和获取的根目录来拼凑临时文件的绝对路径
+ | - creat_file_path
+ |  // 检查该路径文件是存在，存在则跳过创建触发续传，否则创建临时文件
+ | - ftp_d->file = fopen(path, "r")
+ | - ftp_d->file = fopen(path, "w+")
+ |  // 注册一个用于续传表的定时器
+ | - file_transfer_download_vaild_mark_fill
+ |  // 文件下载数据拉取处理
+ | - file_transfer_download_get_data()
+ |  // 注册一个用于定时拉取数据的定时器 
+ | -- ftp_d->get_timeout = sys_timeout_add
+```
+
+##### APP接收到小机获取数据命令（0x1D）后，通过该命令回复把数据下发给小机
+
+```c
+// 响应回复获取数据的处理
+file_transfer_download_doing   //file_transfer.c
+ |  // 向目标设备写入数据
+ | - fwrite(ftp_d->file, data, len)
+ |  // 重新设置用于定时拉取数据的定时器的超时时间
+ | - sys_timer_modify(ftp_d->get_timeout, FTP_FILE_DATA_RECIEVE_TIMEOUT);
+ |  // 文件下载数据拉取处理
+ | - file_transfer_download_get_data()
+```
+
+##### 当APP发送最后一包后
+```c
+// 响应回复获取数据的处理
+file_transfer_download_doing   //file_transfer.c
+ |  // 文件传输，最后一包数据接收处理
+ | - file_transfer_download_doing_last_packet
+ |  // 删除用于定时拉取数据的定时器
+ | -- sys_timeout_del(ftp_d->get_timeout)
+ |  // 写入最后一包数据
+ | -- fwrite(ftp_d->file, data, len)
+ |  // 文件接收完成，文件校验
+ | -- file_transfer_download_file_check()
+ |   // 在主线程中进行数据校验，校验成功小机会主动给APP发送获取文件名命令
+ | --- file_transfer_download_file_check_continue()
+```
+
+##### APP接收到小机获取文件名命令（0x20）请求后，通过改命令回复把文件名传给小机
+```c
+// 响应重命名的处理
+file_transfer_file_rename   //file_transfer.c
+ |  // 根据获取到的名字进行重命名，成功后小机会主动给APP发送结束大文件传输命令
+ | - file_rename((const char *)data)
+```
+
+##### APP接收到结束大文件传输命令（0x1C）后，会对这个命令进行回复
+```c
+// 响应结束大文件传输回复的处理
+rcsp_file_transfer_download_end   //file_transfer.c
+ |  // 文件传输关闭处理
+ | - rcsp_file_transfer_close()
+ |  // 关闭文件
+ | -- fclose(ftp_d->file)
+ |  // 调用掉函数ftp_d->end_callback()
+ | -- app_rcsp_action_end_callback   //rcsp_task.c
+ |   // 返回原来的任务
+ | --- app_task_switch_back();
+// 这时app_task_switch_back调用会触发APP_MODE_RCSP中的app_rcsp_task_stop
+app_rcsp_task_stop
+```
+
+#### 删除歌曲流程
+##### APP发送删除文件命令（0x1F）
+```c
+// 响应删除文件命令
+rcsp_file_delete_start   //file_delete.c
+ |  // 删除文件，成功后会回复状态
+ | - file_delete_func
+```
+
+#### 添加表盘流程
+##### APP发送外挂FLASH操作（0x1A）的插入文件命令
+```c
+// 响应外挂FLASH操作命令
+ rcsp_extra_flash_opt   //rcsp_extra_flash_opt.c
+ |  // 表盘插入文件操作
+ | - rcsp_extra_flash_insert_opt
+ | -- rcsp_extra_flash_opt_insert_start
+ |   // 记录当前传输表盘的文件名
+ | --- strcpy(watch_name, file_name)
+ |   // 记录当前传输表盘文件的大小 
+ | --- g_watch_file_size = file_size
+```
+
+##### APP发送通知固件进入环境准备命令（0x21）
+```c
+// 响应通知固件进入环境命令
+app_rcsp_task_prepare   //rcsp_task.c
+ |  // 切换到下载模式
+ | - app_task_switch_to
+// 进入下载模式
+app_enter_rcsp_mode   //rcsp_task.c
+ |  // 模式初始化
+ | - app_rcsp_task_start 
+ |  // 初始化文件传输流程，记录回调函数
+app_rcsp_action_end_callback
+ | -- rcsp_file_transfer_init   //file_transfer.c
+```
+
+##### APP发送设备相关参数拓展命令（0x27）
+```c
+// 响应设备相关参数拓展命令
+rcsp_device_parm_extra   //rcsp_cmd_recieve.c
+ |  // 记录APP传下来的设备号
+ | - rcsp_file_transfer_download_parm_extra   //file_transfer.c
+```
+
+##### APP发送开始大文件传输命令（0x1B）
+```c
+// 响应大文件传输命令
+Rcsp_file_transfer_download_start   //file_transfer.c
+ |  // 根据上一步接收到的参数获取目标设备
+ | - dev = dev_manager_find_spec
+ |  // 根据目标设备获取对应的根目录
+ | - char *root_path = dev_manager_get_root_path
+ |  // 根据APP传下来的文件名和获取的根目录来拼凑临时文件的绝对路径
+ | - creat_file_path
+ |  // 检查该路径文件是存在，存在则跳过创建触发续传，否则创建临时文件
+ | - ftp_d->file = fopen(path, "r")
+ |  // 大文件传输表盘的开始/结束处理函数，传入当前目标文件状态
+ |  // 目标设备是外挂flash会触发
+ | - file_transfer_watch_opt
+ |  // 假如当前是续传，不动作
+ |  // 假如当前是新文件，会尝试删除临时文件，并检查当前环境是否满足要求
+ | -- rcsp_file_transfer_watch_opt   //rcsp_extra_flash_opt.c
+ |  // 根据路径创建/打开临时文件
+ | - ftp_d->file = fopen(path, "w+")
+ |  // 注册一个用于续传表的定时器
+ | - file_transfer_download_vaild_mark_fill
+ |  // 文件下载数据拉取处理
+ | - file_transfer_download_get_data()
+ |  // 注册一个用于定时拉取数据的定时器 
+ | -- ftp_d->get_timeout = sys_timeout_add
+```
+
+##### APP接收到小机获取数据命令（0x1D）请求后，通过该命令回复把数据下发给小机
+```c
+// 响应回复获取数据的处理
+rcsp_file_transfer_download_doing   //file_transfer.c
+ |  // 向目标设备写入数据
+ | - fwrite(ftp_d->file, data, len)
+ |  // 重新设置用于定时拉取数据的定时器的超时时间
+ | - sys_timer_modify(ftp_d->get_timeout, FTP_FILE_DATA_RECIEVE_TIMEOUT);
+ |  // 文件下载数据拉取处理
+ | - file_transfer_download_get_data()
+```
+
+##### 当APP发送最后一包后
+```c
+// 响应回复获取数据的处理
+rcsp_file_transfer_download_doing   //file_transfer.c
+ |  // 文件传输，最后一包数据接收处理
+ | - rcsp_file_transfer_download_doing_last_packet
+ |  // 删除用于定时拉取数据的定时器
+ | -- sys_timeout_del(ftp_d->get_timeout)
+ |  // 写入最后一包数据
+ | -- fwrite(ftp_d->file, data, len)
+ |  // 文件接收完成，文件校验
+ | -- file_transfer_download_file_check()
+ |   // 在主线程中进行数据校验，校验成功小机会主动给APP发送获取文件名命令
+ | --- file_transfer_download_file_check_continue()
+```
+
+##### APP接收到小机获取文件名命令（0x20）请求后，通过改命令回复把文件名传给小机
+```c
+// 响应重命名的处理
+rcsp_file_transfer_file_rename   //file_transfer.c
+ |  // 目标设备是外挂flash会触发，重命名前尝试删除重名文件
+ | - file_transfer_watch_opt
+ | -- rcsp_file_transfer_watch_opt   //rcsp_extra_flash_opt.c
+ |  // 根据获取到的名字进行重命名，成功后小机会主动给APP发送结束大文件传输命令
+ | - file_rename((const char *)data)
+ |  // 重命名成功后会触发插入文件结束操作，把表盘名放入对应的表中并整理该表
+ | - file_transfer_watch_opt
+ | -- rcsp_file_transfer_watch_opt   //rcsp_extra_flash_opt.c
+```
+
+##### APP接收到结束大文件传输命令（0x1C）后，会对这个命令进行回复
+```c
+// 响应结束大文件传输回复的处理
+rcsp_file_transfer_download_end   //file_transfer.c
+ |  // 文件传输关闭处理
+ | - file_transfer_close()
+ |  // 关闭文件
+ | -- fclose(ftp_d->file)
+ |  // 调用掉函数ftp_d->end_callback()
+ | -- app_rcsp_action_end_callback   //rcsp_task.c
+ |   // 返回原来的任务
+ | --- app_task_switch_back();
+// 这时app_task_switch_back调用会触发APP_MODE_RCSP中的app_rcsp_task_stop
+```
+
+注意：表盘插入成功后，如果需要对表盘进行设置、查询等操作，则需要使用0x1A的表盘操作命令（二级命令是0x03），对应的操作文件是apps/common/third_party_profile/jieli/rcsp/server/functions/external_flash/rcsp_extra_flash_opt.c（rcsp_extra_flash_dial_opt函数）。  
+该命令有由APP主动发起，然后小机把对应的信息返回给APP，一共有5中操作：  
+表盘信息获取、表盘信息这只（选择表盘）、表盘版本号获取、背景信息设置（选择背景）、背景版本号获取。  
+
+#### 删除表盘流程
+##### APP发送外挂FLASH操作（0x1A）的删除文件命令
+```c
+// 响应外挂FLASH操作命令
+rcsp_extra_flash_opt   //rcsp_extra_flash_opt.c
+ |  // 表盘删除操作
+ | - rcsp_extra_flash_delete_opt
+ | -- rcsp_extra_flash_opt_delete_start
+ |   // 记录当前需要删除的表盘文件名
+ | --- strcpy(watch_name, file_path)
+```
+
+##### APP发送通知固件进入环境准备命令（0x21）
+```c
+// 响应通知固件进入环境命令
+app_rcsp_task_prepare   //cmd_recieve.c
+ |  // 切换到下载模式
+ | - app_task_switch_to
+// 进入下载模式
+APP_MODE_RCSP   //rcsp_task.c
+ |  // 模式初始化
+ | - app_rcsp_task_start 
+ |  // 初始化删除文件流程，记录回调函数app_rcsp_action_end_callback
+ | -- rcsp_file_delete_init   //file_transfer.c
+```
+
+##### APP发送删除文件命令（0x1F）
+```c
+// 响应删除文件命令
+rcsp_file_delete_start
+ |  // 删除文件，成功后会回复状态
+ | - file_delete_func
+ |  // 目标设备是外挂flash会触发
+ | - file_transfer_watch_opt
+ |  // 从表盘列表中删除开始时记录的表盘文件名
+ | -- rcsp_file_transfer_watch_opt   //rcsp_extra_flash_opt.c
+ |  // 接收删除文件流程
+ | - rcsp_file_delete_end
+ | -- // __this->end_callback接口对应app_rcsp_action_end_callback函数
+ | -- app_rcsp_action_end_callback   //rcsp_task.c
+ |   // 返回原来的任务
+ | --- app_task_switch_back();
+// 这时app_task_switch_back调用会触发APP_MODE_RCSP中的app_rcsp_task_stop
+```
+
+
+## 小文件传输（联系人、运动数据等）
+### 相关命令
+#### 小文件传输相关命令
+| 命令                 | 说明                     |
+| -------------------- | ------------------------ |
+| 0x28 | 小文件文件传输    |
+
+### 小文件传输流程
+#### 添加小文件流程
+##### APP发送小文件文件传输（0x28）的查询文件列表命令
+```c
+// 响应小文件文件传输命令
+rcsp_file_simple_transfer_for_small_file   //file_simple_transfer.c
+ |  // 查询当前小文件列表相关信息，并通过命令回复告诉APP
+ | - file_simple_opt_query
+```
+
+##### APP发送小文件文件传输（0x28）的新增文件命令
+```c
+//  响应小文件文件传输命令
+rcsp_file_simple_transfer_for_small_file   //file_simple_transfer.c
+ |  // 小机根据APP发下来的ID号、文件数据和其他信息进行数据写入
+ | - file_simple_opt_insert
+```
+
+#### 删除小文件流程
+##### APP发送小文件文件传输（0x28）的查询文件列表命令
+```c
+// 响应小文件文件传输命令
+rcsp_file_simple_transfer_for_small_file   //file_simple_transfer.c
+ |  // 查询当前小文件列表相关信息，并通过命令回复告诉APP
+ | - file_simple_opt_query
+```
+
+##### APP发送小文件文件传输（0x28）的删除文件命令
+```c
+//  响应小文件文件传输命令
+rcsp_file_simple_transfer_for_small_file   //file_simple_transfer.c
+ |  // 小机根据APP发下来的ID号和文件类型进行删除
+ | - file_simple_opt_delete
+```
+
+## 信息推送（IOS/安卓） 
+### 相关命令
+#### 信息推送相关命令（用于安卓）
+| 命令                 | 说明                     |
+| -------------------- | ------------------------ |
+| 0xA1 | APP推送信息到固件命令    |
+
+### 信息推送流程
+#### 安卓基于RCSP信息推送
+##### 手机收到消息后，APP会通过小文件传输流程（0x28）的推送通知消息命令把消息推送给小机
+```c
+// 响应推送信息到固件命令
+rcsp_file_simple_transfer_for_small_file   //file_simple_transfer.c
+ | - file_simple_opt_insert
+ | - file_simple_opt_update
+//这两个函数将对应的消息数据写入小机。
+```
+
+##### 手机对某一条信息进行删除时，APP会发送推送信息到固件命令（0xA1）的移除信息命令
+```c
+// 响应推送信息到固件命令
+rcsp_file_simple_transfer_for_small_file   //file_simple_transfer.c
+ | - file_simple_opt_delete
+//根据传推送过要去删除的消息id，将消息从小机删除。
+```
+
+#### IOS基于ANCS弹窗信息
+- 当IOS手机接收到一条消息时，ANCS会触发ble_rcsp_server.c文件中cbk_packet_handler函数的HCI_EVENT_ANCS_META事件，然后触发notice_set_info_from_ancs把信息给记录起来
+- 当消息下发完后，ANCS会再次触发ble_rcsp_server.c中的ancs_update_status函数，然后通过notice_add_info_from_ancs函数把消息记录在flash中。
+- 当IOS手机删除一条消息时，ANCS会触发ble_rcsp_server.c的notice_remove_info_from_ancs函数，该函数会根据uuid删除对应的消息。
+
+## OTA升级
+### 相关命令
+#### 升级相关命令
+| 命令                 | 说明                     |
+| -------------------- | ------------------------ |
+| 0x0B | 通信方式切换    |
+| 0xE1 | 读取设备所需要升级文件识别信息偏移    |
+| 0xE2 | 查询设备是否可升级    |
+| 0xE3 | 进入升级模式    |
+| 0xE4 | 退出升级模式    |
+| 0xE5 | 固件请求升级文件数据    |
+| 0xE6 | 读取设备升级状态指令    |
+| 0xE7 | 强制设备重启    |
+| 0xE8 | 通知APP升级内容长度    |
+
+### OTA升级流程
+#### 单备份流程
+##### APP发送读取设备所需要升级文件识别信息偏移命令（0xE1）
+```c
+// 响应读取设备所需要升级文件识别信息偏移命令
+JL_rcsp_update_cmd_resp     //rcsp_update.c
+ |  // 发送MSG_JL_GET_DEV_UPDATE_FILE_INFO_OFFSET事件
+ | - JL_rcsp_event_to_user
+// 响应MSG_JL_GET_DEV_UPDATE_FILE_INFO_OFFSET事件
+JL_rcsp_update_msg_deal     //rcsp_update.c
+ |  // 把偏移位置和长度信息通过命令回复发送给APP
+ | - JL_rcsp_resp_dev_update_file_info_offest
+```
+
+##### APP发送查询设备是否可升级命令（0xE2）
+```c
+// 响应查询设备是否可升级命令
+JL_rcsp_update_cmd_resp     //rcsp_update.c
+ |  // 发送MSG_JL_INQUIRE_DEVEICE_IF_CAN_UPDATE事件
+ | - JL_rcsp_event_to_user
+// 响应MSG_JL_INQUIRE_DEVEICE_IF_CAN_UPDATE事件
+JL_rcsp_update_msg_deal     //rcsp_update.c
+ |  // 回复APP当前升级状态
+ | - JL_resp_inquire_device_if_can_update
+ |  // 发送MSG_JL_LOADER_DOWNLOAD_START事件，进入推loader状态
+ | - JL_rcsp_event_to_user
+// 响应MSG_JL_LOADER_DOWNLOAD_START事件
+JL_rcsp_update_cmd_resp     //rcsp_update.c
+ |  // 进入推送loader流程
+ | - rcsp_update_loader_download_init
+ |  // 流程开始前调用状态初始化回调函数
+ |-- update_common_state_cbk     //update.c
+ |--- update_init_common_handle
+ |--- rcsp_update_state_cbk     //update.c
+ |-- rcsp_ch_update_init     //rcsp_ch_loader_download.c
+ |-- rcsp_f_read     //rcsp_ch_loader_download.c
+ |  // 小机主动发送固件请求升级数据命令给APP请求获取数据
+ |  // __this->sleep_hdl对用的是rcsp_update_data_read函数
+ |--- rcsp_update_data_read     //rcsp_update.c
+ |  // 等待APP下发数据
+ |--- __this->sleep_hdl
+```
+
+##### APP接收到固件请求升级文件数据命令（0xE5）后，根据偏移和长度通过回复把数据下发小机
+```c
+// 响应固件请求升级文件数据命令回复的操作
+JL_rcsp_update_cmd_receive_resp     //rcsp_update.c
+ |  // fw_update_block_handle函数对用rcsp_update_handle函数
+ | - rcsp_update_handle     //rcsp_ch_loader_download.c
+ |  // 唤醒上面的__this->sleep_hdl
+ | -- __this->resume_hdl
+```
+
+##### 上面步骤是升级前对远端文件的校验，当校验通过后，小机会主动发送通知APP升级内容长度命令给APP
+```c
+// 小机主动发送通知APP升级内容长度命令（0xE8）告诉APP当前升级的内容长度
+rcsp_notify_update_content_size     //rcsp_ch_loader_download.c
+// 继续主动发送固件请求升级文件数据命令给APP获取对应数据（重复3和4步骤）
+rcsp_f_read     //rcsp_ch_loader_download.c
+ |  // 小机主动发送固件请求升级数据命令给APP请求获取数据
+ |  // __this->sleep_hdl对用的是rcsp_update_data_read函数
+ | - rcsp_update_data_read     //rcsp_update.c
+ |  // 等待APP下发数据
+ | - __this->sleep_hdl
+```
+
+##### 当小机检测到数据已经接收完后，会把偏移地址和长度都填0并通过固件请求文件数据命令给APP，这个时候小机就不会主动发送固件请求文件数据命令
+```c
+// 主动发送固件请求文件数据命令告诉APP升级loader已结束
+rcsp_f_stop     //rcsp_ch_loader_download.c
+ |  // 获取当前升级状态码
+ | - update_result_handle
+ |  // __this->data_send_hdl接口对应rcsp_update_data_read函数
+ | - rcsp_update_data_read     //rcsp_update.c
+ |  // 等待数据，唤醒后会执行__this->send_update_status_hdl接口
+ | - __this->sleep_hdl
+```
+
+##### APP从固件请求文件数据命令中知道传输结束后，会发送读取设备升级状态命令（0xE6）
+```c
+// 响应读取设备升级状态命令
+JL_rcsp_update_cmd_resp     //rcsp_update.c
+ |  // fw_update_block_handle接口对应rcsp_update_handle函数
+ | - rcsp_update_handle     //rcsp_ch_loader_download.c
+ |  // 唤醒__this->sleep_hdl
+ |-- __this->resume_hdl
+// 通过__this->resume_hdl的唤醒，接续执行__this->send_update_status_hdl
+// __this->send_update_status_hdl接口对应的是rcsp_update_status_response函数
+rcsp_update_status_response     //rcsp_update.c
+ |  // 把rcsp_f_stop中获取的当前升级状态码通过回复读取设备升级状态命令告诉给APP
+ | - JL_controller_resp_get_dev_refresh_fw_status
+```
+
+##### APP确认升级状态没问题后，会发送通信方式切换命令（0x0B）
+```c
+// 响应通信方式切换命令
+switch_device     //rcsp_switch_device.c
+ |  // 进行切换
+ | - switch_device
+ |  // 假如当前是SPP则等待APP断开，在rcsp_manage.c文件中触发
+ |-- // MSG_JL_UPDATE_START事件
+ |  // 假如是BLE发送MSG_JL_DEV_DISCONNECT事件
+ |-- JL_rcsp_event_to_user
+// 响应MSG_JL_DEV_DISCONNECT事件
+JL_rcsp_update_msg_deal
+ |  // 断开ble
+ | - ble_app_disconnect
+ |  // 断开经典蓝牙
+ | - user_send_cmd_prepare
+ |  发送MSG_JL_UPDATE_START事件
+// 响应MSG_JL_UPDATE_START事件
+JL_rcsp_update_msg_deal
+ |  // 进入重启前处理，处理完后，进入loader后与APP通信进行真正的升级
+ | - update_mode_api_v2
+```
+
+#### 双备份流程
+##### APP发送读取设备所需要升级文件识别信息偏移命令（0xE1）
+```c
+// 响应读取设备所需要升级文件识别信息偏移命令
+JL_rcsp_update_cmd_resp     //rcsp_update.c
+ |  // 发送MSG_JL_GET_DEV_UPDATE_FILE_INFO_OFFSET事件
+ | - JL_rcsp_event_to_user
+// 响应MSG_JL_GET_DEV_UPDATE_FILE_INFO_OFFSET事件
+JL_rcsp_update_msg_deal     //rcsp_update.c
+ |  // 把偏移位置和长度信息通过命令回复发送给APP
+ | - JL_rcsp_resp_dev_update_file_info_offest
+```
+
+##### APP发送查询设备是否可升级命令（0xE2）
+```c
+// 响应设备是否可升级命令
+JL_rcsp_update_cmd_resp     //rcsp_update.c
+ |  // 发送MSG_JL_INQUIRE_DEVEICE_IF_CAN_UPDATE事件
+ | - JL_rcsp_event_to_user
+// 响应MSG_JL_INQUIRE_DEVEICE_IF_CAN_UPDATE事件
+JL_rcsp_update_msg_deal     //rcsp_update.c
+ |  // 回复APP当前升级状态
+ | - JL_resp_inquire_device_if_can_update
+```
+
+##### APP发送进入升级模式命令（0xE3）
+```c
+// 响应进入升级模式命令
+JL_rcsp_update_cmd_resp
+ |  发送MSG_JL_ENTER_UPDATE_MODE事件
+ | - JL_rcsp_event_to_user
+// 响应MSG_JL_ENTER_UPDATE_MODE事件
+JL_rcsp_update_msg_deal
+ | - // 进入升级流程
+ | - rcsp_update_loader_download_init
+ |  // 流程开始前调用状态初始化回调函数
+ | -- update_common_state_cbk     //update.c
+ | --- update_init_common_handle
+ | --- rcsp_update_state_cbk     //update.c
+ | --- rcsp_ch_update_init     //rcsp_ch_loader_download.c
+ | --- rcsp_f_read     //rcsp_ch_loader_download.c
+ |   // 小机主动发送固件请求升级数据命令给APP请求获取数据
+ |   // __this->sleep_hdl对用的是rcsp_update_data_read函数
+ | --- rcsp_update_data_read     //rcsp_update.c
+ |   // 等待APP下发数据
+ | --- __this->sleep_hdl
+```
+
+##### APP接收到固件请求升级文件数据命令（0xE5）后，把偏移和长度数据回复给小机
+```c
+// 响应固件请求升级文件数据命令回复的操作
+JL_rcsp_update_cmd_receive_resp     //rcsp_update.c
+ |  // fw_update_block_handle函数对用rcsp_update_handle函数
+ | - rcsp_update_handle     //rcsp_ch_loader_download.c
+ |  // 唤醒上面的__this->sleep_hdl
+ | -- __this->resume_hdl
+```
+
+##### 上面步骤是升级前对远端文件的校验，当校验通过后，小机会主动发送通知APP升级内容长度命令（0xE8）给APP
+```c
+// 告诉APP当前升级的内容长度
+rcsp_notify_update_content_size     //rcsp_ch_loader_download.c
+// 继续主动发送固件请求升级文件数据命令给APP获取对应数据（重复4和5步骤）
+rcsp_f_read     //rcsp_ch_loader_download.c
+ |  // 小机主动发送固件请求升级数据命令给APP请求获取数据
+ |  // __this->sleep_hdl对用的是rcsp_update_data_read函数
+ | - rcsp_update_data_read     //rcsp_update.c
+ |  // 等待APP下发数据
+ | - __this->sleep_hdl
+```
+
+##### 当小机检测到数据已经接收完后，会把偏移地址和长度都填0并通过固件请求文件数据命令给APP，这个时候小机就不会主动发送固件请求文件数据命令
+```c
+ |  // 获取当前升级状态码
+ | - update_result_handle
+ |  // __this->data_send_hdl接口对应rcsp_update_data_read函数
+ | - rcsp_update_data_read     //rcsp_update.c
+ |  // 等待数据，唤醒后会执行__this->send_update_status_hdl接口
+ | - __this->sleep_hdl
+```
+
+##### APP从固件请求文件数据命令中知道传输结束后，会发送读取设备升级状态命令（0xE6）
+```c
+// 响应读取设备升级状态命令
+JL_rcsp_update_cmd_resp     //rcsp_update.c
+ |  // fw_update_block_handle接口对应rcsp_update_handle函数
+ | - rcsp_update_handle     //rcsp_ch_loader_download.c
+ |  // 唤醒__this->sleep_hdl
+ | -- __this->resume_hdl
+// 通过__this->resume_hdl的唤醒，接续执行__this->send_update_status_hdl
+// __this->send_update_status_hdl接口对应的是rcsp_update_status_response函数
+rcsp_update_status_response     //rcsp_update.c
+ |  // 把rcsp_f_stop中获取的当前升级状态码通过回复读取设备升级状态命令告诉给APP
+ | - JL_controller_resp_get_dev_refresh_fw_status
+```
+
+##### APP确认升级状态没问题后，会发送强制设备重启命令（0xE7）
+```c
+// 响应强制设备重启命令
+JL_rcsp_update_cmd_resp
+ |  // 重启小机
+ | - rcsp_update_before_jump_handle
+```

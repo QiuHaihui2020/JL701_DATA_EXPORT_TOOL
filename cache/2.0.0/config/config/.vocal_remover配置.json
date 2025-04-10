@@ -1,0 +1,262 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "Vocal Remover",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "template": "",
+        "span": 24,
+        "formId": 101,
+        "renderKey": "1011666765139448",
+        "children": [
+          {
+            "__config__": {
+              "label": "bypass",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 1,
+              "span": 24,
+              "showLabel": true,
+              "labelWidth": null,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "-1",
+                "32"
+              ],
+              "formId": 102,
+              "renderKey": "1021666765145120",
+              "eventField": [],
+              "saveWay": "bin",
+              "tip": "打开时，模块做直通处理。人声消除只支持立体声处理",
+              "tipAlways": true,
+              "originValue": 1
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1675825867879_53",
+            "__vModel__": "field102"
+          },
+          {
+            "__config__": {
+              "label": "Low Pass",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 1,
+              "span": 3,
+              "showLabel": true,
+              "labelWidth": null,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "changeTag": true,
+              "status": 0,
+              "dataType": [
+                "32",
+                "1"
+              ],
+              "formId": 179,
+              "renderKey": "1791711444779471",
+              "eventField": [],
+              "saveWay": "bin",
+              "originValue": 1,
+              "unsupportDebug": true
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1711444779471_0",
+            "__vModel__": "field179"
+          },
+          {
+            "__config__": {
+              "label": "Frequency",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": null,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 180,
+              "span": 21,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "32",
+                "1"
+              ],
+              "formId": 106,
+              "renderKey": "1061679282038363",
+              "saveWay": "bin",
+              "originValue": 180,
+              "tipAlways": true,
+              "tip": "范围：20Hz-19kHz",
+              "eventField": []
+            },
+            "placeholder": "low_cutFrequency",
+            "min": 20,
+            "max": 19000,
+            "step": 100,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1679282038363_10",
+            "__vModel__": "field106"
+          },
+          {
+            "__config__": {
+              "label": "High Pass",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 1,
+              "span": 3,
+              "showLabel": true,
+              "labelWidth": null,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "changeTag": true,
+              "status": 0,
+              "dataType": [
+                "32",
+                "1"
+              ],
+              "formId": 180,
+              "renderKey": "1801711444948307",
+              "saveWay": "bin",
+              "originValue": 1,
+              "unsupportDebug": true
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1711444948307_1",
+            "__vModel__": "field180"
+          },
+          {
+            "__config__": {
+              "label": "Frequency",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": null,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 15000,
+              "span": 21,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "32",
+                "1"
+              ],
+              "formId": 107,
+              "renderKey": "1071679282044559",
+              "saveWay": "bin",
+              "originValue": 15000,
+              "tipAlways": true,
+              "tip": "范围：20Hz-19kHz",
+              "eventField": []
+            },
+            "placeholder": "Frequency",
+            "min": 20,
+            "max": 19000,
+            "step": 100,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1679282044559_11",
+            "__vModel__": "field107"
+          },
+          {
+            "__config__": {
+              "label": "Ratio",
+              "tag": "el-slider",
+              "tagIcon": "slider",
+              "defaultValue": 100,
+              "span": 14,
+              "showLabel": true,
+              "layout": "colFormItem",
+              "labelWidth": null,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "formId": 112,
+              "renderKey": "1121679277016903",
+              "originValue": 100,
+              "tipAlways": true,
+              "tip": "       范围：0-100%",
+              "eventField": [],
+              "saveWay": "bin"
+            },
+            "disabled": false,
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "show-stops": false,
+            "range": false,
+            "style": {
+              "width": "50%"
+            },
+            "id": "id_1679277016903_6",
+            "__vModel__": "field112"
+          }
+        ],
+        "eventField": [],
+        "tipAlways": false,
+        "tip": ""
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "400px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1675825867879_73",
+      "show-text": false
+    }
+  ],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 21,
+  "formBtns": false
+}

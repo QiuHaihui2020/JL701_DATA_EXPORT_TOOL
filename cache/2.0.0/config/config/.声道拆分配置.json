@@ -1,0 +1,39 @@
+﻿{
+  "fields": [{
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "Vocal Track Separation",
+      "enableUuid": "",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "template": "",
+      "span": 24,
+      "formId": 106,
+      "renderKey": "1061666764691753",
+      "children": [],
+      "eventField": []
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "400px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675825867879_27"
+  }],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 24,
+  "formBtns": false
+}

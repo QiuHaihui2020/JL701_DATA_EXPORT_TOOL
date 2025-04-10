@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CharSet>
+	<Char>0x1000-0x109f</Char> <!-- 缅甸语 -->
+	<Char>0xf000-0xf21f</Char> <!-- 缅甸语 -->
+</CharSet>

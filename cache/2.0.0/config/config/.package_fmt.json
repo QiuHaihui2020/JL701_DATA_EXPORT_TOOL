@@ -1,0 +1,91 @@
+﻿{
+  "fields": [{
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_102",
+      "enableUuid": "",
+      "showComponentName": false,
+      "dataType": ["8", "1"],
+      "status": 0,
+      "template": "",
+      "span": 24,
+      "formId": 102,
+      "renderKey": "1021682646307477",
+      "children": [{
+        "__config__": {
+          "label": "封装格式",
+          "showLabel": true,
+          "labelWidth": null,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 12,
+          "required": false,
+          "defaultValue": "AUTO",
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "status": 0,
+          "dataType": ["32", "1"],
+          "formId": 103,
+          "renderKey": "1031682646315278",
+          "originValue": "AUTO",
+          "eventField": [],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "options": [{
+            "label": "AUTO",
+            "value": 0,
+            "hide": false,
+            "disabled": false
+          }, {
+            "label": "MP3",
+            "value": 1,
+            "hide": false,
+            "disabled": false
+          }, {
+            "label": "WAV",
+            "value": 4,
+            "hide": false,
+            "disabled": false
+          }]
+        },
+        "placeholder": "请选择封装格式",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "disabled": false,
+        "filterable": false,
+        "multiple": false,
+        "id": "id_1682646315278_2",
+        "__vModel__": "field103"
+      }],
+      "eventField": [],
+      "saveWay": "bin"
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "100px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1682646307477_1"
+  }],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 12,
+  "formBtns": false
+}

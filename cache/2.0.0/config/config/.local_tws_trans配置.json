@@ -1,0 +1,83 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "发送参数配置",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "template": "",
+        "span": 24,
+        "formId": 140,
+        "renderKey": "1401676447331464",
+        "children": [
+          {
+            "__config__": {
+              "label": "编码帧数",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 0,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 2,
+              "span": 23,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "status": 0,
+              "dataType": [
+                "1",
+                "8"
+              ],
+              "formId": 145,
+              "renderKey": "1451705309981085",
+              "originValue": 2,
+              "emptyValue": "2",
+              "eventField": [],
+              "saveWay": "bin",
+              "tip": "sbc格式最小帧数为4",
+              "tipAlways": true
+            },
+            "placeholder": "编码帧数",
+            "min": 1,
+            "max": 20,
+            "step": 1,
+            "step-strictly": false,
+            "precision": 0,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1705309981085_2",
+            "__vModel__": "field145"
+          }
+        ],
+        "eventField": []
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "200px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1676447331464_3"
+    }
+  ],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 15,
+  "formBtns": false
+}

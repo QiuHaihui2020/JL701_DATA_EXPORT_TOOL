@@ -1,0 +1,231 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "Voice Changer",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "template": "",
+        "span": 24,
+        "formId": 101,
+        "renderKey": "1011666765139448",
+        "children": [
+          {
+            "__config__": {
+              "label": "bypass",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 0,
+              "span": 14,
+              "showLabel": true,
+              "labelWidth": 120,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "-1",
+                "32"
+              ],
+              "formId": 102,
+              "renderKey": "1021666765145120",
+              "eventField": [],
+              "saveWay": "bin",
+              "tip": "打开时，模块做直通处理",
+              "tipAlways": true,
+              "originValue": 0
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1675825867879_54",
+            "__vModel__": "field102"
+          },
+          {
+            "__config__": {
+              "label": "EffectV",
+              "showLabel": true,
+              "labelWidth": 120,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 24,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": [
+                "32",
+                "1"
+              ],
+              "formId": 122,
+              "renderKey": "1221666860508856",
+              "eventField": [],
+              "saveWay": "bin",
+              "defaultValue": "0x00",
+              "tip": "变声模式。当 vc_pitchshift_only = 1时，仅PITCHSHIFT模式生效",
+              "tipAlways": true,
+              "originValue": "0x00"
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "PITCHSHIFT",
+                  "value": "0x00"
+                },
+                {
+                  "label": "CARTOON",
+                  "value": "0x01"
+                },
+                {
+                  "label": "SPECTRUM",
+                  "value": "0x02"
+                },
+                {
+                  "label": "ROBORT",
+                  "value": "0x03"
+                },
+                {
+                  "label": "MELODY",
+                  "value": "0x04"
+                },
+                {
+                  "label": "WHISPER",
+                  "value": "0x05"
+                },
+                {
+                  "label": "F0_DOMAIN",
+                  "value": "0x06"
+                },
+                {
+                  "label": "FO_TD",
+                  "value": "0x07"
+                },
+                {
+                  "label": "FEEDBACK",
+                  "value": "0x08"
+                }
+              ]
+            },
+            "placeholder": "请选择EffectV",
+            "style": {
+              "width": "25%"
+            },
+            "clearable": false,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1675825867879_59",
+            "__vModel__": "field122"
+          },
+          {
+            "__config__": {
+              "label": "ShiftV",
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 56,
+              "span": 24,
+              "showLabel": true,
+              "layout": "colFormItem",
+              "labelWidth": 120,
+              "required": true,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "32",
+                "1"
+              ],
+              "formId": 124,
+              "renderKey": "1241666860974008",
+              "saveWay": "bin",
+              "tip": "改变音调高低，范围：40~250",
+              "paddingLeft": "",
+              "tipAlways": true,
+              "eventField": [],
+              "originValue": 56
+            },
+            "placeholder": "计数器ShiftV",
+            "min": 40,
+            "max": 250,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1675825867883_197",
+            "__vModel__": "field124"
+          },
+          {
+            "__config__": {
+              "label": "Formant Shift",
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 70,
+              "span": 24,
+              "showLabel": true,
+              "layout": "colFormItem",
+              "labelWidth": 120,
+              "required": true,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "32",
+                "1"
+              ],
+              "formId": 126,
+              "renderKey": "1261666861086368",
+              "saveWay": "bin",
+              "tip": " 改变音色，范围：40~250",
+              "paddingLeft": "",
+              "tipAlways": true,
+              "eventField": [],
+              "originValue": 70
+            },
+            "placeholder": "计数器Formant Shift",
+            "min": 40,
+            "max": 250,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1675825867883_201",
+            "__vModel__": "field126"
+          }
+        ],
+        "eventField": [],
+        "showResetBtn": false
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "400px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1675825867879_74"
+    }
+  ],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 24,
+  "formBtns": false
+}

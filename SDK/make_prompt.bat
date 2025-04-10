@@ -1,0 +1,6 @@
+SET PROJ_DOWNLOAD_PATH=%1
+SET SCRIPT_PATH=%~dp0%
+set PATH=%SCRIPT_PATH%tools\utils;C:\Windows\System32;%PATH%
+
+
+

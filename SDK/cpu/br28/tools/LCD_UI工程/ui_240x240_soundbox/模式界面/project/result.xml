@@ -1,0 +1,151 @@
+﻿<?xml version="2.0" encoding="UTF-8"?>
+<Resbuilder>
+    <PageList>
+        <Page id="0">
+            <ColorList>
+                <Color id="0">000000</Color>
+            </ColorList>
+            <PictureList>
+                <Picture format="ARGB8565" id="1">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\note.png</Picture>
+            </PictureList>
+            <CellList/>
+        </Page>
+        <Page id="1">
+            <ColorList>
+                <Color id="0">000000</Color>
+                <Color id="1">368FEE</Color>
+                <Color id="2">D2EE45</Color>
+                <Color id="3">FF0000</Color>
+                <Color id="4">FFFFFF</Color>
+            </ColorList>
+            <PictureList>
+                <Picture format="RGB565" id="1">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\动画效果\01.bmp</Picture>
+                <Picture format="RGB565" id="2">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\动画效果\04.bmp</Picture>
+                <Picture format="RGB565" id="3">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\动画效果\out2.bmp</Picture>
+                <Picture format="ARGB8565" id="4">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\poweron.png</Picture>
+                <Picture format="ARGB8565" id="5">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\菜单\03.menu_icon_state_sel.png</Picture>
+                <Picture format="ARGB8565" id="6">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\菜单\04.menu_icon_heart_sel.png</Picture>
+                <Picture format="ARGB8565" id="7">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\菜单\02.menu_icon_record_sel.png</Picture>
+                <Picture format="ARGB8565" id="8">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\菜单\01.menu_icon_training_sel.png</Picture>
+            </PictureList>
+            <CellList>
+                <Cell id="6">m40</Cell>
+                <Cell id="7">m41</Cell>
+                <Cell id="8">m43</Cell>
+                <Cell id="9">m44</Cell>
+                <Cell id="10">m94</Cell>
+                <Cell id="11">m96</Cell>
+                <Cell id="12">m101</Cell>
+                <Cell id="13">m103</Cell>
+            </CellList>
+        </Page>
+        <Page id="2">
+            <ColorList>
+                <Color id="0">000000</Color>
+                <Color id="1">368FEE</Color>
+                <Color id="2">AAAA7F</Color>
+                <Color id="3">AAAAFF</Color>
+                <Color id="4">D2EE45</Color>
+                <Color id="5">FFFFFF</Color>
+            </ColorList>
+            <PictureList>
+                <Picture format="ARGB8565" id="1">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\0.png</Picture>
+                <Picture format="ARGB8565" id="2">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\1.png</Picture>
+                <Picture format="ARGB8565" id="3">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\2.png</Picture>
+                <Picture format="ARGB8565" id="4">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\3.png</Picture>
+                <Picture format="JPEG" id="5">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\计时器\out0.jpg</Picture>
+                <Picture format="ARGB8565" id="6">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\full.png</Picture>
+                <Picture format="ARGB8565" id="7">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\-.png</Picture>
+                <Picture format="ARGB8565" id="8">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\0.png</Picture>
+                <Picture format="ARGB8565" id="9">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\1.png</Picture>
+                <Picture format="ARGB8565" id="10">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\2.png</Picture>
+                <Picture format="ARGB8565" id="11">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\3.png</Picture>
+                <Picture format="ARGB8565" id="12">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\4.png</Picture>
+                <Picture format="ARGB8565" id="13">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\5.png</Picture>
+                <Picture format="ARGB8565" id="14">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\6.png</Picture>
+                <Picture format="ARGB8565" id="15">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\7.png</Picture>
+                <Picture format="ARGB8565" id="16">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\8.png</Picture>
+                <Picture format="ARGB8565" id="17">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\9.png</Picture>
+                <Picture format="ARGB8565" id="18">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\-1.png</Picture>
+                <Picture format="ARGB8565" id="19">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\m m.png</Picture>
+                <Picture format="ARGB8565" id="20">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\m mm..png</Picture>
+                <Picture format="ARGB8565" id="21">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\m mmg.png</Picture>
+                <Picture format="ARGB8565" id="22">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\icon_charging_02.png</Picture>
+                <Picture format="ARGB8565" id="23">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\icon_charging_03.png</Picture>
+                <Picture format="ARGB8565" id="24">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\icon_charging_04.png</Picture>
+                <Picture format="ARGB8565" id="25">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\icon_charging_05.png</Picture>
+                <Picture format="ARGB8565" id="26">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\菜单\02.menu_icon_record_sel.png</Picture>
+            </PictureList>
+            <CellList/>
+        </Page>
+        <Page id="3">
+            <ColorList>
+                <Color id="0">000000</Color>
+                <Color id="1">8DEEDB</Color>
+                <Color id="2">AAAA00</Color>
+                <Color id="3">D2EE45</Color>
+                <Color id="4">EEB797</Color>
+                <Color id="5">FF0000</Color>
+                <Color id="6">FFFFFF</Color>
+            </ColorList>
+            <PictureList>
+                <Picture format="JPEG" id="1">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\计时器\out1.jpg</Picture>
+                <Picture format="ARGB8565" id="2">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\0.png</Picture>
+                <Picture format="ARGB8565" id="3">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\1.png</Picture>
+                <Picture format="ARGB8565" id="4">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\2.png</Picture>
+                <Picture format="ARGB8565" id="5">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\3.png</Picture>
+                <Picture format="ARGB8565" id="6">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\4.png</Picture>
+                <Picture format="ARGB8565" id="7">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\5.png</Picture>
+                <Picture format="ARGB8565" id="8">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\6.png</Picture>
+                <Picture format="ARGB8565" id="9">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\7.png</Picture>
+                <Picture format="ARGB8565" id="10">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\8.png</Picture>
+                <Picture format="ARGB8565" id="11">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\9.png</Picture>
+                <Picture format="ARGB8565" id="12">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\-1.png</Picture>
+                <Picture format="ARGB8565" id="13">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\表盘预览图\watch2.png</Picture>
+            </PictureList>
+            <CellList/>
+        </Page>
+        <Page id="4">
+            <ColorList>
+                <Color id="0">000000</Color>
+                <Color id="1">368FEE</Color>
+                <Color id="2">55FFFF</Color>
+                <Color id="3">8DEEDB</Color>
+                <Color id="4">D2EE45</Color>
+                <Color id="5">D9EE94</Color>
+                <Color id="6">EEB797</Color>
+                <Color id="7">EED9C1</Color>
+                <Color id="8">FF0000</Color>
+                <Color id="9">FFAA00</Color>
+                <Color id="10">FFFFFF</Color>
+            </ColorList>
+            <PictureList>
+                <Picture format="ARGB8565" id="1">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\0.png</Picture>
+                <Picture format="ARGB8565" id="2">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\1.png</Picture>
+                <Picture format="ARGB8565" id="3">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\2.png</Picture>
+                <Picture format="ARGB8565" id="4">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\3.png</Picture>
+                <Picture format="ARGB8565" id="5">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\4.png</Picture>
+                <Picture format="ARGB8565" id="6">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\5.png</Picture>
+                <Picture format="ARGB8565" id="7">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\6.png</Picture>
+                <Picture format="ARGB8565" id="8">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\7.png</Picture>
+                <Picture format="ARGB8565" id="9">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\8.png</Picture>
+                <Picture format="ARGB8565" id="10">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\9.png</Picture>
+                <Picture format="ARGB8565" id="11">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\-1.png</Picture>
+                <Picture format="ARGB8565" id="12">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\m m.png</Picture>
+                <Picture format="ARGB8565" id="13">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\锻炼\icon_49.png</Picture>
+                <Picture format="ARGB8565" id="14">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\锻炼\icon_54.png</Picture>
+                <Picture format="ARGB8565" id="15">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\菜单\29.menu_icon_counter_sel.png</Picture>
+                <Picture format="ARGB8565" id="16">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\锻炼\01.menu_icon_training_sel_s5.png</Picture>
+            </PictureList>
+            <CellList>
+                <Cell id="1">m32</Cell>
+                <Cell id="2">m33</Cell>
+                <Cell id="3">m35</Cell>
+                <Cell id="4">m36</Cell>
+                <Cell id="5">m39</Cell>
+                <Cell id="7">m41</Cell>
+                <Cell id="9">m44</Cell>
+            </CellList>
+        </Page>
+    </PageList>
+</Resbuilder>

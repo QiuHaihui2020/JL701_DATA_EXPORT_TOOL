@@ -1,0 +1,111 @@
+#ifndef TWS_EVENT_H
+#define TWS_EVENT_H
+
+#define KEY_EVENT_FROM_TWS          (('T' << 24) | ('W' << 16) | ('S' << 8) | '\0')
+#define SYS_BT_EVENT_FROM_TWS       (('T' << 24) | ('W' << 16) | ('S' << 8) | '\0')
+
+enum {
+    TWS_STA_WAIT_SIBLING_PAIR = 1,
+    TWS_STA_SEARCH_SIBLING,
+    TWS_STA_CREATE_CONNECTION_BREDR,
+    TWS_STA_CREATE_CONNECTION_BLE,
+    TWS_STA_WAIT_CONNECTION_BREDR,
+    TWS_STA_WAIT_CONNECTION_BLE,
+    TWS_STA_DISCONNECTION,
+    TWS_STA_CONNECTION,
+    TWS_STA_START_MONITOR,
+    TWS_STA_MONITOR,
+    TWS_STA_WAIT_PHONE_PAIR,
+    TWS_STA_WAIT_PAIR,
+};
+
+enum tws_role_switch_action {
+    TWS_ROLE_SWITCH_ACTION_READY,
+    TWS_ROLE_SWITCH_BY_AUTO,
+    TWS_ROLE_SWITCH_BY_MANUAL,
+};
+
+enum {
+    LOCAL_REMOTE_ADDR = 0,
+    TWS_PAIR_REMOTE_ADDR_STATE_OK,
+    TWS_PAIR_REMOTE_ADDR_STATE_NOT,
+};
+
+enum tws_detach_reason {
+    TWS_DETACH_BY_LOCAL         = 0x01,
+    TWS_DETACH_BY_REMOTE        = 0x02,
+    TWS_DETACH_BY_POWEROFF      = 0x04,
+    TWS_DETACH_BY_SUPER_TIMEOUT = 0x08,
+    TWS_DETACH_BY_REMOVE_PAIRS  = 0x10,
+    TWS_DETACH_BY_TESTBOX_CON   = 0x20,
+    TWS_DETACH_SUSS             = 0x40,
+    TWS_DETACH_BY_FORCE         = 0x80,
+    TWS_DETACH_BY_USER          = 0x100,
+};
+
+
+#define TWS_CONN_CHANNEL                     0
+#define TWS_MONITOR_CHANNEL                  1
+#define TWS_LINK_SYNC_CHANNEL                1
+#define TWS_LMP_SYNC_CHANNEL                 2
+#define TWS_AFH_SYNC_CHANNEL                 3
+#define TWS_TX_SYNC_CHANNEL                  4
+#define TWS_LOW_LATENCY_CHANNEL              5
+#define TWS_DATA_SYNC_CHANNEL                6
+#define TWS_SBC_SYNC_CHANNEL                 7
+#define TWS_EVENT_SYNC_CHANNEL               8
+#define TWS_SYNC_CALL_CHANNEL                9
+#define TWS_POWER_BALANCE_CHANNEL            10
+#define TWS_CI_DATA_SYNC_CHANNEL             11
+#define TWS_LOCAL_MEIDA_SYNC_CHANNEL         12
+#define TWS_LMP_SLOT_CHANNEL                 13
+#define TWS_DATA_TRANS_CHANNEL               14
+
+enum {
+    TWS_EVENT_SEARCH_TIMEOUT = 1,
+    TWS_EVENT_CONNECTED,
+    TWS_EVENT_CONNECTION_TIMEOUT,
+    TWS_EVENT_CONNECTION_DETACH,
+    TWS_EVENT_REMOVE_PAIRS,
+    TWS_EVENT_PHONE_LINK_DETACH,
+    TWS_EVENT_SYNC_FUN_CMD,
+    TWS_EVENT_SYNC_FUN_TRANID,
+    TWS_EVENT_CONNECT_TEST,
+    TWS_EVENT_ROLE_SWITCH,
+    TWS_EVENT_LOCAL_MEDIA_START,
+    TWS_EVENT_LOCAL_MEDIA_STOP,
+    TWS_EVENT_ESCO_ADD_CONNECT,
+    TWS_EVENT_SETUP_MONITOR_LINK,
+    TWS_EVENT_MONITOR_START,
+    TWS_EVENT_DATA_TRANS_OPEN,
+    TWS_EVENT_DATA_TRANS_START,
+    TWS_EVENT_DATA_TRANS_STOP,
+    TWS_EVENT_DATA_TRANS_CLOSE,
+
+    TWS_EVENT_MODE_CHANGE,      //sniff without phone
+
+    TWS_EVENT_MONITOR_M_START_ENTER_ESCO,
+    TWS_EVENT_MONITOR_S_START_ENTER_ESCO,
+    TWS_EVENT_ESCO_ROLE_SWITCH_START,
+
+    TWS_EVENT_TONE_TEST = 0xff,
+};
+
+
+struct tws_event {
+    u8 event;
+    u8 args[15];
+};
+
+
+
+
+
+
+
+
+
+
+
+#endif
+

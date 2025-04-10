@@ -1,0 +1,209 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "Fade",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "32",
+          "-1"
+        ],
+        "template": "",
+        "span": 24,
+        "formId": 101,
+        "renderKey": "1011679401397784",
+        "children": [
+          {
+            "__config__": {
+              "label": "bypass",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 0,
+              "span": 24,
+              "showLabel": true,
+              "labelWidth": 200,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "32",
+                "-1"
+              ],
+              "formId": 101,
+              "renderKey": "1011679401642928",
+              "eventField": [],
+              "saveWay": "bin",
+              "tipAlways": true,
+              "tip": "打开时，模块做直通处理",
+              "originValue": 0
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1679555977650_17",
+            "__vModel__": "field101"
+          },
+          {
+            "__config__": {
+              "label": "Type",
+              "labelWidth": 200,
+              "showLabel": true,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "changeTag": true,
+              "defaultValue": 0,
+              "layout": "colFormItem",
+              "span": 24,
+              "optionType": "default",
+              "regList": [],
+              "required": true,
+              "border": false,
+              "status": 0,
+              "dataType": [
+                "32",
+                "-1"
+              ],
+              "formId": 119,
+              "renderKey": "1191691636296217",
+              "formItemWidth": "",
+              "originValue": 0,
+              "saveWay": "bin",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "淡入淡出类型"
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "Fade In",
+                  "value": 0,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "Fade Out",
+                  "value": 1,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "placeholder": "请选择下拉选择TypeTypeTypeTypeType",
+            "style": {
+              "width": "10%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1691636296217_1",
+            "__vModel__": "field119"
+          },
+          {
+            "__config__": {
+              "label": "Dump Time",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 200,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 200,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "status": 0,
+              "dataType": [
+                "32",
+                "-1"
+              ],
+              "formId": 119,
+              "renderKey": "1191691048619342",
+              "originValue": 200,
+              "saveWay": "bin",
+              "tipAlways": true,
+              "tip": "丢弃时长，仅淡入有效，单位ms",
+              "eventField": []
+            },
+            "placeholder": "Gain FloorGain FloorGain FloorAbandon TimeAbandon TimeDump Time",
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1691048619342_2",
+            "__vModel__": "field119",
+            "precision": 0,
+            "min": 0
+          },
+          {
+            "__config__": {
+              "label": "Fade Time",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 200,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 200,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "status": 0,
+              "dataType": [
+                "32",
+                "-1"
+              ],
+              "formId": 121,
+              "renderKey": "1211691810460362",
+              "originValue": 200,
+              "saveWay": "bin",
+              "tipAlways": true,
+              "tip": "淡入时长，仅淡入有效，单位ms",
+              "eventField": []
+            },
+            "placeholder": "Gain FloorGain FloorGain FloorFade Time",
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1691810460362_0",
+            "__vModel__": "field121",
+            "precision": 0,
+            "min": 0
+          }
+        ],
+        "eventField": []
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "400px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1679401397784_1"
+    }
+  ],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 24,
+  "formBtns": false
+}

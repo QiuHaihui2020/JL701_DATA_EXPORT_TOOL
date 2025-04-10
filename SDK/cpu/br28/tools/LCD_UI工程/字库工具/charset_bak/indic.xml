@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CharSet>
+	<Char>0x0900-0x097f</Char> <!-- 天城文书（梵文） -->
+	<Char>0xe000-0xe2a9</Char> <!-- 印地语重新编码区域 -->
+</CharSet>

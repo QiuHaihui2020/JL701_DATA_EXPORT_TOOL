@@ -1,0 +1,789 @@
+---
+title: JL707N GPU硬件模块使用说明
+category: 2024-08
+grammar_cjkRuby: true
+grammar_mermaid: true
+---
+# 模块介绍
+
+GPU模块，主要用于图像处理，负责图像的变换、叠加等运算。
+
++ 基于指令链表，减少CPU开销，渲染性能 1pixel/cycle；
++ 高密度指令集，减少内存开销；
++ 支持仿射变换（2D）、透视变换（2.5D），采用变换矩阵进行控制；
++ 支持多种颜色格式输入（19种），输出（6种）；
++ 支持多种压缩方式，可灵活选择大小优先/性能优先；
++ 支持多种混合模式，灵活处理前景、背景透明度计算；
++ 支持颜色格式大小端（bpp<8 or RGB565）或RED-BULE交换；
++ 支持纯色填充、MASK、线性渐变、纹理、纹理裁剪等功能；
++ 支持非连续数据（采用mmu tab表）输入；
++ 支持硬件从SRAM/PSRAM、NORFLASH存储介质读取数据；
++ 支持GPU断点指令功能，允许在GPU任务链允许中断、恢复，插入CPU操作；
++ 支持colorkey、dither等拓展功能。
+
+# 模块说明
+
+## 任务与任务链表
+
+* GPU硬件模块采用任务链表配置方式，每个任务各由一组指令参数描述，驱动中体现为一个GPU任务单元。
+* GPU硬件模块启动后，会自动将任务链表中的所有任务绘制完毕，可无需CPU参与，便于GPU绘制和CPU配置指令并行处理。
+* 如需要在GPU绘制过程中，插入CPU操作，可采用GPU任务断点功能，中断GPU绘制，处理完CPU操作后再继续绘制。
+* 任务支持十种功能：纯色填充、纯色填充+MASK、纯色填充+仿射变换、纯色填充+透视变换、线性渐变填充、线性渐变填充+透视变换、纹理填充、纹理填充+MASK、纹理填充+仿射变换、纹理填充+透视变换。
+
+| 功能                  | 定义                     |
+| -------------------- | ------------------------ |
+| 纯色填充              | GPU_FILL                 |
+| 纯色填充+MASK         | GPU_FILL_MASK            |
+| 纯色填充+仿射变换     | GPU_FILL_AFFINE          |
+| 纯色填充+透视变换     | GPU_FILL_PERSPECTIVE     |
+| 线性渐变填充          | GPU_LINEGRAD             |
+| 线性渐变填充+透视变换 | GPU_LINEGRAD_PERSPECTIVE |
+| 纹理填充              | GPU_TEXTURE              |
+| 纹理填充+MASK         | GPU_TEXTURE_MASK         |
+| 纹理填充+仿射变换     | GPU_TEXTURE_AFFINE       |
+| 纹理填充+透视变换     | GPU_TEXTURE_PERSPECTIVE  |
+
+## GPU支持的格式
+
+| 格式         | 描述                | 输出 | 索引格式 | 颜色表格式 | MASK |
+| ------------ | ------------------- | ---- | -------- | ---------- | ---- |
+| ARGB8888     | 24位真彩色+8位alpha |      |          | 是         |      |
+| ARGB8565     | 16位真彩色+8位alpha | 是   |          | 是         |      |
+| ARGB1555     | 15位真彩色+1位alpha |      |          |            |      |
+| ARGB4444     | 12位真彩色+4位alpha |      |          |            |      |
+| RGB888       | 24位真彩色          |      |          | 是         |      |
+| RGB565       | 16位真彩色          | 是   |          | 是         |      |
+| YUV422_BT601 | YUV数据，BT601标准  |      |          |            |      |
+| YUV422_BT709 | YUV数据，BT709标准  |      |          |            |      |
+| AL88         | 8位颜色表+8位alpha  |      | 是       |            |      |
+| AL44         | 4位颜色表+4位alpha  |      | 是       |            |      |
+| AL22         | 2位颜色表+2位alpha  |      | 是       |            |      |
+| L8           | 8位颜色表           |      | 是       |            |      |
+| L4           | 4位颜色表           |      | 是       |            |      |
+| L2           | 2位颜色表           |      | 是       |            |      |
+| L1           | 1位颜色表           |      | 是       |            |      |
+| A8           | 8位alpha            | 是   |          |            | 是   |
+| A4           | 4位alpha            | 是   |          |            | 是   |
+| A2           | 2位alpha            | 是   |          |            | 是   |
+| A1           | 1位alpha            | 是   |          |            | 是   |
+
+## 混合模式
+
+| 混合模式           | 公式                                                                   | 说明                                                                           |
+| ------------------ | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| GPU_BLEND_SRC      | a_out = a_fg<br />c_out = c_fg                                         | 只显示src图像                                                                  |
+| GPU_BLEND_SRC_OVER | a_out = a_fg + (1 - a_fg) * a_bg<br />c_out = c_fg + (1 - a_fg) * c_bg | 按src的透明度将src与dst混合输出                                                |
+| GPU_BLEND_DST_OUT  | a_out =  (1 - a_fg) * a_bg<br />c_out =  (1 - a_fg) * c_bg             | 显示dst图像，但只显示src和dst的不重合部分，且重合部分只有src是不透明的才算重合 |
+| GPU_BLEND_DST_IN   | a_out = a_fg * a_bg<br />c_out = a_fg * c_bg                           | 只显示src和dst重合部分，且src的重合部分只有不透明度有用                        |
+| GPU_BLEND_MAX      | a_out = MAX(a_fg, a_bg)<br />c_out = c_bg                              | 取dst与src的alpha最大值输出                                                    |
+| GPU_BLEND_DST_OVER | a_out = (1 - a_bg) * a_fg + a_bg<br />c_out = (1 - a_bg) * c_fg + c_bg | 与src_over相反                                                                 |
+| GPU_BLEND_SRC_OUT  | a_out = (1 - a_bg) * a_fg<br />c_out = (1 - a_bg) * c_fg               | 显示src图像，但只显示src和dst的不重合部分，且重合部分只有dst是不透明的才算重合 |
+| GPU_BLEND_SRC_IN   | a_out = a_bg * a_fg<br />c_out = a_bg * c_fg                           | 只显示src和dst重合部分，且dst的重合部分只有不透明度有用。                      |
+
++ 注：fg：前景；bg：后景；out：输出；a：alpha；c：color；src 前景；dst 后景；
+
+# 数据结构
+
+```c
+/* GPU task type defined */
+typedef enum {
+	GPU_TASK_FILL, // color fill task
+	GPU_TASK_TEXT, // text task
+	GPU_TASK_DRAW, // cunstom draw task
+	GPU_TASK_IMAGE, // image task
+} JLGPU_TASK_TYPE;
+```
+
+```c
+/* The source of lut tab. */
+enum {
+    CLUT_TAB_NULL,
+    CLUT_TAB_FROM_FLASH,	// lut tab from flash.
+    CLUT_TAB_FROM_RAM,		// lut tab from ram
+};
+```
+
+```c
+enum {
+    GPU_SYNTHESIS_AND_DRAW,
+    GPU_SYNTHESIS,
+    GPU_DRAW,
+};
+```
+
+```c
+// GPU 任务参数，作为参数传递使用，
+// 根据任务内容添加，每个参数的功能必须添加注释
+typedef struct gpu_task_param {
+    JLGPU_TASK_TYPE task_type;		// 任务类型
+    u32 task_id;			// 任务ID
+    u32 element_id;			// 控件ID
+    s16 priority;			// 优先级
+    u16 invisible;			// 默认隐藏，true时，会创建不使能的GPU任务
+
+    u8 crop_en;				// 裁剪使能，true时，会根据crop区域对原图进行裁剪
+    u8 scale_en;			// 缩放使能，true时，会根据缩放系数进行缩放
+    u8 rotate_en;			// 旋转使能，true时，会根据旋转参数进行旋转
+    u8 draw_en;				// 绘图使能，true时，会创建GPU自定义绘图任务
+
+    float ratio_w;			// 缩放参数
+    float ratio_h;
+
+    short rotate_cx;			// 图片旋转中心
+    short rotate_cy;
+    short rotate_dx;			// 屏幕旋转中心
+    short rotate_dy;
+    float rotate_angle;			// 旋转角度
+
+    // 特效参数配置
+    int perspective_en;
+    struct rect fg_win;
+    gpu_boundbox_t bbox;
+    u8 global_alpha;
+    u8 custom_color;			// 自定义颜色使能，true时，将忽略从flash读取的颜色值，强制使用acolor
+
+    u32 acolor;				// 颜色、纯色填充使用
+    s16 clut_format;			// 颜色表格式
+    s16 has_clut;			// 是否有颜色表标志 //0 不带颜色表 1 从falsh取颜色表 2 直接传参
+    u8 *clut_tab;			// 颜色表
+
+    u8 *data;				// 图片数据起始地址
+    u8 *tab;				// 图片数据tab表起始地址
+    GPU_format_t format;		// 图片像素格式，参照jlgpu_driver.h
+
+    void (*cb_func);			// 自定义绘图参数
+    void (*cb_exit);
+    void *priv;
+    u32 priv_len;
+    int draw_id;
+
+    gpu_matrix_t *matrix;		// 变换叠加矩阵，need include jlgpu_math.h
+
+    // draw 决定绘制区域，crop决定对原图的裁剪区域，area决定变换后被父控件裁剪的区域
+    struct rect area;			// 限制区域，相当于父控件区域，绘图最终必须落在area范围内
+    struct rect draw;			// 绘制区域，当前任务要绘制到哪个区域，相对于0坐标计算
+    struct rect crop;			// 裁剪区域，当crop_en使能时，相对于原图0坐标进行裁剪
+
+    struct image_file image;		// 图片信息
+    struct flash_file_info info;	// flash 信息
+} JLGPUTaskParam_t, *pJLGPUTaskParam_t;
+```
+
+```c
+// 自定义绘图回调
+typedef struct gpu_task_draw {
+    void (*cb_func)(int id, u8 *dst_buf, struct rect *dst_r, struct rect *src_r, u8 bytes_per_pixel, void *priv, void *matrix);
+    void (*cb_exit)(void *priv);
+    void *priv;
+    int priv_len;
+    int draw_id;
+    struct rect task_r;
+} JLGPUTaskDraw_t, *pJLGPUTaskDraw_t;
+```
+
+```c
+/* GPU task information structure defined.
+   Cache required, resources must be saved. */
+typedef struct gpu_task_info {
+    u32 task_id;		// 任务ID，必须在开头
+    u32 own_matrix: 1;		// 矩阵是否属于自己标志（1自己申请的矩阵，0继承的父控件矩阵）
+    u32 priority: 31;		// 优先级
+    u8 *clut_tab;  		// 颜色表
+    gpu_matrix_t *matrix;	// 当前任务的变换矩阵
+    pJLGPUTaskDraw_t draw_info; // custom draw
+    u32 enable;			// GPU task enable，must 32bit
+    int image_width;
+    int image_height;
+} JLGPUTaskInfo_t, *pJLGPUTaskInfo_t;
+```
+
+```c
+/* GPU task unit structure defined. */
+typedef struct gpu_task_unit {
+    JLGPUTaskInfo_t info;	// GPU task information structure.
+    u32 task_addr;			// GPU task instructions address.
+} JLGPUTaskUnit_t, *pJLGPUTaskUnit_t;
+```
+
+```c
+/* GPU task chain head structure defined. */
+typedef struct gpu_task_head {
+    gpu_out_params_t out_param;	// GPU output instructions structure.
+    void *gpu_task_base_adr;	// First GPU task instructions address.
+} JLGPUTaskHead_t, *pJLGPUTaskHead_t;
+```
+
+```c
+typedef struct gpu_mult_list {
+    struct list_head list;
+    pJLGPUTaskHead_t head;
+    struct rect win_rect; //ui页面区域
+    struct rect gpu_rect; //GPU window区域
+    struct rect lcd_rect;  //屏幕刷新区域
+    u8 index;
+} JLGPUMultTaskList_t, *pJLGPUMultTaskList_t;
+```
+
+# 函数接口
+
+* 707N系列GPU驱动提供了类似701N-IMB模块的任务链管理逻辑，方便701N系列用户环境移植；
+* 707N系列推屏模块命名为DBI模块，功能与701N系列IMD模块类似，主要用于硬件推屏，但需注意DBI模块API使用与701系列存在区别（具体使用方法，参照DBI模块介绍）；
+
+  1. 开始推屏时，用**lcd_set_draw_area**设置本次推屏的整个区域即可，无需每次推屏都设置推屏区域；
+  2. 第一分块推屏时，使用**lcd_draw_kistart**启动DBI模块推屏；
+  3. 其它分块推屏时，使用**lcd_draw_continue**接口进行续传即可；
+  4. 可参考SDK gpu_task.c 推屏逻辑，lcd_xxx前缀API的调用逻辑。
+     ==注意：DBI模块区域参数为（xstart, xend, ystart, yend）形式，非（x, y, width, height）！==
+* 707N系列GPU驱动管理可分几层理解，其中"jlgpu_driver.h"为GPU硬件驱动代码，直接驱动GPU寄存器；"gpu_port.h"为GPU任务管理模块，调用GPU硬件驱动，并在其基础上增加GPU任务、GPU任务链、多任务链管理逻辑。应用层代码使用本文件API，方便后续GPU驱动修改时移植；"gpu_task.c, gpu_task.h"为GPU任务链管理模块调度逻辑，作为与UI框架的连接层，可创建GPU os_task 用于调度GPU绘制，与UI框架并行处理绘图任务。
+* GPU 硬件相关代码文件为：
+
+  ![1724826841832](image/1724826773922.png)
+
+## GPU与杰理UI工具格式转换
+
+&emsp;&emsp;考虑杰理UI资源编译打包工具的颜色格式定义与GPU存在区别，为方便UI资源编译工具与不同系列GPU连接，因此增加格式转换API，放于gpu_format.h，用于转换杰理UI资源编译工具格式与GPU定义格式。
+* <u>这里只做格式映射，并非对数据进行格式转换。</u>
+```c
+// 杰理UI工具格式转为GPU格式
+int res_format_to_gpu(int res_format);
+
+// GPU格式转为杰理UI工具格式
+int gpu_format_to_res(int gpu_format);
+
+// 文本格式转为GPU格式
+int text_format_to_gpu(int res_format);
+
+// GPU格式转为文本格式
+int gpu_format_to_text(int gpu_format);
+
+// 通过颜色表格式获取颜色表长度
+int get_clut_format_tabsize(int res_format, int clut_format);
+
+// 通过GPU格式获取颜色表长度
+int gpu_format_to_lut_size(int gpu_format, int clut_format);
+```
+
+## GPU变换矩阵计算模块
+&emsp;&emsp;我们提供了GPU仿射变换矩阵计算模块，API放置于jlgpu_math.h，需注意，这里API目前只提供仿射变换的矩阵计算，暂未支持透视矩阵计算功能。
+&emsp;&emsp;常用的矩阵计算API有：
+|函数名|描述|
+|------|------|
+|gpu_matrix_set_identity|设置矩阵为单位矩阵|
+|gpu_matrix_translate|设置矩阵平移|
+|gpu_matrix_scale|设置矩阵缩放|
+|gpu_matrix_rotate|设置矩阵旋转|
+|==gpu_matrix_get_boundbox==|获取方框经矩阵变换后的位置大小|
+
+
+#### 矩阵计算
+&emsp;&emsp;变换矩阵遵从先缩放、后旋转、再平移的计算顺序，但矩阵计算模块是通过左乘的方式实现矩阵效果叠加的，因此在调用API进行矩阵计算时，**API调用顺序应为：先平移、后旋转、再缩放。**
+![1724831159185](image/1724831159185.png)
+* 矩阵乘法不满足交换律，因此计算的先后顺序会影响计算结果：AB != BA
+* 矩阵乘法满足结合率，因此不同的GPU任务可以叠加同一个变换效果：(AB)C = A(BC)
+* 变换矩阵都是相对于0坐标点进行计算，可理解为需告诉GPU如何才能将元素移到坐标0点，因此计算平移、缩放、旋转时需有不同的注意点：
+    1. 缩放时，因为元素本身是在坐标0点，因此缩放无需平移，只需配置缩放系数即可；
+    2. 旋转时，需先将旋转中心移到坐标0点，再进行旋转计算，旋转计算完毕后需再将元素顶点移回坐标0点；
+    3. 平移时，可以理解为通过矩阵告诉GPU如何将元素移动到坐标系0点，因此平移参数为负数。
+
+
+#### 矩阵参数
++ 鉴于矩阵参数于一般理解有些区别，可通过将矩阵作用在空间上来帮助理解矩阵计算API参数含义：
+  * 平移时，平移参数与目标位置相反，将元素平移到（x, y）坐标位置，则需将背景空间往反方向移动（-x, -y），因此平移计算为：
+&emsp;&emsp;gpu_matrix_translate(matrix, -x, -y);
+  * 旋转时，旋转中心为（cx, cy），旋转角度为angle，需将角度转为弧度，将旋转中心移到世界坐标0点时，移动逻辑与矩阵平移一致，旋转后需将矩阵平移回世界坐标0点位置：
+&emsp;&emsp;{
+&emsp;&emsp;gpu_matrix_translate(matrix, -cx, -cy);
+&emsp;&emsp;gpu_matrix_rotate(matrix, RADIAN(angle));
+&emsp;&emsp;gpu_matrix_translate(matrix, cx, xy);
+&emsp;&emsp;}
+  * 缩放时，将元素宽、高都缩小到0.5倍，在空间角度看，是将空间放大2倍：
+&emsp;&emsp;gpu_matrix_scale(matrix, 1/0.5, 1/0.5);
+
+
+
+## GPU模块控制接口
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    GPU 模块初始化
+   @param    malloc:内存申请回调
+   @param    free:内存释放回调
+   @param    screen_width:屏幕宽度
+   @param    screen_height:屏幕高度
+   @return   void
+   @note   初始化时，需将屏幕宽高作为参数传入，用于GPU坐标映射
+*/
+/*-------------------------------------------------------------------*/
+void jlgpu_module_init(
+    void *(*malloc)(int size, u32 ram_type, u32 module_type),
+    void (*free)(void *p, u32 ram_type, u32 module_type),
+	u16 screen_width, u16 screen_height)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief      GPU 模块释放
+   @param      void
+   @return     void
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+void jlgpu_module_free()
+```
+
+## GPU任务链接口
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    创建GPU任务链
+   @param    void
+   @return   新创建的任务链头
+   @note     GPU指令以链表形式组织，一条GPU任务链可以共用一个输出配置，输出配置存放在链表头中
+*/
+/*-------------------------------------------------------------------*/
+pJLGPUTaskHead_t jlgpu_create_task_list_head()
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    删除GPU任务链
+   @param    head:任务链头指针
+   @return   void
+   @note     注意：本API会释放任务链中所有GPU任务单元，并释放任务链头
+*/
+/*-------------------------------------------------------------------*/
+void jlgpu_delete_task_list_head(pJLGPUTaskHead_t head)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    设置GPU任务链输出格式
+   @param    head:任务链头部
+   @param    out_format:输出格式
+   @return   void
+   @note     仅设置本条任务链的输出格式，不同任务链可以输出不同格式
+*/
+/*-------------------------------------------------------------------*/
+void jlgpu_set_task_list_out_format(pJLGPUTaskHead_t head, int out_format)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    设置GPU任务链输出区域和buf
+   @param    head:任务链头部
+   @param    out_buf:输出数据存放的buf
+   @param    rect:输出区域
+   @param    left:左右划屏时，向左偏移坐标
+   @param    stride:主动向左偏移时的stride
+   @return   void
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+void jlgpu_set_task_list_out_buf(pJLGPUTaskHead_t head, u8 *out_buf, struct rect *rect, int left, int stride);
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    启动GPU任务链运行
+   @param    head:任务链表头
+   @return   
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+void jlgpu_task_list_run(pJLGPUTaskHead_t head);
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    GPU任务链根据优先级重新排序
+   @param    head:任务链表头
+   @return   
+   @note    排序时间可能比较久，切勿随意调用 
+*/
+/*-------------------------------------------------------------------*/
+void jlgpu_task_list_reorder(pJLGPUTaskHead_t head)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    拷贝任务链
+   @param    head:任务链表头
+   @return   
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+pJLGPUTaskHead_t jlgpu_task_list_copy(pJLGPUTaskHead_t head)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    释放拷贝任务链
+   @param    head:任务链表头
+   @return   
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+void jlgpu_task_copy_list_destroy(pJLGPUTaskHead_t head)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    所有任务乘以矩阵（不记录）
+   @param    head:任务链表头
+   @param    matrix:矩阵（该数据类型可查看jlgpu_math.h）
+   @return   
+   @note   需先将任务链使用jlgpu_task_list_copy进行拷贝，该函数会将不带变换的GPU任务指令转为带变换的GPU任务指令，整条任务链所有任务都转为为带变换后才能乘以矩阵。
+*/
+/*-------------------------------------------------------------------*/
+void jlgpu_task_list_mul_matrix(pJLGPUTaskHead_t head, gpu_matrix_t *matrix)
+```
+
+## GPU任务接口
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    更新GPU任务配置，用于GPU任务已经存在时更新配置
+   @param    taskp:任务单元指针
+   @param    param:任务参数指针
+   @return   被update的任务指针
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+pJLGPUTaskUnit_t jlgpu_update_task(pJLGPUTaskUnit_t taskp, pJLGPUTaskParam_t param)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    GPU任务创建，用于创建新的GPU任务，并添加到head链表中
+   @param    head:GPU任务链头
+   @psram    param:GPU任务配置
+   @return   新创建的GPU任务
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+pJLGPUTaskUnit_t jlgpu_create_task(pJLGPUTaskHead_t head, pJLGPUTaskParam_t param)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    从GPU任务链中删除指定任务
+   @param    head:GPU任务链头
+   @param    taskp:GPU任务指针
+   @return   0 删除成功，-1 链表中没找到指定任务
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+int jlgpu_delete_task(pJLGPUTaskHead_t head, pJLGPUTaskUnit_t taskp)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    获取GPU任务的绘图区域
+   @param    taskp:GPU任务单元
+   @param    rect:GPU任务绘图区域(输出)
+   @return
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+void jlgpu_get_task_rect(pJLGPUTaskUnit_t taskp, struct rect *rect)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    获取整个GPU任务链的窗口区域
+   @param    rect GPU 开窗区域，输出
+   @return
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+void jlgpu_get_win_rect(struct rect *rect)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    将基于0坐标计算的方框偏移到GPU开窗区域
+   @param    rect 待偏移的方框区域
+   @return
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+void jlgpu_shift_rect(struct rect *rect)
+```
+
+## 通过ID操作GPU任务接口
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    通过ID查找任务
+   @param    head	:GPU任务链头
+   @param    task_id:任务ID
+   @param    element_id:控件ID
+   @return   NULL:没找到任务，其他:任务地址
+   @note     这里提供三种匹配方式：1. 只匹配一个ID时，另一个ID配置为NONE。2. 两个ID都不为NONE时，必须同时匹配两个ID才能查找成功。
+**/
+/*-------------------------------------------------------------------*/
+pJLGPUTaskUnit_t jlgpu_get_task_by_id(pJLGPUTaskHead_t head, u32 task_id, u32 element_id)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    设置GPU任务使能
+   @param     head 任务链表头
+   @param    task_id:任务ID
+   @param    element_id:控件ID
+   @return   
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+void jlgpu_task_enable_by_id(pJLGPUTaskHead_t head, u32 task_id, u32 element_id, int enable)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    通过ID删除指定任务
+   @param    head 任务链表头
+   @param    task_id 任务ID
+   @param    element_id 控件ID
+   @return   
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+void jlgpu_task_delete_by_id(pJLGPUTaskHead_t head, u32 task_id, u32 element_id)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    设置指定任务优先级
+   @param    head:任务链表头
+   @param    task_id:任务ID
+   @param    element_id:控件ID
+   @param    priority:优先级
+   @param    reorder 是否重新排序，1 是，0 否
+   @return   
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+void jlgpu_task_set_prior_by_id(pJLGPUTaskHead_t head, u32 task_id, u32 element_id, u32 priority, int reorder)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    清空指定控件下的部分任务ID
+   @param    head:任务链表头
+   @param    element_id:控件ID
+   @param    task_index:任务ID索引
+   @return   
+   @note     清空规则：清空指定控件ID下，所有任务ID索引不小于指定索引的任务
+*/
+/*-------------------------------------------------------------------*/
+void jlgpu_task_clean_up_by_id(pJLGPUTaskHead_t head, u32 element_id, u8 task_index)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    根据ID更新GPU任务
+   @param    head 任务链表头
+   @param    task_id 任务ID
+   @param    elm_id 控件ID
+   @param    param 任务参数
+   @return   
+   @note     1. 如果任务存在，且任务不用更换，更新任务配置参数
+2.如果任务存在，且任务需要更换，更换任务且更新配置参数
+3.如果任务不存在，新建任务并配置参数
+**/
+/*-------------------------------------------------------------------*/
+void jlgpu_update_task_by_id(pJLGPUTaskHead_t head, u32 task_id, u32 element_id, pJLGPUTaskParam_t param)
+```
+
+
+## 多任务链管理接口
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    获取多任务链管理普通组句柄
+   @param  
+   @return   多任务链头
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+pJLGPUMultTaskList_t jlgpu_mult_task_list_get_common_root()
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    获取多任务链管理影子组句柄
+   @param  
+   @return   多任务链头
+   @note   一般情况下不需要主动获取影子组句柄，切换时通过 jlgpu_mult_task_list_switch_root 进行切换即可。如果直接获取普通组/影子组句柄，需注意使用逻辑不可混乱。
+*/
+/*-------------------------------------------------------------------*/
+pJLGPUMultTaskList_t jlgpu_mult_task_list_get_shadow_root()
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief  切换多任务链管理句柄
+   @param   mult_list 当前使用的多任务链管理句柄
+   @return   空闲的多任务管理句柄
+   @note   库里默认管理两组多任务链管理句柄，通过本API可进行切换（普通组->影子组，影子组->普通组）
+*/
+/*-------------------------------------------------------------------*/
+pJLGPUMultTaskList_t jlgpu_mult_task_list_switch_root(pJLGPUMultTaskList_t mult_list)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    获取锁定的多任务链，GPU合成时正在使用该任务
+   @param  
+   @return   锁定的多任务链
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+pJLGPUMultTaskList_t jlgpu_mult_task_list_get_lock(void)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    设置锁定多任务链，给GPU合成使用，合成期间该任务链不能被改写
+   @param    mult_list 要锁定的多任务链
+   @return   
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+void jlgpu_mult_task_list_set_lock(pJLGPUMultTaskList_t mult_list)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    获取任务链数目
+   @param    mult_list 多任务链
+   @return   任务链数
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+int jlgpu_mult_task_list_get_head_num(pJLGPUMultTaskList_t mult_list)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    添加任务链到多任务链管理
+   @param    mult_list 多任务链
+   @param    task_head：需增加到任务链管理的任务链头
+   @param    index:任务链索引
+   @return    0:正常，-1:申请内存失败
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+int jlgpu_mult_task_list_add(pJLGPUMultTaskList_t mult_list, pJLGPUTaskHead_t task_head, u8 index)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    从多任务链管理中删除任务链
+   @param    mult_list 多任务链
+   @param    task_head:待删除的任务链
+   @return   true：正常, false：未找到指定任务
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+int jlgpu_mult_task_list_del(pJLGPUMultTaskList_t mult_list, pJLGPUTaskHead_t task_head)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    根据索引获取指定任务链
+   @param    mult_list 多任务链
+   @param    index：任务链索引
+   @return   NULL 未找到指定任务链，其它 获取到的任务链头
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+pJLGPUTaskHead_t jlgpu_mult_task_head_by_index(pJLGPUMultTaskList_t mult_list, int index)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    多任务链表设置显示区域
+   @param    mult_list 多任务链
+   @param    index:第几个任务
+   @param    page_r:ui页面区域
+   @param    gpu_r:GPU window区域
+   @param    lcd_r:屏幕刷新区域
+   @return   true 设置成功，false 设置失败
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+int jlgpu_mult_task_head_set_rect_by_index(pJLGPUMultTaskList_t mult_list, int index, struct rect *page_r, struct rect *gpu_r, struct rect *lcd_r)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    多任务链表获取显示区域
+   @param    mult_list 多任务链
+   @param    index:获取第几个任务的显示区域
+   @param    page_r:ui页面区域
+   @param    gpu_r:GPU window区域
+   @param    lcd_r:屏幕刷新区域
+   @return   true 设置成功，false 设置失败
+   @note   
+*/
+/*-------------------------------------------------------------------*/
+int jlgpu_mult_task_head_get_rect_by_index(pJLGPUMultTaskList_t mult_list, int index, struct rect *page_r, struct rect *gpu_r, struct rect *lcd_r)
+```
+
+
+## GPU驱动移植
+&emsp;&emsp;移植GPU驱动几个基本步骤，以下流程运行如果正常，则GPU驱动已能正常运行，之后再调整其它逻辑完善 UI 框架与 GPU 之间的调度逻辑。
+
+  1. 启动GPU模块：jlgpu_module_init
+  2. 创建GPU任务链：jlgpu_create_task_list_head
+  3. 设置GPU任务链输出格式：jlgpu_set_task_list_out_format
+  4. 添加GPU任务（先用GPU_FILL测试）：jlgpu_update_task_by_id
+  5. 设置GPU任务链输出buf和输出区域：jlgpu_set_task_list_out_buf
+  6. 执行GPU任务链：jlgpu_task_list_run
+  7. 确认步骤5设置的buf中得到希望输出的结果，至此GPU模块已运行起来。
+  8. 将输出buf推送到LCD屏幕显示。
+
+&emsp;若GPU运行正常，则只需完善步骤4，通过UI框架在GPU任务链中创建各功能的GPU任务，待所有任务创建完毕后启动GPU绘制并推屏即可。
+
+![1724833385994](image/1724833385994.png)
+
+
+
+## 调试打印接口
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    打印任务链头信息，用于 debug
+   @param    head:任务链头
+   @return   
+   @note   本API只打印任务链头信息，不打印任务链内的GPU任务信息
+*/
+/*-------------------------------------------------------------------*/  
+void jlgpu_dump_task_head(pJLGPUTaskHead_t head)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    打印单个任务的 info 信息，用于debug
+   @param    task:任务指针
+   @param    count:用来计数GPU任务数量
+   @return   
+   @note   本API只打印指定GPU任务信息，只打印一个GPU任务时，count参数可随意传入整数
+*/
+/*-------------------------------------------------------------------*/  
+void jlgpu_dump_task_info(pJLGPUTaskUnit_t task, int count)
+```
+
+```c
+/*-------------------------------------------------------------------*/
+/**@brief    打印指定任务链的所有任务信息，用于 debug
+   @param    head 任务链头
+   @param    func 调用本函数的函数名，一般用 __func__
+   @param    line 调用本函数的代码行，一般用 __LINE__
+   @return   
+   @note   本API会将任务链中所有的GPU任务都打印出来
+*/
+/*-------------------------------------------------------------------*/  
+void jlgpu_dump_all_task(pJLGPUTaskHead_t head, const char *func, int line)
+```

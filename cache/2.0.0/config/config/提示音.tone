@@ -1,0 +1,776 @@
+{
+  "uuid": "1",
+  "enable": true,
+  "current": "tone_zh",
+  "group": [
+    {
+      "title": "tone_en",
+      "configName": "TCFG_TONE_EN_ENABLE",
+      "files": [
+        {
+          "name": "数字0",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\0.mp3",
+          "default": true,
+          "enable": true,
+          "outputName": "0",
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "bd2242b6",
+          "size": 3648
+        },
+        {
+          "name": "数字1",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\1.mp3",
+          "default": true,
+          "enable": true,
+          "outputName": "1",
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "d569c4ae",
+          "size": 3072
+        },
+        {
+          "name": "数字2",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\2.mp3",
+          "outputName": "2",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "aae6aad5",
+          "size": 2880
+        },
+        {
+          "name": "数字3",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\3.mp3",
+          "outputName": "3",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "9eb6075c",
+          "size": 2976
+        },
+        {
+          "name": "数字4",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\4.mp3",
+          "outputName": "4",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "aa7a60f1",
+          "size": 3360
+        },
+        {
+          "name": "数字5",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\5.mp3",
+          "outputName": "5",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "aacce5db",
+          "size": 2496
+        },
+        {
+          "name": "数字6",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\6.mp3",
+          "outputName": "6",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "c3c083b0",
+          "size": 4032
+        },
+        {
+          "name": "数字7",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\7.mp3",
+          "outputName": "7",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "993d69d7",
+          "size": 3840
+        },
+        {
+          "name": "数字8",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\8.mp3",
+          "outputName": "8",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "f49baa21",
+          "size": 2688
+        },
+        {
+          "name": "数字9",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\9.mp3",
+          "outputName": "9",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "6003b6",
+          "size": 3072
+        },
+        {
+          "name": "开机",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\power_on.mp3",
+          "outputName": "power_on",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "7f990caf",
+          "size": 3936
+        },
+        {
+          "name": "关机",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\power_off.mp3",
+          "outputName": "power_off",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "fb09efaa",
+          "size": 4608
+        },
+        {
+          "name": "低电",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\low_power.mp3",
+          "outputName": "low_power",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "96a26b5b",
+          "size": 4512
+        },
+        {
+          "name": "最大音量",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\vol_max.mp3",
+          "outputName": "vol_max",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "21bc2716",
+          "size": 6432
+        },
+        {
+          "name": "连接成功",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\connect.mp3",
+          "outputName": "bt_conn",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "9980bbd0",
+          "size": 3936
+        },
+        {
+          "name": "连接断开",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\disconnect.mp3",
+          "outputName": "bt_dconn",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "4af73e56",
+          "size": 4896
+        },
+        {
+          "name": "响铃",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\ring.mp3",
+          "outputName": "ring",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "3a1d84c4",
+          "size": 11944
+        },
+        {
+          "name": "默认",
+          "path": "%TOOL_PATH%\\resource\\提示音\\normal.sin",
+          "outputName": "normal",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "sin"
+          },
+          "sizeKey": "5c222220",
+          "size": 36
+        },
+        {
+          "name": "bt模式",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\bt.mp3",
+          "outputName": "bt",
+          "format": {
+            "value": "原格式"
+          },
+          "enable": true,
+          "sizeKey": "6d1aaa79",
+          "size": 5472
+        },
+        {
+          "name": "linein模式",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\linein_en.mp3",
+          "outputName": "linein",
+          "format": {
+            "value": "原格式"
+          },
+          "enable": true,
+          "sizeKey": "4bfb1f3f",
+          "size": 16222
+        },
+        {
+          "name": "music模式",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\music.mp3",
+          "outputName": "music",
+          "format": {
+            "value": "原格式"
+          },
+          "enable": true,
+          "sizeKey": "deb87e84",
+          "size": 3168
+        },
+        {
+          "name": "fm模式",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\fm_en.mp3",
+          "outputName": "fm",
+          "format": {
+            "value": "原格式"
+          },
+          "enable": true,
+          "sizeKey": "de371f7b",
+          "size": 15438
+        },
+        {
+          "name": "rtc模式",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\rtc_en.mp3",
+          "outputName": "rtc",
+          "format": {
+            "value": "原格式"
+          },
+          "enable": true,
+          "sizeKey": "fcc65cd9",
+          "size": 14798
+        },
+        {
+          "name": "sd_dev",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\sd_dev_en.mp3",
+          "outputName": "sd",
+          "format": {
+            "value": "原格式"
+          },
+          "enable": true,
+          "sizeKey": "412b01ba",
+          "size": 13950
+        },
+        {
+          "name": "usb_dev",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\usb.mp3",
+          "outputName": "usb",
+          "format": {
+            "value": "原格式"
+          },
+          "enable": true,
+          "sizeKey": "6a664bad",
+          "size": 5760
+        },
+        {
+          "name": "tws连接",
+          "path": "%TOOL_PATH%\\resource\\提示音\\tws_conn.sin",
+          "outputName": "tws_conn",
+          "format": {
+            "value": "sin"
+          },
+          "enable": true,
+          "sizeKey": "9308f0e2",
+          "size": 36
+        },
+        {
+          "name": "tws断开",
+          "path": "%TOOL_PATH%\\resource\\提示音\\tws_dconn.sin",
+          "outputName": "tws_dconn",
+          "format": {
+            "value": "sin"
+          },
+          "enable": true,
+          "sizeKey": "ca5b8184",
+          "size": 52
+        },
+        {
+          "name": "pc模式",
+          "path": "%TOOL_PATH%\\resource\\提示音\\英文\\pc.mp3",
+          "outputName": "pc",
+          "format": {
+            "value": "原格式"
+          },
+          "enable": true,
+          "sizeKey": "8467d4cc",
+          "size": 43953
+        },
+        {
+          "name": "进入游戏模式",
+          "path": "%TOOL_PATH%\\resource\\提示音\\game_in.sin",
+          "outputName": "game_in",
+          "format": {
+            "value": "sin"
+          },
+          "enable": true,
+          "sizeKey": "e9a90a27",
+          "size": 36
+        },
+        {
+          "name": "退出游戏模式",
+          "path": "%TOOL_PATH%\\resource\\提示音\\game_out.sin",
+          "outputName": "game_out",
+          "format": {
+            "value": "sin"
+          },
+          "enable": true,
+          "sizeKey": "451bacc8",
+          "size": 36
+        }
+      ],
+      "enableOutput": 0,
+      "size": 192816
+    },
+    {
+      "title": "tone_zh",
+      "configName": "TCFG_TONE_ZH_ENABLE",
+      "files": [
+        {
+          "name": "数字0",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\0.mp3",
+          "default": true,
+          "enable": true,
+          "outputName": "0",
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "ffd2d428",
+          "size": 10344
+        },
+        {
+          "name": "数字1",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\1.mp3",
+          "default": true,
+          "enable": true,
+          "outputName": "1",
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "80943a62",
+          "size": 9912
+        },
+        {
+          "name": "数字2",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\2.mp3",
+          "outputName": "2",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "2ad705b3",
+          "size": 10488
+        },
+        {
+          "name": "数字3",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\3.mp3",
+          "outputName": "3",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "4b51ca24",
+          "size": 9912
+        },
+        {
+          "name": "数字4",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\4.mp3",
+          "outputName": "4",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "9fbd9f8c",
+          "size": 10056
+        },
+        {
+          "name": "数字5",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\5.mp3",
+          "outputName": "5",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "5e7e51b6",
+          "size": 10488
+        },
+        {
+          "name": "数字6",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\6.mp3",
+          "outputName": "6",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "5e8cc2a5",
+          "size": 10200
+        },
+        {
+          "name": "数字7",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\7.mp3",
+          "outputName": "7",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "7859302f",
+          "size": 10344
+        },
+        {
+          "name": "数字8",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\8.mp3",
+          "outputName": "8",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "462bb189",
+          "size": 9912
+        },
+        {
+          "name": "数字9",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\9.mp3",
+          "outputName": "9",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "ab8a796a",
+          "size": 9912
+        },
+        {
+          "name": "开机",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\power_on.mp3",
+          "outputName": "power_on",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "784354da",
+          "size": 9624
+        },
+        {
+          "name": "关机",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\power_off.mp3",
+          "outputName": "power_off",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "3495a678",
+          "size": 9480
+        },
+        {
+          "name": "低电",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\low_power.mp3",
+          "outputName": "low_power",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "853aca96",
+          "size": 10344
+        },
+        {
+          "name": "最大音量",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\vol_max.mp3",
+          "outputName": "vol_max",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "bc6be9ae",
+          "size": 12216
+        },
+        {
+          "name": "连接成功",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\bt_conn.mp3",
+          "outputName": "bt_conn",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "ab7b4184",
+          "size": 13656
+        },
+        {
+          "name": "连接断开",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\bt_dconn.mp3",
+          "outputName": "bt_dconn",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "99cbc349",
+          "size": 14890
+        },
+        {
+          "name": "响铃",
+          "path": "%TOOL_PATH%\\resource\\提示音\\ring.sin",
+          "outputName": "ring",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "sin"
+          },
+          "sizeKey": "bd757c07",
+          "size": 36
+        },
+        {
+          "name": "默认",
+          "path": "%TOOL_PATH%\\resource\\提示音\\normal.sin",
+          "outputName": "normal",
+          "default": true,
+          "enable": true,
+          "format": {
+            "value": "sin"
+          },
+          "sizeKey": "5c222220",
+          "size": 36
+        },
+        {
+          "name": "按键音",
+          "path": "%TOOL_PATH%\\resource\\提示音\\key_tone.sin",
+          "outputName": "key_tone",
+          "default": true,
+          "enable": false,
+          "format": {
+            "value": "sin"
+          },
+          "sizeKey": "9cd21435",
+          "size": 36
+        },
+        {
+          "name": "bt模式",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\bt.mp3",
+          "outputName": "bt",
+          "format": {
+            "value": "原格式"
+          },
+          "enable": true,
+          "sizeKey": "6916f104",
+          "size": 5472
+        },
+        {
+          "name": "linein模式",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\linein.mp3",
+          "outputName": "linein",
+          "format": {
+            "value": "原格式"
+          },
+          "enable": true,
+          "sizeKey": "937f0460",
+          "size": 12792
+        },
+        {
+          "name": "music模式",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\music.mp3",
+          "outputName": "music",
+          "format": {
+            "value": "原格式"
+          },
+          "enable": true,
+          "sizeKey": "94c8e1f9",
+          "size": 11640
+        },
+        {
+          "name": "fm模式",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\fm.mp3",
+          "outputName": "fm",
+          "format": {
+            "value": "原格式"
+          },
+          "enable": true,
+          "sizeKey": "6bcb6a0b",
+          "size": 11064
+        },
+        {
+          "name": "record模式",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\record.mp3",
+          "outputName": "record",
+          "format": {
+            "value": "原格式"
+          },
+          "enable": true,
+          "sizeKey": "a1f8880",
+          "size": 11496
+        },
+        {
+          "name": "rtc模式",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\rtc.mp3",
+          "outputName": "rtc",
+          "format": {
+            "value": "原格式"
+          },
+          "enable": false,
+          "sizeKey": "b8b1842a",
+          "size": 11784
+        },
+        {
+          "name": "pc模式",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\pc.mp3",
+          "outputName": "pc",
+          "format": {
+            "value": "原格式"
+          },
+          "enable": true,
+          "sizeKey": "5f2157cb",
+          "size": 12072
+        },
+        {
+          "name": "sd_dev",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\sd.mp3",
+          "outputName": "sd",
+          "format": {
+            "value": "原格式"
+          },
+          "enable": true,
+          "sizeKey": "28b269a",
+          "size": 3121
+        },
+        {
+          "name": "usb_dev",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\udisk.mp3",
+          "outputName": "usb",
+          "format": {
+            "value": "原格式"
+          },
+          "enable": true,
+          "sizeKey": "b8f154ac",
+          "size": 2473
+        },
+        {
+          "name": "tws连接",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\tws_conn.mp3",
+          "outputName": "tws_conn",
+          "format": {
+            "value": "原格式"
+          },
+          "enable": true,
+          "sizeKey": "2f5229cd",
+          "size": 15178
+        },
+        {
+          "name": "tws断开",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\tws_dconn.mp3",
+          "outputName": "tws_dconn",
+          "format": {
+            "value": "原格式"
+          },
+          "enable": true,
+          "sizeKey": "21e98388",
+          "size": 15322
+        },
+        {
+          "name": "进入游戏模式",
+          "path": "%TOOL_PATH%\\resource\\提示音\\game_in.sin",
+          "outputName": "game_in",
+          "format": {
+            "value": "sin"
+          },
+          "enable": true,
+          "sizeKey": "e9a90a27",
+          "size": 36
+        },
+        {
+          "name": "退出游戏模式",
+          "path": "%TOOL_PATH%\\resource\\提示音\\game_out.sin",
+          "outputName": "game_out",
+          "format": {
+            "value": "sin"
+          },
+          "enable": true,
+          "sizeKey": "451bacc8",
+          "size": 36
+        },
+        {
+          "name": "广播模式",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\big_mode.mp3",
+          "outputName": "big_mode",
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "400f320d",
+          "size": 7488,
+          "enable": true
+        },
+        {
+          "name": "广播模式关闭",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\big_close.mp3",
+          "outputName": "big_close",
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "bc7c333e",
+          "size": 8784,
+          "enable": true
+        },
+        {
+          "name": "IIS模式",
+          "path": "%TOOL_PATH%\\resource\\提示音\\soundbox\\iis.mp3",
+          "outputName": "iis",
+          "format": {
+            "value": "原格式"
+          },
+          "sizeKey": "9642a893",
+          "size": 8640,
+          "enable": true
+        }
+      ],
+      "enableOutput": 1,
+      "size": 299296,
+      "isOpen": true
+    }
+  ]
+}

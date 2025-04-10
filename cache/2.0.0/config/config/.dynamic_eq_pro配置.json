@@ -1,0 +1,2674 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "Dynamic EQ Pro",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "template": "",
+        "span": 24,
+        "formId": 106,
+        "renderKey": "1061666764691753",
+        "children": [
+          {
+            "__config__": {
+              "label": "bypass",
+              "showLabel": true,
+              "labelWidth": null,
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "layout": "colFormItem",
+              "span": 24,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": [
+                "32",
+                "-1"
+              ],
+              "formId": 246,
+              "renderKey": "2461667355755238",
+              "defaultValue": 0,
+              "tip": "打开时，模块做直通处理",
+              "eventField": [],
+              "saveWay": "bin",
+              "tipAlways": true,
+              "originValue": 0
+            },
+            "style": {
+              "width": "25%"
+            },
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1672127515141_2",
+            "__vModel__": "field246"
+          },
+          {
+            "__config__": {
+              "label": "nSection",
+              "showLabel": true,
+              "labelWidth": null,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 24,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": [
+                "32",
+                "-1"
+              ],
+              "formId": 244,
+              "renderKey": "2441667355634705",
+              "defaultValue": 1,
+              "tip": "",
+              "eventField": [],
+              "saveWay": "bin",
+              "originValue": 1
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "1",
+                  "value": 1
+                },
+                {
+                  "label": "2",
+                  "value": 2
+                },
+                {
+                  "label": "3",
+                  "value": 3
+                },
+                {
+                  "label": "4",
+                  "value": 4
+                }
+              ]
+            },
+            "placeholder": "请选择nSection",
+            "style": {
+              "width": "25%"
+            },
+            "clearable": false,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1672127515141_4",
+            "__vModel__": "field244"
+          }
+        ],
+        "eventField": [],
+        "showResetBtn": false
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "80px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1672127515141_0",
+      "show-text": false
+    },
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "第0段",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "template": "",
+        "span": 12,
+        "formId": 288,
+        "renderKey": "2881669340523456",
+        "children": [
+          {
+            "__config__": {
+              "label": "ByPass",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 0,
+              "span": 12,
+              "showLabel": true,
+              "labelWidth": 130,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "status": 0,
+              "dataType": [
+                "-1",
+                "32"
+              ],
+              "formId": 219,
+              "renderKey": "2191698134628424",
+              "eventField": [],
+              "saveWay": "bin"
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1698134628424_0",
+            "__vModel__": "field219"
+          },
+          {
+            "__config__": {
+              "label": "Fc",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 1000,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "32",
+                "-1"
+              ],
+              "formId": 289,
+              "renderKey": "2891669340592630",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：20~20000 Hz",
+              "saveWay": "bin",
+              "originValue": 1000
+            },
+            "placeholder": "Fc",
+            "min": 20,
+            "max": 20000,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1672127515141_6",
+            "__vModel__": "field289"
+          },
+          {
+            "__config__": {
+              "label": "Q",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0.7,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 290,
+              "renderKey": "2901669340689180",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：0.3~10",
+              "saveWay": "bin",
+              "originValue": 0.7
+            },
+            "placeholder": "Q",
+            "min": 0.3,
+            "max": 10,
+            "step": 0.1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1672127515141_7",
+            "__vModel__": "field290"
+          },
+          {
+            "__config__": {
+              "label": "Gain",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 291,
+              "renderKey": "2911669340808697",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：0~20 dB",
+              "saveWay": "bin",
+              "originValue": 0
+            },
+            "placeholder": "Gain",
+            "min": 0,
+            "max": 20,
+            "step": 0.1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1672127515141_8",
+            "__vModel__": "field291",
+            "precision": 1
+          },
+          {
+            "__config__": {
+              "label": "Attack Time",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 5,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "-1",
+                "16"
+              ],
+              "formId": 294,
+              "renderKey": "2941669341754378",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：1~1500 ms",
+              "saveWay": "bin",
+              "originValue": 5
+            },
+            "placeholder": "Attack Time",
+            "min": 1,
+            "max": 1500,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1672127515141_9",
+            "__vModel__": "field294"
+          },
+          {
+            "__config__": {
+              "label": "Release Time",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 300,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "-1",
+                "16"
+              ],
+              "formId": 296,
+              "renderKey": "2961669341827498",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：1~1500 ms",
+              "saveWay": "bin",
+              "originValue": 300
+            },
+            "placeholder": "Release Time",
+            "min": 1,
+            "max": 1500,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1672127515141_10",
+            "__vModel__": "field296"
+          },
+          {
+            "__config__": {
+              "label": "Low Threshold",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": -10,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 298,
+              "renderKey": "2981669341930626",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：-90.3~0 dB",
+              "saveWay": "bin",
+              "originValue": -10
+            },
+            "placeholder": "Low Threshold",
+            "min": -90.3,
+            "max": 0,
+            "step": 0.1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1672127515141_11",
+            "__vModel__": "field298",
+            "precision": 1
+          },
+          {
+            "__config__": {
+              "label": "High Threshold",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 300,
+              "renderKey": "3001669342184093",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：-90.3~0 dB",
+              "saveWay": "bin",
+              "originValue": 0
+            },
+            "placeholder": "High Threshold",
+            "min": -90.3,
+            "max": 0,
+            "step": 0.1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1672127515141_13",
+            "__vModel__": "field300",
+            "precision": 1
+          },
+          {
+            "__config__": {
+              "label": "Type",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "defaultValue": 2,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "-1",
+                "8"
+              ],
+              "formId": 302,
+              "renderKey": "3021669342888715",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "算法类型",
+              "saveWay": "bin",
+              "originValue": 2
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "Peaking",
+                  "value": 2
+                },
+                {
+                  "label": "HighShelf",
+                  "value": 3
+                },
+                {
+                  "label": "LowShelf",
+                  "value": 4,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "placeholder": "Type",
+            "style": {
+              "width": "35%"
+            },
+            "clearable": false,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1672127515141_17",
+            "__vModel__": "field302"
+          },
+          {
+            "__config__": {
+              "label": "Enable",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 1,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "-1",
+                "8"
+              ],
+              "formId": 137,
+              "renderKey": "1371688971050112",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "使能当前段",
+              "saveWay": "bin",
+              "originValue": 1,
+              "status": 1
+            },
+            "style": {
+              "width": "45%"
+            },
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1688971050112_0",
+            "__vModel__": "field137"
+          },
+          {
+            "__config__": {
+              "label": "Reserved",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "-1",
+                "16"
+              ],
+              "formId": 139,
+              "renderKey": "1391688971162415",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "保留位",
+              "saveWay": "bin",
+              "originValue": 0,
+              "status": 1
+            },
+            "placeholder": "计数器",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": true,
+            "id": "id_1688971162415_2",
+            "__vModel__": "field139"
+          },
+          {
+            "__config__": {
+              "label": "Rms Time",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0.02,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 172,
+              "renderKey": "1721706511453533",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：0.02~25 ms",
+              "saveWay": "bin",
+              "originValue": 0.02
+            },
+            "placeholder": "Rms Time",
+            "min": 0.02,
+            "max": 25,
+            "step": 0.01,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1706511453533_1",
+            "__vModel__": "field172",
+            "precision": 2
+          },
+          {
+            "__config__": {
+              "label": "Output Gain",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 171,
+              "renderKey": "1711706511161949",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：-18~18 dB",
+              "saveWay": "bin",
+              "originValue": 0
+            },
+            "placeholder": "Output Gain",
+            "min": -18,
+            "max": 18,
+            "step": 0.1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1706511161949_0",
+            "__vModel__": "field171",
+            "precision": 1
+          },
+          {
+            "__config__": {
+              "layout": "rowFormItem",
+              "tag": "group",
+              "tagIcon": "row",
+              "layoutTree": true,
+              "componentName": "advance param",
+              "enableUuid": "",
+              "showComponentName": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "status": 1,
+              "template": "",
+              "hideAddTemplate": false,
+              "span": 23,
+              "formId": 229,
+              "renderKey": "2291698134917831",
+              "children": [
+                {
+                  "__config__": {
+                    "label": "计数器",
+                    "showLabel": true,
+                    "changeTag": true,
+                    "labelWidth": null,
+                    "tag": "el-input-number",
+                    "tagIcon": "number",
+                    "defaultValue": 0,
+                    "span": 23,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "status": 0,
+                    "dataType": [
+                      "32",
+                      "1"
+                    ],
+                    "formId": 232,
+                    "renderKey": "2321698134917831",
+                    "originValue": 0,
+                    "saveWay": "bin"
+                  },
+                  "placeholder": "计数器",
+                  "step": 1,
+                  "step-strictly": false,
+                  "controls-position": "",
+                  "disabled": false,
+                  "id": "id_1698134917831_9",
+                  "__vModel__": "field232"
+                },
+                {
+                  "__config__": {
+                    "label": "计数器",
+                    "showLabel": true,
+                    "changeTag": true,
+                    "labelWidth": null,
+                    "tag": "el-input-number",
+                    "tagIcon": "number",
+                    "defaultValue": 0,
+                    "span": 23,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "status": 0,
+                    "dataType": [
+                      "32",
+                      "1"
+                    ],
+                    "formId": 233,
+                    "renderKey": "2331698134917831",
+                    "originValue": 0,
+                    "saveWay": "bin"
+                  },
+                  "placeholder": "计数器",
+                  "step": 1,
+                  "step-strictly": false,
+                  "controls-position": "",
+                  "disabled": false,
+                  "id": "id_1698134917831_10",
+                  "__vModel__": "field233"
+                },
+                {
+                  "__config__": {
+                    "label": "计数器",
+                    "showLabel": true,
+                    "changeTag": true,
+                    "labelWidth": null,
+                    "tag": "el-input-number",
+                    "tagIcon": "number",
+                    "defaultValue": 0,
+                    "span": 23,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "status": 0,
+                    "dataType": [
+                      "32",
+                      "1"
+                    ],
+                    "formId": 234,
+                    "renderKey": "2341698134917831",
+                    "originValue": 0,
+                    "saveWay": "bin"
+                  },
+                  "placeholder": "计数器",
+                  "step": 1,
+                  "step-strictly": false,
+                  "controls-position": "",
+                  "disabled": false,
+                  "id": "id_1698134917831_11",
+                  "__vModel__": "field234"
+                }
+              ],
+              "eventField": [],
+              "expand": 1
+            },
+            "type": "default",
+            "justify": "start",
+            "align": "top",
+            "style": {
+              "height": "400px",
+              "paddingLeft": "0px"
+            },
+            "id": "id_1698134917831_6"
+          }
+        ],
+        "eventField": [],
+        "status": 0,
+        "hideAddTemplate": false
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "400px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1672127515141_5"
+    },
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "第1段",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "template": "",
+        "span": 12,
+        "formId": 109,
+        "renderKey": "1091688644211588",
+        "children": [
+          {
+            "__config__": {
+              "label": "ByPass",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 0,
+              "span": 12,
+              "showLabel": true,
+              "labelWidth": 130,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "status": 0,
+              "dataType": [
+                "-1",
+                "32"
+              ],
+              "formId": 220,
+              "renderKey": "2201698134667248",
+              "eventField": [],
+              "saveWay": "bin"
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1698134667248_1",
+            "__vModel__": "field220"
+          },
+          {
+            "__config__": {
+              "label": "Fc",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 1000,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "32",
+                "-1"
+              ],
+              "formId": 110,
+              "renderKey": "1101688644211588",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：20~20000 Hz",
+              "saveWay": "bin",
+              "originValue": 1000
+            },
+            "placeholder": "Fc",
+            "min": 20,
+            "max": 20000,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1688644211588_1",
+            "__vModel__": "field110"
+          },
+          {
+            "__config__": {
+              "label": "Q",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0.7,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 111,
+              "renderKey": "1111688644211588",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：0.3~10",
+              "saveWay": "bin",
+              "originValue": 0.7
+            },
+            "placeholder": "Q",
+            "min": 0.3,
+            "max": 10,
+            "step": 0.1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1688644211588_2",
+            "__vModel__": "field111"
+          },
+          {
+            "__config__": {
+              "label": "Gain",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 112,
+              "renderKey": "1121688644211588",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：0~20 dB",
+              "saveWay": "bin",
+              "originValue": 0
+            },
+            "placeholder": "Gain",
+            "min": 0,
+            "max": 20,
+            "step": 0.1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1688644211588_3",
+            "__vModel__": "field112",
+            "precision": 1
+          },
+          {
+            "__config__": {
+              "label": "Attack Time",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 5,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "-1",
+                "16"
+              ],
+              "formId": 113,
+              "renderKey": "1131688644211588",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：1~1500 ms",
+              "saveWay": "bin",
+              "originValue": 5
+            },
+            "placeholder": "Attack Time",
+            "min": 1,
+            "max": 1500,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1688644211588_4",
+            "__vModel__": "field113"
+          },
+          {
+            "__config__": {
+              "label": "Release Time",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 300,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "-1",
+                "16"
+              ],
+              "formId": 114,
+              "renderKey": "1141688644211588",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：1~1500 ms",
+              "saveWay": "bin",
+              "originValue": 300
+            },
+            "placeholder": "Release Time",
+            "min": 1,
+            "max": 1500,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1688644211588_5",
+            "__vModel__": "field114"
+          },
+          {
+            "__config__": {
+              "label": "Low Threshold",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": -10,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 115,
+              "renderKey": "1151688644211588",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：-90.3~0 dB",
+              "saveWay": "bin",
+              "originValue": -10
+            },
+            "placeholder": "Low Threshold",
+            "min": -90.3,
+            "max": 0,
+            "step": 0.1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1688644211588_6",
+            "__vModel__": "field115",
+            "precision": 1
+          },
+          {
+            "__config__": {
+              "label": "High Threshold",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 116,
+              "renderKey": "1161688644211588",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：-90.3~0 dB",
+              "saveWay": "bin",
+              "originValue": 0
+            },
+            "placeholder": "High Threshold",
+            "min": -90.3,
+            "max": 0,
+            "step": 0.1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1688644211588_7",
+            "__vModel__": "field116",
+            "precision": 1
+          },
+          {
+            "__config__": {
+              "label": "Type",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "defaultValue": 2,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "-1",
+                "8"
+              ],
+              "formId": 117,
+              "renderKey": "1171688644211588",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "算法类型",
+              "saveWay": "bin",
+              "originValue": 2
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "Peaking",
+                  "value": 2
+                },
+                {
+                  "label": "HighShelf",
+                  "value": 3
+                },
+                {
+                  "label": "LowShelf",
+                  "value": 4,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "placeholder": "Type",
+            "style": {
+              "width": "35%"
+            },
+            "clearable": false,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1688644211588_8",
+            "__vModel__": "field117"
+          },
+          {
+            "__config__": {
+              "label": "Enable",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 1,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "-1",
+                "8"
+              ],
+              "formId": 144,
+              "renderKey": "1441688971308271",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "使能当前段",
+              "saveWay": "bin",
+              "originValue": 1,
+              "status": 1
+            },
+            "style": {
+              "width": "45%"
+            },
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1688971308271_7",
+            "__vModel__": "field144"
+          },
+          {
+            "__config__": {
+              "label": "Reserved",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "-1",
+                "16"
+              ],
+              "formId": 145,
+              "renderKey": "1451688971309279",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "保留位",
+              "saveWay": "bin",
+              "originValue": 0,
+              "status": 1
+            },
+            "placeholder": "Reserved",
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": true,
+            "id": "id_1688971309279_8",
+            "__vModel__": "field145"
+          },
+          {
+            "__config__": {
+              "label": "Rms Time",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0.02,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 173,
+              "renderKey": "1731706511736063",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：0.02~25 ms",
+              "saveWay": "bin",
+              "originValue": 0.02
+            },
+            "placeholder": "Rms Time",
+            "min": 0.02,
+            "max": 25,
+            "step": 0.01,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1706511736063_2",
+            "__vModel__": "field173",
+            "precision": 2
+          },
+          {
+            "__config__": {
+              "label": "Output Gain",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 174,
+              "renderKey": "1741706511791278",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：-18~18 dB",
+              "saveWay": "bin",
+              "originValue": 0
+            },
+            "placeholder": "Output Gain",
+            "min": -18,
+            "max": 18,
+            "step": 0.1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1706511791278_3",
+            "__vModel__": "field174",
+            "precision": 1
+          },
+          {
+            "__config__": {
+              "layout": "rowFormItem",
+              "tag": "group",
+              "tagIcon": "row",
+              "layoutTree": true,
+              "componentName": "advance param",
+              "enableUuid": "",
+              "showComponentName": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "status": 1,
+              "template": "",
+              "hideAddTemplate": false,
+              "span": 23,
+              "formId": 223,
+              "renderKey": "2231698134878291",
+              "children": [
+                {
+                  "__config__": {
+                    "label": "计数器",
+                    "showLabel": true,
+                    "changeTag": true,
+                    "labelWidth": null,
+                    "tag": "el-input-number",
+                    "tagIcon": "number",
+                    "defaultValue": 0,
+                    "span": 23,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "status": 0,
+                    "dataType": [
+                      "32",
+                      "1"
+                    ],
+                    "formId": 226,
+                    "renderKey": "2261698134913615",
+                    "originValue": 0,
+                    "saveWay": "bin"
+                  },
+                  "placeholder": "计数器",
+                  "step": 1,
+                  "step-strictly": false,
+                  "controls-position": "",
+                  "disabled": false,
+                  "id": "id_1698134913615_3",
+                  "__vModel__": "field226"
+                },
+                {
+                  "__config__": {
+                    "label": "计数器",
+                    "showLabel": true,
+                    "changeTag": true,
+                    "labelWidth": null,
+                    "tag": "el-input-number",
+                    "tagIcon": "number",
+                    "defaultValue": 0,
+                    "span": 23,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "status": 0,
+                    "dataType": [
+                      "32",
+                      "1"
+                    ],
+                    "formId": 227,
+                    "renderKey": "2271698134914272",
+                    "originValue": 0,
+                    "saveWay": "bin"
+                  },
+                  "placeholder": "计数器",
+                  "step": 1,
+                  "step-strictly": false,
+                  "controls-position": "",
+                  "disabled": false,
+                  "id": "id_1698134914272_4",
+                  "__vModel__": "field227"
+                },
+                {
+                  "__config__": {
+                    "label": "计数器",
+                    "showLabel": true,
+                    "changeTag": true,
+                    "labelWidth": null,
+                    "tag": "el-input-number",
+                    "tagIcon": "number",
+                    "defaultValue": 0,
+                    "span": 23,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "status": 0,
+                    "dataType": [
+                      "32",
+                      "1"
+                    ],
+                    "formId": 228,
+                    "renderKey": "2281698134914759",
+                    "originValue": 0,
+                    "saveWay": "bin"
+                  },
+                  "placeholder": "计数器",
+                  "step": 1,
+                  "step-strictly": false,
+                  "controls-position": "",
+                  "disabled": false,
+                  "id": "id_1698134914759_5",
+                  "__vModel__": "field228"
+                }
+              ],
+              "eventField": [],
+              "expand": 1
+            },
+            "type": "default",
+            "justify": "start",
+            "align": "top",
+            "style": {
+              "height": "400px",
+              "paddingLeft": "0px"
+            },
+            "id": "id_1698134878291_0"
+          }
+        ],
+        "eventField": [],
+        "status": 1
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "400px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1688644211588_0"
+    },
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "第2段",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "template": "",
+        "span": 12,
+        "formId": 118,
+        "renderKey": "1181688644230882",
+        "children": [
+          {
+            "__config__": {
+              "label": "ByPass",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 0,
+              "span": 12,
+              "showLabel": true,
+              "labelWidth": 130,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "status": 0,
+              "dataType": [
+                "-1",
+                "32"
+              ],
+              "formId": 221,
+              "renderKey": "2211698134702536",
+              "eventField": [],
+              "saveWay": "bin"
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1698134702536_2",
+            "__vModel__": "field221"
+          },
+          {
+            "__config__": {
+              "label": "Fc",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 1000,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "32",
+                "-1"
+              ],
+              "formId": 119,
+              "renderKey": "1191688644230882",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：20~20000 Hz",
+              "saveWay": "bin",
+              "originValue": 1000
+            },
+            "placeholder": "Fc",
+            "min": 20,
+            "max": 20000,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1688644230882_10",
+            "__vModel__": "field119"
+          },
+          {
+            "__config__": {
+              "label": "Q",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0.7,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 120,
+              "renderKey": "1201688644230882",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：0.3~10",
+              "saveWay": "bin",
+              "originValue": 0.7
+            },
+            "placeholder": "Q",
+            "min": 0.3,
+            "max": 10,
+            "step": 0.1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1688644230882_11",
+            "__vModel__": "field120"
+          },
+          {
+            "__config__": {
+              "label": "Gain",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 121,
+              "renderKey": "1211688644230882",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：0~20 dB",
+              "saveWay": "bin",
+              "originValue": 0
+            },
+            "placeholder": "Gain",
+            "min": 0,
+            "max": 20,
+            "step": 0.1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1688644230882_12",
+            "__vModel__": "field121",
+            "precision": 1
+          },
+          {
+            "__config__": {
+              "label": "Attack Time",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 5,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "-1",
+                "16"
+              ],
+              "formId": 122,
+              "renderKey": "1221688644230882",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：1~1500 ms",
+              "saveWay": "bin",
+              "originValue": 5
+            },
+            "placeholder": "Attack Time",
+            "min": 1,
+            "max": 1500,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1688644230882_13",
+            "__vModel__": "field122"
+          },
+          {
+            "__config__": {
+              "label": "Release Time",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 300,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "-1",
+                "16"
+              ],
+              "formId": 123,
+              "renderKey": "1231688644230882",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：1~1500 ms",
+              "saveWay": "bin",
+              "originValue": 300
+            },
+            "placeholder": "Release Time",
+            "min": 1,
+            "max": 1500,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1688644230882_14",
+            "__vModel__": "field123"
+          },
+          {
+            "__config__": {
+              "label": "Low Threshold",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": -10,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 124,
+              "renderKey": "1241688644230882",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：-90.3~0 dB",
+              "saveWay": "bin",
+              "originValue": -10
+            },
+            "placeholder": "Low Threshold",
+            "min": -90.3,
+            "max": 0,
+            "step": 0.1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1688644230882_15",
+            "__vModel__": "field124",
+            "precision": 1
+          },
+          {
+            "__config__": {
+              "label": "High Threshold",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 125,
+              "renderKey": "1251688644230882",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：-90.3~0 dB",
+              "saveWay": "bin",
+              "originValue": 0
+            },
+            "placeholder": "High Threshold",
+            "min": -90.3,
+            "max": 0,
+            "step": 0.1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1688644230882_16",
+            "__vModel__": "field125",
+            "precision": 1
+          },
+          {
+            "__config__": {
+              "label": "Type",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "defaultValue": 2,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "-1",
+                "8"
+              ],
+              "formId": 126,
+              "renderKey": "1261688644230882",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "算法类型",
+              "saveWay": "bin",
+              "originValue": 2
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "Peaking",
+                  "value": 2
+                },
+                {
+                  "label": "HighShelf",
+                  "value": 3
+                },
+                {
+                  "label": "LowShelf",
+                  "value": 4,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "placeholder": "Type",
+            "style": {
+              "width": "35%"
+            },
+            "clearable": false,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1688644230882_17",
+            "__vModel__": "field126"
+          },
+          {
+            "__config__": {
+              "label": "Enable",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 1,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "-1",
+                "8"
+              ],
+              "formId": 148,
+              "renderKey": "1481688971436422",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "使能当前段",
+              "saveWay": "bin",
+              "originValue": 1,
+              "status": 1
+            },
+            "style": {
+              "width": "45%"
+            },
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1688971436422_11",
+            "__vModel__": "field148"
+          },
+          {
+            "__config__": {
+              "label": "Reserved",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "-1",
+                "16"
+              ],
+              "formId": 149,
+              "renderKey": "1491688971436887",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "保留位",
+              "saveWay": "bin",
+              "originValue": 0,
+              "status": 1
+            },
+            "placeholder": "Reserved",
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": true,
+            "id": "id_1688971436887_12",
+            "__vModel__": "field149"
+          },
+          {
+            "__config__": {
+              "label": "Rms Time",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0.02,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 175,
+              "renderKey": "1751706511817866",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：0.02~25 ms",
+              "saveWay": "bin",
+              "originValue": 0.02
+            },
+            "placeholder": "Rms Time",
+            "min": 0.02,
+            "max": 25,
+            "step": 0.01,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1706511817866_4",
+            "__vModel__": "field175",
+            "precision": 2
+          },
+          {
+            "__config__": {
+              "label": "Output Gain",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 176,
+              "renderKey": "1761706511894711",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：-18~18 dB",
+              "saveWay": "bin",
+              "originValue": 0
+            },
+            "placeholder": "Output Gain",
+            "min": -18,
+            "max": 18,
+            "step": 0.1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1706511894711_5",
+            "__vModel__": "field176",
+            "precision": 1
+          },
+          {
+            "__config__": {
+              "layout": "rowFormItem",
+              "tag": "group",
+              "tagIcon": "row",
+              "layoutTree": true,
+              "componentName": "advance param",
+              "enableUuid": "",
+              "showComponentName": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "status": 1,
+              "template": "",
+              "hideAddTemplate": false,
+              "span": 23,
+              "formId": 241,
+              "renderKey": "2411698135492126",
+              "children": [
+                {
+                  "__config__": {
+                    "label": "计数器",
+                    "showLabel": true,
+                    "changeTag": true,
+                    "labelWidth": null,
+                    "tag": "el-input-number",
+                    "tagIcon": "number",
+                    "defaultValue": 0,
+                    "span": 23,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "status": 0,
+                    "dataType": [
+                      "32",
+                      "1"
+                    ],
+                    "formId": 244,
+                    "renderKey": "2441698135492126",
+                    "originValue": 0,
+                    "saveWay": "bin"
+                  },
+                  "placeholder": "计数器",
+                  "step": 1,
+                  "step-strictly": false,
+                  "controls-position": "",
+                  "disabled": false,
+                  "id": "id_1698135492126_21",
+                  "__vModel__": "field244"
+                },
+                {
+                  "__config__": {
+                    "label": "计数器",
+                    "showLabel": true,
+                    "changeTag": true,
+                    "labelWidth": null,
+                    "tag": "el-input-number",
+                    "tagIcon": "number",
+                    "defaultValue": 0,
+                    "span": 23,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "status": 0,
+                    "dataType": [
+                      "32",
+                      "1"
+                    ],
+                    "formId": 245,
+                    "renderKey": "2451698135492126",
+                    "originValue": 0,
+                    "saveWay": "bin"
+                  },
+                  "placeholder": "计数器",
+                  "step": 1,
+                  "step-strictly": false,
+                  "controls-position": "",
+                  "disabled": false,
+                  "id": "id_1698135492126_22",
+                  "__vModel__": "field245"
+                },
+                {
+                  "__config__": {
+                    "label": "计数器",
+                    "showLabel": true,
+                    "changeTag": true,
+                    "labelWidth": null,
+                    "tag": "el-input-number",
+                    "tagIcon": "number",
+                    "defaultValue": 0,
+                    "span": 23,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "status": 0,
+                    "dataType": [
+                      "32",
+                      "1"
+                    ],
+                    "formId": 246,
+                    "renderKey": "2461698135492126",
+                    "originValue": 0,
+                    "saveWay": "bin"
+                  },
+                  "placeholder": "计数器",
+                  "step": 1,
+                  "step-strictly": false,
+                  "controls-position": "",
+                  "disabled": false,
+                  "id": "id_1698135492126_23",
+                  "__vModel__": "field246"
+                }
+              ],
+              "eventField": [],
+              "expand": 1
+            },
+            "type": "default",
+            "justify": "start",
+            "align": "top",
+            "style": {
+              "height": "400px",
+              "paddingLeft": "0px"
+            },
+            "id": "id_1698135492126_18"
+          }
+        ],
+        "eventField": [],
+        "status": 1
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "400px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1688644230882_9"
+    },
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "第3段",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "template": "",
+        "span": 12,
+        "formId": 127,
+        "renderKey": "1271688644247770",
+        "children": [
+          {
+            "__config__": {
+              "label": "ByPass",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 0,
+              "span": 12,
+              "showLabel": true,
+              "labelWidth": 130,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "status": 0,
+              "dataType": [
+                "-1",
+                "32"
+              ],
+              "formId": 222,
+              "renderKey": "2221698134709576",
+              "eventField": [],
+              "saveWay": "bin"
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1698134709576_3",
+            "__vModel__": "field222"
+          },
+          {
+            "__config__": {
+              "label": "Fc",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 1000,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "32",
+                "-1"
+              ],
+              "formId": 128,
+              "renderKey": "1281688644247770",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：20~20000 Hz",
+              "saveWay": "bin",
+              "originValue": 1000
+            },
+            "placeholder": "Fc",
+            "min": 20,
+            "max": 20000,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1688644247770_19",
+            "__vModel__": "field128"
+          },
+          {
+            "__config__": {
+              "label": "Q",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0.7,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 129,
+              "renderKey": "1291688644247770",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：0.3~10",
+              "saveWay": "bin",
+              "originValue": 0.7
+            },
+            "placeholder": "Q",
+            "min": 0.3,
+            "max": 10,
+            "step": 0.1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1688644247770_20",
+            "__vModel__": "field129"
+          },
+          {
+            "__config__": {
+              "label": "Gain",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 130,
+              "renderKey": "1301688644247770",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：0~20 dB",
+              "saveWay": "bin",
+              "originValue": 0
+            },
+            "placeholder": "Gain",
+            "min": 0,
+            "max": 20,
+            "step": 0.1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1688644247770_21",
+            "__vModel__": "field130",
+            "precision": 1
+          },
+          {
+            "__config__": {
+              "label": "Attack Time",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 5,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "-1",
+                "16"
+              ],
+              "formId": 131,
+              "renderKey": "1311688644247770",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：1~1500 ms",
+              "saveWay": "bin",
+              "originValue": 5
+            },
+            "placeholder": "Attack Time",
+            "min": 1,
+            "max": 1500,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1688644247770_22",
+            "__vModel__": "field131"
+          },
+          {
+            "__config__": {
+              "label": "Release Time",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 300,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "-1",
+                "16"
+              ],
+              "formId": 132,
+              "renderKey": "1321688644247770",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：1~1500 ms",
+              "saveWay": "bin",
+              "originValue": 300
+            },
+            "placeholder": "Release Time",
+            "min": 1,
+            "max": 1500,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1688644247770_23",
+            "__vModel__": "field132"
+          },
+          {
+            "__config__": {
+              "label": "Low Threshold",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": -10,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 133,
+              "renderKey": "1331688644247770",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：-90.3~0 dB",
+              "saveWay": "bin",
+              "originValue": -10
+            },
+            "placeholder": "Low Threshold",
+            "min": -90.3,
+            "max": 0,
+            "step": 0.1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1688644247770_24",
+            "__vModel__": "field133",
+            "precision": 1
+          },
+          {
+            "__config__": {
+              "label": "High Threshold",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 134,
+              "renderKey": "1341688644247770",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：-90.3~0 dB",
+              "saveWay": "bin",
+              "originValue": 0
+            },
+            "placeholder": "High Threshold",
+            "min": -90.3,
+            "max": 0,
+            "step": 0.1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1688644247770_25",
+            "__vModel__": "field134",
+            "precision": 1
+          },
+          {
+            "__config__": {
+              "label": "Type",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "defaultValue": 2,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "-1",
+                "8"
+              ],
+              "formId": 135,
+              "renderKey": "1351688644247770",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "算法类型",
+              "saveWay": "bin",
+              "originValue": 2
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "Peaking",
+                  "value": 2
+                },
+                {
+                  "label": "HighShelf",
+                  "value": 3
+                },
+                {
+                  "label": "LowShelf",
+                  "value": 4,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "placeholder": "Type",
+            "style": {
+              "width": "35%"
+            },
+            "clearable": false,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1688644247770_26",
+            "__vModel__": "field135"
+          },
+          {
+            "__config__": {
+              "label": "Enable",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 1,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "-1",
+                "8"
+              ],
+              "formId": 152,
+              "renderKey": "1521688971598224",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "使能当前段",
+              "saveWay": "bin",
+              "originValue": 1,
+              "status": 1
+            },
+            "style": {
+              "width": "45%"
+            },
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1688971598224_15",
+            "__vModel__": "field152"
+          },
+          {
+            "__config__": {
+              "label": "Reserved",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "-1",
+                "16"
+              ],
+              "formId": 153,
+              "renderKey": "1531688971598686",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "保留位",
+              "saveWay": "bin",
+              "originValue": 0,
+              "status": 1
+            },
+            "placeholder": "Reserved",
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": true,
+            "id": "id_1688971598686_16",
+            "__vModel__": "field153"
+          },
+          {
+            "__config__": {
+              "label": "Rms Time",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0.02,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 177,
+              "renderKey": "1771706511940268",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：0.02~25 ms",
+              "saveWay": "bin",
+              "originValue": 0.02
+            },
+            "placeholder": "Rms Time",
+            "min": 0.02,
+            "max": 25,
+            "step": 0.01,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1706511940268_6",
+            "__vModel__": "field177",
+            "precision": 2
+          },
+          {
+            "__config__": {
+              "label": "Output Gain",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 130,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 178,
+              "renderKey": "1781706511954938",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：-18~18 dB",
+              "saveWay": "bin",
+              "originValue": 0
+            },
+            "placeholder": "Output Gain",
+            "min": -18,
+            "max": 18,
+            "step": 0.1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1706511954938_7",
+            "__vModel__": "field178",
+            "precision": 1
+          },
+          {
+            "__config__": {
+              "layout": "rowFormItem",
+              "tag": "group",
+              "tagIcon": "row",
+              "layoutTree": true,
+              "componentName": "advance param",
+              "enableUuid": "",
+              "showComponentName": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "status": 1,
+              "template": "",
+              "hideAddTemplate": false,
+              "span": 23,
+              "formId": 235,
+              "renderKey": "2351698134935751",
+              "children": [
+                {
+                  "__config__": {
+                    "label": "计数器",
+                    "showLabel": true,
+                    "changeTag": true,
+                    "labelWidth": null,
+                    "tag": "el-input-number",
+                    "tagIcon": "number",
+                    "defaultValue": 0,
+                    "span": 23,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "status": 0,
+                    "dataType": [
+                      "32",
+                      "1"
+                    ],
+                    "formId": 238,
+                    "renderKey": "2381698134935751",
+                    "originValue": 0,
+                    "saveWay": "bin"
+                  },
+                  "placeholder": "计数器",
+                  "step": 1,
+                  "step-strictly": false,
+                  "controls-position": "",
+                  "disabled": false,
+                  "id": "id_1698134935751_15",
+                  "__vModel__": "field238"
+                },
+                {
+                  "__config__": {
+                    "label": "计数器",
+                    "showLabel": true,
+                    "changeTag": true,
+                    "labelWidth": null,
+                    "tag": "el-input-number",
+                    "tagIcon": "number",
+                    "defaultValue": 0,
+                    "span": 23,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "status": 0,
+                    "dataType": [
+                      "32",
+                      "1"
+                    ],
+                    "formId": 239,
+                    "renderKey": "2391698134935751",
+                    "originValue": 0,
+                    "saveWay": "bin"
+                  },
+                  "placeholder": "计数器",
+                  "step": 1,
+                  "step-strictly": false,
+                  "controls-position": "",
+                  "disabled": false,
+                  "id": "id_1698134935751_16",
+                  "__vModel__": "field239"
+                },
+                {
+                  "__config__": {
+                    "label": "计数器",
+                    "showLabel": true,
+                    "changeTag": true,
+                    "labelWidth": null,
+                    "tag": "el-input-number",
+                    "tagIcon": "number",
+                    "defaultValue": 0,
+                    "span": 23,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "status": 0,
+                    "dataType": [
+                      "32",
+                      "1"
+                    ],
+                    "formId": 240,
+                    "renderKey": "2401698134935751",
+                    "originValue": 0,
+                    "saveWay": "bin"
+                  },
+                  "placeholder": "计数器",
+                  "step": 1,
+                  "step-strictly": false,
+                  "controls-position": "",
+                  "disabled": false,
+                  "id": "id_1698134935751_17",
+                  "__vModel__": "field240"
+                }
+              ],
+              "eventField": [],
+              "expand": 1
+            },
+            "type": "default",
+            "justify": "start",
+            "align": "top",
+            "style": {
+              "height": "400px",
+              "paddingLeft": "0px"
+            },
+            "id": "id_1698134935751_12"
+          }
+        ],
+        "eventField": [],
+        "status": 1
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "400px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1688644247770_18"
+    }
+  ],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 23,
+  "formBtns": false,
+  "maxFormId": 300
+}

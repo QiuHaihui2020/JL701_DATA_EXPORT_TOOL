@@ -1,0 +1,8 @@
+第三方算法
+############
+
+.. toctree::
+   :maxdepth: 1
+
+   EffectDev_manual.md
+   

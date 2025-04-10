@@ -1,0 +1,449 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "Pingpong Echo",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "template": "",
+        "span": 24,
+        "formId": 106,
+        "renderKey": "1061666764691753",
+        "children": [
+          {
+            "__config__": {
+              "label": "bypass",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 0,
+              "span": 14,
+              "showLabel": true,
+              "labelWidth": null,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "-1",
+                "32"
+              ],
+              "formId": 101,
+              "renderKey": "1011666764633591",
+              "eventField": [],
+              "saveWay": "bin",
+              "tip": "",
+              "tipAlways": true,
+              "originValue": 0
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1675825867878_0",
+            "__vModel__": "field101"
+          },
+          {
+            "__config__": {
+              "label": "Delay",
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 150,
+              "span": 24,
+              "showLabel": true,
+              "layout": "colFormItem",
+              "labelWidth": 170,
+              "required": true,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "32",
+                "1"
+              ],
+              "formId": 180,
+              "renderKey": "1801733483642482",
+              "saveWay": "bin",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：1~Max Delay,影响声音间隔,单位ms",
+              "originValue": 150
+            },
+            "placeholder": "计数器Delay",
+            "min": 1,
+            "max": 3000,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1733483642482_2",
+            "__vModel__": "field180"
+          },
+          {
+            "__config__": {
+              "label": "Decay Val",
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": -4.1,
+              "span": 24,
+              "showLabel": true,
+              "layout": "colFormItem",
+              "labelWidth": 170,
+              "required": true,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "float"
+              ],
+              "formId": 191,
+              "renderKey": "1911733715012090",
+              "saveWay": "bin",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：-60~-0.5声音衰减速度，单位dB",
+              "originValue": -4.1
+            },
+            "placeholder": "计数器Decay Val",
+            "min": -60,
+            "max": -0.5,
+            "step": 0.001,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1733715012090_0",
+            "__vModel__": "field191",
+            "precision": 3
+          },
+          {
+            "__config__": {
+              "label": "Filt Enable",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 0,
+              "span": 24,
+              "showLabel": true,
+              "labelWidth": 170,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "changeTag": true,
+              "status": 0,
+              "dataType": [
+                "32",
+                "1"
+              ],
+              "formId": 193,
+              "renderKey": "1931733715296426",
+              "tipAlways": true,
+              "tip": "低通滤波开关",
+              "saveWay": "bin"
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1733715296426_2",
+            "__vModel__": "field193"
+          },
+          {
+            "__config__": {
+              "label": "Lowpass Filter  Freq",
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 6400,
+              "span": 24,
+              "showLabel": true,
+              "layout": "colFormItem",
+              "labelWidth": 170,
+              "required": true,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "32",
+                "1"
+              ],
+              "formId": 194,
+              "renderKey": "1941733715304377",
+              "saveWay": "bin",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：10~20000,低通滤波的频率，单位Hz",
+              "originValue": 6400
+            },
+            "placeholder": "计数器Lowpass Filter  Freq",
+            "min": 10,
+            "max": 20000,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1733715304377_3",
+            "__vModel__": "field194"
+          },
+          {
+            "__config__": {
+              "label": "Wet Gain",
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 100,
+              "span": 24,
+              "showLabel": true,
+              "layout": "colFormItem",
+              "labelWidth": 170,
+              "required": true,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "32",
+                "1"
+              ],
+              "formId": 184,
+              "renderKey": "1841733484130130",
+              "saveWay": "bin",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：0~300,  湿声增益，单位Percent",
+              "originValue": 100
+            },
+            "placeholder": "计数器Wet Gain",
+            "min": 0,
+            "max": 300,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1733484130130_6",
+            "__vModel__": "field184"
+          },
+          {
+            "__config__": {
+              "label": "Dry Gain",
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 100,
+              "span": 24,
+              "showLabel": true,
+              "layout": "colFormItem",
+              "labelWidth": 170,
+              "required": true,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "32",
+                "1"
+              ],
+              "formId": 185,
+              "renderKey": "1851733484163178",
+              "saveWay": "bin",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：0~100, 干声增益，单位Percent",
+              "originValue": 100
+            },
+            "placeholder": "计数器Dry Gain",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1733484163178_7",
+            "__vModel__": "field185"
+          },
+          {
+            "__config__": {
+              "label": "Pre Delay",
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 150,
+              "span": 24,
+              "showLabel": true,
+              "layout": "colFormItem",
+              "labelWidth": 170,
+              "required": true,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "32",
+                "-1"
+              ],
+              "formId": 195,
+              "renderKey": "1951733715410682",
+              "saveWay": "bin",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围：1~Max Delay, 左耳第一湿声距离干声的延时，建议值等于Delay, 单位ms",
+              "originValue": 150
+            },
+            "placeholder": "计数器Pre Delay",
+            "min": 1,
+            "max": 3000,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1733715410682_4",
+            "__vModel__": "field195"
+          },
+          {
+            "__config__": {
+              "label": "Max Delay",
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 500,
+              "span": 24,
+              "showLabel": true,
+              "layout": "colFormItem",
+              "labelWidth": 170,
+              "required": true,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "32",
+                "-1"
+              ],
+              "formId": 196,
+              "renderKey": "1961733715411169",
+              "saveWay": "bin",
+              "eventField": [],
+              "tipAlways": true,
+              "tip": "范围:1~3000,影响申请的最大buf，单位ms",
+              "originValue": 500
+            },
+            "placeholder": "计数器Max Delay",
+            "min": 1,
+            "max": 30000,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1733715411169_5",
+            "__vModel__": "field196"
+          }
+        ],
+        "eventField": [],
+        "showResetBtn": false
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "400px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1733475867496_0"
+    },
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "高级配置",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "status": 0,
+        "template": "",
+        "hideAddTemplate": false,
+        "span": 24,
+        "formId": 197,
+        "renderKey": "1971733792546162",
+        "children": [
+          {
+            "__config__": {
+              "label": "Wet Bit Width",
+              "showLabel": true,
+              "labelWidth": 170,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 24,
+              "required": true,
+              "defaultValue": 0,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "status": 0,
+              "dataType": [
+                "32",
+                "-1"
+              ],
+              "formId": 197,
+              "renderKey": "1971733792714948",
+              "tipAlways": true,
+              "tip": "湿声精度配置，24Bit使用更多的资源",
+              "originValue": 0,
+              "saveWay": "bin",
+              "eventField": []
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "16bit",
+                  "value": 0,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "24bit",
+                  "value": 1,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "placeholder": "请选择Wet Bit Width",
+            "style": {
+              "width": "135px"
+            },
+            "clearable": false,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1733792714948_3",
+            "__vModel__": "field197"
+          }
+        ],
+        "eventField": [],
+        "expand": 1
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "400px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1733792546162_0"
+    }
+  ],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 24,
+  "formBtns": false
+}

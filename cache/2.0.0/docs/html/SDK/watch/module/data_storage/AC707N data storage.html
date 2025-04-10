@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>数据存储介绍 &mdash; JL Project Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="https://doc.zh-jieli.com/static/css/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=fa47ad08"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="https://doc.zh-jieli.com/static/js/custom.js"></script>
+        <script src="../../../../_static/js/custom.js?v=bfa33168"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">SDK入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/index.html">1. 快速入门</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">SDK Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../soundbox/index.html">1. SDK 详细介绍</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../audio/index.html">1. 音频播放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../btstack/index.html">2. 蓝牙协议栈</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../driver/index.html">3. 外设驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../driver/pmu/index.html">4. 电源管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../led_ui/index.html">5. LED状态显示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/file_system/index.html">6. 文件系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/os/index.html">7. 操作系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/timer/index.html">8. 定时器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/clock_manage/index.html">9. 时钟管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev_manager/index.html">10. 设备管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/%E9%80%9A%E7%94%A8%E7%BB%84%E4%BB%B6/index.html">11. 通用组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../audio_config/index.html">12. 音频配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../audio_flow/index.html">13. 音频流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../audio_effects/index.html">14. 音效调试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../audio_cvp/index.html">15. 通话清晰语音</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/report/index.html">16. 系统状态报告</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/ui/index.html">17. UI 框架</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">JieLi_蓝牙音频</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">数据存储介绍</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>数据存储介绍<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<section id="rcsp">
+<h2>响应RCSP命令的交互文件<a class="headerlink" href="#rcsp" title="Link to this heading"></a></h2>
+</section>
+<section id="id2">
+<h2>数据存储说明<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<section id="id3">
+<h3>说明<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<p>用户能够存储日常使用手表所需的数据。<br />
+存储管理通过FlashDB框架实现，FlashDB框架代码的路径是在apps/common/flashdb/目录下。<br />
+应用层会基于FlashDB封装一层，方便使用，代码在apps/watch/data_storage/目录下。<br />
+本章主要接受基于FlashDB封装出来的应用层接口进行介绍。</p>
+</section>
+<section id="id4">
+<h3>存储应用层目录结构<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<section id="id5">
+<h4>目录结构图<a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
+<p><img alt="data" src="../../../../_images/data.png" /></p>
+</section>
+<section id="id6">
+<h4>相关文件说明<a class="headerlink" href="#id6" title="Link to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>文件</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>watch_data_storage.c</p></td>
+<td><p>是基于FlashDB实现封装，实现数据的存储，修改，删除功能</p></td>
+</tr>
+<tr class="row-odd"><td><p>watch_data_call_log_storage.c</p></td>
+<td><p>用于通话记录功能的存储和读取</p></td>
+</tr>
+<tr class="row-even"><td><p>watch_data_message_storage.c</p></td>
+<td><p>用于消息功能的存储和读取</p></td>
+</tr>
+<tr class="row-odd"><td><p>watch_data_phonebook_storage.c</p></td>
+<td><p>用于电话本功能的读取</p></td>
+</tr>
+<tr class="row-even"><td><p>watch_data_weather_storage.c</p></td>
+<td><p>用于天气功能的读取</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id7">
+<h3>接口说明<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<section id="flashdb-watch-data-storage-h">
+<h4>基于FlashDB封装出来的接口说明 watch_data_storage.h<a class="headerlink" href="#flashdb-watch-data-storage-h" title="Link to this heading"></a></h4>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="cm">/**</span>
+<span class="cm"> * @brief 初始化小文件</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Return flase or true</span>
+<span class="cm"> */</span>
+<span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">watch_small_file_init</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="cm">/**</span>
+<span class="cm"> * @brief 通过id,读取对应小文件内容</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Params small_file_type 小文件类型</span>
+<span class="cm"> * @Params id 文件id</span>
+<span class="cm"> * @Params buf 存储要读取文件数据的buffer</span>
+<span class="cm"> * @Params len 要读取的数据长度</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Return 读取到的字节数</span>
+<span class="cm"> */</span>
+<span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">small_file_read</span><span class="p">(</span><span class="n">u8</span><span class="w"> </span><span class="n">small_file_type</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">len</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
+<span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="cm">/**</span>
+<span class="cm"> * @brief 写入小文件数据</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Params small_file_type 小文件类型</span>
+<span class="cm"> * @Params buf_offset 要写入数据的偏移</span>
+<span class="cm"> * @Params buf 存储写入文件数据的buffer</span>
+<span class="cm"> * @Params len 要写入数据的长度</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Return 写入成功 返回u16位大小的id; 写入失败 返回id为0</span>
+<span class="cm"> */</span>
+<span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="n">u32</span><span class="w">  </span><span class="nf">small_file_write</span><span class="p">(</span><span class="n">u8</span><span class="w"> </span><span class="n">small_file_type</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="o">*</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">buf_offset</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">len</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">total_len</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
+<span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="cm">/**</span>
+<span class="cm"> * @brief 通过id,更新对应小文件内容</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Params small_file_type 小文件类型</span>
+<span class="cm"> * @Params id 文件id</span>
+<span class="cm"> * @Params buf_offset 要写入数据的偏移</span>
+<span class="cm"> * @Params buf 存储写入文件数据的buffer</span>
+<span class="cm"> * @Params len 要写入数据的长度</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Return 0:false 1:true</span>
+<span class="cm"> */</span>
+<span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">small_file_update_by_id</span><span class="p">(</span><span class="n">u8</span><span class="w"> </span><span class="n">small_file_type</span><span class="p">,</span><span class="w"> </span><span class="n">u16</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">buf_offset</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">len</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">total_len</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
+<span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="cm">/**</span>
+<span class="cm"> * @brief 通过id,删除小文件</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Params file_type 小文件类型</span>
+<span class="cm"> * @Params id 文件id</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Return 0:false 1:true</span>
+<span class="cm"> */</span>
+<span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">small_file_delete_by_id</span><span class="p">(</span><span class="n">u8</span><span class="w"> </span><span class="n">small_file_type</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
+<span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="cm">/**</span>
+<span class="cm"> * @brief 获取小文件的id_table的大小</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Params small_file_type 小文件类型</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Return length of the id_table</span>
+<span class="cm"> */</span>
+<span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">small_file_get_id_table_len</span><span class="p">(</span><span class="n">u8</span><span class="w"> </span><span class="n">small_file_type</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
+<span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="cm">/**</span>
+<span class="cm"> * @brief 获取小文件的id_table</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Params small_file_type</span>
+<span class="cm"> * @Params table_data Pointer to the buffer where the id_table data will be stored.</span>
+<span class="cm"> * @Params data_len The length of the table_data buffer.</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Return 0:false 1:true</span>
+<span class="cm"> */</span>
+<span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">small_file_get_id_table</span><span class="p">(</span><span class="n">u8</span><span class="w"> </span><span class="n">small_file_type</span><span class="p">,</span><span class="w"> </span><span class="n">u8</span><span class="w"> </span><span class="o">*</span><span class="n">table_data</span><span class="p">,</span><span class="w"> </span><span class="n">u16</span><span class="w"> </span><span class="n">data_len</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h4>给功能应用使用接口说明<a class="headerlink" href="#id8" title="Link to this heading"></a></h4>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="cm">/**</span>
+<span class="cm"> * @brief 根据index获取通话记录数据</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Params call_log 指向存储通话记录数据的buf</span>
+<span class="cm"> * @Params index 存储顺序</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Return false or true</span>
+<span class="cm"> */</span>
+<span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">ui_small_file_call_log_read_by_index</span><span class="p">(</span><span class="n">small_file_call_log_t</span><span class="w"> </span><span class="o">*</span><span class="n">call_log</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="cm">/**</span>
+<span class="cm"> * @brief 获取通话记录数据数量</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Return 通话记录数据数量</span>
+<span class="cm"> */</span>
+<span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">ui_small_file_call_log_get_count</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="cm">/**</span>
+<span class="cm"> * @brief 获取消息数据数量</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Return 消息数据数量</span>
+<span class="cm"> */</span>
+<span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">ui_small_file_message_get_count</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="cm">/**</span>
+<span class="cm"> * @brief 根据index获取消息数据</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Params message 指向消息数据的buf</span>
+<span class="cm"> * @Params index 存储顺序</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Return false or true</span>
+<span class="cm"> */</span>
+<span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">small_file_message_read_by_index</span><span class="p">(</span><span class="n">small_file_message_t</span><span class="w"> </span><span class="o">*</span><span class="n">message</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="cm">/**</span>
+<span class="cm"> * @brief 获取存储的联系人数量</span>
+<span class="cm"> */</span>
+<span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">ui_small_file_phonebook_get_count</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">//* ------------------------------------------------------------------------------------*/</span>
+<span class="cm">/**</span>
+<span class="cm"> * @brief 根据index获取电话本数据</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Params message 指向电话本数据的buf</span>
+<span class="cm"> * @Params index 存储顺序</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Return false or true</span>
+<span class="cm"> */</span>
+<span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">ui_small_file_phonebook_read_by_index</span><span class="p">(</span><span class="n">small_file_phonebook_t</span><span class="w"> </span><span class="o">*</span><span class="n">phonebook</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="cm">/**</span>
+<span class="cm"> * @brief 获取天气数据数量</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Return 天气数据数量</span>
+<span class="cm"> */</span>
+<span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">ui_small_file_weather_get_count</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="cm">/**</span>
+<span class="cm"> * @brief 获取天气数据大小</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Params index 存储顺序</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Return 天气数据大小</span>
+<span class="cm"> */</span>
+<span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">ui_small_file_weather_get_size_by_index</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="cm">/**</span>
+<span class="cm"> * @brief 根据index获取天气数据</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Params buf 指向天气数据的buf</span>
+<span class="cm"> * @Params len buf的长度</span>
+<span class="cm"> * @Params index 存储顺序</span>
+<span class="cm"> *</span>
+<span class="cm"> * @Return false or true</span>
+<span class="cm"> */</span>
+<span class="cm">/* ------------------------------------------------------------------------------------*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">ui_small_file_weather_read_by_index</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">len</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="id9">
+<h2>数据存储接入rcsp流程<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<section id="id10">
+<h3>说明<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<p>手表上的应用数据与app进行交互通过rcsp协议，这里主要介绍如何接入rcsp的数据交互部分。</p>
+</section>
+<section id="id11">
+<h3>流程说明<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
+<p>watch_data_rcsp_interface.c实现数据存储接入rcsp流程。<br />
+这里注册对于rcsp的handle，来响应rcsp的处理。</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">rcsp_simple_trans_opt</span><span class="w"> </span><span class="n">g_test_trans_opt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">.</span><span class="n">get_id_table_len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simple_trans_get_id_table_len</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">get_id_table</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simple_trans_get_id_table</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">read_file_by_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simple_trans_read_file_by_id</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">insert_file_by_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simple_trans_insert_file_by_id</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">update_file_by_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simple_trans_update_file_by_id</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">delete_file_by_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simple_trans_delete_file_by_id</span><span class="p">,</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">test_simple_trans</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">rcsp_register_file_simple_transfer_interface</span><span class="p">((</span><span class="n">rcsp_simple_trans_opt</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">g_test_trans_opt</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2010-2023, 杰理科技股份有限公司.
+      <span class="lastupdated">Last updated on Oct 12, 2024.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

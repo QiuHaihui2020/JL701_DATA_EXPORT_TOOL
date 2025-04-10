@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>模块介绍 &mdash; JL Project Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="https://doc.zh-jieli.com/static/css/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=fa47ad08"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="https://doc.zh-jieli.com/static/js/custom.js"></script>
+        <script src="../../../../_static/js/custom.js?v=bfa33168"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">SDK入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/index.html">1. 快速入门</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">SDK Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../soundbox/index.html">1. SDK 详细介绍</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../audio/index.html">1. 音频播放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../btstack/index.html">2. 蓝牙协议栈</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../driver/index.html">3. 外设驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../driver/pmu/index.html">4. 电源管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../led_ui/index.html">5. LED状态显示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/file_system/index.html">6. 文件系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/os/index.html">7. 操作系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/timer/index.html">8. 定时器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/clock_manage/index.html">9. 时钟管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev_manager/index.html">10. 设备管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/%E9%80%9A%E7%94%A8%E7%BB%84%E4%BB%B6/index.html">11. 通用组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../audio_config/index.html">12. 音频配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../audio_flow/index.html">13. 音频流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../audio_effects/index.html">14. 音效调试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../audio_cvp/index.html">15. 通话清晰语音</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/report/index.html">16. 系统状态报告</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/ui/index.html">17. UI 框架</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">JieLi_蓝牙音频</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">模块介绍</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>模块介绍<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<p>GPU模块，主要用于图像处理，负责图像的变换、叠加等运算。</p>
+<ul class="simple">
+<li><p>基于指令链表，减少CPU开销，渲染性能 1pixel/cycle；</p></li>
+<li><p>高密度指令集，减少内存开销；</p></li>
+<li><p>支持仿射变换（2D）、透视变换（2.5D），采用变换矩阵进行控制；</p></li>
+<li><p>支持多种颜色格式输入（19种），输出（6种）；</p></li>
+<li><p>支持多种压缩方式，可灵活选择大小优先/性能优先；</p></li>
+<li><p>支持多种混合模式，灵活处理前景、背景透明度计算；</p></li>
+<li><p>支持颜色格式大小端（bpp&lt;8 or RGB565）或RED-BULE交换；</p></li>
+<li><p>支持纯色填充、MASK、线性渐变、纹理、纹理裁剪等功能；</p></li>
+<li><p>支持非连续数据（采用mmu tab表）输入；</p></li>
+<li><p>支持硬件从SRAM/PSRAM、NORFLASH存储介质读取数据；</p></li>
+<li><p>支持GPU断点指令功能，允许在GPU任务链允许中断、恢复，插入CPU操作；</p></li>
+<li><p>支持colorkey、dither等拓展功能。</p></li>
+</ul>
+</section>
+<section id="id2">
+<h1>模块说明<a class="headerlink" href="#id2" title="Link to this heading"></a></h1>
+<section id="id3">
+<h2>任务与任务链表<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>GPU硬件模块采用任务链表配置方式，每个任务各由一组指令参数描述，驱动中体现为一个GPU任务单元。</p></li>
+<li><p>GPU硬件模块启动后，会自动将任务链表中的所有任务绘制完毕，可无需CPU参与，便于GPU绘制和CPU配置指令并行处理。</p></li>
+<li><p>如需要在GPU绘制过程中，插入CPU操作，可采用GPU任务断点功能，中断GPU绘制，处理完CPU操作后再继续绘制。</p></li>
+<li><p>任务支持十种功能：纯色填充、纯色填充+MASK、纯色填充+仿射变换、纯色填充+透视变换、线性渐变填充、线性渐变填充+透视变换、纹理填充、纹理填充+MASK、纹理填充+仿射变换、纹理填充+透视变换。</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>功能</p></th>
+<th class="head"><p>定义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>纯色填充</p></td>
+<td><p>GPU_FILL</p></td>
+</tr>
+<tr class="row-odd"><td><p>纯色填充+MASK</p></td>
+<td><p>GPU_FILL_MASK</p></td>
+</tr>
+<tr class="row-even"><td><p>纯色填充+仿射变换</p></td>
+<td><p>GPU_FILL_AFFINE</p></td>
+</tr>
+<tr class="row-odd"><td><p>纯色填充+透视变换</p></td>
+<td><p>GPU_FILL_PERSPECTIVE</p></td>
+</tr>
+<tr class="row-even"><td><p>线性渐变填充</p></td>
+<td><p>GPU_LINEGRAD</p></td>
+</tr>
+<tr class="row-odd"><td><p>线性渐变填充+透视变换</p></td>
+<td><p>GPU_LINEGRAD_PERSPECTIVE</p></td>
+</tr>
+<tr class="row-even"><td><p>纹理填充</p></td>
+<td><p>GPU_TEXTURE</p></td>
+</tr>
+<tr class="row-odd"><td><p>纹理填充+MASK</p></td>
+<td><p>GPU_TEXTURE_MASK</p></td>
+</tr>
+<tr class="row-even"><td><p>纹理填充+仿射变换</p></td>
+<td><p>GPU_TEXTURE_AFFINE</p></td>
+</tr>
+<tr class="row-odd"><td><p>纹理填充+透视变换</p></td>
+<td><p>GPU_TEXTURE_PERSPECTIVE</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="gpu">
+<h2>GPU支持的格式<a class="headerlink" href="#gpu" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>格式</p></th>
+<th class="head"><p>描述</p></th>
+<th class="head"><p>输出</p></th>
+<th class="head"><p>索引格式</p></th>
+<th class="head"><p>颜色表格式</p></th>
+<th class="head"><p>MASK</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ARGB8888</p></td>
+<td><p>24位真彩色+8位alpha</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>是</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>ARGB8565</p></td>
+<td><p>16位真彩色+8位alpha</p></td>
+<td><p>是</p></td>
+<td><p></p></td>
+<td><p>是</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ARGB1555</p></td>
+<td><p>15位真彩色+1位alpha</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>ARGB4444</p></td>
+<td><p>12位真彩色+4位alpha</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>RGB888</p></td>
+<td><p>24位真彩色</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>是</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>RGB565</p></td>
+<td><p>16位真彩色</p></td>
+<td><p>是</p></td>
+<td><p></p></td>
+<td><p>是</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>YUV422_BT601</p></td>
+<td><p>YUV数据，BT601标准</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>YUV422_BT709</p></td>
+<td><p>YUV数据，BT709标准</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>AL88</p></td>
+<td><p>8位颜色表+8位alpha</p></td>
+<td><p></p></td>
+<td><p>是</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>AL44</p></td>
+<td><p>4位颜色表+4位alpha</p></td>
+<td><p></p></td>
+<td><p>是</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>AL22</p></td>
+<td><p>2位颜色表+2位alpha</p></td>
+<td><p></p></td>
+<td><p>是</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>L8</p></td>
+<td><p>8位颜色表</p></td>
+<td><p></p></td>
+<td><p>是</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>L4</p></td>
+<td><p>4位颜色表</p></td>
+<td><p></p></td>
+<td><p>是</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>L2</p></td>
+<td><p>2位颜色表</p></td>
+<td><p></p></td>
+<td><p>是</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>L1</p></td>
+<td><p>1位颜色表</p></td>
+<td><p></p></td>
+<td><p>是</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>A8</p></td>
+<td><p>8位alpha</p></td>
+<td><p>是</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>是</p></td>
+</tr>
+<tr class="row-even"><td><p>A4</p></td>
+<td><p>4位alpha</p></td>
+<td><p>是</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>是</p></td>
+</tr>
+<tr class="row-odd"><td><p>A2</p></td>
+<td><p>2位alpha</p></td>
+<td><p>是</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>是</p></td>
+</tr>
+<tr class="row-even"><td><p>A1</p></td>
+<td><p>1位alpha</p></td>
+<td><p>是</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>是</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id4">
+<h2>混合模式<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>混合模式</p></th>
+<th class="head"><p>公式</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GPU_BLEND_SRC</p></td>
+<td><p>a_out = a_fg<br />c_out = c_fg</p></td>
+<td><p>只显示src图像</p></td>
+</tr>
+<tr class="row-odd"><td><p>GPU_BLEND_SRC_OVER</p></td>
+<td><p>a_out = a_fg + (1 - a_fg) * a_bg<br />c_out = c_fg + (1 - a_fg) * c_bg</p></td>
+<td><p>按src的透明度将src与dst混合输出</p></td>
+</tr>
+<tr class="row-even"><td><p>GPU_BLEND_DST_OUT</p></td>
+<td><p>a_out =  (1 - a_fg) * a_bg<br />c_out =  (1 - a_fg) * c_bg</p></td>
+<td><p>显示dst图像，但只显示src和dst的不重合部分，且重合部分只有src是不透明的才算重合</p></td>
+</tr>
+<tr class="row-odd"><td><p>GPU_BLEND_DST_IN</p></td>
+<td><p>a_out = a_fg * a_bg<br />c_out = a_fg * c_bg</p></td>
+<td><p>只显示src和dst重合部分，且src的重合部分只有不透明度有用</p></td>
+</tr>
+<tr class="row-even"><td><p>GPU_BLEND_MAX</p></td>
+<td><p>a_out = MAX(a_fg, a_bg)<br />c_out = c_bg</p></td>
+<td><p>取dst与src的alpha最大值输出</p></td>
+</tr>
+<tr class="row-odd"><td><p>GPU_BLEND_DST_OVER</p></td>
+<td><p>a_out = (1 - a_bg) * a_fg + a_bg<br />c_out = (1 - a_bg) * c_fg + c_bg</p></td>
+<td><p>与src_over相反</p></td>
+</tr>
+<tr class="row-even"><td><p>GPU_BLEND_SRC_OUT</p></td>
+<td><p>a_out = (1 - a_bg) * a_fg<br />c_out = (1 - a_bg) * c_fg</p></td>
+<td><p>显示src图像，但只显示src和dst的不重合部分，且重合部分只有dst是不透明的才算重合</p></td>
+</tr>
+<tr class="row-odd"><td><p>GPU_BLEND_SRC_IN</p></td>
+<td><p>a_out = a_bg * a_fg<br />c_out = a_bg * c_fg</p></td>
+<td><p>只显示src和dst重合部分，且dst的重合部分只有不透明度有用。</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>注：fg：前景；bg：后景；out：输出；a：alpha；c：color；src 前景；dst 后景；</p></li>
+</ul>
+</section>
+</section>
+<section id="id5">
+<h1>数据结构<a class="headerlink" href="#id5" title="Link to this heading"></a></h1>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* GPU task type defined */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="n">GPU_TASK_FILL</span><span class="p">,</span><span class="w"> </span><span class="c1">// color fill task</span>
+<span class="w">	</span><span class="n">GPU_TASK_TEXT</span><span class="p">,</span><span class="w"> </span><span class="c1">// text task</span>
+<span class="w">	</span><span class="n">GPU_TASK_DRAW</span><span class="p">,</span><span class="w"> </span><span class="c1">// cunstom draw task</span>
+<span class="w">	</span><span class="n">GPU_TASK_IMAGE</span><span class="p">,</span><span class="w"> </span><span class="c1">// image task</span>
+<span class="p">}</span><span class="w"> </span><span class="n">JLGPU_TASK_TYPE</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* The source of lut tab. */</span>
+<span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">CLUT_TAB_NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">CLUT_TAB_FROM_FLASH</span><span class="p">,</span><span class="w">	</span><span class="c1">// lut tab from flash.</span>
+<span class="w">    </span><span class="n">CLUT_TAB_FROM_RAM</span><span class="p">,</span><span class="w">		</span><span class="c1">// lut tab from ram</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">GPU_SYNTHESIS_AND_DRAW</span><span class="p">,</span>
+<span class="w">    </span><span class="n">GPU_SYNTHESIS</span><span class="p">,</span>
+<span class="w">    </span><span class="n">GPU_DRAW</span><span class="p">,</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// GPU 任务参数，作为参数传递使用，</span>
+<span class="c1">// 根据任务内容添加，每个参数的功能必须添加注释</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">gpu_task_param</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">JLGPU_TASK_TYPE</span><span class="w"> </span><span class="n">task_type</span><span class="p">;</span><span class="w">		</span><span class="c1">// 任务类型</span>
+<span class="w">    </span><span class="n">u32</span><span class="w"> </span><span class="n">task_id</span><span class="p">;</span><span class="w">			</span><span class="c1">// 任务ID</span>
+<span class="w">    </span><span class="n">u32</span><span class="w"> </span><span class="n">element_id</span><span class="p">;</span><span class="w">			</span><span class="c1">// 控件ID</span>
+<span class="w">    </span><span class="n">s16</span><span class="w"> </span><span class="n">priority</span><span class="p">;</span><span class="w">			</span><span class="c1">// 优先级</span>
+<span class="w">    </span><span class="n">u16</span><span class="w"> </span><span class="n">invisible</span><span class="p">;</span><span class="w">			</span><span class="c1">// 默认隐藏，true时，会创建不使能的GPU任务</span>
+
+<span class="w">    </span><span class="n">u8</span><span class="w"> </span><span class="n">crop_en</span><span class="p">;</span><span class="w">				</span><span class="c1">// 裁剪使能，true时，会根据crop区域对原图进行裁剪</span>
+<span class="w">    </span><span class="n">u8</span><span class="w"> </span><span class="n">scale_en</span><span class="p">;</span><span class="w">			</span><span class="c1">// 缩放使能，true时，会根据缩放系数进行缩放</span>
+<span class="w">    </span><span class="n">u8</span><span class="w"> </span><span class="n">rotate_en</span><span class="p">;</span><span class="w">			</span><span class="c1">// 旋转使能，true时，会根据旋转参数进行旋转</span>
+<span class="w">    </span><span class="n">u8</span><span class="w"> </span><span class="n">draw_en</span><span class="p">;</span><span class="w">				</span><span class="c1">// 绘图使能，true时，会创建GPU自定义绘图任务</span>
+
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">ratio_w</span><span class="p">;</span><span class="w">			</span><span class="c1">// 缩放参数</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">ratio_h</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">short</span><span class="w"> </span><span class="n">rotate_cx</span><span class="p">;</span><span class="w">			</span><span class="c1">// 图片旋转中心</span>
+<span class="w">    </span><span class="kt">short</span><span class="w"> </span><span class="n">rotate_cy</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">short</span><span class="w"> </span><span class="n">rotate_dx</span><span class="p">;</span><span class="w">			</span><span class="c1">// 屏幕旋转中心</span>
+<span class="w">    </span><span class="kt">short</span><span class="w"> </span><span class="n">rotate_dy</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">rotate_angle</span><span class="p">;</span><span class="w">			</span><span class="c1">// 旋转角度</span>
+
+<span class="w">    </span><span class="c1">// 特效参数配置</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">perspective_en</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">rect</span><span class="w"> </span><span class="n">fg_win</span><span class="p">;</span>
+<span class="w">    </span><span class="n">gpu_boundbox_t</span><span class="w"> </span><span class="n">bbox</span><span class="p">;</span>
+<span class="w">    </span><span class="n">u8</span><span class="w"> </span><span class="n">global_alpha</span><span class="p">;</span>
+<span class="w">    </span><span class="n">u8</span><span class="w"> </span><span class="n">custom_color</span><span class="p">;</span><span class="w">			</span><span class="c1">// 自定义颜色使能，true时，将忽略从flash读取的颜色值，强制使用acolor</span>
+
+<span class="w">    </span><span class="n">u32</span><span class="w"> </span><span class="n">acolor</span><span class="p">;</span><span class="w">				</span><span class="c1">// 颜色、纯色填充使用</span>
+<span class="w">    </span><span class="n">s16</span><span class="w"> </span><span class="n">clut_format</span><span class="p">;</span><span class="w">			</span><span class="c1">// 颜色表格式</span>
+<span class="w">    </span><span class="n">s16</span><span class="w"> </span><span class="n">has_clut</span><span class="p">;</span><span class="w">			</span><span class="c1">// 是否有颜色表标志 //0 不带颜色表 1 从falsh取颜色表 2 直接传参</span>
+<span class="w">    </span><span class="n">u8</span><span class="w"> </span><span class="o">*</span><span class="n">clut_tab</span><span class="p">;</span><span class="w">			</span><span class="c1">// 颜色表</span>
+
+<span class="w">    </span><span class="n">u8</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">;</span><span class="w">				</span><span class="c1">// 图片数据起始地址</span>
+<span class="w">    </span><span class="n">u8</span><span class="w"> </span><span class="o">*</span><span class="n">tab</span><span class="p">;</span><span class="w">				</span><span class="c1">// 图片数据tab表起始地址</span>
+<span class="w">    </span><span class="n">GPU_format_t</span><span class="w"> </span><span class="n">format</span><span class="p">;</span><span class="w">		</span><span class="c1">// 图片像素格式，参照jlgpu_driver.h</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">cb_func</span><span class="p">);</span><span class="w">			</span><span class="c1">// 自定义绘图参数</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">cb_exit</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">priv</span><span class="p">;</span>
+<span class="w">    </span><span class="n">u32</span><span class="w"> </span><span class="n">priv_len</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">draw_id</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">gpu_matrix_t</span><span class="w"> </span><span class="o">*</span><span class="n">matrix</span><span class="p">;</span><span class="w">		</span><span class="c1">// 变换叠加矩阵，need include jlgpu_math.h</span>
+
+<span class="w">    </span><span class="c1">// draw 决定绘制区域，crop决定对原图的裁剪区域，area决定变换后被父控件裁剪的区域</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">rect</span><span class="w"> </span><span class="n">area</span><span class="p">;</span><span class="w">			</span><span class="c1">// 限制区域，相当于父控件区域，绘图最终必须落在area范围内</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">rect</span><span class="w"> </span><span class="n">draw</span><span class="p">;</span><span class="w">			</span><span class="c1">// 绘制区域，当前任务要绘制到哪个区域，相对于0坐标计算</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">rect</span><span class="w"> </span><span class="n">crop</span><span class="p">;</span><span class="w">			</span><span class="c1">// 裁剪区域，当crop_en使能时，相对于原图0坐标进行裁剪</span>
+
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">image_file</span><span class="w"> </span><span class="n">image</span><span class="p">;</span><span class="w">		</span><span class="c1">// 图片信息</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">flash_file_info</span><span class="w"> </span><span class="n">info</span><span class="p">;</span><span class="w">	</span><span class="c1">// flash 信息</span>
+<span class="p">}</span><span class="w"> </span><span class="n">JLGPUTaskParam_t</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">pJLGPUTaskParam_t</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// 自定义绘图回调</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">gpu_task_draw</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">cb_func</span><span class="p">)(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">u8</span><span class="w"> </span><span class="o">*</span><span class="n">dst_buf</span><span class="p">,</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">rect</span><span class="w"> </span><span class="o">*</span><span class="n">dst_r</span><span class="p">,</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">rect</span><span class="w"> </span><span class="o">*</span><span class="n">src_r</span><span class="p">,</span><span class="w"> </span><span class="n">u8</span><span class="w"> </span><span class="n">bytes_per_pixel</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">priv</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">matrix</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">cb_exit</span><span class="p">)(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">priv</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">priv</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">priv_len</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">draw_id</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">rect</span><span class="w"> </span><span class="n">task_r</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">JLGPUTaskDraw_t</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">pJLGPUTaskDraw_t</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* GPU task information structure defined.</span>
+<span class="cm">   Cache required, resources must be saved. */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">gpu_task_info</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">u32</span><span class="w"> </span><span class="n">task_id</span><span class="p">;</span><span class="w">		</span><span class="c1">// 任务ID，必须在开头</span>
+<span class="w">    </span><span class="n">u32</span><span class="w"> </span><span class="n">own_matrix</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">		</span><span class="c1">// 矩阵是否属于自己标志（1自己申请的矩阵，0继承的父控件矩阵）</span>
+<span class="w">    </span><span class="n">u32</span><span class="w"> </span><span class="n">priority</span><span class="o">:</span><span class="w"> </span><span class="mi">31</span><span class="p">;</span><span class="w">		</span><span class="c1">// 优先级</span>
+<span class="w">    </span><span class="n">u8</span><span class="w"> </span><span class="o">*</span><span class="n">clut_tab</span><span class="p">;</span><span class="w">  		</span><span class="c1">// 颜色表</span>
+<span class="w">    </span><span class="n">gpu_matrix_t</span><span class="w"> </span><span class="o">*</span><span class="n">matrix</span><span class="p">;</span><span class="w">	</span><span class="c1">// 当前任务的变换矩阵</span>
+<span class="w">    </span><span class="n">pJLGPUTaskDraw_t</span><span class="w"> </span><span class="n">draw_info</span><span class="p">;</span><span class="w"> </span><span class="c1">// custom draw</span>
+<span class="w">    </span><span class="n">u32</span><span class="w"> </span><span class="n">enable</span><span class="p">;</span><span class="w">			</span><span class="c1">// GPU task enable，must 32bit</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">image_width</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">image_height</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">JLGPUTaskInfo_t</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">pJLGPUTaskInfo_t</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* GPU task unit structure defined. */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">gpu_task_unit</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">JLGPUTaskInfo_t</span><span class="w"> </span><span class="n">info</span><span class="p">;</span><span class="w">	</span><span class="c1">// GPU task information structure.</span>
+<span class="w">    </span><span class="n">u32</span><span class="w"> </span><span class="n">task_addr</span><span class="p">;</span><span class="w">			</span><span class="c1">// GPU task instructions address.</span>
+<span class="p">}</span><span class="w"> </span><span class="n">JLGPUTaskUnit_t</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">pJLGPUTaskUnit_t</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* GPU task chain head structure defined. */</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">gpu_task_head</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">gpu_out_params_t</span><span class="w"> </span><span class="n">out_param</span><span class="p">;</span><span class="w">	</span><span class="c1">// GPU output instructions structure.</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">gpu_task_base_adr</span><span class="p">;</span><span class="w">	</span><span class="c1">// First GPU task instructions address.</span>
+<span class="p">}</span><span class="w"> </span><span class="n">JLGPUTaskHead_t</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">pJLGPUTaskHead_t</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">gpu_mult_list</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">list_head</span><span class="w"> </span><span class="n">list</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">head</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">rect</span><span class="w"> </span><span class="n">win_rect</span><span class="p">;</span><span class="w"> </span><span class="c1">//ui页面区域</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">rect</span><span class="w"> </span><span class="n">gpu_rect</span><span class="p">;</span><span class="w"> </span><span class="c1">//GPU window区域</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">rect</span><span class="w"> </span><span class="n">lcd_rect</span><span class="p">;</span><span class="w">  </span><span class="c1">//屏幕刷新区域</span>
+<span class="w">    </span><span class="n">u8</span><span class="w"> </span><span class="n">index</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">JLGPUMultTaskList_t</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">pJLGPUMultTaskList_t</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h1>函数接口<a class="headerlink" href="#id6" title="Link to this heading"></a></h1>
+<ul>
+<li><p>707N系列GPU驱动提供了类似701N-IMB模块的任务链管理逻辑，方便701N系列用户环境移植；</p></li>
+<li><p>707N系列推屏模块命名为DBI模块，功能与701N系列IMD模块类似，主要用于硬件推屏，但需注意DBI模块API使用与701系列存在区别（具体使用方法，参照DBI模块介绍）；</p>
+<ol class="arabic simple">
+<li><p>开始推屏时，用<strong>lcd_set_draw_area</strong>设置本次推屏的整个区域即可，无需每次推屏都设置推屏区域；</p></li>
+<li><p>第一分块推屏时，使用<strong>lcd_draw_kistart</strong>启动DBI模块推屏；</p></li>
+<li><p>其它分块推屏时，使用<strong>lcd_draw_continue</strong>接口进行续传即可；</p></li>
+<li><p>可参考SDK gpu_task.c 推屏逻辑，lcd_xxx前缀API的调用逻辑。
+==注意：DBI模块区域参数为（xstart, xend, ystart, yend）形式，非（x, y, width, height）！==</p></li>
+</ol>
+</li>
+<li><p>707N系列GPU驱动管理可分几层理解，其中”jlgpu_driver.h”为GPU硬件驱动代码，直接驱动GPU寄存器；”gpu_port.h”为GPU任务管理模块，调用GPU硬件驱动，并在其基础上增加GPU任务、GPU任务链、多任务链管理逻辑。应用层代码使用本文件API，方便后续GPU驱动修改时移植；”gpu_task.c, gpu_task.h”为GPU任务链管理模块调度逻辑，作为与UI框架的连接层，可创建GPU os_task 用于调度GPU绘制，与UI框架并行处理绘图任务。</p></li>
+<li><p>GPU 硬件相关代码文件为：</p>
+<p><img alt="1724826841832" src="../../../../_images/1724826773922.png" /></p>
+</li>
+</ul>
+<section id="gpuui">
+<h2>GPU与杰理UI工具格式转换<a class="headerlink" href="#gpuui" title="Link to this heading"></a></h2>
+<p>  考虑杰理UI资源编译打包工具的颜色格式定义与GPU存在区别，为方便UI资源编译工具与不同系列GPU连接，因此增加格式转换API，放于gpu_format.h，用于转换杰理UI资源编译工具格式与GPU定义格式。</p>
+<ul class="simple">
+<li><p><u>这里只做格式映射，并非对数据进行格式转换。</u></p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// 杰理UI工具格式转为GPU格式</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">res_format_to_gpu</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">res_format</span><span class="p">);</span>
+
+<span class="c1">// GPU格式转为杰理UI工具格式</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">gpu_format_to_res</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">gpu_format</span><span class="p">);</span>
+
+<span class="c1">// 文本格式转为GPU格式</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">text_format_to_gpu</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">res_format</span><span class="p">);</span>
+
+<span class="c1">// GPU格式转为文本格式</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">gpu_format_to_text</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">gpu_format</span><span class="p">);</span>
+
+<span class="c1">// 通过颜色表格式获取颜色表长度</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">get_clut_format_tabsize</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">res_format</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">clut_format</span><span class="p">);</span>
+
+<span class="c1">// 通过GPU格式获取颜色表长度</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">gpu_format_to_lut_size</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">gpu_format</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">clut_format</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h2>GPU变换矩阵计算模块<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p>  我们提供了GPU仿射变换矩阵计算模块，API放置于jlgpu_math.h，需注意，这里API目前只提供仿射变换的矩阵计算，暂未支持透视矩阵计算功能。
+  常用的矩阵计算API有：</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数名</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>gpu_matrix_set_identity</p></td>
+<td><p>设置矩阵为单位矩阵</p></td>
+</tr>
+<tr class="row-odd"><td><p>gpu_matrix_translate</p></td>
+<td><p>设置矩阵平移</p></td>
+</tr>
+<tr class="row-even"><td><p>gpu_matrix_scale</p></td>
+<td><p>设置矩阵缩放</p></td>
+</tr>
+<tr class="row-odd"><td><p>gpu_matrix_rotate</p></td>
+<td><p>设置矩阵旋转</p></td>
+</tr>
+<tr class="row-even"><td><p>==gpu_matrix_get_boundbox==</p></td>
+<td><p>获取方框经矩阵变换后的位置大小</p></td>
+</tr>
+</tbody>
+</table>
+<section id="id8">
+<h3>矩阵计算<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<p>  变换矩阵遵从先缩放、后旋转、再平移的计算顺序，但矩阵计算模块是通过左乘的方式实现矩阵效果叠加的，因此在调用API进行矩阵计算时，<strong>API调用顺序应为：先平移、后旋转、再缩放。</strong>
+<img alt="1724831159185" src="../../../../_images/1724831159185.png" /></p>
+<ul class="simple">
+<li><p>矩阵乘法不满足交换律，因此计算的先后顺序会影响计算结果：AB != BA</p></li>
+<li><p>矩阵乘法满足结合率，因此不同的GPU任务可以叠加同一个变换效果：(AB)C = A(BC)</p></li>
+<li><p>变换矩阵都是相对于0坐标点进行计算，可理解为需告诉GPU如何才能将元素移到坐标0点，因此计算平移、缩放、旋转时需有不同的注意点：</p>
+<ol class="arabic simple">
+<li><p>缩放时，因为元素本身是在坐标0点，因此缩放无需平移，只需配置缩放系数即可；</p></li>
+<li><p>旋转时，需先将旋转中心移到坐标0点，再进行旋转计算，旋转计算完毕后需再将元素顶点移回坐标0点；</p></li>
+<li><p>平移时，可以理解为通过矩阵告诉GPU如何将元素移动到坐标系0点，因此平移参数为负数。</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="id9">
+<h3>矩阵参数<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>鉴于矩阵参数于一般理解有些区别，可通过将矩阵作用在空间上来帮助理解矩阵计算API参数含义：</p>
+<ul>
+<li><p>平移时，平移参数与目标位置相反，将元素平移到（x, y）坐标位置，则需将背景空间往反方向移动（-x, -y），因此平移计算为：
+  gpu_matrix_translate(matrix, -x, -y);</p></li>
+<li><p>旋转时，旋转中心为（cx, cy），旋转角度为angle，需将角度转为弧度，将旋转中心移到世界坐标0点时，移动逻辑与矩阵平移一致，旋转后需将矩阵平移回世界坐标0点位置：
+  {
+  gpu_matrix_translate(matrix, -cx, -cy);
+  gpu_matrix_rotate(matrix, RADIAN(angle));
+  gpu_matrix_translate(matrix, cx, xy);
+  }</p></li>
+<li><p>缩放时，将元素宽、高都缩小到0.5倍，在空间角度看，是将空间放大2倍：
+  gpu_matrix_scale(matrix, 1/0.5, 1/0.5);</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="id10">
+<h2>GPU模块控制接口<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    GPU 模块初始化</span>
+<span class="cm">   @param    malloc:内存申请回调</span>
+<span class="cm">   @param    free:内存释放回调</span>
+<span class="cm">   @param    screen_width:屏幕宽度</span>
+<span class="cm">   @param    screen_height:屏幕高度</span>
+<span class="cm">   @return   void</span>
+<span class="cm">   @note   初始化时，需将屏幕宽高作为参数传入，用于GPU坐标映射</span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">jlgpu_module_init</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n">malloc</span><span class="p">)(</span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">ram_type</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">module_type</span><span class="p">),</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">free</span><span class="p">)(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">ram_type</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">module_type</span><span class="p">),</span>
+<span class="w">	</span><span class="n">u16</span><span class="w"> </span><span class="n">screen_width</span><span class="p">,</span><span class="w"> </span><span class="n">u16</span><span class="w"> </span><span class="n">screen_height</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief      GPU 模块释放</span>
+<span class="cm">   @param      void</span>
+<span class="cm">   @return     void</span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">jlgpu_module_free</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="id11">
+<h2>GPU任务链接口<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    创建GPU任务链</span>
+<span class="cm">   @param    void</span>
+<span class="cm">   @return   新创建的任务链头</span>
+<span class="cm">   @note     GPU指令以链表形式组织，一条GPU任务链可以共用一个输出配置，输出配置存放在链表头中</span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">jlgpu_create_task_list_head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    删除GPU任务链</span>
+<span class="cm">   @param    head:任务链头指针</span>
+<span class="cm">   @return   void</span>
+<span class="cm">   @note     注意：本API会释放任务链中所有GPU任务单元，并释放任务链头</span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">jlgpu_delete_task_list_head</span><span class="p">(</span><span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">head</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    设置GPU任务链输出格式</span>
+<span class="cm">   @param    head:任务链头部</span>
+<span class="cm">   @param    out_format:输出格式</span>
+<span class="cm">   @return   void</span>
+<span class="cm">   @note     仅设置本条任务链的输出格式，不同任务链可以输出不同格式</span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">jlgpu_set_task_list_out_format</span><span class="p">(</span><span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">out_format</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    设置GPU任务链输出区域和buf</span>
+<span class="cm">   @param    head:任务链头部</span>
+<span class="cm">   @param    out_buf:输出数据存放的buf</span>
+<span class="cm">   @param    rect:输出区域</span>
+<span class="cm">   @param    left:左右划屏时，向左偏移坐标</span>
+<span class="cm">   @param    stride:主动向左偏移时的stride</span>
+<span class="cm">   @return   void</span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">jlgpu_set_task_list_out_buf</span><span class="p">(</span><span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="n">u8</span><span class="w"> </span><span class="o">*</span><span class="n">out_buf</span><span class="p">,</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">rect</span><span class="w"> </span><span class="o">*</span><span class="n">rect</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">stride</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    启动GPU任务链运行</span>
+<span class="cm">   @param    head:任务链表头</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">jlgpu_task_list_run</span><span class="p">(</span><span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">head</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    GPU任务链根据优先级重新排序</span>
+<span class="cm">   @param    head:任务链表头</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note    排序时间可能比较久，切勿随意调用 </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">jlgpu_task_list_reorder</span><span class="p">(</span><span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">head</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    拷贝任务链</span>
+<span class="cm">   @param    head:任务链表头</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">jlgpu_task_list_copy</span><span class="p">(</span><span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">head</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    释放拷贝任务链</span>
+<span class="cm">   @param    head:任务链表头</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">jlgpu_task_copy_list_destroy</span><span class="p">(</span><span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">head</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    所有任务乘以矩阵（不记录）</span>
+<span class="cm">   @param    head:任务链表头</span>
+<span class="cm">   @param    matrix:矩阵（该数据类型可查看jlgpu_math.h）</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note   需先将任务链使用jlgpu_task_list_copy进行拷贝，该函数会将不带变换的GPU任务指令转为带变换的GPU任务指令，整条任务链所有任务都转为为带变换后才能乘以矩阵。</span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">jlgpu_task_list_mul_matrix</span><span class="p">(</span><span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="n">gpu_matrix_t</span><span class="w"> </span><span class="o">*</span><span class="n">matrix</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id12">
+<h2>GPU任务接口<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    更新GPU任务配置，用于GPU任务已经存在时更新配置</span>
+<span class="cm">   @param    taskp:任务单元指针</span>
+<span class="cm">   @param    param:任务参数指针</span>
+<span class="cm">   @return   被update的任务指针</span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="n">pJLGPUTaskUnit_t</span><span class="w"> </span><span class="n">jlgpu_update_task</span><span class="p">(</span><span class="n">pJLGPUTaskUnit_t</span><span class="w"> </span><span class="n">taskp</span><span class="p">,</span><span class="w"> </span><span class="n">pJLGPUTaskParam_t</span><span class="w"> </span><span class="n">param</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    GPU任务创建，用于创建新的GPU任务，并添加到head链表中</span>
+<span class="cm">   @param    head:GPU任务链头</span>
+<span class="cm">   @psram    param:GPU任务配置</span>
+<span class="cm">   @return   新创建的GPU任务</span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="n">pJLGPUTaskUnit_t</span><span class="w"> </span><span class="n">jlgpu_create_task</span><span class="p">(</span><span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="n">pJLGPUTaskParam_t</span><span class="w"> </span><span class="n">param</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    从GPU任务链中删除指定任务</span>
+<span class="cm">   @param    head:GPU任务链头</span>
+<span class="cm">   @param    taskp:GPU任务指针</span>
+<span class="cm">   @return   0 删除成功，-1 链表中没找到指定任务</span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">jlgpu_delete_task</span><span class="p">(</span><span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="n">pJLGPUTaskUnit_t</span><span class="w"> </span><span class="n">taskp</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    获取GPU任务的绘图区域</span>
+<span class="cm">   @param    taskp:GPU任务单元</span>
+<span class="cm">   @param    rect:GPU任务绘图区域(输出)</span>
+<span class="cm">   @return</span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">jlgpu_get_task_rect</span><span class="p">(</span><span class="n">pJLGPUTaskUnit_t</span><span class="w"> </span><span class="n">taskp</span><span class="p">,</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">rect</span><span class="w"> </span><span class="o">*</span><span class="n">rect</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    获取整个GPU任务链的窗口区域</span>
+<span class="cm">   @param    rect GPU 开窗区域，输出</span>
+<span class="cm">   @return</span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">jlgpu_get_win_rect</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">rect</span><span class="w"> </span><span class="o">*</span><span class="n">rect</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    将基于0坐标计算的方框偏移到GPU开窗区域</span>
+<span class="cm">   @param    rect 待偏移的方框区域</span>
+<span class="cm">   @return</span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">jlgpu_shift_rect</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">rect</span><span class="w"> </span><span class="o">*</span><span class="n">rect</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="idgpu">
+<h2>通过ID操作GPU任务接口<a class="headerlink" href="#idgpu" title="Link to this heading"></a></h2>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    通过ID查找任务</span>
+<span class="cm">   @param    head	:GPU任务链头</span>
+<span class="cm">   @param    task_id:任务ID</span>
+<span class="cm">   @param    element_id:控件ID</span>
+<span class="cm">   @return   NULL:没找到任务，其他:任务地址</span>
+<span class="cm">   @note     这里提供三种匹配方式：1. 只匹配一个ID时，另一个ID配置为NONE。2. 两个ID都不为NONE时，必须同时匹配两个ID才能查找成功。</span>
+<span class="cm">**/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="n">pJLGPUTaskUnit_t</span><span class="w"> </span><span class="n">jlgpu_get_task_by_id</span><span class="p">(</span><span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">task_id</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">element_id</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    设置GPU任务使能</span>
+<span class="cm">   @param     head 任务链表头</span>
+<span class="cm">   @param    task_id:任务ID</span>
+<span class="cm">   @param    element_id:控件ID</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">jlgpu_task_enable_by_id</span><span class="p">(</span><span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">task_id</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">element_id</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">enable</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    通过ID删除指定任务</span>
+<span class="cm">   @param    head 任务链表头</span>
+<span class="cm">   @param    task_id 任务ID</span>
+<span class="cm">   @param    element_id 控件ID</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">jlgpu_task_delete_by_id</span><span class="p">(</span><span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">task_id</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">element_id</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    设置指定任务优先级</span>
+<span class="cm">   @param    head:任务链表头</span>
+<span class="cm">   @param    task_id:任务ID</span>
+<span class="cm">   @param    element_id:控件ID</span>
+<span class="cm">   @param    priority:优先级</span>
+<span class="cm">   @param    reorder 是否重新排序，1 是，0 否</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">jlgpu_task_set_prior_by_id</span><span class="p">(</span><span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">task_id</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">element_id</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">priority</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">reorder</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    清空指定控件下的部分任务ID</span>
+<span class="cm">   @param    head:任务链表头</span>
+<span class="cm">   @param    element_id:控件ID</span>
+<span class="cm">   @param    task_index:任务ID索引</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note     清空规则：清空指定控件ID下，所有任务ID索引不小于指定索引的任务</span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">jlgpu_task_clean_up_by_id</span><span class="p">(</span><span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">element_id</span><span class="p">,</span><span class="w"> </span><span class="n">u8</span><span class="w"> </span><span class="n">task_index</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    根据ID更新GPU任务</span>
+<span class="cm">   @param    head 任务链表头</span>
+<span class="cm">   @param    task_id 任务ID</span>
+<span class="cm">   @param    elm_id 控件ID</span>
+<span class="cm">   @param    param 任务参数</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note     1. 如果任务存在，且任务不用更换，更新任务配置参数</span>
+<span class="cm">2.如果任务存在，且任务需要更换，更换任务且更新配置参数</span>
+<span class="cm">3.如果任务不存在，新建任务并配置参数</span>
+<span class="cm">**/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">jlgpu_update_task_by_id</span><span class="p">(</span><span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">task_id</span><span class="p">,</span><span class="w"> </span><span class="n">u32</span><span class="w"> </span><span class="n">element_id</span><span class="p">,</span><span class="w"> </span><span class="n">pJLGPUTaskParam_t</span><span class="w"> </span><span class="n">param</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id13">
+<h2>多任务链管理接口<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    获取多任务链管理普通组句柄</span>
+<span class="cm">   @param  </span>
+<span class="cm">   @return   多任务链头</span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="n">pJLGPUMultTaskList_t</span><span class="w"> </span><span class="n">jlgpu_mult_task_list_get_common_root</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    获取多任务链管理影子组句柄</span>
+<span class="cm">   @param  </span>
+<span class="cm">   @return   多任务链头</span>
+<span class="cm">   @note   一般情况下不需要主动获取影子组句柄，切换时通过 jlgpu_mult_task_list_switch_root 进行切换即可。如果直接获取普通组/影子组句柄，需注意使用逻辑不可混乱。</span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="n">pJLGPUMultTaskList_t</span><span class="w"> </span><span class="n">jlgpu_mult_task_list_get_shadow_root</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief  切换多任务链管理句柄</span>
+<span class="cm">   @param   mult_list 当前使用的多任务链管理句柄</span>
+<span class="cm">   @return   空闲的多任务管理句柄</span>
+<span class="cm">   @note   库里默认管理两组多任务链管理句柄，通过本API可进行切换（普通组-&gt;影子组，影子组-&gt;普通组）</span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="n">pJLGPUMultTaskList_t</span><span class="w"> </span><span class="n">jlgpu_mult_task_list_switch_root</span><span class="p">(</span><span class="n">pJLGPUMultTaskList_t</span><span class="w"> </span><span class="n">mult_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    获取锁定的多任务链，GPU合成时正在使用该任务</span>
+<span class="cm">   @param  </span>
+<span class="cm">   @return   锁定的多任务链</span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="n">pJLGPUMultTaskList_t</span><span class="w"> </span><span class="n">jlgpu_mult_task_list_get_lock</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    设置锁定多任务链，给GPU合成使用，合成期间该任务链不能被改写</span>
+<span class="cm">   @param    mult_list 要锁定的多任务链</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">jlgpu_mult_task_list_set_lock</span><span class="p">(</span><span class="n">pJLGPUMultTaskList_t</span><span class="w"> </span><span class="n">mult_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    获取任务链数目</span>
+<span class="cm">   @param    mult_list 多任务链</span>
+<span class="cm">   @return   任务链数</span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">jlgpu_mult_task_list_get_head_num</span><span class="p">(</span><span class="n">pJLGPUMultTaskList_t</span><span class="w"> </span><span class="n">mult_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    添加任务链到多任务链管理</span>
+<span class="cm">   @param    mult_list 多任务链</span>
+<span class="cm">   @param    task_head：需增加到任务链管理的任务链头</span>
+<span class="cm">   @param    index:任务链索引</span>
+<span class="cm">   @return    0:正常，-1:申请内存失败</span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">jlgpu_mult_task_list_add</span><span class="p">(</span><span class="n">pJLGPUMultTaskList_t</span><span class="w"> </span><span class="n">mult_list</span><span class="p">,</span><span class="w"> </span><span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">task_head</span><span class="p">,</span><span class="w"> </span><span class="n">u8</span><span class="w"> </span><span class="n">index</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    从多任务链管理中删除任务链</span>
+<span class="cm">   @param    mult_list 多任务链</span>
+<span class="cm">   @param    task_head:待删除的任务链</span>
+<span class="cm">   @return   true：正常, false：未找到指定任务</span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">jlgpu_mult_task_list_del</span><span class="p">(</span><span class="n">pJLGPUMultTaskList_t</span><span class="w"> </span><span class="n">mult_list</span><span class="p">,</span><span class="w"> </span><span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">task_head</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    根据索引获取指定任务链</span>
+<span class="cm">   @param    mult_list 多任务链</span>
+<span class="cm">   @param    index：任务链索引</span>
+<span class="cm">   @return   NULL 未找到指定任务链，其它 获取到的任务链头</span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">jlgpu_mult_task_head_by_index</span><span class="p">(</span><span class="n">pJLGPUMultTaskList_t</span><span class="w"> </span><span class="n">mult_list</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    多任务链表设置显示区域</span>
+<span class="cm">   @param    mult_list 多任务链</span>
+<span class="cm">   @param    index:第几个任务</span>
+<span class="cm">   @param    page_r:ui页面区域</span>
+<span class="cm">   @param    gpu_r:GPU window区域</span>
+<span class="cm">   @param    lcd_r:屏幕刷新区域</span>
+<span class="cm">   @return   true 设置成功，false 设置失败</span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">jlgpu_mult_task_head_set_rect_by_index</span><span class="p">(</span><span class="n">pJLGPUMultTaskList_t</span><span class="w"> </span><span class="n">mult_list</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">rect</span><span class="w"> </span><span class="o">*</span><span class="n">page_r</span><span class="p">,</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">rect</span><span class="w"> </span><span class="o">*</span><span class="n">gpu_r</span><span class="p">,</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">rect</span><span class="w"> </span><span class="o">*</span><span class="n">lcd_r</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    多任务链表获取显示区域</span>
+<span class="cm">   @param    mult_list 多任务链</span>
+<span class="cm">   @param    index:获取第几个任务的显示区域</span>
+<span class="cm">   @param    page_r:ui页面区域</span>
+<span class="cm">   @param    gpu_r:GPU window区域</span>
+<span class="cm">   @param    lcd_r:屏幕刷新区域</span>
+<span class="cm">   @return   true 设置成功，false 设置失败</span>
+<span class="cm">   @note   </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">jlgpu_mult_task_head_get_rect_by_index</span><span class="p">(</span><span class="n">pJLGPUMultTaskList_t</span><span class="w"> </span><span class="n">mult_list</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">rect</span><span class="w"> </span><span class="o">*</span><span class="n">page_r</span><span class="p">,</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">rect</span><span class="w"> </span><span class="o">*</span><span class="n">gpu_r</span><span class="p">,</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">rect</span><span class="w"> </span><span class="o">*</span><span class="n">lcd_r</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id14">
+<h2>GPU驱动移植<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<p>  移植GPU驱动几个基本步骤，以下流程运行如果正常，则GPU驱动已能正常运行，之后再调整其它逻辑完善 UI 框架与 GPU 之间的调度逻辑。</p>
+<ol class="arabic simple">
+<li><p>启动GPU模块：jlgpu_module_init</p></li>
+<li><p>创建GPU任务链：jlgpu_create_task_list_head</p></li>
+<li><p>设置GPU任务链输出格式：jlgpu_set_task_list_out_format</p></li>
+<li><p>添加GPU任务（先用GPU_FILL测试）：jlgpu_update_task_by_id</p></li>
+<li><p>设置GPU任务链输出buf和输出区域：jlgpu_set_task_list_out_buf</p></li>
+<li><p>执行GPU任务链：jlgpu_task_list_run</p></li>
+<li><p>确认步骤5设置的buf中得到希望输出的结果，至此GPU模块已运行起来。</p></li>
+<li><p>将输出buf推送到LCD屏幕显示。</p></li>
+</ol>
+<p> 若GPU运行正常，则只需完善步骤4，通过UI框架在GPU任务链中创建各功能的GPU任务，待所有任务创建完毕后启动GPU绘制并推屏即可。</p>
+<p><img alt="1724833385994" src="../../../../_images/1724833385994.png" /></p>
+</section>
+<section id="id15">
+<h2>调试打印接口<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    打印任务链头信息，用于 debug</span>
+<span class="cm">   @param    head:任务链头</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note   本API只打印任务链头信息，不打印任务链内的GPU任务信息</span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span><span class="w">  </span>
+<span class="kt">void</span><span class="w"> </span><span class="n">jlgpu_dump_task_head</span><span class="p">(</span><span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">head</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    打印单个任务的 info 信息，用于debug</span>
+<span class="cm">   @param    task:任务指针</span>
+<span class="cm">   @param    count:用来计数GPU任务数量</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note   本API只打印指定GPU任务信息，只打印一个GPU任务时，count参数可随意传入整数</span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span><span class="w">  </span>
+<span class="kt">void</span><span class="w"> </span><span class="n">jlgpu_dump_task_info</span><span class="p">(</span><span class="n">pJLGPUTaskUnit_t</span><span class="w"> </span><span class="n">task</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    打印指定任务链的所有任务信息，用于 debug</span>
+<span class="cm">   @param    head 任务链头</span>
+<span class="cm">   @param    func 调用本函数的函数名，一般用 __func__</span>
+<span class="cm">   @param    line 调用本函数的代码行，一般用 __LINE__</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note   本API会将任务链中所有的GPU任务都打印出来</span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span><span class="w">  </span>
+<span class="kt">void</span><span class="w"> </span><span class="n">jlgpu_dump_all_task</span><span class="p">(</span><span class="n">pJLGPUTaskHead_t</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">func</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2010-2023, 杰理科技股份有限公司.
+      <span class="lastupdated">Last updated on Oct 12, 2024.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

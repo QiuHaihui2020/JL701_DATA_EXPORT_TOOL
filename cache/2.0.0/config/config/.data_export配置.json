@@ -1,0 +1,82 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "DATA EXPORT配置",
+        "showComponentName": true,
+        "dataType": [],
+        "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+        "template": "",
+        "span": 24,
+        "formId": 101,
+        "renderKey": "1011648192624776",
+        "children": [
+          {
+            "__config__": {
+              "label": "通道数据大小",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": "",
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 1024,
+              "span": 16,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "dataType": [
+                "1",
+                "16"
+              ],
+              "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+              "formId": 115,
+              "renderKey": "1151696816199138",
+              "tip": "该通道允许发送的数据大小，单位：byte",
+              "saveWay": "bin",
+              "tipAlways": true,
+              "originValue": 1024,
+              "emptyValue": "102"
+            },
+            "placeholder": "通道数据大小",
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1710829477195_0",
+            "__vModel__": "field115",
+            "min": 1,
+            "max": 10240,
+            "precision": 0
+          }
+        ],
+        "saveWay": "bin",
+        "uuid": "114",
+        "eventField": []
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "80px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1710829679673_1",
+      "show-text": false
+    }
+  ],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 16,
+  "formBtns": false
+}

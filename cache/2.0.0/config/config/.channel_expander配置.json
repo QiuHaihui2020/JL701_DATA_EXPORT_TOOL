@@ -1,0 +1,85 @@
+﻿{
+  "fields": [{
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "Channel Expander",
+      "enableUuid": "",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "template": "",
+      "span": 24,
+      "formId": 101,
+      "renderKey": "1011666765139448",
+      "children": [{
+        "__config__": {
+          "label": "扩展声道配置",
+          "showLabel": true,
+          "labelWidth": null,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 11,
+          "required": true,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": ["8", "1"],
+          "formId": 106,
+          "renderKey": "1061675923289365",
+          "eventField": [],
+          "saveWay": "bin",
+          "defaultValue": 0,
+          "originValue": 0,
+          "tipAlways": true,
+          "paddingLeft": "",
+          "tip": "立体声时，R是否静音；四声道时，RL/RR是否静音"
+        },
+        "__slot__": {
+          "options": [{
+            "label": "copy",
+            "value": 0
+          }, {
+            "label": "slience",
+            "value": 1
+          }]
+        },
+        "placeholder": "请选择扩展声道配置",
+        "style": {
+          "width": "30%"
+        },
+        "clearable": false,
+        "disabled": false,
+        "filterable": false,
+        "multiple": false,
+        "id": "id_1675923289365_0",
+        "__vModel__": "field106"
+      }],
+      "eventField": [],
+      "showResetBtn": false,
+      "saveWay": "bin",
+      "tipAlways": false
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "400px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1666765139448_1"
+  }],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "medium",
+  "labelPosition": "right",
+  "labelWidth": 108,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 11,
+  "formBtns": false
+}

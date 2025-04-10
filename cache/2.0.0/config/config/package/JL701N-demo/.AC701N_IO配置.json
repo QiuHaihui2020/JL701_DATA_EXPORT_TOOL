@@ -1,0 +1,2909 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "GPIO",
+        "showComponentName": true,
+        "dataType": [],
+        "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+        "template": "",
+        "span": 24,
+        "formId": 101,
+        "renderKey": "1011646033666159",
+        "children": [
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTA_00",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 102,
+              "renderKey": "1021646033671605",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio",
+                "adio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本单行文本单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field102",
+            "id": "id_1647485267192_66"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTA_01",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 103,
+              "renderKey": "1031646033717286",
+              "saveWay": "bin",
+              "uuid": "1",
+              "eventField": [
+                "gpio",
+                "device"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field103",
+            "id": "id_1647485267192_67"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTA_02",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 104,
+              "renderKey": "1041646033728917",
+              "saveWay": "bin",
+              "uuid": "2",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field104",
+            "id": "id_1647485267192_68"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTA_03",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 105,
+              "renderKey": "1051646033738449",
+              "saveWay": "bin",
+              "uuid": "3",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field105",
+            "id": "id_1647485267192_69"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTA_04",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 126,
+              "renderKey": "1261646206189443",
+              "saveWay": "bin",
+              "uuid": "3",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field126",
+            "id": "id_1647485267192_70"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTA_05",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 127,
+              "renderKey": "1271646206196287",
+              "saveWay": "bin",
+              "uuid": "3",
+              "eventField": [
+                "device",
+                "gpio",
+                "adio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field127",
+            "id": "id_1647485267192_71"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTA_06",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 128,
+              "renderKey": "1281646206199971",
+              "saveWay": "bin",
+              "uuid": "3",
+              "eventField": [
+                "device",
+                "gpio",
+                "adio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field128",
+            "id": "id_1647485267192_72"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTA_07",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 129,
+              "renderKey": "1291646206203179",
+              "saveWay": "bin",
+              "uuid": "3",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field129",
+            "id": "id_1647485267192_73"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTA_08",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 130,
+              "renderKey": "1301653449701350",
+              "saveWay": "bin",
+              "uuid": "3",
+              "eventField": [
+                "device",
+                "gpio",
+                "adio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field130",
+            "id": "id_1653449701350_0"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTA_09",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 105,
+              "renderKey": "1051659942254420",
+              "saveWay": "bin",
+              "uuid": "3",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field105",
+            "id": "id_1659942254419_11"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTA_10",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 106,
+              "renderKey": "1061659942300489",
+              "saveWay": "bin",
+              "uuid": "3",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field106",
+            "id": "id_1659942300489_12"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTA_11",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 107,
+              "renderKey": "1071659942301465",
+              "saveWay": "bin",
+              "uuid": "3",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field107",
+            "id": "id_1659942301465_13"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTA_12",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 109,
+              "renderKey": "1091659942302985",
+              "saveWay": "bin",
+              "uuid": "3",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field109",
+            "id": "id_1659942302985_15"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTA_13",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 110,
+              "renderKey": "1101659942303977",
+              "saveWay": "bin",
+              "uuid": "3",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field110",
+            "id": "id_1659942303977_16"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTA_14",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 111,
+              "renderKey": "1111659942305385",
+              "saveWay": "bin",
+              "uuid": "3",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field111",
+            "id": "id_1659942305385_17"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTA_15",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 108,
+              "renderKey": "1081659942302234",
+              "saveWay": "bin",
+              "uuid": "3",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field108",
+            "id": "id_1659942302234_14"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTB_00",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 131,
+              "renderKey": "1311646206211607",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field131",
+            "id": "id_1647485267192_74"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTB_01",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 132,
+              "renderKey": "1321646206219865",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio",
+                "adio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field132",
+            "id": "id_1647485267192_75"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTB_02",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 133,
+              "renderKey": "1331646206224811",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio",
+                "adio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field133",
+            "id": "id_1647485267192_76"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTB_03",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 134,
+              "renderKey": "1341646206228587",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field134",
+            "id": "id_1647485267192_77"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTB_04",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 135,
+              "renderKey": "1351646206239105",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field135",
+            "id": "id_1647485267192_78"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTB_05",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 136,
+              "renderKey": "1361646206242647",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio",
+                "adio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field136",
+            "id": "id_1647485267192_79"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTB_06",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 137,
+              "renderKey": "1371646206246295",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field137",
+            "id": "id_1647485267192_80"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTB_07",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 138,
+              "renderKey": "1381646206249771",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field138",
+            "id": "id_1647485267192_81"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTB_08",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 119,
+              "renderKey": "1191659942520267",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field119",
+            "id": "id_1659942520267_25"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTB_09",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 112,
+              "renderKey": "1121659942416666",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio",
+                "adio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field112",
+            "id": "id_1659942416666_18"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTB_10",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 113,
+              "renderKey": "1131659942417369",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field113",
+            "id": "id_1659942417369_19"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTB_11",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 114,
+              "renderKey": "1141659942418129",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field114",
+            "id": "id_1659942418129_20"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTB_12",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 115,
+              "renderKey": "1151659942418537",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field115",
+            "id": "id_1659942418537_21"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTB_13",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 116,
+              "renderKey": "1161659942418961",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field116",
+            "id": "id_1659942418961_22"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTB_14",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 117,
+              "renderKey": "1171659942419409",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field117",
+            "id": "id_1659942419409_23"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTB_15",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 118,
+              "renderKey": "1181659942420017",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field118",
+            "id": "id_1659942420017_24"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTC_00",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 139,
+              "renderKey": "1391646206256785",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field139",
+            "id": "id_1647485267192_82"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTC_01",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 140,
+              "renderKey": "1401646206262407",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field140",
+            "id": "id_1647485267192_83"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTC_02",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 141,
+              "renderKey": "1411646206267239",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field141",
+            "id": "id_1647485267192_84"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTC_03",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 142,
+              "renderKey": "1421646206272349",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field142",
+            "id": "id_1647485267192_85"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTC_04",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 143,
+              "renderKey": "1431646206276745",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio",
+                "adio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field143",
+            "id": "id_1647485267192_86"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTC_05",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 144,
+              "renderKey": "1441646206286916",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio",
+                "adio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field144",
+            "id": "id_1647485267192_87"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTC_06",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 145,
+              "renderKey": "1451646206291322",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field145",
+            "id": "id_1647485267192_88"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTC_07",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 146,
+              "renderKey": "1461646206294928",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field146",
+            "id": "id_1647485267192_89"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTC_08",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 128,
+              "renderKey": "1281659942689298",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field128",
+            "id": "id_1659942689298_34"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTC_09",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 121,
+              "renderKey": "1211659942548530",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field121",
+            "id": "id_1659942548530_27"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTC_10",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 126,
+              "renderKey": "1261659942549845",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field126",
+            "id": "id_1659942549845_32"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTC_11",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 123,
+              "renderKey": "1231659942548938",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field123",
+            "id": "id_1659942548938_29"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTC_12",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 124,
+              "renderKey": "1241659942549182",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field124",
+            "id": "id_1659942549182_30"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTG_00",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 117,
+              "renderKey": "1171651200719084",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio",
+                "adio"
+              ],
+              "originValue": "IO_PORTG_00"
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field117",
+            "id": "id_1651200719084_10"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTG_01",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 118,
+              "renderKey": "1181651200755336",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio",
+                "adio"
+              ],
+              "originValue": "IO_PORTG_01"
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field118",
+            "id": "id_1651200755336_11"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTG_02",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 119,
+              "renderKey": "1191651200759199",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ],
+              "originValue": "IO_PORTG_02"
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field119",
+            "id": "id_1651200759198_12"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTG_03",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 120,
+              "renderKey": "1201651200760502",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ],
+              "originValue": "IO_PORTG_03"
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field120",
+            "id": "id_1651200760502_13"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTG_04",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 121,
+              "renderKey": "1211651200761897",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ],
+              "originValue": "IO_PORTG_04"
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field121",
+            "id": "id_1651200761897_14"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTG_05",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 122,
+              "renderKey": "1221651200763262",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio",
+                "adio"
+              ],
+              "originValue": "IO_PORTG_05"
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field122",
+            "id": "id_1651200763262_15"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTG_06",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 123,
+              "renderKey": "1231651200764534",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ],
+              "originValue": "IO_PORTG_06"
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field123",
+            "id": "id_1651200764534_16"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTG_07",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 124,
+              "renderKey": "1241651200765594",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio",
+                "adio"
+              ],
+              "originValue": "IO_PORTG_07"
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field124",
+            "id": "id_1651200765594_17"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTG_08",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 614,
+              "renderKey": "6141676343428226",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ],
+              "originValue": "IO_PORTG_08"
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field614",
+            "id": "id_1676343428226_0"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORT_DM",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 127,
+              "renderKey": "1271651200854573",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio",
+                "adio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field127",
+            "id": "id_1651200854573_20"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORT_DP",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 126,
+              "renderKey": "1261651200840445",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "gpio",
+                "device",
+                "adio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field126",
+            "id": "id_1651200840445_19"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORT_LDOIN",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 185,
+              "renderKey": "1851654138247476",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "device",
+                "gpio"
+              ]
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field185",
+            "id": "id_1654138247476_3"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTE_01",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 140,
+              "renderKey": "1401708670490604",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "gpio",
+                "device"
+              ],
+              "originValue": "IO_PORTE_01"
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field140",
+            "id": "id_1708670490604_0"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTE_02",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 141,
+              "renderKey": "1411708670648187",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "gpio",
+                "device"
+              ],
+              "originValue": "IO_PORTE_02"
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field141",
+            "id": "id_1708670648187_1"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTE_03",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 142,
+              "renderKey": "1421708670652673",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "gpio",
+                "device"
+              ],
+              "originValue": "IO_PORTE_03"
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field142",
+            "id": "id_1708670652673_2"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTE_04",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 143,
+              "renderKey": "1431708670655579",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "gpio",
+                "device"
+              ],
+              "originValue": "IO_PORTE_04"
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field143",
+            "id": "id_1708670655579_3"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTE_05",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 144,
+              "renderKey": "1441708670659570",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "gpio",
+                "device"
+              ],
+              "originValue": "IO_PORTE_05"
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field144",
+            "id": "id_1708670659570_4"
+          },
+          {
+            "__config__": {
+              "label": "单行文本",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "defaultValue": "IO_PORTE_06",
+              "required": false,
+              "layout": "colFormItem",
+              "span": 6,
+              "document": "https://element.eleme.cn/#/zh-CN/component/input",
+              "regList": [],
+              "dataType": [
+                "16",
+                "string"
+              ],
+              "formId": 145,
+              "renderKey": "1451708670662890",
+              "saveWay": "bin",
+              "uuid": "0",
+              "eventField": [
+                "gpio",
+                "device"
+              ],
+              "originValue": "IO_PORTE_06"
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "placeholder": "请输入单行文本",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "prefix-icon": "",
+            "suffix-icon": "",
+            "maxlength": null,
+            "show-word-limit": false,
+            "readonly": false,
+            "disabled": false,
+            "__vModel__": "field145",
+            "id": "id_1708670662890_5"
+          }
+        ],
+        "eventField": [],
+        "hideEnable": false
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "800px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1647485267192_90"
+    }
+  ],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 6,
+  "formBtns": false
+}

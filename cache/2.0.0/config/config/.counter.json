@@ -1,0 +1,76 @@
+﻿{
+  "fields": [{
+    "__config__": {
+      "label": "名字",
+      "labelWidth": 40,
+      "showLabel": true,
+      "changeTag": true,
+      "tag": "el-input",
+      "tagIcon": "input",
+      "required": false,
+      "layout": "colFormItem",
+      "span": 24,
+      "document": "https://element.eleme.cn/#/zh-CN/component/input",
+      "regList": [],
+      "dataType": ["string", "16"],
+      "formId": 101,
+      "renderKey": "1011653897364662",
+      "eventField": ["counter", "show"],
+      "saveWay": "bin",
+      "uuid": "0"
+    },
+    "__slot__": {
+      "prepend": "",
+      "append": ""
+    },
+    "placeholder": "名字",
+    "style": {
+      "width": ""
+    },
+    "clearable": true,
+    "prefix-icon": "",
+    "suffix-icon": "",
+    "maxlength": null,
+    "show-word-limit": false,
+    "readonly": false,
+    "disabled": false,
+    "id": "id_1653897364662_0",
+    "__vModel__": "field101"
+  }, {
+    "__config__": {
+      "label": "值",
+      "showLabel": true,
+      "changeTag": true,
+      "labelWidth": 40,
+      "tag": "el-input-number",
+      "tagIcon": "number",
+      "defaultValue": 0,
+      "span": 24,
+      "layout": "colFormItem",
+      "required": false,
+      "regList": [],
+      "dataType": ["32"],
+      "formId": 106,
+      "renderKey": "1061660291130384",
+      "eventField": ["show"]
+    },
+    "placeholder": "值",
+    "step": 1,
+    "step-strictly": false,
+    "controls-position": "",
+    "disabled": false,
+    "id": "id_1660291130384_0",
+    "__vModel__": "field106"
+  }],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 24,
+  "formBtns": false
+}

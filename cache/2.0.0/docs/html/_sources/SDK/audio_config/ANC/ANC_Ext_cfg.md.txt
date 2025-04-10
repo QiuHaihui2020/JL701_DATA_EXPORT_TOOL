@@ -1,0 +1,195 @@
+# ANC扩展功能说明
+
+![ANC扩展功能](./assets/ANC-EXT_func.jpg)<br>
+
+## 名词解释
+**ADT** : ACOUSTIC DETECTOR, 声音检测<br>
+**SPEAK_TO_CHAT** : 智能免摘<br>
+**WIDE_AREA_TAP** ： 广域点击<br>
+**WIND_NOISE_DET** ： 风噪检测<br>
+**EAR_ADAPTIVE** ： 耳道自适应<br>
+**FIT_DET** ： 贴合度检测<br>
+
+## 耳道自适应
+### 需求简介
+
+简介：ANC降噪效果与耳机佩戴松紧度，以及用户的耳道差异息息相关；耳道自适应技术，通过麦克风收集用户耳道特性和佩戴情况的声学特征信息，自适应调整降噪参数，以提供更加舒适和个性化的降噪体验；
+- 优势：补全不同人耳道的佩戴差异
+- 关键词：（操作）自适应、（输入）耳道/佩戴信息、（输出）调滤波器/增益。
+
+### 软件配置
+#### 基础配置
++ 提示音配置：配置如下图，自适应需要特殊的提示音，会提供默认提示音`Adaptive ANC Tone1/2/3`，需要质量比较好的提示音格式，如MTY/SBC等，如需自定义提示音，可将提示音发给原厂检查是否满足要求：
+![耳道自适应提示音](./assets/ANC-ear_adaptive_tone.jpg)<br>
+<br>
++ 每次切降噪模式，都触发耳道自适应，配置以下宏定义即可
+```c
+#define ANC_EAR_ADAPTIVE_EVERY_TIME		1   /*每次切ANC_ON都进行自适应*/
+```
++ 自适应参数配置及调试方法：参考《JL耳道自适应调试指南》，导出anc_ext.bin下载到小机
++ anc_ext.bin 文件路径：.\SDK\cpu\br28\tools\anc_ext.bin
+
+### API定义
+```c
+
+/*自适应模式-重新检测
+ * param: tws_sync_en          1 TWS同步自适应，支持TWS降噪平衡，需左右耳一起调用此接口
+ *                             0 单耳自适应, 不支持TWS降噪平衡，可TWS状态下单耳自适应
+ */
+int audio_anc_mode_ear_adaptive(u8 tws_sync_en);
+
+/*
+   强制中断自适应
+   param: default_flag		1 退出后恢复默认ANC效果； 0 退出后保持ANC_OFF(避免与下一个切模式流程冲突)
+ */
+void anc_ear_adaptive_forced_exit(u8 default_flag);
+
+/*
+   自适应/普通参数切换（只切换参数）
+	param:  mode 		0 使用普通参数; 1 使用自适应参数
+			tone_play 	0 不播放提示音；1 播放提示音
+			update_flag 0 不更新效果；	1 即时更新效果
+ */
+int audio_anc_coeff_adaptive_set(u32 mode, u8 tone_play);
+
+/*ANC滤波器模式循环切换*/
+int audio_anc_coeff_adaptive_switch();
+
+/*当前ANC滤波器模式获取 0:普通参数 1:自适应参数*/
+int audio_anc_coeff_mode_get(void);
+
+```
+
+### 使用demo
+```c
+//切换耳道自适应滤波器，更新效果
+audio_anc_coeff_adaptive_set(1,0);  //切换自适应滤波器
+audio_anc_param_reset(1);           //（可选）复位ANC，更新参数效果；需在ANC模式下
+
+//切换默认滤波器，更新效果
+audio_anc_coeff_adaptive_set(0,0);  //切换默认滤波器
+audio_anc_param_reset(1);           //（可选）复位ANC，更新参数效果；需在ANC模式下
+```
+
+### FAQ
+1. 耳道自适应场景互斥问题<br>
+    前置条件：ANC模式下支持进入耳道自适应；
+    播歌：会打断背景音乐，等自适应完成之后再继续播放
+    通话：不支持耳道自适应；
+    其他功能互斥：智能免摘/贴合度检测/场景自适应等功能，SDK 默认会关闭，等自适应完成再打开；
+2. 耳道自适应结束会使用自适应参数，并保存到vm，后续切降噪模式都会使用自适应参数，如果需要恢复默认ANC参数则调用`audio_anc_coeff_adaptive_set`接口设置
+
+### CPU差异
+|特性|700N|701N|708N|
+|---|---|---|---|
+|耳道自适应|×|√|√|
+
+## 智能免摘
+### 功能描述
+耳机检测到佩戴者说话的时候，暂停正在播放的音乐，切换到通透模式捕捉环境声音，使佩戴者听取外界声音方便与人交谈；如果在指定时间内没有检测到佩戴者说话，会退出免摘模式恢复播歌，切换到之前的状态。<br>
+
+### 开发说明
+（1）硬件需求<br>
+仅ANC HYBRID混合馈方案支持使用<br>
+（2）开发流程<br>
+智能免摘需原厂协助开发，开发流程如下：<br>
+![开发流程](./assets/speak_to_chat_1.png)<br>
+
+### 使用说明
+（1）在audio_anc.h配置支持打开智能免摘的模式<br>
+![](./assets/speak_to_chat_2.png)<br>
+
+（2）在audio_anc.h配置是否anc on自动打开免摘，anc off自动关闭免摘<br>
+![](./assets/speak_to_chat_3.png)<br>
+
+（3）智能免摘相关的接口<br>
+```c
+/*打开智能免摘*/  
+int audio_speak_to_chat_open();  
+
+/*关闭智能免摘*/  
+int audio_speak_to_chat_close();  
+
+/*获取智能免摘是否打开*/  
+u8 audio_speak_to_chat_is_running();  
+
+/*获取智能免摘状态*/  
+u8 get_speak_to_chat_state();  
+
+/*设置免摘定时结束的时间，单位ms*/  
+int audio_speak_to_char_end_time_set(u16 time);  
+
+/*智能免摘使用demo*/
+void audio_speak_to_chat_demo(); 
+```
+
+## 风噪检测
+### 功能描述
+检测风噪强度，在不同强度的风噪下，设置对应的ANC降噪强度<br>
+
+### 开发说明
+（1）硬件需求<br>
+仅ANC HYBRID混合馈方案支持使用<br>
+（2）开发流程<br>
+风噪检测需原厂协助开发，开发流程如下：<br>
+![开发流程](./assets/speak_to_chat_1.png)<br>
+
+### 使用说明
+（1）风噪检测相关的api接口<br>
+```c
+/*打开风噪检测*/
+int audio_icsd_wind_detect_open();
+/*关闭风噪检测*/
+int audio_icsd_wind_detect_close(); 
+
+/*获取风噪等级*/
+u8 get_audio_icsd_wind_lvl();
+
+/*风噪检测使用demo*/
+void audio_icsd_wind_detect_demo(); 
+```
+
+（2）可通过串口打印或者在icsd_adt_app.h里面打开ICSD_ADT_WIND_INFO_SPP_DEBUG_EN，然后用手机蓝牙串口工具连接样机接收风噪值<br>
+![](./assets/wind_1.png)<br>
+
+（3）在程序icsd_adt_app.c的wind_lvl_det_anc参数里面，可配置5个风噪阈值划分6个不同的风噪等级<br>
+![](./assets/wind_2.png)<br>
+
+（4）在程序icsd_adt_app.c的wind_info_anc参数里面，可配置不同风噪等级的淡入淡出时间，单位是秒<br>
+![](./assets/wind_3.png)<br>
+
+（5）在程序icsd_adt_app.c的audio_anc_wind_noise_process函数里面，可以设置不同风噪等级下的ANC增益<br>
+![](./assets/wind_4.png)<br>
+
+## 广域点击
+### 功能描述
+使用麦克风检测点击后脸颊或者耳廓的的情况当作按键使用，减少硬件成本<br>
+
+### 开发说明
+（1）硬件需求<br>
+仅ANC HYBRID混合馈方案支持使用<br>
+（2）开发流程<br>
+广域点击需原厂协助开发，开发流程如下：<br>
+![开发流程](./assets/speak_to_chat_1.png)<br>
+
+### 使用说明
+（1）在audio_anc.h配置是否把单耳点击事件同步到对耳<br>
+![](./assets/wide_1.png)<br>
+
+（2）广域点击相关的api接口<br>
+```c
+/*打开广域点击*/
+int audio_wat_click_open();
+
+/*关闭广域点击*/
+int audio_wat_click_close();
+
+/*广域点击使用demo*/
+void audio_wat_click_demo();
+```
+
+（3）在icsd_adt_app.c的audio_wat_area_tap_event_handle()函数里面配置不同点击下的响应事件<br>
+![](./assets/wide_2.png)<br>
+
+## 贴合度检测
+

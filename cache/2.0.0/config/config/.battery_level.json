@@ -1,0 +1,43 @@
+﻿{
+  "fields": [{
+    "__config__": {
+      "label": "电量",
+      "tag": "el-slider",
+      "tagIcon": "slider",
+      "defaultValue": 50,
+      "span": 23,
+      "showLabel": false,
+      "layout": "colFormItem",
+      "labelWidth": null,
+      "required": false,
+      "regList": [],
+      "changeTag": true,
+      "dataType": ["1", "8"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/slider",
+      "formId": 102,
+      "renderKey": "1021653376846449",
+      "saveWay": "bin",
+      "uuid": "0",
+      "eventField": ["show"]
+    },
+    "disabled": false,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "show-stops": false,
+    "range": false,
+    "id": "id_1653376846449_1",
+    "__vModel__": "field102"
+  }],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 23,
+  "formBtns": false
+}

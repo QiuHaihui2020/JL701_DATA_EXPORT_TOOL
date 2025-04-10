@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CharSet>
+	<Char>0x00c3</Char>
+	<Char>0x00cc</Char>
+	<Char>0x00d2</Char>
+	<Char>0x00d5</Char>
+	<Char>0x00dd</Char>
+	<Char>0x00e3</Char>
+	<Char>0x00ec</Char>
+	<Char>0x00f2</Char>
+	<Char>0x00f5</Char>
+	<Char>0x00fd</Char>
+	<Char>0x0128-0x0129</Char>
+	<Char>0x0168-0x0169</Char>
+	<Char>0x1ea0-0x1ef7</Char>
+</CharSet>

@@ -1,0 +1,854 @@
+
+杰理UI使用说明
+====================
+
+# 编写目的
++ 该文档主要介绍了ui接口的使用，以及接口使用上的一些注意事项
+
+# 功能概述
+
++ 在显示屏上显示图形文字等内容，实现人机交互界面
+
+# UI模块接口
+
+## 显示页面
+
+### 功能介绍
+
++ 显示指定ID号的页面
+
+### 接口介绍
+
+| 函数原型                                                     | <p align="left"> int ui_show_main(int id); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  显示指定页面 |
+| 参数说明                                      | id : 页面的id号  |
+| 输出 | 0：显示成功 其他：显示失败  |
+| 例子 | ui_show_main(PAGE_0); //PAGE_0为页面的ID号，参考style.h文件 |
+| 关联模块 | lcd_ui_api.c   |
+| 补充说明 | 无  |
+
+## 隐藏页面
+
+### 功能介绍
+
++ 隐藏指定ID号的页面
+
+### 接口介绍
+
+| 函数原型                                                     | <p align="left"> int ui_hide_main(int id); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  隐藏指定页面 |
+| 参数说明                                      | id : 页面的id号  |
+| 输出 | 0：隐藏成功 其他:隐藏失败  |
+| 例子 | ui_hide_main(PAGE_0); //PAGE_0为页面的ID号，参考style.h文件 |
+| 关联模块 | lcd_ui_api.c   |
+| 补充说明 | 无  |
+
+## 隐藏当前页面
+
+### 功能介绍
+
++ 用于隐藏当前的页面，用户无须关心当前页面的id号
+
+### 接口介绍
+
+| 函数原型                                                     | <p align="left"> int ui_hide_curr_main(); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  隐藏当前页面 |
+| 参数说明                                      | id : 页面的id号  |
+| 输出 | 0：隐藏成功 其他:隐藏失败  |
+| 例子 | ui_hide_curr_main(); |
+| 关联模块 | lcd_ui_api.c   |
+| 补充说明 | 无  |
+
+## 获取当前页面ID
+
+### 功能介绍
+
++ 获取当前页面的id
+
+### 接口介绍
+
+| 函数原型                                                     | <p align="left"> int ui_get_current_window_id(); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  获取当前页面的id号 |
+| 参数说明                                      | 无  |
+| 输出 | 当前页面的id号  |
+| 例子 | int curr_id = ui_get_current_window_id(); |
+| 关联模块 | lcd_ui_api.c   |
+| 补充说明 | 无  |
+
+## 显示控件
+
+### 功能介绍
+
++ 将指定id的控件显示出来
+
+### 接口介绍
+
+| 函数原型                                                     | <p align="left"> int ui_show(int id); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  显示控件 |
+| 参数说明                                      | id：控件的id号  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | //显示图片控件, PIC_1为控件的ID号，参考style_JL_new.h <br /> ui_show(PIC_1); |
+| 关联模块 | lcd_ui_api.c  |
+| 补充说明 | 无  |
+
+## 隐藏控件
+
+### 功能介绍
+
++ 将指定id的控件隐藏
+
+### 接口介绍
+
+| 函数原型                                                     | <p align="left"> int ui_hide(int id); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  隐藏控件 |
+| 参数说明                                      | id：控件的id号  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | //隐藏图片控件, PIC_1为控件的ID号，参考style_JL_new.h <br /> ui_hide(PIC_1); |
+| 关联模块 | lcd_ui_api.c  |
+| 补充说明 | 无  |
+
+## 锁住触摸焦点控件
+
+### 功能介绍
+
++ 将当前控件设置为焦点控件，当有触摸事件发生时，会将触摸事件发送给焦点控件
+
+### 接口介绍
+
+| 函数原型                                                     | <p align="left"> void ui_ontouch_lock(void *elm); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  锁住触摸焦点控件 |
+| 参数说明                                      | elm: 控件的句柄  |
+| 输出 | 无 |
+| 例子 | 无 |
+| 关联模块 | lcd_ui_api.c  |
+| 补充说明 | 无  |
+
+## 解锁触摸焦点控件
+
+### 功能介绍
+
++ 当前控件设置为非焦点控件
+
+### 接口介绍
+
+| 函数原型                                                     | <p align="left"> void ui_ontouch_unlock(void *elm); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  解锁触摸焦点控件 |
+| 参数说明                                      | elm: 控件的句柄  |
+| 输出 | 无 |
+| 例子 | 无 |
+| 关联模块 | lcd_ui_api.c  |
+| 补充说明 | 无  |
+
+## 高亮控件
+
+### 功能介绍
+
++ 高亮某个控件的显示，表示当前选中状态，一般用于列表控件
+
+### 接口介绍
+
+| 函数原型                                                     | <p align="left"> int ui_highlight_element_by_id(int id); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  高亮控件 |
+| 参数说明                                      | id: 控件ID  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | //高亮文本控件, TEXT为控件的ID号，参考style_JL_new.h <br /> ui_highlight_element_by_id(TEXT); |
+| 关联模块 | lcd_ui_api.c  |
+| 补充说明 | 无  |
+
+## 取消高亮控件
+
+### 功能介绍
+
++ 取消控件的高亮显示，一般用于列表控件
+
+### 接口介绍
+
+| 函数原型                                     | <p align="left"> int ui_no_highlight_element_by_id(int id); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  取消控件高亮 |
+| 参数说明                                      | id: 控件ID  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | //取消文本控件高亮, TEXT为控件的ID号，参考style_JL_new.h <br /> ui_no_highlight_element_by_id(TEXT); |
+| 关联模块 | lcd_ui_api.c  |
+| 补充说明 | 无  |
+
+## 注册消息响应
+
+### 功能介绍
+
++ 注册消息相应回调
+
+### 接口介绍
+
+| 函数原型                                     | <p align="left"> int ui_register_msg_handler(int id, const struct uimsg_handl *handler) <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  注册消息响应，用于app与ui进行消息交互 |
+| 参数说明                                      | id: 页面的ID <br /> struct uimsg_handl { <br /> &nbsp; &nbsp; const char *msg;  <br /> &nbsp; &nbsp; int (*handler)(const char *type, u32 args); <br /> };  <br /> handler: 自定义消息响应 |
+| 输出 | 0：注册成功 其他：注册失败 |
+| 例子 | static const struct uimsg_handl ui_msg_handler[] = { <br /> &nbsp; &nbsp; { "music_start",        music_start     },  <br /> &nbsp; &nbsp; { NULL, NULL }, <br /> };  <br /> 注册消息交互的回调 |
+| 关联模块 | lcd_ui_api.c  |
+| 补充说明 | 无  |
+
+## 推送消息
+
+### 功能介绍
+
++ 向ui发送自定义消息
+
+### 接口介绍
+
+| 函数原型                                     | <p align="left"> int ui_server_msg_post(const char *msg, ...); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  向ui发送自定义消息 |
+| 参数说明                                      | msg: 消息 <br /> ...: 参数  |
+| 输出 | 0：注册成功 其他：注册失败 |
+| 例子 | 无 |
+| 关联模块 | lcd_ui_api.c  |
+| 补充说明 | 无  |
+
+## 发送按键消息
+
+### 功能介绍
+
++ 向ui发送按键消息
+
+### 接口介绍
+
+| 函数原型                                     | <p align="left"> int ui_key_msg_post(int key); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  向ui内核发送按键消息，由ui内核进行消息分发 |
+| 参数说明                                      | key: 按键消息  |
+| 输出 | 0：发送成功 其他：发送失败 |
+| 例子 | ui_key_msg_post(key_msg); |
+| 关联模块 | lcd_ui_api.c  |
+| 补充说明 | 无  |
+
+## 发送触摸消息
+
+### 功能介绍
+
++ 向ui发送触摸消息
+
+### 接口介绍
+
+| 函数原型                                     | <p align="left">  int ui_touch_msg_post(struct touch_event *event); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  向ui内核发送触摸消息，由ui内核进行消息分发 |
+| 参数说明                                      | struct touch_event { <br />  &nbsp; &nbsp; int event; <br /> &nbsp; &nbsp; int x; <br /> &nbsp; &nbsp; int y;<br /> };  <br /> event:触摸事件  |
+| 输出 | 0：发送成功 其他：发送失败 |
+| 例子 | ui_touch_msg_post(&touch_event); |
+| 关联模块 | lcd_ui_api.c  |
+| 补充说明 | 无  |
+
+## ui控件响应
+
+### 事件类型
+
+#### *onchange事件*
+```c
+enum element_change_event {
+    &nbsp; &nbsp; ON_CHANGE_INIT_PROBE,         //创建控件开始前的准备
+    &nbsp; &nbsp; ON_CHANGE_INIT,				   //创建控件
+    &nbsp; &nbsp; ON_CHANGE_TRY_OPEN_DC,       //尝试打开显示上下文
+    &nbsp; &nbsp; ON_CHANGE_FIRST_SHOW,		   //自创建以来首次显示
+    &nbsp; &nbsp; ON_CHANGE_SHOW_PROBE,		   //显示前
+    &nbsp; &nbsp; ON_CHANGE_SHOW,			   //显示、重绘
+    &nbsp; &nbsp; ON_CHANGE_SHOW_POST,		   //显示后
+    &nbsp; &nbsp; ON_CHANGE_HIDE,			   //隐藏
+    &nbsp; &nbsp; ON_CHANGE_HIGHLIGHT,		   //高亮显示
+    &nbsp; &nbsp; ON_CHANGE_RELEASE_PROBE,	   //销毁前的准备
+    &nbsp; &nbsp; ON_CHANGE_RELEASE,			   //销毁
+    &nbsp; &nbsp; ON_CHANGE_ANIMATION_END,	   //动画播放完毕
+    &nbsp; &nbsp; ON_CHANGE_SHOW_COMPLETED,   //显示完成
+};
+```
+#### *ontouch事件*
+```c
+enum {
+		ELM_EVENT_TOUCH_DOWN,	     //按下
+		ELM_EVENT_TOUCH_MOVE,      //移动
+		ELM_EVENT_TOUCH_R_MOVE,    //右翻
+		ELM_EVENT_TOUCH_L_MOVE,    //左翻
+		ELM_EVENT_TOUCH_D_MOVE,    //下翻
+		ELM_EVENT_TOUCH_U_MOVE,    //上翻
+		ELM_EVENT_TOUCH_HOLD,       //按住
+		ELM_EVENT_TOUCH_UP,         //抬起
+};
+```
+#### *onkey事件*
+```c
+enum {
+		KEY_EVENT_CLICK,    //单击
+		KEY_EVENT_LONG,    //长按
+		KEY_EVENT_HOLD,    //按住
+		KEY_EVENT_DOWN,   //按下
+		KEY_EVENT_UP,      //抬起
+};
+```
+### 2 回调函数结构
+
+```c
+struct element_event_handler {
+		 int id;											    //控件ID号
+		 int (*ontouch)(void *, struct element_touch_event *);		    //触摸响应函数
+		 int (*onkey)(void *, struct element_key_event *);			    //按键响应函数
+		 int (*onchange)(void *, enum element_change_event, void *);  //控件状态变化响应函数
+};
+```
+
+### 注册回调函数模板
+
+```c
+/**
+  * @brief  onchange响应函数
+  * @param  ctrl ：控件句柄，如需访问控件的变量，则需强制转换成相应控件的类型，比如当前是图片控件的回调，则强制转换为struct ui_pic
+  * @param  event : 事件类型，比较常用到的是ON_CHANGE_INIT,ON_CHANGE_RELEASE，分别对应控件的初始化与控件的销毁
+  * @return 0:成功 其他：失败
+  * @note   该接口禁止使用ui_show、ui_hide
+ */
+ 
+static int xxx_onchange(void *ctrl, enum element_change_event event, void *arg)
+{
+    struct ui_pic *pic = (struct ui_pic *)ctrl;//根据控件类型进行强制转换，这里假设为图片控件
+
+    switch (event) {
+        case ON_CHANGE_INIT://控件创建，可在此初始化
+            break;
+        case ON_CHANGE_SHOW://控件显示
+            break;
+        case ON_CHANGE_HIDE://控件隐藏
+            break;
+        case ON_CHANGE_RELEASE://控件销毁
+            break;
+        default:
+            return FALSE;
+    }
+    return FALSE;
+}
+
+/**
+ * @brief  onkey响应函数
+ * @param  ctrl ：控件句柄，如需访问控件的变量，需要强制转换成相应控件的结构，比如当前是图片控件的回调，则强制转换为struct ui_pic
+ * @param  event : 按键事件类型
+ * @return 0:成功 其他：失败
+ * @note   该接口可以使用ui_show、ui_hide控制控件的显示与隐藏
+ */
+
+static int xxx_onkey(void *ctrl, struct element_key_event *e)
+{
+    struct ui_pic *pic = (struct ui_pic *)ctrl;//根据控件类型进行强制转换，这里假设为图片控件
+
+    switch (e->event) {
+    case KEY_EVENT_CLICK:
+        switch (e->value) {
+        case KEY_MENU:
+            break;
+        default:
+            return false;
+        }
+        break;
+    default:
+        break;
+    }
+    return true;
+}
+
+/**
+ * @brief  ontouch响应函数
+ * @param  ctrl ：控件句柄，如需访问控件的变量，需要强制转换成相应控件的结构，比如当前是图片控件的回调，则强制转换为struct ui_pic
+ * @param  event : 触摸事件类型
+ * @return 0:成功 其他：失败
+ * @note   该接口可以使用ui_show、ui_hide控制控件的显示与隐藏
+*/
+
+static int xxx_ontouch(void *ctrl, struct element_touch_event *e)
+{
+    struct ui_pic *pic = (struct ui_pic *)ctrl;//根据控件类型进行强制转换，这里假设为图片控件
+    
+    switch (e->event) {
+        case ELM_EVENT_TOUCH_R_MOVE:
+            break;
+        case ELM_EVENT_TOUCH_L_MOVE:
+            break;
+        case ELM_EVENT_TOUCH_D_MOVE:
+            break;
+        case ELM_EVENT_TOUCH_U_MOVE:
+            break;
+        case ELM_EVENT_TOUCH_DOWN:
+            break;
+        case ELM_EVENT_TOUCH_HOLD:
+            break;
+        case ELM_EVENT_TOUCH_MOVE:
+            break;
+        case ELM_EVENT_TOUCH_UP:
+            break;
+    }
+    return true;
+}
+
+REGISTER_UI_EVENT_HANDLER(控件id号) //控件id号请参考style.h
+.onchange = xxx_onchange,
+ .onkey = xxx_onkey,
+  .ontouch = xxx_ontouch,
+};
+```
+
+# UI控件接口
+
+## 图片控件接口
+
+### 显示图片
+
+### 功能介绍
+
++ 切换图片列表里的图片
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> int ui_pic_show_image_by_id(int id, int index); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  在图片列表里切换显示图片 |
+| 参数说明                                      | id：控件id   index：图片列表中的索引  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | 无 |
+| 关联模块 | ui_pic.c  |
+| 补充说明 | 无  |
+
+## 图片控件初始化
+
+### 功能介绍
+
++ 设置需要显示的图片索引
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> int ui_pic_set_image_index(struct ui_pic *pic, int index); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  在图片控件响应里设置需要显示的图片索引 |
+| 参数说明                                      | pic:图片控件句柄  index:图片列表索引  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | 无 |
+| 关联模块 | ui_pic.c  |
+| 补充说明 | 无  |
+
+## 列表控件
+
+### 选择列表项
+
+### 功能介绍
+
++ 设置表格活动项
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> void ui_grid_set_item(struct ui_grid *grid,int index); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  设置表格活动项 |
+| 参数说明                                      | grid：表格控件句柄  index：活动项索引  |
+| 输出 | 无 |
+| 例子 | 无 |
+| 关联模块 | ui_grid.c  |
+| 补充说明 | 无  |
+
+### 获取列表项
+
+### 功能介绍
+
++ 获取当前表格活动项
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> int ui_grid_cur_item(struct ui_grid *grid); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  获取当前表格活动项 |
+| 参数说明                                      | grid：表格控件句柄  |
+| 输出 | 无 |
+| 例子 | 无 |
+| 关联模块 | ui_grid.c  |
+| 补充说明 | 无  |
+
+## 高亮列表项
+
+### 功能介绍
+
++ 高亮指定子项
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> int ui_grid_highlight_item(struct ui_grid *grid, int item, bool yes); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  高亮指定子项 |
+| 参数说明                                      | grid：表格控件句柄  item：子项序号 yes：是否高亮  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | 无 |
+| 关联模块 | ui_grid.c  |
+| 补充说明 | 无  |
+
+## 设置列表项焦点
+
+### 功能介绍
+
++ 设置表格控件为焦点控件
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> void ui_grid_on_focus(struct ui_grid *grid); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  设置表格控件为焦点控件，按键、触摸消息直接发给焦点控件 |
+| 参数说明                                      | grid：表格控件句柄  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | 无 |
+| 关联模块 | ui_grid.c  |
+| 补充说明 | 无  |
+
+## 取消列表项焦点
+
+###Ⅰ 功能介绍
+
++ 设置表格控件为非焦点控件
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> void ui_grid_lose_focus(struct ui_grid *grid); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  设置表格控件为非焦点控件 |
+| 参数说明                                      | grid：表格控件句柄  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | 无 |
+| 关联模块 | ui_grid.c  |
+| 补充说明 | 无  |
+
+## 时间控件
+
+### 设置时间
+
+### 功能介绍
+
++ 设置时间
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> int ui_time_update_by_id(int id, struct utime *time); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  设置时间 |
+| 参数说明                                      | id：时间控件ID <br /> struct utime { <br /> &nbsp; &nbsp; u16 year;   //年 <br /> &nbsp; &nbsp;  u8 month;  //月 <br /> &nbsp; &nbsp; u8 day;    //日 <br /> &nbsp; &nbsp;  u8 hour;   //时  <br /> &nbsp; &nbsp;  u8 min;    //分 <br /> &nbsp; &nbsp; u8 sec;    //秒 <br /> };  <br /> time：时间  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | 无 |
+| 关联模块 | ui_time.c  |
+| 补充说明 | 无  |
+
+## 文本控件
+
++ 文本控件支持ascii、strpic、text的编码格式。ascii主要用于显示ASCII码的场合，strpic主要用于固定文字的场合，一般用于多国语言的菜单显示。text格式主要用于非固定文字的场合，例如短信，歌词显示等需要字库的支持
+
+### 文本控件初始化（strpic编码格式）
+
+### 功能介绍
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> int ui_text_set_index(struct ui_text *text, int index); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  在文字列表里切换显示（strpic编码格式） |
+| 参数说明                                      | text：文本控件句柄  index:文字索引  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | 无 |
+| 关联模块 | ui_text.c  |
+| 补充说明 | 无  |
+
+### 显示指定的文本（strpic编码格式）
+
+### 功能介绍
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> int ui_text_show_index_by_id(int id, int index); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  在文字列表里切换显示（strpic编码格式） |
+| 参数说明                                      | id：文本控件id号   index:文字索引  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | 无 |
+| 关联模块 | ui_text.c  |
+| 补充说明 | 无  |
+
+### 文本控件初始化（ascii编码格式）
+
+### 功能介绍
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> int ui_text_set_str(struct ui_text *text, const char *format, const char *str, int strlen, u32 flags); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  ascii编码的初始化函数 |
+| 参数说明                                      | text：文本控件句柄 <br /> format:格式 <br /> str：ascii编码 <br /> strlen：编码长度 <br /> flags：标志位  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | 无 |
+| 关联模块 | ui_text.c  |
+| 补充说明 | 无  |
+
+### 显示指定的ASCII码（ascii编码格式）
+
+### 功能介绍
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> int ui_text_set_str_by_id(int id, const char *format, const char *str); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  显示ascii码（ascii编码格式，ascii字库默认已添加） |
+| 参数说明                                      | id：文本控件id <br /> format:格式 <br /> str：ascii编码  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | 无 |
+| 关联模块 | ui_text.c  |
+| 补充说明 | 无  |
+
+### 文本控件初始化（text编码格式）
+
+### 功能介绍
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> void ui_text_set_text_attrs(struct ui_text *text, const char *str, int strlen, u8 encode, u8 endian, u32 flags); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  text编码的初始化函数 |
+| 参数说明                                      | text：文本控件句柄 <br /> str：ascii编码 <br /> strlen：编码长度 <br /> encode：编码类型 <br /> endian：大小端 <br /> flags：标志位  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | 无 |
+| 关联模块 | ui_text.c  |
+| 补充说明 | 无  |
+
+### 显示内码（text编码格式）
+
+### 功能介绍
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> int ui_text_set_text_by_id(int id, const char *str, int strlen, u32 flags);<div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  内码显示接口 |
+| 参数说明                                      | id：文本控件id <br /> str：内码 <br /> strlen：编码长度 <br /> flags：标志位  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | 无 |
+| 关联模块 | ui_text.c  |
+| 补充说明 | 无  |
+
+### 显示UNICODE编码（text编码格式）
+
+### 功能介绍
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> int ui_text_set_textw_by_id(int id, const char *str, int strlen, int endian, u32 flags); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  unicode编码显示接口 |
+| 参数说明                                      | id：文本控件id <br /> str：unicode编码 <br /> strlen：编码长度 <br /> endian: 大小端 <br />  flags：标志位  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | 无 |
+| 关联模块 | ui_text.c  |
+| 补充说明 | 无  |
+
+### 显示UTF8编码（text编码格式）
+
+### 功能介绍
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> int ui_text_set_textu_by_id(int id, const char *str, int strlen, u32 flags); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  utf8编码显示接口 |
+| 参数说明                                      | id：文本控件id <br /> str：utf8编码 <br /> strlen：编码长度 <br /> flags：标志位  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | 无 |
+| 关联模块 | ui_text.c  |
+| 补充说明 | 无  |
+
+## 电池控件
+
+### 改变所有电池控件的电量状态
+
+### 功能介绍
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> void ui_battery_level_change(int persent, int incharge); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  改变所有电池控件的状态 |
+| 参数说明                                      | persent: 电池电量百分比 <br /> incharge: 是否充电状态  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | 无 |
+| 关联模块 | ui_battery.c  |
+| 补充说明 | 无  |
+
+### 改变指定电池控件的电量状态
+
+### 功能介绍
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> int ui_battery_set_level_by_id(int id, int persent, int incharge); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  改变指定电池控件的状态 |
+| 参数说明                                      | persent：电池电量百分比 <br /> incharge: 是否充电状态  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | 无 |
+| 关联模块 | ui_battery.c  |
+| 补充说明 | 无  |
+
+### 电池控件电量状态初始化
+
+### 功能介绍
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> int ui_battery_set_level(struct ui_battery *battery, int persent, int incharge); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  改变电池控件的状态 |
+| 参数说明                                      | battery: 电池控件句柄 <br /> persent：电池电量百分比 <br /> incharge: 是否充电状态  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | //非充电状态，电池电量为30%，根据电量显示相应的电量图标 <br /> ui_battery_set_level(battery, 30, 0); |
+| 关联模块 | ui_battery.c  |
+| 补充说明 | 无  |
+
+## 数字控件
+
+### 设置数字
+
+### 功能介绍
+
++ 更新数字控件的显示内容
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> int ui_number_update_by_id(int id, struct unumber *n); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  更新数字显示 |
+| 参数说明                                      | id：数字控件ID <br />  enum { <br /> &nbsp; &nbsp; TYPE_NUM,		//数字 <br /> &nbsp; &nbsp;  TYPE_STRING,	    //数字字符串 <br /> };  <br /> <br /> struct unumber { <br /> &nbsp; &nbsp; u8 numbs;	   //数字个数 <br /> &nbsp; &nbsp; u8 type;		   //类型 <br /> &nbsp; &nbsp; u32 number[2];  //数值，当TYPE_NUM时有效 <br /> &nbsp; &nbsp; u8 *num_str;	   //字符串,当TYPE_STRING时有效 <br /> }; <br /> <br />  n:需要显示的数字参数 |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | struct unumber n; <br />  n.type = TYPE_NUM;  <br /> n.numbs = 1; <br />  n.number[0] = 10;  <br /> ui_number_update_by_id(NUMBER,&n); |
+| 关联模块 | ui_number.c  |
+| 补充说明 | 这个接口的参数需要与数字控件的格式参数对应，比如格式是"%d",这里就要填数值类型的参数  |
+
+## 滑块控件
+
+### 设置滑动块进度
+
+### 功能介绍
+
++ 根据百分比更新滑动块的显示位置
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> int ui_slider_set_persent_by_id(int id, int persent);<div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  设置滑动块进度 |
+| 参数说明                                      | id：控件id <br /> persent：百分比（0~100%）  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | ui_slider_set_persent_by_id(SLIDER, 20); |
+| 关联模块 | ui_slider.c  |
+| 补充说明 | 无  |
+
+## 圆环进度条控件
+
+### 设置圆环进度
+
+### 功能介绍
+
++ 更新圆环的显示百分比
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> int ui_progress_set_persent_by_id(int id, int persent); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  设置圆环进度 |
+| 参数说明                                      | id：控件id <br /> persent：百分比（0~100%）  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | ui_progress_set_persent_by_id(PROGRESS, 10); |
+| 关联模块 | ui_progress.c  |
+| 补充说明 | 无  |
+
+## 多圆环进度条控件
+
+### 设置第一个圆环进度
+
+### 功能介绍
+
++ 更新第一个圆环的显示百分比
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> int ui_multiprogress_set_persent_by_id(int id, int persent); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  设置第一个圆环进度 |
+| 参数说明                                      | id：多圆环控件ID <br /> persent：进度（0~100%）  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | ui_multiprogress_set_first_persent_by_id(MULTIPROGRESS, 25); |
+| 关联模块 | ui_progress_multi.c  |
+| 补充说明 | 无  |
+
+### 设置第二个圆环进度
+
+### 功能介绍
+
++ 更新第二个圆环的显示百分比
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> int ui_multiprogress_set_second_persent_by_id(int id, int percent); <div style="width:380px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  设置第二个圆环进度 |
+| 参数说明                                      | id：多圆环控件ID <br /> persent：进度（0~100%）  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | ui_multiprogress_set_second_persent_by_id(MULTIPROGRESS, 50); |
+| 关联模块 | ui_progress_multi.c  |
+| 补充说明 | 无  |
+
+### 设置第三个圆环进度
+
+### 功能介绍
+
++ 更新第三个圆环的显示百分比
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> int ui_multiprogress_set_third_persent_by_id(int id, int percent); <div style="width:350px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  设置第三个圆环进度 |
+| 参数说明                                      | id：多圆环控件ID <br /> persent：进度（0~100%）  |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | ui_multiprogress_set_third_persent_by_id(MULTIPROGRESS, 30); |
+| 关联模块 | ui_progress_multi.c  |
+| 补充说明 | 无  |
+
+## 模拟时钟控件
+
+### 设置模拟时钟时间
+
+### 功能介绍
+
++ 更新模拟时钟控件时、分、秒针的位置
+
+### 接口介绍
+
+| 函数原型                                | <p align="left"> int ui_watch_set_time_by_id(int id, int hour, int min, int sec); <div style="width:350px"> |
+| ---------------------------------------------| -------- |
+| 功能描述                                         |  设置模拟时钟时间 |
+| 参数说明                                      | id：时钟控件ID <br /> hour：时 <br /> min：分  <br /> sec：秒 |
+| 输出 | 0：成功 其他：失败 |
+| 例子 | ui_watch_set_time_by_id(WATCH, 12, 10,30); |
+| 关联模块 | ui_watch.c |
+| 补充说明 | 无  |
+
+
+
+
+
+
+

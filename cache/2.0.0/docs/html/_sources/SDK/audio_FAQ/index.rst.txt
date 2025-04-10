@@ -1,0 +1,7 @@
+音频FAQ
+#########
+
+.. toctree::
+   :maxdepth: 1
+
+   common/index.rst

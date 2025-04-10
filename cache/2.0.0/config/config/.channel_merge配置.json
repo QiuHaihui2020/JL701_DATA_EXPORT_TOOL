@@ -1,0 +1,115 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "Channel Merge",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "template": "",
+        "span": 24,
+        "formId": 106,
+        "renderKey": "1061666764691753",
+        "children": [
+          {
+            "__config__": {
+              "label": "config",
+              "showLabel": true,
+              "labelWidth": null,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 24,
+              "required": false,
+              "defaultValue": 0,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "status": 0,
+              "dataType": [
+                "32",
+                "1"
+              ],
+              "formId": 749,
+              "renderKey": "7491704936301911",
+              "saveWay": "bin",
+              "originValue": 0,
+              "eventField": []
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "auto",
+                  "value": 0,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "stereo_to_mono",
+                  "value": 1,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "qual_to_stero",
+                  "value": 2,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "qual_to_mono",
+                  "value": 3,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "tws_auto",
+                  "value": 4,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "placeholder": "请选择config",
+            "style": {
+              "width": "200px"
+            },
+            "clearable": false,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1704936301911_1",
+            "__vModel__": "field749"
+          }
+        ],
+        "eventField": []
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "400px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1675825867879_27"
+    }
+  ],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 24,
+  "formBtns": false
+}

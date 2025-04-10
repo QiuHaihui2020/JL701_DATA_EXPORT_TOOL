@@ -1,0 +1,284 @@
+﻿{
+  "fields": [{
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "降噪类型配置",
+      "enableUuid": "",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "template": "",
+      "span": 24,
+      "formId": 291,
+      "renderKey": "2911680244536320",
+      "children": [{
+        "__config__": {
+          "label": "降噪类型",
+          "showLabel": true,
+          "labelWidth": null,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 6,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": ["1", "8"],
+          "formId": 290,
+          "renderKey": "2901680243604727",
+          "eventField": [],
+          "defaultValue": 1,
+          "originValue": 1,
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "options": [{
+            "label": "通话下行降噪",
+            "value": 1
+          }, {
+            "label": "通用降噪",
+            "value": 2
+          }]
+        },
+        "placeholder": "请选择降噪类型",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "disabled": false,
+        "filterable": false,
+        "multiple": false,
+        "id": "id_1680243604727_0",
+        "__vModel__": "field290"
+      }],
+      "eventField": [],
+      "saveWay": "bin"
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "90px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1680244536320_0"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "降噪参数配置",
+      "showComponentName": true,
+      "dataType": [],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 101,
+      "renderKey": "1011648192624776",
+      "children": [{
+        "__config__": {
+          "label": "触发时机",
+          "labelWidth": null,
+          "showLabel": true,
+          "tag": "el-radio-group",
+          "tagIcon": "radio",
+          "changeTag": true,
+          "defaultValue": 1,
+          "layout": "colFormItem",
+          "span": 24,
+          "optionType": "default",
+          "regList": [],
+          "required": false,
+          "border": false,
+          "dataType": ["1", "8"],
+          "formId": 127,
+          "renderKey": "1271667030913975",
+          "eventField": [],
+          "saveWay": "bin",
+          "status": 0
+        },
+        "__slot__": {
+          "options": [{
+            "label": "电话铃声前",
+            "value": 0
+          }, {
+            "label": "电话铃声后",
+            "value": 1
+          }]
+        },
+        "style": {
+          "width": "100%"
+        },
+        "size": "medium",
+        "disabled": false,
+        "id": "id_1667030913975_1",
+        "__vModel__": "field127"
+      }, {
+        "__config__": {
+          "label": "降噪模式",
+          "labelWidth": null,
+          "showLabel": true,
+          "tag": "el-radio-group",
+          "tagIcon": "radio",
+          "changeTag": true,
+          "defaultValue": 0,
+          "layout": "colFormItem",
+          "span": 24,
+          "optionType": "default",
+          "regList": [],
+          "required": false,
+          "border": false,
+          "dataType": ["1", "8"],
+          "formId": 134,
+          "renderKey": "1341667031407543",
+          "tipAlways": true,
+          "tip": "越大越耗资源，效果越好",
+          "eventField": [],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "options": [{
+            "label": "0",
+            "value": 0
+          }, {
+            "label": "1",
+            "value": 1
+          }, {
+            "label": "2",
+            "value": 2
+          }]
+        },
+        "style": {
+          "width": "100%"
+        },
+        "size": "medium",
+        "disabled": false,
+        "id": "id_1667031407543_8",
+        "__vModel__": "field134"
+      }, {
+        "__config__": {
+          "label": "AggressFatcor",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 180,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "defaultValue": 1,
+          "span": 24,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": ["-1", "float"],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 133,
+          "renderKey": "1331667031240208",
+          "tip": "噪声前级动态压制,越大越强， 设置范围: 1 ~ 2.0，默认值：1.0",
+          "saveWay": "bin",
+          "tipAlways": true,
+          "eventField": []
+        },
+        "placeholder": "AggressFatcor",
+        "step": 0.01,
+        "step-strictly": false,
+        "controls-position": "",
+        "disabled": false,
+        "id": "id_1667031240208_7",
+        "__vModel__": "field133",
+        "min": 1,
+        "max": 2,
+        "precision": 2
+      }, {
+        "__config__": {
+          "label": "MicSuppress",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 180,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "defaultValue": 0.09,
+          "span": 24,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": ["-1", "float"],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 160,
+          "renderKey": "1601650803243382",
+          "tip": "噪声后级静态压制,越小越强， 设置范围: 0 ~ 1.0，默认值：0.09",
+          "saveWay": "bin",
+          "tipAlways": true,
+          "eventField": []
+        },
+        "placeholder": "MicSuppress",
+        "step": 0.01,
+        "step-strictly": false,
+        "controls-position": "",
+        "disabled": false,
+        "id": "id_1650803243382_24",
+        "__vModel__": "field160",
+        "min": 0,
+        "max": 1,
+        "precision": 2
+      }, {
+        "__config__": {
+          "label": "MicNoiseLevel",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 180,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "defaultValue": -98.4,
+          "span": 24,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": ["-1", "float"],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 107,
+          "renderKey": "1071656920542670",
+          "tip": "设置范围: -100 ~ -30，默认值：-98.4",
+          "saveWay": "bin",
+          "tipAlways": true,
+          "eventField": []
+        },
+        "placeholder": "MicNoiseLevel",
+        "step": 0.1,
+        "step-strictly": false,
+        "controls-position": "",
+        "disabled": false,
+        "id": "id_1656920542670_1",
+        "__vModel__": "field107",
+        "min": -100,
+        "max": -30,
+        "precision": 1
+      }],
+      "tip": "",
+      "saveWay": "bin",
+      "uuid": "118",
+      "eventField": []
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "200px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675825867879_42"
+  }],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 6,
+  "formBtns": false
+}

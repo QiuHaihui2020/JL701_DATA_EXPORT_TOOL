@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>模块介绍 &mdash; JL Project Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="https://doc.zh-jieli.com/static/css/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=fa47ad08"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="https://doc.zh-jieli.com/static/js/custom.js"></script>
+        <script src="../../../../_static/js/custom.js?v=bfa33168"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">SDK入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/index.html">1. 快速入门</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">SDK Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../soundbox/index.html">1. SDK 详细介绍</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../audio/index.html">1. 音频播放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../btstack/index.html">2. 蓝牙协议栈</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../driver/index.html">3. 外设驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../driver/pmu/index.html">4. 电源管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../led_ui/index.html">5. LED状态显示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/file_system/index.html">6. 文件系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/os/index.html">7. 操作系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/timer/index.html">8. 定时器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/clock_manage/index.html">9. 时钟管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev_manager/index.html">10. 设备管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/%E9%80%9A%E7%94%A8%E7%BB%84%E4%BB%B6/index.html">11. 通用组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../audio_config/index.html">12. 音频配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../audio_flow/index.html">13. 音频流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../audio_effects/index.html">14. 音效调试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../audio_cvp/index.html">15. 通话清晰语音</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/report/index.html">16. 系统状态报告</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/ui/index.html">17. UI 框架</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">JieLi_蓝牙音频</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">模块介绍</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>模块介绍<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>DBI模块用于推屏处理，支持SPI、MCU、RGB接口；</p></li>
+<li><p>推屏时钟来源于芯片内部的时钟分频，因此可能和想要的时钟有偏差，可以实测CLK输出频率；</p></li>
+</ul>
+</section>
+<section id="id2">
+<h1>数据结构<a class="headerlink" href="#id2" title="Link to this heading"></a></h1>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">typedef</span><span class="w"> </span><span class="kr">enum</span><span class="w"> </span><span class="nx">lcd_type_cfg</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">LCD_TYPE_SPI</span><span class="p">,</span><span class="w">	        </span><span class="c1">// SPI屏</span>
+<span class="w">    </span><span class="nx">LCD_TYPE_SPI_RAMLESS</span><span class="p">,</span><span class="w">	</span><span class="c1">// SPI RAMLESS屏</span>
+<span class="w">    </span><span class="nx">LCD_TYPE_MCU</span><span class="p">,</span><span class="w">	        </span><span class="c1">// MCU屏</span>
+<span class="w">    </span><span class="nx">LCD_TYPE_RGB</span><span class="p">,</span><span class="w">	        </span><span class="c1">// RGB屏</span>
+<span class="w">    </span><span class="nx">LCD_TYPE_MAX</span><span class="p">,</span>
+<span class="p">}</span><span class="w"> </span><span class="nx">LCD_TYPE</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">struct</span><span class="w"> </span><span class="nx">dbi_param</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// 显示区域相关(用于配置推屏区域，可不推全屏)</span>
+<span class="w">    </span><span class="kr">int</span><span class="w"> </span><span class="nx">scr_x</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">int</span><span class="w"> </span><span class="nx">scr_y</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">int</span><span class="w"> </span><span class="nx">scr_w</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">int</span><span class="w"> </span><span class="nx">scr_h</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// lcd配置</span>
+<span class="w">    </span><span class="kr">int</span><span class="w"> </span><span class="nx">lcd_width</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">int</span><span class="w"> </span><span class="nx">lcd_height</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">LCD_TYPE</span><span class="w"> </span><span class="nx">lcd_type</span><span class="p">;</span><span class="w">	</span><span class="c1">// LCD接口类型：SPI, SPI Ramless, MCU, RGB</span>
+
+<span class="w">    </span><span class="c1">// 显存配置</span>
+<span class="w">    </span><span class="kr">int</span><span class="w"> </span><span class="nx">buffer_num</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">int</span><span class="w"> </span><span class="nx">buffer_size</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">int</span><span class="w"> </span><span class="nx">buffer_total_size</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">u8</span><span class="w"> </span><span class="o">*</span><span class="nx">buffer</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// dbi模块的输入，与imb模块一起用时，也是imb模块的输出</span>
+<span class="w">    </span><span class="kr">int</span><span class="w"> </span><span class="nx">in_width</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">int</span><span class="w"> </span><span class="nx">in_height</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">int</span><span class="w"> </span><span class="nx">in_format</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">int</span><span class="w"> </span><span class="nx">in_stride</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// debug模式(推新屏时，可使能debug模式，先推纯色测试)</span>
+<span class="w">    </span><span class="kr">int</span><span class="w"> </span><span class="nx">debug_mode_en</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">int</span><span class="w"> </span><span class="nx">debug_mode_color</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// 帧率配置(用于计算DBI模块时钟频率，但实际推屏帧率仅会接近配置，并非100%一致)</span>
+<span class="w">    </span><span class="kr">int</span><span class="w"> </span><span class="nx">fps</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// 以下为三种屏驱动相关配置，out_format为屏幕的像素格式类型</span>
+<span class="w">    </span><span class="nx">struct</span><span class="w"> </span><span class="nx">spi_param</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kr">int</span><span class="w"> </span><span class="nx">spi_mode</span><span class="p">;</span>
+<span class="w">        </span><span class="kr">int</span><span class="w"> </span><span class="nx">pixel_type</span><span class="p">;</span>
+<span class="w">        </span><span class="kr">int</span><span class="w"> </span><span class="nx">out_format</span><span class="p">;</span>
+<span class="w">        </span><span class="kr">int</span><span class="w"> </span><span class="nx">spi_dat_mode</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">struct</span><span class="w"> </span><span class="nx">qspi_cmd</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">u8</span><span class="w"> </span><span class="nx">write_cmd</span><span class="p">;</span>
+<span class="w">            </span><span class="nx">u8</span><span class="w"> </span><span class="nx">read_cmd</span><span class="p">;</span>
+<span class="w">            </span><span class="nx">u8</span><span class="w"> </span><span class="nx">submode0_cmd</span><span class="p">;</span><span class="c1">//0x2c/0x3c/数据单线, default value 0x02</span>
+<span class="w">            </span><span class="nx">u8</span><span class="w"> </span><span class="nx">submode1_cmd</span><span class="p">;</span><span class="c1">//0x2c/0x3c单线，数据四线，default value 0x32</span>
+<span class="w">            </span><span class="nx">u8</span><span class="w"> </span><span class="nx">submode2_cmd</span><span class="p">;</span><span class="c1">//0x2c/0x3c/数据四线, default value 0x12</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="nx">qspi_cmd</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">struct</span><span class="w"> </span><span class="nx">ramless</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">u32</span><span class="w"> </span><span class="nx">frame_sync_cmd</span><span class="p">;</span><span class="c1">//ramless cmd</span>
+<span class="w">            </span><span class="nx">u32</span><span class="w"> </span><span class="nx">porch_sync_cmd</span><span class="p">;</span><span class="c1">//ramless cmd</span>
+<span class="w">            </span><span class="nx">u32</span><span class="w"> </span><span class="nx">line_sync_cmd</span><span class="p">;</span><span class="c1">//ramless cmd</span>
+<span class="w">            </span><span class="nx">u16</span><span class="w"> </span><span class="nx">hbp</span><span class="p">;</span><span class="c1">//hori back porch</span>
+<span class="w">            </span><span class="nx">u16</span><span class="w"> </span><span class="nx">hfp</span><span class="p">;</span><span class="c1">//hori front porch</span>
+<span class="w">            </span><span class="nx">u16</span><span class="w"> </span><span class="nx">vbp</span><span class="p">;</span><span class="c1">//vert back porch</span>
+<span class="w">            </span><span class="nx">u16</span><span class="w"> </span><span class="nx">vfp</span><span class="p">;</span><span class="c1">//vert front porch</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="nx">ramless</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">u8</span><span class="w"> </span><span class="nx">caset_cmd</span><span class="p">;</span><span class="c1">//Column Address Set, default value 0x2a</span>
+<span class="w">        </span><span class="nx">u8</span><span class="w"> </span><span class="nx">paset_cmd</span><span class="p">;</span><span class="c1">//Page Address Set, default value 0x2b</span>
+<span class="w">        </span><span class="nx">u8</span><span class="w"> </span><span class="nx">ramwr_cmd</span><span class="p">;</span><span class="c1">//Memory Write Start, default value 0x2c</span>
+<span class="w">        </span><span class="nx">u8</span><span class="w"> </span><span class="nx">ramwrc_cmd</span><span class="p">;</span><span class="c1">//Memory Write Continue, default valus 0x3c</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="nx">spi</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nx">struct</span><span class="w"> </span><span class="nx">pap_param</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kr">int</span><span class="w"> </span><span class="nx">out_format</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="nx">pap</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nx">struct</span><span class="w"> </span><span class="nx">rgb_param</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kr">int</span><span class="w"> </span><span class="nx">use_spi</span><span class="p">;</span>
+<span class="w">        </span><span class="kr">int</span><span class="w"> </span><span class="nx">out_format</span><span class="p">;</span>
+<span class="w">        </span><span class="kr">int</span><span class="w"> </span><span class="nx">continue_frames</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kr">int</span><span class="w"> </span><span class="nx">hpw_prd</span><span class="p">;</span>
+<span class="w">        </span><span class="kr">int</span><span class="w"> </span><span class="nx">hbw_prd</span><span class="p">;</span>
+<span class="w">        </span><span class="kr">int</span><span class="w"> </span><span class="nx">hfw_prd</span><span class="p">;</span>
+<span class="w">        </span><span class="kr">int</span><span class="w"> </span><span class="nx">hact_prd</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kr">int</span><span class="w"> </span><span class="nx">vpw_prd</span><span class="p">;</span>
+<span class="w">        </span><span class="kr">int</span><span class="w"> </span><span class="nx">vbw_prd</span><span class="p">;</span>
+<span class="w">        </span><span class="kr">int</span><span class="w"> </span><span class="nx">vfw_prd</span><span class="p">;</span>
+<span class="w">        </span><span class="kr">int</span><span class="w"> </span><span class="nx">vact_prd</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="nx">rgb</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h1>函数接口<a class="headerlink" href="#id3" title="Link to this heading"></a></h1>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    DBI模块初始化</span>
+<span class="cm">   @param    param DBI配置句柄</span>
+<span class="cm">   @return   0：成功，-1：失败</span>
+<span class="cm">   @note     需要操作DBI或从DBI获取信息时，必须先初始化</span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kr">int</span><span class="w"> </span><span class="nx">lcd_init</span><span class="p">(</span><span class="nx">struct</span><span class="w"> </span><span class="nx">dbi_param</span><span class="w"> </span><span class="o">*</span><span class="nx">param</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    DBI模块向LCD指定地址写数据</span>
+<span class="cm">   @param    cmd 待操作的LCD命令地址</span>
+<span class="cm">   @param    buf 数据缓存buf（如果不需要写数据，可传入NULL）</span>
+<span class="cm">   @param    len 数据缓存长度（如果不写数据，需将len配置为0）</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note     </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="ow">void</span><span class="w"> </span><span class="nx">lcd_write_cmd</span><span class="p">(</span><span class="nx">u32</span><span class="w"> </span><span class="nx">cmd</span><span class="p">,</span><span class="w"> </span><span class="nx">u8</span><span class="w"> </span><span class="o">*</span><span class="nx">buf</span><span class="p">,</span><span class="w"> </span><span class="nx">u8</span><span class="w"> </span><span class="nx">len</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    DBI模块从LCD指定地址读数据</span>
+<span class="cm">   @param    cmd 待操作的LCD命令地址</span>
+<span class="cm">   @param    buf 数据缓存buf（输出）</span>
+<span class="cm">   @param    len 读取的数据长度（需与buf匹配，不可超过buf大小）</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note     </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="ow">void</span><span class="w"> </span><span class="nx">lcd_read_cmd</span><span class="p">(</span><span class="nx">u32</span><span class="w"> </span><span class="nx">cmd</span><span class="p">,</span><span class="w"> </span><span class="nx">u8</span><span class="w"> </span><span class="o">*</span><span class="nx">buf</span><span class="p">,</span><span class="w"> </span><span class="nx">u8</span><span class="w"> </span><span class="nx">len</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    设置LCD显示区域（2A, 2B命令）</span>
+<span class="cm">   @param    xstart X起始像素坐标</span>
+<span class="cm">   @param    xend   X结束像素坐标</span>
+<span class="cm">   @param    ystart Y起始像素坐标</span>
+<span class="cm">   @param    yend   Y结束像素坐标</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note     </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="ow">void</span><span class="w"> </span><span class="nx">lcd_set_draw_area</span><span class="p">(</span><span class="kr">int</span><span class="w"> </span><span class="nx">xstart</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">xend</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">ystart</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">yend</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    DBI硬件写显示数据到LCD, 非阻塞接口，与lcd_set_draw_area配合使用</span>
+<span class="cm">   @param    buf     待写出数据</span>
+<span class="cm">   @param    xstart  X起始像素坐标</span>
+<span class="cm">   @param    xend    X结束像素坐标</span>
+<span class="cm">   @param    ystart  Y起始像素坐标</span>
+<span class="cm">   @param    yend    Y结束像素坐标</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note     </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="ow">void</span><span class="w"> </span><span class="nx">lcd_draw</span><span class="p">(</span><span class="nx">u8</span><span class="w"> </span><span class="o">*</span><span class="nx">buf</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">xstart</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">xend</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">ystart</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">yend</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    DBI硬件以续传方式写显示数据到LCD, 非阻塞接口，与lcd_set_draw_area、lcd_draw配合使用</span>
+<span class="cm">   @param    buf     待写出数据</span>
+<span class="cm">   @param    xstart  X起始像素坐标</span>
+<span class="cm">   @param    xend    X结束像素坐标</span>
+<span class="cm">   @param    ystart  Y起始像素坐标</span>
+<span class="cm">   @param    yend    Y结束像素坐标</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note     </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="ow">void</span><span class="w"> </span><span class="nx">lcd_draw_continue</span><span class="p">(</span><span class="nx">u8</span><span class="w"> </span><span class="o">*</span><span class="nx">buf</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">xstart</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">xend</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">ystart</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">yend</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    纯色填充LCD指定区域</span>
+<span class="cm">   @param    color  待填充的RGB888颜色值</span>
+<span class="cm">   @param    xstart 待填充的X起始像素坐标</span>
+<span class="cm">   @param    xend   待填充的X结束像素坐标</span>
+<span class="cm">   @param    ystart 待填充的Y起始像素坐标</span>
+<span class="cm">   @param    yend   待填充的Y结束像素坐标</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note     </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="ow">void</span><span class="w"> </span><span class="nx">lcd_clear</span><span class="p">(</span><span class="nx">u32</span><span class="w"> </span><span class="nx">color</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">xstart</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">xend</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">ystart</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">yend</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    配置LCD控制脚操作函数</span>
+<span class="cm">   @param    te_stat TE脚控制函数</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note     </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="ow">void</span><span class="w"> </span><span class="nx">lcd_set_ctrl_pin_func</span><span class="p">(</span><span class="kr">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">te_stat</span><span class="p">)())</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    配置TE信号等待回调函数，如果注册，等待TE时将调用回调进行等待</span>
+<span class="cm">   @param    te_wait 应用层实现的TE等待函数</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note     </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="ow">void</span><span class="w"> </span><span class="nx">lcd_set_te_wait_cb</span><span class="p">(</span><span class="ow">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">te_wait</span><span class="p">)())</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    设置LCD对齐参数</span>
+<span class="cm">   @param    row_align    设置行对齐参数</span>
+<span class="cm">   @param    column_align 设置列对齐参数</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note     </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="ow">void</span><span class="w"> </span><span class="nx">lcd_set_align</span><span class="p">(</span><span class="nx">u8</span><span class="w"> </span><span class="nx">row_align</span><span class="p">,</span><span class="w"> </span><span class="nx">u8</span><span class="w"> </span><span class="nx">column_align</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    获取LCD对齐参数</span>
+<span class="cm">   @param    row_align    获取行对齐参数</span>
+<span class="cm">   @param    column_align 获取列对齐参数</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note     </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="ow">void</span><span class="w"> </span><span class="nx">lcd_get_align</span><span class="p">(</span><span class="nx">u8</span><span class="w"> </span><span class="o">*</span><span class="nx">row_align</span><span class="p">,</span><span class="w"> </span><span class="nx">u8</span><span class="w"> </span><span class="o">*</span><span class="nx">column_align</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    检查LCD刷屏区域参数是否对齐</span>
+<span class="cm">   @param    xstart X起始像素坐标</span>
+<span class="cm">   @param    xend   X结束像素坐标</span>
+<span class="cm">   @param    ystart Y起始像素坐标</span>
+<span class="cm">   @param    yend   Y结束像素坐标</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note     </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kr">int</span><span class="w"> </span><span class="nx">lcd_check_align</span><span class="p">(</span><span class="kr">int</span><span class="w"> </span><span class="nx">xstart</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">xend</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">ystart</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">yend</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    等待lcd空闲</span>
+<span class="cm">   @param    </span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note     本函数一般在推屏buffer释放前调用，等待推屏结束</span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="ow">void</span><span class="w"> </span><span class="nx">lcd_wait_busy</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    无等待推屏接口</span>
+<span class="cm">   @param    buf     待写出数据</span>
+<span class="cm">   @param    xstart  X起始像素坐标</span>
+<span class="cm">   @param    xend    X结束像素坐标</span>
+<span class="cm">   @param    ystart  Y起始像素坐标</span>
+<span class="cm">   @param    yend    Y结束像素坐标</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note     </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="ow">void</span><span class="w"> </span><span class="nx">lcd_draw_kistart</span><span class="p">(</span><span class="nx">u8</span><span class="w"> </span><span class="o">*</span><span class="nx">buf</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">xstart</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">xend</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">ystart</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">yend</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    设置推屏结束回调, lcd_draw、lcd_draw_continue推屏结束时调用该回调</span>
+<span class="cm">   @param    </span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note     </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kr">int</span><span class="w"> </span><span class="nx">lcd_draw_set_callback</span><span class="p">(</span><span class="ow">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">callback</span><span class="p">)(</span><span class="kr">int</span><span class="w"> </span><span class="nx">err</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    设置LCD繁忙状态</span>
+<span class="cm">   @param    </span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note     需TE中断调用lcd_draw_kistart接口推屏，推屏结束后会自动消除繁忙状态。另外附加作用是打印调试接口，如果是kistart是由TE来引导的,那么wait lcd busy就是正常的, 不用打印出来</span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="ow">void</span><span class="w"> </span><span class="nx">lcd_te_trig_kistart_set_busy</span><span class="p">(</span><span class="ow">void</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    设置LCD模式</span>
+<span class="cm">   @param    mode：LCD模式（目前只有CMD_MODE）</span>
+<span class="cm">   @param    priv：CMD_8BIT、CMD_16BIT、CMD_24BIT</span>
+<span class="cm">   @return   </span>
+<span class="cm">   @note     </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="ow">void</span><span class="w"> </span><span class="nx">lcd_set_param</span><span class="p">(</span><span class="nx">u8</span><span class="w"> </span><span class="nx">mode</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">priv</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/**@brief    获取LCD模式</span>
+<span class="cm">   @param    mode： CMD_MODE</span>
+<span class="cm">   @return   CMD_8BIT、CMD_16BIT、CMD_24BIT</span>
+<span class="cm">   @note     </span>
+<span class="cm">*/</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="kr">int</span><span class="w"> </span><span class="nx">lcd_get_param</span><span class="p">(</span><span class="nx">u8</span><span class="w"> </span><span class="nx">mode</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2010-2023, 杰理科技股份有限公司.
+      <span class="lastupdated">Last updated on Oct 12, 2024.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

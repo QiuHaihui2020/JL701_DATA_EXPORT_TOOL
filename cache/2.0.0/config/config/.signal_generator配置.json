@@ -1,0 +1,178 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "Signal Generator ",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "template": "",
+        "span": 24,
+        "formId": 106,
+        "renderKey": "1061666764691753",
+        "children": [
+          {
+            "__config__": {
+              "label": "Signal Type",
+              "showLabel": true,
+              "labelWidth": 150,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 24,
+              "required": true,
+              "defaultValue": 1,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "status": 0,
+              "dataType": [
+                "32",
+                "1"
+              ],
+              "formId": 183,
+              "renderKey": "1831696747122847",
+              "eventField": [],
+              "tip": "",
+              "tipAlways": true,
+              "originValue": 1,
+              "saveWay": "bin"
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "Slience",
+                  "value": 0,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "Sine Wave",
+                  "value": 1,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "White Noise",
+                  "value": 2,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "placeholder": "请选择Signal Type",
+            "style": {
+              "width": "25%"
+            },
+            "clearable": false,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1696747122847_1",
+            "__vModel__": "field183"
+          },
+          {
+            "__config__": {
+              "label": "Center Frequency",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 150,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 1000,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "status": 0,
+              "dataType": [
+                "32",
+                "1"
+              ],
+              "formId": 1065,
+              "renderKey": "10651722394077395",
+              "originValue": 1000,
+              "eventField": [],
+              "saveWay": "bin",
+              "structDef": "20%",
+              "tip": "单位：Hz, 仅Sine Wave有效",
+              "tipAlways": true
+            },
+            "placeholder": "Center Frequency",
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1722394077395_1",
+            "__vModel__": "field1065",
+            "min": 20
+          },
+          {
+            "__config__": {
+              "label": "Gain",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 150,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": -30,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": true,
+              "regList": [],
+              "status": 0,
+              "dataType": [
+                "float"
+              ],
+              "formId": 1066,
+              "renderKey": "10661722394182066",
+              "originValue": -30,
+              "eventField": [],
+              "saveWay": "bin",
+              "structDef": "20%",
+              "tip": "单位：dB",
+              "tipAlways": true
+            },
+            "placeholder": "Gain",
+            "step": 0.1,
+            "step-strictly": false,
+            "precision": 1,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1722394182066_2",
+            "__vModel__": "field1066",
+            "max": 0
+          }
+        ],
+        "eventField": [],
+        "showResetBtn": false
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "400px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1675825867879_24"
+    }
+  ],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 24,
+  "formBtns": false
+}

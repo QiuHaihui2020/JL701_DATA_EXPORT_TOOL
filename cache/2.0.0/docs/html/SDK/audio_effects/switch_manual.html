@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>数据流开关节点（Switch） &mdash; JL Project Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="https://doc.zh-jieli.com/static/css/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=fa47ad08"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="https://doc.zh-jieli.com/static/js/custom.js"></script>
+        <script src="../../_static/js/custom.js?v=bfa33168"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">SDK入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/index.html">1. 快速入门</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">SDK Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../soundbox/index.html">1. SDK 详细介绍</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../audio/index.html">1. 音频播放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../btstack/index.html">2. 蓝牙协议栈</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../driver/index.html">3. 外设驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../driver/pmu/index.html">4. 电源管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../led_ui/index.html">5. LED状态显示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system/file_system/index.html">6. 文件系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system/os/index.html">7. 操作系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system/timer/index.html">8. 定时器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system/clock_manage/index.html">9. 时钟管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_manager/index.html">10. 设备管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system/%E9%80%9A%E7%94%A8%E7%BB%84%E4%BB%B6/index.html">11. 通用组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../audio_config/index.html">12. 音频配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../audio_flow/index.html">13. 音频流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">14. 音效调试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../audio_cvp/index.html">15. 通话清晰语音</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system/report/index.html">16. 系统状态报告</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system/ui/index.html">17. UI 框架</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">JieLi_蓝牙音频</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">数据流开关节点（Switch）</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="switch">
+<h1>数据流开关节点（Switch）<a class="headerlink" href="#switch" title="Link to this heading"></a></h1>
+<section id="id1">
+<h2>功能介绍<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>在数据流已创建的情况下，动态控制数据是否往后级传递。</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>使用范例<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>设置节点名称</strong>
+<img alt="switch_name" src="../../_images/switch1.png" /></p></li>
+<li><p><strong>将节点串在需要动态开关的数据流中</strong>
+<img alt="switch_name" src="../../_images/switch2.png" /></p></li>
+<li><p><strong>程序中配置回调函数</strong>
+<code class="docutils literal notranslate"><span class="pre">jlstream_event_handle.c</span></code>文件中，根据节点名称匹配回调函数，通过回调函数的返回值确定节点开关状态。</p></li>
+</ul>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * 示例：使用全局变量控制switch开关</span>
+<span class="cm"> * 返回1，switch节点打开，数据往后级传递</span>
+<span class="cm"> * 返回0，switch节点关闭，数据流阻塞</span>
+<span class="cm"> */</span>
+<span class="n">u8</span><span class="w"> </span><span class="n">switch_en</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">get_switch_test_state</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">switch_en</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">get_switch_node_callback</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">arg</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">strcmp</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Switch_test&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">get_switch_test_state</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2010-2023, 杰理科技股份有限公司.
+      <span class="lastupdated">Last updated on Oct 12, 2024.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

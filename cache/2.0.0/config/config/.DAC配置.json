@@ -1,0 +1,247 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "DAC节点参数配置",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [],
+        "template": "",
+        "span": 24,
+        "formId": 104,
+        "renderKey": "1041677138688471",
+        "children": [
+          {
+            "__config__": {
+              "label": "dac通道延时（ms）",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 200,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 50,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "dataType": [
+                "16",
+                "1"
+              ],
+              "formId": 104,
+              "renderKey": "1041677140583268",
+              "eventField": [],
+              "saveWay": "bin",
+              "emptyValue": "",
+              "originValue": 50,
+              "tip": ""
+            },
+            "placeholder": "(ms) dac通道延时dac通道延时（ms）",
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1677642341249_0",
+            "__vModel__": "field104",
+            "min": 1,
+            "max": 256
+          },
+          {
+            "__config__": {
+              "label": "dac延时保护时间（ms）",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 200,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 8,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "dataType": [
+                "1",
+                "16"
+              ],
+              "formId": 108,
+              "renderKey": "1081677144866466",
+              "eventField": [],
+              "saveWay": "bin",
+              "emptyValue": "",
+              "originValue": 8,
+              "formItemWidth": "90%",
+              "tip": ""
+            },
+            "placeholder": "dac延时保护时间（ms）",
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1677642343355_1",
+            "__vModel__": "field108",
+            "min": 1,
+            "max": 1000
+          },
+          {
+            "__config__": {
+              "label": "DAC写入模式",
+              "labelWidth": 200,
+              "showLabel": true,
+              "tag": "el-radio-group",
+              "tagIcon": "radio",
+              "changeTag": true,
+              "defaultValue": 0,
+              "layout": "colFormItem",
+              "span": 24,
+              "optionType": "default",
+              "regList": [],
+              "required": false,
+              "border": false,
+              "dataType": [
+                "1",
+                "8"
+              ],
+              "formId": 106,
+              "renderKey": "1061677144833176",
+              "saveWay": "bin",
+              "originValue": 0,
+              "eventField": []
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "BLOCK",
+                  "value": 0
+                },
+                {
+                  "label": "FORCE",
+                  "value": 1
+                }
+              ]
+            },
+            "style": {
+              "width": "100%"
+            },
+            "size": "medium",
+            "disabled": false,
+            "id": "id_1677642344547_2",
+            "__vModel__": "field106"
+          }
+        ],
+        "eventField": [],
+        "saveWay": "bin"
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "100px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1678246329785_2"
+    },
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "多设备输出配置",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "status": 0,
+        "template": "",
+        "hideAddTemplate": false,
+        "span": 24,
+        "formId": 742,
+        "renderKey": "7421702378606977",
+        "children": [
+          {
+            "__config__": {
+              "label": "设备属性",
+              "labelWidth": 200,
+              "showLabel": true,
+              "tag": "el-radio-group",
+              "tagIcon": "radio",
+              "changeTag": true,
+              "defaultValue": 0,
+              "layout": "colFormItem",
+              "span": 24,
+              "optionType": "default",
+              "regList": [],
+              "required": false,
+              "border": false,
+              "dataType": [
+                "1",
+                "8"
+              ],
+              "formId": 160,
+              "renderKey": "1601693469084872",
+              "saveWay": "bin",
+              "originValue": 0,
+              "eventField": [],
+              "tip": "1、关联同步的主设备使能，只能有一个节点是主设备。从设备跟随主设备做同步。2、只有在多个输出设备同时挂载到同一个分流器时，分流器的最后一个作为主设备，其余不同频率的硬件需要配置成从设备。3、单设备输出选Disable",
+              "tipAlways": true
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "Disable",
+                  "value": 0
+                },
+                {
+                  "label": "主设备",
+                  "value": 1,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "从设备",
+                  "value": 2,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "style": {
+              "width": "100%"
+            },
+            "size": "medium",
+            "disabled": false,
+            "id": "id_1693469084872_1",
+            "__vModel__": "field160"
+          }
+        ],
+        "eventField": [],
+        "expand": 1
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "400px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1702378606977_0"
+    }
+  ],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 24,
+  "formBtns": false
+}

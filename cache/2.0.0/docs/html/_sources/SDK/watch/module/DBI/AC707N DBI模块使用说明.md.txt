@@ -1,0 +1,336 @@
+---
+title: AC707N DBI模块使用说明
+category: 2024-08
+grammar_cjkRuby: true
+grammar_mermaid: true
+---
+
+# 模块介绍
+
++ DBI模块用于推屏处理，支持SPI、MCU、RGB接口；
++ 推屏时钟来源于芯片内部的时钟分频，因此可能和想要的时钟有偏差，可以实测CLK输出频率；
+
+
+# 数据结构
+
+```javascript
+typedef enum lcd_type_cfg {
+    LCD_TYPE_SPI,	        // SPI屏
+    LCD_TYPE_SPI_RAMLESS,	// SPI RAMLESS屏
+    LCD_TYPE_MCU,	        // MCU屏
+    LCD_TYPE_RGB,	        // RGB屏
+    LCD_TYPE_MAX,
+} LCD_TYPE;
+```
+
+```javascript
+struct dbi_param {
+    // 显示区域相关(用于配置推屏区域，可不推全屏)
+    int scr_x;
+    int scr_y;
+    int scr_w;
+    int scr_h;
+
+    // lcd配置
+    int lcd_width;
+    int lcd_height;
+    LCD_TYPE lcd_type;	// LCD接口类型：SPI, SPI Ramless, MCU, RGB
+
+    // 显存配置
+    int buffer_num;
+    int buffer_size;
+    int buffer_total_size;
+    u8 *buffer;
+
+    // dbi模块的输入，与imb模块一起用时，也是imb模块的输出
+    int in_width;
+    int in_height;
+    int in_format;
+    int in_stride;
+
+    // debug模式(推新屏时，可使能debug模式，先推纯色测试)
+    int debug_mode_en;
+    int debug_mode_color;
+
+    // 帧率配置(用于计算DBI模块时钟频率，但实际推屏帧率仅会接近配置，并非100%一致)
+    int fps;
+
+    // 以下为三种屏驱动相关配置，out_format为屏幕的像素格式类型
+    struct spi_param {
+        int spi_mode;
+        int pixel_type;
+        int out_format;
+        int spi_dat_mode;
+        struct qspi_cmd {
+            u8 write_cmd;
+            u8 read_cmd;
+            u8 submode0_cmd;//0x2c/0x3c/数据单线, default value 0x02
+            u8 submode1_cmd;//0x2c/0x3c单线，数据四线，default value 0x32
+            u8 submode2_cmd;//0x2c/0x3c/数据四线, default value 0x12
+        } qspi_cmd;
+        struct ramless {
+            u32 frame_sync_cmd;//ramless cmd
+            u32 porch_sync_cmd;//ramless cmd
+            u32 line_sync_cmd;//ramless cmd
+            u16 hbp;//hori back porch
+            u16 hfp;//hori front porch
+            u16 vbp;//vert back porch
+            u16 vfp;//vert front porch
+        } ramless;
+        u8 caset_cmd;//Column Address Set, default value 0x2a
+        u8 paset_cmd;//Page Address Set, default value 0x2b
+        u8 ramwr_cmd;//Memory Write Start, default value 0x2c
+        u8 ramwrc_cmd;//Memory Write Continue, default valus 0x3c
+    } spi;
+
+    struct pap_param {
+        int out_format;
+    } pap;
+
+    struct rgb_param {
+        int use_spi;
+        int out_format;
+        int continue_frames;
+
+        int hpw_prd;
+        int hbw_prd;
+        int hfw_prd;
+        int hact_prd;
+
+        int vpw_prd;
+        int vbw_prd;
+        int vfw_prd;
+        int vact_prd;
+    } rgb;
+};
+```
+
+# 函数接口
+
+```JavaScript
+/*-------------------------------------------------------------------*/
+/**@brief    DBI模块初始化
+   @param    param DBI配置句柄
+   @return   0：成功，-1：失败
+   @note     需要操作DBI或从DBI获取信息时，必须先初始化
+*/
+/*-------------------------------------------------------------------*/
+int lcd_init(struct dbi_param *param)
+```
+
+```javascript
+/*-------------------------------------------------------------------*/
+/**@brief    DBI模块向LCD指定地址写数据
+   @param    cmd 待操作的LCD命令地址
+   @param    buf 数据缓存buf（如果不需要写数据，可传入NULL）
+   @param    len 数据缓存长度（如果不写数据，需将len配置为0）
+   @return   
+   @note     
+*/
+/*-------------------------------------------------------------------*/
+void lcd_write_cmd(u32 cmd, u8 *buf, u8 len)
+```
+
+```javascript
+/*-------------------------------------------------------------------*/
+/**@brief    DBI模块从LCD指定地址读数据
+   @param    cmd 待操作的LCD命令地址
+   @param    buf 数据缓存buf（输出）
+   @param    len 读取的数据长度（需与buf匹配，不可超过buf大小）
+   @return   
+   @note     
+*/
+/*-------------------------------------------------------------------*/
+void lcd_read_cmd(u32 cmd, u8 *buf, u8 len)
+```
+
+```javascript
+/*-------------------------------------------------------------------*/
+/**@brief    设置LCD显示区域（2A, 2B命令）
+   @param    xstart X起始像素坐标
+   @param    xend   X结束像素坐标
+   @param    ystart Y起始像素坐标
+   @param    yend   Y结束像素坐标
+   @return   
+   @note     
+*/
+/*-------------------------------------------------------------------*/
+void lcd_set_draw_area(int xstart, int xend, int ystart, int yend)
+```
+
+```javascript
+/*-------------------------------------------------------------------*/
+/**@brief    DBI硬件写显示数据到LCD, 非阻塞接口，与lcd_set_draw_area配合使用
+   @param    buf     待写出数据
+   @param    xstart  X起始像素坐标
+   @param    xend    X结束像素坐标
+   @param    ystart  Y起始像素坐标
+   @param    yend    Y结束像素坐标
+   @return   
+   @note     
+*/
+/*-------------------------------------------------------------------*/
+void lcd_draw(u8 *buf, int xstart, int xend, int ystart, int yend)
+```
+
+```javascript
+/*-------------------------------------------------------------------*/
+/**@brief    DBI硬件以续传方式写显示数据到LCD, 非阻塞接口，与lcd_set_draw_area、lcd_draw配合使用
+   @param    buf     待写出数据
+   @param    xstart  X起始像素坐标
+   @param    xend    X结束像素坐标
+   @param    ystart  Y起始像素坐标
+   @param    yend    Y结束像素坐标
+   @return   
+   @note     
+*/
+/*-------------------------------------------------------------------*/
+void lcd_draw_continue(u8 *buf, int xstart, int xend, int ystart, int yend)
+```
+
+```javascript
+/*-------------------------------------------------------------------*/
+/**@brief    纯色填充LCD指定区域
+   @param    color  待填充的RGB888颜色值
+   @param    xstart 待填充的X起始像素坐标
+   @param    xend   待填充的X结束像素坐标
+   @param    ystart 待填充的Y起始像素坐标
+   @param    yend   待填充的Y结束像素坐标
+   @return   
+   @note     
+*/
+/*-------------------------------------------------------------------*/
+void lcd_clear(u32 color, int xstart, int xend, int ystart, int yend)
+```
+
+```javascript
+/*-------------------------------------------------------------------*/
+/**@brief    配置LCD控制脚操作函数
+   @param    te_stat TE脚控制函数
+   @return   
+   @note     
+*/
+/*-------------------------------------------------------------------*/
+void lcd_set_ctrl_pin_func(int (*te_stat)())
+```
+
+```javascript
+/*-------------------------------------------------------------------*/
+/**@brief    配置TE信号等待回调函数，如果注册，等待TE时将调用回调进行等待
+   @param    te_wait 应用层实现的TE等待函数
+   @return   
+   @note     
+*/
+/*-------------------------------------------------------------------*/
+void lcd_set_te_wait_cb(void (*te_wait)())
+```
+
+```javascript
+/*-------------------------------------------------------------------*/
+/**@brief    设置LCD对齐参数
+   @param    row_align    设置行对齐参数
+   @param    column_align 设置列对齐参数
+   @return   
+   @note     
+*/
+/*-------------------------------------------------------------------*/
+void lcd_set_align(u8 row_align, u8 column_align)
+```
+
+```javascript
+/*-------------------------------------------------------------------*/
+/**@brief    获取LCD对齐参数
+   @param    row_align    获取行对齐参数
+   @param    column_align 获取列对齐参数
+   @return   
+   @note     
+*/
+/*-------------------------------------------------------------------*/
+void lcd_get_align(u8 *row_align, u8 *column_align)
+```
+
+```javascript
+/*-------------------------------------------------------------------*/
+/**@brief    检查LCD刷屏区域参数是否对齐
+   @param    xstart X起始像素坐标
+   @param    xend   X结束像素坐标
+   @param    ystart Y起始像素坐标
+   @param    yend   Y结束像素坐标
+   @return   
+   @note     
+*/
+/*-------------------------------------------------------------------*/
+int lcd_check_align(int xstart, int xend, int ystart, int yend)
+```
+
+```javascript
+/*-------------------------------------------------------------------*/
+/**@brief    等待lcd空闲
+   @param    
+   @return   
+   @note     本函数一般在推屏buffer释放前调用，等待推屏结束
+*/
+/*-------------------------------------------------------------------*/
+void lcd_wait_busy()
+```
+
+```javascript
+/*-------------------------------------------------------------------*/
+/**@brief    无等待推屏接口
+   @param    buf     待写出数据
+   @param    xstart  X起始像素坐标
+   @param    xend    X结束像素坐标
+   @param    ystart  Y起始像素坐标
+   @param    yend    Y结束像素坐标
+   @return   
+   @note     
+*/
+/*-------------------------------------------------------------------*/
+void lcd_draw_kistart(u8 *buf, int xstart, int xend, int ystart, int yend)
+```
+
+```javascript
+/*-------------------------------------------------------------------*/
+/**@brief    设置推屏结束回调, lcd_draw、lcd_draw_continue推屏结束时调用该回调
+   @param    
+   @return   
+   @note     
+*/
+/*-------------------------------------------------------------------*/
+int lcd_draw_set_callback(void (*callback)(int err))
+```
+
+```javascript
+/*-------------------------------------------------------------------*/
+/**@brief    设置LCD繁忙状态
+   @param    
+   @return   
+   @note     需TE中断调用lcd_draw_kistart接口推屏，推屏结束后会自动消除繁忙状态。另外附加作用是打印调试接口，如果是kistart是由TE来引导的,那么wait lcd busy就是正常的, 不用打印出来
+*/
+/*-------------------------------------------------------------------*/
+void lcd_te_trig_kistart_set_busy(void)
+```
+
+```javascript
+/*-------------------------------------------------------------------*/
+/**@brief    设置LCD模式
+   @param    mode：LCD模式（目前只有CMD_MODE）
+   @param    priv：CMD_8BIT、CMD_16BIT、CMD_24BIT
+   @return   
+   @note     
+*/
+/*-------------------------------------------------------------------*/
+void lcd_set_param(u8 mode, int priv)
+```
+
+```javascript
+/*-------------------------------------------------------------------*/
+/**@brief    获取LCD模式
+   @param    mode： CMD_MODE
+   @return   CMD_8BIT、CMD_16BIT、CMD_24BIT
+   @note     
+*/
+/*-------------------------------------------------------------------*/
+int lcd_get_param(u8 mode)
+```
+

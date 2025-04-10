@@ -1,0 +1,159 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "蓝牙音频同步节点参数配置",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [],
+        "template": "",
+        "span": 24,
+        "formId": 104,
+        "renderKey": "1041677138688471",
+        "children": [
+          {
+            "__config__": {
+              "label": "网络时钟配置",
+              "labelWidth": 200,
+              "showLabel": true,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "changeTag": true,
+              "defaultValue": 1,
+              "layout": "colFormItem",
+              "span": 24,
+              "optionType": "default",
+              "regList": [],
+              "required": false,
+              "border": false,
+              "dataType": [
+                "1",
+                "8"
+              ],
+              "formId": 160,
+              "renderKey": "1601693469084872",
+              "saveWay": "bin",
+              "originValue": 1,
+              "eventField": [],
+              "tip": "",
+              "tipAlways": true
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "AUDIO_NETWORK_LOCAL",
+                  "value": 0
+                },
+                {
+                  "label": "AUDIO_NETWORK_BT2_1 ",
+                  "value": 1
+                },
+                {
+                  "label": "AUDIO_NETWORK_BLE",
+                  "value": 2,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "AUDIO_NETWORK_IPV4",
+                  "value": 3,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "placeholder": "请选择下拉选择网络时钟配置",
+            "style": {
+              "width": "50%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1693469084872_1",
+            "__vModel__": "field160"
+          },
+          {
+            "__config__": {
+              "label": "对齐模式",
+              "tag": "el-select",
+              "tagIcon": "select",
+              "defaultValue": 0,
+              "span": 24,
+              "showLabel": true,
+              "labelWidth": 200,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "status": 0,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "formId": 113,
+              "renderKey": "1131716965372533",
+              "eventField": [],
+              "saveWay": "bin"
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "快速对齐",
+                  "value": 0,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "缓慢对齐（非us对齐）",
+                  "value": 1,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "变采样bypass",
+                  "value": 2,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "placeholder": "请选择对齐模式",
+            "style": {},
+            "clearable": false,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1716965372533_1",
+            "__vModel__": "field113"
+          }
+        ],
+        "eventField": [],
+        "saveWay": "bin"
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "400px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1693539807876_1"
+    }
+  ],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 24,
+  "formBtns": false
+}

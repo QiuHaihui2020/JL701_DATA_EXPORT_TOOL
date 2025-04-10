@@ -1,0 +1,981 @@
+手表项目入门
+====================
+
+## 文件结构
+
+### 根目录
+
+| 目录名                | 介绍                     |
+| -------------------- | ------------------------ |
+| .\SDK                | 主核工程                  |
+| .\SensorHub          | P11小核工程               |
+| .\loader             | 升级loader工程            |
+| .\output             | 可视化工具导出的配置文件   |
+| .\src                | 可视化工具配置文件         |
+
+
+
+### SDK重点目录
+
+| 目录名                | 介绍                     |
+| -------------------- | ------------------------ |
+| SDK\apps\watch\board            | 板卡操作目录                  |
+| SDK\apps\watch\message\adapter  | SDK模式、消息切换函数          |
+| SDK\apps\watch\mode             | SDK 下的模式应用            |
+| SDK\apps\watch\ui               | 杰理UI 应用及GPU demo         |
+| SDK\apps\watch\data_storage     | 杰理运动、信息存储模块         |
+| SDK\apps\watch\app_main.c       | 应用入口函数                  |
+| SDK\apps\common                 | 通用模块、设备、文件系统配置文件夹   |
+| SDK\apps\common\third_party_profile   | 杰理app 协议应用对接         |
+
+
+
+## 启动与编译
+
+### 启动流程
+
+#### SDK启动流程为：
+
+start->setup_arch->app_main->os_start->cpu1_start->os_start
+
+- 1.setup_arch
+
+setup_arch是发布SDK能看到的第一个函数，主要有以下功能：  
+①初始化内存管理  
+②初始化看门狗  
+③初始化efuse  
+④初始化时钟  
+⑤初始化操作系统  
+⑥初始化tick_timer和sys_timer  
+⑦初始化串口打印  
+⑧初步初始化电源  
+
+
+- 2.app_main
+
+app_main里面会新建一个app_core任务（任务会等到os_start后才开始执行）。  
+在app_core 任务的入口位置的app_task_init函数里面包含了SDK的常见初始化，UI 初始化就是在其中。  
+board_init函数就是我们面对用户使用的推荐函数，app_main里面是使用弱定义的方式注册了一个弱的board_init函数，实体部分依然是board 板卡函数里面实现。
+
+
+- 3.os_start
+
+os_start会开始操作系统，新建一个最低优先级的idle任务。如果多核的话，会初始化其他内核。
+
+
+- 4.cpu1_start
+
+cpu1_start是另一个内核的初始化流程，最后会调用os_start创建idle1任务。
+
+
+
+### 编译链接
+
+
+- sdk_ld.c  
+
+SDK的链接脚本是sdk.ld，由sdk_ld.c预编译生成，其中分配了data、bss、text等各个段的信息。
+
+
+- sdk_used_list.c  
+
+在sdk中，有些符号没有使用，在编译的时候不会链接进来，定义在sdk_used_list.c中的符号能强制链接。
+
+- isd_config_rule.c  
+
+该文件定义了一些下载信息，例如spi的配置，flash分配等。
+
+
+- 编译输出  
+
+sdk.map 详细映射：  
+
+显示每个编译单元在内存中的具体位置，包括代码段、数据段等。通过详细映射，开发者可以了解每个源文件对内存的贡献，从而优化代码和数据的布局。  
+通过分析map文件，开发者可以了解程序的静态ram和flash使用情况，从而进行针对性的优化。此外，可以通过sdk.map可以分析每个段里面的函数先后顺序。  
+
+
+
+## 配置
+
+
+### 板级相关
+#### DEBUG配置
+##### debug io配置
+
+板卡的串口io和波特率配置是从杰理可视化工程生成的sdk_config.h里面配置生成。
+
+```c
+// ------------板级配置.json------------
+#define TCFG_DEBUG_UART_ENABLE 1 // 调试串口
+#if TCFG_DEBUG_UART_ENABLE
+#define TCFG_DEBUG_UART_TX_PIN IO_PORTB_03 // 输出IO
+#define TCFG_DEBUG_UART_BAUDRATE 0x1e8480 // 波特率
+#define TCFG_EXCEPTION_LOG_ENABLE 0x1 // 打印异常信息
+#define TCFG_EXCEPTION_RESET_ENABLE 0x0 // 异常自动复位
+#define TCFG_CONFIG_DEBUG_RECORD_ENABLE 0x0 // 异常存flash
+#endif // TCFG_DEBUG_UART_ENABLE
+```
+
+配置信息基本规则:
+- sdk_config.h   是由杰理可视化工具在线配置生成，原则上不建议客户直接修改sdk_config.h的文件，如果客户希望可视化工具不覆盖sdk_config.h，可以配置可视化工具脱机模式
+
+-  board_config.h 是唯一包含有sdk_config.h和板卡配置的文件的，用户可以在自己的板卡对配置信息进行完善
+
+- app_config.h   包含有board_config.h  
+
+因此如果用户如果配置不想耦合到杰理可视化工程，请在用户的board_config.h进行定义，如果已经定义在sdk_config.h的内容，客户不想使用工具配置，也可以重新进行undef。
+
+
+##### 异常打印配置
+
+异常信息打印开关在log_config/lib_system_config.c
+
+```c
+///打印是否时间打印信息
+const int config_printf_time         = 1;
+
+///异常中断，asser打印开启
+#if CONFIG_DEBUG_ENABLE
+const int config_asser         = TCFG_EXCEPTION_LOG_ENABLE;  // 1:使能异常打印; 2:追加额外调试信息(dump另外一个CPU寄存器信息)
+const int config_exception_reset_enable = TCFG_EXCEPTION_RESET_ENABLE;
+#else
+const int config_asser         = 0;
+const int config_exception_reset_enable = 1;
+#endif
+```
+
+##### 内存debug
+
+该功能开启后malloc的赘余空间会增加，仅仅适用于SDK开发阶段对malloc的内存情况进行debug，不适用于量产使用和静态buf的越界。  
+配置参见log_config/lib_system_config.c。  
+单纯的内存泄漏问题也可以使用heap内存记录功能进行debug。
+
+```c
+//================================================//
+//          malloc 越界debug和记录功能            //
+//const_malloc_list_check_debug_en             = 1;      //开启配置内存越界检查，注意，本功能和heap内存记录功能互斥，更注重debug性质和主动检查性质，开启后会申请额外信息，本功能仅仅适用开发后用于内存安全性检查和内存越界的检查
+//const_malloc_list_check_add_extlen           = 0;     //用来做写穿检查，如果内存写穿比较厉害导致rets打印异常，可以增加长度
+//const int const_malloc_list_check_for_each   = 1;     //每次申请内存都做全局性检查，效率低，但是可以快速回溯出异常地址
+//内存泄漏debug：通过 malloc_list_status_printf_all    //可以打印最后没有释放的内存,cout 是需要打印是数量,存在内存泄漏一般看最后几个申请是否有rets重复即可
+//void malloc_list_status_printf_all(int count);
+//================================================//
+const int const_malloc_list_check_debug_en   = 0;
+const int const_malloc_list_check_add_extlen = 0;
+const int const_malloc_list_check_for_each   = 0;
+
+```
+
+```c
+//================================================//
+//          heap内存记录功能                      //
+// 使能建议设置为256（表示最大记录256项）         //
+// 空间需求：CONFIG_HEAP_MEMORY_TRACE*12          //
+//   CONFIG_HEAP_MEMORY_MAX_TRACE_EN使能时空间翻倍//
+// 通过void mem_unfree_dump()输出实时记录         //
+// 通过void mem_max_unfree_dump()输出最大记录     //
+// void mem_max_unfree_recount()最大记录重新统计  //
+//================================================//
+const u32 CONFIG_HEAP_MEMORY_TRACE = 0;
+const u32 CONFIG_HEAP_MEMORY_MAX_TRACE_EN = 0; // 0 or 1
+
+```
+
+
+
+#### RTC相关结构体
+
+用户可以初始化配置默认的系统时间和闹钟函数。
+
+```c
+static struct sys_time def_sys_time = {  //初始化系统时间
+    .year = 2020,
+    .month = 1,
+    .day = 1,
+    .hour = 0,
+    .min = 0,
+    .sec = 0,
+};
+
+static struct sys_time def_alarm = {     //初始化闹钟时间
+    .year = 2020,
+    .month = 1,
+    .day = 1,
+    .hour = 0,
+    .min = 5,
+    .sec = 0,
+};
+
+extern void alm_wakeup_isr(void);
+void rtc_alm_isr()    //闹钟回调函数测试
+{
+    printf("alarm_timeout!!!\n\n");
+    /* alm_wakeup_isr(); */
+}
+
+struct rtc_config_init rtc_dev_config = {   //RTC初始化结构体
+    .default_sys_time = &def_sys_time,   //配置默认系统时钟
+    .default_alarm = &def_alarm,        //配置默认闹钟
+    .rtc_clk = CLK_SEL_LRC,       // 配置时钟源
+
+    .alm_en = 1,            //闹钟使能
+    .cbfun = rtc_alm_isr,
+    //rtc闹钟回调函数
+};
+
+```
+
+SDK的rtc接口进行过重构，在701 SDK上我们是使用dev设备接口进行RTC读取，新SDK接口修改为：
+
+```c
+void rtc_read_time(struct sys_time *time);
+void rtc_write_time(const struct sys_time *time);
+void rtc_read_alarm(struct sys_time *time);
+void rtc_write_alarm(const struct sys_time *time);
+```
+
+#### LCD相关结构体
+
+lcd结构体部分和701 SDK保持比较一致
+
+注意：LCD是使用专门的推屏模块，不是使用普通spi，4线spi的dc io 为固定io，直接硬件输出。后续考虑支持软件模拟DC信号。关注杰理最新补丁。
+
+```c
+#if TCFG_SPI_LCD_ENABLE
+//推屏使用有专门硬件模块,不是普通spi模块,io固定,根据屏幕驱动类似输出时序
+LCD_SPI_PLATFORM_DATA_BEGIN(lcd_spi_data) = {
+    .pin_reset = IO_PORTC_03,
+    .pin_en = IO_PORTC_01,
+    .pin_en_ex = IO_PORTC_02,
+    .pin_te = TCFG_LCD_TE_IO,
+    .pin_bl = TCFG_LCD_BL_IO,
+
+    LCD_SPI_PLATFORM_DATA_END()
+};
+
+const struct ui_devices_cfg ui_cfg_data = {
+    .type = TFT_LCD,
+    .private_data = (void *) &lcd_spi_data,
+};
+#endif /*TCFG_SPI_LCD_ENABLE*/
+```
+
+#### FLASH分区注册
+
+SDK可以在flash上分配出内置分区，分配物理分区需要在路径 ：br35/tools/isd_config_rule.c文件下载分配办法
+
+```c
+MODE_FILE = mode.bin;
+MODE_ADR = TCFG_MODE_INSERT_FLASH_BASE;
+MODE_LEN = TCFG_MODE_INSERT_FLASH_SIZE;
+MODE_OPT = 1;
+
+FATFSI_FILE = watch.bin;
+FATFSI_ADR = TCFG_WATCH_INSERT_FLASH_BASE;
+FATFSI_LEN = TCFG_WATCH_INSERT_FLASH_SIZE;
+FATFSI_OPT = 1;
+```
+
+MODE和FATFSI是分区的名称，可以见板卡配置的路径，mode.bin 和 watch.bin 是下载到分区的文件文件，分配的LEN长度必须大于文件长度。  
+如果不知道如何分配地址大小，也可以先注册为以下形式：
+
+```c
+/* MODE_FILE = mode.bin; */
+MODE_ADR = AUTO;
+MODE_LEN = TCFG_MODE_INSERT_FLASH_SIZE;
+MODE_OPT = 1;
+```
+
+通过观察下载提醒的地址提示框分配地址
+
+
+板卡配置：
+
+```c
+/注册只读文件系统分区
+NORFLASH_SFC_DEV_PLATFORM_DATA_BEGIN(norflash_norfs_inside_dev_mode_data)
+.path                 = (const u8 *)"mnt/sdfile/app/MODE",
+.start_addr           = TCFG_MODE_INSERT_FLASH_BASE,
+.size     = TCFG_MODE_INSERT_FLASH_SIZE,
+ NORFLASH_SFC_DEV_PLATFORM_DATA_END()
+
+
+
+//注册杰理virfat分区,带读写文件系统.
+ NORFLASH_SFC_DEV_PLATFORM_DATA_BEGIN(norflash_norfs_inside_dev_data)
+.path                 = (const u8 *)"mnt/sdfile/app/FATFSI",
+.start_addr           = TCFG_WATCH_INSERT_FLASH_BASE,
+.size     = TCFG_WATCH_INSERT_FLASH_SIZE,
+ NORFLASH_SFC_DEV_PLATFORM_DATA_END()
+
+ //使用内置flash  跑ui
+ //虚拟文件系统对接jl sdfile fat 文件系统设备入口,往下对接文件系统，往上对接物理设备
+    { "virfat_flash",  &virfat_flash_dev_ops, (void *)"res_nor"},
+ //res_nor 是物理设备入口
+    { "res_nor",   &inside_norflash_fs_dev_ops, (void *) &norflash_norfs_inside_dev_data},
+
+
+  //res_nor_mode 是文件系统物理设备入口
+      { "res_nor_mode",   &inside_norflash_fs_dev_ops, (void *) &norflash_norfs_inside_dev_mode_data},
+```
+
+文件系统和设备的关联是在 dev_manager/dev_reg.c 注册文件系统关联入口，设备名称就是关联的dev的设备，文件的跟目录也跟随关联的文件系统，即使是不同分区关联两个相同的文件系统，也是需要注册两次的（根路径不一样）
+
+```c
+
+// dev_manager/dev_reg.c 注册文件系统入口
+  //flash 虚拟fat
+    {
+        /*logo*/   "virfat_flash",
+        /*name*/   "virfat_flash",
+        /*storage_path*/ "storage/virfat_flash",
+        /*root_path*/  "storage/virfat_flash/C/",
+        /*fs_type*/   "sdfile_fat",
+    },
+    // 用于存储JL font sidebar
+    {
+        /*logo*/   "res_nor_mode",
+        /*name*/   "res_nor_mode",
+        /*storage_path*/ "storage/res_nor_mode",
+        /*root_path*/  "storage/res_nor_mode/C/",
+        /*fs_type*/   "ex_sdfile",
+    },
+```
+
+
+## 模块说明
+
+### app_core
+#### 整体框架
+
+上层应用都是在app_core任务上去开发的，在app_core任务上搞出了一个模式的概念，btstack、btctrler等线程、以及按键、充电等中断会post关键事件给到app_core去处理。
+
+#### 模式
+
+鉴于杰理音箱SDK开发历史原因，app_core引用了模式的概念，同一时刻有且只有一个模式在运行。  
+模式的概念在手表的SDK是比较弱化的，因为我们的SDK设计是把UI操作放在了主导地位，SDK大部分场景是工作在蓝牙模式里面，在涉及本地音乐发射的场景，我们会切换音乐模式，在需要处理开关机界面、动画时候我们要切换开关机模式。  
+因此，SDK里面的模式概念用户可以简单的理解和使用即可。  
+
+
+##### 模式相关结构体
+
+每个模式拥有自己的一个结构体变量，通过REGISTER_APP_MODE注册到模式的段中，结构体如下：
+
+```c
+struct app_mode {
+    u8 name;
+    u8 index;
+    u8 state;
+    struct list_head entry;
+    const struct app_mode_ops *ops;
+};
+```
+
+操作函数结构体如下：
+
+```c
+struct app_mode_ops {
+    int (*enter)(int param);
+    int (*exit)();
+    int (*try_enter)(int param);
+    int (*try_exit)();
+    int (*goto_background)();
+    int (*goto_foreground)();
+    int (*msg_handler)(int *msg);
+};
+```
+
+##### 模式切换应用
+
+模式切换时，要用app_send_message发送APP_MSG_GOTO_MODE或者APP_MSG_GOTO_NEXT_MODE事件去切换，比如切换到开机模式时，调用：
+```c
+app_send_message(APP_MSG_GOTO_MODE, APP_MODE_POWERON);
+```
+
+切换到下一个模式，调用：
+```c
+app_send_message(APP_MSG_GOTO_NEXT_MODE, 0);
+```
+
+为了方便在701手表SDK已经熟悉开发的客户，我们也封装支持了和701 SDK一样的接口进行模式切换，priv参数为用户需要自带的信息，默认为NULL：
+```c
+app_task_switch_to(APP_MODE_POWERON, NULL);
+```
+
+模式返回：
+```c
+app_task_switch_back();
+```
+
+获取当前模式：
+```c
+app_get_curr_task();
+```
+
+#### 事件处理流程
+
+app_core任务平时会一直pend着，直到有其他任务/中断post事件过来，才会执行。执行的时候会按照下面顺序依次执行：
+- 使用APP_MSG_PROB_HANDLER注册的事件处理函数(app_get_messag 函数for_each_app_msg_prob_handler的遍历调用)
+- 当前模式的事件处理函数（蓝牙模式是app_enter_bt_mode里面的注册处理）
+使用APP_MSG_HANDLER注册的事件处理函数（在app_default_msg_handler函数里面被调用）
+- 注意：仅仅APP_MSG_PROB_HANDLER注册的处理拥有拦截权，可以拦截消息不往下传输，实现参见app_get_messag函数注释。
+
+
+### 事件分布处理
+
+SDK中，有很多流程，都是采用链接脚本加入一个text段去实现分布处理。
+
+- 原理
+
+在链接脚本中定义一个段，然后将结构体变量放到对应段里面，形成一个结构体数组。使用时相当于操作一个结构体数组。
+
+- 优点
+
+可以在SDK任意文件中注册一个事件处理函数来实现想要的功能，方便将一个功能的相关代码集中到同一个文件中，有利于模块化管理。比如将播放提示音的流程都集中到了tone.c文件中。
+
+- 缺点
+
+当功能有耦合性和先后顺序时不好把控。  
+比如要等ESCO解码关闭后再播放提示音，如果在BT_STATUS_SCO_STATUS_CHANGE事件就播提示音，有可能先播了提示音再停止解码。  
+解决办法：手表应用是UI高度接管的，UI拥有高度优先级，针对按键消息，可以直接接管。  
+针对系统消息、蓝牙消息：UI进行监听即可、并且需要关注是否存在SDK关于系统、蓝牙消息直接处理，如果存在需要切断，由UI释放消息进一步处理。  
+
+
+
+### 低功耗管理
+#### 低功耗等级的区别
+
+SDK的低功耗等级有两个重要配置（sdk_config.h配置），SLEEP和DSLEEP，即睡眠和深度睡眠。深度睡眠具备更优的功耗特性，但是对比SLEEP，深度睡眠场景下，芯片的寄存器、部分ram会进行掉电，因此对于退出深度睡眠后的场景，用户要注册外设模块的恢复，一般情况下SDK已经做了默认处理。  
+malloc的ram在进入低功耗前需要尽量释放内存，如果不满足可以掉电ram的颗粒度（**剩余RAM需要大于92KB**），芯片只能进入SLEEP，无法进入DSLEEP（这里和701 存在不同）。  
+SDK在进出低功耗过程会对malloc的内存进行自动整理，涉及硬件模块的内存建议使用静态内存分配或者使用dma_malloc接口申请内存（该接口的物理空间不会发生整理）。硬件访问的内存在使用过程发生整理会触发死机。  
+
+#### 进出低功耗回调函数
+
+用户可以在这里进行一些进低功耗前的特殊处理或者debug 低功耗进出时间
+
+```c
+void sleep_enter_callback(u8 step)
+{
+    /* 此函数禁止添加打印 */
+    putchar('<');
+    gpio_portb_control(1);
+}
+
+void sleep_exit_callback(u32 usec)
+{
+    gpio_portb_control(0);
+    putchar('>');
+}
+```
+
+#### 低功耗拦截
+
+用户可以主动拦截低功耗行为，例如在亮屏操作时候不进低功耗
+
+```c
+/* --------------------------------------------------------------------------*/
+/**
+ * @brief 按键模块是否可进低功耗查询函数
+ *
+ * @return 0：不可进
+ *         1：可进
+ */
+/* ----------------------------------------------------------------------------*/
+static u8 key_idle_query(void)
+{
+    if (g_key_idle_query_en) {
+        return !g_is_key_active;
+    } else {
+        return 1;
+    }
+}
+REGISTER_LP_TARGET(key_driver_target) = {
+    .name = "key",
+    .is_idle = key_idle_query,
+};
+```
+
+#### 低功耗等级拦截
+
+用户可以主动拦截低功耗等级，例如可以强制把DSLEEP行为拦截为SLEEP行为，应用在客户实现灭屏表盘功能、一些特殊场景不能进深度睡眠的场景但是有基本功耗要求。
+
+```c
+static u8 lowpower_level_target(void)
+{
+     return LOW_POWER_MODE_SLEEP;//返回轻度休眠
+     return LOW_POWER_MODE_DEEP_SLEEP;//返回深度睡眠
+ }
+
+REGISTER_LP_TARGET(lowpower_level_target) = {
+    .name = "lowpower_level_target",
+    .level = lowpower_level_target,
+}
+```
+
+#### 低功耗注册拦截事件
+
+本次拦截事件注册和拦截进低功耗有本质的区别，之前的拦截是通过idle查询方式的拦截，工作的场景是在低功耗外面的，本次拦截事件注册是在进低功耗过程中进行一次拦截，来做一些必须资源的释放然后下一个tick进入休眠，本应用在701 手表SDK我们用于外挂flash电源的释放。  
+
+注意：本次post消息处理是异步发送到第三方线程，这个时候就有一个异步问题，有使用这个场景时候建议联系杰理做进一步了解
+
+```c
+static u8 extern_flash_handler(u32 timeout)
+{
+    int msg[3];
+    ASSERT(extern_flash_status != EX_FLASH_POWER_OPENING);
+
+    if (extern_flash_status == EX_FLASH_POWER_CLOSE) {
+        return 0;//本次进低功耗
+    }
+
+    if (extern_flash_status == EX_FLASH_POWER_CLOSING) {
+        return 1;//本次先不进低功耗
+    }
+
+    extern_flash_status = EX_FLASH_POWER_CLOSING;
+    msg[0] = (int)norflash_flash_poweroff;
+    msg[1] = 1;
+    msg[2] = (int)NULL;
+    last_id++;//产生时序上的唯一值，用于删消息池
+    if (!last_id) {
+        last_id = 1;
+    }
+    os_taskq_post_type("app_core", Q_CALLBACK | last_id | USER_MASK_TYPE, 3, msg);
+
+    return 1;//本次先不进低功耗
+}
+
+static u8 extern_flash_handler1(u32 timeout)
+{
+    return 0;
+}
+
+//低功耗线程请求所有模块关闭，由对应线程处理
+REGISTER_LP_REQUEST(power_flash_target) = {
+    .name = "extern_flash",
+    .request_enter = extern_flash_handler,
+    .request_exit = extern_flash_handler1,
+};
+```
+
+#### 低功耗外设恢复
+
+深度睡眠场景下，芯片的寄存器、部分ram会进行掉电，因此对于退出深度睡眠后的场景，用户要注册外设模块的恢复。如果有用户自行实现的外设驱动，需要注意进行低功耗的寄存器备份和恢复操作。  
+
+```c
+
+static void mcpwm_enter_deepsleep(void)
+{
+    mcpwm_con_en = 0;
+    for (u8 id = 0; id < MCPWM_NUM_MAX; id++) {
+        if (mcpwm_info[id] != NULL) {
+            u32 ch = (u32)mcpwm_info[id]->cfg.ch;
+            if (JL_MCPWM->MCPWM_CON0 & BIT(ch + MCPWM_CON_TMR_EN)) {
+                mcpwm_con_en |= BIT(ch + MCPWM_CON_TMR_EN);
+            }
+            if (JL_MCPWM->MCPWM_CON0 & BIT(ch + MCPWM_CON_PWM_EN)) {
+                mcpwm_con_en |= BIT(ch + MCPWM_CON_PWM_EN);
+            }
+        }
+    }
+}
+
+static void mcpwm_exit_deepsleep(void)
+{
+    for (u8 id = 0; id < MCPWM_NUM_MAX; id++) {
+        if (mcpwm_info[id] != NULL) {
+            u32 ch = (u32)mcpwm_info[id]->cfg.ch;
+            if ((mcpwm_con_en & BIT(ch + MCPWM_CON_TMR_EN)) && (mcpwm_con_en & BIT(ch + MCPWM_CON_PWM_EN))) {
+                mcpwm_start(id);
+            }
+        }
+    }
+}
+DEEPSLEEP_TARGET_REGISTER(mcpwm) = {
+    .name   = "mcpwm",
+    .enter  = (void *)mcpwm_enter_deepsleep,
+    .exit   = (void *)mcpwm_exit_deepsleep,
+};
+```
+
+### GPIO
+#### IO操作
+
+SDK对GPIO的接口进行了重构，接口见gpio.h，常见的使用方式如：
+
+```c
+ enum gpio_mode mode = val ? PORT_OUTPUT_HIGH : PORT_OUTPUT_LOW;
+ gpio_set_mode(IO_PORT_SPILT(IO_PORTA_00), mode);
+//输出0、1
+
+ gpio_set_mode(IO_PORT_SPILT(IO_PORTA_00), PORT_INPUT_PULLUP_100K);
+//上下拉配置
+
+ gpio_set_mode(IO_PORT_SPILT(IO_PORTA_00), PORT_INPUT_FLOATING);
+//输入配置
+```
+
+特别注意：客户请不要直接操作GPIO寄存器、避免在多核系统造成原子操作问题
+
+
+#### IO中断操作
+
+IO中断可以用于te、tp中断的捕捉，参见demo
+
+```c
+struct gpio_irq_config_st tp_int_irq_config = {
+    .pin = NO_CONFIG_PORT,
+    .irq_edge = PORT_IRQ_EDGE_FALL,
+    .callback = tp_irq_callback,
+    .irq_priority = 3,
+};
+
+static void tp_irq_init(void)
+{
+    u8 port_x = TCFG_TP_INT_IO / IO_GROUP_NUM;
+    u16 port_pin_x = BIT(TCFG_TP_INT_IO % IO_GROUP_NUM);
+    tp_int_irq_config.pin =  port_pin_x;
+    log_debug("[%s] port_x:%x, port_pin_x:%x", __func__, port_x, port_pin_x);
+    gpio_irq_config(port_x, &tp_int_irq_config);
+}
+```
+
+
+### MTPG和LCDPG
+#### 说明
+
+power gate 为开漏输出接口，只可以输出低电平、高阻，和普通GPIO不同，因此不能调用gpio的接口。
+
+
+#### 输出低电平或者高阻
+
+```c
+/*
+ *@brief  设置pg_io的开漏输出
+ *@param  pg_io : 可选IO_LCD_PG, IO_MT_PG
+ *@param  value : 0,输出低电平  1,则高阻
+ */
+void power_gate_open_drain_output(u32 pg_io, u32 value);
+
+```
+
+
+#### PWM输出
+
+powergate可以挂载pwm，交替输出低电平、高阻  
+
+```c
+/*
+ *@brief  初始化pg_io送出高阻+低电平的pwm
+ *@param  pg_io : 可选IO_LCD_PG, IO_MT_PG
+ *@param  freq  : pwm的频率
+ *@param  duty  : pwm的低电平的占空比，0~10000对应0%~100%
+ *@return 0:成功  非0:失败
+ */
+int power_gate_pwm_init(u32 pg_io, u32 freq, u32 duty);
+
+/*
+ *@brief  设置pg_io的pwm的低电平占空比
+ *@param  pg_io : 可选IO_LCD_PG, IO_MT_PG
+ *@param  duty  : pwm的低电平的占空比，0~10000对应0%~100%
+ */
+void power_gate_pwm_set_duty(u32 pg_io, u32 duty);
+
+/*
+ *@brief  关闭pwm, pg_io为高阻
+ *@param  pg_io : 可选IO_LCD_PG, IO_MT_PG
+ */
+void power_gate_pwm_close(u32 pg_io);
+```
+
+
+### 按键注册和消息
+#### 按键初始化
+
+707N 芯片的IO存在比较紧张的问题，因此SDK优先使用AD按键。下面以AD按键为例说明初始化：
+
+```c
+int adkey_init(void)
+{
+    __this = get_adkey_platform_data();
+     ...
+    return 0;
+}
+//adkey_init函数 在app mian 入口调用
+```
+
+adkey_init函数 在app mian 入口调用，在SDK中get_adkey_platform_data()是获取可视化工具的cfg_tool.bin 的配置，客户需要接管可视化工具的配置，需要对info和platform_data结构体重新赋值即可。
+
+```c
+const struct adkey_platform_data *get_adkey_platform_data()
+{
+    struct adkey_info info;
+    u16 key_numbers;
+    if (platform_data.enable) {
+        return &platform_data;
+    }
+    key_numbers = 2;
+
+    info.cfg_key_list[0].res = 100;    // adkey1电阻值
+    info.cfg_key_list[1].res = 330;    // adkey2电阻值
+    info.max_ad_value = 4096;           // adc最大值
+    info.pull_up_value = 1000;          // 上拉电阻值
+
+    platform_data.adkey_pin = IO_PORTB_07;
+    platform_data.extern_up_en = 0;
+    platform_data.ad_channel = adc_io2ch(platform_data.adkey_pin);
+    platform_data.long_press_enable = 1;
+    platform_data.long_press_time = 8;
+
+    platform_data.key_value[0] = KEY_AD_NUM0;
+    platform_data.key_value[1] = KEY_AD_NUM1;
+    platform_data.enable    = 1;
+    
+    ...
+}
+```
+
+
+#### 按键低功耗唤醒
+
+区别于701 SDK的板卡注册，707 SDK注册按键唤醒在 br35/power/key_wakeup.c。  
+
+芯片最多支持8通道注册，用户新增通道模仿以下操作即可，SDK内部会自动分配空闲通道的注册。对于AD按键来说，建议过滤一次唤醒时候SDK唤醒瞬态的ad 按键消息，避免出现部分情况按键唤醒有响应消息、部分场景不响应消息的问题。  
+
+key_active_set接口,在SDK设计为了重置按键驱动拦截低功耗的计数器，避免按键唤醒后立即进低功耗情况。
+
+```c
+void key_active_set(u8 port);
+static void key_wakeup_callback(P33_IO_WKUP_EDGE edge)
+{
+    key_active_set(0);
+}
+
+//只读配置，用户后续新增io唤醒、ad唤醒注意使用const修饰，节约静态ram
+static const struct _p33_io_wakeup_config port0 = {
+    .pullup_down_mode  = PORT_INPUT_PULLUP_10K,
+    .filter        = PORT_FLT_DISABLE,
+    .edge               = FALLING_EDGE,
+    .gpio              = IO_PORTB_07,
+    .callback          = key_wakeup_callback,
+};
+
+void key_wakeup_init()
+{
+#if (!TCFG_LP_TOUCH_KEY_ENABLE)
+    p33_io_wakeup_port_init(&port0);
+    p33_io_wakeup_enable(IO_PORTB_07, 1);
+#endif
+}
+```
+
+#### 按键长按复位
+
+进行长按复位支持是考虑客户样机发生未知异常情况可以强制复位，因为使用了AD按键，需要考虑IO电压能拉低到1v下。  
+另外考虑到客户开关机情况长按按键比较久，需要对长按复位时间进行加长配置，时间最长配置16s。如果客户不能接受开关机按键16s长按复位，建议新增独立按键。
+
+```c
+int adkey_init(void)
+{
+    ...
+    if (__this->long_press_enable) {
+        gpio_longpress_pin0_reset_config(__this->adkey_pin, 0, __this->long_press_time,  1,  PORT_INPUT_PULLUP_100K);
+    }
+    return 0;
+}
+```
+
+#### 按键消息
+
+识别到按键消息后，在 key/key_driver.c 里面调用key_event_handler 实现把消息发生到app core线程。app_send_message_from 为原生设计用于发送消息的接口。
+
+```c
+/* --------------------------------------------------------------------------*/
+/**
+ * @brief 按键事件过滤、检测和发送
+ *
+ * @param key：基础按键动作（mono_click、long、hold、up）和键值
+ */
+/* ----------------------------------------------------------------------------*/
+void key_event_handler(struct key_event *key)
+{
+    ...
+    //外部需要格外做的处理流程，请通过注册的形式在此处回调
+    list_for_each_key_callback(p) {
+        if (p->cb_deal == NULL) {
+            continue;
+        }
+        if (p->cb_deal(key)) {
+            return;
+        }
+    }
+    app_send_message_from(MSG_FROM_KEY, sizeof(*key), (int *)key);
+}
+```
+
+如果客户需要在消息发送前对按键消息进行拦截或者转发到用户自定义的线程，可以注册REGISTER_KEY_DET_CALLBACK的段，即可被list_for_each_key_callback 进行拦截。如下文，用户可以参考ui_key_remay.c 的实现
+
+```c
+static int ui_key_event_prob_handle(void *arg)
+{
+    struct key_event *key = (struct key_event *)arg;
+    u16 key_event;
+    log_debug("[%s] key->event:%d, key->value:%d", __func__, key->event, key->value);
+    key_event = jlui_key_event_remap(key, jlui_key_watch_event_table);
+
+    if (__this->send_event_cb) {
+        __this->send_event_cb(key_event);
+        return 1; /*接管事件*/
+    }
+    return 0; /*不接管事件*/
+}
+/*拦截key_driver产生的key_event*/
+REGISTER_KEY_DET_CALLBACK(jlui_key) = {
+    .name = NULL,
+    .arg = NULL,
+    .cb_deal = ui_key_event_prob_handle,
+};
+```
+
+### 硬件IIC
+
+SDK支持两组硬件iic，第一组iic的仅仅适用于主系统（可以支持普通io 映射），第二组iic用于主系统和sensorhub的共享iic（仅仅支持PORTB的IO映射）。  
+sensorhub操作第二组iic接口要注意sensorhub 初始化io要和主系统保持一致。  
+
+- 板卡注册：
+
+```c
+const struct iic_master_config hw_iic_cfg_const[MAX_HW_IIC_NUM] = {
+    {
+        .role = IIC_MASTER,
+        .scl_io = TCFG_HW_I2C0_CLK_PORT,
+        .sda_io = TCFG_HW_I2C0_DAT_PORT,
+        .io_mode = PORT_INPUT_PULLUP_10K,      //上拉或浮空，如果外部电路没有焊接上拉电阻需要置上拉
+        .hdrive = PORT_DRIVE_STRENGT_2p4mA,    //IO口强驱
+        .master_frequency = TCFG_HW_I2C0_CLK,  //IIC通讯波特率
+        .io_filter = 1,                        //是否打开滤波器（去纹波）
+    },//iic0
+    {
+        .role = IIC_MASTER,
+        .scl_io = TCFG_HW_I2C_P11_CLK_PORT,
+        .sda_io = TCFG_HW_I2C_P11_DAT_PORT,
+        .io_mode = PORT_INPUT_PULLUP_10K,      //上拉或浮空，如果外部电路没有焊接上拉电阻需要置上拉
+        .hdrive = PORT_DRIVE_STRENGT_2p4mA,    //IO口强驱
+        .master_frequency = TCFG_HW_I2C_P11_CLK,  //IIC通讯波特率
+        .io_filter = 1,                        //是否打开滤波器（去纹波）
+    },//iic_p11
+};
+```
+
+- iic接口参见iic_api.h：  
+
+建议客户使用system_iic 接口，所示接口iic地址为8bit地址，后续会调整会7bit地址，如果需要在中断使用iic，需要把iic的互斥量改成spin lock，但有限制cpu 性能影响，因此SDK 设计的tp 处理是在任务中进行，客户进行SDK 二次开发可以参考这个设计逻辑，避免中断运行iic。  
+注意:同一组iic不能交叉使用原生的硬件iic接口（没有共同的互斥锁）。主系统的iic1可以和sensorhub 共享使用，对比了701的大小核共享iic通讯，707和sensorhub支持硬件锁结构，用户可以无感直接调用iic接口即可。
+
+```c
+int system_iic_init(hw_iic_dev iic, struct iic_master_config *i2c_config);
+int system_iic_deinit(hw_iic_dev iic);
+void system_iic_reset(hw_iic_dev iic);
+int system_iic_suspend(hw_iic_dev iic);
+int system_iic_resume(hw_iic_dev iic);
+int system_iic_read_nbytes(hw_iic_dev iic,
+                           unsigned char dev_addr, //设备地址
+                           unsigned char *reg_addr, unsigned char reg_len,//设备寄存器地址，长度
+                           unsigned char *read_buf, int read_len);//缓存buf，读取长度
+int system_iic_write_nbytes(hw_iic_dev iic,
+                            unsigned char dev_addr, //设备地址
+                            unsigned char *reg_addr, unsigned char reg_len,//设备寄存器地址，长度
+                            unsigned char *write_buf, int write_len);//数据buf, 写入长度
+```
+
+### 时钟管理
+#### api简介
+
+SDK针对时钟频率切换提供4个主要api：clock_alloc、clock_free、clock_lock、clock_unlock
+
+- clock_alloc：  
+  
+函数介绍：用户主动增加时钟,name 为用户自定义名字，注意申请和释放使用统一名字即可。接口带防重入，即同一个名字自会增加一次时钟。  
+函数作用：用户调用clock_alloc后，系统时钟会自动设置到允许最大值，然后系统根据SDK 允许情况进行动态降频，直到最低运行频率降低为用户增加的时钟频率累计和。  
+
+
+- clock_free：  
+
+函数介绍：用户主动释放时钟,name 为用户自定义名字，注意申请和释放使用统一名字即可。  
+函数作用：用户调用clock_free后，系统时钟会自动设置到允许最大值，然后系统根据SDK 允许情况进行动态降频，直到最低运行频率降低为当前用户释放时钟的频率。  
+
+
+- clock_lock：  
+
+函数介绍：用户主动锁存时钟，锁存后，时钟即为用户设置时钟，系统不会进行变频。  
+
+- clock_free：  
+
+函数介绍：用户主动解锁时钟，解锁存后，时钟恢复最大值，然后根据系统空闲情况，逐步降低为用户累加时钟的数值。  
+
+
+```c
+/* --------------------------------------------------------------------------*/
+/**
+ * @brief clock_alloc，此函数会触发时钟频率设置
+ *
+ * @param name
+ * @param clk
+ *
+ * @return 0:succ
+ */
+/* ----------------------------------------------------------------------------*/
+int clock_alloc(const char *name, u32 clk)
+
+
+/* --------------------------------------------------------------------------*/
+/**
+ * @brief clock_free，此函数会触发时钟频率设置
+ *
+ * @param name
+ *
+ * @return 0:succ
+ */
+/* ----------------------------------------------------------------------------*/
+int clock_free(char *name)
+
+
+/* --------------------------------------------------------------------------*/
+/**
+ * @brief clock_lock
+ *
+ * @param name: owner name
+ * @param clk: lock_freq
+ *
+ * @return 0:succ, other:err code
+ */
+/* ----------------------------------------------------------------------------*/
+int clock_lock(const char *name, u32 clk)
+
+
+/* --------------------------------------------------------------------------*/
+/**
+ * @brief clock_unlock
+ *
+ * @param name: owner name
+ *
+ * @return 0:succ, other:err code
+ */
+/* ----------------------------------------------------------------------------*/
+int clock_unlock(char *name)
+```
+
+#### api典型应用
+
+屏幕亮屏时候对时钟进行锁存、灭屏时候进行时钟解锁。  
+
+```c
+clock_lock("ui_show", clk_get_max_frequency());
+clock_unlock("ui_show");
+```
+
+
+### 通用外设驱动 
+
+[API REFERENCE -> 外设驱动](../../../../../SDK/driver/index.html)
+
+

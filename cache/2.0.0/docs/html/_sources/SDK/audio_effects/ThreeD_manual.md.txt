@@ -1,0 +1,8 @@
+# 功能说明
+3D音效增强
+
+## 参数说明
+*  drygain         干声增益
+*  wetgain         湿声增益
+*  wet_highpass_freq  湿声的起始频率
+*  wet_lowpass_freq   湿声的截至频率

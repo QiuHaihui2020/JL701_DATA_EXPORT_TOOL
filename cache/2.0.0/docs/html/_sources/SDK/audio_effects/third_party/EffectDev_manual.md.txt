@@ -1,0 +1,55 @@
+# 第三方算法开发
+
+## 功能介绍
+第三方算法开发节点，客户可以在节点流程里面实现自己的自定义算法
+
+## 开发流程
+**（1）音频流程添加第三方音效开发节点**<br>
+根据实际需要，可以添加一个自定义算法节点，也可以添加两个自定义算法节点，或者多个<br>
+![EffectDev](./asses/../assets/EffectDev.png)
+
+**（2）自定义算法开发位置**<br>
+自定义节点0路径：`audio/framework/nodes/effect_dev0_node.c`<br>
+自定义节点1路径：`audio/framework/nodes/effect_dev1_node.c`<br>
+自定义节点2路径：`audio/framework/nodes/effect_dev2_node.c`<br>
+自定义节点3路径：`audio/framework/nodes/effect_dev3_node.c`<br>
+自定义节点4路径：`audio/framework/nodes/effect_dev4_node.c`<br>
+以EffectDev0开发为例：<br>
+- `初始化接口`<br>
+audio_effect_dev0_init函数中添加自定义算法初始化处理
+```C
+/* 自定义算法，初始化
+ * sample_rate:采样率
+ * ch_num:通道数，单声道 1，立体声 2, 四声道 4
+ * */
+static void audio_effect_dev0_init(u32 sample_rate, u8 ch_num)
+{
+    //TODO
+}
+```
+
+- `运行接口`<br>
+audio_effect_dev0_run函数中添加自定义算法运行处理
+```C
+/* 自定义算法，运行
+ * sample_rate:采样率
+ * ch_num:通道数，单声道 1，立体声 2, 四声道 4
+ * *data:输入输出数据同地址,位宽16bit
+ * data_len :输入数据长度，byte
+ * */
+static void audio_effect_dev0_run(u32 sample_rate, u8 ch_num,  s16 *data, u32 data_len)
+{
+    //TODO
+}
+```
+- `退出关闭接口` <br>
+audio_effect_dev0_exit函数中添加自定义算法关闭处理
+```C
+/* 自定义算法，关闭
+ * */
+static void audio_effect_dev0_exit()
+{
+    //TODO
+
+}
+```

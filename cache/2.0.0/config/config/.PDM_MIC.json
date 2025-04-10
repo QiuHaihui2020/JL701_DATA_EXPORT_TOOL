@@ -1,0 +1,194 @@
+﻿{
+  "fields": [{
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "PDM MIC配置",
+      "enableUuid": "",
+      "showComponentName": true,
+      "dataType": [],
+      "template": "",
+      "span": 24,
+      "formId": 102,
+      "renderKey": "1021676941449220",
+      "children": [{
+        "__config__": {
+          "label": "通道选择",
+          "tag": "el-select",
+          "tagIcon": "select",
+          "defaultValue": 1,
+          "span": 24,
+          "showLabel": true,
+          "labelWidth": null,
+          "layout": "colFormItem",
+          "optionType": "default",
+          "required": true,
+          "regList": [],
+          "changeTag": true,
+          "border": false,
+          "status": 0,
+          "dataType": ["8", "1"],
+          "formId": 103,
+          "renderKey": "1031682061814589",
+          "originValue": 1,
+          "saveWay": "bin",
+          "eventField": []
+        },
+        "__slot__": {
+          "options": [{
+            "label": "单通道（固定使用CH0）",
+            "value": 1,
+            "hide": false,
+            "disabled": false
+          }, {
+            "label": "双通道（同时使用CH0和CH1）",
+            "value": 2,
+            "hide": false,
+            "disabled": false
+          }]
+        },
+        "placeholder": "请选择下拉选择",
+        "style": {
+          "width": "90%"
+        },
+        "clearable": true,
+        "disabled": false,
+        "filterable": false,
+        "multiple": false,
+        "id": "id_1682061814589_3",
+        "__vModel__": "field103"
+      }, {
+        "__config__": {
+          "label": "SCLK_IO",
+          "showLabel": true,
+          "labelWidth": null,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 24,
+          "required": true,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": ["16", "1", "string"],
+          "formId": 105,
+          "renderKey": "1051676951169034",
+          "saveWay": "bin",
+          "eventField": ["gpio"],
+          "tip": "",
+          "originValue": "",
+          "defaultValue": ""
+        },
+        "__slot__": {
+          "options": []
+        },
+        "placeholder": "请选择SCLK_IO",
+        "style": {
+          "width": "90%"
+        },
+        "clearable": false,
+        "disabled": false,
+        "filterable": true,
+        "multiple": false,
+        "id": "id_1682061767494_0",
+        "__vModel__": "field105",
+        "searchSource": true
+      }, {
+        "__config__": {
+          "label": "CH0_IO",
+          "showLabel": true,
+          "labelWidth": null,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 24,
+          "required": true,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": ["16", "1", "string"],
+          "formId": 106,
+          "renderKey": "1061676951189275",
+          "saveWay": "bin",
+          "eventField": ["gpio"],
+          "tip": "",
+          "originValue": "",
+          "defaultValue": ""
+        },
+        "__slot__": {
+          "options": []
+        },
+        "placeholder": "请选择CH0_IO",
+        "style": {
+          "width": "90%"
+        },
+        "clearable": false,
+        "disabled": false,
+        "filterable": true,
+        "multiple": false,
+        "id": "id_1682061770331_1",
+        "__vModel__": "field106",
+        "searchSource": true
+      }, {
+        "__config__": {
+          "label": "CH1_IO",
+          "showLabel": true,
+          "labelWidth": null,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 24,
+          "required": true,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": ["16", "1", "string"],
+          "formId": 107,
+          "renderKey": "1071676951212459",
+          "saveWay": "bin",
+          "eventField": ["gpio"],
+          "tip": "",
+          "originValue": "",
+          "defaultValue": ""
+        },
+        "__slot__": {
+          "options": []
+        },
+        "placeholder": "请选择CH1_IO",
+        "style": {
+          "width": "90%"
+        },
+        "clearable": false,
+        "disabled": false,
+        "filterable": true,
+        "multiple": false,
+        "id": "id_1682061773275_2",
+        "__vModel__": "field107",
+        "searchSource": true
+      }],
+      "eventField": [],
+      "saveWay": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "400px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1682061817570_4"
+  }],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 24,
+  "formBtns": false
+}

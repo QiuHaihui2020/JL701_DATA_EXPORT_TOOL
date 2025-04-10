@@ -1,0 +1,5926 @@
+﻿{
+  "fields": [{
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_101",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 101,
+      "renderKey": "1011653457751530",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_POWER",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 134,
+          "renderKey": "1341653465071753",
+          "eventField": ["device", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653465071753_0",
+        "__vModel__": "field134"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_POWER_CLICK",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 102,
+          "renderKey": "1021653457761653",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653457761653_1",
+        "__vModel__": "field102"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_POWER_LONG",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 103,
+          "renderKey": "1031653457844515",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653457844515_2",
+        "__vModel__": "field103"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_POWER_HOLD",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 104,
+          "renderKey": "1041653457853093",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653457853093_3",
+        "__vModel__": "field104"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_POWER_UP",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 105,
+          "renderKey": "1051653457861018",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653457861018_4",
+        "__vModel__": "field105"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_POWER_DOUBLE_CLICK",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 106,
+          "renderKey": "1061653457866679",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653457866679_5",
+        "__vModel__": "field106"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_POWER_TRIPLE_CLICK",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 107,
+          "renderKey": "1071653457876993",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653457876993_6",
+        "__vModel__": "field107"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_POWER_FOURTH_CLICK",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 108,
+          "renderKey": "1081653457891058",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653457891058_7",
+        "__vModel__": "field108"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_POWER_FIRTH_CLICK",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 109,
+          "renderKey": "1091653457901511",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653457901511_8",
+        "__vModel__": "field109"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_POWER_HOLD_3S",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 110,
+          "renderKey": "1101653457912171",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653457912171_9",
+        "__vModel__": "field110"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_POWER_HOLD_5S",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 111,
+          "renderKey": "1111653457924861",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653457924861_10",
+        "__vModel__": "field111"
+      }],
+      "eventField": []
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1653457751530_0"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_112",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 112,
+      "renderKey": "1121653457994743",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_NEXT",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 135,
+          "renderKey": "1351653465116259",
+          "eventField": ["device", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653465116259_1",
+        "__vModel__": "field135"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_NEXT_CLICK",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 113,
+          "renderKey": "1131653457994743",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653457994743_12",
+        "__vModel__": "field113"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_NEXT_LONG",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 114,
+          "renderKey": "1141653457994743",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653457994743_13",
+        "__vModel__": "field114"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_NEXT_HOLD",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 115,
+          "renderKey": "1151653457994743",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653457994743_14",
+        "__vModel__": "field115"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_NEXT_UP",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 116,
+          "renderKey": "1161653457994743",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653457994743_15",
+        "__vModel__": "field116"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_NEXT_DOUBLE_CLICK",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 117,
+          "renderKey": "1171653457994743",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653457994743_16",
+        "__vModel__": "field117"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_NEXT_TRIPLE_CLICK",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 118,
+          "renderKey": "1181653457994743",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653457994743_17",
+        "__vModel__": "field118"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_NEXT_FOURTH_CLICK",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 119,
+          "renderKey": "1191653457994743",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653457994743_18",
+        "__vModel__": "field119"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_NEXT_FIRTH_CLICK",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 120,
+          "renderKey": "1201653457994743",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653457994743_19",
+        "__vModel__": "field120"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_NEXT_HOLD_3S",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 121,
+          "renderKey": "1211653457994743",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653457994743_20",
+        "__vModel__": "field121"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_NEXT_HOLD_5S",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 122,
+          "renderKey": "1221653457994743",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653457994743_21",
+        "__vModel__": "field122"
+      }],
+      "eventField": []
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1653457994743_11"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_123",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 123,
+      "renderKey": "1231653458060658",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_PREV",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 136,
+          "renderKey": "1361653465127430",
+          "eventField": ["device", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653465127430_2",
+        "__vModel__": "field136"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_PREV_CLICK",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 124,
+          "renderKey": "1241653458060658",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653458060658_23",
+        "__vModel__": "field124"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_PREV_LONG",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 125,
+          "renderKey": "1251653458060658",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653458060658_24",
+        "__vModel__": "field125"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_PREV_HOLD",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 126,
+          "renderKey": "1261653458060658",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653458060658_25",
+        "__vModel__": "field126"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_PREV_UP",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 127,
+          "renderKey": "1271653458060658",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653458060658_26",
+        "__vModel__": "field127"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_PREV_DOUBLE_CLICK",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 128,
+          "renderKey": "1281653458060658",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653458060658_27",
+        "__vModel__": "field128"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_PREV_TRIPLE_CLICK",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 129,
+          "renderKey": "1291653458060658",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653458060658_28",
+        "__vModel__": "field129"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_PREV_FOURTH_CLICK",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 130,
+          "renderKey": "1301653458060658",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653458060658_29",
+        "__vModel__": "field130"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_PREV_FIRTH_CLICK",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 131,
+          "renderKey": "1311653458060658",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653458060658_30",
+        "__vModel__": "field131"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_PREV_HOLD_3S",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 132,
+          "renderKey": "1321653458060658",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653458060658_31",
+        "__vModel__": "field132"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_PREV_HOLD_5S",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 133,
+          "renderKey": "1331653458060658",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1653458060658_32",
+        "__vModel__": "field133"
+      }],
+      "eventField": []
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1653458060658_22"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_115",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 115,
+      "renderKey": "1151666691116793",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_SLIDER",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 116,
+          "renderKey": "1161666691116793",
+          "eventField": ["device", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1666691116793_1",
+        "__vModel__": "field116"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_SLIDER_UP",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 117,
+          "renderKey": "1171666691116793",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1666691116793_2",
+        "__vModel__": "field117"
+      }, {
+        "__config__": {
+          "label": "msg",
+          "labelWidth": 40,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_SLIDER_DOWN",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 6,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 118,
+          "renderKey": "1181666691116793",
+          "eventField": ["event", "key"],
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入msg",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1666691116793_3",
+        "__vModel__": "field118"
+      }],
+      "eventField": []
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1666691116793_0"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_122",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 122,
+      "renderKey": "1221675425366400",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IO_NUM0",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 123,
+          "renderKey": "1231675425366400",
+          "eventField": ["device", "iokey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IO_NUM0"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675425366400_2",
+        "__vModel__": "field123"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "100px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675425366400_1"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_126",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 126,
+      "renderKey": "1261675476692370",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IO_NUM1",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 127,
+          "renderKey": "1271675476692370",
+          "eventField": ["device", "iokey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IO_NUM1"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675476692370_1",
+        "__vModel__": "field127"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675476692370_0"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_129",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 129,
+      "renderKey": "1291675476765643",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IO_NUM2",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 130,
+          "renderKey": "1301675476765644",
+          "eventField": ["device", "iokey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IO_NUM2"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675476765644_4",
+        "__vModel__": "field130"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675476765643_3"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_131",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 131,
+      "renderKey": "1311675476771479",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IO_NUM3",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 132,
+          "renderKey": "1321675476771479",
+          "eventField": ["device", "iokey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IO_NUM3"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675476771479_6",
+        "__vModel__": "field132"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675476771479_5"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_133",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 133,
+      "renderKey": "1331675476772250",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IO_NUM4",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 134,
+          "renderKey": "1341675476772250",
+          "eventField": ["device", "iokey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IO_NUM4"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675476772250_8",
+        "__vModel__": "field134"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675476772250_7"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_135",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 135,
+      "renderKey": "1351675476773079",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IO_NUM5",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 136,
+          "renderKey": "1361675476773079",
+          "eventField": ["device", "iokey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IO_NUM5"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675476773079_10",
+        "__vModel__": "field136"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675476773079_9"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_137",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 137,
+      "renderKey": "1371675476773798",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IO_NUM6",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 138,
+          "renderKey": "1381675476773798",
+          "eventField": ["device", "iokey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IO_NUM6"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675476773798_12",
+        "__vModel__": "field138"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675476773798_11"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_139",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 139,
+      "renderKey": "1391675476774526",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IO_NUM7",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 140,
+          "renderKey": "1401675476774526",
+          "eventField": ["device", "iokey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IO_NUM7"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675476774526_14",
+        "__vModel__": "field140"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675476774526_13"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_141",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 141,
+      "renderKey": "1411675476775294",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IO_NUM8",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 142,
+          "renderKey": "1421675476775294",
+          "eventField": ["device", "iokey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IO_NUM8"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675476775294_16",
+        "__vModel__": "field142"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675476775294_15"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_143",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 143,
+      "renderKey": "1431675476776063",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IO_NUM9",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 144,
+          "renderKey": "1441675476776063",
+          "eventField": ["device", "iokey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IO_NUM9"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675476776063_18",
+        "__vModel__": "field144"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675476776063_17"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_145",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 145,
+      "renderKey": "1451675506993812",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IO_NUM10",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 146,
+          "renderKey": "1461675506993814",
+          "eventField": ["device", "iokey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IO_NUM10"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675506993814_20",
+        "__vModel__": "field146"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675506993812_19"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_147",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 147,
+      "renderKey": "1471675507046489",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IO_NUM11",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 148,
+          "renderKey": "1481675507046489",
+          "eventField": ["device", "iokey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IO_NUM11"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675507046489_22",
+        "__vModel__": "field148"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675507046489_21"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_149",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 149,
+      "renderKey": "1491675507049574",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IO_NUM12",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 150,
+          "renderKey": "1501675507049574",
+          "eventField": ["device", "iokey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IO_NUM12"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675507049574_24",
+        "__vModel__": "field150"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675507049574_23"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_151",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 151,
+      "renderKey": "1511675507050286",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IO_NUM13",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 152,
+          "renderKey": "1521675507050286",
+          "eventField": ["device", "iokey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IO_NUM13"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675507050286_26",
+        "__vModel__": "field152"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675507050286_25"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_153",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 153,
+      "renderKey": "1531675507050830",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IO_NUM14",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 154,
+          "renderKey": "1541675507050830",
+          "eventField": ["device", "iokey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IO_NUM14"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675507050830_28",
+        "__vModel__": "field154"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675507050830_27"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_155",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 155,
+      "renderKey": "1551675507051390",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_AD_NUM0",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 156,
+          "renderKey": "1561675507051390",
+          "eventField": ["device", "adkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_AD_NUM0"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675507051390_30",
+        "__vModel__": "field156"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675507051390_29"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_157",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 157,
+      "renderKey": "1571675507051910",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_AD_NUM1",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 158,
+          "renderKey": "1581675507051910",
+          "eventField": ["device", "adkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_AD_NUM1"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675507051910_32",
+        "__vModel__": "field158"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675507051910_31"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_159",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 159,
+      "renderKey": "1591675507052463",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_AD_NUM2",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 160,
+          "renderKey": "1601675507052463",
+          "eventField": ["device", "adkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_AD_NUM2"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675507052463_34",
+        "__vModel__": "field160"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675507052463_33"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_161",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 161,
+      "renderKey": "1611675507052991",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_AD_NUM3",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 162,
+          "renderKey": "1621675507052991",
+          "eventField": ["device", "adkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_AD_NUM3"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675507052991_36",
+        "__vModel__": "field162"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675507052991_35"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_163",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 163,
+      "renderKey": "1631675507053703",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_AD_NUM4",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 164,
+          "renderKey": "1641675507053703",
+          "eventField": ["device", "adkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_AD_NUM4"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675507053703_38",
+        "__vModel__": "field164"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675507053703_37"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_463",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 463,
+      "renderKey": "4631675858366684",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_AD_NUM5",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 464,
+          "renderKey": "4641675858366684",
+          "eventField": ["device", "adkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_AD_NUM5"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858366684_1",
+        "__vModel__": "field464"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858366684_0"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_465",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 465,
+      "renderKey": "4651675858369587",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_AD_NUM6",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 466,
+          "renderKey": "4661675858369587",
+          "eventField": ["device", "adkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_AD_NUM6"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858369587_3",
+        "__vModel__": "field466"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858369587_2"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_467",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 467,
+      "renderKey": "4671675858370563",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_AD_NUM7",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 468,
+          "renderKey": "4681675858370563",
+          "eventField": ["device", "adkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_AD_NUM7"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858370563_5",
+        "__vModel__": "field468"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858370563_4"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_469",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 469,
+      "renderKey": "4691675858371315",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_AD_NUM8",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 470,
+          "renderKey": "4701675858371315",
+          "eventField": ["device", "adkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_AD_NUM8"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858371315_7",
+        "__vModel__": "field470"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858371315_6"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_471",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 471,
+      "renderKey": "4711675858371979",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_AD_NUM9",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 472,
+          "renderKey": "4721675858371979",
+          "eventField": ["device", "adkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_AD_NUM9"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858371979_9",
+        "__vModel__": "field472"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858371979_8"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_473",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 473,
+      "renderKey": "4731675858372582",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_AD_NUM10",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 474,
+          "renderKey": "4741675858372582",
+          "eventField": ["device", "adkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_AD_NUM10"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858372582_11",
+        "__vModel__": "field474"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858372582_10"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_475",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 475,
+      "renderKey": "4751675858373116",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_AD_NUM11",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 476,
+          "renderKey": "4761675858373116",
+          "eventField": ["device", "adkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_AD_NUM11"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858373116_13",
+        "__vModel__": "field476"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858373116_12"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_477",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 477,
+      "renderKey": "4771675858373643",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_AD_NUM12",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 478,
+          "renderKey": "4781675858373643",
+          "eventField": ["device", "adkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_AD_NUM12"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858373643_15",
+        "__vModel__": "field478"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858373643_14"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_479",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 479,
+      "renderKey": "4791675858374443",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_AD_NUM13",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 480,
+          "renderKey": "4801675858374443",
+          "eventField": ["device", "adkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_AD_NUM13"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858374443_17",
+        "__vModel__": "field480"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858374443_16"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_481",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 481,
+      "renderKey": "4811675858375627",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_AD_NUM14",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 482,
+          "renderKey": "4821675858375627",
+          "eventField": ["device", "adkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_AD_NUM14"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858375627_19",
+        "__vModel__": "field482"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858375627_18"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_483",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 483,
+      "renderKey": "4831675858376955",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_AD_NUM15",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 484,
+          "renderKey": "4841675858376955",
+          "eventField": ["device", "adkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_AD_NUM15"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858376955_21",
+        "__vModel__": "field484"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858376955_20"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_485",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 485,
+      "renderKey": "4851675858377659",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_AD_NUM16",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 486,
+          "renderKey": "4861675858377659",
+          "eventField": ["device", "adkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_AD_NUM16"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858377659_23",
+        "__vModel__": "field486"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858377659_22"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_487",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 487,
+      "renderKey": "4871675858378339",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_AD_NUM17",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 488,
+          "renderKey": "4881675858378339",
+          "eventField": ["device", "adkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_AD_NUM17"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858378339_25",
+        "__vModel__": "field488"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858378339_24"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_489",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 489,
+      "renderKey": "4891675858379010",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_AD_NUM18",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 490,
+          "renderKey": "4901675858379010",
+          "eventField": ["device", "adkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_AD_NUM18"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858379010_27",
+        "__vModel__": "field490"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858379010_26"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_491",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 491,
+      "renderKey": "4911675858379667",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_AD_NUM19",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 492,
+          "renderKey": "4921675858379667",
+          "eventField": ["device", "adkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_AD_NUM19"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858379667_29",
+        "__vModel__": "field492"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858379667_28"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_493",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 493,
+      "renderKey": "4931675858443354",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM0",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 494,
+          "renderKey": "4941675858443354",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM0"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858443354_31",
+        "__vModel__": "field494"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858443354_30"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_495",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 495,
+      "renderKey": "4951675858496996",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM1",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 496,
+          "renderKey": "4961675858496996",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM1"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858496996_33",
+        "__vModel__": "field496"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858496996_32"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_497",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 497,
+      "renderKey": "4971675858500137",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM2",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 498,
+          "renderKey": "4981675858500137",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM2"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858500137_35",
+        "__vModel__": "field498"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858500137_34"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_499",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 499,
+      "renderKey": "4991675858500937",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM3",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 500,
+          "renderKey": "5001675858500937",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM3"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858500937_37",
+        "__vModel__": "field500"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858500937_36"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_501",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 501,
+      "renderKey": "5011675858501617",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM4",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 502,
+          "renderKey": "5021675858501617",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM4"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858501617_39",
+        "__vModel__": "field502"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858501617_38"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_503",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 503,
+      "renderKey": "5031675858502181",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM5",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 504,
+          "renderKey": "5041675858502181",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM5"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858502181_41",
+        "__vModel__": "field504"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858502181_40"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_505",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 505,
+      "renderKey": "5051675858502721",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM6",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 506,
+          "renderKey": "5061675858502721",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM6"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858502721_43",
+        "__vModel__": "field506"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858502721_42"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_507",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 507,
+      "renderKey": "5071675858503217",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM7",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 508,
+          "renderKey": "5081675858503217",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM7"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858503217_45",
+        "__vModel__": "field508"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858503217_44"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_509",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 509,
+      "renderKey": "5091675858503761",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM8",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 510,
+          "renderKey": "5101675858503761",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM8"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858503761_47",
+        "__vModel__": "field510"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858503761_46"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_511",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 511,
+      "renderKey": "5111675858504290",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM9",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 512,
+          "renderKey": "5121675858504290",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM9"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858504290_49",
+        "__vModel__": "field512"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858504290_48"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_513",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 513,
+      "renderKey": "5131675858504842",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM10",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 514,
+          "renderKey": "5141675858504842",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM10"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858504842_51",
+        "__vModel__": "field514"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858504842_50"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_515",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 515,
+      "renderKey": "5151675858505361",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM11",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 516,
+          "renderKey": "5161675858505361",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM11"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858505361_53",
+        "__vModel__": "field516"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858505361_52"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_517",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 517,
+      "renderKey": "5171675858505860",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM12",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 518,
+          "renderKey": "5181675858505860",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM12"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858505860_55",
+        "__vModel__": "field518"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858505860_54"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_519",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 519,
+      "renderKey": "5191675858506393",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM13",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 520,
+          "renderKey": "5201675858506393",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM13"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858506393_57",
+        "__vModel__": "field520"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858506393_56"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_521",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 521,
+      "renderKey": "5211675858506953",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM14",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 522,
+          "renderKey": "5221675858506953",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM14"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858506953_59",
+        "__vModel__": "field522"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858506953_58"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_523",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 523,
+      "renderKey": "5231675858507498",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM15",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 524,
+          "renderKey": "5241675858507498",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM15"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858507498_61",
+        "__vModel__": "field524"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858507498_60"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_525",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 525,
+      "renderKey": "5251675858508756",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM16",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 526,
+          "renderKey": "5261675858508756",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM16"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858508756_63",
+        "__vModel__": "field526"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858508756_62"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_527",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 527,
+      "renderKey": "5271675858509441",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM17",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 528,
+          "renderKey": "5281675858509441",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM17"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858509441_65",
+        "__vModel__": "field528"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858509441_64"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_529",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 529,
+      "renderKey": "5291675858510041",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM18",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 530,
+          "renderKey": "5301675858510041",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM18"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858510041_67",
+        "__vModel__": "field530"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858510041_66"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_531",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 531,
+      "renderKey": "5311675858510770",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM19",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 532,
+          "renderKey": "5321675858510770",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM19"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858510770_69",
+        "__vModel__": "field532"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858510770_68"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_533",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 533,
+      "renderKey": "5331675858568842",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM20",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 534,
+          "renderKey": "5341675858568842",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM20"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858568842_71",
+        "__vModel__": "field534"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858568842_70"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_535",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 535,
+      "renderKey": "5351675858584296",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM21",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 536,
+          "renderKey": "5361675858584296",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM21"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858584296_73",
+        "__vModel__": "field536"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858584296_72"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_537",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 537,
+      "renderKey": "5371675858585369",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM22",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 538,
+          "renderKey": "5381675858585369",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM22"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858585369_75",
+        "__vModel__": "field538"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858585369_74"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_539",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 539,
+      "renderKey": "5391675858586194",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM23",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 540,
+          "renderKey": "5401675858586194",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM23"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858586194_77",
+        "__vModel__": "field540"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858586194_76"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_541",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 541,
+      "renderKey": "5411675858586937",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM24",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 542,
+          "renderKey": "5421675858586937",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM24"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858586937_79",
+        "__vModel__": "field542"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858586937_78"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_543",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 543,
+      "renderKey": "5431675858587618",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM25",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 544,
+          "renderKey": "5441675858587618",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM25"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858587618_81",
+        "__vModel__": "field544"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858587618_80"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_545",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 545,
+      "renderKey": "5451675858588265",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM26",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 546,
+          "renderKey": "5461675858588265",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM26"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858588265_83",
+        "__vModel__": "field546"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858588265_82"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_547",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 547,
+      "renderKey": "5471675858589057",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM27",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 548,
+          "renderKey": "5481675858589057",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM27"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858589057_85",
+        "__vModel__": "field548"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858589057_84"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_549",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 549,
+      "renderKey": "5491675858589857",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM28",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 550,
+          "renderKey": "5501675858589857",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM28"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858589857_87",
+        "__vModel__": "field550"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858589857_86"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_551",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 551,
+      "renderKey": "5511675858590552",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM29",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 552,
+          "renderKey": "5521675858590552",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM29"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858590552_89",
+        "__vModel__": "field552"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858590552_88"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_553",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 553,
+      "renderKey": "5531675858591235",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM30",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 554,
+          "renderKey": "5541675858591235",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM30"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858591235_91",
+        "__vModel__": "field554"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858591235_90"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_555",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 555,
+      "renderKey": "5551675858591889",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM31",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 556,
+          "renderKey": "5561675858591889",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM31"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858591889_93",
+        "__vModel__": "field556"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858591889_92"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_557",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 557,
+      "renderKey": "5571675858592472",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM32",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 558,
+          "renderKey": "5581675858592472",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM32"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858592472_95",
+        "__vModel__": "field558"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858592472_94"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_559",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 559,
+      "renderKey": "5591675858593129",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM33",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 560,
+          "renderKey": "5601675858593129",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM33"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858593129_97",
+        "__vModel__": "field560"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858593129_96"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "row_561",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 561,
+      "renderKey": "5611675858593721",
+      "children": [{
+        "__config__": {
+          "label": "key_name",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "KEY_IR_NUM34",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "document": "https://element.eleme.cn/#/zh-CN/component/input",
+          "regList": [],
+          "dataType": ["string", "16"],
+          "formId": 562,
+          "renderKey": "5621675858593721",
+          "eventField": ["device", "irkey"],
+          "saveWay": "bin",
+          "originValue": "KEY_IR_NUM34"
+        },
+        "__slot__": {
+          "prepend": "",
+          "append": ""
+        },
+        "placeholder": "请输入key_name",
+        "style": {
+          "width": "100%"
+        },
+        "clearable": true,
+        "prefix-icon": "",
+        "suffix-icon": "",
+        "maxlength": null,
+        "show-word-limit": false,
+        "readonly": false,
+        "disabled": false,
+        "id": "id_1675858593721_99",
+        "__vModel__": "field562"
+      }],
+      "eventField": [],
+      "formItemWidth": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675858593721_98"
+  }],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 24,
+  "formBtns": false
+}

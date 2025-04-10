@@ -1,0 +1,84 @@
+﻿{
+  "fields": [{
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "IIS配置",
+      "enableUuid": "",
+      "showComponentName": true,
+      "dataType": ["1", "8"],
+      "template": "",
+      "span": 24,
+      "formId": 102,
+      "renderKey": "1021676941449220",
+      "children": [{
+        "__config__": {
+          "label": "通道选择",
+          "labelWidth": null,
+          "showLabel": true,
+          "tag": "el-radio-group",
+          "tagIcon": "radio",
+          "changeTag": true,
+          "layout": "colFormItem",
+          "span": 24,
+          "optionType": "default",
+          "regList": [],
+          "required": true,
+          "border": false,
+          "dataType": ["1", "16"],
+          "formId": 102,
+          "renderKey": "1021676947560619",
+          "saveWay": "bin",
+          "originValue": 0,
+          "defaultValue": 0,
+          "eventField": []
+        },
+        "__slot__": {
+          "options": [{
+            "label": "通道0",
+            "value": 0
+          }, {
+            "label": "通道1",
+            "value": 1
+          }, {
+            "label": "通道2",
+            "value": 2
+          }, {
+            "label": "通道3",
+            "value": 3
+          }]
+        },
+        "style": {
+          "width": "100%"
+        },
+        "size": "medium",
+        "disabled": false,
+        "id": "id_1676947560619_24",
+        "__vModel__": "field102"
+      }],
+      "eventField": [],
+      "saveWay": "bin"
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "400px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1676941449220_9"
+  }],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 24,
+  "formBtns": false
+}

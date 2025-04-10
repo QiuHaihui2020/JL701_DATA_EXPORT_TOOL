@@ -1,0 +1,595 @@
+{
+    "compile":{
+		"macroPath":"./SDK/apps/soundbox/board/br28/sdk_config.h",
+		"constPath":"./SDK/apps/soundbox/board/br28/sdk_config.c",
+        "streamMacroPath":"./SDK/apps/soundbox/board/br28/jlstream_node_cfg.h"
+	},
+    "protocol":{
+	 "version": 1
+	},
+    "effectBin":{
+	 "version": 4
+	},
+	"eq":{
+	"hasHpAndLp":true
+	},
+	"drc": {
+	   "rmsTime": {
+		"min": 0.02,
+		"max": 25,
+		"step": 0.02,
+		"support24Bit": true
+		},
+	   "disabledWDRC": true
+	},
+	
+	"files": [{
+		"path": "../../板级配置.json",
+		"copy": true,
+		"binName": "boardcfg.bin"
+	},
+	{
+		"path": "../../功能配置.json",
+		"copy": true,
+		"binName": "modecfg.bin"
+	},
+	{
+		"path": "../../按键配置.json",
+		"copy": true,
+		"binName": "keycfg.bin"
+	},
+	{		
+		"path": "../../电源配置.json",
+		"copy": true,
+		"binName": "powercfg.bin"	
+    },  
+	{		
+		"path": "../../UI配置.json",
+		"copy": true,
+		"binName": "uicfg.bin"	
+    },  {
+		"path": "../../蓝牙配置.json",
+		"copy": true,
+		"binName": "btcfg.bin"
+    },  {
+		"folder":true,
+		"title":"LE_AUDIO配置",
+		"support24bit":false,
+		"copy": true,
+		"files":[
+			{
+			"path": "../../LE_AUDIO配置/公共配置.json",
+			"copy": true,
+			"binName": "leacfg.bin"				
+			}, {
+			"path": "../../LE_AUDIO配置/BIS配置.json",
+			"copy": true,
+			"binName": "leacfg.bin"				
+			}, {
+			"path": "../../LE_AUDIO配置/CIS配置.json",
+			"copy": true,
+			"binName": "leacfg.bin"				
+			}
+		]
+    }, {
+        "path": "../../升级配置.json",
+        "copy": true,
+        "binName": "updatecfg.bin"
+	}, {
+		"path": "../../音频配置.json",
+		"copy": true,
+		"binName": "audiocfg.bin"
+	}, {
+		"path": "../../提示音.tone",
+		"copy": true,
+		"binName": ""
+	}, {
+                        "folder":true,
+                        "title":"音频流程",
+                        "support24bit":true,
+                        "copy": true,
+                        "files":[
+		        {
+		               "path": "../../音频流程/系统模式.x6flow",
+		               "copy": true,
+		               "binName": "stream.bin"
+                                        }, {
+		               "path": "../../音频流程/媒体.x6flow",
+		               "copy": true,
+		               "binName": "stream.bin"
+                                       }, {
+		               "path": "../../音频流程/蓝牙通话.x6flow",
+		               "copy": true,
+		               "binName": "stream.bin",
+                        "disabled24bit":true 
+                                        } , {
+		               "path": "../../音频流程/麦克风音效.x6flow",
+		               "copy": true,
+		               "binName": "stream.bin"
+                                        } , {
+		               "path": "../../音频流程/USB Audio.x6flow",
+		               "copy": true,
+		               "binName": "stream.bin"
+                                        } , {
+		               "path": "../../音频流程/录音.x6flow",
+		               "copy": true,
+		               "binName": "stream.bin"
+                                        } ,{
+		               "path": "../../音频流程/LE_Audio.x6flow",
+		               "copy": true,
+		               "binName": "stream.bin"
+                                       }
+                                  ]
+	}, {
+		"path": "../../v6stencil.stencil",
+		"copy": false,
+		"binName": ""	
+                  },{
+		"path": "./.AC701N_IO配置.json",
+		"copy": false,
+		"binName": "",
+		"eventSource":true
+	}, {
+		"path": "../../.ADC配置.json",
+		"copy": false,
+		"binName": ""
+	}, {
+		"path": "../../.local_tws_trans配置.json",
+		"copy": false,
+		"binName": ""
+	}, {
+		"path": "../../.PDM_MIC.json",
+		"copy": false,
+		"binName": ""
+	}, {
+		"path": "../../.IIS配置.json",
+		"copy": false,
+		"binName": ""
+	}, {
+		"path": "../../.IIS_TX配置.json",
+		"copy": false,
+		"binName": ""
+	}, {
+		"path": "../../.DAC配置.json",
+		"copy": false,
+		"binName": ""
+	}, {
+		"path": "../../.时钟同步配置.json",
+		"copy": false,
+		"binName": ""
+	}, {
+		"path": "../../.fm配置.json",
+		"copy": false,
+		"binName": ""
+	}, {
+		"path": "../../.LINEIN配置.json",
+		"copy": false,
+		"binName": ""
+	},{
+		"path": "../../.PCMIC配置.json",
+		"copy": false,
+		"binName": ""
+	},{
+		"path": "../../.spdif_master配置.json",
+		"copy": false,
+		"binName": ""
+	},{
+		"path": "../../.音量配置.json",
+		"copy": false,
+		"binName": ""
+	},{
+		"path": "../../.package_fmt.json",
+		"copy": false,
+		"binName": ""
+	},{
+		"path": "../../.cvp_sms_ans配置.json",
+		"copy": false,
+		"binName": ""
+    },{
+		"path": "../../.cvp_sms_dns配置.json",
+		"copy": false,
+		"binName": ""
+    },{  
+		"path": "../../.cvp_dms_ans配置.json",
+		"copy": false,
+		"binName": ""
+    },{  
+		"path": "../../.cvp_dms_dns配置.json",
+		"copy": false,
+		"binName": ""
+    },{  
+		"path": "../../.cvp_dms_flexible_ans配置.json",
+		"copy": false,
+		"binName": ""
+        },{  
+		"path": "../../.cvp_dms_flexible_dns配置.json",
+		"copy": false,
+		"binName": ""
+        },{
+		"path": "../../.CVP第三方算法.json",
+		"copy": false
+        },{
+
+		"path": "../../.NoiseSuppressor配置.json",
+		"copy": false,
+		"binName": ""
+    },{   
+		"path": "../../.uart_dump_data.json",
+		"copy": false,
+		"binName": ""
+    },{
+		"path": "../../.timer_create.json",
+		"copy": false,
+		"binName": ""
+    },{
+		"path": "../../.rand_timer_create.json",
+		"copy": false,
+		"binName": "" 
+    },{
+		"path": "../../.timer_state.json",
+		"copy": false,
+		"binName": ""
+	 },{
+		"path": "../../.battery_voltage.json",
+		"copy": false,
+		"binName": ""
+	 },{
+		"path": "../../.battery_level.json",
+		"copy": false,
+		"binName": ""
+	},{
+		"path": "../../.key_data.json",
+		"copy": false,
+		"binName": "",
+		"eventSource":true
+	},{
+		"path": "../../.gpio_output.json",
+		"copy": false,
+		"binName": ""
+                },{
+		"path": "../../.adio_input.json",
+		"copy": false,
+		"binName": ""
+               },{
+		"path": "../../.counter.json",
+		"copy": false,
+		"binName": ""
+              },{
+		"path": "../../.counter_state.json",
+		"copy": false,
+		"binName": ""
+              },{
+		"path": "../../.蓝牙命令.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.virtual_bass配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.gain配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.SteroMix配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.surround配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.voice_changer配置.json",
+		"copy": false,
+		"binName": ""
+			},{
+		"path": "../../.voice_changer_adv配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.noisegate配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.frequency_shift配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.howling_suppress配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.plate_reverb配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.plate_reverb_advance配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.echo配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.crossover配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.spectrum_fft配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.autotune配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.vocal_remover配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.bass_and_treble配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.2band_merge配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.3band_merge配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.pitch_speed配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.dynamic_eq配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.dynamic_eq_pro配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.dynamic_eq_pro_ext_detector配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.energy_detect配置.json",
+		"copy": false,
+		"binName": ""
+            },{
+		"path": "../../.poweron_time.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.AutoWah配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.crossover_2band配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.stereo_widen配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.harmonic_exciter配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.chorus配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.channel_expander配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.dynamic_eq_ext_detector配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.pcm_delay配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.channel_merge配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.声道拆分配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.声道组合配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.音频分流器配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.AutoDuck_Trigger配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.AutoDuck配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.encoder_fmt.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.package_fmt.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.PingpongPcmDelay配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.three_d配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.mixer配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.sync配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.a2dp_file配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.llns配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.spectrum_eq配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.StereoMtapsEcho配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.howling_gate配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.MULTI_CH_IIS配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.fade配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.第三方音效配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.MULTI_CH_IIS_RX配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.distortion配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.noisegate_pro配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.limiter配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.multi_band_limiter配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.virtual_surround_pro配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.data_export配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.signal_generator配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.replace配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.reverb配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../sub_flow/.virtual_surround_pro_utral.encflow",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../sub_flow/.virtual_surround_pro_utral配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../sub_flow/.virtual_surround_pro_v5t1.encflow",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../sub_flow/.virtual_surround_pro_v5t1配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../sub_flow/.virtual_surround_pro_v4t0.encflow",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../sub_flow/.virtual_surround_pro_v4t0配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../sub_flow/.3D_Plus.encflow",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../sub_flow/.3D_Plus配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.split_gain配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../sub_flow/.VirtualBassPro.encflow",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../sub_flow/.VirtualBassPro.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.virtual_bass_classic配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.Phaser配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.Flanger配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.chorus_advance配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.pingpong_echo配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.stereo_spatial_wider配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.distortion_clipping配置.json",
+		"copy": false,
+		"binName": ""
+           },{
+		"path": "../../.frequency_compressor配置.json",
+		"copy": false,
+		"binName": ""
+           }]
+}
+

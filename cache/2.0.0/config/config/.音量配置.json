@@ -1,0 +1,340 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "音量配置",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "template": "",
+        "span": 24,
+        "formId": 140,
+        "renderKey": "1401676447331464",
+        "children": [
+          {
+            "__config__": {
+              "label": "bypass",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 0,
+              "span": 16,
+              "showLabel": true,
+              "labelWidth": null,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "status": 0,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "formId": 157,
+              "renderKey": "1571681280938229",
+              "saveWay": "bin",
+              "originValue": 0,
+              "eventField": [],
+              "tip": "打开时模块做直通处理",
+              "tipAlways": true
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1681280938229_0",
+            "__vModel__": "field157"
+          },
+          {
+            "__config__": {
+              "label": "最大音量等级",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": null,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 16,
+              "span": 10,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "dataType": [
+                "16",
+                "1"
+              ],
+              "formId": 141,
+              "renderKey": "1411676447481291",
+              "originValue": 16,
+              "eventField": [],
+              "saveWay": "bin",
+              "tip": "不支持在线调试",
+              "tipAlways": true,
+              "unsupportDebug": true
+            },
+            "placeholder": "最大音量等级",
+            "min": 1,
+            "max": 200,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1676447481291_4",
+            "__vModel__": "field141"
+          },
+          {
+            "__config__": {
+              "label": "最小音量(dB)",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": null,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": -45,
+              "span": 23,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "dataType": [
+                "32",
+                "-1"
+              ],
+              "formId": 143,
+              "renderKey": "1431676447941026",
+              "originValue": -45,
+              "saveWay": "bin",
+              "tip": "",
+              "eventField": []
+            },
+            "placeholder": "最小音量(dB)",
+            "min": -100,
+            "max": 0,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1676447941026_6",
+            "__vModel__": "field143"
+          },
+          {
+            "__config__": {
+              "label": "音量表类型",
+              "showLabel": true,
+              "labelWidth": "",
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 22,
+              "required": true,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "formId": 283,
+              "renderKey": "2831678088452701",
+              "eventField": [],
+              "tip": "不支持在线调试，等间隔，则每级音量间隔相等；自定义，客户可自定义每级音量大小",
+              "defaultValue": 1,
+              "originValue": 1,
+              "saveWay": "bin",
+              "tipAlways": true,
+              "unsupportDebug": true,
+              "formItemWidth": ""
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "等间隔",
+                  "value": 1
+                },
+                {
+                  "label": "自定义",
+                  "value": 2
+                }
+              ]
+            },
+            "placeholder": "请选择音量表类型",
+            "style": {
+              "width": "130px"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1678088452701_0",
+            "__vModel__": "field283"
+          },
+          {
+            "__config__": {
+              "label": "最大音量(dB)",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": null,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "dataType": [
+                "32",
+                "-1"
+              ],
+              "formId": 152,
+              "renderKey": "1521677290960342",
+              "originValue": 0,
+              "saveWay": "bin",
+              "tip": "",
+              "eventField": [],
+              "formItemWidth": "100"
+            },
+            "placeholder": "最大音量(dB)",
+            "min": -100,
+            "max": 0,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1677290960342_0",
+            "__vModel__": "field152"
+          },
+          {
+            "__config__": {
+              "label": "当前音量值",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": "",
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 16,
+              "span": 9,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "status": 0,
+              "dataType": [
+                "16",
+                "-1"
+              ],
+              "formId": 200,
+              "renderKey": "2001690535811640",
+              "originValue": 16,
+              "saveWay": "",
+              "eventField": [],
+              "syncFlag": "volume",
+              "formItemWidth": "245px"
+            },
+            "placeholder": "当前音量值",
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1690535811640_0",
+            "__vModel__": "field200",
+            "min": 0,
+            "max": 16
+          },
+          {
+            "__config__": {
+              "label": "",
+              "tag": "el-slider",
+              "tagIcon": "slider",
+              "defaultValue": 16,
+              "span": 9,
+              "showLabel": true,
+              "layout": "colFormItem",
+              "labelWidth": 1,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "16",
+                "-1"
+              ],
+              "formId": 146,
+              "renderKey": "1461676801188975",
+              "originValue": 16,
+              "eventField": [],
+              "saveWay": "bin",
+              "tip": "",
+              "syncFlag": "volume"
+            },
+            "disabled": false,
+            "min": 0,
+            "max": 16,
+            "step": 1,
+            "show-stops": false,
+            "range": false,
+            "id": "id_1676801188975_0",
+            "__vModel__": "field146"
+          }
+        ],
+        "eventField": []
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "200px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1676447331464_3"
+    },
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "音量表",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "template": "{\"__config__\":{\"label\":\"音量\",\"showLabel\":true,\"changeTag\":true,\"labelWidth\":65,\"tag\":\"el-input-number\",\"tagIcon\":\"number\",\"defaultValue\":0,\"span\":5,\"layout\":\"colFormItem\",\"required\":false,\"regList\":[],\"dataType\":[\"float\",\"-1\"],\"formId\":104,\"renderKey\":\"1041691027020758\",\"originValue\":0,\"eventField\":[],\"saveWay\":\"bin\",\"paddingLeft\":\"0\",\"formItemWidth\":\"\"},\"placeholder\":\"音量音量\",\"min\":-100,\"max\":0,\"step\":0.1,\"step-strictly\":false,\"precision\":1,\"controls-position\":\"\",\"disabled\":false,\"id\":\"id_1691027020758_3\",\"__vModel__\":\"field104\"}",
+        "span": 24,
+        "formId": 272,
+        "renderKey": "2721677751149521",
+        "children": [],
+        "eventField": [],
+        "saveWay": "bin",
+        "hideAddTemplate": true,
+        "showLabelIndex": true
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "400px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1677751149521_1"
+    }
+  ],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 22,
+  "formBtns": false
+}

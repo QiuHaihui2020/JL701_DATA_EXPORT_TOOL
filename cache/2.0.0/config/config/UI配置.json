@@ -1,0 +1,4443 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "UI配置",
+        "enableUuid": "TCFG_UI_ENABLE",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "template": "",
+        "span": 24,
+        "formId": 660,
+        "renderKey": "6601678622212458",
+        "children": [
+          {
+            "__config__": {
+              "layout": "rowFormItem",
+              "tag": "group",
+              "tagIcon": "row",
+              "layoutTree": true,
+              "componentName": "UI类型",
+              "enableUuid": "",
+              "showComponentName": false,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "template": "",
+              "span": 24,
+              "formId": 670,
+              "renderKey": "6701678623061293",
+              "children": [
+                {
+                  "__config__": {
+                    "label": "UI类型",
+                    "labelWidth": 80,
+                    "showLabel": true,
+                    "tag": "el-radio-group",
+                    "tagIcon": "radio",
+                    "changeTag": true,
+                    "defaultValue": "STYLE_JL_LED7",
+                    "layout": "colFormItem",
+                    "span": 24,
+                    "optionType": "default",
+                    "regList": [],
+                    "required": false,
+                    "border": false,
+                    "dataType": [
+                      "macro"
+                    ],
+                    "formId": 669,
+                    "renderKey": "6691678622751766",
+                    "originValue": "STYLE_JL_LED7",
+                    "saveWay": "macro",
+                    "uuid": "CONFIG_UI_STYLE",
+                    "tip": "选择LCD屏需要按说明添加资源文件",
+                    "tipAlways": true,
+                    "eventField": [],
+                    "formItemWidth": ""
+                  },
+                  "__slot__": {
+                    "options": [
+                      {
+                        "label": "LED数码管屏",
+                        "value": "STYLE_JL_LED7"
+                      },
+                      {
+                        "label": "OLED点阵屏（soundbar）",
+                        "value": "STYLE_JL_SOUNDBAR"
+                      },
+                      {
+                        "label": "LCD彩屏",
+                        "value": "STYLE_JL_SOUNDBOX",
+                        "hide": false,
+                        "disabled": false
+                      }
+                    ]
+                  },
+                  "style": {
+                    "width": "450px"
+                  },
+                  "size": "medium",
+                  "disabled": false,
+                  "id": "id_1678622751766_9",
+                  "__vModel__": "field669"
+                }
+              ],
+              "eventField": []
+            },
+            "type": "default",
+            "justify": "start",
+            "align": "top",
+            "style": {
+              "height": "40px",
+              "paddingLeft": "0px"
+            },
+            "id": "id_1678623061293_10",
+            "show-text": false
+          },
+          {
+            "__config__": {
+              "layout": "rowFormItem",
+              "tag": "group",
+              "tagIcon": "row",
+              "layoutTree": true,
+              "componentName": "LED数码管屏配置",
+              "enableUuid": "",
+              "showComponentName": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "template": "",
+              "span": 24,
+              "formId": 806,
+              "renderKey": "8061679646183102",
+              "children": [
+                {
+                  "__config__": {
+                    "label": "LED屏驱动跑RAM",
+                    "tag": "el-switch",
+                    "tagIcon": "switch",
+                    "defaultValue": 1,
+                    "span": 12,
+                    "showLabel": true,
+                    "labelWidth": 150,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "dataType": [
+                      "float"
+                    ],
+                    "formId": 689,
+                    "renderKey": "6891678623838622",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_LED7_RUN_RAM",
+                    "originValue": 1,
+                    "formItemWidth": "",
+                    "emptyValue": "0",
+                    "eventField": []
+                  },
+                  "style": {},
+                  "disabled": false,
+                  "active-text": "",
+                  "inactive-text": "",
+                  "active-color": null,
+                  "inactive-color": null,
+                  "active-value": 1,
+                  "inactive-value": 0,
+                  "id": "id_1678623838622_29",
+                  "__vModel__": "field689"
+                },
+                {
+                  "__config__": {
+                    "label": "LED7脚数码管屏",
+                    "tag": "el-switch",
+                    "tagIcon": "switch",
+                    "defaultValue": 1,
+                    "span": 12,
+                    "showLabel": true,
+                    "labelWidth": 150,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "dataType": [
+                      "float"
+                    ],
+                    "formId": 787,
+                    "renderKey": "7871678794312350",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_UI_LED7_ENABLE",
+                    "originValue": 1,
+                    "formItemWidth": "",
+                    "emptyValue": "0"
+                  },
+                  "style": {},
+                  "disabled": false,
+                  "active-text": "",
+                  "inactive-text": "",
+                  "active-color": null,
+                  "inactive-color": null,
+                  "active-value": 1,
+                  "inactive-value": 0,
+                  "id": "id_1678794312350_1",
+                  "__vModel__": "field787"
+                }
+              ],
+              "eventField": []
+            },
+            "type": "default",
+            "justify": "start",
+            "align": "top",
+            "style": {
+              "height": "40px",
+              "paddingLeft": "0px"
+            },
+            "id": "id_1679646183102_0"
+          },
+          {
+            "__config__": {
+              "layout": "rowFormItem",
+              "tag": "group",
+              "tagIcon": "row",
+              "layoutTree": true,
+              "componentName": "LCD屏配置",
+              "enableUuid": "",
+              "showComponentName": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "template": "",
+              "span": 24,
+              "formId": 690,
+              "renderKey": "6901678624035690",
+              "children": [
+                {
+                  "__config__": {
+                    "layout": "rowFormItem",
+                    "tag": "group",
+                    "tagIcon": "row",
+                    "layoutTree": true,
+                    "componentName": "row_759",
+                    "enableUuid": "",
+                    "showComponentName": false,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "template": "",
+                    "span": 24,
+                    "formId": 759,
+                    "renderKey": "7591678632364022",
+                    "children": [
+                      {
+                        "__config__": {
+                          "label": "LCD SPI口选择",
+                          "labelWidth": 150,
+                          "showLabel": true,
+                          "tag": "el-radio-group",
+                          "tagIcon": "radio",
+                          "changeTag": true,
+                          "defaultValue": 1,
+                          "layout": "colFormItem",
+                          "span": 24,
+                          "optionType": "default",
+                          "regList": [],
+                          "required": false,
+                          "border": false,
+                          "dataType": [
+                            "float"
+                          ],
+                          "formId": 703,
+                          "renderKey": "7031678624154420",
+                          "saveWay": "macro",
+                          "uuid": "TCFG_TFT_LCD_DEV_SPI_HW_NUM",
+                          "originValue": 1,
+                          "syncFlag": "",
+                          "tip": "SPI引脚配置请在硬件SPI配置项配置",
+                          "tipAlways": true,
+                          "formItemWidth": ""
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "SPI1",
+                              "value": 1
+                            },
+                            {
+                              "label": "SPI2",
+                              "value": 2
+                            }
+                          ]
+                        },
+                        "style": {
+                          "width": "20%"
+                        },
+                        "size": "medium",
+                        "disabled": false,
+                        "id": "id_1678624154420_43",
+                        "__vModel__": "field703"
+                      }
+                    ],
+                    "eventField": []
+                  },
+                  "type": "default",
+                  "justify": "start",
+                  "align": "top",
+                  "style": {
+                    "height": "30px",
+                    "paddingLeft": "0px"
+                  },
+                  "id": "id_1678632364022_99",
+                  "show-text": false
+                },
+                {
+                  "__config__": {
+                    "layout": "rowFormItem",
+                    "tag": "group",
+                    "tagIcon": "row",
+                    "layoutTree": true,
+                    "componentName": "row_799",
+                    "enableUuid": "",
+                    "showComponentName": false,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "template": "",
+                    "span": 24,
+                    "formId": 799,
+                    "renderKey": "7991679384397209",
+                    "children": [
+                      {
+                        "__config__": {
+                          "label": "歌词显示",
+                          "tag": "el-switch",
+                          "tagIcon": "switch",
+                          "defaultValue": 0,
+                          "span": 12,
+                          "showLabel": true,
+                          "labelWidth": 140,
+                          "layout": "colFormItem",
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "dataType": [
+                            "float"
+                          ],
+                          "formId": 801,
+                          "renderKey": "8011679384397209",
+                          "eventField": [],
+                          "uuid": "TCFG_LRC_LYRICS_ENABLE",
+                          "saveWay": "macro",
+                          "tip": "",
+                          "formItemWidth": "",
+                          "emptyValue": "0",
+                          "originValue": 0
+                        },
+                        "style": {},
+                        "disabled": true,
+                        "active-text": "",
+                        "inactive-text": "",
+                        "active-color": null,
+                        "inactive-color": null,
+                        "active-value": 1,
+                        "inactive-value": 0,
+                        "id": "id_1679384397209_3",
+                        "__vModel__": "field801"
+                      },
+                      {
+                        "__config__": {
+                          "label": "保存歌词时间标签到flash",
+                          "tag": "el-switch",
+                          "tagIcon": "switch",
+                          "defaultValue": 0,
+                          "span": 12,
+                          "showLabel": true,
+                          "labelWidth": 200,
+                          "layout": "colFormItem",
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "dataType": [
+                            "float"
+                          ],
+                          "formId": 802,
+                          "renderKey": "8021679384397209",
+                          "eventField": [],
+                          "uuid": "LRC_ENABLE_SAVE_LABEL_TO_FLASH",
+                          "saveWay": "macro",
+                          "tip": "可兼容长歌词文件，但需要占用flash空间（默认4k）",
+                          "syncFlag": "",
+                          "emptyValue": "0",
+                          "originValue": 0
+                        },
+                        "style": {},
+                        "disabled": true,
+                        "active-text": "",
+                        "inactive-text": "",
+                        "active-color": null,
+                        "inactive-color": null,
+                        "active-value": 1,
+                        "inactive-value": 0,
+                        "id": "id_1679384397209_4",
+                        "__vModel__": "field802"
+                      }
+                    ],
+                    "eventField": []
+                  },
+                  "type": "default",
+                  "justify": "start",
+                  "align": "top",
+                  "style": {
+                    "height": "30px",
+                    "paddingLeft": "0px"
+                  },
+                  "id": "id_1679384397209_1",
+                  "show-text": false
+                },
+                {
+                  "__config__": {
+                    "layout": "rowFormItem",
+                    "tag": "group",
+                    "tagIcon": "row",
+                    "layoutTree": true,
+                    "componentName": "驱动选择",
+                    "enableUuid": "",
+                    "showComponentName": true,
+                    "dataType": [
+                      "float"
+                    ],
+                    "template": "",
+                    "span": 24,
+                    "formId": 758,
+                    "renderKey": "7581678632344995",
+                    "children": [
+                      {
+                        "__config__": {
+                          "layout": "rowFormItem",
+                          "tag": "group",
+                          "tagIcon": "row",
+                          "layoutTree": true,
+                          "componentName": "row_807",
+                          "enableUuid": "",
+                          "showComponentName": false,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "template": "",
+                          "span": 24,
+                          "formId": 807,
+                          "renderKey": "8071679647264246",
+                          "children": [
+                            {
+                              "__config__": {
+                                "label": "OLED屏使能",
+                                "tag": "el-switch",
+                                "tagIcon": "switch",
+                                "defaultValue": 0,
+                                "span": 12,
+                                "showLabel": true,
+                                "labelWidth": null,
+                                "layout": "colFormItem",
+                                "required": false,
+                                "regList": [],
+                                "changeTag": true,
+                                "dataType": [
+                                  "float"
+                                ],
+                                "formId": 760,
+                                "renderKey": "7601678632436716",
+                                "uuid": "TCFG_LCD_OLED_ENABLE",
+                                "saveWay": "macro",
+                                "tip": "",
+                                "originValue": 0,
+                                "eventField": [],
+                                "formItemWidth": ""
+                              },
+                              "style": {},
+                              "disabled": true,
+                              "active-text": "",
+                              "inactive-text": "",
+                              "active-color": null,
+                              "inactive-color": null,
+                              "active-value": 1,
+                              "inactive-value": 0,
+                              "id": "id_1678632436716_100",
+                              "__vModel__": "field760"
+                            },
+                            {
+                              "__config__": {
+                                "label": "SSD1306",
+                                "tag": "el-switch",
+                                "tagIcon": "switch",
+                                "defaultValue": 0,
+                                "span": 12,
+                                "showLabel": true,
+                                "labelWidth": null,
+                                "layout": "colFormItem",
+                                "required": false,
+                                "regList": [],
+                                "changeTag": true,
+                                "dataType": [
+                                  "float"
+                                ],
+                                "formId": 762,
+                                "renderKey": "7621678634563748",
+                                "uuid": "TCFG_OLED_SPI_SSD1306_ENABLE",
+                                "saveWay": "macro",
+                                "tip": "OLED 12864点阵屏",
+                                "originValue": 0,
+                                "eventField": []
+                              },
+                              "style": {},
+                              "disabled": true,
+                              "active-text": "",
+                              "inactive-text": "",
+                              "active-color": null,
+                              "inactive-color": null,
+                              "active-value": 1,
+                              "inactive-value": 0,
+                              "id": "id_1678634563748_1",
+                              "__vModel__": "field762"
+                            }
+                          ],
+                          "eventField": []
+                        },
+                        "type": "default",
+                        "justify": "start",
+                        "align": "top",
+                        "style": {
+                          "height": "40px",
+                          "paddingLeft": "0px"
+                        },
+                        "id": "id_1679647264246_1"
+                      },
+                      {
+                        "__config__": {
+                          "layout": "rowFormItem",
+                          "tag": "group",
+                          "tagIcon": "row",
+                          "layoutTree": true,
+                          "componentName": "row_808",
+                          "enableUuid": "",
+                          "showComponentName": false,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "template": "",
+                          "span": 24,
+                          "formId": 808,
+                          "renderKey": "8081679647283313",
+                          "children": [
+                            {
+                              "__config__": {
+                                "label": "LCD彩屏使能",
+                                "tag": "el-switch",
+                                "tagIcon": "switch",
+                                "defaultValue": 0,
+                                "span": 12,
+                                "showLabel": true,
+                                "labelWidth": null,
+                                "layout": "colFormItem",
+                                "required": false,
+                                "regList": [],
+                                "changeTag": true,
+                                "status": 0,
+                                "dataType": [
+                                  "float"
+                                ],
+                                "formId": 122,
+                                "renderKey": "1221730788765440",
+                                "eventField": [],
+                                "uuid": "TCFG_SPI_LCD_ENABLE",
+                                "saveWay": "macro"
+                              },
+                              "style": {},
+                              "disabled": true,
+                              "active-text": "",
+                              "inactive-text": "",
+                              "active-color": null,
+                              "inactive-color": null,
+                              "active-value": 1,
+                              "inactive-value": 0,
+                              "id": "id_1730788765440_0",
+                              "__vModel__": "field122"
+                            },
+                            {
+                              "__config__": {
+                                "label": "ST7789V",
+                                "tag": "el-switch",
+                                "tagIcon": "switch",
+                                "defaultValue": 0,
+                                "span": 12,
+                                "showLabel": true,
+                                "labelWidth": null,
+                                "layout": "colFormItem",
+                                "required": false,
+                                "regList": [],
+                                "changeTag": true,
+                                "status": 0,
+                                "dataType": [
+                                  "float"
+                                ],
+                                "formId": 125,
+                                "renderKey": "1251730789495139",
+                                "eventField": [],
+                                "saveWay": "macro",
+                                "uuid": "TCFG_LCD_SPI_ST7789V_ENABLE",
+                                "tip": "ST7789V_240x240 SPI LCD 屏驱动"
+                              },
+                              "style": {},
+                              "disabled": true,
+                              "active-text": "",
+                              "inactive-text": "",
+                              "active-color": null,
+                              "inactive-color": null,
+                              "active-value": 1,
+                              "inactive-value": 0,
+                              "id": "id_1730789495139_3",
+                              "__vModel__": "field125"
+                            }
+                          ],
+                          "eventField": []
+                        },
+                        "type": "default",
+                        "justify": "start",
+                        "align": "top",
+                        "style": {
+                          "height": "40px",
+                          "paddingLeft": "0px"
+                        },
+                        "id": "id_1679647283313_2"
+                      }
+                    ],
+                    "eventField": [],
+                    "saveWay": "macro"
+                  },
+                  "type": "default",
+                  "justify": "start",
+                  "align": "top",
+                  "style": {
+                    "height": "50px",
+                    "paddingLeft": "0px"
+                  },
+                  "id": "id_1678632344995_98",
+                  "show-text": false
+                }
+              ],
+              "eventField": []
+            },
+            "type": "default",
+            "justify": "start",
+            "align": "top",
+            "style": {
+              "height": "100px",
+              "paddingLeft": "0px"
+            },
+            "id": "id_1678624035690_30"
+          },
+          {
+            "__config__": {
+              "layout": "rowFormItem",
+              "tag": "group",
+              "tagIcon": "row",
+              "layoutTree": true,
+              "componentName": "LED屏引脚配置",
+              "enableUuid": "",
+              "showComponentName": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "template": "",
+              "span": 24,
+              "formId": 687,
+              "renderKey": "6871678623647935",
+              "children": [
+                {
+                  "__config__": {
+                    "layout": "rowFormItem",
+                    "tag": "group",
+                    "tagIcon": "row",
+                    "layoutTree": true,
+                    "componentName": "row_671",
+                    "enableUuid": "",
+                    "showComponentName": false,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "template": "",
+                    "span": 24,
+                    "formId": 671,
+                    "renderKey": "6711678623122614",
+                    "children": [
+                      {
+                        "__config__": {
+                          "label": "LED引脚0",
+                          "showLabel": true,
+                          "labelWidth": null,
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 12,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "macro"
+                          ],
+                          "formId": 674,
+                          "renderKey": "6741678623376462",
+                          "saveWay": "macro",
+                          "eventField": [
+                            "device",
+                            "gpio"
+                          ],
+                          "uuid": "TCFG_LED7_PIN0",
+                          "emptyValue": "NO_CONFIG_PORT",
+                          "defaultValue": "id_1647485267192_70",
+                          "originValue": "id_1647485267192_70"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "IO_PORTA_00",
+                              "value": "id_1647485267192_66"
+                            },
+                            {
+                              "label": "IO_PORTA_01",
+                              "value": "id_1647485267192_67"
+                            },
+                            {
+                              "label": "IO_PORTA_02",
+                              "value": "id_1647485267192_68"
+                            },
+                            {
+                              "label": "IO_PORTA_03",
+                              "value": "id_1647485267192_69"
+                            },
+                            {
+                              "label": "IO_PORTA_04",
+                              "value": "id_1647485267192_70"
+                            },
+                            {
+                              "label": "IO_PORTA_05",
+                              "value": "id_1647485267192_71"
+                            },
+                            {
+                              "label": "IO_PORTA_06",
+                              "value": "id_1647485267192_72"
+                            },
+                            {
+                              "label": "IO_PORTA_07",
+                              "value": "id_1647485267192_73"
+                            },
+                            {
+                              "label": "IO_PORTA_08",
+                              "value": "id_1653449701350_0"
+                            },
+                            {
+                              "label": "IO_PORTA_09",
+                              "value": "id_1659942254419_11"
+                            },
+                            {
+                              "label": "IO_PORTA_10",
+                              "value": "id_1659942300489_12"
+                            },
+                            {
+                              "label": "IO_PORTA_11",
+                              "value": "id_1659942301465_13"
+                            },
+                            {
+                              "label": "IO_PORTA_12",
+                              "value": "id_1659942302985_15"
+                            },
+                            {
+                              "label": "IO_PORTA_13",
+                              "value": "id_1659942303977_16"
+                            },
+                            {
+                              "label": "IO_PORTA_14",
+                              "value": "id_1659942305385_17"
+                            },
+                            {
+                              "label": "IO_PORTA_15",
+                              "value": "id_1659942302234_14"
+                            },
+                            {
+                              "label": "IO_PORTB_00",
+                              "value": "id_1647485267192_74"
+                            },
+                            {
+                              "label": "IO_PORTB_01",
+                              "value": "id_1647485267192_75"
+                            },
+                            {
+                              "label": "IO_PORTB_02",
+                              "value": "id_1647485267192_76"
+                            },
+                            {
+                              "label": "IO_PORTB_03",
+                              "value": "id_1647485267192_77"
+                            },
+                            {
+                              "label": "IO_PORTB_04",
+                              "value": "id_1647485267192_78"
+                            },
+                            {
+                              "label": "IO_PORTB_05",
+                              "value": "id_1647485267192_79"
+                            },
+                            {
+                              "label": "IO_PORTB_06",
+                              "value": "id_1647485267192_80"
+                            },
+                            {
+                              "label": "IO_PORTB_07",
+                              "value": "id_1647485267192_81"
+                            },
+                            {
+                              "label": "IO_PORTB_08",
+                              "value": "id_1659942520267_25"
+                            },
+                            {
+                              "label": "IO_PORTB_09",
+                              "value": "id_1659942416666_18"
+                            },
+                            {
+                              "label": "IO_PORTB_10",
+                              "value": "id_1659942417369_19"
+                            },
+                            {
+                              "label": "IO_PORTB_11",
+                              "value": "id_1659942418129_20"
+                            },
+                            {
+                              "label": "IO_PORTB_12",
+                              "value": "id_1659942418537_21"
+                            },
+                            {
+                              "label": "IO_PORTB_13",
+                              "value": "id_1659942418961_22"
+                            },
+                            {
+                              "label": "IO_PORTB_14",
+                              "value": "id_1659942419409_23"
+                            },
+                            {
+                              "label": "IO_PORTB_15",
+                              "value": "id_1659942420017_24"
+                            },
+                            {
+                              "label": "IO_PORTC_00",
+                              "value": "id_1647485267192_82"
+                            },
+                            {
+                              "label": "IO_PORTC_01",
+                              "value": "id_1647485267192_83"
+                            },
+                            {
+                              "label": "IO_PORTC_02",
+                              "value": "id_1647485267192_84"
+                            },
+                            {
+                              "label": "IO_PORTC_03",
+                              "value": "id_1647485267192_85"
+                            },
+                            {
+                              "label": "IO_PORTC_04",
+                              "value": "id_1647485267192_86"
+                            },
+                            {
+                              "label": "IO_PORTC_05",
+                              "value": "id_1647485267192_87"
+                            },
+                            {
+                              "label": "IO_PORTC_06",
+                              "value": "id_1647485267192_88"
+                            },
+                            {
+                              "label": "IO_PORTC_07",
+                              "value": "id_1647485267192_89"
+                            },
+                            {
+                              "label": "IO_PORTC_08",
+                              "value": "id_1659942689298_34"
+                            },
+                            {
+                              "label": "IO_PORTC_09",
+                              "value": "id_1659942548530_27"
+                            },
+                            {
+                              "label": "IO_PORTC_10",
+                              "value": "id_1659942549845_32"
+                            },
+                            {
+                              "label": "IO_PORTC_11",
+                              "value": "id_1659942548938_29"
+                            },
+                            {
+                              "label": "IO_PORTC_12",
+                              "value": "id_1659942549182_30"
+                            },
+                            {
+                              "label": "IO_PORTD_00",
+                              "value": "id_1651200719084_10"
+                            },
+                            {
+                              "label": "IO_PORTD_01",
+                              "value": "id_1651200755336_11"
+                            },
+                            {
+                              "label": "IO_PORTD_02",
+                              "value": "id_1651200759198_12"
+                            },
+                            {
+                              "label": "IO_PORTD_03",
+                              "value": "id_1651200760502_13"
+                            },
+                            {
+                              "label": "IO_PORTD_04",
+                              "value": "id_1651200761897_14"
+                            },
+                            {
+                              "label": "IO_PORTD_05",
+                              "value": "id_1651200763262_15"
+                            },
+                            {
+                              "label": "IO_PORTD_06",
+                              "value": "id_1651200764534_16"
+                            },
+                            {
+                              "label": "IO_PORTD_07",
+                              "value": "id_1651200765594_17"
+                            },
+                            {
+                              "label": "IO_PORT_LDOIN",
+                              "value": "id_1654138247476_3"
+                            },
+                            {
+                              "label": "IO_PORT_DP",
+                              "value": "id_1651200840445_19"
+                            },
+                            {
+                              "label": "IO_PORT_DM",
+                              "value": "id_1651200854573_20"
+                            },
+                            {
+                              "label": "IO_PORT_PR_00",
+                              "value": "id_1676343428226_0"
+                            },
+                            {
+                              "label": "IO_PORT_PR_01",
+                              "value": "id_1676343431713_1"
+                            }
+                          ]
+                        },
+                        "placeholder": "请选择LED引脚0",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1678623376462_14",
+                        "__vModel__": "field674",
+                        "searchSource": true
+                      },
+                      {
+                        "__config__": {
+                          "label": "LED引脚1",
+                          "showLabel": true,
+                          "labelWidth": null,
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 12,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "macro"
+                          ],
+                          "formId": 677,
+                          "renderKey": "6771678623521305",
+                          "saveWay": "macro",
+                          "eventField": [
+                            "device",
+                            "gpio"
+                          ],
+                          "uuid": "TCFG_LED7_PIN1",
+                          "emptyValue": "NO_CONFIG_PORT",
+                          "defaultValue": "id_1647485267192_72",
+                          "originValue": "id_1647485267192_72"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "IO_PORTA_00",
+                              "value": "id_1647485267192_66"
+                            },
+                            {
+                              "label": "IO_PORTA_01",
+                              "value": "id_1647485267192_67"
+                            },
+                            {
+                              "label": "IO_PORTA_02",
+                              "value": "id_1647485267192_68"
+                            },
+                            {
+                              "label": "IO_PORTA_03",
+                              "value": "id_1647485267192_69"
+                            },
+                            {
+                              "label": "IO_PORTA_04",
+                              "value": "id_1647485267192_70"
+                            },
+                            {
+                              "label": "IO_PORTA_05",
+                              "value": "id_1647485267192_71"
+                            },
+                            {
+                              "label": "IO_PORTA_06",
+                              "value": "id_1647485267192_72"
+                            },
+                            {
+                              "label": "IO_PORTA_07",
+                              "value": "id_1647485267192_73"
+                            },
+                            {
+                              "label": "IO_PORTA_08",
+                              "value": "id_1653449701350_0"
+                            },
+                            {
+                              "label": "IO_PORTA_09",
+                              "value": "id_1659942254419_11"
+                            },
+                            {
+                              "label": "IO_PORTA_10",
+                              "value": "id_1659942300489_12"
+                            },
+                            {
+                              "label": "IO_PORTA_11",
+                              "value": "id_1659942301465_13"
+                            },
+                            {
+                              "label": "IO_PORTA_12",
+                              "value": "id_1659942302985_15"
+                            },
+                            {
+                              "label": "IO_PORTA_13",
+                              "value": "id_1659942303977_16"
+                            },
+                            {
+                              "label": "IO_PORTA_14",
+                              "value": "id_1659942305385_17"
+                            },
+                            {
+                              "label": "IO_PORTA_15",
+                              "value": "id_1659942302234_14"
+                            },
+                            {
+                              "label": "IO_PORTB_00",
+                              "value": "id_1647485267192_74"
+                            },
+                            {
+                              "label": "IO_PORTB_01",
+                              "value": "id_1647485267192_75"
+                            },
+                            {
+                              "label": "IO_PORTB_02",
+                              "value": "id_1647485267192_76"
+                            },
+                            {
+                              "label": "IO_PORTB_03",
+                              "value": "id_1647485267192_77"
+                            },
+                            {
+                              "label": "IO_PORTB_04",
+                              "value": "id_1647485267192_78"
+                            },
+                            {
+                              "label": "IO_PORTB_05",
+                              "value": "id_1647485267192_79"
+                            },
+                            {
+                              "label": "IO_PORTB_06",
+                              "value": "id_1647485267192_80"
+                            },
+                            {
+                              "label": "IO_PORTB_07",
+                              "value": "id_1647485267192_81"
+                            },
+                            {
+                              "label": "IO_PORTB_08",
+                              "value": "id_1659942520267_25"
+                            },
+                            {
+                              "label": "IO_PORTB_09",
+                              "value": "id_1659942416666_18"
+                            },
+                            {
+                              "label": "IO_PORTB_10",
+                              "value": "id_1659942417369_19"
+                            },
+                            {
+                              "label": "IO_PORTB_11",
+                              "value": "id_1659942418129_20"
+                            },
+                            {
+                              "label": "IO_PORTB_12",
+                              "value": "id_1659942418537_21"
+                            },
+                            {
+                              "label": "IO_PORTB_13",
+                              "value": "id_1659942418961_22"
+                            },
+                            {
+                              "label": "IO_PORTB_14",
+                              "value": "id_1659942419409_23"
+                            },
+                            {
+                              "label": "IO_PORTB_15",
+                              "value": "id_1659942420017_24"
+                            },
+                            {
+                              "label": "IO_PORTC_00",
+                              "value": "id_1647485267192_82"
+                            },
+                            {
+                              "label": "IO_PORTC_01",
+                              "value": "id_1647485267192_83"
+                            },
+                            {
+                              "label": "IO_PORTC_02",
+                              "value": "id_1647485267192_84"
+                            },
+                            {
+                              "label": "IO_PORTC_03",
+                              "value": "id_1647485267192_85"
+                            },
+                            {
+                              "label": "IO_PORTC_04",
+                              "value": "id_1647485267192_86"
+                            },
+                            {
+                              "label": "IO_PORTC_05",
+                              "value": "id_1647485267192_87"
+                            },
+                            {
+                              "label": "IO_PORTC_06",
+                              "value": "id_1647485267192_88"
+                            },
+                            {
+                              "label": "IO_PORTC_07",
+                              "value": "id_1647485267192_89"
+                            },
+                            {
+                              "label": "IO_PORTC_08",
+                              "value": "id_1659942689298_34"
+                            },
+                            {
+                              "label": "IO_PORTC_09",
+                              "value": "id_1659942548530_27"
+                            },
+                            {
+                              "label": "IO_PORTC_10",
+                              "value": "id_1659942549845_32"
+                            },
+                            {
+                              "label": "IO_PORTC_11",
+                              "value": "id_1659942548938_29"
+                            },
+                            {
+                              "label": "IO_PORTC_12",
+                              "value": "id_1659942549182_30"
+                            },
+                            {
+                              "label": "IO_PORTD_00",
+                              "value": "id_1651200719084_10"
+                            },
+                            {
+                              "label": "IO_PORTD_01",
+                              "value": "id_1651200755336_11"
+                            },
+                            {
+                              "label": "IO_PORTD_02",
+                              "value": "id_1651200759198_12"
+                            },
+                            {
+                              "label": "IO_PORTD_03",
+                              "value": "id_1651200760502_13"
+                            },
+                            {
+                              "label": "IO_PORTD_04",
+                              "value": "id_1651200761897_14"
+                            },
+                            {
+                              "label": "IO_PORTD_05",
+                              "value": "id_1651200763262_15"
+                            },
+                            {
+                              "label": "IO_PORTD_06",
+                              "value": "id_1651200764534_16"
+                            },
+                            {
+                              "label": "IO_PORTD_07",
+                              "value": "id_1651200765594_17"
+                            },
+                            {
+                              "label": "IO_PORT_LDOIN",
+                              "value": "id_1654138247476_3"
+                            },
+                            {
+                              "label": "IO_PORT_DP",
+                              "value": "id_1651200840445_19"
+                            },
+                            {
+                              "label": "IO_PORT_DM",
+                              "value": "id_1651200854573_20"
+                            },
+                            {
+                              "label": "IO_PORT_PR_00",
+                              "value": "id_1676343428226_0"
+                            },
+                            {
+                              "label": "IO_PORT_PR_01",
+                              "value": "id_1676343431713_1"
+                            }
+                          ]
+                        },
+                        "placeholder": "请选择LED引脚1",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1678623521305_17",
+                        "__vModel__": "field677",
+                        "searchSource": true
+                      }
+                    ],
+                    "eventField": []
+                  },
+                  "type": "default",
+                  "justify": "start",
+                  "align": "top",
+                  "style": {
+                    "height": "40px",
+                    "paddingLeft": "0px"
+                  },
+                  "id": "id_1678623122614_11"
+                },
+                {
+                  "__config__": {
+                    "layout": "rowFormItem",
+                    "tag": "group",
+                    "tagIcon": "row",
+                    "layoutTree": true,
+                    "componentName": "row_678",
+                    "enableUuid": "",
+                    "showComponentName": false,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "template": "",
+                    "span": 24,
+                    "formId": 678,
+                    "renderKey": "6781678623549283",
+                    "children": [
+                      {
+                        "__config__": {
+                          "label": "LED引脚2",
+                          "showLabel": true,
+                          "labelWidth": null,
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 12,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "macro"
+                          ],
+                          "formId": 679,
+                          "renderKey": "6791678623549283",
+                          "saveWay": "macro",
+                          "eventField": [
+                            "device",
+                            "gpio"
+                          ],
+                          "uuid": "TCFG_LED7_PIN2",
+                          "emptyValue": "NO_CONFIG_PORT",
+                          "defaultValue": "id_1647485267192_73",
+                          "originValue": "id_1647485267192_73"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "IO_PORTA_00",
+                              "value": "id_1647485267192_66"
+                            },
+                            {
+                              "label": "IO_PORTA_01",
+                              "value": "id_1647485267192_67"
+                            },
+                            {
+                              "label": "IO_PORTA_02",
+                              "value": "id_1647485267192_68"
+                            },
+                            {
+                              "label": "IO_PORTA_03",
+                              "value": "id_1647485267192_69"
+                            },
+                            {
+                              "label": "IO_PORTA_04",
+                              "value": "id_1647485267192_70"
+                            },
+                            {
+                              "label": "IO_PORTA_05",
+                              "value": "id_1647485267192_71"
+                            },
+                            {
+                              "label": "IO_PORTA_06",
+                              "value": "id_1647485267192_72"
+                            },
+                            {
+                              "label": "IO_PORTA_07",
+                              "value": "id_1647485267192_73"
+                            },
+                            {
+                              "label": "IO_PORTA_08",
+                              "value": "id_1653449701350_0"
+                            },
+                            {
+                              "label": "IO_PORTA_09",
+                              "value": "id_1659942254419_11"
+                            },
+                            {
+                              "label": "IO_PORTA_10",
+                              "value": "id_1659942300489_12"
+                            },
+                            {
+                              "label": "IO_PORTA_11",
+                              "value": "id_1659942301465_13"
+                            },
+                            {
+                              "label": "IO_PORTA_12",
+                              "value": "id_1659942302985_15"
+                            },
+                            {
+                              "label": "IO_PORTA_13",
+                              "value": "id_1659942303977_16"
+                            },
+                            {
+                              "label": "IO_PORTA_14",
+                              "value": "id_1659942305385_17"
+                            },
+                            {
+                              "label": "IO_PORTA_15",
+                              "value": "id_1659942302234_14"
+                            },
+                            {
+                              "label": "IO_PORTB_00",
+                              "value": "id_1647485267192_74"
+                            },
+                            {
+                              "label": "IO_PORTB_01",
+                              "value": "id_1647485267192_75"
+                            },
+                            {
+                              "label": "IO_PORTB_02",
+                              "value": "id_1647485267192_76"
+                            },
+                            {
+                              "label": "IO_PORTB_03",
+                              "value": "id_1647485267192_77"
+                            },
+                            {
+                              "label": "IO_PORTB_04",
+                              "value": "id_1647485267192_78"
+                            },
+                            {
+                              "label": "IO_PORTB_05",
+                              "value": "id_1647485267192_79"
+                            },
+                            {
+                              "label": "IO_PORTB_06",
+                              "value": "id_1647485267192_80"
+                            },
+                            {
+                              "label": "IO_PORTB_07",
+                              "value": "id_1647485267192_81"
+                            },
+                            {
+                              "label": "IO_PORTB_08",
+                              "value": "id_1659942520267_25"
+                            },
+                            {
+                              "label": "IO_PORTB_09",
+                              "value": "id_1659942416666_18"
+                            },
+                            {
+                              "label": "IO_PORTB_10",
+                              "value": "id_1659942417369_19"
+                            },
+                            {
+                              "label": "IO_PORTB_11",
+                              "value": "id_1659942418129_20"
+                            },
+                            {
+                              "label": "IO_PORTB_12",
+                              "value": "id_1659942418537_21"
+                            },
+                            {
+                              "label": "IO_PORTB_13",
+                              "value": "id_1659942418961_22"
+                            },
+                            {
+                              "label": "IO_PORTB_14",
+                              "value": "id_1659942419409_23"
+                            },
+                            {
+                              "label": "IO_PORTB_15",
+                              "value": "id_1659942420017_24"
+                            },
+                            {
+                              "label": "IO_PORTC_00",
+                              "value": "id_1647485267192_82"
+                            },
+                            {
+                              "label": "IO_PORTC_01",
+                              "value": "id_1647485267192_83"
+                            },
+                            {
+                              "label": "IO_PORTC_02",
+                              "value": "id_1647485267192_84"
+                            },
+                            {
+                              "label": "IO_PORTC_03",
+                              "value": "id_1647485267192_85"
+                            },
+                            {
+                              "label": "IO_PORTC_04",
+                              "value": "id_1647485267192_86"
+                            },
+                            {
+                              "label": "IO_PORTC_05",
+                              "value": "id_1647485267192_87"
+                            },
+                            {
+                              "label": "IO_PORTC_06",
+                              "value": "id_1647485267192_88"
+                            },
+                            {
+                              "label": "IO_PORTC_07",
+                              "value": "id_1647485267192_89"
+                            },
+                            {
+                              "label": "IO_PORTC_08",
+                              "value": "id_1659942689298_34"
+                            },
+                            {
+                              "label": "IO_PORTC_09",
+                              "value": "id_1659942548530_27"
+                            },
+                            {
+                              "label": "IO_PORTC_10",
+                              "value": "id_1659942549845_32"
+                            },
+                            {
+                              "label": "IO_PORTC_11",
+                              "value": "id_1659942548938_29"
+                            },
+                            {
+                              "label": "IO_PORTC_12",
+                              "value": "id_1659942549182_30"
+                            },
+                            {
+                              "label": "IO_PORTD_00",
+                              "value": "id_1651200719084_10"
+                            },
+                            {
+                              "label": "IO_PORTD_01",
+                              "value": "id_1651200755336_11"
+                            },
+                            {
+                              "label": "IO_PORTD_02",
+                              "value": "id_1651200759198_12"
+                            },
+                            {
+                              "label": "IO_PORTD_03",
+                              "value": "id_1651200760502_13"
+                            },
+                            {
+                              "label": "IO_PORTD_04",
+                              "value": "id_1651200761897_14"
+                            },
+                            {
+                              "label": "IO_PORTD_05",
+                              "value": "id_1651200763262_15"
+                            },
+                            {
+                              "label": "IO_PORTD_06",
+                              "value": "id_1651200764534_16"
+                            },
+                            {
+                              "label": "IO_PORTD_07",
+                              "value": "id_1651200765594_17"
+                            },
+                            {
+                              "label": "IO_PORT_LDOIN",
+                              "value": "id_1654138247476_3"
+                            },
+                            {
+                              "label": "IO_PORT_DP",
+                              "value": "id_1651200840445_19"
+                            },
+                            {
+                              "label": "IO_PORT_DM",
+                              "value": "id_1651200854573_20"
+                            },
+                            {
+                              "label": "IO_PORT_PR_00",
+                              "value": "id_1676343428226_0"
+                            },
+                            {
+                              "label": "IO_PORT_PR_01",
+                              "value": "id_1676343431713_1"
+                            }
+                          ]
+                        },
+                        "placeholder": "请选择LED引脚2",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1678623549283_19",
+                        "__vModel__": "field679",
+                        "searchSource": true
+                      },
+                      {
+                        "__config__": {
+                          "label": "LED引脚3",
+                          "showLabel": true,
+                          "labelWidth": null,
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 12,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "macro"
+                          ],
+                          "formId": 680,
+                          "renderKey": "6801678623549283",
+                          "saveWay": "macro",
+                          "eventField": [
+                            "device",
+                            "gpio"
+                          ],
+                          "uuid": "TCFG_LED7_PIN3",
+                          "emptyValue": "NO_CONFIG_PORT",
+                          "defaultValue": "id_1653449701350_0",
+                          "originValue": "id_1653449701350_0"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "IO_PORTA_00",
+                              "value": "id_1647485267192_66"
+                            },
+                            {
+                              "label": "IO_PORTA_01",
+                              "value": "id_1647485267192_67"
+                            },
+                            {
+                              "label": "IO_PORTA_02",
+                              "value": "id_1647485267192_68"
+                            },
+                            {
+                              "label": "IO_PORTA_03",
+                              "value": "id_1647485267192_69"
+                            },
+                            {
+                              "label": "IO_PORTA_04",
+                              "value": "id_1647485267192_70"
+                            },
+                            {
+                              "label": "IO_PORTA_05",
+                              "value": "id_1647485267192_71"
+                            },
+                            {
+                              "label": "IO_PORTA_06",
+                              "value": "id_1647485267192_72"
+                            },
+                            {
+                              "label": "IO_PORTA_07",
+                              "value": "id_1647485267192_73"
+                            },
+                            {
+                              "label": "IO_PORTA_08",
+                              "value": "id_1653449701350_0"
+                            },
+                            {
+                              "label": "IO_PORTA_09",
+                              "value": "id_1659942254419_11"
+                            },
+                            {
+                              "label": "IO_PORTA_10",
+                              "value": "id_1659942300489_12"
+                            },
+                            {
+                              "label": "IO_PORTA_11",
+                              "value": "id_1659942301465_13"
+                            },
+                            {
+                              "label": "IO_PORTA_12",
+                              "value": "id_1659942302985_15"
+                            },
+                            {
+                              "label": "IO_PORTA_13",
+                              "value": "id_1659942303977_16"
+                            },
+                            {
+                              "label": "IO_PORTA_14",
+                              "value": "id_1659942305385_17"
+                            },
+                            {
+                              "label": "IO_PORTA_15",
+                              "value": "id_1659942302234_14"
+                            },
+                            {
+                              "label": "IO_PORTB_00",
+                              "value": "id_1647485267192_74"
+                            },
+                            {
+                              "label": "IO_PORTB_01",
+                              "value": "id_1647485267192_75"
+                            },
+                            {
+                              "label": "IO_PORTB_02",
+                              "value": "id_1647485267192_76"
+                            },
+                            {
+                              "label": "IO_PORTB_03",
+                              "value": "id_1647485267192_77"
+                            },
+                            {
+                              "label": "IO_PORTB_04",
+                              "value": "id_1647485267192_78"
+                            },
+                            {
+                              "label": "IO_PORTB_05",
+                              "value": "id_1647485267192_79"
+                            },
+                            {
+                              "label": "IO_PORTB_06",
+                              "value": "id_1647485267192_80"
+                            },
+                            {
+                              "label": "IO_PORTB_07",
+                              "value": "id_1647485267192_81"
+                            },
+                            {
+                              "label": "IO_PORTB_08",
+                              "value": "id_1659942520267_25"
+                            },
+                            {
+                              "label": "IO_PORTB_09",
+                              "value": "id_1659942416666_18"
+                            },
+                            {
+                              "label": "IO_PORTB_10",
+                              "value": "id_1659942417369_19"
+                            },
+                            {
+                              "label": "IO_PORTB_11",
+                              "value": "id_1659942418129_20"
+                            },
+                            {
+                              "label": "IO_PORTB_12",
+                              "value": "id_1659942418537_21"
+                            },
+                            {
+                              "label": "IO_PORTB_13",
+                              "value": "id_1659942418961_22"
+                            },
+                            {
+                              "label": "IO_PORTB_14",
+                              "value": "id_1659942419409_23"
+                            },
+                            {
+                              "label": "IO_PORTB_15",
+                              "value": "id_1659942420017_24"
+                            },
+                            {
+                              "label": "IO_PORTC_00",
+                              "value": "id_1647485267192_82"
+                            },
+                            {
+                              "label": "IO_PORTC_01",
+                              "value": "id_1647485267192_83"
+                            },
+                            {
+                              "label": "IO_PORTC_02",
+                              "value": "id_1647485267192_84"
+                            },
+                            {
+                              "label": "IO_PORTC_03",
+                              "value": "id_1647485267192_85"
+                            },
+                            {
+                              "label": "IO_PORTC_04",
+                              "value": "id_1647485267192_86"
+                            },
+                            {
+                              "label": "IO_PORTC_05",
+                              "value": "id_1647485267192_87"
+                            },
+                            {
+                              "label": "IO_PORTC_06",
+                              "value": "id_1647485267192_88"
+                            },
+                            {
+                              "label": "IO_PORTC_07",
+                              "value": "id_1647485267192_89"
+                            },
+                            {
+                              "label": "IO_PORTC_08",
+                              "value": "id_1659942689298_34"
+                            },
+                            {
+                              "label": "IO_PORTC_09",
+                              "value": "id_1659942548530_27"
+                            },
+                            {
+                              "label": "IO_PORTC_10",
+                              "value": "id_1659942549845_32"
+                            },
+                            {
+                              "label": "IO_PORTC_11",
+                              "value": "id_1659942548938_29"
+                            },
+                            {
+                              "label": "IO_PORTC_12",
+                              "value": "id_1659942549182_30"
+                            },
+                            {
+                              "label": "IO_PORTD_00",
+                              "value": "id_1651200719084_10"
+                            },
+                            {
+                              "label": "IO_PORTD_01",
+                              "value": "id_1651200755336_11"
+                            },
+                            {
+                              "label": "IO_PORTD_02",
+                              "value": "id_1651200759198_12"
+                            },
+                            {
+                              "label": "IO_PORTD_03",
+                              "value": "id_1651200760502_13"
+                            },
+                            {
+                              "label": "IO_PORTD_04",
+                              "value": "id_1651200761897_14"
+                            },
+                            {
+                              "label": "IO_PORTD_05",
+                              "value": "id_1651200763262_15"
+                            },
+                            {
+                              "label": "IO_PORTD_06",
+                              "value": "id_1651200764534_16"
+                            },
+                            {
+                              "label": "IO_PORTD_07",
+                              "value": "id_1651200765594_17"
+                            },
+                            {
+                              "label": "IO_PORT_LDOIN",
+                              "value": "id_1654138247476_3"
+                            },
+                            {
+                              "label": "IO_PORT_DP",
+                              "value": "id_1651200840445_19"
+                            },
+                            {
+                              "label": "IO_PORT_DM",
+                              "value": "id_1651200854573_20"
+                            },
+                            {
+                              "label": "IO_PORT_PR_00",
+                              "value": "id_1676343428226_0"
+                            },
+                            {
+                              "label": "IO_PORT_PR_01",
+                              "value": "id_1676343431713_1"
+                            }
+                          ]
+                        },
+                        "placeholder": "请选择LED引脚3",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1678623549283_20",
+                        "__vModel__": "field680",
+                        "searchSource": true
+                      }
+                    ],
+                    "eventField": []
+                  },
+                  "type": "default",
+                  "justify": "start",
+                  "align": "top",
+                  "style": {
+                    "height": "40px",
+                    "paddingLeft": "0px"
+                  },
+                  "id": "id_1678623549283_18"
+                },
+                {
+                  "__config__": {
+                    "layout": "rowFormItem",
+                    "tag": "group",
+                    "tagIcon": "row",
+                    "layoutTree": true,
+                    "componentName": "row_681",
+                    "enableUuid": "",
+                    "showComponentName": false,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "template": "",
+                    "span": 24,
+                    "formId": 681,
+                    "renderKey": "6811678623552168",
+                    "children": [
+                      {
+                        "__config__": {
+                          "label": "LED引脚4",
+                          "showLabel": true,
+                          "labelWidth": null,
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 12,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "macro"
+                          ],
+                          "formId": 682,
+                          "renderKey": "6821678623552168",
+                          "saveWay": "macro",
+                          "eventField": [
+                            "device",
+                            "gpio"
+                          ],
+                          "uuid": "TCFG_LED7_PIN4",
+                          "emptyValue": "NO_CONFIG_PORT",
+                          "defaultValue": "id_1659942254419_11",
+                          "originValue": "id_1659942254419_11"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "IO_PORTA_00",
+                              "value": "id_1647485267192_66"
+                            },
+                            {
+                              "label": "IO_PORTA_01",
+                              "value": "id_1647485267192_67"
+                            },
+                            {
+                              "label": "IO_PORTA_02",
+                              "value": "id_1647485267192_68"
+                            },
+                            {
+                              "label": "IO_PORTA_03",
+                              "value": "id_1647485267192_69"
+                            },
+                            {
+                              "label": "IO_PORTA_04",
+                              "value": "id_1647485267192_70"
+                            },
+                            {
+                              "label": "IO_PORTA_05",
+                              "value": "id_1647485267192_71"
+                            },
+                            {
+                              "label": "IO_PORTA_06",
+                              "value": "id_1647485267192_72"
+                            },
+                            {
+                              "label": "IO_PORTA_07",
+                              "value": "id_1647485267192_73"
+                            },
+                            {
+                              "label": "IO_PORTA_08",
+                              "value": "id_1653449701350_0"
+                            },
+                            {
+                              "label": "IO_PORTA_09",
+                              "value": "id_1659942254419_11"
+                            },
+                            {
+                              "label": "IO_PORTA_10",
+                              "value": "id_1659942300489_12"
+                            },
+                            {
+                              "label": "IO_PORTA_11",
+                              "value": "id_1659942301465_13"
+                            },
+                            {
+                              "label": "IO_PORTA_12",
+                              "value": "id_1659942302985_15"
+                            },
+                            {
+                              "label": "IO_PORTA_13",
+                              "value": "id_1659942303977_16"
+                            },
+                            {
+                              "label": "IO_PORTA_14",
+                              "value": "id_1659942305385_17"
+                            },
+                            {
+                              "label": "IO_PORTA_15",
+                              "value": "id_1659942302234_14"
+                            },
+                            {
+                              "label": "IO_PORTB_00",
+                              "value": "id_1647485267192_74"
+                            },
+                            {
+                              "label": "IO_PORTB_01",
+                              "value": "id_1647485267192_75"
+                            },
+                            {
+                              "label": "IO_PORTB_02",
+                              "value": "id_1647485267192_76"
+                            },
+                            {
+                              "label": "IO_PORTB_03",
+                              "value": "id_1647485267192_77"
+                            },
+                            {
+                              "label": "IO_PORTB_04",
+                              "value": "id_1647485267192_78"
+                            },
+                            {
+                              "label": "IO_PORTB_05",
+                              "value": "id_1647485267192_79"
+                            },
+                            {
+                              "label": "IO_PORTB_06",
+                              "value": "id_1647485267192_80"
+                            },
+                            {
+                              "label": "IO_PORTB_07",
+                              "value": "id_1647485267192_81"
+                            },
+                            {
+                              "label": "IO_PORTB_08",
+                              "value": "id_1659942520267_25"
+                            },
+                            {
+                              "label": "IO_PORTB_09",
+                              "value": "id_1659942416666_18"
+                            },
+                            {
+                              "label": "IO_PORTB_10",
+                              "value": "id_1659942417369_19"
+                            },
+                            {
+                              "label": "IO_PORTB_11",
+                              "value": "id_1659942418129_20"
+                            },
+                            {
+                              "label": "IO_PORTB_12",
+                              "value": "id_1659942418537_21"
+                            },
+                            {
+                              "label": "IO_PORTB_13",
+                              "value": "id_1659942418961_22"
+                            },
+                            {
+                              "label": "IO_PORTB_14",
+                              "value": "id_1659942419409_23"
+                            },
+                            {
+                              "label": "IO_PORTB_15",
+                              "value": "id_1659942420017_24"
+                            },
+                            {
+                              "label": "IO_PORTC_00",
+                              "value": "id_1647485267192_82"
+                            },
+                            {
+                              "label": "IO_PORTC_01",
+                              "value": "id_1647485267192_83"
+                            },
+                            {
+                              "label": "IO_PORTC_02",
+                              "value": "id_1647485267192_84"
+                            },
+                            {
+                              "label": "IO_PORTC_03",
+                              "value": "id_1647485267192_85"
+                            },
+                            {
+                              "label": "IO_PORTC_04",
+                              "value": "id_1647485267192_86"
+                            },
+                            {
+                              "label": "IO_PORTC_05",
+                              "value": "id_1647485267192_87"
+                            },
+                            {
+                              "label": "IO_PORTC_06",
+                              "value": "id_1647485267192_88"
+                            },
+                            {
+                              "label": "IO_PORTC_07",
+                              "value": "id_1647485267192_89"
+                            },
+                            {
+                              "label": "IO_PORTC_08",
+                              "value": "id_1659942689298_34"
+                            },
+                            {
+                              "label": "IO_PORTC_09",
+                              "value": "id_1659942548530_27"
+                            },
+                            {
+                              "label": "IO_PORTC_10",
+                              "value": "id_1659942549845_32"
+                            },
+                            {
+                              "label": "IO_PORTC_11",
+                              "value": "id_1659942548938_29"
+                            },
+                            {
+                              "label": "IO_PORTC_12",
+                              "value": "id_1659942549182_30"
+                            },
+                            {
+                              "label": "IO_PORTD_00",
+                              "value": "id_1651200719084_10"
+                            },
+                            {
+                              "label": "IO_PORTD_01",
+                              "value": "id_1651200755336_11"
+                            },
+                            {
+                              "label": "IO_PORTD_02",
+                              "value": "id_1651200759198_12"
+                            },
+                            {
+                              "label": "IO_PORTD_03",
+                              "value": "id_1651200760502_13"
+                            },
+                            {
+                              "label": "IO_PORTD_04",
+                              "value": "id_1651200761897_14"
+                            },
+                            {
+                              "label": "IO_PORTD_05",
+                              "value": "id_1651200763262_15"
+                            },
+                            {
+                              "label": "IO_PORTD_06",
+                              "value": "id_1651200764534_16"
+                            },
+                            {
+                              "label": "IO_PORTD_07",
+                              "value": "id_1651200765594_17"
+                            },
+                            {
+                              "label": "IO_PORT_LDOIN",
+                              "value": "id_1654138247476_3"
+                            },
+                            {
+                              "label": "IO_PORT_DP",
+                              "value": "id_1651200840445_19"
+                            },
+                            {
+                              "label": "IO_PORT_DM",
+                              "value": "id_1651200854573_20"
+                            },
+                            {
+                              "label": "IO_PORT_PR_00",
+                              "value": "id_1676343428226_0"
+                            },
+                            {
+                              "label": "IO_PORT_PR_01",
+                              "value": "id_1676343431713_1"
+                            }
+                          ]
+                        },
+                        "placeholder": "请选择LED引脚4",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1678623552168_22",
+                        "__vModel__": "field682",
+                        "searchSource": true
+                      },
+                      {
+                        "__config__": {
+                          "label": "LED引脚5",
+                          "showLabel": true,
+                          "labelWidth": null,
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 12,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "macro"
+                          ],
+                          "formId": 683,
+                          "renderKey": "6831678623552168",
+                          "saveWay": "macro",
+                          "eventField": [
+                            "device",
+                            "gpio"
+                          ],
+                          "uuid": "TCFG_LED7_PIN5",
+                          "emptyValue": "NO_CONFIG_PORT",
+                          "defaultValue": "id_1659942300489_12",
+                          "originValue": "id_1659942300489_12"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "IO_PORTA_00",
+                              "value": "id_1647485267192_66"
+                            },
+                            {
+                              "label": "IO_PORTA_01",
+                              "value": "id_1647485267192_67"
+                            },
+                            {
+                              "label": "IO_PORTA_02",
+                              "value": "id_1647485267192_68"
+                            },
+                            {
+                              "label": "IO_PORTA_03",
+                              "value": "id_1647485267192_69"
+                            },
+                            {
+                              "label": "IO_PORTA_04",
+                              "value": "id_1647485267192_70"
+                            },
+                            {
+                              "label": "IO_PORTA_05",
+                              "value": "id_1647485267192_71"
+                            },
+                            {
+                              "label": "IO_PORTA_06",
+                              "value": "id_1647485267192_72"
+                            },
+                            {
+                              "label": "IO_PORTA_07",
+                              "value": "id_1647485267192_73"
+                            },
+                            {
+                              "label": "IO_PORTA_08",
+                              "value": "id_1653449701350_0"
+                            },
+                            {
+                              "label": "IO_PORTA_09",
+                              "value": "id_1659942254419_11"
+                            },
+                            {
+                              "label": "IO_PORTA_10",
+                              "value": "id_1659942300489_12"
+                            },
+                            {
+                              "label": "IO_PORTA_11",
+                              "value": "id_1659942301465_13"
+                            },
+                            {
+                              "label": "IO_PORTA_12",
+                              "value": "id_1659942302985_15"
+                            },
+                            {
+                              "label": "IO_PORTA_13",
+                              "value": "id_1659942303977_16"
+                            },
+                            {
+                              "label": "IO_PORTA_14",
+                              "value": "id_1659942305385_17"
+                            },
+                            {
+                              "label": "IO_PORTA_15",
+                              "value": "id_1659942302234_14"
+                            },
+                            {
+                              "label": "IO_PORTB_00",
+                              "value": "id_1647485267192_74"
+                            },
+                            {
+                              "label": "IO_PORTB_01",
+                              "value": "id_1647485267192_75"
+                            },
+                            {
+                              "label": "IO_PORTB_02",
+                              "value": "id_1647485267192_76"
+                            },
+                            {
+                              "label": "IO_PORTB_03",
+                              "value": "id_1647485267192_77"
+                            },
+                            {
+                              "label": "IO_PORTB_04",
+                              "value": "id_1647485267192_78"
+                            },
+                            {
+                              "label": "IO_PORTB_05",
+                              "value": "id_1647485267192_79"
+                            },
+                            {
+                              "label": "IO_PORTB_06",
+                              "value": "id_1647485267192_80"
+                            },
+                            {
+                              "label": "IO_PORTB_07",
+                              "value": "id_1647485267192_81"
+                            },
+                            {
+                              "label": "IO_PORTB_08",
+                              "value": "id_1659942520267_25"
+                            },
+                            {
+                              "label": "IO_PORTB_09",
+                              "value": "id_1659942416666_18"
+                            },
+                            {
+                              "label": "IO_PORTB_10",
+                              "value": "id_1659942417369_19"
+                            },
+                            {
+                              "label": "IO_PORTB_11",
+                              "value": "id_1659942418129_20"
+                            },
+                            {
+                              "label": "IO_PORTB_12",
+                              "value": "id_1659942418537_21"
+                            },
+                            {
+                              "label": "IO_PORTB_13",
+                              "value": "id_1659942418961_22"
+                            },
+                            {
+                              "label": "IO_PORTB_14",
+                              "value": "id_1659942419409_23"
+                            },
+                            {
+                              "label": "IO_PORTB_15",
+                              "value": "id_1659942420017_24"
+                            },
+                            {
+                              "label": "IO_PORTC_00",
+                              "value": "id_1647485267192_82"
+                            },
+                            {
+                              "label": "IO_PORTC_01",
+                              "value": "id_1647485267192_83"
+                            },
+                            {
+                              "label": "IO_PORTC_02",
+                              "value": "id_1647485267192_84"
+                            },
+                            {
+                              "label": "IO_PORTC_03",
+                              "value": "id_1647485267192_85"
+                            },
+                            {
+                              "label": "IO_PORTC_04",
+                              "value": "id_1647485267192_86"
+                            },
+                            {
+                              "label": "IO_PORTC_05",
+                              "value": "id_1647485267192_87"
+                            },
+                            {
+                              "label": "IO_PORTC_06",
+                              "value": "id_1647485267192_88"
+                            },
+                            {
+                              "label": "IO_PORTC_07",
+                              "value": "id_1647485267192_89"
+                            },
+                            {
+                              "label": "IO_PORTC_08",
+                              "value": "id_1659942689298_34"
+                            },
+                            {
+                              "label": "IO_PORTC_09",
+                              "value": "id_1659942548530_27"
+                            },
+                            {
+                              "label": "IO_PORTC_10",
+                              "value": "id_1659942549845_32"
+                            },
+                            {
+                              "label": "IO_PORTC_11",
+                              "value": "id_1659942548938_29"
+                            },
+                            {
+                              "label": "IO_PORTC_12",
+                              "value": "id_1659942549182_30"
+                            },
+                            {
+                              "label": "IO_PORTD_00",
+                              "value": "id_1651200719084_10"
+                            },
+                            {
+                              "label": "IO_PORTD_01",
+                              "value": "id_1651200755336_11"
+                            },
+                            {
+                              "label": "IO_PORTD_02",
+                              "value": "id_1651200759198_12"
+                            },
+                            {
+                              "label": "IO_PORTD_03",
+                              "value": "id_1651200760502_13"
+                            },
+                            {
+                              "label": "IO_PORTD_04",
+                              "value": "id_1651200761897_14"
+                            },
+                            {
+                              "label": "IO_PORTD_05",
+                              "value": "id_1651200763262_15"
+                            },
+                            {
+                              "label": "IO_PORTD_06",
+                              "value": "id_1651200764534_16"
+                            },
+                            {
+                              "label": "IO_PORTD_07",
+                              "value": "id_1651200765594_17"
+                            },
+                            {
+                              "label": "IO_PORT_LDOIN",
+                              "value": "id_1654138247476_3"
+                            },
+                            {
+                              "label": "IO_PORT_DP",
+                              "value": "id_1651200840445_19"
+                            },
+                            {
+                              "label": "IO_PORT_DM",
+                              "value": "id_1651200854573_20"
+                            },
+                            {
+                              "label": "IO_PORT_PR_00",
+                              "value": "id_1676343428226_0"
+                            },
+                            {
+                              "label": "IO_PORT_PR_01",
+                              "value": "id_1676343431713_1"
+                            }
+                          ]
+                        },
+                        "placeholder": "请选择LED引脚5",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1678623552168_23",
+                        "__vModel__": "field683",
+                        "searchSource": true
+                      }
+                    ],
+                    "eventField": []
+                  },
+                  "type": "default",
+                  "justify": "start",
+                  "align": "top",
+                  "style": {
+                    "height": "40px",
+                    "paddingLeft": "0px"
+                  },
+                  "id": "id_1678623552168_21"
+                },
+                {
+                  "__config__": {
+                    "layout": "rowFormItem",
+                    "tag": "group",
+                    "tagIcon": "row",
+                    "layoutTree": true,
+                    "componentName": "row_684",
+                    "enableUuid": "",
+                    "showComponentName": false,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "template": "",
+                    "span": 24,
+                    "formId": 684,
+                    "renderKey": "6841678623556356",
+                    "children": [
+                      {
+                        "__config__": {
+                          "label": "LED引脚6",
+                          "showLabel": true,
+                          "labelWidth": null,
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 12,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "macro"
+                          ],
+                          "formId": 685,
+                          "renderKey": "6851678623556356",
+                          "saveWay": "macro",
+                          "eventField": [
+                            "device",
+                            "gpio"
+                          ],
+                          "uuid": "TCFG_LED7_PIN6",
+                          "emptyValue": "NO_CONFIG_PORT",
+                          "defaultValue": "id_1659942301465_13",
+                          "originValue": "id_1659942301465_13"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "IO_PORTA_00",
+                              "value": "id_1647485267192_66"
+                            },
+                            {
+                              "label": "IO_PORTA_01",
+                              "value": "id_1647485267192_67"
+                            },
+                            {
+                              "label": "IO_PORTA_02",
+                              "value": "id_1647485267192_68"
+                            },
+                            {
+                              "label": "IO_PORTA_03",
+                              "value": "id_1647485267192_69"
+                            },
+                            {
+                              "label": "IO_PORTA_04",
+                              "value": "id_1647485267192_70"
+                            },
+                            {
+                              "label": "IO_PORTA_05",
+                              "value": "id_1647485267192_71"
+                            },
+                            {
+                              "label": "IO_PORTA_06",
+                              "value": "id_1647485267192_72"
+                            },
+                            {
+                              "label": "IO_PORTA_07",
+                              "value": "id_1647485267192_73"
+                            },
+                            {
+                              "label": "IO_PORTA_08",
+                              "value": "id_1653449701350_0"
+                            },
+                            {
+                              "label": "IO_PORTA_09",
+                              "value": "id_1659942254419_11"
+                            },
+                            {
+                              "label": "IO_PORTA_10",
+                              "value": "id_1659942300489_12"
+                            },
+                            {
+                              "label": "IO_PORTA_11",
+                              "value": "id_1659942301465_13"
+                            },
+                            {
+                              "label": "IO_PORTA_12",
+                              "value": "id_1659942302985_15"
+                            },
+                            {
+                              "label": "IO_PORTA_13",
+                              "value": "id_1659942303977_16"
+                            },
+                            {
+                              "label": "IO_PORTA_14",
+                              "value": "id_1659942305385_17"
+                            },
+                            {
+                              "label": "IO_PORTA_15",
+                              "value": "id_1659942302234_14"
+                            },
+                            {
+                              "label": "IO_PORTB_00",
+                              "value": "id_1647485267192_74"
+                            },
+                            {
+                              "label": "IO_PORTB_01",
+                              "value": "id_1647485267192_75"
+                            },
+                            {
+                              "label": "IO_PORTB_02",
+                              "value": "id_1647485267192_76"
+                            },
+                            {
+                              "label": "IO_PORTB_03",
+                              "value": "id_1647485267192_77"
+                            },
+                            {
+                              "label": "IO_PORTB_04",
+                              "value": "id_1647485267192_78"
+                            },
+                            {
+                              "label": "IO_PORTB_05",
+                              "value": "id_1647485267192_79"
+                            },
+                            {
+                              "label": "IO_PORTB_06",
+                              "value": "id_1647485267192_80"
+                            },
+                            {
+                              "label": "IO_PORTB_07",
+                              "value": "id_1647485267192_81"
+                            },
+                            {
+                              "label": "IO_PORTB_08",
+                              "value": "id_1659942520267_25"
+                            },
+                            {
+                              "label": "IO_PORTB_09",
+                              "value": "id_1659942416666_18"
+                            },
+                            {
+                              "label": "IO_PORTB_10",
+                              "value": "id_1659942417369_19"
+                            },
+                            {
+                              "label": "IO_PORTB_11",
+                              "value": "id_1659942418129_20"
+                            },
+                            {
+                              "label": "IO_PORTB_12",
+                              "value": "id_1659942418537_21"
+                            },
+                            {
+                              "label": "IO_PORTB_13",
+                              "value": "id_1659942418961_22"
+                            },
+                            {
+                              "label": "IO_PORTB_14",
+                              "value": "id_1659942419409_23"
+                            },
+                            {
+                              "label": "IO_PORTB_15",
+                              "value": "id_1659942420017_24"
+                            },
+                            {
+                              "label": "IO_PORTC_00",
+                              "value": "id_1647485267192_82"
+                            },
+                            {
+                              "label": "IO_PORTC_01",
+                              "value": "id_1647485267192_83"
+                            },
+                            {
+                              "label": "IO_PORTC_02",
+                              "value": "id_1647485267192_84"
+                            },
+                            {
+                              "label": "IO_PORTC_03",
+                              "value": "id_1647485267192_85"
+                            },
+                            {
+                              "label": "IO_PORTC_04",
+                              "value": "id_1647485267192_86"
+                            },
+                            {
+                              "label": "IO_PORTC_05",
+                              "value": "id_1647485267192_87"
+                            },
+                            {
+                              "label": "IO_PORTC_06",
+                              "value": "id_1647485267192_88"
+                            },
+                            {
+                              "label": "IO_PORTC_07",
+                              "value": "id_1647485267192_89"
+                            },
+                            {
+                              "label": "IO_PORTC_08",
+                              "value": "id_1659942689298_34"
+                            },
+                            {
+                              "label": "IO_PORTC_09",
+                              "value": "id_1659942548530_27"
+                            },
+                            {
+                              "label": "IO_PORTC_10",
+                              "value": "id_1659942549845_32"
+                            },
+                            {
+                              "label": "IO_PORTC_11",
+                              "value": "id_1659942548938_29"
+                            },
+                            {
+                              "label": "IO_PORTC_12",
+                              "value": "id_1659942549182_30"
+                            },
+                            {
+                              "label": "IO_PORTD_00",
+                              "value": "id_1651200719084_10"
+                            },
+                            {
+                              "label": "IO_PORTD_01",
+                              "value": "id_1651200755336_11"
+                            },
+                            {
+                              "label": "IO_PORTD_02",
+                              "value": "id_1651200759198_12"
+                            },
+                            {
+                              "label": "IO_PORTD_03",
+                              "value": "id_1651200760502_13"
+                            },
+                            {
+                              "label": "IO_PORTD_04",
+                              "value": "id_1651200761897_14"
+                            },
+                            {
+                              "label": "IO_PORTD_05",
+                              "value": "id_1651200763262_15"
+                            },
+                            {
+                              "label": "IO_PORTD_06",
+                              "value": "id_1651200764534_16"
+                            },
+                            {
+                              "label": "IO_PORTD_07",
+                              "value": "id_1651200765594_17"
+                            },
+                            {
+                              "label": "IO_PORT_LDOIN",
+                              "value": "id_1654138247476_3"
+                            },
+                            {
+                              "label": "IO_PORT_DP",
+                              "value": "id_1651200840445_19"
+                            },
+                            {
+                              "label": "IO_PORT_DM",
+                              "value": "id_1651200854573_20"
+                            },
+                            {
+                              "label": "IO_PORT_PR_00",
+                              "value": "id_1676343428226_0"
+                            },
+                            {
+                              "label": "IO_PORT_PR_01",
+                              "value": "id_1676343431713_1"
+                            }
+                          ]
+                        },
+                        "placeholder": "请选择LED引脚6",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1678623556356_25",
+                        "__vModel__": "field685",
+                        "searchSource": true
+                      }
+                    ],
+                    "eventField": []
+                  },
+                  "type": "default",
+                  "justify": "start",
+                  "align": "top",
+                  "style": {
+                    "height": "40px",
+                    "paddingLeft": "0px"
+                  },
+                  "id": "id_1678623556356_24"
+                }
+              ],
+              "eventField": []
+            },
+            "type": "default",
+            "justify": "start",
+            "align": "top",
+            "style": {
+              "height": "40px",
+              "paddingLeft": "0px"
+            },
+            "id": "id_1678623647935_27"
+          },
+          {
+            "__config__": {
+              "layout": "rowFormItem",
+              "tag": "group",
+              "tagIcon": "row",
+              "layoutTree": true,
+              "componentName": "LCD屏引脚配置",
+              "enableUuid": "",
+              "showComponentName": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "template": "",
+              "span": 24,
+              "formId": 748,
+              "renderKey": "7481678631829452",
+              "children": [
+                {
+                  "__config__": {
+                    "label": "LCD RESET ",
+                    "showLabel": true,
+                    "labelWidth": 130,
+                    "tag": "el-select",
+                    "tagIcon": "select",
+                    "layout": "colFormItem",
+                    "span": 12,
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "searchSource": false,
+                    "dataType": [
+                      "macro"
+                    ],
+                    "formId": 752,
+                    "renderKey": "7521678631896153",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_LCD_PIN_RESET",
+                    "eventField": [
+                      "device",
+                      "gpio"
+                    ],
+                    "emptyValue": "NO_CONFIG_PORT",
+                    "defaultValue": "id_1647485267192_80",
+                    "originValue": "id_1647485267192_80"
+                  },
+                  "__slot__": {
+                    "options": [
+                      {
+                        "label": "IO_PORTA_00",
+                        "value": "id_1647485267192_66"
+                      },
+                      {
+                        "label": "IO_PORTA_01",
+                        "value": "id_1647485267192_67"
+                      },
+                      {
+                        "label": "IO_PORTA_02",
+                        "value": "id_1647485267192_68"
+                      },
+                      {
+                        "label": "IO_PORTA_03",
+                        "value": "id_1647485267192_69"
+                      },
+                      {
+                        "label": "IO_PORTA_04",
+                        "value": "id_1647485267192_70"
+                      },
+                      {
+                        "label": "IO_PORTA_05",
+                        "value": "id_1647485267192_71"
+                      },
+                      {
+                        "label": "IO_PORTA_06",
+                        "value": "id_1647485267192_72"
+                      },
+                      {
+                        "label": "IO_PORTA_07",
+                        "value": "id_1647485267192_73"
+                      },
+                      {
+                        "label": "IO_PORTA_08",
+                        "value": "id_1653449701350_0"
+                      },
+                      {
+                        "label": "IO_PORTA_09",
+                        "value": "id_1659942254419_11"
+                      },
+                      {
+                        "label": "IO_PORTA_10",
+                        "value": "id_1659942300489_12"
+                      },
+                      {
+                        "label": "IO_PORTA_11",
+                        "value": "id_1659942301465_13"
+                      },
+                      {
+                        "label": "IO_PORTA_12",
+                        "value": "id_1659942302985_15"
+                      },
+                      {
+                        "label": "IO_PORTA_13",
+                        "value": "id_1659942303977_16"
+                      },
+                      {
+                        "label": "IO_PORTA_14",
+                        "value": "id_1659942305385_17"
+                      },
+                      {
+                        "label": "IO_PORTA_15",
+                        "value": "id_1659942302234_14"
+                      },
+                      {
+                        "label": "IO_PORTB_00",
+                        "value": "id_1647485267192_74"
+                      },
+                      {
+                        "label": "IO_PORTB_01",
+                        "value": "id_1647485267192_75"
+                      },
+                      {
+                        "label": "IO_PORTB_02",
+                        "value": "id_1647485267192_76"
+                      },
+                      {
+                        "label": "IO_PORTB_03",
+                        "value": "id_1647485267192_77"
+                      },
+                      {
+                        "label": "IO_PORTB_04",
+                        "value": "id_1647485267192_78"
+                      },
+                      {
+                        "label": "IO_PORTB_05",
+                        "value": "id_1647485267192_79"
+                      },
+                      {
+                        "label": "IO_PORTB_06",
+                        "value": "id_1647485267192_80"
+                      },
+                      {
+                        "label": "IO_PORTB_07",
+                        "value": "id_1647485267192_81"
+                      },
+                      {
+                        "label": "IO_PORTB_08",
+                        "value": "id_1659942520267_25"
+                      },
+                      {
+                        "label": "IO_PORTB_09",
+                        "value": "id_1659942416666_18"
+                      },
+                      {
+                        "label": "IO_PORTB_10",
+                        "value": "id_1659942417369_19"
+                      },
+                      {
+                        "label": "IO_PORTB_11",
+                        "value": "id_1659942418129_20"
+                      },
+                      {
+                        "label": "IO_PORTB_12",
+                        "value": "id_1659942418537_21"
+                      },
+                      {
+                        "label": "IO_PORTB_13",
+                        "value": "id_1659942418961_22"
+                      },
+                      {
+                        "label": "IO_PORTB_14",
+                        "value": "id_1659942419409_23"
+                      },
+                      {
+                        "label": "IO_PORTB_15",
+                        "value": "id_1659942420017_24"
+                      },
+                      {
+                        "label": "IO_PORTC_00",
+                        "value": "id_1647485267192_82"
+                      },
+                      {
+                        "label": "IO_PORTC_01",
+                        "value": "id_1647485267192_83"
+                      },
+                      {
+                        "label": "IO_PORTC_02",
+                        "value": "id_1647485267192_84"
+                      },
+                      {
+                        "label": "IO_PORTC_03",
+                        "value": "id_1647485267192_85"
+                      },
+                      {
+                        "label": "IO_PORTC_04",
+                        "value": "id_1647485267192_86"
+                      },
+                      {
+                        "label": "IO_PORTC_05",
+                        "value": "id_1647485267192_87"
+                      },
+                      {
+                        "label": "IO_PORTC_06",
+                        "value": "id_1647485267192_88"
+                      },
+                      {
+                        "label": "IO_PORTC_07",
+                        "value": "id_1647485267192_89"
+                      },
+                      {
+                        "label": "IO_PORTC_08",
+                        "value": "id_1659942689298_34"
+                      },
+                      {
+                        "label": "IO_PORTC_09",
+                        "value": "id_1659942548530_27"
+                      },
+                      {
+                        "label": "IO_PORTC_10",
+                        "value": "id_1659942549845_32"
+                      },
+                      {
+                        "label": "IO_PORTC_11",
+                        "value": "id_1659942548938_29"
+                      },
+                      {
+                        "label": "IO_PORTC_12",
+                        "value": "id_1659942549182_30"
+                      },
+                      {
+                        "label": "IO_PORTD_00",
+                        "value": "id_1651200719084_10"
+                      },
+                      {
+                        "label": "IO_PORTD_01",
+                        "value": "id_1651200755336_11"
+                      },
+                      {
+                        "label": "IO_PORTD_02",
+                        "value": "id_1651200759198_12"
+                      },
+                      {
+                        "label": "IO_PORTD_03",
+                        "value": "id_1651200760502_13"
+                      },
+                      {
+                        "label": "IO_PORTD_04",
+                        "value": "id_1651200761897_14"
+                      },
+                      {
+                        "label": "IO_PORTD_05",
+                        "value": "id_1651200763262_15"
+                      },
+                      {
+                        "label": "IO_PORTD_06",
+                        "value": "id_1651200764534_16"
+                      },
+                      {
+                        "label": "IO_PORTD_07",
+                        "value": "id_1651200765594_17"
+                      },
+                      {
+                        "label": "IO_PORT_LDOIN",
+                        "value": "id_1654138247476_3"
+                      },
+                      {
+                        "label": "IO_PORT_DP",
+                        "value": "id_1651200840445_19"
+                      },
+                      {
+                        "label": "IO_PORT_DM",
+                        "value": "id_1651200854573_20"
+                      },
+                      {
+                        "label": "IO_PORT_PR_00",
+                        "value": "id_1676343428226_0"
+                      },
+                      {
+                        "label": "IO_PORT_PR_01",
+                        "value": "id_1676343431713_1"
+                      }
+                    ]
+                  },
+                  "placeholder": "请选择LCD RESET ",
+                  "style": {
+                    "width": "100%"
+                  },
+                  "clearable": true,
+                  "disabled": false,
+                  "filterable": false,
+                  "multiple": false,
+                  "id": "id_1678631896153_92",
+                  "__vModel__": "field752",
+                  "searchSource": true
+                },
+                {
+                  "__config__": {
+                    "label": "LCD CS",
+                    "showLabel": true,
+                    "labelWidth": 130,
+                    "tag": "el-select",
+                    "tagIcon": "select",
+                    "layout": "colFormItem",
+                    "span": 12,
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "searchSource": false,
+                    "dataType": [
+                      "macro"
+                    ],
+                    "formId": 753,
+                    "renderKey": "7531678632016503",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_LCD_PIN_CS",
+                    "eventField": [
+                      "device",
+                      "gpio"
+                    ],
+                    "emptyValue": "NO_CONFIG_PORT",
+                    "defaultValue": "id_1647485267192_69",
+                    "originValue": "id_1647485267192_69"
+                  },
+                  "__slot__": {
+                    "options": [
+                      {
+                        "label": "IO_PORTA_00",
+                        "value": "id_1647485267192_66"
+                      },
+                      {
+                        "label": "IO_PORTA_01",
+                        "value": "id_1647485267192_67"
+                      },
+                      {
+                        "label": "IO_PORTA_02",
+                        "value": "id_1647485267192_68"
+                      },
+                      {
+                        "label": "IO_PORTA_03",
+                        "value": "id_1647485267192_69"
+                      },
+                      {
+                        "label": "IO_PORTA_04",
+                        "value": "id_1647485267192_70"
+                      },
+                      {
+                        "label": "IO_PORTA_05",
+                        "value": "id_1647485267192_71"
+                      },
+                      {
+                        "label": "IO_PORTA_06",
+                        "value": "id_1647485267192_72"
+                      },
+                      {
+                        "label": "IO_PORTA_07",
+                        "value": "id_1647485267192_73"
+                      },
+                      {
+                        "label": "IO_PORTA_08",
+                        "value": "id_1653449701350_0"
+                      },
+                      {
+                        "label": "IO_PORTA_09",
+                        "value": "id_1659942254419_11"
+                      },
+                      {
+                        "label": "IO_PORTA_10",
+                        "value": "id_1659942300489_12"
+                      },
+                      {
+                        "label": "IO_PORTA_11",
+                        "value": "id_1659942301465_13"
+                      },
+                      {
+                        "label": "IO_PORTA_12",
+                        "value": "id_1659942302985_15"
+                      },
+                      {
+                        "label": "IO_PORTA_13",
+                        "value": "id_1659942303977_16"
+                      },
+                      {
+                        "label": "IO_PORTA_14",
+                        "value": "id_1659942305385_17"
+                      },
+                      {
+                        "label": "IO_PORTA_15",
+                        "value": "id_1659942302234_14"
+                      },
+                      {
+                        "label": "IO_PORTB_00",
+                        "value": "id_1647485267192_74"
+                      },
+                      {
+                        "label": "IO_PORTB_01",
+                        "value": "id_1647485267192_75"
+                      },
+                      {
+                        "label": "IO_PORTB_02",
+                        "value": "id_1647485267192_76"
+                      },
+                      {
+                        "label": "IO_PORTB_03",
+                        "value": "id_1647485267192_77"
+                      },
+                      {
+                        "label": "IO_PORTB_04",
+                        "value": "id_1647485267192_78"
+                      },
+                      {
+                        "label": "IO_PORTB_05",
+                        "value": "id_1647485267192_79"
+                      },
+                      {
+                        "label": "IO_PORTB_06",
+                        "value": "id_1647485267192_80"
+                      },
+                      {
+                        "label": "IO_PORTB_07",
+                        "value": "id_1647485267192_81"
+                      },
+                      {
+                        "label": "IO_PORTB_08",
+                        "value": "id_1659942520267_25"
+                      },
+                      {
+                        "label": "IO_PORTB_09",
+                        "value": "id_1659942416666_18"
+                      },
+                      {
+                        "label": "IO_PORTB_10",
+                        "value": "id_1659942417369_19"
+                      },
+                      {
+                        "label": "IO_PORTB_11",
+                        "value": "id_1659942418129_20"
+                      },
+                      {
+                        "label": "IO_PORTB_12",
+                        "value": "id_1659942418537_21"
+                      },
+                      {
+                        "label": "IO_PORTB_13",
+                        "value": "id_1659942418961_22"
+                      },
+                      {
+                        "label": "IO_PORTB_14",
+                        "value": "id_1659942419409_23"
+                      },
+                      {
+                        "label": "IO_PORTB_15",
+                        "value": "id_1659942420017_24"
+                      },
+                      {
+                        "label": "IO_PORTC_00",
+                        "value": "id_1647485267192_82"
+                      },
+                      {
+                        "label": "IO_PORTC_01",
+                        "value": "id_1647485267192_83"
+                      },
+                      {
+                        "label": "IO_PORTC_02",
+                        "value": "id_1647485267192_84"
+                      },
+                      {
+                        "label": "IO_PORTC_03",
+                        "value": "id_1647485267192_85"
+                      },
+                      {
+                        "label": "IO_PORTC_04",
+                        "value": "id_1647485267192_86"
+                      },
+                      {
+                        "label": "IO_PORTC_05",
+                        "value": "id_1647485267192_87"
+                      },
+                      {
+                        "label": "IO_PORTC_06",
+                        "value": "id_1647485267192_88"
+                      },
+                      {
+                        "label": "IO_PORTC_07",
+                        "value": "id_1647485267192_89"
+                      },
+                      {
+                        "label": "IO_PORTC_08",
+                        "value": "id_1659942689298_34"
+                      },
+                      {
+                        "label": "IO_PORTC_09",
+                        "value": "id_1659942548530_27"
+                      },
+                      {
+                        "label": "IO_PORTC_10",
+                        "value": "id_1659942549845_32"
+                      },
+                      {
+                        "label": "IO_PORTC_11",
+                        "value": "id_1659942548938_29"
+                      },
+                      {
+                        "label": "IO_PORTC_12",
+                        "value": "id_1659942549182_30"
+                      },
+                      {
+                        "label": "IO_PORTD_00",
+                        "value": "id_1651200719084_10"
+                      },
+                      {
+                        "label": "IO_PORTD_01",
+                        "value": "id_1651200755336_11"
+                      },
+                      {
+                        "label": "IO_PORTD_02",
+                        "value": "id_1651200759198_12"
+                      },
+                      {
+                        "label": "IO_PORTD_03",
+                        "value": "id_1651200760502_13"
+                      },
+                      {
+                        "label": "IO_PORTD_04",
+                        "value": "id_1651200761897_14"
+                      },
+                      {
+                        "label": "IO_PORTD_05",
+                        "value": "id_1651200763262_15"
+                      },
+                      {
+                        "label": "IO_PORTD_06",
+                        "value": "id_1651200764534_16"
+                      },
+                      {
+                        "label": "IO_PORTD_07",
+                        "value": "id_1651200765594_17"
+                      },
+                      {
+                        "label": "IO_PORT_LDOIN",
+                        "value": "id_1654138247476_3"
+                      },
+                      {
+                        "label": "IO_PORT_DP",
+                        "value": "id_1651200840445_19"
+                      },
+                      {
+                        "label": "IO_PORT_DM",
+                        "value": "id_1651200854573_20"
+                      },
+                      {
+                        "label": "IO_PORT_PR_00",
+                        "value": "id_1676343428226_0"
+                      },
+                      {
+                        "label": "IO_PORT_PR_01",
+                        "value": "id_1676343431713_1"
+                      }
+                    ]
+                  },
+                  "placeholder": "请选择LCD CS",
+                  "style": {
+                    "width": "100%"
+                  },
+                  "clearable": true,
+                  "disabled": false,
+                  "filterable": false,
+                  "multiple": false,
+                  "id": "id_1678632016503_93",
+                  "__vModel__": "field753",
+                  "searchSource": true
+                },
+                {
+                  "__config__": {
+                    "label": "LCD BLCKLIGHT",
+                    "showLabel": true,
+                    "labelWidth": 130,
+                    "tag": "el-select",
+                    "tagIcon": "select",
+                    "layout": "colFormItem",
+                    "span": 12,
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "searchSource": false,
+                    "dataType": [
+                      "macro"
+                    ],
+                    "formId": 754,
+                    "renderKey": "7541678632029166",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_LCD_PIN_BL",
+                    "eventField": [
+                      "device",
+                      "gpio"
+                    ],
+                    "emptyValue": "NO_CONFIG_PORT",
+                    "defaultValue": "id_1659942689298_34",
+                    "originValue": "id_1659942689298_34"
+                  },
+                  "__slot__": {
+                    "options": [
+                      {
+                        "label": "IO_PORTA_00",
+                        "value": "id_1647485267192_66"
+                      },
+                      {
+                        "label": "IO_PORTA_01",
+                        "value": "id_1647485267192_67"
+                      },
+                      {
+                        "label": "IO_PORTA_02",
+                        "value": "id_1647485267192_68"
+                      },
+                      {
+                        "label": "IO_PORTA_03",
+                        "value": "id_1647485267192_69"
+                      },
+                      {
+                        "label": "IO_PORTA_04",
+                        "value": "id_1647485267192_70"
+                      },
+                      {
+                        "label": "IO_PORTA_05",
+                        "value": "id_1647485267192_71"
+                      },
+                      {
+                        "label": "IO_PORTA_06",
+                        "value": "id_1647485267192_72"
+                      },
+                      {
+                        "label": "IO_PORTA_07",
+                        "value": "id_1647485267192_73"
+                      },
+                      {
+                        "label": "IO_PORTA_08",
+                        "value": "id_1653449701350_0"
+                      },
+                      {
+                        "label": "IO_PORTA_09",
+                        "value": "id_1659942254419_11"
+                      },
+                      {
+                        "label": "IO_PORTA_10",
+                        "value": "id_1659942300489_12"
+                      },
+                      {
+                        "label": "IO_PORTA_11",
+                        "value": "id_1659942301465_13"
+                      },
+                      {
+                        "label": "IO_PORTA_12",
+                        "value": "id_1659942302985_15"
+                      },
+                      {
+                        "label": "IO_PORTA_13",
+                        "value": "id_1659942303977_16"
+                      },
+                      {
+                        "label": "IO_PORTA_14",
+                        "value": "id_1659942305385_17"
+                      },
+                      {
+                        "label": "IO_PORTA_15",
+                        "value": "id_1659942302234_14"
+                      },
+                      {
+                        "label": "IO_PORTB_00",
+                        "value": "id_1647485267192_74"
+                      },
+                      {
+                        "label": "IO_PORTB_01",
+                        "value": "id_1647485267192_75"
+                      },
+                      {
+                        "label": "IO_PORTB_02",
+                        "value": "id_1647485267192_76"
+                      },
+                      {
+                        "label": "IO_PORTB_03",
+                        "value": "id_1647485267192_77"
+                      },
+                      {
+                        "label": "IO_PORTB_04",
+                        "value": "id_1647485267192_78"
+                      },
+                      {
+                        "label": "IO_PORTB_05",
+                        "value": "id_1647485267192_79"
+                      },
+                      {
+                        "label": "IO_PORTB_06",
+                        "value": "id_1647485267192_80"
+                      },
+                      {
+                        "label": "IO_PORTB_07",
+                        "value": "id_1647485267192_81"
+                      },
+                      {
+                        "label": "IO_PORTB_08",
+                        "value": "id_1659942520267_25"
+                      },
+                      {
+                        "label": "IO_PORTB_09",
+                        "value": "id_1659942416666_18"
+                      },
+                      {
+                        "label": "IO_PORTB_10",
+                        "value": "id_1659942417369_19"
+                      },
+                      {
+                        "label": "IO_PORTB_11",
+                        "value": "id_1659942418129_20"
+                      },
+                      {
+                        "label": "IO_PORTB_12",
+                        "value": "id_1659942418537_21"
+                      },
+                      {
+                        "label": "IO_PORTB_13",
+                        "value": "id_1659942418961_22"
+                      },
+                      {
+                        "label": "IO_PORTB_14",
+                        "value": "id_1659942419409_23"
+                      },
+                      {
+                        "label": "IO_PORTB_15",
+                        "value": "id_1659942420017_24"
+                      },
+                      {
+                        "label": "IO_PORTC_00",
+                        "value": "id_1647485267192_82"
+                      },
+                      {
+                        "label": "IO_PORTC_01",
+                        "value": "id_1647485267192_83"
+                      },
+                      {
+                        "label": "IO_PORTC_02",
+                        "value": "id_1647485267192_84"
+                      },
+                      {
+                        "label": "IO_PORTC_03",
+                        "value": "id_1647485267192_85"
+                      },
+                      {
+                        "label": "IO_PORTC_04",
+                        "value": "id_1647485267192_86"
+                      },
+                      {
+                        "label": "IO_PORTC_05",
+                        "value": "id_1647485267192_87"
+                      },
+                      {
+                        "label": "IO_PORTC_06",
+                        "value": "id_1647485267192_88"
+                      },
+                      {
+                        "label": "IO_PORTC_07",
+                        "value": "id_1647485267192_89"
+                      },
+                      {
+                        "label": "IO_PORTC_08",
+                        "value": "id_1659942689298_34"
+                      },
+                      {
+                        "label": "IO_PORTC_09",
+                        "value": "id_1659942548530_27"
+                      },
+                      {
+                        "label": "IO_PORTC_10",
+                        "value": "id_1659942549845_32"
+                      },
+                      {
+                        "label": "IO_PORTC_11",
+                        "value": "id_1659942548938_29"
+                      },
+                      {
+                        "label": "IO_PORTC_12",
+                        "value": "id_1659942549182_30"
+                      },
+                      {
+                        "label": "IO_PORTD_00",
+                        "value": "id_1651200719084_10"
+                      },
+                      {
+                        "label": "IO_PORTD_01",
+                        "value": "id_1651200755336_11"
+                      },
+                      {
+                        "label": "IO_PORTD_02",
+                        "value": "id_1651200759198_12"
+                      },
+                      {
+                        "label": "IO_PORTD_03",
+                        "value": "id_1651200760502_13"
+                      },
+                      {
+                        "label": "IO_PORTD_04",
+                        "value": "id_1651200761897_14"
+                      },
+                      {
+                        "label": "IO_PORTD_05",
+                        "value": "id_1651200763262_15"
+                      },
+                      {
+                        "label": "IO_PORTD_06",
+                        "value": "id_1651200764534_16"
+                      },
+                      {
+                        "label": "IO_PORTD_07",
+                        "value": "id_1651200765594_17"
+                      },
+                      {
+                        "label": "IO_PORT_LDOIN",
+                        "value": "id_1654138247476_3"
+                      },
+                      {
+                        "label": "IO_PORT_DP",
+                        "value": "id_1651200840445_19"
+                      },
+                      {
+                        "label": "IO_PORT_DM",
+                        "value": "id_1651200854573_20"
+                      },
+                      {
+                        "label": "IO_PORT_PR_00",
+                        "value": "id_1676343428226_0"
+                      },
+                      {
+                        "label": "IO_PORT_PR_01",
+                        "value": "id_1676343431713_1"
+                      }
+                    ]
+                  },
+                  "placeholder": "请选择LCD BLCKLIGHTLCD BLCKLIGHT",
+                  "style": {
+                    "width": "100%"
+                  },
+                  "clearable": true,
+                  "disabled": false,
+                  "filterable": false,
+                  "multiple": false,
+                  "id": "id_1678632029166_94",
+                  "__vModel__": "field754",
+                  "searchSource": true
+                },
+                {
+                  "__config__": {
+                    "label": "LCD DC",
+                    "showLabel": true,
+                    "labelWidth": 130,
+                    "tag": "el-select",
+                    "tagIcon": "select",
+                    "layout": "colFormItem",
+                    "span": 12,
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "searchSource": false,
+                    "dataType": [
+                      "macro"
+                    ],
+                    "formId": 755,
+                    "renderKey": "7551678632092183",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_LCD_PIN_DC",
+                    "eventField": [
+                      "device",
+                      "gpio"
+                    ],
+                    "emptyValue": "NO_CONFIG_PORT",
+                    "defaultValue": "id_1647485267192_68"
+                  },
+                  "__slot__": {
+                    "options": [
+                      {
+                        "label": "IO_PORTA_00",
+                        "value": "id_1647485267192_66"
+                      },
+                      {
+                        "label": "IO_PORTA_01",
+                        "value": "id_1647485267192_67"
+                      },
+                      {
+                        "label": "IO_PORTA_02",
+                        "value": "id_1647485267192_68"
+                      },
+                      {
+                        "label": "IO_PORTA_03",
+                        "value": "id_1647485267192_69"
+                      },
+                      {
+                        "label": "IO_PORTA_04",
+                        "value": "id_1647485267192_70"
+                      },
+                      {
+                        "label": "IO_PORTA_05",
+                        "value": "id_1647485267192_71"
+                      },
+                      {
+                        "label": "IO_PORTA_06",
+                        "value": "id_1647485267192_72"
+                      },
+                      {
+                        "label": "IO_PORTA_07",
+                        "value": "id_1647485267192_73"
+                      },
+                      {
+                        "label": "IO_PORTA_08",
+                        "value": "id_1653449701350_0"
+                      },
+                      {
+                        "label": "IO_PORTA_09",
+                        "value": "id_1659942254419_11"
+                      },
+                      {
+                        "label": "IO_PORTA_10",
+                        "value": "id_1659942300489_12"
+                      },
+                      {
+                        "label": "IO_PORTA_11",
+                        "value": "id_1659942301465_13"
+                      },
+                      {
+                        "label": "IO_PORTA_12",
+                        "value": "id_1659942302985_15"
+                      },
+                      {
+                        "label": "IO_PORTA_13",
+                        "value": "id_1659942303977_16"
+                      },
+                      {
+                        "label": "IO_PORTA_14",
+                        "value": "id_1659942305385_17"
+                      },
+                      {
+                        "label": "IO_PORTA_15",
+                        "value": "id_1659942302234_14"
+                      },
+                      {
+                        "label": "IO_PORTB_00",
+                        "value": "id_1647485267192_74"
+                      },
+                      {
+                        "label": "IO_PORTB_01",
+                        "value": "id_1647485267192_75"
+                      },
+                      {
+                        "label": "IO_PORTB_02",
+                        "value": "id_1647485267192_76"
+                      },
+                      {
+                        "label": "IO_PORTB_03",
+                        "value": "id_1647485267192_77"
+                      },
+                      {
+                        "label": "IO_PORTB_04",
+                        "value": "id_1647485267192_78"
+                      },
+                      {
+                        "label": "IO_PORTB_05",
+                        "value": "id_1647485267192_79"
+                      },
+                      {
+                        "label": "IO_PORTB_06",
+                        "value": "id_1647485267192_80"
+                      },
+                      {
+                        "label": "IO_PORTB_07",
+                        "value": "id_1647485267192_81"
+                      },
+                      {
+                        "label": "IO_PORTB_08",
+                        "value": "id_1659942520267_25"
+                      },
+                      {
+                        "label": "IO_PORTB_09",
+                        "value": "id_1659942416666_18"
+                      },
+                      {
+                        "label": "IO_PORTB_10",
+                        "value": "id_1659942417369_19"
+                      },
+                      {
+                        "label": "IO_PORTB_11",
+                        "value": "id_1659942418129_20"
+                      },
+                      {
+                        "label": "IO_PORTB_12",
+                        "value": "id_1659942418537_21"
+                      },
+                      {
+                        "label": "IO_PORTB_13",
+                        "value": "id_1659942418961_22"
+                      },
+                      {
+                        "label": "IO_PORTB_14",
+                        "value": "id_1659942419409_23"
+                      },
+                      {
+                        "label": "IO_PORTB_15",
+                        "value": "id_1659942420017_24"
+                      },
+                      {
+                        "label": "IO_PORTC_00",
+                        "value": "id_1647485267192_82"
+                      },
+                      {
+                        "label": "IO_PORTC_01",
+                        "value": "id_1647485267192_83"
+                      },
+                      {
+                        "label": "IO_PORTC_02",
+                        "value": "id_1647485267192_84"
+                      },
+                      {
+                        "label": "IO_PORTC_03",
+                        "value": "id_1647485267192_85"
+                      },
+                      {
+                        "label": "IO_PORTC_04",
+                        "value": "id_1647485267192_86"
+                      },
+                      {
+                        "label": "IO_PORTC_05",
+                        "value": "id_1647485267192_87"
+                      },
+                      {
+                        "label": "IO_PORTC_06",
+                        "value": "id_1647485267192_88"
+                      },
+                      {
+                        "label": "IO_PORTC_07",
+                        "value": "id_1647485267192_89"
+                      },
+                      {
+                        "label": "IO_PORTC_08",
+                        "value": "id_1659942689298_34"
+                      },
+                      {
+                        "label": "IO_PORTC_09",
+                        "value": "id_1659942548530_27"
+                      },
+                      {
+                        "label": "IO_PORTC_10",
+                        "value": "id_1659942549845_32"
+                      },
+                      {
+                        "label": "IO_PORTC_11",
+                        "value": "id_1659942548938_29"
+                      },
+                      {
+                        "label": "IO_PORTC_12",
+                        "value": "id_1659942549182_30"
+                      },
+                      {
+                        "label": "IO_PORTD_00",
+                        "value": "id_1651200719084_10"
+                      },
+                      {
+                        "label": "IO_PORTD_01",
+                        "value": "id_1651200755336_11"
+                      },
+                      {
+                        "label": "IO_PORTD_02",
+                        "value": "id_1651200759198_12"
+                      },
+                      {
+                        "label": "IO_PORTD_03",
+                        "value": "id_1651200760502_13"
+                      },
+                      {
+                        "label": "IO_PORTD_04",
+                        "value": "id_1651200761897_14"
+                      },
+                      {
+                        "label": "IO_PORTD_05",
+                        "value": "id_1651200763262_15"
+                      },
+                      {
+                        "label": "IO_PORTD_06",
+                        "value": "id_1651200764534_16"
+                      },
+                      {
+                        "label": "IO_PORTD_07",
+                        "value": "id_1651200765594_17"
+                      },
+                      {
+                        "label": "IO_PORT_LDOIN",
+                        "value": "id_1654138247476_3"
+                      },
+                      {
+                        "label": "IO_PORT_DP",
+                        "value": "id_1651200840445_19"
+                      },
+                      {
+                        "label": "IO_PORT_DM",
+                        "value": "id_1651200854573_20"
+                      },
+                      {
+                        "label": "IO_PORT_PR_00",
+                        "value": "id_1676343428226_0"
+                      },
+                      {
+                        "label": "IO_PORT_PR_01",
+                        "value": "id_1676343431713_1"
+                      }
+                    ]
+                  },
+                  "placeholder": "请选择LCD BLCKLIGHTLCD DC",
+                  "style": {
+                    "width": "100%"
+                  },
+                  "clearable": true,
+                  "disabled": false,
+                  "filterable": false,
+                  "multiple": false,
+                  "id": "id_1678632092183_95",
+                  "__vModel__": "field755",
+                  "searchSource": true
+                },
+                {
+                  "__config__": {
+                    "label": "LCD EN",
+                    "showLabel": true,
+                    "labelWidth": 130,
+                    "tag": "el-select",
+                    "tagIcon": "select",
+                    "layout": "colFormItem",
+                    "span": 12,
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "searchSource": false,
+                    "dataType": [
+                      "macro"
+                    ],
+                    "formId": 756,
+                    "renderKey": "7561678632104757",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_LCD_PIN_EN",
+                    "eventField": [
+                      "device",
+                      "gpio"
+                    ],
+                    "emptyValue": "NO_CONFIG_PORT",
+                    "defaultValue": ""
+                  },
+                  "__slot__": {
+                    "options": [
+                      {
+                        "label": "IO_PORTA_00",
+                        "value": "id_1647485267192_66"
+                      },
+                      {
+                        "label": "IO_PORTA_01",
+                        "value": "id_1647485267192_67"
+                      },
+                      {
+                        "label": "IO_PORTA_02",
+                        "value": "id_1647485267192_68"
+                      },
+                      {
+                        "label": "IO_PORTA_03",
+                        "value": "id_1647485267192_69"
+                      },
+                      {
+                        "label": "IO_PORTA_04",
+                        "value": "id_1647485267192_70"
+                      },
+                      {
+                        "label": "IO_PORTA_05",
+                        "value": "id_1647485267192_71"
+                      },
+                      {
+                        "label": "IO_PORTA_06",
+                        "value": "id_1647485267192_72"
+                      },
+                      {
+                        "label": "IO_PORTA_07",
+                        "value": "id_1647485267192_73"
+                      },
+                      {
+                        "label": "IO_PORTA_08",
+                        "value": "id_1653449701350_0"
+                      },
+                      {
+                        "label": "IO_PORTA_09",
+                        "value": "id_1659942254419_11"
+                      },
+                      {
+                        "label": "IO_PORTA_10",
+                        "value": "id_1659942300489_12"
+                      },
+                      {
+                        "label": "IO_PORTA_11",
+                        "value": "id_1659942301465_13"
+                      },
+                      {
+                        "label": "IO_PORTA_12",
+                        "value": "id_1659942302985_15"
+                      },
+                      {
+                        "label": "IO_PORTA_13",
+                        "value": "id_1659942303977_16"
+                      },
+                      {
+                        "label": "IO_PORTA_14",
+                        "value": "id_1659942305385_17"
+                      },
+                      {
+                        "label": "IO_PORTA_15",
+                        "value": "id_1659942302234_14"
+                      },
+                      {
+                        "label": "IO_PORTB_00",
+                        "value": "id_1647485267192_74"
+                      },
+                      {
+                        "label": "IO_PORTB_01",
+                        "value": "id_1647485267192_75"
+                      },
+                      {
+                        "label": "IO_PORTB_02",
+                        "value": "id_1647485267192_76"
+                      },
+                      {
+                        "label": "IO_PORTB_03",
+                        "value": "id_1647485267192_77"
+                      },
+                      {
+                        "label": "IO_PORTB_04",
+                        "value": "id_1647485267192_78"
+                      },
+                      {
+                        "label": "IO_PORTB_05",
+                        "value": "id_1647485267192_79"
+                      },
+                      {
+                        "label": "IO_PORTB_06",
+                        "value": "id_1647485267192_80"
+                      },
+                      {
+                        "label": "IO_PORTB_07",
+                        "value": "id_1647485267192_81"
+                      },
+                      {
+                        "label": "IO_PORTB_08",
+                        "value": "id_1659942520267_25"
+                      },
+                      {
+                        "label": "IO_PORTB_09",
+                        "value": "id_1659942416666_18"
+                      },
+                      {
+                        "label": "IO_PORTB_10",
+                        "value": "id_1659942417369_19"
+                      },
+                      {
+                        "label": "IO_PORTB_11",
+                        "value": "id_1659942418129_20"
+                      },
+                      {
+                        "label": "IO_PORTB_12",
+                        "value": "id_1659942418537_21"
+                      },
+                      {
+                        "label": "IO_PORTB_13",
+                        "value": "id_1659942418961_22"
+                      },
+                      {
+                        "label": "IO_PORTB_14",
+                        "value": "id_1659942419409_23"
+                      },
+                      {
+                        "label": "IO_PORTB_15",
+                        "value": "id_1659942420017_24"
+                      },
+                      {
+                        "label": "IO_PORTC_00",
+                        "value": "id_1647485267192_82"
+                      },
+                      {
+                        "label": "IO_PORTC_01",
+                        "value": "id_1647485267192_83"
+                      },
+                      {
+                        "label": "IO_PORTC_02",
+                        "value": "id_1647485267192_84"
+                      },
+                      {
+                        "label": "IO_PORTC_03",
+                        "value": "id_1647485267192_85"
+                      },
+                      {
+                        "label": "IO_PORTC_04",
+                        "value": "id_1647485267192_86"
+                      },
+                      {
+                        "label": "IO_PORTC_05",
+                        "value": "id_1647485267192_87"
+                      },
+                      {
+                        "label": "IO_PORTC_06",
+                        "value": "id_1647485267192_88"
+                      },
+                      {
+                        "label": "IO_PORTC_07",
+                        "value": "id_1647485267192_89"
+                      },
+                      {
+                        "label": "IO_PORTC_08",
+                        "value": "id_1659942689298_34"
+                      },
+                      {
+                        "label": "IO_PORTC_09",
+                        "value": "id_1659942548530_27"
+                      },
+                      {
+                        "label": "IO_PORTC_10",
+                        "value": "id_1659942549845_32"
+                      },
+                      {
+                        "label": "IO_PORTC_11",
+                        "value": "id_1659942548938_29"
+                      },
+                      {
+                        "label": "IO_PORTC_12",
+                        "value": "id_1659942549182_30"
+                      },
+                      {
+                        "label": "IO_PORTD_00",
+                        "value": "id_1651200719084_10"
+                      },
+                      {
+                        "label": "IO_PORTD_01",
+                        "value": "id_1651200755336_11"
+                      },
+                      {
+                        "label": "IO_PORTD_02",
+                        "value": "id_1651200759198_12"
+                      },
+                      {
+                        "label": "IO_PORTD_03",
+                        "value": "id_1651200760502_13"
+                      },
+                      {
+                        "label": "IO_PORTD_04",
+                        "value": "id_1651200761897_14"
+                      },
+                      {
+                        "label": "IO_PORTD_05",
+                        "value": "id_1651200763262_15"
+                      },
+                      {
+                        "label": "IO_PORTD_06",
+                        "value": "id_1651200764534_16"
+                      },
+                      {
+                        "label": "IO_PORTD_07",
+                        "value": "id_1651200765594_17"
+                      },
+                      {
+                        "label": "IO_PORT_LDOIN",
+                        "value": "id_1654138247476_3"
+                      },
+                      {
+                        "label": "IO_PORT_DP",
+                        "value": "id_1651200840445_19"
+                      },
+                      {
+                        "label": "IO_PORT_DM",
+                        "value": "id_1651200854573_20"
+                      },
+                      {
+                        "label": "IO_PORT_PR_00",
+                        "value": "id_1676343428226_0"
+                      },
+                      {
+                        "label": "IO_PORT_PR_01",
+                        "value": "id_1676343431713_1"
+                      }
+                    ]
+                  },
+                  "placeholder": "请选择LCD BLCKLIGHTLCD EN",
+                  "style": {
+                    "width": "100%"
+                  },
+                  "clearable": true,
+                  "disabled": false,
+                  "filterable": false,
+                  "multiple": false,
+                  "id": "id_1678632104757_96",
+                  "__vModel__": "field756",
+                  "searchSource": true
+                },
+                {
+                  "__config__": {
+                    "label": "LCD TE",
+                    "showLabel": true,
+                    "labelWidth": 130,
+                    "tag": "el-select",
+                    "tagIcon": "select",
+                    "layout": "colFormItem",
+                    "span": 12,
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "searchSource": false,
+                    "dataType": [
+                      "macro"
+                    ],
+                    "formId": 757,
+                    "renderKey": "7571678632149261",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_LCD_PIN_TE",
+                    "eventField": [
+                      "device",
+                      "gpio"
+                    ],
+                    "emptyValue": "NO_CONFIG_PORT",
+                    "defaultValue": ""
+                  },
+                  "__slot__": {
+                    "options": [
+                      {
+                        "label": "IO_PORTA_00",
+                        "value": "id_1647485267192_66"
+                      },
+                      {
+                        "label": "IO_PORTA_01",
+                        "value": "id_1647485267192_67"
+                      },
+                      {
+                        "label": "IO_PORTA_02",
+                        "value": "id_1647485267192_68"
+                      },
+                      {
+                        "label": "IO_PORTA_03",
+                        "value": "id_1647485267192_69"
+                      },
+                      {
+                        "label": "IO_PORTA_04",
+                        "value": "id_1647485267192_70"
+                      },
+                      {
+                        "label": "IO_PORTA_05",
+                        "value": "id_1647485267192_71"
+                      },
+                      {
+                        "label": "IO_PORTA_06",
+                        "value": "id_1647485267192_72"
+                      },
+                      {
+                        "label": "IO_PORTA_07",
+                        "value": "id_1647485267192_73"
+                      },
+                      {
+                        "label": "IO_PORTA_08",
+                        "value": "id_1653449701350_0"
+                      },
+                      {
+                        "label": "IO_PORTA_09",
+                        "value": "id_1659942254419_11"
+                      },
+                      {
+                        "label": "IO_PORTA_10",
+                        "value": "id_1659942300489_12"
+                      },
+                      {
+                        "label": "IO_PORTA_11",
+                        "value": "id_1659942301465_13"
+                      },
+                      {
+                        "label": "IO_PORTA_12",
+                        "value": "id_1659942302985_15"
+                      },
+                      {
+                        "label": "IO_PORTA_13",
+                        "value": "id_1659942303977_16"
+                      },
+                      {
+                        "label": "IO_PORTA_14",
+                        "value": "id_1659942305385_17"
+                      },
+                      {
+                        "label": "IO_PORTA_15",
+                        "value": "id_1659942302234_14"
+                      },
+                      {
+                        "label": "IO_PORTB_00",
+                        "value": "id_1647485267192_74"
+                      },
+                      {
+                        "label": "IO_PORTB_01",
+                        "value": "id_1647485267192_75"
+                      },
+                      {
+                        "label": "IO_PORTB_02",
+                        "value": "id_1647485267192_76"
+                      },
+                      {
+                        "label": "IO_PORTB_03",
+                        "value": "id_1647485267192_77"
+                      },
+                      {
+                        "label": "IO_PORTB_04",
+                        "value": "id_1647485267192_78"
+                      },
+                      {
+                        "label": "IO_PORTB_05",
+                        "value": "id_1647485267192_79"
+                      },
+                      {
+                        "label": "IO_PORTB_06",
+                        "value": "id_1647485267192_80"
+                      },
+                      {
+                        "label": "IO_PORTB_07",
+                        "value": "id_1647485267192_81"
+                      },
+                      {
+                        "label": "IO_PORTB_08",
+                        "value": "id_1659942520267_25"
+                      },
+                      {
+                        "label": "IO_PORTB_09",
+                        "value": "id_1659942416666_18"
+                      },
+                      {
+                        "label": "IO_PORTB_10",
+                        "value": "id_1659942417369_19"
+                      },
+                      {
+                        "label": "IO_PORTB_11",
+                        "value": "id_1659942418129_20"
+                      },
+                      {
+                        "label": "IO_PORTB_12",
+                        "value": "id_1659942418537_21"
+                      },
+                      {
+                        "label": "IO_PORTB_13",
+                        "value": "id_1659942418961_22"
+                      },
+                      {
+                        "label": "IO_PORTB_14",
+                        "value": "id_1659942419409_23"
+                      },
+                      {
+                        "label": "IO_PORTB_15",
+                        "value": "id_1659942420017_24"
+                      },
+                      {
+                        "label": "IO_PORTC_00",
+                        "value": "id_1647485267192_82"
+                      },
+                      {
+                        "label": "IO_PORTC_01",
+                        "value": "id_1647485267192_83"
+                      },
+                      {
+                        "label": "IO_PORTC_02",
+                        "value": "id_1647485267192_84"
+                      },
+                      {
+                        "label": "IO_PORTC_03",
+                        "value": "id_1647485267192_85"
+                      },
+                      {
+                        "label": "IO_PORTC_04",
+                        "value": "id_1647485267192_86"
+                      },
+                      {
+                        "label": "IO_PORTC_05",
+                        "value": "id_1647485267192_87"
+                      },
+                      {
+                        "label": "IO_PORTC_06",
+                        "value": "id_1647485267192_88"
+                      },
+                      {
+                        "label": "IO_PORTC_07",
+                        "value": "id_1647485267192_89"
+                      },
+                      {
+                        "label": "IO_PORTC_08",
+                        "value": "id_1659942689298_34"
+                      },
+                      {
+                        "label": "IO_PORTC_09",
+                        "value": "id_1659942548530_27"
+                      },
+                      {
+                        "label": "IO_PORTC_10",
+                        "value": "id_1659942549845_32"
+                      },
+                      {
+                        "label": "IO_PORTC_11",
+                        "value": "id_1659942548938_29"
+                      },
+                      {
+                        "label": "IO_PORTC_12",
+                        "value": "id_1659942549182_30"
+                      },
+                      {
+                        "label": "IO_PORTD_00",
+                        "value": "id_1651200719084_10"
+                      },
+                      {
+                        "label": "IO_PORTD_01",
+                        "value": "id_1651200755336_11"
+                      },
+                      {
+                        "label": "IO_PORTD_02",
+                        "value": "id_1651200759198_12"
+                      },
+                      {
+                        "label": "IO_PORTD_03",
+                        "value": "id_1651200760502_13"
+                      },
+                      {
+                        "label": "IO_PORTD_04",
+                        "value": "id_1651200761897_14"
+                      },
+                      {
+                        "label": "IO_PORTD_05",
+                        "value": "id_1651200763262_15"
+                      },
+                      {
+                        "label": "IO_PORTD_06",
+                        "value": "id_1651200764534_16"
+                      },
+                      {
+                        "label": "IO_PORTD_07",
+                        "value": "id_1651200765594_17"
+                      },
+                      {
+                        "label": "IO_PORT_LDOIN",
+                        "value": "id_1654138247476_3"
+                      },
+                      {
+                        "label": "IO_PORT_DP",
+                        "value": "id_1651200840445_19"
+                      },
+                      {
+                        "label": "IO_PORT_DM",
+                        "value": "id_1651200854573_20"
+                      },
+                      {
+                        "label": "IO_PORT_PR_00",
+                        "value": "id_1676343428226_0"
+                      },
+                      {
+                        "label": "IO_PORT_PR_01",
+                        "value": "id_1676343431713_1"
+                      }
+                    ]
+                  },
+                  "placeholder": "请选择LCD BLCKLIGHTLCD TE",
+                  "style": {
+                    "width": "100%"
+                  },
+                  "clearable": true,
+                  "disabled": false,
+                  "filterable": false,
+                  "multiple": false,
+                  "id": "id_1678632149261_97",
+                  "__vModel__": "field757",
+                  "searchSource": true
+                }
+              ],
+              "eventField": []
+            },
+            "type": "default",
+            "justify": "start",
+            "align": "top",
+            "style": {
+              "height": "60px",
+              "paddingLeft": "0px"
+            },
+            "id": "id_1678631829452_88"
+          }
+        ],
+        "eventField": [],
+        "disable": false
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "70px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1678622212458_0"
+    }
+  ],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 12,
+  "formBtns": false,
+  "maxFormId": 472
+}

@@ -1,0 +1,536 @@
+SensorHub
+====================
+
+## 模块介绍
+
+穿戴设备不同芯片、不同传感器、不同算法间需要进行适配，故开发运动健康模块，提供sensor管理、运动与健康类业务管理。  
+
+本文档出现的名词解释:  
+| 名词                 | 说明                     |
+| -------------------- | ------------------------ |
+| 大核、主核、主系统、MSYS、MASTER、SDK | 指主要运行的高性能cpu/dsp，对应工程代码为/SDK   |
+| 小核、P11、SENSORHUB | 指低功耗小核，通常用于低功耗场景下的sensor处理，对应工程代码为/p11_code or /sensorhub   |
+	
+
+## 代码结构
+### SDK运动健康代码结构
+
+
+  ![health_manager](image/health_manager.png)
+
+| 文件夹                 | 说明                     |
+| -------------------- | ------------------------ |
+| common | 提供线程管理、文件存储、数据存储、对外api接口等    |
+| Module | 具体的应用场景模块    |
+| Algo | 算法    |
+| ... | 拓展：可以把喝水提醒等检测提醒功能抽象成module    |
+
+
+
+
+### SDK sensor管理代码结构
+
+  ![sensorhub](image/sensorhub.png)
+
+| 软件层级              |  文件               | 说明                     |
+| -------------------- | -------------------- | ------------------------ |
+| 驱动层 | Sensor_driver.c、Sensor_dirver_p11.c、具体的sensor驱动 | 大小核sensor驱动和数据接口（大核iic、小核cbuf）    |
+| Hal层 | Sensor_hal_xxx.c | 某一功能模块的适配接口。向上对接service的算法、向下调用driver接口获取数据    |
+| Service层 | Sensor_serivce_xxx.c | 调用设备算法，给运动健康管理使用    |
+
+
+
+### p11 sensorhub 代码结构
+
+  ![sensor_drv](image/sensor_drv.png)
+
+| 名称                 |  文件               | 说明                     |
+| -------------------- | -------------------- | ------------------------ |
+| dirver | Sensor_driver.c、具体的sensor驱动 | iic接口、sensor定时器管理、sensor初始化、sensor运行      |
+| Service | Sensor_serivce_xxx.c | 小核算法      |
+
+
+
+
+## 数据结构
+### SDK模块注册
+```c
+struct sport_health_module {  
+    u8 module;//模块名称  
+    int(*io_ctrl)(int cmd, void *priv);//控制接口  
+    int (*get_value)(int type, void *pirv);//数据获取接口  
+};  
+//注册模块接口  
+#define REGISTER_SPORT_HEALTH_MODULE(target) \  
+        const struct sport_health_module sport_health_##target sec(.sport_health_module) =  
+//遍历所有模块  
+extern const struct sport_health_module sport_health_module_begin[];  
+extern const struct sport_health_module sport_health_module_end[];  
+#define list_for_each_sport_health_module(p) \  
+    for (p =(struct sport_health_module*)sport_health_module_begin; p < (struct sport_health_module*)sport_health_module_end; p++)  
+```
+
+### sdk驱动注册
+```c
+typedef struct {  
+    sensor_info_t *info;//模块信息  
+    s8(*open)(u16  range, u16  odr);//打开模块  
+    s8(*close)(void);//关闭模块  
+    s8(*run)(void *arg, u16 *len);//运行模块  
+    s8(*online)(void);//检查模块是否在线  
+} SENSOR_INTERFACE;  
+  
+//注册驱动  
+#define REGISTER_SENSOR(Sensor) \  
+    static const SENSOR_INTERFACE Sensor SEC_USED(.sensor_dev)  
+  
+//遍历所有sensor驱动  
+extern SENSOR_INTERFACE  sensor_dev_begin[];  
+extern SENSOR_INTERFACE  sensor_dev_end[];  
+#define list_for_each_sensor(c) \  
+    for (c=sensor_dev_begin; c<sensor_dev_end; c++)  
+```
+
+### p11sensorhub 模块注册
+```c
+typedef struct {  
+    u8   type;  
+    u8   enable;  
+    u8   odr;  
+    u16  range;  
+} p11_sensor_t;  
+  
+typedef struct {  
+    sensor_info_t *info;  
+    s8(*open)(u16  range, u16  odr);  
+    s8(*close)(void);  
+    s8(*run)(void *arg, u16 *len);  
+    s8(*online)(void);  
+} SENSOR_INTERFACE;  
+  
+#define REGISTER_SENSOR(Sensor) \  
+    static const SENSOR_INTERFACE Sensor SEC_USED(.sensor_dev)  
+  
+#define REGISTER_SENSOR_SERVICE(Sensor) \  
+    static const SENSOR_INTERFACE Sensor SEC_USED(.sensor_dev)  
+```
+
+
+
+
+## 通用接口
+### SDK运动健康线程接口
+```c
+//运动健康管理初始化  
+int sport_health_manager_init()  
+//注销  
+int sport_health_manager_release()  
+//获取模块数据  
+int sport_health_manager_value_get(int module, int type, void *priv)  
+//发送消息给其他模块执行  
+int sport_health_manager_msg_post_self(int module, int cmd, void *priv)  
+//post消息给健康模块  
+int sport_health_manager_msg_post(int module, int cmd, void *priv, int need_pend)  
+```
+
+### SDK文件存储接口
+```c
+//通过id打开文件  
+void *sport_health_file_open(u8 type, u16 id);  
+//通过日期打开文件  
+void *sport_health_file_open_by_time(u8 type, u16 year, u8 month, u8 day);  
+//写入数据到文件  
+int sport_health_file_write(void *hd, u8 *buf, int offset, int len);  
+//从文件读取数据  
+int sport_health_file_read(void *hd, u8 *buf, int offset, int len);  
+//更新数据到文件  
+int sport_health_file_update(void *hd, u8 *buf, int offset, int len);  
+//关闭文件  
+int sport_health_file_close(void *hd);  
+//获取文件长度  
+int sport_health_file_get_len(void *hd);  
+//获取某类文件的总数  
+int sport_health_file_get_total(u8 type);  
+//删除文件，需要先open，delete，再close  
+int sport_health_file_delete(void *hd);  
+//通过索引获取id  
+int sport_health_file_get_id(void *hd, u8 index);  
+```
+
+
+### SDK驱动接口
+
+//驱动接口  
+```c
+//大核iic读写接口  
+u8 sensor_write(u8 w_chip_id, u8 register_address, const u8 *buf, u8 data_len);  
+u8 sensor_read(u8 r_chip_id, u8 register_address, u8 *buf, u8 data_len, u8 ignore_len);
+```
+
+//模块检测  
+```c
+void sensor_driver_check(void);  
+```
+
+//对外接口  
+```c
+//模块使能  
+s8 sensor_hub_enable(u8 type, u8 enable);  
+//模块cbuf使能  
+s8 sensor_hub_cbuf_enable(u8 type, u8 index, u8 enable);  
+//获取驱动数据  
+u16 sensor_hub_get_data(u8 type, u8 index, void *buff, u16 buff_len);  
+```
+
+//小核接口  
+```c
+//获取小核info  
+sensor_info_t *sensor_driver_p11_info_get(sensor_type_t type);  
+//初始化小核模块  
+void sensor_driver_p11_init(sensor_type_t type, u8 enable, u16 range, u8 odr);  
+//初始化小核cbuf  
+u16 sensor_driver_p11_cbuf_mult_entry_enable(sensor_type_t type, u8 index, u8 enable); 
+
+//获取小核数据  
+u16 sensor_driver_p11_data_get(sensor_type_t type, u8 index, void *data_buff, u16 data_len);  
+  
+//模块初始化  
+void sensor_driver_init(u8 type, u8 enable, u16 range, u8 odr);  
+//获取模块info  
+sensor_info_t *sensor_driver_info_get(sensor_type_t type);  
+//获取模块数据  
+u16 sensor_driver_data_get(sensor_type_t type, void *data_buff, u16 data_len);  
+```
+
+### p11 sensorhub 接口
+```c
+//iic 写接口  
+u8 sensor_write(u8 w_chip_id, u8 register_address,  u8 *buf, u8 data_len);  
+//iic读接口  
+u8 sensor_read(u8 r_chip_id, u8 register_address, u8 *buf, u8 data_len, u8 ignore_len);  
+//reset 定时器周期  
+void sensor_timer_modify(u32 msec);  
+//check sensor驱动  
+void sensor_driver_check(void);  
+//初始化sensor驱动  
+void sensor_driver_init(u8 type, u8 enable, u16 range, u8 odr);  
+//运行sensor  
+void sensor_driver_run(void);  
+```
+
+## 使用demo
+### 注册驱动
+
+根据需求，在大核或者小核中注册具体的sensor模块  
+
+```c
+//在p11中注册一个sensor模块的驱动  
+static sensor_info_t sensor_info = {  
+    .type = SENSOR_DRV_ACCELER,  
+    .name = "sc7a20",  
+    .range = {2, 4, 8, 16},  
+    .odr = {10, 25, 50, 100},  
+    .cbuffer = 0,  
+};  
+REGISTER_SENSOR(sensor_acc) = {  
+    .info    = &sensor_info,  
+    .online  = sensor_check,  
+    .open    = sensor_open,  
+    .close   = sensor_close,  
+    .run     = sensor_read_fifo_data,  
+};  
+```
+
+
+### 将sensor数据写入cbuf
+
+大小核的sensor数据主要通过cbuf交互  
+```c
+static s8 sensor_read_fifo_data(void *arg, u16 *len)  
+{  
+    u8 fifo_len = 0;  
+    u8 temp_arry[6];  
+    axis_data_t *accel = arg;  
+//读取fifo数据长度  
+    sensor_read(IIC_ADDR_R, 0x2f, &fifo_len, 1, 0);  
+    fifo_len = fifo_len & 0x1f;  
+//读取fifo数据  
+    for (u8 i = 0; i < fifo_len; i++) {  
+        sensor_read(IIC_ADDR_R, 0xa8, temp_arry, 6, 0);  
+        accel[i].x = (((s16)((s16)temp_arry[1] * 256 + temp_arry[0])) >> 3);  
+        accel[i].y = -(((s16)((s16)temp_arry[3] * 256 + temp_arry[2])) >> 3);  
+        accel[i].z = (((s16)((s16)temp_arry[5] * 256 + temp_arry[4])) >> 3);  
+        LOG(" xyz(%d,%d): %d %d %d", fifo_len, i, accel[i].x, accel[i].y,  accel[i].z);  
+    }  
+    fifo_len *= sizeof(axis_data_t);  
+//将fifo数据写入cbuf  
+    if ((fifo_len > 0) && (sensor_info.cbuffer)) {  
+        if (!cbuf_is_write_able(sensor_info.cbuffer, fifo_len)) {  
+            cbuf_mult_read_alloc_len_updata(sensor_info.cbuffer, 0, fifo_len);  
+            cbuf_mult_read_alloc_len_updata(sensor_info.cbuffer, 1, fifo_len);  
+        }  
+        u32 wlen = cbuf_write(sensor_info.cbuffer, arg, fifo_len);  
+        LOG("cbuf wlen=%d glen=%d", wlen, fifo_len);  
+    }  
+    *len = fifo_len;  
+    return RET_OK;  
+}  
+```
+
+### 在大核中注册hal层接口  
+
+注册一个hal层，提供算法调用的接口，方便适配不同的传感器  
+
+```c
+//sensor类型  
+#define THIS_SENSOR_TYPE  SENSOR_DRV_ACCELER  
+//获取info  
+static sensor_info_t *sensor_info(void)  
+{  
+    static sensor_info_t *info = NULL;  
+    if (info == NULL) {  
+#if TCFG_ACCELER_MASTER_ENABLE  
+        info = sensor_driver_info_get(THIS_SENSOR_TYPE);  
+#endif  
+#if TCFG_ACCELER_P11_ENABLE  
+        info = sensor_driver_p11_info_get(THIS_SENSOR_TYPE);  
+#endif  
+    }  
+    return info;  
+}  
+//模块使能  
+static s8 sensor_enable(u8 enable)  
+{  
+#if TCFG_ACCELER_MASTER_ENABLE  
+    sensor_driver_init(THIS_SENSOR_TYPE, enable, 4, 25);  
+#endif  
+#if TCFG_ACCELER_P11_ENABLE  
+    sensor_driver_p11_init(THIS_SENSOR_TYPE, enable, 4, 25);  
+#endif  
+    return RET_OK;  
+}  
+//cbuf使能  
+static s8 sensor_cbuf_enable(u8 index, u8 enable)  
+{  
+#if TCFG_ACCELER_MASTER_ENABLE  
+    return RET_ERR;  
+#endif  
+#if TCFG_ACCELER_P11_ENABLE  
+    sensor_driver_p11_cbuf_mult_entry_enable(THIS_SENSOR_TYPE, index, enable);  
+    return RET_OK;  
+#endif  
+}  
+//数据获取接口  
+static u16 sensor_raw_data_get(u8 index, void *data_buff, u16 data_len)  
+{  
+#if TCFG_ACCELER_MASTER_ENABLE  
+    return sensor_driver_data_get(THIS_SENSOR_TYPE, data_buff, data_len) / 6;  
+#endif  
+#if TCFG_ACCELER_P11_ENABLE  
+    return sensor_driver_p11_data_get(THIS_SENSOR_TYPE, index, data_buff, data_len) / 6;  
+#endif  
+}  
+REGISTER_SENSOR_HAL(sensor_hal) = {  
+    .dev_type    = THIS_SENSOR_TYPE,  
+    .dev_info    = sensor_info,  
+    .dev_init    = sensor_enable,  
+    .dev_cbuf    = sensor_cbuf_enable,  
+    .dev_get     = sensor_raw_data_get,  
+};  
+```
+
+### 注册运动健康管理模块，调用算法
+
+注册algo模块，将sensor数据转换成具体业务情景需要的数据  
+
+```c
+//service层  
+void sensor_service_motion_get(struct algo_value *buf)  
+{  
+    axis_data_t gsensor[50];  
+    //获取sensor数据  
+    u16 point = sensor_hub_get_data(SENSOR_DRV_ACCELER, 0, gsensor,  sizeof(gsensor));  
+    if (!point) {  
+        log_warn("%s point:%d", __func__, point);  
+    }  
+    //运行算法  
+    struct sys_time time;  
+    rtc_read_time(&time);  
+    u32 timestamp = timestamp_mytime_2_utc_sec(&time);  
+    algo_out out =  algo_motion_run(timestamp, (accel_data *)gsensor, point, 0, 0);  
+    //输出数据  
+    memcpy(buf, &out.steps, sizeof(struct algo_value));  
+}  
+  
+//运动健康管理  
+static algo_out gsensor_algo_info = {0};  
+static int shm_algo_gsensor_init()  
+{  
+    int ret = SHM_ERR_OK;  
+    sensor_service_motion_init();  
+    return ret;  
+}  
+static  int shm_algo_gsensor_update()  
+{  
+    int ret = SHM_ERR_OK;  
+    sensor_service_motion_get(&gsensor_algo_info);  
+    return ret;  
+}  
+static int shm_algo_gsensor_io_crtl(int cmd, void *priv)  
+{  
+    int ret = SHM_ERR_OK;  
+    switch (cmd) {  
+    case SHM_CMD_INIT:  
+        ret =  shm_algo_gsensor_init();  
+        break;  
+    case SHM_CMD_UPDATE:  
+    case SHM_CMD_UPDATE_SEC:  
+        ret = shm_algo_gsensor_update();  
+        break;  
+    case SHM_CMD_INFO_SET:  
+        ret = shm_algo_gsensor_set(priv);  
+        break;  
+    default:  
+        /* ret = -SHE_ERR_MOD_NO_THIS_CMD; */  
+        break;  
+    }  
+    return ret;  
+}  
+static int shm_algo_gsensor_get_value(int type, void *priv)  
+{  
+    int ret = SHM_ERR_OK;  
+    switch (type) {  
+    case SHM_GET_TYPE_INFO:  
+        memcpy(priv, &gsensor_algo_info, sizeof(algo_out));  
+        break;  
+    default:  
+        ret = -SHM_ERR_MOD_NO_THIS_TYPE;  
+        break;  
+    }  
+    return ret;  
+}  
+  
+REGISTER_SPORT_HEALTH_MODULE(gsensor_algo)  
+{  
+    .module = SHM_MOD_GSENSOR_ALGO,  
+     .io_ctrl = shm_algo_gsensor_io_crtl,  
+      .get_value = shm_algo_gsensor_get_value,  
+};  
+```
+
+### 定义具体的功能模块，实现功能
+
+根据不同的业务情景，注册不同的功能模块，比如全天运动和锻炼运动可以注册成两个不同的模块，使用相同的算法输出数据。  
+
+```c
+//每秒更新一次数据  
+static int shm_daily_active_update()  
+{  
+    int ret;  
+    struct algo_value algo_out_value;  
+    struct sys_time time;  
+    rtc_read_time(&time);  
+    //从algo模块获取算法输出结果  
+    ret = sport_health_manager_value_get(SHM_MOD_GSENSOR_ALGO, SHM_GET_TYPE_INFO, &algo_out_value);  
+    if ((__storage->day) && (time.day != __storage->day)) {  
+        memset(__storage, 0, sizeof(struct daily_active));  
+    }  
+    if (!ret) {  
+        __value->steps = __storage->steps + algo_out_value.steps;  
+        __value->calories = __storage->calories + algo_out_value.calories;  
+        __value->distance = __storage->calories + DISTANCE_MAP(algo_out_value.distance);//m  
+        __value->day = time.day;  
+    }  
+    return ret;  
+}  
+static int shm_daily_active_io_crtl(int cmd, void *priv)  
+{  
+    int ret = SHM_ERR_OK;  
+    switch (cmd) {  
+    case SHM_CMD_INIT:  
+        ret = shm_daily_active_init();  
+        break;  
+    case SHM_CMD_RELEASE:  
+        ret = shm_daily_active_release();  
+        break;  
+    case SHM_CMD_UPDATE_SEC:  
+        ret = shm_daily_active_update();  
+        break;  
+    case SHM_CMD_TARGET_SET:  
+        ret = shm_daily_active_target_set(priv);  
+        break;  
+    case  SHM_CMD_CLEAR_VALUE:  
+        ret =  shm_daily_active_clear_value();  
+        break;  
+    case SHM_CMD_SAVE_SINGLE:  
+    case SHM_CMD_SAVE_CONTINUE:  
+        ret = shm_daily_active_save();  
+        break;  
+    default:  
+        /* ret = -SHE_ERR_MOD_NO_THIS_CMD; */  
+        break;  
+    }  
+    return ret;  
+}  
+//数据接口  
+static int shm_daily_active_get_value(int type, void *priv)  
+{  
+    int ret = SHM_ERR_OK;  
+    switch (type) {  
+    case SHM_GET_TYPE_INFO:  
+        memcpy(priv, __value, sizeof(struct daily_active));  
+        log_debug("fun:<%s> real value steps:%d cal:%d dist:%d day:%d\n", \  
+                  __func__, __value->steps, __value->calories, __value->distance, __value->day);  
+        break;  
+    case SHM_GET_TYPE_TARGET:  
+        memcpy(priv, __target, sizeof(struct daily_active));  
+        log_debug("fun:<%s> target steps:%d cal:%d dist:%d \n", \  
+                  __func__, __target->steps, __target->calories, __target->distance);  
+        break;  
+    default:  
+        ret = -SHM_ERR_MOD_NO_THIS_TYPE;  
+        break;  
+    }  
+    return ret;  
+}  
+  
+  
+REGISTER_SPORT_HEALTH_MODULE(daily_active)  
+{  
+    .module =  SHM_MOD_DAILY_ACTIVE,  
+     .io_ctrl =  shm_daily_active_io_crtl,  
+      .get_value =  shm_daily_active_get_value,  
+};  
+  
+//api  
+int sport_health_get_value_daily_active(struct daily_active *data)  
+{  
+    return sport_health_manager_value_get(SHM_MOD_DAILY_ACTIVE, SHM_GET_TYPE_INFO, data);  
+  
+}  
+int sport_health_get_value_daily_steps()  
+{  
+    struct daily_active data;  
+    if (!sport_health_get_value_daily_active(&data)) {  
+        return data.steps;  
+    }  
+    return 0;  
+}  
+int sport_health_get_value_daily_calories()  
+{  
+    struct daily_active data;  
+    if (!sport_health_get_value_daily_active(&data)) {  
+        return data.calories;  
+    }  
+    return 0;  
+}  
+int sport_health_get_value_daily_distance()  
+{  
+    struct daily_active data;  
+    if (!sport_health_get_value_daily_active(&data)) {  
+        return data.distance / 100; //转m  
+    }  
+    return 0;  
+}  
+```
+

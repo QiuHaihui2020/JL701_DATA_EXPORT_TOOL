@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CharSet>
+	<Char>0x0600-0x06ff</Char>
+	<Char>0xfb50-0xfdff</Char>
+	<Char>0xfe70-0xfeff</Char>
+</CharSet>

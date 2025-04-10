@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CharSet>
+	<Char>0x0980-0x09ff</Char> <!-- 孟加拉语 -->
+	<Char>0xe730-0xe836</Char> <!-- 孟加拉语 -->
+</CharSet>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CharSet>
+	<Char>0x0100-0x017f</Char> <!-- 拉丁字母扩充-A -->
+	<Char>0x0180-0x024f</Char> <!-- 拉丁字母扩充-B -->
+	<Char>0x0250-0x02af</Char> <!-- 国际音标扩充 -->
+	<Char>0x02b0-0x02ff</Char> <!-- 进格修饰字符 -->
+	<Char>0x0300-0x036f</Char> <!-- 组合附加符号 -->
+	<Char>0x1e00-0x1eff</Char> <!-- 拉丁字母扩充附加 -->
+	<Char>0x2460-0x24ea</Char>
+	<Char>0xf900-0xfad9</Char>
+</CharSet>

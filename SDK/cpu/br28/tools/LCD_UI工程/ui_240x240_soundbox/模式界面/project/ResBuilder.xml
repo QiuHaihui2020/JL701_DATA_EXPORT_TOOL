@@ -1,0 +1,224 @@
+<?xml version='2.0' encoding='UTF-8'?>
+<Resbuilder>
+        <Items>
+                <text>1bpp</text>
+                <dpi>72</dpi>
+                <text_type>image</text_type>
+                <LanguageList>
+                        <language_name LANG="Chinese_Simplified">简体中文</language_name>
+                        <language_name LANG="Chinese_Traditional">繁体中文</language_name>
+                        <language_name LANG="Japanese">日语</language_name>
+                        <language_name LANG="Korean">韩语</language_name>
+                        <language_name LANG="English">英语</language_name>
+                        <language_name LANG="French">法语</language_name>
+                        <language_name LANG="German">德语</language_name>
+                        <language_name LANG="Italian">意大利语</language_name>
+                        <language_name LANG="Dutch">荷兰语</language_name>
+                        <language_name LANG="Portuguese">葡萄牙语</language_name>
+                        <language_name LANG="Spanish">西班牙语</language_name>
+                        <language_name LANG="Swedish">瑞典语</language_name>
+                        <language_name LANG="Czech">捷克语</language_name>
+                        <language_name LANG="Danish">丹麦语</language_name>
+                        <language_name LANG="Polish">波兰语</language_name>
+                        <language_name LANG="Russian">俄国语</language_name>
+                        <language_name LANG="Turkey">土耳其语</language_name>
+                        <language_name LANG="Hebrew">希伯来语</language_name>
+                        <language_name LANG="Thai">泰语</language_name>
+                        <language_name LANG="Hungarian">匈牙利语</language_name>
+                        <language_name LANG="Romanian">罗马尼亚语</language_name>
+                        <language_name LANG="Arabic">阿拉伯语</language_name>
+                </LanguageList>
+                <Fonts>
+                        <font00 lfEscapement="0" lfFaceName="Cambria" lfClipPrecision="0" lfPitchAndFamily="2" lfCharSet="134" lfHeight="-32" lfStrikeOut="0" lfQuality="0" lfWidth="0" lfUnderline="0" lfOutPrecision="0" lfWeight="400" lfItalic="0" lfOrientation="0"/>
+                        <font01 lfEscapement="0" lfFaceName="宋体" lfClipPrecision="0" lfPitchAndFamily="2" lfCharSet="134" lfHeight="-32" lfStrikeOut="0" lfQuality="0" lfWidth="0" lfUnderline="0" lfOutPrecision="0" lfWeight="400" lfItalic="0" lfOrientation="0"/>
+                        <font02 lfEscapement="0" lfFaceName="宋体" lfClipPrecision="0" lfPitchAndFamily="2" lfCharSet="134" lfHeight="-32" lfStrikeOut="0" lfQuality="0" lfWidth="0" lfUnderline="0" lfOutPrecision="0" lfWeight="400" lfItalic="0" lfOrientation="0"/>
+                        <font03 lfEscapement="0" lfFaceName="宋体" lfClipPrecision="0" lfPitchAndFamily="2" lfCharSet="134" lfHeight="-32" lfStrikeOut="0" lfQuality="0" lfWidth="0" lfUnderline="0" lfOutPrecision="0" lfWeight="400" lfItalic="0" lfOrientation="0"/>
+                        <font04 lfEscapement="0" lfFaceName="宋体" lfClipPrecision="0" lfPitchAndFamily="2" lfCharSet="134" lfHeight="-32" lfStrikeOut="0" lfQuality="0" lfWidth="0" lfUnderline="0" lfOutPrecision="0" lfWeight="400" lfItalic="0" lfOrientation="0"/>
+                        <font05 lfEscapement="0" lfFaceName="宋体" lfClipPrecision="0" lfPitchAndFamily="2" lfCharSet="134" lfHeight="-32" lfStrikeOut="0" lfQuality="0" lfWidth="0" lfUnderline="0" lfOutPrecision="0" lfWeight="400" lfItalic="0" lfOrientation="0"/>
+                        <font06 lfEscapement="0" lfFaceName="宋体" lfClipPrecision="0" lfPitchAndFamily="2" lfCharSet="134" lfHeight="-16" lfStrikeOut="0" lfQuality="0" lfWidth="0" lfUnderline="0" lfOutPrecision="0" lfWeight="400" lfItalic="0" lfOrientation="0"/>
+                        <font07 lfEscapement="0" lfFaceName="宋体" lfClipPrecision="0" lfPitchAndFamily="2" lfCharSet="134" lfHeight="-16" lfStrikeOut="0" lfQuality="0" lfWidth="0" lfUnderline="0" lfOutPrecision="0" lfWeight="400" lfItalic="0" lfOrientation="0"/>
+                        <font08 lfEscapement="0" lfFaceName="宋体" lfClipPrecision="0" lfPitchAndFamily="2" lfCharSet="134" lfHeight="-16" lfStrikeOut="0" lfQuality="0" lfWidth="0" lfUnderline="0" lfOutPrecision="0" lfWeight="400" lfItalic="0" lfOrientation="0"/>
+                        <font09 lfEscapement="0" lfFaceName="宋体" lfClipPrecision="0" lfPitchAndFamily="2" lfCharSet="134" lfHeight="-16" lfStrikeOut="0" lfQuality="0" lfWidth="0" lfUnderline="0" lfOutPrecision="0" lfWeight="400" lfItalic="0" lfOrientation="0"/>
+                        <font10 lfEscapement="0" lfFaceName="宋体" lfClipPrecision="0" lfPitchAndFamily="2" lfCharSet="134" lfHeight="-16" lfStrikeOut="0" lfQuality="0" lfWidth="0" lfUnderline="0" lfOutPrecision="0" lfWeight="400" lfItalic="0" lfOrientation="0"/>
+                        <font11 lfEscapement="0" lfFaceName="宋体" lfClipPrecision="0" lfPitchAndFamily="2" lfCharSet="134" lfHeight="-16" lfStrikeOut="0" lfQuality="0" lfWidth="0" lfUnderline="0" lfOutPrecision="0" lfWeight="400" lfItalic="0" lfOrientation="0"/>
+                        <font12 lfEscapement="0" lfFaceName="宋体" lfClipPrecision="0" lfPitchAndFamily="2" lfCharSet="134" lfHeight="-16" lfStrikeOut="0" lfQuality="0" lfWidth="0" lfUnderline="0" lfOutPrecision="0" lfWeight="400" lfItalic="0" lfOrientation="0"/>
+                        <font13 lfEscapement="0" lfFaceName="宋体" lfClipPrecision="0" lfPitchAndFamily="2" lfCharSet="134" lfHeight="-16" lfStrikeOut="0" lfQuality="0" lfWidth="0" lfUnderline="0" lfOutPrecision="0" lfWeight="400" lfItalic="0" lfOrientation="0"/>
+                        <font14 lfEscapement="0" lfFaceName="宋体" lfClipPrecision="0" lfPitchAndFamily="2" lfCharSet="134" lfHeight="-16" lfStrikeOut="0" lfQuality="0" lfWidth="0" lfUnderline="0" lfOutPrecision="0" lfWeight="400" lfItalic="0" lfOrientation="0"/>
+                        <font15 lfEscapement="0" lfFaceName="宋体" lfClipPrecision="0" lfPitchAndFamily="2" lfCharSet="134" lfHeight="-16" lfStrikeOut="0" lfQuality="0" lfWidth="0" lfUnderline="0" lfOutPrecision="0" lfWeight="400" lfItalic="0" lfOrientation="0"/>
+                        <font16 lfEscapement="0" lfFaceName="宋体" lfClipPrecision="0" lfPitchAndFamily="2" lfCharSet="134" lfHeight="-16" lfStrikeOut="0" lfQuality="0" lfWidth="0" lfUnderline="0" lfOutPrecision="0" lfWeight="400" lfItalic="0" lfOrientation="0"/>
+                        <font17 lfEscapement="0" lfFaceName="宋体" lfClipPrecision="0" lfPitchAndFamily="2" lfCharSet="134" lfHeight="-16" lfStrikeOut="0" lfQuality="0" lfWidth="0" lfUnderline="0" lfOutPrecision="0" lfWeight="400" lfItalic="0" lfOrientation="0"/>
+                        <font18 lfEscapement="0" lfFaceName="宋体" lfClipPrecision="0" lfPitchAndFamily="2" lfCharSet="134" lfHeight="-16" lfStrikeOut="0" lfQuality="0" lfWidth="0" lfUnderline="0" lfOutPrecision="0" lfWeight="400" lfItalic="0" lfOrientation="0"/>
+                        <font19 lfEscapement="0" lfFaceName="宋体" lfClipPrecision="0" lfPitchAndFamily="2" lfCharSet="134" lfHeight="-16" lfStrikeOut="0" lfQuality="0" lfWidth="0" lfUnderline="0" lfOutPrecision="0" lfWeight="400" lfItalic="0" lfOrientation="0"/>
+                        <font20 lfEscapement="0" lfFaceName="宋体" lfClipPrecision="0" lfPitchAndFamily="2" lfCharSet="134" lfHeight="-16" lfStrikeOut="0" lfQuality="0" lfWidth="0" lfUnderline="0" lfOutPrecision="0" lfWeight="400" lfItalic="0" lfOrientation="0"/>
+                        <font21 lfEscapement="0" lfFaceName="宋体" lfClipPrecision="0" lfPitchAndFamily="2" lfCharSet="134" lfHeight="-16" lfStrikeOut="0" lfQuality="0" lfWidth="0" lfUnderline="0" lfOutPrecision="0" lfWeight="400" lfItalic="0" lfOrientation="0"/>
+                </Fonts>
+                <endian>LITTLEENDIAN</endian>
+                <paneltype>TFTPANEL</paneltype>
+                <picture_path>NULL</picture_path>
+                <excel_path>../../../UITools/多国语言_watch.xls</excel_path>
+                <PageList>
+                        <Page id="0">
+                                <ColorList>
+                                        <Color>000000</Color>
+                                </ColorList>
+                                <PictureList>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\note.png</Picture>
+                                </PictureList>
+                                <CellList/>
+                        </Page>
+                        <Page id="1">
+                                <ColorList>
+                                        <Color>D2EE45</Color>
+                                        <Color>368FEE</Color>
+                                        <Color>FF0000</Color>
+                                        <Color>000000</Color>
+                                        <Color>FFFFFF</Color>
+                                </ColorList>
+                                <PictureList>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\菜单\01.menu_icon_training_sel.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\菜单\04.menu_icon_heart_sel.png</Picture>
+                                        <Picture fmt="RGB565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\动画效果\out2.bmp</Picture>
+                                        <Picture fmt="RGB565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\动画效果\01.bmp</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\poweron.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\菜单\03.menu_icon_state_sel.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\菜单\02.menu_icon_record_sel.png</Picture>
+                                        <Picture fmt="RGB565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\动画效果\04.bmp</Picture>
+                                </PictureList>
+                                <CellList>
+                                        <Cell compress_method="soft">m94</Cell>
+                                        <Cell compress_method="soft">m43</Cell>
+                                        <Cell compress_method="soft">m44</Cell>
+                                        <Cell compress_method="soft">m101</Cell>
+                                        <Cell compress_method="soft">m41</Cell>
+                                        <Cell compress_method="soft">m103</Cell>
+                                        <Cell compress_method="soft">m40</Cell>
+                                        <Cell compress_method="soft">m96</Cell>
+                                </CellList>
+                        </Page>
+                        <Page id="2">
+                                <ColorList>
+                                        <Color>D2EE45</Color>
+                                        <Color>AAAA7F</Color>
+                                        <Color>FFFFFF</Color>
+                                        <Color>368FEE</Color>
+                                        <Color>000000</Color>
+                                        <Color>AAAAFF</Color>
+                                </ColorList>
+                                <PictureList>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\3.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\icon_charging_04.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\2.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\0.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\m mm..png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\-.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\2.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\9.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\6.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\8.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\5.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\m mmg.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\icon_charging_03.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\icon_charging_05.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\m m.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\7.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\icon_charging_02.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\3.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\0.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\菜单\02.menu_icon_record_sel.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\1.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\1.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\full.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\-1.png</Picture>
+                                        <Picture fmt="JPEG">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\计时器\out0.jpg</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\4.png</Picture>
+                                </PictureList>
+                                <CellList/>
+                        </Page>
+                        <Page id="3">
+                                <ColorList>
+                                        <Color>D2EE45</Color>
+                                        <Color>FF0000</Color>
+                                        <Color>FFFFFF</Color>
+                                        <Color>AAAA00</Color>
+                                        <Color>8DEEDB</Color>
+                                        <Color>000000</Color>
+                                        <Color>EEB797</Color>
+                                </ColorList>
+                                <PictureList>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\3.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\0.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\2.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\9.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\6.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\8.png</Picture>
+                                        <Picture fmt="JPEG">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\计时器\out1.jpg</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\5.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\7.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\1.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\表盘预览图\watch2.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\-1.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\4.png</Picture>
+                                </PictureList>
+                                <CellList/>
+                        </Page>
+                        <Page id="4">
+                                <ColorList>
+                                        <Color>000000</Color>
+                                        <Color>8DEEDB</Color>
+                                        <Color>FFAA00</Color>
+                                        <Color>EED9C1</Color>
+                                        <Color>FF0000</Color>
+                                        <Color>D9EE94</Color>
+                                        <Color>55FFFF</Color>
+                                        <Color>368FEE</Color>
+                                        <Color>D2EE45</Color>
+                                        <Color>EEB797</Color>
+                                        <Color>FFFFFF</Color>
+                                </ColorList>
+                                <PictureList>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\锻炼\01.menu_icon_training_sel_s5.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\锻炼\icon_49.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\4.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\锻炼\icon_54.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\3.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\-1.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\0.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\9.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\7.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\1.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\m m.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\蓝牙智能手表切图\菜单\29.menu_icon_counter_sel.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\5.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\6.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\8.png</Picture>
+                                        <Picture fmt="ARGB8565">E:\daily\临时文件\jl_download_manifest\standard\soundbox\JL701N\V3.0.0\SDK\cpu\br28\tools\LCD_UI工程\ui_240x240_soundbox\模式界面\project\config\电量\num_s\2.png</Picture>
+                                </PictureList>
+                                <CellList>
+                                        <Cell compress_method="soft">m33</Cell>
+                                        <Cell compress_method="soft">m36</Cell>
+                                        <Cell compress_method="soft">m44</Cell>
+                                        <Cell compress_method="soft">m32</Cell>
+                                        <Cell compress_method="soft">m41</Cell>
+                                        <Cell compress_method="soft">m39</Cell>
+                                        <Cell compress_method="soft">m35</Cell>
+                                </CellList>
+                        </Page>
+                </PageList>
+                <language>0x00000007</language>
+                <bmp_transparent_color>0x00FFFFFF</bmp_transparent_color>
+                <png_background_color>0x00000000</png_background_color>
+                <chip_type/>
+                <spec_color_list>NULL</spec_color_list>
+                <png2jpg_list>NULL</png2jpg_list>
+                <res>result</res>
+                <resfilename>C:\Users\ZPC23-015\Desktop\br27_soundbox_download_V3.0.0\UI工程\ui_240x240_soundbox\模式界面\project\result.bin</resfilename>
+                <headerfilename>C:\Users\ZPC23-015\Desktop\br27_soundbox_download_V3.0.0\UI工程\ui_240x240_soundbox\模式界面\project\result.h</headerfilename>
+                <image_compress_method>quicklz</image_compress_method>
+                <string_compress_method>rle</string_compress_method>
+                <palette_type>rgb</palette_type>
+                <percent>100%</percent>
+                <excel_crc/>
+                <excel_row/>
+                <rotate>0</rotate>
+        </Items>
+</Resbuilder>

@@ -1,0 +1,171 @@
+{
+  "type": "音箱",
+  "sdk": "le_audio",
+  "singleSeries": false,
+  "chip": "JL701N",
+  "version": "2.0.0",
+  "ingoreConfig": false,
+  "pack": "JL701N-demo",
+  "patch": {
+    "title": "patch_02",
+    "sn": 2,
+    "relateVersion": "4.2.2"
+  },
+  "specialPatchKey": "",
+  "projectType": "OfflineProject",
+  "tabform": [
+    {
+      "type": 1,
+      "fileName": "src\\板级配置.json",
+      "binName": "boardcfg.bin",
+      "showName": "板级配置"
+    },
+    {
+      "type": 1,
+      "fileName": "src\\功能配置.json",
+      "binName": "modecfg.bin",
+      "showName": "功能配置"
+    },
+    {
+      "type": 1,
+      "fileName": "src\\按键配置.json",
+      "binName": "keycfg.bin",
+      "showName": "按键配置"
+    },
+    {
+      "type": 1,
+      "fileName": "src\\电源配置.json",
+      "binName": "powercfg.bin",
+      "showName": "电源配置"
+    },
+    {
+      "type": 1,
+      "fileName": "src\\UI配置.json",
+      "binName": "uicfg.bin",
+      "showName": "UI配置"
+    },
+    {
+      "type": 1,
+      "fileName": "src\\蓝牙配置.json",
+      "binName": "btcfg.bin",
+      "showName": "蓝牙配置"
+    },
+    {
+      "type": 1,
+      "fileName": "src\\LE_AUDIO配置",
+      "binName": "leacfg.bin",
+      "showName": "LE_AUDIO配置",
+      "folder": true,
+      "files": [
+        {
+          "type": 1,
+          "fileName": "src\\LE_AUDIO配置\\公共配置.json",
+          "binName": "leacfg.bin",
+          "showName": "公共配置",
+          "data": ""
+        },
+        {
+          "type": 1,
+          "fileName": "src\\LE_AUDIO配置\\BIS配置.json",
+          "binName": "leacfg.bin",
+          "showName": "BIS配置",
+          "data": ""
+        },
+        {
+          "type": 1,
+          "fileName": "src\\LE_AUDIO配置\\CIS配置.json",
+          "binName": "leacfg.bin",
+          "showName": "CIS配置",
+          "data": ""
+        }
+      ]
+    },
+    {
+      "type": 1,
+      "fileName": "src\\升级配置.json",
+      "binName": "updatecfg.bin",
+      "showName": "升级配置"
+    },
+    {
+      "type": 1,
+      "fileName": "src\\音频配置.json",
+      "binName": "audiocfg.bin",
+      "showName": "音频配置"
+    },
+    {
+      "type": 3,
+      "fileName": "src\\提示音.tone",
+      "binName": "",
+      "showName": "提示音"
+    },
+    {
+      "type": 4,
+      "fileName": "src\\音频流程",
+      "binName": "stream.bin",
+      "showName": "音频流程",
+      "folder": true,
+      "files": [
+        {
+          "type": 4,
+          "fileName": "src\\音频流程\\系统模式.x6flow",
+          "binName": "stream.bin",
+          "showName": "系统模式",
+          "data": ""
+        },
+        {
+          "type": 4,
+          "fileName": "src\\音频流程\\媒体.x6flow",
+          "binName": "stream.bin",
+          "showName": "媒体",
+          "data": ""
+        },
+        {
+          "type": 4,
+          "fileName": "src\\音频流程\\蓝牙通话.x6flow",
+          "binName": "stream.bin",
+          "showName": "蓝牙通话",
+          "data": ""
+        },
+        {
+          "type": 4,
+          "fileName": "src\\音频流程\\麦克风音效.x6flow",
+          "binName": "stream.bin",
+          "showName": "麦克风音效",
+          "data": ""
+        },
+        {
+          "type": 4,
+          "fileName": "src\\音频流程\\USB Audio.x6flow",
+          "binName": "stream.bin",
+          "showName": "USB Audio",
+          "data": ""
+        },
+        {
+          "type": 4,
+          "fileName": "src\\音频流程\\录音.x6flow",
+          "binName": "stream.bin",
+          "showName": "录音",
+          "data": ""
+        },
+        {
+          "type": 4,
+          "fileName": "src\\音频流程\\LE_Audio.x6flow",
+          "binName": "stream.bin",
+          "showName": "LE_Audio",
+          "data": ""
+        }
+      ]
+    }
+  ],
+  "create_time": "2025-04-10T01:40:34.058Z",
+  "update_time": "2025-04-10T01:48:41.527Z",
+  "standardPatch": "",
+  "lastOpenToolVersion": "4.4.5",
+  "lastStencilFlowTime": "2025-04-10T09:40:50.0314637+08:00",
+  "proxyRepoid": null,
+  "versionName": "2.0.0",
+  "provider": "杰理",
+  "publishType": 2,
+  "checkPatchTime": 0,
+  "relateVersion": "4.2.2"
+}

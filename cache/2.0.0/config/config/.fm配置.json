@@ -1,0 +1,246 @@
+﻿{
+  "fields": [{
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "FM配置",
+      "enableUuid": "",
+      "showComponentName": true,
+      "dataType": [],
+      "template": "",
+      "span": 24,
+      "formId": 101,
+      "renderKey": "1011675929644433",
+      "children": [{
+        "__config__": {
+          "label": "FM选择",
+          "labelWidth": null,
+          "showLabel": true,
+          "tag": "el-radio-group",
+          "tagIcon": "radio",
+          "changeTag": true,
+          "defaultValue": 1,
+          "layout": "colFormItem",
+          "span": 24,
+          "optionType": "default",
+          "regList": [],
+          "required": true,
+          "border": false,
+          "dataType": ["8", "1"],
+          "formId": 103,
+          "renderKey": "1031675929687461",
+          "originValue": 1,
+          "emptyValue": "1",
+          "saveWay": "bin",
+          "uuid": "",
+          "eventField": [],
+          "tip": "外置FM流程未通"
+        },
+        "__slot__": {
+          "options": [{
+            "label": "FM_INSIDE",
+            "value": 1
+          }, {
+            "label": "FM_EXTERN",
+            "value": 2
+          }]
+        },
+        "style": {
+          "width": "100%"
+        },
+        "size": "medium",
+        "disabled": true,
+        "id": "id_1675929687461_9",
+        "__vModel__": "field103"
+      }],
+      "eventField": [],
+      "saveWay": "bin",
+      "showResetBtn": false,
+      "disable": false,
+      "uuid": ""
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "20px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1675929644433_7",
+    "show-text": false
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "外置FM选项",
+      "showComponentName": true,
+      "dataType": [],
+      "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+      "template": "",
+      "span": 24,
+      "formId": 101,
+      "renderKey": "1011648192624776",
+      "children": [{
+        "__config__": {
+          "label": "输入通道",
+          "tag": "el-checkbox-group",
+          "tagIcon": "checkbox",
+          "defaultValue": [8],
+          "span": 24,
+          "showLabel": true,
+          "labelWidth": null,
+          "layout": "colFormItem",
+          "optionType": "default",
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "border": false,
+          "dataType": ["32", "1"],
+          "formId": 127,
+          "renderKey": "1271676538791277",
+          "originValue": [8],
+          "emptyValue": "8",
+          "saveWay": "bin",
+          "eventField": []
+        },
+        "__slot__": {
+          "options": [{
+            "label": "LINEIN1",
+            "value": 1
+          }, {
+            "label": "LINEIN2",
+            "value": 2
+          }, {
+            "label": "LINEIN3",
+            "value": 4
+          }, {
+            "label": "LINEIN4",
+            "value": 8
+          }]
+        },
+        "style": {
+          "width": "100%"
+        },
+        "size": "medium",
+        "min": 1,
+        "max": 2,
+        "disabled": false,
+        "id": "id_1676538791277_1",
+        "__vModel__": "field127"
+      }, {
+        "__config__": {
+          "label": "外置FM选择",
+          "showLabel": true,
+          "labelWidth": null,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 24,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": ["8", "1"],
+          "formId": 127,
+          "renderKey": "1271676538651498",
+          "eventField": [],
+          "emptyValue": "1",
+          "originValue": 1,
+          "defaultValue": 1,
+          "saveWay": "bin"
+        },
+        "__slot__": {
+          "options": [{
+            "label": "RAD5807",
+            "value": 1
+          }, {
+            "label": "BK1080",
+            "value": 2
+          }, {
+            "label": "QN8035",
+            "value": 3
+          }, {
+            "label": "OTHER",
+            "value": 4
+          }]
+        },
+        "placeholder": "请选择下拉选择外置FM选择外置FM选择外置FM选择外置FM选择外置FM选择外置FM选择外置FM选择",
+        "style": {
+          "width": "50%"
+        },
+        "clearable": true,
+        "disabled": false,
+        "filterable": false,
+        "multiple": false,
+        "id": "id_1676538651498_0",
+        "__vModel__": "field127"
+      }, {
+        "__config__": {
+          "label": "FM 输入方式",
+          "labelWidth": null,
+          "showLabel": true,
+          "tag": "el-radio-group",
+          "tagIcon": "radio",
+          "changeTag": true,
+          "defaultValue": 1,
+          "layout": "colFormItem",
+          "span": 9,
+          "optionType": "default",
+          "regList": [],
+          "required": false,
+          "border": false,
+          "dataType": ["8", "1"],
+          "formId": 117,
+          "renderKey": "1171675926492758",
+          "originValue": 1,
+          "emptyValue": "1",
+          "tip": "",
+          "saveWay": "bin",
+          "eventField": []
+        },
+        "__slot__": {
+          "options": [{
+            "label": "AD",
+            "value": 1
+          }, {
+            "label": "DA",
+            "value": 2
+          }]
+        },
+        "style": {
+          "width": "100%"
+        },
+        "size": "medium",
+        "disabled": true,
+        "id": "id_1675926492758_18",
+        "__vModel__": "field117"
+      }],
+      "saveWay": "bin",
+      "uuid": "",
+      "eventField": []
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "80px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1676857589685_24"
+  }],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 24,
+  "formBtns": false
+}

@@ -1,0 +1,742 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "Mixer节点参数配置",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "status": 0,
+        "template": "",
+        "hideAddTemplate": false,
+        "span": 24,
+        "formId": 101,
+        "renderKey": "1011692607304610",
+        "children": [
+          {
+            "__config__": {
+              "label": "通道0同步信息使能",
+              "labelWidth": 180,
+              "showLabel": true,
+              "tag": "el-radio-group",
+              "tagIcon": "radio",
+              "changeTag": true,
+              "defaultValue": 1,
+              "layout": "colFormItem",
+              "span": 12,
+              "optionType": "default",
+              "regList": [],
+              "required": true,
+              "border": false,
+              "status": 0,
+              "dataType": [
+                "1",
+                "8"
+              ],
+              "formId": 160,
+              "renderKey": "1601693468600809",
+              "eventField": [],
+              "saveWay": "bin",
+              "originValue": 1,
+              "tip": "",
+              "tipAlways": false
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "Disable",
+                  "value": 0,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "Enable",
+                  "value": 1,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "style": {
+              "width": "100%"
+            },
+            "size": "medium",
+            "disabled": false,
+            "id": "id_1693468600809_0",
+            "__vModel__": "field160"
+          },
+          {
+            "__config__": {
+              "label": "通道1同步信息使能",
+              "labelWidth": 180,
+              "showLabel": true,
+              "tag": "el-radio-group",
+              "tagIcon": "radio",
+              "changeTag": true,
+              "defaultValue": 1,
+              "layout": "colFormItem",
+              "span": 12,
+              "optionType": "default",
+              "regList": [],
+              "required": true,
+              "border": false,
+              "status": 0,
+              "dataType": [
+                "1",
+                "8"
+              ],
+              "formId": 160,
+              "renderKey": "1601693469541112",
+              "eventField": [],
+              "saveWay": "bin",
+              "originValue": 1,
+              "tip": "",
+              "tipAlways": false
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "Disable",
+                  "value": 0,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "Enable",
+                  "value": 1,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "style": {
+              "width": "100%"
+            },
+            "size": "medium",
+            "disabled": false,
+            "id": "id_1693469541112_2",
+            "__vModel__": "field160"
+          },
+          {
+            "__config__": {
+              "label": "通道2同步信息使能",
+              "labelWidth": 180,
+              "showLabel": true,
+              "tag": "el-radio-group",
+              "tagIcon": "radio",
+              "changeTag": true,
+              "defaultValue": 1,
+              "layout": "colFormItem",
+              "span": 12,
+              "optionType": "default",
+              "regList": [],
+              "required": true,
+              "border": false,
+              "status": 0,
+              "dataType": [
+                "1",
+                "8"
+              ],
+              "formId": 161,
+              "renderKey": "1611693469541968",
+              "eventField": [],
+              "saveWay": "bin",
+              "originValue": 1,
+              "tip": "",
+              "tipAlways": false
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "Disable",
+                  "value": 0,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "Enable",
+                  "value": 1,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "style": {
+              "width": "100%"
+            },
+            "size": "medium",
+            "disabled": false,
+            "id": "id_1693469541968_3",
+            "__vModel__": "field161"
+          },
+          {
+            "__config__": {
+              "label": "通道3同步信息使能",
+              "labelWidth": 180,
+              "showLabel": true,
+              "tag": "el-radio-group",
+              "tagIcon": "radio",
+              "changeTag": true,
+              "defaultValue": 1,
+              "layout": "colFormItem",
+              "span": 12,
+              "optionType": "default",
+              "regList": [],
+              "required": true,
+              "border": false,
+              "status": 0,
+              "dataType": [
+                "1",
+                "8"
+              ],
+              "formId": 162,
+              "renderKey": "1621693469542656",
+              "eventField": [],
+              "saveWay": "bin",
+              "originValue": 1,
+              "tip": "",
+              "tipAlways": false
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "Disable",
+                  "value": 0,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "Enable",
+                  "value": 1,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "style": {
+              "width": "100%"
+            },
+            "size": "medium",
+            "disabled": false,
+            "id": "id_1693469542656_4",
+            "__vModel__": "field162"
+          },
+          {
+            "__config__": {
+              "label": "通道4同步信息使能",
+              "labelWidth": 180,
+              "showLabel": true,
+              "tag": "el-radio-group",
+              "tagIcon": "radio",
+              "changeTag": true,
+              "defaultValue": 1,
+              "layout": "colFormItem",
+              "span": 12,
+              "optionType": "default",
+              "regList": [],
+              "required": true,
+              "border": false,
+              "status": 0,
+              "dataType": [
+                "1",
+                "8"
+              ],
+              "formId": 163,
+              "renderKey": "1631693469543266",
+              "eventField": [],
+              "saveWay": "bin",
+              "originValue": 1,
+              "tip": "",
+              "tipAlways": false
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "Disable",
+                  "value": 0,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "Enable",
+                  "value": 1,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "style": {
+              "width": "100%"
+            },
+            "size": "medium",
+            "disabled": false,
+            "id": "id_1693469543266_5",
+            "__vModel__": "field163"
+          },
+          {
+            "__config__": {
+              "label": "通道5同步信息使能",
+              "labelWidth": 180,
+              "showLabel": true,
+              "tag": "el-radio-group",
+              "tagIcon": "radio",
+              "changeTag": true,
+              "defaultValue": 1,
+              "layout": "colFormItem",
+              "span": 12,
+              "optionType": "default",
+              "regList": [],
+              "required": true,
+              "border": false,
+              "status": 0,
+              "dataType": [
+                "1",
+                "8"
+              ],
+              "formId": 164,
+              "renderKey": "1641693469544016",
+              "eventField": [],
+              "saveWay": "bin",
+              "originValue": 1,
+              "tip": "",
+              "tipAlways": false
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "Disable",
+                  "value": 0,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "Enable",
+                  "value": 1,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "style": {
+              "width": "100%"
+            },
+            "size": "medium",
+            "disabled": false,
+            "id": "id_1693469544016_6",
+            "__vModel__": "field164"
+          },
+          {
+            "__config__": {
+              "label": "通道6同步信息使能",
+              "labelWidth": 180,
+              "showLabel": true,
+              "tag": "el-radio-group",
+              "tagIcon": "radio",
+              "changeTag": true,
+              "defaultValue": 1,
+              "layout": "colFormItem",
+              "span": 12,
+              "optionType": "default",
+              "regList": [],
+              "required": true,
+              "border": false,
+              "status": 0,
+              "dataType": [
+                "1",
+                "8"
+              ],
+              "formId": 171,
+              "renderKey": "1711694660183626",
+              "eventField": [],
+              "saveWay": "bin",
+              "originValue": 1,
+              "tip": "",
+              "tipAlways": false
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "Disable",
+                  "value": 0,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "Enable",
+                  "value": 1,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "style": {
+              "width": "100%"
+            },
+            "size": "medium",
+            "disabled": false,
+            "id": "id_1694660183626_0",
+            "__vModel__": "field171"
+          },
+          {
+            "__config__": {
+              "label": "通道7同步信息使能",
+              "labelWidth": 180,
+              "showLabel": true,
+              "tag": "el-radio-group",
+              "tagIcon": "radio",
+              "changeTag": true,
+              "defaultValue": 1,
+              "layout": "colFormItem",
+              "span": 12,
+              "optionType": "default",
+              "regList": [],
+              "required": true,
+              "border": false,
+              "status": 0,
+              "dataType": [
+                "1",
+                "8"
+              ],
+              "formId": 183,
+              "renderKey": "1831696938086525",
+              "eventField": [],
+              "saveWay": "bin",
+              "originValue": 1,
+              "tip": "",
+              "tipAlways": false
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "Disable",
+                  "value": 0,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "Enable",
+                  "value": 1,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "style": {
+              "width": "100%"
+            },
+            "size": "medium",
+            "disabled": false,
+            "id": "id_1696938086525_0",
+            "__vModel__": "field183"
+          },
+          {
+            "__config__": {
+              "label": "通道8同步信息使能",
+              "labelWidth": 180,
+              "showLabel": true,
+              "tag": "el-radio-group",
+              "tagIcon": "radio",
+              "changeTag": true,
+              "defaultValue": 1,
+              "layout": "colFormItem",
+              "span": 12,
+              "optionType": "default",
+              "regList": [],
+              "required": true,
+              "border": false,
+              "status": 0,
+              "dataType": [
+                "1",
+                "8"
+              ],
+              "formId": 753,
+              "renderKey": "7531708417612901",
+              "eventField": [],
+              "saveWay": "bin",
+              "originValue": 1,
+              "tip": "",
+              "tipAlways": false
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "Disable",
+                  "value": 0,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "Enable",
+                  "value": 1,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "style": {
+              "width": "100%"
+            },
+            "size": "medium",
+            "disabled": false,
+            "id": "id_1708417612901_2",
+            "__vModel__": "field753"
+          },
+          {
+            "__config__": {
+              "label": "通道9同步信息使能",
+              "labelWidth": 180,
+              "showLabel": true,
+              "tag": "el-radio-group",
+              "tagIcon": "radio",
+              "changeTag": true,
+              "defaultValue": 1,
+              "layout": "colFormItem",
+              "span": 12,
+              "optionType": "default",
+              "regList": [],
+              "required": true,
+              "border": false,
+              "status": 0,
+              "dataType": [
+                "1",
+                "8"
+              ],
+              "formId": 754,
+              "renderKey": "7541708417613613",
+              "eventField": [],
+              "saveWay": "bin",
+              "originValue": 1,
+              "tip": "",
+              "tipAlways": false
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "Disable",
+                  "value": 0,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "Enable",
+                  "value": 1,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "style": {
+              "width": "100%"
+            },
+            "size": "medium",
+            "disabled": false,
+            "id": "id_1708417613613_3",
+            "__vModel__": "field754"
+          },
+          {
+            "__config__": {
+              "label": "通道10同步信息使能",
+              "labelWidth": 180,
+              "showLabel": true,
+              "tag": "el-radio-group",
+              "tagIcon": "radio",
+              "changeTag": true,
+              "defaultValue": 1,
+              "layout": "colFormItem",
+              "span": 12,
+              "optionType": "default",
+              "regList": [],
+              "required": true,
+              "border": false,
+              "status": 0,
+              "dataType": [
+                "1",
+                "8"
+              ],
+              "formId": 755,
+              "renderKey": "7551708417615676",
+              "eventField": [],
+              "saveWay": "bin",
+              "originValue": 1,
+              "tip": "",
+              "tipAlways": false
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "Disable",
+                  "value": 0,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "Enable",
+                  "value": 1,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "style": {
+              "width": "100%"
+            },
+            "size": "medium",
+            "disabled": false,
+            "id": "id_1708417615676_4",
+            "__vModel__": "field755"
+          },
+          {
+            "__config__": {
+              "label": "通道11同步信息使能",
+              "labelWidth": 180,
+              "showLabel": true,
+              "tag": "el-radio-group",
+              "tagIcon": "radio",
+              "changeTag": true,
+              "defaultValue": 1,
+              "layout": "colFormItem",
+              "span": 12,
+              "optionType": "default",
+              "regList": [],
+              "required": true,
+              "border": false,
+              "status": 0,
+              "dataType": [
+                "1",
+                "8"
+              ],
+              "formId": 756,
+              "renderKey": "7561708417713332",
+              "eventField": [],
+              "saveWay": "bin",
+              "originValue": 1,
+              "tip": "",
+              "tipAlways": false
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "Disable",
+                  "value": 0,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "Enable",
+                  "value": 1,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "style": {
+              "width": "100%"
+            },
+            "size": "medium",
+            "disabled": false,
+            "id": "id_1708417713332_5",
+            "__vModel__": "field756"
+          }
+        ],
+        "eventField": []
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "400px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1692607304610_0"
+    },
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "高级配置",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "status": 0,
+        "template": "",
+        "hideAddTemplate": false,
+        "span": 24,
+        "formId": 751,
+        "renderKey": "7511708417559152",
+        "children": [
+          {
+            "__config__": {
+              "label": "mix frame size",
+              "showLabel": true,
+              "labelWidth": 180,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "layout": "colFormItem",
+              "span": 24,
+              "required": true,
+              "defaultValue": 0,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "status": 0,
+              "dataType": [
+                "32",
+                "1"
+              ],
+              "formId": 752,
+              "renderKey": "7521708417599972",
+              "originValue": 0,
+              "tipAlways": true,
+              "tip": "mix buf每个声道的点数。单位：点。非0有效，0则使用sdk内默认值",
+              "saveWay": "bin",
+              "eventField": []
+            },
+            "placeholder": "请选择mix frame size",
+            "min": 0,
+            "max": 1024,
+            "step": 1,
+            "step-strictly": false,
+            "precision": 1,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1708417599972_1",
+            "__vModel__": "field752"
+          }
+        ],
+        "eventField": [],
+        "expand": 1
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "400px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1708417559152_0"
+    }
+  ],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 12,
+  "formBtns": false
+}

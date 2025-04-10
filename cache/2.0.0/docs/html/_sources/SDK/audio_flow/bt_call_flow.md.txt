@@ -1,0 +1,25 @@
+# 蓝牙通话
+
+## 算法流程图配置
++ 根据应用方案，在侧边栏的`清晰语音`选择匹配的算法节点，拉入到流程图中，删除不用的算法节点，重新连线新的算法节点。如下图中的`双MIC+DNS`节点
+![算法流程图配置](./assets/bt_call_flow/call_flow.png)
+   
+   
++ `ADC`节点配置中`MIC使能`，勾选与算法对应的MIC个数；如上图中选了`双MIC+DNS`，则需要勾选两个原理图上对应的MIC，否则数据流会异常；
+如果是单MIC相关算法节点，则仅需勾选1个原理图上对应的MIC
+![MIC个数匹配](./assets/bt_call_flow/call_flow_ADC.png)
+
+## 第三方算法接入说明
+
+### 算法流程图配置
+
++ 在侧边栏的`清晰语音`选择`通话第三方算法`节点，根据方案在`通话第三方算法`节点配置中选择对应的`算法类型`
+![第三方算法流程图](./assets/bt_call_flow/other_call_flow.png)
+![第三方算法节点配置](./assets/bt_call_flow/other_call_flow_type.png)
++ `ADC`节点配置中`MIC使能`，勾选与算法对应的MIC个数, 如上图选择的`单麦算法`，则`MIC使能`勾选一个原理图对应的MIC，否则数据流会异常；
+![第三方算法节点配置](./assets/bt_call_flow/other_call_ADC.png)
+
+### 代码流程
++ 参考`audio/CVP/audio_cvp_develop.c`<br>
+![第三方算法code](./assets/bt_call_flow/other_call_code.png)
+

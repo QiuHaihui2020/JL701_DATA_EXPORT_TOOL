@@ -1,0 +1,174 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "参数配置",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [],
+        "template": "",
+        "span": 24,
+        "formId": 104,
+        "renderKey": "1041677138688471",
+        "children": [
+          {
+            "__config__": {
+              "label": "同步延时（ms）",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 200,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 10,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "dataType": [
+                "float"
+              ],
+              "formId": 104,
+              "renderKey": "1041677140583268",
+              "eventField": [],
+              "saveWay": "bin",
+              "emptyValue": "",
+              "originValue": 10,
+              "tip": "控制缓存时间"
+            },
+            "placeholder": "计数器时钟同步延时时钟同步延时时钟同步延时（ms）同步延时（ms）",
+            "step": 0.1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1677140583268_0",
+            "__vModel__": "field104",
+            "min": 1,
+            "max": 256,
+            "precision": 1
+          },
+          {
+            "__config__": {
+              "label": "计算周期（ms）",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 200,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 100,
+              "span": 24,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "dataType": [
+                "1",
+                "32"
+              ],
+              "formId": 108,
+              "renderKey": "1081677144866466",
+              "eventField": [],
+              "saveWay": "bin",
+              "emptyValue": "",
+              "originValue": 100,
+              "formItemWidth": "90%",
+              "tip": ""
+            },
+            "placeholder": "单位：us计算周期（ms）",
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1677144866465_6",
+            "__vModel__": "field108",
+            "min": 10,
+            "max": 20000
+          },
+          {
+            "__config__": {
+              "label": "对齐模式",
+              "showLabel": true,
+              "labelWidth": 200,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 24,
+              "required": false,
+              "defaultValue": 0,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "status": 0,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "formId": 115,
+              "renderKey": "1151719387029771",
+              "eventField": [],
+              "saveWay": "bin",
+              "originValue": 0,
+              "formItemWidth": "",
+              "paddingLeft": ""
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "快速对齐",
+                  "value": 0,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "缓慢对齐",
+                  "value": 1,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "变采样bypass",
+                  "value": 2,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "placeholder": "请选择对齐模式",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": false,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1719387029771_0",
+            "__vModel__": "field115"
+          }
+        ],
+        "eventField": [],
+        "saveWay": "bin"
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "400px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1678246329785_3"
+    }
+  ],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 24,
+  "formBtns": false
+}

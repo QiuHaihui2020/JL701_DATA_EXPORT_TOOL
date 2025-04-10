@@ -1,0 +1,147 @@
+[
+  {
+    "uuid": "32",
+    "defaultValue": 32
+  },
+  {
+    "uuid": 40,
+    "defaultValue": 40
+  },
+  {
+    "uuid": 50,
+    "defaultValue": 50
+  },
+  {
+    "uuid": 3,
+    "defaultValue": 3
+  },
+  {
+    "defaultValue": "1. uac音频参数（含UAC协议版本）修改后需要在 “设备管理器” 卸载一次，才能正常工作；\n2. 对于多数安卓（苹果）手机而言，要支持播歌、录音、通话，声音经样机输入输出（不经过手机扬声器输出，麦克风输入），最佳组合是 关闭读卡器 + USB扬声器 2ch 24bit + USB麦克风 1ch 16bit。USB扬声器可配置成16 + 24bit，手机会以24bit打开。至于采样率以及有几个采样率，则没有要求；\n3. 设备类开关不同的组合，会使USB呈现不同的Product ID，这是为了兼容Windows 7等不支持自动更新驱动的老系统。如果需要固定Product ID，要修改代码。\n以下为uac v2.0需要注意的：\n4. uac 2.0需要使能spk的多采样率以及mic的多采样率才能被正确枚举；\n5. 从Windodws 10 1703开始才支持uac 2.0，Linux则较早就支持，基于兼容性考虑，请谨慎选用；"
+  },
+  {
+    "uuid": "0x12345678",
+    "defaultValue": "0x12345678"
+  },
+  {
+    "uuid": "0x45",
+    "defaultValue": "0x45"
+  },
+  {
+    "uuid": "0x46",
+    "defaultValue": "0x46"
+  },
+  {
+    "uuid": "0x47",
+    "defaultValue": "0x47"
+  },
+  {
+    "uuid": "0x44",
+    "defaultValue": "0x44"
+  },
+  {
+    "uuid": "0x40",
+    "defaultValue": "0x40"
+  },
+  {
+    "uuid": "0x43",
+    "defaultValue": "0x43"
+  },
+  {
+    "uuid": "0x07",
+    "defaultValue": "0x07"
+  },
+  {
+    "uuid": "0x15",
+    "defaultValue": "0x15"
+  },
+  {
+    "uuid": "0x09",
+    "defaultValue": "0x09"
+  },
+  {
+    "uuid": "0x16",
+    "defaultValue": "0x16"
+  },
+  {
+    "uuid": "0x19",
+    "defaultValue": "0x19"
+  },
+  {
+    "uuid": "0x0d",
+    "defaultValue": "0x0d"
+  },
+  {
+    "uuid": "0x0c",
+    "defaultValue": "0x0c"
+  },
+  {
+    "uuid": "0x18",
+    "defaultValue": "0x18"
+  },
+  {
+    "uuid": "0x5e",
+    "defaultValue": "0x5e"
+  },
+  {
+    "uuid": "0x08",
+    "defaultValue": "0x08"
+  },
+  {
+    "uuid": "0x1c",
+    "defaultValue": "0x1c"
+  },
+  {
+    "uuid": "0x5a",
+    "defaultValue": "0x5a"
+  },
+  {
+    "uuid": "0x42",
+    "defaultValue": "0x42"
+  },
+  {
+    "uuid": "0x52",
+    "defaultValue": "0x52"
+  },
+  {
+    "uuid": "0x4a",
+    "defaultValue": "0x4a"
+  },
+  {
+    "uuid": "soundbox",
+    "defaultValue": "soundbox"
+  },
+  {
+    "uuid": [
+      255,
+      255,
+      255,
+      255,
+      255,
+      255
+    ],
+    "defaultValue": "FF FF FF FF FF FF"
+  },
+  {
+    "uuid": 65535,
+    "defaultValue": "0xFFFF"
+  },
+  {
+    "defaultValue": "1.勾选LE_AUDIO_UNICAST_SINK_EN协议，需要在音频流程→蓝牙音乐/蓝牙通话选择LE_Audio分组，使能音频流程→LE_Audio的音频流程图（详细可见项目帮助文档的LE_Audio章节）。"
+  },
+  {
+    "uuid": "product_fast_test",
+    "defaultValue": "product_fast_test"
+  },
+  {
+    "uuid": "le_audio_soundbar",
+    "defaultValue": "le_audio_soundbar"
+  },
+  {
+    "uuid": "PB02_PB08",
+    "defaultValue": "PB02_PB08"
+  },
+  {
+    "uuid": "0",
+    "defaultValue": "0"
+  }
+]

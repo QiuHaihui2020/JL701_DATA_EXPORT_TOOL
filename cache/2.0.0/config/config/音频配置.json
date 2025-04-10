@@ -1,0 +1,4723 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "DAC配置",
+        "showComponentName": true,
+        "dataType": [],
+        "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+        "template": "",
+        "span": 24,
+        "formId": 101,
+        "renderKey": "1011646278043832",
+        "children": [
+          {
+            "__config__": {
+              "label": "声道配置",
+              "showLabel": true,
+              "labelWidth": null,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 7,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": [
+                "macro"
+              ],
+              "formId": 102,
+              "renderKey": "1021675927003642",
+              "eventField": [],
+              "saveWay": "macro",
+              "defaultValue": "DAC_OUTPUT_LR",
+              "originValue": "DAC_OUTPUT_LR",
+              "uuid": "TCFG_AUDIO_DAC_CONNECT_MODE"
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "单左声道",
+                  "value": "DAC_OUTPUT_MONO_L"
+                },
+                {
+                  "label": "单右声道",
+                  "value": "DAC_OUTPUT_MONO_R"
+                },
+                {
+                  "label": "双声道",
+                  "value": "DAC_OUTPUT_LR"
+                },
+                {
+                  "label": "单声道 LP-RP",
+                  "value": "DAC_OUTPUT_MONO_LR_DIFF"
+                }
+              ]
+            },
+            "placeholder": "请选择声道配置",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1675927003642_1",
+            "__vModel__": "field101"
+          },
+          {
+            "__config__": {
+              "label": "输出方式",
+              "showLabel": true,
+              "labelWidth": 100,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 7,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": [
+                "macro"
+              ],
+              "document": "https://element.eleme.cn/#/zh-CN/component/select",
+              "formId": 160,
+              "renderKey": "1601646374701189",
+              "saveWay": "macro",
+              "defaultValue": "DAC_MODE_H2_SINGLE",
+              "uuid": "TCFG_AUDIO_DAC_MODE",
+              "eventField": [],
+              "originValue": "DAC_MODE_H2_SINGLE"
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "低压差分(需要iovdd>=2.8V)",
+                  "value": "DAC_MODE_L_DIFF"
+                },
+                {
+                  "label": "低压单端(需要iovdd>=2.8V)",
+                  "value": "DAC_MODE_L_SINGLE"
+                },
+                {
+                  "label": "高压一档差分(需要iovdd>=3.0V)",
+                  "value": "DAC_MODE_H1_DIFF"
+                },
+                {
+                  "label": "高压一档单端(需要iovdd>=3.0V)",
+                  "value": "DAC_MODE_H1_SINGLE"
+                },
+                {
+                  "label": "高压二档差分(需要iovdd>=3.4V)",
+                  "value": "DAC_MODE_H2_DIFF"
+                },
+                {
+                  "label": "高压二档单端(需要iovdd>=3.4V)",
+                  "value": "DAC_MODE_H2_SINGLE"
+                }
+              ]
+            },
+            "placeholder": "请选择输出方式",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "__vModel__": "field102",
+            "id": "id_1647418957554_138"
+          },
+          {
+            "__config__": {
+              "label": "轻量关闭",
+              "showLabel": true,
+              "labelWidth": 150,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 6,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": [
+                "macro"
+              ],
+              "formId": 101,
+              "renderKey": "1011675927466877",
+              "eventField": [],
+              "saveWay": "macro",
+              "defaultValue": "0X0",
+              "originValue": "0X0",
+              "uuid": "TCFG_AUDIO_DAC_LIGHT_CLOSE_ENABLE",
+              "formItemWidth": "300px"
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "不使能",
+                  "value": "0X0"
+                },
+                {
+                  "label": "使能",
+                  "value": "0X1"
+                }
+              ]
+            },
+            "placeholder": "请选择是否开启轻量关闭轻量关闭",
+            "style": {
+              "width": ""
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1675927466877_2",
+            "__vModel__": "field103"
+          },
+          {
+            "__config__": {
+              "label": "VCM电容",
+              "showLabel": true,
+              "labelWidth": null,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 7,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": [
+                "macro"
+              ],
+              "formId": 102,
+              "renderKey": "1021675927562235",
+              "eventField": [],
+              "saveWay": "macro",
+              "defaultValue": "0x1",
+              "originValue": "0x1",
+              "uuid": "TCFG_AUDIO_VCM_CAP_EN"
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "不带电容",
+                  "value": "0X0"
+                },
+                {
+                  "label": "带电容",
+                  "value": "0x1"
+                }
+              ]
+            },
+            "placeholder": "请选择VCM电容",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1675927562235_4",
+            "__vModel__": "field105"
+          },
+          {
+            "__config__": {
+              "label": "DAC开启模式",
+              "showLabel": true,
+              "labelWidth": 100,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 7,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": [
+                "macro"
+              ],
+              "formId": 101,
+              "renderKey": "1011675927508549",
+              "eventField": [],
+              "defaultValue": "0X0",
+              "originValue": "0X0",
+              "saveWay": "macro",
+              "uuid": "TCFG_AUDIO_DAC_POWER_ON_MODE"
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "模式1",
+                  "value": "0X0"
+                },
+                {
+                  "label": "模式2",
+                  "value": "0X1"
+                }
+              ]
+            },
+            "placeholder": "请选择DAC开启模式",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1675927508549_3",
+            "__vModel__": "field104"
+          },
+          {
+            "__config__": {
+              "label": "缓冲长度（ms）",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 150,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "span": 6,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "dataType": [
+                "macro"
+              ],
+              "formId": 101,
+              "renderKey": "1011677049234036",
+              "eventField": [],
+              "uuid": "TCFG_AUDIO_DAC_BUFFER_TIME_MS",
+              "saveWay": "macro",
+              "formItemWidth": "300px",
+              "originValue": 100,
+              "defaultValue": 100
+            },
+            "placeholder": "缓冲长度（ms）缓冲长度（ms）",
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1677049234036_3",
+            "__vModel__": "field106",
+            "min": 20,
+            "max": 100
+          },
+          {
+            "__config__": {
+              "label": "DAC IO",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 0,
+              "span": 24,
+              "showLabel": true,
+              "labelWidth": null,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "status": 0,
+              "dataType": [
+                "macro"
+              ],
+              "formId": 228,
+              "renderKey": "2281726819837526",
+              "eventField": [],
+              "saveWay": "macro",
+              "uuid": "TCFG_AUDIO_DAC_IO_ENABLE",
+              "unsupportDebug": false,
+              "originValue": 0,
+              "tipAlways": true,
+              "tip": "DAC作普通IO口使用，音频流程中请选择其他输出方式"
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1726819837526_0",
+            "__vModel__": "field228"
+          },
+          {
+            "__config__": {
+              "label": "电流档位",
+              "showLabel": true,
+              "labelWidth": 100,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 7,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": [
+                "macro"
+              ],
+              "formId": 234,
+              "renderKey": "2341728717272694",
+              "eventField": [],
+              "defaultValue": 4,
+              "originValue": 4,
+              "saveWay": "macro",
+              "uuid": "TCFG_AUDIO_DAC_PA_ISEL"
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "LEVEL0",
+                  "value": 0
+                },
+                {
+                  "label": "LEVEL1",
+                  "value": 1
+                },
+                {
+                  "label": "LEVEL2",
+                  "value": 2,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "LEVEL3",
+                  "value": 3,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "LEVEL4",
+                  "value": 4,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "LEVEL5",
+                  "value": 5,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "LEVEL6",
+                  "value": 6,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "placeholder": "请选择电流档位",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1728717272694_0",
+            "__vModel__": "field234"
+          },
+          {
+            "__config__": {
+              "layout": "rowFormItem",
+              "tag": "group",
+              "tagIcon": "row",
+              "layoutTree": true,
+              "componentName": "音量增强配置",
+              "enableUuid": "",
+              "showComponentName": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "status": 0,
+              "template": "",
+              "hideAddTemplate": false,
+              "span": 24,
+              "formId": 203,
+              "renderKey": "2031725974528067",
+              "children": [
+                {
+                  "__config__": {
+                    "label": "音量增强模式",
+                    "tag": "el-switch",
+                    "tagIcon": "switch",
+                    "defaultValue": 1,
+                    "span": 12,
+                    "showLabel": true,
+                    "labelWidth": 140,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "status": 0,
+                    "dataType": [
+                      "macro"
+                    ],
+                    "formId": 204,
+                    "renderKey": "2041725974562348",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_AUDIO_DAC_POWER_BOOST",
+                    "tip": "仅输出模式为高压二档单端时可用",
+                    "tipAlways": true,
+                    "formItemWidth": "",
+                    "originValue": 1,
+                    "eventField": []
+                  },
+                  "style": {},
+                  "disabled": false,
+                  "active-text": "",
+                  "inactive-text": "",
+                  "active-color": null,
+                  "inactive-color": null,
+                  "active-value": 1,
+                  "inactive-value": 0,
+                  "id": "id_1725974562348_1",
+                  "__vModel__": "field204"
+                }
+              ],
+              "eventField": []
+            },
+            "type": "default",
+            "justify": "start",
+            "align": "top",
+            "style": {
+              "height": "60px",
+              "paddingLeft": "0px"
+            },
+            "id": "id_1725974528067_0"
+          },
+          {
+            "__config__": {
+              "layout": "rowFormItem",
+              "tag": "group",
+              "tagIcon": "row",
+              "layoutTree": true,
+              "componentName": "Analog Gain",
+              "enableUuid": "",
+              "showComponentName": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "status": 0,
+              "template": "",
+              "hideAddTemplate": false,
+              "span": 24,
+              "formId": 168,
+              "renderKey": "1681698929435532",
+              "children": [
+                {
+                  "__config__": {
+                    "label": "L Channel",
+                    "showLabel": true,
+                    "labelWidth": null,
+                    "tag": "el-select",
+                    "tagIcon": "select",
+                    "layout": "colFormItem",
+                    "span": 6,
+                    "required": false,
+                    "defaultValue": "0x03",
+                    "regList": [],
+                    "changeTag": true,
+                    "searchSource": false,
+                    "status": 0,
+                    "dataType": [
+                      "macro"
+                    ],
+                    "formId": 167,
+                    "renderKey": "1671698929563840",
+                    "eventField": [],
+                    "saveWay": "macro",
+                    "uuid": "TCFG_AUDIO_L_CHANNEL_GAIN",
+                    "originValue": "0x03"
+                  },
+                  "__slot__": {
+                    "options": [
+                      {
+                        "label": "0dB",
+                        "value": "0x03",
+                        "hide": false,
+                        "disabled": false
+                      },
+                      {
+                        "label": "-6dB",
+                        "value": "0x02",
+                        "hide": false,
+                        "disabled": false
+                      },
+                      {
+                        "label": "-12dB",
+                        "value": "0x01",
+                        "hide": false,
+                        "disabled": false
+                      },
+                      {
+                        "label": "-18dB",
+                        "value": "0x00",
+                        "hide": false,
+                        "disabled": false
+                      }
+                    ]
+                  },
+                  "placeholder": "请选择L Channel",
+                  "style": {
+                    "width": "100%"
+                  },
+                  "clearable": true,
+                  "disabled": false,
+                  "filterable": false,
+                  "multiple": false,
+                  "id": "id_1698929563840_2",
+                  "__vModel__": "field167"
+                },
+                {
+                  "__config__": {
+                    "label": "R Channel",
+                    "showLabel": true,
+                    "labelWidth": null,
+                    "tag": "el-select",
+                    "tagIcon": "select",
+                    "layout": "colFormItem",
+                    "span": 6,
+                    "required": false,
+                    "defaultValue": "0x03",
+                    "regList": [],
+                    "changeTag": true,
+                    "searchSource": false,
+                    "status": 0,
+                    "dataType": [
+                      "macro"
+                    ],
+                    "formId": 167,
+                    "renderKey": "1671698929587371",
+                    "uuid": "TCFG_AUDIO_R_CHANNEL_GAIN",
+                    "saveWay": "macro",
+                    "originValue": "0x03"
+                  },
+                  "__slot__": {
+                    "options": [
+                      {
+                        "label": "0dB",
+                        "value": "0x03",
+                        "hide": false,
+                        "disabled": false
+                      },
+                      {
+                        "label": "-6dB",
+                        "value": "0x02",
+                        "hide": false,
+                        "disabled": false
+                      },
+                      {
+                        "label": "-12dB",
+                        "value": "0x01",
+                        "hide": false,
+                        "disabled": false
+                      },
+                      {
+                        "label": "-18dB",
+                        "value": "0x00",
+                        "hide": false,
+                        "disabled": false
+                      }
+                    ]
+                  },
+                  "placeholder": "请选择R Channel",
+                  "style": {
+                    "width": "100%"
+                  },
+                  "clearable": true,
+                  "disabled": false,
+                  "filterable": false,
+                  "multiple": false,
+                  "id": "id_1698929587371_3",
+                  "__vModel__": "field168"
+                }
+              ],
+              "eventField": []
+            },
+            "type": "default",
+            "justify": "start",
+            "align": "top",
+            "style": {
+              "height": "60px",
+              "paddingLeft": "0px"
+            },
+            "id": "id_1698929435532_1",
+            "show-text": false
+          },
+          {
+            "__config__": {
+              "layout": "rowFormItem",
+              "tag": "group",
+              "tagIcon": "row",
+              "layoutTree": true,
+              "componentName": "Digital Gain",
+              "enableUuid": "",
+              "showComponentName": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "template": "",
+              "span": 24,
+              "formId": 222,
+              "renderKey": "2221726108327978",
+              "children": [
+                {
+                  "__config__": {
+                    "label": "Digital Gain",
+                    "showLabel": true,
+                    "changeTag": true,
+                    "labelWidth": null,
+                    "tag": "el-input-number",
+                    "tagIcon": "number",
+                    "defaultValue": 0,
+                    "span": 24,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "status": 0,
+                    "dataType": [
+                      "float"
+                    ],
+                    "formId": 227,
+                    "renderKey": "2271726108419157",
+                    "originValue": 0,
+                    "saveWay": "macro",
+                    "uuid": "TCFG_AUDIO_DIGITAL_GAIN",
+                    "tipAlways": true,
+                    "tip": "DAC硬件数字音量，范围：-90dB~0dB",
+                    "eventField": []
+                  },
+                  "placeholder": "Digital Gain",
+                  "min": -90,
+                  "max": 0,
+                  "step": 0.1,
+                  "step-strictly": false,
+                  "precision": 1,
+                  "controls-position": "",
+                  "disabled": false,
+                  "id": "id_1726108419157_5",
+                  "__vModel__": "field227"
+                }
+              ],
+              "eventField": []
+            },
+            "type": "default",
+            "justify": "start",
+            "align": "top",
+            "style": {
+              "height": "40px",
+              "paddingLeft": "0px"
+            },
+            "id": "id_1726108327978_0"
+          }
+        ],
+        "eventField": [],
+        "enableUuid": "",
+        "tip": "",
+        "uuid": "550",
+        "saveWay": ""
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "100px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1647418957554_139"
+    },
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "ADC配置",
+        "enableUuid": "TCFG_AUDIO_ADC_ENABLE",
+        "showComponentName": true,
+        "dataType": [
+          "macro"
+        ],
+        "template": "",
+        "span": 24,
+        "formId": 102,
+        "renderKey": "1021655194873993",
+        "children": [
+          {
+            "__config__": {
+              "layout": "rowFormItem",
+              "tag": "group",
+              "tagIcon": "row",
+              "layoutTree": true,
+              "componentName": "row_103",
+              "enableUuid": "",
+              "showComponentName": false,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "template": "",
+              "span": 24,
+              "formId": 103,
+              "renderKey": "1031655194873993",
+              "children": [
+                {
+                  "__config__": {
+                    "label": "MIC LDO 电压",
+                    "showLabel": true,
+                    "labelWidth": 110,
+                    "tag": "el-select",
+                    "tagIcon": "select",
+                    "layout": "colFormItem",
+                    "span": 5,
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "searchSource": false,
+                    "dataType": [
+                      "32"
+                    ],
+                    "document": "https://element.eleme.cn/#/zh-CN/component/select",
+                    "formId": 106,
+                    "renderKey": "1061655194873993",
+                    "defaultValue": 5,
+                    "saveWay": "macro",
+                    "uuid": "TCFG_AUDIO_MIC_LDO_VSEL",
+                    "eventField": []
+                  },
+                  "__slot__": {
+                    "options": [
+                      {
+                        "label": "1.3V",
+                        "value": 0
+                      },
+                      {
+                        "label": "1.4V",
+                        "value": 1
+                      },
+                      {
+                        "label": "1.5V",
+                        "value": 2
+                      },
+                      {
+                        "label": "2.0V",
+                        "value": 3
+                      },
+                      {
+                        "label": "2.2V",
+                        "value": 4
+                      },
+                      {
+                        "label": "2.4V",
+                        "value": 5
+                      },
+                      {
+                        "label": "2.6V",
+                        "value": 6
+                      },
+                      {
+                        "label": "2.8V",
+                        "value": 7
+                      }
+                    ]
+                  },
+                  "placeholder": "请选择MIC LDO 电压",
+                  "style": {
+                    "width": "100%"
+                  },
+                  "clearable": true,
+                  "disabled": false,
+                  "filterable": false,
+                  "multiple": false,
+                  "__vModel__": "field106",
+                  "id": "id_1655194873993_4"
+                },
+                {
+                  "__config__": {
+                    "label": "MIC LDO 电流",
+                    "showLabel": true,
+                    "labelWidth": 110,
+                    "tag": "el-select",
+                    "tagIcon": "select",
+                    "layout": "colFormItem",
+                    "span": 5,
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "searchSource": false,
+                    "dataType": [
+                      "32"
+                    ],
+                    "document": "https://element.eleme.cn/#/zh-CN/component/select",
+                    "formId": 105,
+                    "renderKey": "1051655194873993",
+                    "defaultValue": 2,
+                    "saveWay": "macro",
+                    "uuid": "TCFG_AUDIO_MIC_LDO_ISEL",
+                    "eventField": []
+                  },
+                  "__slot__": {
+                    "options": [
+                      {
+                        "label": "LEVEL0",
+                        "value": 0
+                      },
+                      {
+                        "label": "LEVEL1",
+                        "value": 1
+                      },
+                      {
+                        "label": "LEVEL2",
+                        "value": 2
+                      },
+                      {
+                        "label": "LEVEL3",
+                        "value": 3
+                      }
+                    ]
+                  },
+                  "placeholder": "MIC LDO 电流",
+                  "style": {
+                    "width": "100%"
+                  },
+                  "clearable": true,
+                  "disabled": false,
+                  "filterable": false,
+                  "multiple": false,
+                  "__vModel__": "field105",
+                  "id": "id_1655194873993_3"
+                },
+                {
+                  "__config__": {
+                    "layout": "rowFormItem",
+                    "tag": "group",
+                    "tagIcon": "row",
+                    "layoutTree": true,
+                    "componentName": "ADC0 配置",
+                    "showComponentName": true,
+                    "dataType": [],
+                    "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+                    "template": "",
+                    "span": 24,
+                    "formId": 101,
+                    "renderKey": "1011648192624776",
+                    "children": [
+                      {
+                        "__config__": {
+                          "label": "使能",
+                          "tag": "el-switch",
+                          "tagIcon": "switch",
+                          "defaultValue": 1,
+                          "span": 24,
+                          "showLabel": true,
+                          "labelWidth": null,
+                          "layout": "colFormItem",
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "status": 0,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 222,
+                          "renderKey": "2221725242345382",
+                          "saveWay": "macro",
+                          "originValue": 1,
+                          "uuid": "TCFG_ADC0_ENABLE",
+                          "eventField": []
+                        },
+                        "style": {},
+                        "disabled": false,
+                        "active-text": "",
+                        "inactive-text": "",
+                        "active-color": null,
+                        "inactive-color": null,
+                        "active-value": 1,
+                        "inactive-value": 0,
+                        "id": "id_1725242345382_1",
+                        "__vModel__": "field222"
+                      },
+                      {
+                        "__config__": {
+                          "label": "模式",
+                          "showLabel": true,
+                          "labelWidth": "",
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 10,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 129,
+                          "renderKey": "1291671073275027",
+                          "eventField": [],
+                          "saveWay": "macro",
+                          "defaultValue": 0,
+                          "formItemWidth": "300px",
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC0_MODE"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "单端隔直电容模式",
+                              "value": 0
+                            },
+                            {
+                              "label": "差分隔直电容模式",
+                              "value": 1
+                            },
+                            {
+                              "label": "单端省电容模式",
+                              "value": 2
+                            }
+                          ]
+                        },
+                        "placeholder": "模式",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1671073275027_4",
+                        "__vModel__": "field129"
+                      },
+                      {
+                        "__config__": {
+                          "label": "输入端口",
+                          "showLabel": true,
+                          "labelWidth": "",
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 6,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 126,
+                          "renderKey": "1261671073588104",
+                          "saveWay": "macro",
+                          "defaultValue": 1,
+                          "formItemWidth": "200px",
+                          "eventField": [],
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC0_AIN_SEL"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "PA1",
+                              "value": 1
+                            }
+                          ]
+                        },
+                        "placeholder": "请选择输入端口",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1671073588104_6",
+                        "__vModel__": "field126"
+                      },
+                      {
+                        "__config__": {
+                          "label": "供电端口",
+                          "showLabel": true,
+                          "labelWidth": "",
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 7,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 127,
+                          "renderKey": "1271671073751470",
+                          "saveWay": "macro",
+                          "defaultValue": 1,
+                          "formItemWidth": "350px",
+                          "originValue": 1,
+                          "eventField": [],
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC0_BIAS_SEL"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "其他（IO供电或外部供电）",
+                              "value": 0
+                            },
+                            {
+                              "label": "MIC_LDO (PA0)",
+                              "value": 16
+                            },
+                            {
+                              "label": "MIC_BIAS (PA2)",
+                              "value": 1
+                            }
+                          ]
+                        },
+                        "placeholder": "请选择供电端口供电端口",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1671073751470_7",
+                        "__vModel__": "field127"
+                      },
+                      {
+                        "__config__": {
+                          "label": "MIC BIAS上拉电阻挡位",
+                          "showLabel": true,
+                          "labelWidth": 160,
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 11,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 128,
+                          "renderKey": "1281671074003588",
+                          "eventField": [],
+                          "saveWay": "macro",
+                          "formItemWidth": "300px",
+                          "defaultValue": 4,
+                          "originValue": 4,
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC0_BIAS_RSEL"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "10.0k",
+                              "value": 15
+                            },
+                            {
+                              "label": "9.0k",
+                              "value": 14
+                            },
+                            {
+                              "label": "8.0k",
+                              "value": 13
+                            },
+                            {
+                              "label": "7.0k",
+                              "value": 12
+                            },
+                            {
+                              "label": "6.0k",
+                              "value": 11
+                            },
+                            {
+                              "label": "5.0k",
+                              "value": 10
+                            },
+                            {
+                              "label": "4.5k",
+                              "value": 9
+                            },
+                            {
+                              "label": "4.0k",
+                              "value": 8
+                            },
+                            {
+                              "label": "3.5k",
+                              "value": 7
+                            },
+                            {
+                              "label": "3.0k",
+                              "value": 6
+                            },
+                            {
+                              "label": "2.5k",
+                              "value": 5
+                            },
+                            {
+                              "label": "2.0k",
+                              "value": 4
+                            },
+                            {
+                              "label": "1.5k",
+                              "value": 3
+                            },
+                            {
+                              "label": "1.0k",
+                              "value": 2
+                            },
+                            {
+                              "label": "0.5k",
+                              "value": 1
+                            }
+                          ]
+                        },
+                        "placeholder": "MIC BIAS电阻挡位MIC BIAS电阻挡位MIC BIAS上拉电阻挡位",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1671074003588_8",
+                        "__vModel__": "field128"
+                      },
+                      {
+                        "__config__": {
+                          "label": "DCC 档位",
+                          "showLabel": true,
+                          "labelWidth": "",
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 6,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 127,
+                          "renderKey": "1271671083339712",
+                          "eventField": [],
+                          "defaultValue": 8,
+                          "saveWay": "macro",
+                          "formItemWidth": "200px",
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC0_DCC_LEVEL"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "关闭",
+                              "value": 0
+                            },
+                            {
+                              "label": "8",
+                              "value": 8
+                            },
+                            {
+                              "label": "9",
+                              "value": 9
+                            },
+                            {
+                              "label": "10",
+                              "value": 10
+                            },
+                            {
+                              "label": "11",
+                              "value": 11
+                            },
+                            {
+                              "label": "12",
+                              "value": 12
+                            },
+                            {
+                              "label": "13",
+                              "value": 13
+                            },
+                            {
+                              "label": "14",
+                              "value": 14
+                            },
+                            {
+                              "label": "15",
+                              "value": 15
+                            }
+                          ]
+                        },
+                        "placeholder": "请选择DCC 档位DCC 档位",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1671083339712_11",
+                        "__vModel__": "field127"
+                      },
+                      {
+                        "__config__": {
+                          "label": "IO供电选择",
+                          "showLabel": true,
+                          "labelWidth": null,
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 5,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "16",
+                            "string"
+                          ],
+                          "formId": 133,
+                          "renderKey": "1331671169030149",
+                          "eventField": [
+                            "device",
+                            "gpio"
+                          ],
+                          "saveWay": "macro",
+                          "formItemWidth": "250px",
+                          "defaultValue": "",
+                          "emptyValue": "0",
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC0_POWER_IO"
+                        },
+                        "__slot__": {
+                          "options": []
+                        },
+                        "placeholder": "IO供电选择",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1671169030149_8",
+                        "__vModel__": "field133",
+                        "searchSource": true
+                      }
+                    ],
+                    "saveWay": "macro",
+                    "uuid": "",
+                    "eventField": []
+                  },
+                  "type": "default",
+                  "justify": "start",
+                  "align": "top",
+                  "style": {
+                    "height": "100px",
+                    "paddingLeft": "0px"
+                  },
+                  "id": "id_1675824280474_161"
+                },
+                {
+                  "__config__": {
+                    "layout": "rowFormItem",
+                    "tag": "group",
+                    "tagIcon": "row",
+                    "layoutTree": true,
+                    "componentName": "ADC1 配置",
+                    "showComponentName": true,
+                    "dataType": [],
+                    "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+                    "template": "",
+                    "span": 24,
+                    "formId": 125,
+                    "renderKey": "1251671176268890",
+                    "children": [
+                      {
+                        "__config__": {
+                          "label": "使能",
+                          "tag": "el-switch",
+                          "tagIcon": "switch",
+                          "defaultValue": 1,
+                          "span": 24,
+                          "showLabel": true,
+                          "labelWidth": null,
+                          "layout": "colFormItem",
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "status": 0,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 221,
+                          "renderKey": "2211725498622417",
+                          "saveWay": "macro",
+                          "originValue": 1,
+                          "uuid": "TCFG_ADC1_ENABLE",
+                          "eventField": []
+                        },
+                        "style": {},
+                        "disabled": false,
+                        "active-text": "",
+                        "inactive-text": "",
+                        "active-color": null,
+                        "inactive-color": null,
+                        "active-value": 1,
+                        "inactive-value": 0,
+                        "id": "id_1725498622417_0",
+                        "__vModel__": "field221"
+                      },
+                      {
+                        "__config__": {
+                          "label": "模式",
+                          "showLabel": true,
+                          "labelWidth": "",
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 10,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 126,
+                          "renderKey": "1261671176268890",
+                          "eventField": [],
+                          "saveWay": "macro",
+                          "defaultValue": 0,
+                          "formItemWidth": "300px",
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC1_MODE"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "单端隔直电容模式",
+                              "value": 0
+                            },
+                            {
+                              "label": "差分隔直电容模式",
+                              "value": 1
+                            },
+                            {
+                              "label": "单端省电容模式",
+                              "value": 2
+                            }
+                          ]
+                        },
+                        "placeholder": "模式",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1671176268890_11",
+                        "__vModel__": "field126"
+                      },
+                      {
+                        "__config__": {
+                          "label": "输入端口",
+                          "showLabel": true,
+                          "labelWidth": "",
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 6,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 129,
+                          "renderKey": "1291671176268890",
+                          "saveWay": "macro",
+                          "defaultValue": 1,
+                          "formItemWidth": "200px",
+                          "originValue": 1,
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC1_AIN_SEL"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "PA3",
+                              "value": 1
+                            }
+                          ]
+                        },
+                        "placeholder": "请选择输入端口",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1671176268890_14",
+                        "__vModel__": "field129"
+                      },
+                      {
+                        "__config__": {
+                          "label": "供电端口",
+                          "showLabel": true,
+                          "labelWidth": "",
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 7,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 130,
+                          "renderKey": "1301671176268890",
+                          "saveWay": "macro",
+                          "defaultValue": 2,
+                          "formItemWidth": "350px",
+                          "originValue": 2,
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC1_BIAS_SEL"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "其他（IO供电或外部供电）",
+                              "value": 0
+                            },
+                            {
+                              "label": "MIC_LDO (PA0)",
+                              "value": 16
+                            },
+                            {
+                              "label": "MIC_BIAS (PA4)",
+                              "value": 2
+                            }
+                          ]
+                        },
+                        "placeholder": "请选择供电端口",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1671176268890_15",
+                        "__vModel__": "field130"
+                      },
+                      {
+                        "__config__": {
+                          "label": "MIC BIAS上拉电阻挡位",
+                          "showLabel": true,
+                          "labelWidth": 160,
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 11,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 131,
+                          "renderKey": "1311671176268890",
+                          "eventField": [],
+                          "saveWay": "macro",
+                          "formItemWidth": "300px",
+                          "defaultValue": 4,
+                          "originValue": 4,
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC1_BIAS_RSEL"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "10.0k",
+                              "value": 15
+                            },
+                            {
+                              "label": "9.0k",
+                              "value": 14
+                            },
+                            {
+                              "label": "8.0k",
+                              "value": 13
+                            },
+                            {
+                              "label": "7.0k",
+                              "value": 12
+                            },
+                            {
+                              "label": "6.0k",
+                              "value": 11
+                            },
+                            {
+                              "label": "5.0k",
+                              "value": 10
+                            },
+                            {
+                              "label": "4.5k",
+                              "value": 9
+                            },
+                            {
+                              "label": "4.0k",
+                              "value": 8
+                            },
+                            {
+                              "label": "3.5k",
+                              "value": 7
+                            },
+                            {
+                              "label": "3.0k",
+                              "value": 6
+                            },
+                            {
+                              "label": "2.5k",
+                              "value": 5
+                            },
+                            {
+                              "label": "2.0k",
+                              "value": 4
+                            },
+                            {
+                              "label": "1.5k",
+                              "value": 3
+                            },
+                            {
+                              "label": "1.0k",
+                              "value": 2
+                            },
+                            {
+                              "label": "0.5k",
+                              "value": 1
+                            }
+                          ]
+                        },
+                        "placeholder": "MIC BIAS电阻挡位MIC BIAS电阻挡位MIC BIAS上拉电阻挡位",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1671176268890_16",
+                        "__vModel__": "field131"
+                      },
+                      {
+                        "__config__": {
+                          "label": "DCC 档位",
+                          "showLabel": true,
+                          "labelWidth": "",
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 6,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 132,
+                          "renderKey": "1321671176268890",
+                          "eventField": [],
+                          "defaultValue": 8,
+                          "saveWay": "macro",
+                          "formItemWidth": "200px",
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC1_DCC_LEVEL"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "关闭",
+                              "value": 0
+                            },
+                            {
+                              "label": "8",
+                              "value": 8
+                            },
+                            {
+                              "label": "9",
+                              "value": 9
+                            },
+                            {
+                              "label": "10",
+                              "value": 10
+                            },
+                            {
+                              "label": "11",
+                              "value": 11
+                            },
+                            {
+                              "label": "12",
+                              "value": 12
+                            },
+                            {
+                              "label": "13",
+                              "value": 13
+                            },
+                            {
+                              "label": "14",
+                              "value": 14
+                            },
+                            {
+                              "label": "15",
+                              "value": 15
+                            }
+                          ]
+                        },
+                        "placeholder": "请选择DCC 档位",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1671176268890_17",
+                        "__vModel__": "field132"
+                      },
+                      {
+                        "__config__": {
+                          "label": "IO供电选择",
+                          "showLabel": true,
+                          "labelWidth": null,
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 5,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "16",
+                            "string"
+                          ],
+                          "formId": 133,
+                          "renderKey": "1331671176268890",
+                          "eventField": [
+                            "device",
+                            "gpio"
+                          ],
+                          "saveWay": "macro",
+                          "formItemWidth": "250px",
+                          "defaultValue": "",
+                          "emptyValue": "0",
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC1_POWER_IO"
+                        },
+                        "__slot__": {
+                          "options": []
+                        },
+                        "placeholder": "IO供电选择",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1671176268890_18",
+                        "__vModel__": "field133",
+                        "searchSource": true
+                      }
+                    ],
+                    "saveWay": "macro",
+                    "uuid": "",
+                    "eventField": []
+                  },
+                  "type": "default",
+                  "justify": "start",
+                  "align": "top",
+                  "style": {
+                    "height": "100px",
+                    "paddingLeft": "0px"
+                  },
+                  "id": "id_1671176268890_10"
+                },
+                {
+                  "__config__": {
+                    "layout": "rowFormItem",
+                    "tag": "group",
+                    "tagIcon": "row",
+                    "layoutTree": true,
+                    "componentName": "ADC2 配置",
+                    "showComponentName": true,
+                    "dataType": [],
+                    "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+                    "template": "",
+                    "span": 24,
+                    "formId": 153,
+                    "renderKey": "1531673164303524",
+                    "children": [
+                      {
+                        "__config__": {
+                          "label": "使能",
+                          "tag": "el-switch",
+                          "tagIcon": "switch",
+                          "defaultValue": 1,
+                          "span": 24,
+                          "showLabel": true,
+                          "labelWidth": null,
+                          "layout": "colFormItem",
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "status": 0,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 222,
+                          "renderKey": "2221725498629158",
+                          "saveWay": "macro",
+                          "originValue": 1,
+                          "uuid": "TCFG_ADC2_ENABLE",
+                          "eventField": []
+                        },
+                        "style": {},
+                        "disabled": false,
+                        "active-text": "",
+                        "inactive-text": "",
+                        "active-color": null,
+                        "inactive-color": null,
+                        "active-value": 1,
+                        "inactive-value": 0,
+                        "id": "id_1725498629158_1",
+                        "__vModel__": "field222"
+                      },
+                      {
+                        "__config__": {
+                          "label": "模式",
+                          "showLabel": true,
+                          "labelWidth": "",
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 10,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 154,
+                          "renderKey": "1541673164303524",
+                          "eventField": [],
+                          "saveWay": "macro",
+                          "defaultValue": 0,
+                          "formItemWidth": "300px",
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC2_MODE"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "单端隔直电容模式",
+                              "value": 0
+                            },
+                            {
+                              "label": "差分隔直电容模式",
+                              "value": 1
+                            },
+                            {
+                              "label": "单端省电容模式",
+                              "value": 2
+                            }
+                          ]
+                        },
+                        "placeholder": "模式",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1673164303524_1",
+                        "__vModel__": "field154"
+                      },
+                      {
+                        "__config__": {
+                          "label": "输入端口",
+                          "showLabel": true,
+                          "labelWidth": "",
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 6,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 157,
+                          "renderKey": "1571673164303524",
+                          "saveWay": "macro",
+                          "defaultValue": 1,
+                          "formItemWidth": "200px",
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC2_AIN_SEL"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "PG8",
+                              "value": 1
+                            }
+                          ]
+                        },
+                        "placeholder": "请选择输入端口",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1673164303524_4",
+                        "__vModel__": "field157"
+                      },
+                      {
+                        "__config__": {
+                          "label": "供电端口",
+                          "showLabel": true,
+                          "labelWidth": "",
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 7,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 158,
+                          "renderKey": "1581673164303524",
+                          "saveWay": "macro",
+                          "defaultValue": 4,
+                          "formItemWidth": "350px",
+                          "originValue": 4,
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC2_BIAS_SEL"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "其他（IO供电或外部供电）",
+                              "value": 0
+                            },
+                            {
+                              "label": "MIC_LDO (PA0)",
+                              "value": 16
+                            },
+                            {
+                              "label": "MIC_BIAS (PG7)",
+                              "value": 4
+                            }
+                          ]
+                        },
+                        "placeholder": "请选择供电端口",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1673164303524_5",
+                        "__vModel__": "field158"
+                      },
+                      {
+                        "__config__": {
+                          "label": "MIC BIAS上拉电阻挡位",
+                          "showLabel": true,
+                          "labelWidth": 160,
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 11,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 159,
+                          "renderKey": "1591673164303524",
+                          "eventField": [],
+                          "saveWay": "macro",
+                          "formItemWidth": "300px",
+                          "defaultValue": 4,
+                          "originValue": 4,
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC2_BIAS_RSEL"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "10.0k",
+                              "value": 15
+                            },
+                            {
+                              "label": "9.0k",
+                              "value": 14
+                            },
+                            {
+                              "label": "8.0k",
+                              "value": 13
+                            },
+                            {
+                              "label": "7.0k",
+                              "value": 12
+                            },
+                            {
+                              "label": "6.0k",
+                              "value": 11
+                            },
+                            {
+                              "label": "5.0k",
+                              "value": 10
+                            },
+                            {
+                              "label": "4.5k",
+                              "value": 9
+                            },
+                            {
+                              "label": "4.0k",
+                              "value": 8
+                            },
+                            {
+                              "label": "3.5k",
+                              "value": 7
+                            },
+                            {
+                              "label": "3.0k",
+                              "value": 6
+                            },
+                            {
+                              "label": "2.5k",
+                              "value": 5
+                            },
+                            {
+                              "label": "2.0k",
+                              "value": 4
+                            },
+                            {
+                              "label": "1.5k",
+                              "value": 3
+                            },
+                            {
+                              "label": "1.0k",
+                              "value": 2
+                            },
+                            {
+                              "label": "0.5k",
+                              "value": 1
+                            }
+                          ]
+                        },
+                        "placeholder": "MIC BIAS电阻挡位MIC BIAS电阻挡位MIC BIAS上拉电阻挡位",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1673164303524_6",
+                        "__vModel__": "field159"
+                      },
+                      {
+                        "__config__": {
+                          "label": "DCC 档位",
+                          "showLabel": true,
+                          "labelWidth": "",
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 6,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 160,
+                          "renderKey": "1601673164303524",
+                          "eventField": [],
+                          "defaultValue": 8,
+                          "saveWay": "macro",
+                          "formItemWidth": "200px",
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC2_DCC_LEVEL"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "关闭",
+                              "value": 0
+                            },
+                            {
+                              "label": "8",
+                              "value": 8
+                            },
+                            {
+                              "label": "9",
+                              "value": 9
+                            },
+                            {
+                              "label": "10",
+                              "value": 10
+                            },
+                            {
+                              "label": "11",
+                              "value": 11
+                            },
+                            {
+                              "label": "12",
+                              "value": 12
+                            },
+                            {
+                              "label": "13",
+                              "value": 13
+                            },
+                            {
+                              "label": "14",
+                              "value": 14
+                            },
+                            {
+                              "label": "15",
+                              "value": 15
+                            }
+                          ]
+                        },
+                        "placeholder": "请选择DCC 档位",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1673164303524_7",
+                        "__vModel__": "field160"
+                      },
+                      {
+                        "__config__": {
+                          "label": "IO供电选择",
+                          "showLabel": true,
+                          "labelWidth": null,
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 5,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "16",
+                            "string"
+                          ],
+                          "formId": 161,
+                          "renderKey": "1611673164303524",
+                          "eventField": [
+                            "device",
+                            "gpio"
+                          ],
+                          "saveWay": "macro",
+                          "formItemWidth": "250px",
+                          "defaultValue": "",
+                          "emptyValue": "0",
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC2_POWER_IO"
+                        },
+                        "__slot__": {
+                          "options": []
+                        },
+                        "placeholder": "IO供电选择",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1673164303524_8",
+                        "__vModel__": "field161",
+                        "searchSource": true
+                      }
+                    ],
+                    "saveWay": "macro",
+                    "uuid": "",
+                    "eventField": []
+                  },
+                  "type": "default",
+                  "justify": "start",
+                  "align": "top",
+                  "style": {
+                    "height": "100px",
+                    "paddingLeft": "0px"
+                  },
+                  "id": "id_1673164303524_0"
+                },
+                {
+                  "__config__": {
+                    "layout": "rowFormItem",
+                    "tag": "group",
+                    "tagIcon": "row",
+                    "layoutTree": true,
+                    "componentName": "ADC3 配置",
+                    "showComponentName": true,
+                    "dataType": [],
+                    "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+                    "template": "",
+                    "span": 24,
+                    "formId": 162,
+                    "renderKey": "1621673164306360",
+                    "children": [
+                      {
+                        "__config__": {
+                          "label": "使能",
+                          "tag": "el-switch",
+                          "tagIcon": "switch",
+                          "defaultValue": 1,
+                          "span": 24,
+                          "showLabel": true,
+                          "labelWidth": null,
+                          "layout": "colFormItem",
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "status": 0,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 223,
+                          "renderKey": "2231725498636063",
+                          "saveWay": "macro",
+                          "originValue": 1,
+                          "uuid": "TCFG_ADC3_ENABLE",
+                          "eventField": []
+                        },
+                        "style": {},
+                        "disabled": false,
+                        "active-text": "",
+                        "inactive-text": "",
+                        "active-color": null,
+                        "inactive-color": null,
+                        "active-value": 1,
+                        "inactive-value": 0,
+                        "id": "id_1725498636063_2",
+                        "__vModel__": "field223"
+                      },
+                      {
+                        "__config__": {
+                          "label": "模式",
+                          "showLabel": true,
+                          "labelWidth": "",
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 10,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 163,
+                          "renderKey": "1631673164306360",
+                          "eventField": [],
+                          "saveWay": "macro",
+                          "defaultValue": 0,
+                          "formItemWidth": "300px",
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC3_MODE"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "单端隔直电容模式",
+                              "value": 0
+                            },
+                            {
+                              "label": "差分隔直电容模式",
+                              "value": 1
+                            },
+                            {
+                              "label": "单端省电容模式",
+                              "value": 2
+                            }
+                          ]
+                        },
+                        "placeholder": "模式",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1673164306360_10",
+                        "__vModel__": "field163"
+                      },
+                      {
+                        "__config__": {
+                          "label": "输入端口",
+                          "showLabel": true,
+                          "labelWidth": "",
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 6,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 166,
+                          "renderKey": "1661673164306360",
+                          "saveWay": "macro",
+                          "defaultValue": 1,
+                          "formItemWidth": "200px",
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC3_AIN_SEL"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "PG6",
+                              "value": 1
+                            }
+                          ]
+                        },
+                        "placeholder": "请选择输入端口",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1673164306360_13",
+                        "__vModel__": "field166"
+                      },
+                      {
+                        "__config__": {
+                          "label": "供电端口",
+                          "showLabel": true,
+                          "labelWidth": "",
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 7,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 167,
+                          "renderKey": "1671673164306360",
+                          "saveWay": "macro",
+                          "defaultValue": 8,
+                          "formItemWidth": "350px",
+                          "originValue": 8,
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC3_BIAS_SEL"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "其他（IO供电或外部供电）",
+                              "value": 0
+                            },
+                            {
+                              "label": "MIC_LDO (PA0)",
+                              "value": 16
+                            },
+                            {
+                              "label": "MIC_BIAS (PG5)",
+                              "value": 8
+                            }
+                          ]
+                        },
+                        "placeholder": "请选择供电端口",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1673164306360_14",
+                        "__vModel__": "field167"
+                      },
+                      {
+                        "__config__": {
+                          "label": "MIC BIAS上拉电阻挡位",
+                          "showLabel": true,
+                          "labelWidth": 160,
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 11,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 168,
+                          "renderKey": "1681673164306360",
+                          "eventField": [],
+                          "saveWay": "macro",
+                          "formItemWidth": "300px",
+                          "defaultValue": 4,
+                          "originValue": 4,
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC3_BIAS_RSEL"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "10.0k",
+                              "value": 15
+                            },
+                            {
+                              "label": "9.0k",
+                              "value": 14
+                            },
+                            {
+                              "label": "8.0k",
+                              "value": 13
+                            },
+                            {
+                              "label": "7.0k",
+                              "value": 12
+                            },
+                            {
+                              "label": "6.0k",
+                              "value": 11
+                            },
+                            {
+                              "label": "5.0k",
+                              "value": 10
+                            },
+                            {
+                              "label": "4.5k",
+                              "value": 9
+                            },
+                            {
+                              "label": "4.0k",
+                              "value": 8
+                            },
+                            {
+                              "label": "3.5k",
+                              "value": 7
+                            },
+                            {
+                              "label": "3.0k",
+                              "value": 6
+                            },
+                            {
+                              "label": "2.5k",
+                              "value": 5
+                            },
+                            {
+                              "label": "2.0k",
+                              "value": 4
+                            },
+                            {
+                              "label": "1.5k",
+                              "value": 3
+                            },
+                            {
+                              "label": "1.0k",
+                              "value": 2
+                            },
+                            {
+                              "label": "0.5k",
+                              "value": 1
+                            }
+                          ]
+                        },
+                        "placeholder": "MIC BIAS电阻挡位MIC BIAS电阻挡位MIC BIAS上拉电阻挡位",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1673164306360_15",
+                        "__vModel__": "field168"
+                      },
+                      {
+                        "__config__": {
+                          "label": "DCC 档位",
+                          "showLabel": true,
+                          "labelWidth": "",
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 6,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "8",
+                            "1"
+                          ],
+                          "formId": 169,
+                          "renderKey": "1691673164306360",
+                          "eventField": [],
+                          "defaultValue": 8,
+                          "saveWay": "macro",
+                          "formItemWidth": "200px",
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC3_DCC_LEVEL"
+                        },
+                        "__slot__": {
+                          "options": [
+                            {
+                              "label": "关闭",
+                              "value": 0
+                            },
+                            {
+                              "label": "8",
+                              "value": 8
+                            },
+                            {
+                              "label": "9",
+                              "value": 9
+                            },
+                            {
+                              "label": "10",
+                              "value": 10
+                            },
+                            {
+                              "label": "11",
+                              "value": 11
+                            },
+                            {
+                              "label": "12",
+                              "value": 12
+                            },
+                            {
+                              "label": "13",
+                              "value": 13
+                            },
+                            {
+                              "label": "14",
+                              "value": 14
+                            },
+                            {
+                              "label": "15",
+                              "value": 15
+                            }
+                          ]
+                        },
+                        "placeholder": "请选择DCC 档位",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1673164306360_16",
+                        "__vModel__": "field169"
+                      },
+                      {
+                        "__config__": {
+                          "label": "IO供电选择",
+                          "showLabel": true,
+                          "labelWidth": null,
+                          "tag": "el-select",
+                          "tagIcon": "select",
+                          "layout": "colFormItem",
+                          "span": 5,
+                          "required": false,
+                          "regList": [],
+                          "changeTag": true,
+                          "searchSource": false,
+                          "dataType": [
+                            "16",
+                            "string"
+                          ],
+                          "formId": 170,
+                          "renderKey": "1701673164306360",
+                          "eventField": [
+                            "device",
+                            "gpio"
+                          ],
+                          "saveWay": "macro",
+                          "formItemWidth": "250px",
+                          "defaultValue": "",
+                          "emptyValue": "0",
+                          "unsupportDebug": true,
+                          "uuid": "TCFG_ADC3_POWER_IO"
+                        },
+                        "__slot__": {
+                          "options": []
+                        },
+                        "placeholder": "IO供电选择",
+                        "style": {
+                          "width": "100%"
+                        },
+                        "clearable": true,
+                        "disabled": false,
+                        "filterable": false,
+                        "multiple": false,
+                        "id": "id_1673164306360_17",
+                        "__vModel__": "field170",
+                        "searchSource": true
+                      }
+                    ],
+                    "saveWay": "macro",
+                    "uuid": "",
+                    "eventField": []
+                  },
+                  "type": "default",
+                  "justify": "start",
+                  "align": "top",
+                  "style": {
+                    "height": "100px",
+                    "paddingLeft": "0px"
+                  },
+                  "id": "id_1673164306360_9"
+                }
+              ],
+              "eventField": []
+            },
+            "type": "default",
+            "justify": "start",
+            "align": "top",
+            "style": {
+              "height": "60px",
+              "paddingLeft": "0px"
+            },
+            "id": "id_1655194873993_1"
+          }
+        ],
+        "eventField": [],
+        "disable": false,
+        "saveWay": "macro"
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "60px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1655194873993_0",
+      "show-text": false
+    },
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "通用音频配置",
+        "showComponentName": true,
+        "dataType": [],
+        "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+        "template": "",
+        "span": 24,
+        "formId": 101,
+        "renderKey": "1011683874753190",
+        "children": [
+          {
+            "__config__": {
+              "label": "全局采样率",
+              "showLabel": true,
+              "labelWidth": 100,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 15,
+              "required": true,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": [
+                "macro"
+              ],
+              "document": "https://element.eleme.cn/#/zh-CN/component/select",
+              "formId": 102,
+              "renderKey": "1021683874753190",
+              "saveWay": "macro",
+              "defaultValue": 44100,
+              "uuid": "TCFG_AUDIO_GLOBAL_SAMPLE_RATE",
+              "eventField": [],
+              "formItemWidth": "",
+              "originValue": 44100,
+              "tip": "固定采样率输出，非通话有效。disable为关闭固定采样率",
+              "tipAlways": true
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "Disable",
+                  "disabled": false,
+                  "value": "0x0"
+                },
+                {
+                  "label": "8000Hz",
+                  "disabled": false,
+                  "value": 8000
+                },
+                {
+                  "label": "16000Hz",
+                  "disabled": false,
+                  "value": 16000
+                },
+                {
+                  "label": "32000Hz",
+                  "disabled": false,
+                  "value": 32000
+                },
+                {
+                  "label": "44100Hz",
+                  "value": 44100,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "48000Hz",
+                  "value": 48000,
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "96000Hz",
+                  "value": 96000,
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "placeholder": "请选择全局采样率",
+            "style": {
+              "width": ""
+            },
+            "clearable": false,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "__vModel__": "field102",
+            "id": "id_1683874753190_1"
+          }
+        ],
+        "eventField": [],
+        "enableUuid": "",
+        "tip": "",
+        "saveWay": "",
+        "uuid": "550",
+        "tipAlways": false
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "100px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1683874753189_0"
+    },
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "通话配置",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "template": "",
+        "span": 24,
+        "formId": 115,
+        "renderKey": "1151660806418564",
+        "children": [
+          {
+            "__config__": {
+              "label": "手机APP在线调试",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 0,
+              "span": 5,
+              "showLabel": true,
+              "labelWidth": 140,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "formId": 119,
+              "renderKey": "1191660806454060",
+              "formItemWidth": "",
+              "saveWay": "macro",
+              "uuid": "TCFG_AEC_TOOL_ONLINE_ENABLE",
+              "eventField": []
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1660806454060_5",
+            "__vModel__": "field119"
+          },
+          {
+            "__config__": {
+              "label": "通话上行同步",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 0,
+              "span": 5,
+              "showLabel": true,
+              "labelWidth": 140,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "formId": 124,
+              "renderKey": "1241662468644366",
+              "formItemWidth": "",
+              "saveWay": "macro",
+              "uuid": "TCFG_AUDIO_CVP_SYNC",
+              "eventField": [],
+              "originValue": 0
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1662468644366_0",
+            "__vModel__": "field124"
+          },
+          {
+            "__config__": {
+              "label": "通话产测",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 1,
+              "span": 5,
+              "showLabel": true,
+              "labelWidth": 140,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "formId": 101,
+              "renderKey": "1011666324053324",
+              "formItemWidth": "",
+              "saveWay": "macro",
+              "uuid": "TCFG_AUDIO_DMS_DUT_ENABLE",
+              "eventField": []
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1666324053324_0",
+            "__vModel__": "field101"
+          },
+          {
+            "__config__": {
+              "label": "通话下行固定16K",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 0,
+              "span": 5,
+              "showLabel": true,
+              "labelWidth": 140,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "formId": 259,
+              "renderKey": "2591676985026350",
+              "formItemWidth": "",
+              "saveWay": "macro",
+              "uuid": "TCFG_ESCO_DL_CVSD_SR_USE_16K",
+              "eventField": [],
+              "originValue": 0
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1676985026350_0",
+            "__vModel__": "field259"
+          }
+        ],
+        "eventField": [],
+        "tipAlways": false
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "60px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1660806418564_1",
+      "show-text": false
+    },
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "音频算法配置",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "status": 0,
+        "template": "",
+        "hideAddTemplate": false,
+        "span": 24,
+        "formId": 146,
+        "renderKey": "1461718094599180",
+        "children": [
+          {
+            "__config__": {
+              "layout": "rowFormItem",
+              "tag": "group",
+              "tagIcon": "row",
+              "layoutTree": true,
+              "componentName": "清晰语音算法配置",
+              "enableUuid": "",
+              "showComponentName": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "status": 0,
+              "template": "",
+              "span": 24,
+              "formId": 103,
+              "renderKey": "1031682317173715",
+              "children": [
+                {
+                  "__config__": {
+                    "label": "1mic算法选择",
+                    "showLabel": true,
+                    "labelWidth": 150,
+                    "tag": "el-select",
+                    "tagIcon": "select",
+                    "layout": "colFormItem",
+                    "span": 24,
+                    "required": false,
+                    "defaultValue": "SMS_DEFAULT",
+                    "regList": [],
+                    "changeTag": true,
+                    "searchSource": false,
+                    "status": 0,
+                    "dataType": [
+                      "macro"
+                    ],
+                    "formId": 105,
+                    "renderKey": "1051682317254477",
+                    "saveWay": "macro",
+                    "originValue": "SMS_DEFAULT",
+                    "emptyValue": "SMS_DEFAULT",
+                    "formItemWidth": "",
+                    "tip": "TDE算法支持延时估计和延时补偿",
+                    "uuid": "TCFG_AUDIO_SMS_SEL",
+                    "eventField": [],
+                    "tipAlways": true
+                  },
+                  "__slot__": {
+                    "options": [
+                      {
+                        "label": "SMS_DEFAULT",
+                        "value": "SMS_DEFAULT",
+                        "hide": false,
+                        "disabled": false
+                      },
+                      {
+                        "label": "SMS_TDE",
+                        "value": "SMS_TDE",
+                        "hide": false,
+                        "disabled": false
+                      }
+                    ]
+                  },
+                  "placeholder": "请选择1mic算法选择",
+                  "style": {
+                    "width": ""
+                  },
+                  "clearable": false,
+                  "disabled": false,
+                  "filterable": false,
+                  "multiple": false,
+                  "id": "id_1724071239293_1",
+                  "__vModel__": "field105"
+                },
+                {
+                  "__config__": {
+                    "label": "2micDNS算法选择",
+                    "showLabel": true,
+                    "labelWidth": 150,
+                    "tag": "el-select",
+                    "tagIcon": "select",
+                    "layout": "colFormItem",
+                    "span": 24,
+                    "required": false,
+                    "defaultValue": "DMS_GLOBAL_V200",
+                    "regList": [],
+                    "changeTag": true,
+                    "searchSource": false,
+                    "status": 0,
+                    "dataType": [
+                      "macro"
+                    ],
+                    "formId": 192,
+                    "renderKey": "1921724069278002",
+                    "saveWay": "macro",
+                    "originValue": "DMS_GLOBAL_V200",
+                    "emptyValue": "JLSP_3MIC_MODE2",
+                    "formItemWidth": "",
+                    "tip": "",
+                    "uuid": "TCFG_AUDIO_DMS_GLOBAL_VERSION",
+                    "eventField": [],
+                    "tipAlways": true
+                  },
+                  "__slot__": {
+                    "options": [
+                      {
+                        "label": "V1.0.0",
+                        "value": "DMS_GLOBAL_V100",
+                        "hide": false,
+                        "disabled": false
+                      },
+                      {
+                        "label": "V2.0.0",
+                        "value": "DMS_GLOBAL_V200",
+                        "hide": false,
+                        "disabled": false
+                      }
+                    ]
+                  },
+                  "placeholder": "请选择2micDNS算法选择",
+                  "style": {
+                    "width": ""
+                  },
+                  "clearable": false,
+                  "disabled": false,
+                  "filterable": false,
+                  "multiple": false,
+                  "id": "id_1724071241187_2",
+                  "__vModel__": "field192"
+                },
+                {
+                  "__config__": {
+                    "label": "3mic算法选择",
+                    "showLabel": true,
+                    "labelWidth": 150,
+                    "tag": "el-select",
+                    "tagIcon": "select",
+                    "layout": "colFormItem",
+                    "span": 24,
+                    "required": false,
+                    "defaultValue": "JLSP_3MIC_MODE2",
+                    "regList": [],
+                    "changeTag": true,
+                    "searchSource": false,
+                    "status": 0,
+                    "dataType": [
+                      "macro"
+                    ],
+                    "formId": 169,
+                    "renderKey": "1691715915753252",
+                    "saveWay": "macro",
+                    "originValue": "JLSP_3MIC_MODE2",
+                    "emptyValue": "JLSP_3MIC_MODE2",
+                    "formItemWidth": "",
+                    "tip": "",
+                    "uuid": "TCFG_3MIC_MODE_SEL",
+                    "eventField": [],
+                    "tipAlways": true
+                  },
+                  "__slot__": {
+                    "options": [
+                      {
+                        "label": "模式一",
+                        "value": "JLSP_3MIC_MODE1",
+                        "hide": false,
+                        "disabled": false
+                      },
+                      {
+                        "label": "模式二",
+                        "value": "JLSP_3MIC_MODE2",
+                        "hide": false,
+                        "disabled": false
+                      }
+                    ]
+                  },
+                  "placeholder": "请选择3mic算法选择",
+                  "style": {
+                    "width": ""
+                  },
+                  "clearable": false,
+                  "disabled": false,
+                  "filterable": false,
+                  "multiple": false,
+                  "id": "id_1724071243187_3",
+                  "__vModel__": "field169"
+                }
+              ],
+              "eventField": [],
+              "uuid": ""
+            },
+            "type": "default",
+            "justify": "start",
+            "align": "top",
+            "style": {
+              "height": "100px",
+              "paddingLeft": "0px"
+            },
+            "id": "id_1724071237235_0"
+          },
+          {
+            "__config__": {
+              "layout": "rowFormItem",
+              "tag": "group",
+              "tagIcon": "row",
+              "layoutTree": true,
+              "componentName": "MUSIC_PLC配置",
+              "enableUuid": "",
+              "showComponentName": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "status": 0,
+              "template": "",
+              "span": 24,
+              "formId": 147,
+              "renderKey": "1471718094644300",
+              "children": [
+                {
+                  "__config__": {
+                    "label": "PLC类型选择",
+                    "showLabel": true,
+                    "labelWidth": 110,
+                    "tag": "el-select",
+                    "tagIcon": "select",
+                    "layout": "colFormItem",
+                    "span": 24,
+                    "required": false,
+                    "defaultValue": 0,
+                    "regList": [],
+                    "changeTag": true,
+                    "searchSource": false,
+                    "status": 0,
+                    "dataType": [
+                      "macro"
+                    ],
+                    "formId": 148,
+                    "renderKey": "1481718094644300",
+                    "saveWay": "macro",
+                    "originValue": 0,
+                    "emptyValue": "0",
+                    "formItemWidth": "40%",
+                    "tip": "PLC 的advanced 比 lite 版本消耗资源多一些",
+                    "uuid": "TCFG_MUSIC_PLC_YPE",
+                    "eventField": []
+                  },
+                  "__slot__": {
+                    "options": [
+                      {
+                        "label": "PLC_LITE",
+                        "value": 1,
+                        "hide": false,
+                        "disabled": false
+                      },
+                      {
+                        "label": "PLC_ADVANCED",
+                        "value": 0,
+                        "hide": false,
+                        "disabled": false
+                      }
+                    ]
+                  },
+                  "placeholder": "PLC类型选择",
+                  "style": {
+                    "width": ""
+                  },
+                  "clearable": false,
+                  "disabled": false,
+                  "filterable": false,
+                  "multiple": false,
+                  "id": "id_1718094644300_2",
+                  "__vModel__": "field148"
+                }
+              ],
+              "eventField": [],
+              "uuid": ""
+            },
+            "type": "default",
+            "justify": "start",
+            "align": "top",
+            "style": {
+              "height": "60px",
+              "paddingLeft": "0px"
+            },
+            "id": "id_1718094644300_1",
+            "show-text": false
+          }
+        ],
+        "eventField": [],
+        "showResetBtn": false
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "280px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1718094599180_0"
+    },
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "关键词检测",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "template": "",
+        "span": 24,
+        "formId": 135,
+        "renderKey": "1351671075371041",
+        "children": [
+          {
+            "__config__": {
+              "label": "关键词检测KWS",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 0,
+              "span": 24,
+              "showLabel": true,
+              "labelWidth": 120,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "formId": 134,
+              "renderKey": "1341671075263566",
+              "eventField": [],
+              "paddingLeft": "",
+              "saveWay": "macro",
+              "uuid": "TCFG_KWS_VOICE_RECOGNITION_ENABLE",
+              "formItemWidth": "",
+              "tip": "来电时说yes/no接听或者挂断电话",
+              "tipAlways": true
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1671075263566_0",
+            "__vModel__": "field134"
+          },
+          {
+            "__config__": {
+              "label": "麦克风选择",
+              "showLabel": true,
+              "labelWidth": "",
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 5,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": [
+                "macro"
+              ],
+              "formId": 101,
+              "renderKey": "1011680767276038",
+              "formItemWidth": "",
+              "tipAlways": false,
+              "originValue": "AUDIO_ADC_MIC_0",
+              "defaultValue": "AUDIO_ADC_MIC_0",
+              "saveWay": "macro",
+              "uuid": "TCFG_KWS_MIC_CHA_SELECT",
+              "emptyValue": "AUDIO_ADC_MIC_0",
+              "eventField": []
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "MIC0",
+                  "value": "AUDIO_ADC_MIC_0"
+                },
+                {
+                  "label": "MIC1",
+                  "value": "AUDIO_ADC_MIC_1"
+                },
+                {
+                  "label": "MIC2",
+                  "value": "AUDIO_ADC_MIC_2",
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "MIC3",
+                  "value": "AUDIO_ADC_MIC_3",
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "placeholder": "请选择麦克风选择",
+            "style": {
+              "width": ""
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1680767276038_0",
+            "__vModel__": "field101"
+          }
+        ],
+        "eventField": []
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "60px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1671075371041_1"
+    },
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "离线语音识别",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "template": "",
+        "span": 24,
+        "formId": 139,
+        "renderKey": "1391698803393602",
+        "children": [
+          {
+            "__config__": {
+              "label": "离线语音识别",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 0,
+              "span": 24,
+              "showLabel": true,
+              "labelWidth": 120,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "formId": 140,
+              "renderKey": "1401698803393602",
+              "eventField": [],
+              "paddingLeft": "",
+              "saveWay": "macro",
+              "uuid": "TCFG_SMART_VOICE_ENABLE",
+              "formItemWidth": "",
+              "tip": "通用词条：小杰同学/小杰小杰 、 播放音乐、 暂停播放 、 上一首 、 下一首 、 增大音量 、 减小音量 、  接听电话 、 挂断电话 等",
+              "tipAlways": true
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1698803393602_1",
+            "__vModel__": "field140"
+          },
+          {
+            "__config__": {
+              "label": "回音消除使能",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 0,
+              "span": 24,
+              "showLabel": true,
+              "labelWidth": 120,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "formId": 101,
+              "renderKey": "1011719985168239",
+              "eventField": [],
+              "paddingLeft": "",
+              "saveWay": "macro",
+              "uuid": "TCFG_SMART_VOICE_USE_AEC",
+              "formItemWidth": "",
+              "tip": "需要保证播歌DAC采样率是16k的倍数",
+              "tipAlways": true
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1719985168239_0",
+            "__vModel__": "field101"
+          },
+          {
+            "__config__": {
+              "label": "麦克风选择",
+              "tag": "el-select",
+              "tagIcon": "select",
+              "defaultValue": "AUDIO_ADC_MIC_0",
+              "span": 7,
+              "showLabel": true,
+              "labelWidth": 90,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "macro"
+              ],
+              "formId": 141,
+              "renderKey": "1411698803554056",
+              "eventField": [],
+              "paddingLeft": "",
+              "saveWay": "macro",
+              "uuid": "TCFG_SMART_VOICE_MIC_CH_SEL",
+              "formItemWidth": "",
+              "tip": "",
+              "originValue": "AUDIO_ADC_MIC_0"
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "MIC0",
+                  "value": "AUDIO_ADC_MIC_0",
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "MIC1",
+                  "value": "AUDIO_ADC_MIC_1",
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "MIC2",
+                  "value": "AUDIO_ADC_MIC_2",
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "MIC3",
+                  "value": "AUDIO_ADC_MIC_3",
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "placeholder": "请选择下拉选择",
+            "style": {},
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1698803554056_2",
+            "__vModel__": "field141"
+          },
+          {
+            "__config__": {
+              "label": "模式选择",
+              "tag": "el-select",
+              "tagIcon": "select",
+              "defaultValue": "KWS_CH",
+              "span": 7,
+              "showLabel": true,
+              "labelWidth": 90,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "macro"
+              ],
+              "formId": 143,
+              "renderKey": "1431698803613085",
+              "eventField": [],
+              "paddingLeft": "",
+              "saveWay": "macro",
+              "uuid": "TCFG_AUDIO_KWS_LANGUAGE_SEL",
+              "formItemWidth": "",
+              "tip": "远场语音识别需要授权才可以正常使用，没有授权单次只能体验20分钟",
+              "originValue": "KWS_CH",
+              "tipAlways": false
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "近场语音识别",
+                  "value": "KWS_CH",
+                  "hide": false,
+                  "disabled": false
+                },
+                {
+                  "label": "远场语音识别",
+                  "value": "KWS_FAR_CH",
+                  "hide": false,
+                  "disabled": false
+                }
+              ]
+            },
+            "placeholder": "请选择下拉选择",
+            "style": {},
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1698803613085_4",
+            "__vModel__": "field143"
+          }
+        ],
+        "eventField": []
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "100px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1698803393602_0"
+    },
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "解码相关配置",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "template": "",
+        "span": 24,
+        "formId": 128,
+        "renderKey": "1281676941434369",
+        "children": [
+          {
+            "__config__": {
+              "layout": "rowFormItem",
+              "tag": "group",
+              "tagIcon": "row",
+              "layoutTree": true,
+              "componentName": "通用解码格式",
+              "enableUuid": "",
+              "showComponentName": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "status": 0,
+              "template": "",
+              "hideAddTemplate": false,
+              "span": 24,
+              "formId": 140,
+              "renderKey": "1401693547387581",
+              "children": [
+                {
+                  "__config__": {
+                    "label": "WAV",
+                    "tag": "el-switch",
+                    "tagIcon": "switch",
+                    "defaultValue": 1,
+                    "span": 5,
+                    "showLabel": true,
+                    "labelWidth": 60,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "formId": 131,
+                    "renderKey": "1311676941780679",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_DEC_WAV_ENABLE",
+                    "originValue": 1
+                  },
+                  "style": {},
+                  "disabled": false,
+                  "active-text": "",
+                  "inactive-text": "",
+                  "active-color": null,
+                  "inactive-color": null,
+                  "active-value": 1,
+                  "inactive-value": 0,
+                  "id": "id_1676941780679_3",
+                  "__vModel__": "field131"
+                },
+                {
+                  "__config__": {
+                    "label": "MP3",
+                    "tag": "el-switch",
+                    "tagIcon": "switch",
+                    "defaultValue": 1,
+                    "span": 5,
+                    "showLabel": true,
+                    "labelWidth": 60,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "formId": 132,
+                    "renderKey": "1321676941819665",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_DEC_MP3_ENABLE",
+                    "originValue": 1
+                  },
+                  "style": {},
+                  "disabled": false,
+                  "active-text": "",
+                  "inactive-text": "",
+                  "active-color": null,
+                  "inactive-color": null,
+                  "active-value": 1,
+                  "inactive-value": 0,
+                  "id": "id_1676941819665_4",
+                  "__vModel__": "field132"
+                },
+                {
+                  "__config__": {
+                    "label": "FLAC",
+                    "tag": "el-switch",
+                    "tagIcon": "switch",
+                    "defaultValue": 1,
+                    "span": 5,
+                    "showLabel": true,
+                    "labelWidth": 60,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "formId": 134,
+                    "renderKey": "1341676941860782",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_DEC_FLAC_ENABLE",
+                    "originValue": 1
+                  },
+                  "style": {},
+                  "disabled": false,
+                  "active-text": "",
+                  "inactive-text": "",
+                  "active-color": null,
+                  "inactive-color": null,
+                  "active-value": 1,
+                  "inactive-value": 0,
+                  "id": "id_1676941860782_6",
+                  "__vModel__": "field134"
+                },
+                {
+                  "__config__": {
+                    "label": "WMA",
+                    "tag": "el-switch",
+                    "tagIcon": "switch",
+                    "defaultValue": 1,
+                    "span": 5,
+                    "showLabel": true,
+                    "labelWidth": 60,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "formId": 133,
+                    "renderKey": "1331676941844959",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_DEC_WMA_ENABLE",
+                    "originValue": 1,
+                    "eventField": [],
+                    "tip": "",
+                    "tipAlways": false
+                  },
+                  "style": {},
+                  "disabled": false,
+                  "active-text": "",
+                  "inactive-text": "",
+                  "active-color": null,
+                  "inactive-color": null,
+                  "active-value": 1,
+                  "inactive-value": 0,
+                  "id": "id_1676941844958_5",
+                  "__vModel__": "field133"
+                },
+                {
+                  "__config__": {
+                    "label": "APE",
+                    "tag": "el-switch",
+                    "tagIcon": "switch",
+                    "defaultValue": 1,
+                    "span": 4,
+                    "showLabel": true,
+                    "labelWidth": 60,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "formId": 135,
+                    "renderKey": "1351676941879787",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_DEC_APE_ENABLE",
+                    "originValue": 1
+                  },
+                  "style": {},
+                  "disabled": false,
+                  "active-text": "",
+                  "inactive-text": "",
+                  "active-color": null,
+                  "inactive-color": null,
+                  "active-value": 1,
+                  "inactive-value": 0,
+                  "id": "id_1676941879787_7",
+                  "__vModel__": "field135"
+                },
+                {
+                  "__config__": {
+                    "label": "AAC",
+                    "tag": "el-switch",
+                    "tagIcon": "switch",
+                    "defaultValue": 0,
+                    "span": 5,
+                    "showLabel": true,
+                    "labelWidth": 60,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "formId": 133,
+                    "renderKey": "1331678503771343",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_DEC_AAC_ENABLE",
+                    "originValue": 0
+                  },
+                  "style": {},
+                  "disabled": false,
+                  "active-text": "",
+                  "inactive-text": "",
+                  "active-color": null,
+                  "inactive-color": null,
+                  "active-value": 1,
+                  "inactive-value": 0,
+                  "id": "id_1678503771343_0",
+                  "__vModel__": "field133"
+                }
+              ],
+              "eventField": []
+            },
+            "type": "default",
+            "justify": "start",
+            "align": "top",
+            "style": {
+              "height": "60px",
+              "paddingLeft": "0px"
+            },
+            "id": "id_1693547387581_0"
+          },
+          {
+            "__config__": {
+              "layout": "rowFormItem",
+              "tag": "group",
+              "tagIcon": "row",
+              "layoutTree": true,
+              "componentName": "自定义解码格式",
+              "enableUuid": "",
+              "showComponentName": true,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "status": 0,
+              "template": "",
+              "hideAddTemplate": false,
+              "span": 24,
+              "formId": 141,
+              "renderKey": "1411693547394343",
+              "children": [
+                {
+                  "__config__": {
+                    "label": "F2A",
+                    "tag": "el-switch",
+                    "tagIcon": "switch",
+                    "defaultValue": 0,
+                    "span": 5,
+                    "showLabel": true,
+                    "labelWidth": 60,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "formId": 140,
+                    "renderKey": "1401676942751971",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_DEC_F2A_ENABLE"
+                  },
+                  "style": {},
+                  "disabled": false,
+                  "active-text": "",
+                  "inactive-text": "",
+                  "active-color": null,
+                  "inactive-color": null,
+                  "active-value": 1,
+                  "inactive-value": 0,
+                  "id": "id_1676942751971_12",
+                  "__vModel__": "field140"
+                },
+                {
+                  "__config__": {
+                    "label": "WTG",
+                    "tag": "el-switch",
+                    "tagIcon": "switch",
+                    "defaultValue": 0,
+                    "span": 5,
+                    "showLabel": true,
+                    "labelWidth": 60,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "formId": 132,
+                    "renderKey": "1321677210368177",
+                    "eventField": [],
+                    "saveWay": "macro",
+                    "uuid": "TCFG_DEC_WTG_ENABLE"
+                  },
+                  "style": {},
+                  "disabled": false,
+                  "active-text": "",
+                  "inactive-text": "",
+                  "active-color": null,
+                  "inactive-color": null,
+                  "active-value": 1,
+                  "inactive-value": 0,
+                  "id": "id_1677210368177_0",
+                  "__vModel__": "field132"
+                },
+                {
+                  "__config__": {
+                    "label": "MTY",
+                    "tag": "el-switch",
+                    "tagIcon": "switch",
+                    "defaultValue": 0,
+                    "span": 5,
+                    "showLabel": true,
+                    "labelWidth": 60,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "formId": 129,
+                    "renderKey": "1291676941636341",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_DEC_MTY_ENABLE",
+                    "originValue": 0,
+                    "eventField": []
+                  },
+                  "style": {},
+                  "disabled": false,
+                  "active-text": "",
+                  "inactive-text": "",
+                  "active-color": null,
+                  "inactive-color": null,
+                  "active-value": 1,
+                  "inactive-value": 0,
+                  "id": "id_1676941636341_1",
+                  "__vModel__": "field129"
+                },
+                {
+                  "__config__": {
+                    "label": "WTS",
+                    "tag": "el-switch",
+                    "tagIcon": "switch",
+                    "defaultValue": 0,
+                    "span": 5,
+                    "showLabel": true,
+                    "labelWidth": 60,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "formId": 130,
+                    "renderKey": "1301676941745411",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_DEC_WTS_ENABLE",
+                    "eventField": []
+                  },
+                  "style": {},
+                  "disabled": false,
+                  "active-text": "",
+                  "inactive-text": "",
+                  "active-color": null,
+                  "inactive-color": null,
+                  "active-value": 1,
+                  "inactive-value": 0,
+                  "id": "id_1676941745411_2",
+                  "__vModel__": "field130"
+                },
+                {
+                  "__config__": {
+                    "label": "JLA",
+                    "tag": "el-switch",
+                    "tagIcon": "switch",
+                    "defaultValue": 1,
+                    "span": 4,
+                    "showLabel": true,
+                    "labelWidth": 60,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "status": 0,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "formId": 101,
+                    "renderKey": "1011704162768227",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_DEC_JLA_ENABLE",
+                    "formItemWidth": "",
+                    "eventField": [],
+                    "originValue": 1
+                  },
+                  "style": {},
+                  "disabled": false,
+                  "active-text": "",
+                  "inactive-text": "",
+                  "active-color": null,
+                  "inactive-color": null,
+                  "active-value": 1,
+                  "inactive-value": 0,
+                  "id": "id_1704162768227_0",
+                  "__vModel__": "field101"
+                }
+              ]
+            },
+            "type": "default",
+            "justify": "start",
+            "align": "top",
+            "style": {
+              "height": "60px",
+              "paddingLeft": "0px"
+            },
+            "id": "id_1693547394343_1"
+          }
+        ],
+        "showResetBtn": false,
+        "eventField": [],
+        "tip": "  编解码格式如涉及版权，请自行获取授权",
+        "tipAlways": true
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "100px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1676941434369_0"
+    },
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "编码配置",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "template": "",
+        "span": 24,
+        "formId": 128,
+        "renderKey": "1281676947824134",
+        "children": [
+          {
+            "__config__": {
+              "layout": "rowFormItem",
+              "tag": "group",
+              "tagIcon": "row",
+              "layoutTree": true,
+              "componentName": "row_318",
+              "enableUuid": "",
+              "showComponentName": false,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "status": 0,
+              "template": "",
+              "span": 24,
+              "formId": 318,
+              "renderKey": "3181683637036413",
+              "children": [
+                {
+                  "__config__": {
+                    "label": "MSBC",
+                    "tag": "el-switch",
+                    "tagIcon": "switch",
+                    "defaultValue": 1,
+                    "span": 5,
+                    "showLabel": true,
+                    "labelWidth": 60,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "formId": 129,
+                    "renderKey": "1291676947884969",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_ENC_MSBC_ENABLE ",
+                    "originValue": 1,
+                    "eventField": []
+                  },
+                  "style": {},
+                  "disabled": false,
+                  "active-text": "",
+                  "inactive-text": "",
+                  "active-color": null,
+                  "inactive-color": null,
+                  "active-value": 1,
+                  "inactive-value": 0,
+                  "id": "id_1676947884969_1",
+                  "__vModel__": "field129"
+                },
+                {
+                  "__config__": {
+                    "label": "CVSD",
+                    "tag": "el-switch",
+                    "tagIcon": "switch",
+                    "defaultValue": 1,
+                    "span": 5,
+                    "showLabel": true,
+                    "labelWidth": 60,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "formId": 130,
+                    "renderKey": "1301676947996732",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_ENC_CVSD_ENABLE ",
+                    "originValue": 1,
+                    "eventField": []
+                  },
+                  "style": {},
+                  "disabled": false,
+                  "active-text": "",
+                  "inactive-text": "",
+                  "active-color": null,
+                  "inactive-color": null,
+                  "active-value": 1,
+                  "inactive-value": 0,
+                  "id": "id_1676947996732_2",
+                  "__vModel__": "field130"
+                },
+                {
+                  "__config__": {
+                    "label": "JLA",
+                    "tag": "el-switch",
+                    "tagIcon": "switch",
+                    "defaultValue": 1,
+                    "span": 5,
+                    "showLabel": true,
+                    "labelWidth": 60,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "status": 0,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "formId": 102,
+                    "renderKey": "1021704162902831",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_ENC_JLA_ENABLE",
+                    "originValue": 1,
+                    "eventField": []
+                  },
+                  "style": {},
+                  "disabled": false,
+                  "active-text": "",
+                  "inactive-text": "",
+                  "active-color": null,
+                  "inactive-color": null,
+                  "active-value": 1,
+                  "inactive-value": 0,
+                  "id": "id_1704162902831_1",
+                  "__vModel__": "field102"
+                },
+                {
+                  "__config__": {
+                    "label": "SBC",
+                    "tag": "el-switch",
+                    "tagIcon": "switch",
+                    "defaultValue": 0,
+                    "span": 5,
+                    "showLabel": true,
+                    "labelWidth": 60,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "status": 0,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "formId": 139,
+                    "renderKey": "1391708573065438",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_ENC_SBC_ENABLE",
+                    "eventField": []
+                  },
+                  "style": {},
+                  "disabled": false,
+                  "active-text": "",
+                  "inactive-text": "",
+                  "active-color": null,
+                  "inactive-color": null,
+                  "active-value": 1,
+                  "inactive-value": 0,
+                  "id": "id_1708573065438_0",
+                  "__vModel__": "field139"
+                },
+                {
+                  "__config__": {
+                    "label": "AMR",
+                    "tag": "el-switch",
+                    "tagIcon": "switch",
+                    "defaultValue": 0,
+                    "span": 5,
+                    "showLabel": true,
+                    "labelWidth": 60,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "status": 0,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "formId": 158,
+                    "renderKey": "1581726626277018",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_ENC_AMR_ENABLE",
+                    "eventField": []
+                  },
+                  "style": {},
+                  "disabled": false,
+                  "active-text": "",
+                  "inactive-text": "",
+                  "active-color": null,
+                  "inactive-color": null,
+                  "active-value": 1,
+                  "inactive-value": 0,
+                  "id": "id_1726626277018_0",
+                  "__vModel__": "field158"
+                }
+              ],
+              "eventField": []
+            },
+            "type": "default",
+            "justify": "start",
+            "align": "top",
+            "style": {
+              "height": "50px",
+              "paddingLeft": "0px"
+            },
+            "id": "id_1683637036413_0",
+            "show-text": false
+          },
+          {
+            "__config__": {
+              "layout": "rowFormItem",
+              "tag": "group",
+              "tagIcon": "row",
+              "layoutTree": true,
+              "componentName": "MP3",
+              "enableUuid": "",
+              "showComponentName": false,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "status": 0,
+              "template": "",
+              "span": 24,
+              "formId": 303,
+              "renderKey": "3031683636304752",
+              "children": [
+                {
+                  "__config__": {
+                    "label": "MP3",
+                    "tag": "el-switch",
+                    "tagIcon": "switch",
+                    "defaultValue": 0,
+                    "span": 5,
+                    "showLabel": true,
+                    "labelWidth": 60,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "formId": 131,
+                    "renderKey": "1311676948041450",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_ENC_MP3_ENABLE ",
+                    "eventField": []
+                  },
+                  "style": {},
+                  "disabled": false,
+                  "active-text": "",
+                  "inactive-text": "",
+                  "active-color": null,
+                  "inactive-color": null,
+                  "active-value": 1,
+                  "inactive-value": 0,
+                  "id": "id_1676948041450_3",
+                  "__vModel__": "field131"
+                },
+                {
+                  "__config__": {
+                    "label": "MP3格式选择",
+                    "showLabel": true,
+                    "labelWidth": 120,
+                    "tag": "el-select",
+                    "tagIcon": "select",
+                    "layout": "colFormItem",
+                    "span": 12,
+                    "required": false,
+                    "defaultValue": 0,
+                    "regList": [],
+                    "changeTag": true,
+                    "searchSource": false,
+                    "status": 0,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "formId": 301,
+                    "renderKey": "3011683629502654",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_ENC_MP3_TYPE",
+                    "originValue": 0,
+                    "eventField": [],
+                    "formItemWidth": ""
+                  },
+                  "__slot__": {
+                    "options": [
+                      {
+                        "label": "MP2",
+                        "value": 0,
+                        "hide": false,
+                        "disabled": false
+                      },
+                      {
+                        "label": "MP3",
+                        "value": 1,
+                        "hide": false,
+                        "disabled": false
+                      }
+                    ]
+                  },
+                  "placeholder": "请选择MP3格式",
+                  "style": {
+                    "width": "50%"
+                  },
+                  "clearable": true,
+                  "disabled": false,
+                  "filterable": false,
+                  "multiple": false,
+                  "id": "id_1683629502654_1",
+                  "__vModel__": "field301"
+                }
+              ],
+              "eventField": []
+            },
+            "type": "default",
+            "justify": "start",
+            "align": "top",
+            "style": {
+              "height": "50px",
+              "paddingLeft": "0px"
+            },
+            "id": "id_1683636304752_0",
+            "show-text": false
+          },
+          {
+            "__config__": {
+              "layout": "rowFormItem",
+              "tag": "group",
+              "tagIcon": "row",
+              "layoutTree": true,
+              "componentName": "ADPCM",
+              "enableUuid": "",
+              "showComponentName": false,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "status": 0,
+              "template": "",
+              "span": 24,
+              "formId": 304,
+              "renderKey": "3041683636368448",
+              "children": [
+                {
+                  "__config__": {
+                    "label": "ADPCM",
+                    "tag": "el-switch",
+                    "tagIcon": "switch",
+                    "defaultValue": 0,
+                    "span": 5,
+                    "showLabel": true,
+                    "labelWidth": 60,
+                    "layout": "colFormItem",
+                    "required": false,
+                    "regList": [],
+                    "changeTag": true,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "formId": 132,
+                    "renderKey": "1321676948087318",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_ENC_ADPCM_ENABLE "
+                  },
+                  "style": {},
+                  "disabled": false,
+                  "active-text": "",
+                  "inactive-text": "",
+                  "active-color": null,
+                  "inactive-color": null,
+                  "active-value": 1,
+                  "inactive-value": 0,
+                  "id": "id_1676948087318_4",
+                  "__vModel__": "field132"
+                },
+                {
+                  "__config__": {
+                    "label": "ADPCM格式选择",
+                    "showLabel": true,
+                    "labelWidth": 120,
+                    "tag": "el-select",
+                    "tagIcon": "select",
+                    "layout": "colFormItem",
+                    "span": 12,
+                    "required": false,
+                    "defaultValue": 0,
+                    "regList": [],
+                    "changeTag": true,
+                    "searchSource": false,
+                    "status": 0,
+                    "dataType": [
+                      "8",
+                      "1"
+                    ],
+                    "formId": 302,
+                    "renderKey": "3021683629692524",
+                    "saveWay": "macro",
+                    "uuid": "TCFG_ENC_ADPCM_TYPE",
+                    "originValue": 0,
+                    "formItemWidth": "",
+                    "paddingLeft": ""
+                  },
+                  "__slot__": {
+                    "options": [
+                      {
+                        "label": "MS_ADPCM",
+                        "value": 0,
+                        "hide": false,
+                        "disabled": false
+                      },
+                      {
+                        "label": "IMA_ADPCM",
+                        "value": 1,
+                        "hide": false,
+                        "disabled": false
+                      }
+                    ]
+                  },
+                  "placeholder": "请选择MP3格式ADPCM格式选择",
+                  "style": {
+                    "width": "50%"
+                  },
+                  "clearable": true,
+                  "disabled": false,
+                  "filterable": false,
+                  "multiple": false,
+                  "id": "id_1683629692524_2",
+                  "__vModel__": "field302"
+                }
+              ]
+            },
+            "type": "default",
+            "justify": "start",
+            "align": "top",
+            "style": {
+              "height": "50px",
+              "paddingLeft": "0px"
+            },
+            "id": "id_1683636368448_1"
+          }
+        ],
+        "eventField": [],
+        "tip": "  编解码格式如涉及版权，请自行获取授权",
+        "tipAlways": true
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "300px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1676947824134_0"
+    },
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "DATA EXPORT配置",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [
+          "8",
+          "1"
+        ],
+        "template": "",
+        "span": 24,
+        "formId": 160,
+        "renderKey": "1601710830846458",
+        "children": [
+          {
+            "__config__": {
+              "label": "串口发送引脚",
+              "showLabel": true,
+              "labelWidth": 130,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 6,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": [
+                "macro"
+              ],
+              "formId": 162,
+              "renderKey": "1621710830846458",
+              "saveWay": "macro",
+              "uuid": "TCFG_DATA_EXPORT_UART_TX_PORT",
+              "originValue": "IO_PORT_DM",
+              "defaultValue": "IO_PORT_DM",
+              "emptyValue": "IO_PORT_DM",
+              "eventField": [
+                "device",
+                "gpio"
+              ],
+              "tipAlways": false
+            },
+            "__slot__": {
+              "options": []
+            },
+            "placeholder": "请选择串口发送引脚",
+            "style": {
+              "width": ""
+            },
+            "clearable": false,
+            "disabled": false,
+            "filterable": true,
+            "multiple": false,
+            "id": "id_1710830931602_6",
+            "__vModel__": "field162",
+            "searchSource": true
+          },
+          {
+            "__config__": {
+              "label": "串口波特率",
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 2000000,
+              "span": 6,
+              "showLabel": true,
+              "labelWidth": 130,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "dataType": [
+                "1",
+                "32"
+              ],
+              "formId": 163,
+              "renderKey": "1631710830846458",
+              "uuid": "TCFG_DATA_EXPORT_UART_BAUDRATE",
+              "saveWay": "macro",
+              "originValue": 2000000,
+              "emptyValue": "1000000",
+              "eventField": []
+            },
+            "placeholder": "计数器",
+            "min": 1000000,
+            "max": 9000000,
+            "step": 1000000,
+            "step-strictly": false,
+            "precision": 0,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1710830982756_7",
+            "__vModel__": "field163"
+          }
+        ],
+        "eventField": []
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "60px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1710830910571_5"
+    }
+  ],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 12,
+  "formBtns": false,
+  "maxFormId": 300
+}

@@ -1,0 +1,561 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "LINEIN使能配置",
+        "enableUuid": "",
+        "showComponentName": true,
+        "dataType": [],
+        "template": "",
+        "span": 24,
+        "formId": 125,
+        "renderKey": "1251671070268689",
+        "children": [
+          {
+            "__config__": {
+              "label": "LINEIN 使能",
+              "tag": "el-checkbox-group",
+              "tagIcon": "checkbox",
+              "defaultValue": [
+                1,
+                2
+              ],
+              "span": 24,
+              "showLabel": true,
+              "labelWidth": null,
+              "layout": "colFormItem",
+              "optionType": "default",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "border": false,
+              "dataType": [
+                "32",
+                "1"
+              ],
+              "formId": 126,
+              "renderKey": "1261671070296872",
+              "eventField": [],
+              "saveWay": "bin",
+              "originValue": [
+                1,
+                2
+              ],
+              "unsupportDebug": true
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "LINEIN 0",
+                  "value": 1
+                },
+                {
+                  "label": "LINEIN 1",
+                  "value": 2
+                },
+                {
+                  "label": "LINEIN 2",
+                  "value": 4
+                },
+                {
+                  "label": "LINEIN 3",
+                  "value": 8
+                }
+              ]
+            },
+            "style": {
+              "width": "100%"
+            },
+            "size": "medium",
+            "max": 3,
+            "disabled": false,
+            "id": "id_1671070296872_1",
+            "__vModel__": "field126"
+          }
+        ],
+        "eventField": [],
+        "saveWay": "bin"
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "30px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1671070268689_0"
+    },
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "LINEIN0 配置",
+        "showComponentName": true,
+        "dataType": [],
+        "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+        "template": "",
+        "span": 24,
+        "formId": 101,
+        "renderKey": "1011648192624776",
+        "children": [
+          {
+            "__config__": {
+              "label": "增益",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": "",
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 10,
+              "span": 11,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+              "formId": 102,
+              "renderKey": "1021648192653566",
+              "saveWay": "bin",
+              "tipAlways": true,
+              "eventField": [],
+              "formItemWidth": "250px",
+              "originValue": 10
+            },
+            "placeholder": "增益",
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1675824280474_155",
+            "__vModel__": "field102",
+            "min": 0,
+            "max": 19,
+            "precision": 0
+          },
+          {
+            "__config__": {
+              "label": "前级增益",
+              "showLabel": true,
+              "labelWidth": "",
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 11,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "formId": 128,
+              "renderKey": "1281671073072823",
+              "eventField": [],
+              "defaultValue": 1,
+              "tipAlways": false,
+              "saveWay": "bin",
+              "formItemWidth": "250px",
+              "originValue": 1
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "0dB",
+                  "value": 0
+                },
+                {
+                  "label": "6dB",
+                  "value": 1
+                }
+              ]
+            },
+            "placeholder": "MIC前级增益MIC前级增益MIC前级增益前级增益",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1671073072823_3",
+            "__vModel__": "field128"
+          }
+        ],
+        "saveWay": "bin",
+        "uuid": "",
+        "eventField": []
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "100px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1675824280474_161"
+    },
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "LINEIN1 配置",
+        "showComponentName": true,
+        "dataType": [],
+        "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+        "template": "",
+        "span": 24,
+        "formId": 125,
+        "renderKey": "1251671176268890",
+        "children": [
+          {
+            "__config__": {
+              "label": "增益",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": "",
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 10,
+              "span": 11,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+              "formId": 127,
+              "renderKey": "1271671176268890",
+              "saveWay": "bin",
+              "tipAlways": true,
+              "eventField": [],
+              "formItemWidth": "250px"
+            },
+            "placeholder": "增益",
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1671176268890_12",
+            "__vModel__": "field127",
+            "min": 0,
+            "max": 19,
+            "precision": 0
+          },
+          {
+            "__config__": {
+              "label": "前级增益",
+              "showLabel": true,
+              "labelWidth": "",
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 11,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "formId": 128,
+              "renderKey": "1281671176268890",
+              "eventField": [],
+              "defaultValue": 1,
+              "tipAlways": false,
+              "saveWay": "bin",
+              "formItemWidth": "250px",
+              "originValue": 1
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "0dB",
+                  "value": 0
+                },
+                {
+                  "label": "6dB",
+                  "value": 1
+                }
+              ]
+            },
+            "placeholder": "MIC前级增益MIC前级增益MIC前级增益前级增益",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1671176268890_13",
+            "__vModel__": "field128"
+          }
+        ],
+        "saveWay": "bin",
+        "uuid": "",
+        "eventField": []
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "100px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1671176268890_10"
+    },
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "LINEIN2 配置",
+        "showComponentName": true,
+        "dataType": [],
+        "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+        "template": "",
+        "span": 24,
+        "formId": 153,
+        "renderKey": "1531673164303524",
+        "children": [
+          {
+            "__config__": {
+              "label": "增益",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": "",
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 10,
+              "span": 11,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+              "formId": 155,
+              "renderKey": "1551673164303524",
+              "saveWay": "bin",
+              "tipAlways": true,
+              "eventField": [],
+              "formItemWidth": "250px"
+            },
+            "placeholder": "增益",
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1673164303524_2",
+            "__vModel__": "field155",
+            "min": 0,
+            "max": 19,
+            "precision": 0
+          },
+          {
+            "__config__": {
+              "label": "前级增益",
+              "showLabel": true,
+              "labelWidth": "",
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 11,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "formId": 156,
+              "renderKey": "1561673164303524",
+              "eventField": [],
+              "defaultValue": 1,
+              "tipAlways": false,
+              "saveWay": "bin",
+              "formItemWidth": "250px",
+              "originValue": 1
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "0dB",
+                  "value": 0
+                },
+                {
+                  "label": "6dB",
+                  "value": 1
+                }
+              ]
+            },
+            "placeholder": "MIC前级增益MIC前级增益MIC前级增益前级增益",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1673164303524_3",
+            "__vModel__": "field156"
+          }
+        ],
+        "saveWay": "bin",
+        "uuid": "",
+        "eventField": []
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "100px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1673164303524_0"
+    },
+    {
+      "__config__": {
+        "layout": "rowFormItem",
+        "tag": "group",
+        "tagIcon": "row",
+        "layoutTree": true,
+        "componentName": "LINEIN3 配置",
+        "showComponentName": true,
+        "dataType": [],
+        "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+        "template": "",
+        "span": 24,
+        "formId": 162,
+        "renderKey": "1621673164306360",
+        "children": [
+          {
+            "__config__": {
+              "label": "增益",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": "",
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 10,
+              "span": 11,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+              "formId": 164,
+              "renderKey": "1641673164306360",
+              "saveWay": "bin",
+              "tipAlways": true,
+              "eventField": [],
+              "formItemWidth": "250px"
+            },
+            "placeholder": "增益",
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1673164306360_11",
+            "__vModel__": "field164",
+            "min": 0,
+            "max": 19,
+            "precision": 0
+          },
+          {
+            "__config__": {
+              "label": "前级增益",
+              "showLabel": true,
+              "labelWidth": "",
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 11,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": [
+                "8",
+                "1"
+              ],
+              "formId": 165,
+              "renderKey": "1651673164306360",
+              "eventField": [],
+              "defaultValue": 1,
+              "tipAlways": false,
+              "saveWay": "bin",
+              "formItemWidth": "250px",
+              "originValue": 1
+            },
+            "__slot__": {
+              "options": [
+                {
+                  "label": "0dB",
+                  "value": 0
+                },
+                {
+                  "label": "6dB",
+                  "value": 1
+                }
+              ]
+            },
+            "placeholder": "MIC前级增益MIC前级增益MIC前级增益前级增益",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1673164306360_12",
+            "__vModel__": "field165"
+          }
+        ],
+        "saveWay": "bin",
+        "uuid": "",
+        "eventField": []
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+        "height": "100px",
+        "paddingLeft": "0px"
+      },
+      "id": "id_1673164306360_9"
+    }
+  ],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "small",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 24,
+  "formBtns": false
+}

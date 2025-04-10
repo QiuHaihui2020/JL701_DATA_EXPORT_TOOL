@@ -1,0 +1,17 @@
+# 信号发生器（SignalGen 和 SignalGenSource）
+
+## 功能介绍
+
+产生静音、正弦波、或者白噪声信号，替换pcm数据或者叠加到pcm数据中
+
+### SignalGen参数介绍
+* **Process Type**：信号处理方式 Mix:叠加到数据流内， Replace:替换数据
+* **Signal Type**：产生的信号类型 Slience:静音， Sine Wave:正弦波，White Noise:白噪声
+* **Center Frequcncy**：生成正弦波的中心频率
+* **Gain**：减少dB数
+
+### SignalGen Source参数介绍
+* **Signal Type**：产生的信号类型 Slience:静音， Sine Wave:正弦波，White Noise:白噪声
+* **Center Frequcncy**：生成正弦波的中心频率
+* **Gain**：减少dB数
+

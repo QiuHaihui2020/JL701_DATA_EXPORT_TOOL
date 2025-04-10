@@ -1,0 +1,1868 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>杰理UI使用说明 &mdash; JL Project Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="https://doc.zh-jieli.com/static/css/custom.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=fa47ad08"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="https://doc.zh-jieli.com/static/js/custom.js"></script>
+        <script src="../../../../_static/js/custom.js?v=bfa33168"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html">
+            
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">SDK入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/index.html">1. 快速入门</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">SDK Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../soundbox/index.html">1. SDK 详细介绍</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../audio/index.html">1. 音频播放</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../btstack/index.html">2. 蓝牙协议栈</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../driver/index.html">3. 外设驱动</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../driver/pmu/index.html">4. 电源管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../led_ui/index.html">5. LED状态显示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/file_system/index.html">6. 文件系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/os/index.html">7. 操作系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/timer/index.html">8. 定时器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/clock_manage/index.html">9. 时钟管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev_manager/index.html">10. 设备管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/%E9%80%9A%E7%94%A8%E7%BB%84%E4%BB%B6/index.html">11. 通用组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../audio_config/index.html">12. 音频配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../audio_flow/index.html">13. 音频流程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../audio_effects/index.html">14. 音效调试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../audio_cvp/index.html">15. 通话清晰语音</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/report/index.html">16. 系统状态报告</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../system/ui/index.html">17. UI 框架</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">JieLi_蓝牙音频</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">杰理UI使用说明</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ui">
+<h1>杰理UI使用说明<a class="headerlink" href="#ui" title="Link to this heading"></a></h1>
+</section>
+<section id="id1">
+<h1>编写目的<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>该文档主要介绍了ui接口的使用，以及接口使用上的一些注意事项</p></li>
+</ul>
+</section>
+<section id="id2">
+<h1>功能概述<a class="headerlink" href="#id2" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>在显示屏上显示图形文字等内容，实现人机交互界面</p></li>
+</ul>
+</section>
+<section id="id3">
+<h1>UI模块接口<a class="headerlink" href="#id3" title="Link to this heading"></a></h1>
+<section id="id4">
+<h2>显示页面<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<section id="id5">
+<h3>功能介绍<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>显示指定ID号的页面</p></li>
+</ul>
+</section>
+<section id="id6">
+<h3>接口介绍<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_show_main(int id); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>显示指定页面</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>id : 页面的id号</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：显示成功 其他：显示失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>ui_show_main(PAGE_0); //PAGE_0为页面的ID号，参考style.h文件</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>lcd_ui_api.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id7">
+<h2>隐藏页面<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<section id="id8">
+<h3>功能介绍<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>隐藏指定ID号的页面</p></li>
+</ul>
+</section>
+<section id="id9">
+<h3>接口介绍<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_hide_main(int id); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>隐藏指定页面</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>id : 页面的id号</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：隐藏成功 其他:隐藏失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>ui_hide_main(PAGE_0); //PAGE_0为页面的ID号，参考style.h文件</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>lcd_ui_api.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id10">
+<h2>隐藏当前页面<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<section id="id11">
+<h3>功能介绍<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>用于隐藏当前的页面，用户无须关心当前页面的id号</p></li>
+</ul>
+</section>
+<section id="id12">
+<h3>接口介绍<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_hide_curr_main(); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>隐藏当前页面</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>id : 页面的id号</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：隐藏成功 其他:隐藏失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>ui_hide_curr_main();</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>lcd_ui_api.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id">
+<h2>获取当前页面ID<a class="headerlink" href="#id" title="Link to this heading"></a></h2>
+<section id="id13">
+<h3>功能介绍<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>获取当前页面的id</p></li>
+</ul>
+</section>
+<section id="id14">
+<h3>接口介绍<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_get_current_window_id(); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>获取当前页面的id号</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>当前页面的id号</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>int curr_id = ui_get_current_window_id();</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>lcd_ui_api.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id15">
+<h2>显示控件<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
+<section id="id16">
+<h3>功能介绍<a class="headerlink" href="#id16" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>将指定id的控件显示出来</p></li>
+</ul>
+</section>
+<section id="id17">
+<h3>接口介绍<a class="headerlink" href="#id17" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_show(int id); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>显示控件</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>id：控件的id号</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>//显示图片控件, PIC_1为控件的ID号，参考style_JL_new.h <br /> ui_show(PIC_1);</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>lcd_ui_api.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id18">
+<h2>隐藏控件<a class="headerlink" href="#id18" title="Link to this heading"></a></h2>
+<section id="id19">
+<h3>功能介绍<a class="headerlink" href="#id19" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>将指定id的控件隐藏</p></li>
+</ul>
+</section>
+<section id="id20">
+<h3>接口介绍<a class="headerlink" href="#id20" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_hide(int id); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>隐藏控件</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>id：控件的id号</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>//隐藏图片控件, PIC_1为控件的ID号，参考style_JL_new.h <br /> ui_hide(PIC_1);</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>lcd_ui_api.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id21">
+<h2>锁住触摸焦点控件<a class="headerlink" href="#id21" title="Link to this heading"></a></h2>
+<section id="id22">
+<h3>功能介绍<a class="headerlink" href="#id22" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>将当前控件设置为焦点控件，当有触摸事件发生时，会将触摸事件发送给焦点控件</p></li>
+</ul>
+</section>
+<section id="id23">
+<h3>接口介绍<a class="headerlink" href="#id23" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> void ui_ontouch_lock(void *elm); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>锁住触摸焦点控件</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>elm: 控件的句柄</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>lcd_ui_api.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id24">
+<h2>解锁触摸焦点控件<a class="headerlink" href="#id24" title="Link to this heading"></a></h2>
+<section id="id25">
+<h3>功能介绍<a class="headerlink" href="#id25" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>当前控件设置为非焦点控件</p></li>
+</ul>
+</section>
+<section id="id26">
+<h3>接口介绍<a class="headerlink" href="#id26" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> void ui_ontouch_unlock(void *elm); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>解锁触摸焦点控件</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>elm: 控件的句柄</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>lcd_ui_api.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id27">
+<h2>高亮控件<a class="headerlink" href="#id27" title="Link to this heading"></a></h2>
+<section id="id28">
+<h3>功能介绍<a class="headerlink" href="#id28" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>高亮某个控件的显示，表示当前选中状态，一般用于列表控件</p></li>
+</ul>
+</section>
+<section id="id29">
+<h3>接口介绍<a class="headerlink" href="#id29" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_highlight_element_by_id(int id); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>高亮控件</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>id: 控件ID</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>//高亮文本控件, TEXT为控件的ID号，参考style_JL_new.h <br /> ui_highlight_element_by_id(TEXT);</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>lcd_ui_api.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id30">
+<h2>取消高亮控件<a class="headerlink" href="#id30" title="Link to this heading"></a></h2>
+<section id="id31">
+<h3>功能介绍<a class="headerlink" href="#id31" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>取消控件的高亮显示，一般用于列表控件</p></li>
+</ul>
+</section>
+<section id="id32">
+<h3>接口介绍<a class="headerlink" href="#id32" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_no_highlight_element_by_id(int id); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>取消控件高亮</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>id: 控件ID</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>//取消文本控件高亮, TEXT为控件的ID号，参考style_JL_new.h <br /> ui_no_highlight_element_by_id(TEXT);</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>lcd_ui_api.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id33">
+<h2>注册消息响应<a class="headerlink" href="#id33" title="Link to this heading"></a></h2>
+<section id="id34">
+<h3>功能介绍<a class="headerlink" href="#id34" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>注册消息相应回调</p></li>
+</ul>
+</section>
+<section id="id35">
+<h3>接口介绍<a class="headerlink" href="#id35" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_register_msg_handler(int id, const struct uimsg_handl *handler) <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>注册消息响应，用于app与ui进行消息交互</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>id: 页面的ID <br /> struct uimsg_handl { <br />     const char *msg;  <br />     int (*handler)(const char *type, u32 args); <br /> };  <br /> handler: 自定义消息响应</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：注册成功 其他：注册失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>static const struct uimsg_handl ui_msg_handler[] = { <br />     { “music_start”,        music_start     },  <br />     { NULL, NULL }, <br /> };  <br /> 注册消息交互的回调</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>lcd_ui_api.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id36">
+<h2>推送消息<a class="headerlink" href="#id36" title="Link to this heading"></a></h2>
+<section id="id37">
+<h3>功能介绍<a class="headerlink" href="#id37" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>向ui发送自定义消息</p></li>
+</ul>
+</section>
+<section id="id38">
+<h3>接口介绍<a class="headerlink" href="#id38" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_server_msg_post(const char *msg, …); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>向ui发送自定义消息</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>msg: 消息 <br /> …: 参数</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：注册成功 其他：注册失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>lcd_ui_api.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id39">
+<h2>发送按键消息<a class="headerlink" href="#id39" title="Link to this heading"></a></h2>
+<section id="id40">
+<h3>功能介绍<a class="headerlink" href="#id40" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>向ui发送按键消息</p></li>
+</ul>
+</section>
+<section id="id41">
+<h3>接口介绍<a class="headerlink" href="#id41" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_key_msg_post(int key); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>向ui内核发送按键消息，由ui内核进行消息分发</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>key: 按键消息</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：发送成功 其他：发送失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>ui_key_msg_post(key_msg);</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>lcd_ui_api.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id42">
+<h2>发送触摸消息<a class="headerlink" href="#id42" title="Link to this heading"></a></h2>
+<section id="id43">
+<h3>功能介绍<a class="headerlink" href="#id43" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>向ui发送触摸消息</p></li>
+</ul>
+</section>
+<section id="id44">
+<h3>接口介绍<a class="headerlink" href="#id44" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left">  int ui_touch_msg_post(struct touch_event *event); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>向ui内核发送触摸消息，由ui内核进行消息分发</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>struct touch_event { <br />      int event; <br />     int x; <br />     int y;<br /> };  <br /> event:触摸事件</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：发送成功 其他：发送失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>ui_touch_msg_post(&amp;touch_event);</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>lcd_ui_api.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id45">
+<h2>ui控件响应<a class="headerlink" href="#id45" title="Link to this heading"></a></h2>
+<section id="id46">
+<h3>事件类型<a class="headerlink" href="#id46" title="Link to this heading"></a></h3>
+<section id="onchange">
+<h4><em>onchange事件</em><a class="headerlink" href="#onchange" title="Link to this heading"></a></h4>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span><span class="w"> </span><span class="n">element_change_event</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="n">ON_CHANGE_INIT_PROBE</span><span class="p">,</span><span class="w">         </span><span class="c1">//创建控件开始前的准备</span>
+<span class="w">    </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="n">ON_CHANGE_INIT</span><span class="p">,</span><span class="w">				   </span><span class="c1">//创建控件</span>
+<span class="w">    </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="n">ON_CHANGE_TRY_OPEN_DC</span><span class="p">,</span><span class="w">       </span><span class="c1">//尝试打开显示上下文</span>
+<span class="w">    </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="n">ON_CHANGE_FIRST_SHOW</span><span class="p">,</span><span class="w">		   </span><span class="c1">//自创建以来首次显示</span>
+<span class="w">    </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="n">ON_CHANGE_SHOW_PROBE</span><span class="p">,</span><span class="w">		   </span><span class="c1">//显示前</span>
+<span class="w">    </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="n">ON_CHANGE_SHOW</span><span class="p">,</span><span class="w">			   </span><span class="c1">//显示、重绘</span>
+<span class="w">    </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="n">ON_CHANGE_SHOW_POST</span><span class="p">,</span><span class="w">		   </span><span class="c1">//显示后</span>
+<span class="w">    </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="n">ON_CHANGE_HIDE</span><span class="p">,</span><span class="w">			   </span><span class="c1">//隐藏</span>
+<span class="w">    </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="n">ON_CHANGE_HIGHLIGHT</span><span class="p">,</span><span class="w">		   </span><span class="c1">//高亮显示</span>
+<span class="w">    </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="n">ON_CHANGE_RELEASE_PROBE</span><span class="p">,</span><span class="w">	   </span><span class="c1">//销毁前的准备</span>
+<span class="w">    </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="n">ON_CHANGE_RELEASE</span><span class="p">,</span><span class="w">			   </span><span class="c1">//销毁</span>
+<span class="w">    </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="n">ON_CHANGE_ANIMATION_END</span><span class="p">,</span><span class="w">	   </span><span class="c1">//动画播放完毕</span>
+<span class="w">    </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="w"> </span><span class="n">ON_CHANGE_SHOW_COMPLETED</span><span class="p">,</span><span class="w">   </span><span class="c1">//显示完成</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="ontouch">
+<h4><em>ontouch事件</em><a class="headerlink" href="#ontouch" title="Link to this heading"></a></h4>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="n">ELM_EVENT_TOUCH_DOWN</span><span class="p">,</span><span class="w">	     </span><span class="c1">//按下</span>
+<span class="w">		</span><span class="n">ELM_EVENT_TOUCH_MOVE</span><span class="p">,</span><span class="w">      </span><span class="c1">//移动</span>
+<span class="w">		</span><span class="n">ELM_EVENT_TOUCH_R_MOVE</span><span class="p">,</span><span class="w">    </span><span class="c1">//右翻</span>
+<span class="w">		</span><span class="n">ELM_EVENT_TOUCH_L_MOVE</span><span class="p">,</span><span class="w">    </span><span class="c1">//左翻</span>
+<span class="w">		</span><span class="n">ELM_EVENT_TOUCH_D_MOVE</span><span class="p">,</span><span class="w">    </span><span class="c1">//下翻</span>
+<span class="w">		</span><span class="n">ELM_EVENT_TOUCH_U_MOVE</span><span class="p">,</span><span class="w">    </span><span class="c1">//上翻</span>
+<span class="w">		</span><span class="n">ELM_EVENT_TOUCH_HOLD</span><span class="p">,</span><span class="w">       </span><span class="c1">//按住</span>
+<span class="w">		</span><span class="n">ELM_EVENT_TOUCH_UP</span><span class="p">,</span><span class="w">         </span><span class="c1">//抬起</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="onkey">
+<h4><em>onkey事件</em><a class="headerlink" href="#onkey" title="Link to this heading"></a></h4>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="n">KEY_EVENT_CLICK</span><span class="p">,</span><span class="w">    </span><span class="c1">//单击</span>
+<span class="w">		</span><span class="n">KEY_EVENT_LONG</span><span class="p">,</span><span class="w">    </span><span class="c1">//长按</span>
+<span class="w">		</span><span class="n">KEY_EVENT_HOLD</span><span class="p">,</span><span class="w">    </span><span class="c1">//按住</span>
+<span class="w">		</span><span class="n">KEY_EVENT_DOWN</span><span class="p">,</span><span class="w">   </span><span class="c1">//按下</span>
+<span class="w">		</span><span class="n">KEY_EVENT_UP</span><span class="p">,</span><span class="w">      </span><span class="c1">//抬起</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id47">
+<h3>2 回调函数结构<a class="headerlink" href="#id47" title="Link to this heading"></a></h3>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">element_event_handler</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		 </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w">											    </span><span class="c1">//控件ID号</span>
+<span class="w">		 </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">ontouch</span><span class="p">)(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">element_touch_event</span><span class="w"> </span><span class="o">*</span><span class="p">);</span><span class="w">		    </span><span class="c1">//触摸响应函数</span>
+<span class="w">		 </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">onkey</span><span class="p">)(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">element_key_event</span><span class="w"> </span><span class="o">*</span><span class="p">);</span><span class="w">			    </span><span class="c1">//按键响应函数</span>
+<span class="w">		 </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">onchange</span><span class="p">)(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="n">element_change_event</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">);</span><span class="w">  </span><span class="c1">//控件状态变化响应函数</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="id48">
+<h3>注册回调函数模板<a class="headerlink" href="#id48" title="Link to this heading"></a></h3>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm">  * @brief  onchange响应函数</span>
+<span class="cm">  * @param  ctrl ：控件句柄，如需访问控件的变量，则需强制转换成相应控件的类型，比如当前是图片控件的回调，则强制转换为struct ui_pic</span>
+<span class="cm">  * @param  event : 事件类型，比较常用到的是ON_CHANGE_INIT,ON_CHANGE_RELEASE，分别对应控件的初始化与控件的销毁</span>
+<span class="cm">  * @return 0:成功 其他：失败</span>
+<span class="cm">  * @note   该接口禁止使用ui_show、ui_hide</span>
+<span class="cm"> */</span>
+<span class="w"> </span>
+<span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">xxx_onchange</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ctrl</span><span class="p">,</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="n">element_change_event</span><span class="w"> </span><span class="n">event</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">arg</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">ui_pic</span><span class="w"> </span><span class="o">*</span><span class="n">pic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">ui_pic</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">ctrl</span><span class="p">;</span><span class="c1">//根据控件类型进行强制转换，这里假设为图片控件</span>
+
+<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">ON_CHANGE_INIT</span><span class="p">:</span><span class="c1">//控件创建，可在此初始化</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">ON_CHANGE_SHOW</span><span class="p">:</span><span class="c1">//控件显示</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">ON_CHANGE_HIDE</span><span class="p">:</span><span class="c1">//控件隐藏</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">ON_CHANGE_RELEASE</span><span class="p">:</span><span class="c1">//控件销毁</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="k">default</span><span class="o">:</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">FALSE</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">FALSE</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @brief  onkey响应函数</span>
+<span class="cm"> * @param  ctrl ：控件句柄，如需访问控件的变量，需要强制转换成相应控件的结构，比如当前是图片控件的回调，则强制转换为struct ui_pic</span>
+<span class="cm"> * @param  event : 按键事件类型</span>
+<span class="cm"> * @return 0:成功 其他：失败</span>
+<span class="cm"> * @note   该接口可以使用ui_show、ui_hide控制控件的显示与隐藏</span>
+<span class="cm"> */</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">xxx_onkey</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ctrl</span><span class="p">,</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">element_key_event</span><span class="w"> </span><span class="o">*</span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">ui_pic</span><span class="w"> </span><span class="o">*</span><span class="n">pic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">ui_pic</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">ctrl</span><span class="p">;</span><span class="c1">//根据控件类型进行强制转换，这里假设为图片控件</span>
+
+<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="no">KEY_EVENT_CLICK</span><span class="p">:</span>
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">KEY_MENU</span><span class="p">:</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="k">default</span><span class="o">:</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">default</span><span class="o">:</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @brief  ontouch响应函数</span>
+<span class="cm"> * @param  ctrl ：控件句柄，如需访问控件的变量，需要强制转换成相应控件的结构，比如当前是图片控件的回调，则强制转换为struct ui_pic</span>
+<span class="cm"> * @param  event : 触摸事件类型</span>
+<span class="cm"> * @return 0:成功 其他：失败</span>
+<span class="cm"> * @note   该接口可以使用ui_show、ui_hide控制控件的显示与隐藏</span>
+<span class="cm">*/</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">xxx_ontouch</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">ctrl</span><span class="p">,</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">element_touch_event</span><span class="w"> </span><span class="o">*</span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">ui_pic</span><span class="w"> </span><span class="o">*</span><span class="n">pic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">ui_pic</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">ctrl</span><span class="p">;</span><span class="c1">//根据控件类型进行强制转换，这里假设为图片控件</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">ELM_EVENT_TOUCH_R_MOVE</span><span class="p">:</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">ELM_EVENT_TOUCH_L_MOVE</span><span class="p">:</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">ELM_EVENT_TOUCH_D_MOVE</span><span class="p">:</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">ELM_EVENT_TOUCH_U_MOVE</span><span class="p">:</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">ELM_EVENT_TOUCH_DOWN</span><span class="p">:</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">ELM_EVENT_TOUCH_HOLD</span><span class="p">:</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">ELM_EVENT_TOUCH_MOVE</span><span class="p">:</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">ELM_EVENT_TOUCH_UP</span><span class="p">:</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">REGISTER_UI_EVENT_HANDLER</span><span class="p">(</span><span class="n">控件id号</span><span class="p">)</span><span class="w"> </span><span class="c1">//控件id号请参考style.h</span>
+<span class="p">.</span><span class="n">onchange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xxx_onchange</span><span class="p">,</span>
+<span class="w"> </span><span class="p">.</span><span class="n">onkey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xxx_onkey</span><span class="p">,</span>
+<span class="w">  </span><span class="p">.</span><span class="n">ontouch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xxx_ontouch</span><span class="p">,</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="id49">
+<h1>UI控件接口<a class="headerlink" href="#id49" title="Link to this heading"></a></h1>
+<section id="id50">
+<h2>图片控件接口<a class="headerlink" href="#id50" title="Link to this heading"></a></h2>
+<section id="id51">
+<h3>显示图片<a class="headerlink" href="#id51" title="Link to this heading"></a></h3>
+</section>
+<section id="id52">
+<h3>功能介绍<a class="headerlink" href="#id52" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>切换图片列表里的图片</p></li>
+</ul>
+</section>
+<section id="id53">
+<h3>接口介绍<a class="headerlink" href="#id53" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_pic_show_image_by_id(int id, int index); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>在图片列表里切换显示图片</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>id：控件id   index：图片列表中的索引</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_pic.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id54">
+<h2>图片控件初始化<a class="headerlink" href="#id54" title="Link to this heading"></a></h2>
+<section id="id55">
+<h3>功能介绍<a class="headerlink" href="#id55" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>设置需要显示的图片索引</p></li>
+</ul>
+</section>
+<section id="id56">
+<h3>接口介绍<a class="headerlink" href="#id56" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_pic_set_image_index(struct ui_pic *pic, int index); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>在图片控件响应里设置需要显示的图片索引</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>pic:图片控件句柄  index:图片列表索引</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_pic.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id57">
+<h2>列表控件<a class="headerlink" href="#id57" title="Link to this heading"></a></h2>
+<section id="id58">
+<h3>选择列表项<a class="headerlink" href="#id58" title="Link to this heading"></a></h3>
+</section>
+<section id="id59">
+<h3>功能介绍<a class="headerlink" href="#id59" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>设置表格活动项</p></li>
+</ul>
+</section>
+<section id="id60">
+<h3>接口介绍<a class="headerlink" href="#id60" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> void ui_grid_set_item(struct ui_grid *grid,int index); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>设置表格活动项</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>grid：表格控件句柄  index：活动项索引</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_grid.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id61">
+<h3>获取列表项<a class="headerlink" href="#id61" title="Link to this heading"></a></h3>
+</section>
+<section id="id62">
+<h3>功能介绍<a class="headerlink" href="#id62" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>获取当前表格活动项</p></li>
+</ul>
+</section>
+<section id="id63">
+<h3>接口介绍<a class="headerlink" href="#id63" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_grid_cur_item(struct ui_grid *grid); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>获取当前表格活动项</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>grid：表格控件句柄</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_grid.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id64">
+<h2>高亮列表项<a class="headerlink" href="#id64" title="Link to this heading"></a></h2>
+<section id="id65">
+<h3>功能介绍<a class="headerlink" href="#id65" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>高亮指定子项</p></li>
+</ul>
+</section>
+<section id="id66">
+<h3>接口介绍<a class="headerlink" href="#id66" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_grid_highlight_item(struct ui_grid *grid, int item, bool yes); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>高亮指定子项</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>grid：表格控件句柄  item：子项序号 yes：是否高亮</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_grid.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id67">
+<h2>设置列表项焦点<a class="headerlink" href="#id67" title="Link to this heading"></a></h2>
+<section id="id68">
+<h3>功能介绍<a class="headerlink" href="#id68" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>设置表格控件为焦点控件</p></li>
+</ul>
+</section>
+<section id="id69">
+<h3>接口介绍<a class="headerlink" href="#id69" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> void ui_grid_on_focus(struct ui_grid *grid); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>设置表格控件为焦点控件，按键、触摸消息直接发给焦点控件</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>grid：表格控件句柄</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_grid.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id70">
+<h2>取消列表项焦点<a class="headerlink" href="#id70" title="Link to this heading"></a></h2>
+<p>###Ⅰ 功能介绍</p>
+<ul class="simple">
+<li><p>设置表格控件为非焦点控件</p></li>
+</ul>
+<section id="id71">
+<h3>接口介绍<a class="headerlink" href="#id71" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> void ui_grid_lose_focus(struct ui_grid *grid); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>设置表格控件为非焦点控件</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>grid：表格控件句柄</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_grid.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id72">
+<h2>时间控件<a class="headerlink" href="#id72" title="Link to this heading"></a></h2>
+<section id="id73">
+<h3>设置时间<a class="headerlink" href="#id73" title="Link to this heading"></a></h3>
+</section>
+<section id="id74">
+<h3>功能介绍<a class="headerlink" href="#id74" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>设置时间</p></li>
+</ul>
+</section>
+<section id="id75">
+<h3>接口介绍<a class="headerlink" href="#id75" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_time_update_by_id(int id, struct utime *time); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>设置时间</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>id：时间控件ID <br /> struct utime { <br />     u16 year;   //年 <br />      u8 month;  //月 <br />     u8 day;    //日 <br />      u8 hour;   //时  <br />      u8 min;    //分 <br />     u8 sec;    //秒 <br /> };  <br /> time：时间</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_time.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id76">
+<h2>文本控件<a class="headerlink" href="#id76" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>文本控件支持ascii、strpic、text的编码格式。ascii主要用于显示ASCII码的场合，strpic主要用于固定文字的场合，一般用于多国语言的菜单显示。text格式主要用于非固定文字的场合，例如短信，歌词显示等需要字库的支持</p></li>
+</ul>
+<section id="strpic">
+<h3>文本控件初始化（strpic编码格式）<a class="headerlink" href="#strpic" title="Link to this heading"></a></h3>
+</section>
+<section id="id77">
+<h3>功能介绍<a class="headerlink" href="#id77" title="Link to this heading"></a></h3>
+</section>
+<section id="id78">
+<h3>接口介绍<a class="headerlink" href="#id78" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_text_set_index(struct ui_text *text, int index); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>在文字列表里切换显示（strpic编码格式）</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>text：文本控件句柄  index:文字索引</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_text.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id79">
+<h3>显示指定的文本（strpic编码格式）<a class="headerlink" href="#id79" title="Link to this heading"></a></h3>
+</section>
+<section id="id80">
+<h3>功能介绍<a class="headerlink" href="#id80" title="Link to this heading"></a></h3>
+</section>
+<section id="id81">
+<h3>接口介绍<a class="headerlink" href="#id81" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_text_show_index_by_id(int id, int index); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>在文字列表里切换显示（strpic编码格式）</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>id：文本控件id号   index:文字索引</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_text.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ascii">
+<h3>文本控件初始化（ascii编码格式）<a class="headerlink" href="#ascii" title="Link to this heading"></a></h3>
+</section>
+<section id="id82">
+<h3>功能介绍<a class="headerlink" href="#id82" title="Link to this heading"></a></h3>
+</section>
+<section id="id83">
+<h3>接口介绍<a class="headerlink" href="#id83" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_text_set_str(struct ui_text *text, const char *format, const char *str, int strlen, u32 flags); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>ascii编码的初始化函数</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>text：文本控件句柄 <br /> format:格式 <br /> str：ascii编码 <br /> strlen：编码长度 <br /> flags：标志位</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_text.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ascii-ascii">
+<h3>显示指定的ASCII码（ascii编码格式）<a class="headerlink" href="#ascii-ascii" title="Link to this heading"></a></h3>
+</section>
+<section id="id84">
+<h3>功能介绍<a class="headerlink" href="#id84" title="Link to this heading"></a></h3>
+</section>
+<section id="id85">
+<h3>接口介绍<a class="headerlink" href="#id85" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_text_set_str_by_id(int id, const char *format, const char *str); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>显示ascii码（ascii编码格式，ascii字库默认已添加）</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>id：文本控件id <br /> format:格式 <br /> str：ascii编码</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_text.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="text">
+<h3>文本控件初始化（text编码格式）<a class="headerlink" href="#text" title="Link to this heading"></a></h3>
+</section>
+<section id="id86">
+<h3>功能介绍<a class="headerlink" href="#id86" title="Link to this heading"></a></h3>
+</section>
+<section id="id87">
+<h3>接口介绍<a class="headerlink" href="#id87" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> void ui_text_set_text_attrs(struct ui_text *text, const char *str, int strlen, u8 encode, u8 endian, u32 flags); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>text编码的初始化函数</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>text：文本控件句柄 <br /> str：ascii编码 <br /> strlen：编码长度 <br /> encode：编码类型 <br /> endian：大小端 <br /> flags：标志位</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_text.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id88">
+<h3>显示内码（text编码格式）<a class="headerlink" href="#id88" title="Link to this heading"></a></h3>
+</section>
+<section id="id89">
+<h3>功能介绍<a class="headerlink" href="#id89" title="Link to this heading"></a></h3>
+</section>
+<section id="id90">
+<h3>接口介绍<a class="headerlink" href="#id90" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_text_set_text_by_id(int id, const char *str, int strlen, u32 flags);<div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>内码显示接口</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>id：文本控件id <br /> str：内码 <br /> strlen：编码长度 <br /> flags：标志位</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_text.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="unicode-text">
+<h3>显示UNICODE编码（text编码格式）<a class="headerlink" href="#unicode-text" title="Link to this heading"></a></h3>
+</section>
+<section id="id91">
+<h3>功能介绍<a class="headerlink" href="#id91" title="Link to this heading"></a></h3>
+</section>
+<section id="id92">
+<h3>接口介绍<a class="headerlink" href="#id92" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_text_set_textw_by_id(int id, const char *str, int strlen, int endian, u32 flags); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>unicode编码显示接口</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>id：文本控件id <br /> str：unicode编码 <br /> strlen：编码长度 <br /> endian: 大小端 <br />  flags：标志位</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_text.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="utf8-text">
+<h3>显示UTF8编码（text编码格式）<a class="headerlink" href="#utf8-text" title="Link to this heading"></a></h3>
+</section>
+<section id="id93">
+<h3>功能介绍<a class="headerlink" href="#id93" title="Link to this heading"></a></h3>
+</section>
+<section id="id94">
+<h3>接口介绍<a class="headerlink" href="#id94" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_text_set_textu_by_id(int id, const char *str, int strlen, u32 flags); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>utf8编码显示接口</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>id：文本控件id <br /> str：utf8编码 <br /> strlen：编码长度 <br /> flags：标志位</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_text.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id95">
+<h2>电池控件<a class="headerlink" href="#id95" title="Link to this heading"></a></h2>
+<section id="id96">
+<h3>改变所有电池控件的电量状态<a class="headerlink" href="#id96" title="Link to this heading"></a></h3>
+</section>
+<section id="id97">
+<h3>功能介绍<a class="headerlink" href="#id97" title="Link to this heading"></a></h3>
+</section>
+<section id="id98">
+<h3>接口介绍<a class="headerlink" href="#id98" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> void ui_battery_level_change(int persent, int incharge); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>改变所有电池控件的状态</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>persent: 电池电量百分比 <br /> incharge: 是否充电状态</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_battery.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id99">
+<h3>改变指定电池控件的电量状态<a class="headerlink" href="#id99" title="Link to this heading"></a></h3>
+</section>
+<section id="id100">
+<h3>功能介绍<a class="headerlink" href="#id100" title="Link to this heading"></a></h3>
+</section>
+<section id="id101">
+<h3>接口介绍<a class="headerlink" href="#id101" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_battery_set_level_by_id(int id, int persent, int incharge); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>改变指定电池控件的状态</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>persent：电池电量百分比 <br /> incharge: 是否充电状态</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>无</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_battery.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id102">
+<h3>电池控件电量状态初始化<a class="headerlink" href="#id102" title="Link to this heading"></a></h3>
+</section>
+<section id="id103">
+<h3>功能介绍<a class="headerlink" href="#id103" title="Link to this heading"></a></h3>
+</section>
+<section id="id104">
+<h3>接口介绍<a class="headerlink" href="#id104" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_battery_set_level(struct ui_battery *battery, int persent, int incharge); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>改变电池控件的状态</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>battery: 电池控件句柄 <br /> persent：电池电量百分比 <br /> incharge: 是否充电状态</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>//非充电状态，电池电量为30%，根据电量显示相应的电量图标 <br /> ui_battery_set_level(battery, 30, 0);</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_battery.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id105">
+<h2>数字控件<a class="headerlink" href="#id105" title="Link to this heading"></a></h2>
+<section id="id106">
+<h3>设置数字<a class="headerlink" href="#id106" title="Link to this heading"></a></h3>
+</section>
+<section id="id107">
+<h3>功能介绍<a class="headerlink" href="#id107" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>更新数字控件的显示内容</p></li>
+</ul>
+</section>
+<section id="id108">
+<h3>接口介绍<a class="headerlink" href="#id108" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_number_update_by_id(int id, struct unumber *n); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>更新数字显示</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>id：数字控件ID <br />  enum { <br />     TYPE_NUM,		//数字 <br />      TYPE_STRING,	    //数字字符串 <br /> };  <br /> <br /> struct unumber { <br />     u8 numbs;	   //数字个数 <br />     u8 type;		   //类型 <br />     u32 number[2];  //数值，当TYPE_NUM时有效 <br />     u8 *num_str;	   //字符串,当TYPE_STRING时有效 <br /> }; <br /> <br />  n:需要显示的数字参数</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>struct unumber n; <br />  n.type = TYPE_NUM;  <br /> n.numbs = 1; <br />  n.number[0] = 10;  <br /> ui_number_update_by_id(NUMBER,&amp;n);</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_number.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>这个接口的参数需要与数字控件的格式参数对应，比如格式是”%d”,这里就要填数值类型的参数</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id109">
+<h2>滑块控件<a class="headerlink" href="#id109" title="Link to this heading"></a></h2>
+<section id="id110">
+<h3>设置滑动块进度<a class="headerlink" href="#id110" title="Link to this heading"></a></h3>
+</section>
+<section id="id111">
+<h3>功能介绍<a class="headerlink" href="#id111" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>根据百分比更新滑动块的显示位置</p></li>
+</ul>
+</section>
+<section id="id112">
+<h3>接口介绍<a class="headerlink" href="#id112" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_slider_set_persent_by_id(int id, int persent);<div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>设置滑动块进度</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>id：控件id <br /> persent：百分比（0~100%）</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>ui_slider_set_persent_by_id(SLIDER, 20);</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_slider.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id113">
+<h2>圆环进度条控件<a class="headerlink" href="#id113" title="Link to this heading"></a></h2>
+<section id="id114">
+<h3>设置圆环进度<a class="headerlink" href="#id114" title="Link to this heading"></a></h3>
+</section>
+<section id="id115">
+<h3>功能介绍<a class="headerlink" href="#id115" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>更新圆环的显示百分比</p></li>
+</ul>
+</section>
+<section id="id116">
+<h3>接口介绍<a class="headerlink" href="#id116" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_progress_set_persent_by_id(int id, int persent); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>设置圆环进度</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>id：控件id <br /> persent：百分比（0~100%）</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>ui_progress_set_persent_by_id(PROGRESS, 10);</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_progress.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id117">
+<h2>多圆环进度条控件<a class="headerlink" href="#id117" title="Link to this heading"></a></h2>
+<section id="id118">
+<h3>设置第一个圆环进度<a class="headerlink" href="#id118" title="Link to this heading"></a></h3>
+</section>
+<section id="id119">
+<h3>功能介绍<a class="headerlink" href="#id119" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>更新第一个圆环的显示百分比</p></li>
+</ul>
+</section>
+<section id="id120">
+<h3>接口介绍<a class="headerlink" href="#id120" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_multiprogress_set_persent_by_id(int id, int persent); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>设置第一个圆环进度</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>id：多圆环控件ID <br /> persent：进度（0~100%）</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>ui_multiprogress_set_first_persent_by_id(MULTIPROGRESS, 25);</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_progress_multi.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id121">
+<h3>设置第二个圆环进度<a class="headerlink" href="#id121" title="Link to this heading"></a></h3>
+</section>
+<section id="id122">
+<h3>功能介绍<a class="headerlink" href="#id122" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>更新第二个圆环的显示百分比</p></li>
+</ul>
+</section>
+<section id="id123">
+<h3>接口介绍<a class="headerlink" href="#id123" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_multiprogress_set_second_persent_by_id(int id, int percent); <div style="width:380px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>设置第二个圆环进度</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>id：多圆环控件ID <br /> persent：进度（0~100%）</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>ui_multiprogress_set_second_persent_by_id(MULTIPROGRESS, 50);</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_progress_multi.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id124">
+<h3>设置第三个圆环进度<a class="headerlink" href="#id124" title="Link to this heading"></a></h3>
+</section>
+<section id="id125">
+<h3>功能介绍<a class="headerlink" href="#id125" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>更新第三个圆环的显示百分比</p></li>
+</ul>
+</section>
+<section id="id126">
+<h3>接口介绍<a class="headerlink" href="#id126" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_multiprogress_set_third_persent_by_id(int id, int percent); <div style="width:350px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>设置第三个圆环进度</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>id：多圆环控件ID <br /> persent：进度（0~100%）</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>ui_multiprogress_set_third_persent_by_id(MULTIPROGRESS, 30);</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_progress_multi.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id127">
+<h2>模拟时钟控件<a class="headerlink" href="#id127" title="Link to this heading"></a></h2>
+<section id="id128">
+<h3>设置模拟时钟时间<a class="headerlink" href="#id128" title="Link to this heading"></a></h3>
+</section>
+<section id="id129">
+<h3>功能介绍<a class="headerlink" href="#id129" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>更新模拟时钟控件时、分、秒针的位置</p></li>
+</ul>
+</section>
+<section id="id130">
+<h3>接口介绍<a class="headerlink" href="#id130" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数原型</p></th>
+<th class="head"><p><p align="left"> int ui_watch_set_time_by_id(int id, int hour, int min, int sec); <div style="width:350px"></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>功能描述</p></td>
+<td><p>设置模拟时钟时间</p></td>
+</tr>
+<tr class="row-odd"><td><p>参数说明</p></td>
+<td><p>id：时钟控件ID <br /> hour：时 <br /> min：分  <br /> sec：秒</p></td>
+</tr>
+<tr class="row-even"><td><p>输出</p></td>
+<td><p>0：成功 其他：失败</p></td>
+</tr>
+<tr class="row-odd"><td><p>例子</p></td>
+<td><p>ui_watch_set_time_by_id(WATCH, 12, 10,30);</p></td>
+</tr>
+<tr class="row-even"><td><p>关联模块</p></td>
+<td><p>ui_watch.c</p></td>
+</tr>
+<tr class="row-odd"><td><p>补充说明</p></td>
+<td><p>无</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2010-2023, 杰理科技股份有限公司.
+      <span class="lastupdated">Last updated on Oct 12, 2024.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

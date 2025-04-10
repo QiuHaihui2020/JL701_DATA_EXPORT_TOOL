@@ -1,0 +1,2035 @@
+﻿{
+  "fields": [{
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "HDMI ARC配置",
+      "enableUuid": "",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "template": "",
+      "span": 24,
+      "formId": 165,
+      "renderKey": "1651680072902892",
+      "children": [{
+        "__config__": {
+          "label": "源选择-模拟",
+          "showLabel": true,
+          "labelWidth": 100,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 6,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": ["16", "string"],
+          "formId": 163,
+          "renderKey": "1631680072676032",
+          "tip": "自带内部放大",
+          "saveWay": "bin",
+          "eventField": ["device", "gpio", "spdif"],
+          "emptyValue": "0",
+          "defaultValue": "id_1647485267192_84",
+          "originValue": "id_1647485267192_84",
+          "formItemWidth": ""
+        },
+        "__slot__": {
+          "options": []
+        },
+        "placeholder": "请选择源选择-模拟",
+        "style": {
+          "width": "70%"
+        },
+        "clearable": true,
+        "disabled": false,
+        "filterable": false,
+        "multiple": false,
+        "id": "id_1680072676032_7",
+        "__vModel__": "field163",
+        "searchSource": true
+      }, {
+        "__config__": {
+          "label": "源选择-数字",
+          "showLabel": true,
+          "labelWidth": 100,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 6,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": ["16", "string"],
+          "formId": 164,
+          "renderKey": "1641680072721186",
+          "eventField": ["device", "gpio"],
+          "saveWay": "bin",
+          "defaultValue": "",
+          "originValue": "",
+          "uuid": "",
+          "emptyValue": "0",
+          "tip": "需外围放大",
+          "formItemWidth": ""
+        },
+        "__slot__": {
+          "options": []
+        },
+        "placeholder": "IO选择源选择-数字",
+        "style": {
+          "width": "70%"
+        },
+        "clearable": true,
+        "disabled": true,
+        "filterable": false,
+        "multiple": false,
+        "id": "id_1680072721186_8",
+        "__vModel__": "field164",
+        "searchSource": true
+      }, {
+        "__config__": {
+          "label": "插入检测",
+          "labelWidth": 100,
+          "showLabel": true,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "changeTag": true,
+          "defaultValue": 1,
+          "layout": "colFormItem",
+          "span": 6,
+          "optionType": "button",
+          "regList": [],
+          "required": false,
+          "border": false,
+          "dataType": ["8", "1"],
+          "formId": 169,
+          "renderKey": "1691680073679533",
+          "originValue": 1,
+          "emptyValue": "0",
+          "saveWay": "bin",
+          "eventField": [],
+          "formItemWidth": ""
+        },
+        "__slot__": {
+          "options": [{
+            "label": "HDMI-DET",
+            "value": 1
+          }, {
+            "label": "无检测",
+            "value": 0
+          }]
+        },
+        "placeholder": "请选择下拉选择插入检测",
+        "style": {
+          "width": "70%"
+        },
+        "clearable": false,
+        "disabled": false,
+        "filterable": false,
+        "multiple": false,
+        "id": "id_1680073679533_13",
+        "__vModel__": "field169"
+      }, {
+        "__config__": {
+          "label": "HDMI-DET脚",
+          "showLabel": true,
+          "labelWidth": 100,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 6,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": ["16", "string"],
+          "formId": 170,
+          "renderKey": "1701680073924892",
+          "eventField": ["device", "gpio"],
+          "saveWay": "bin",
+          "defaultValue": "id_1647485267192_88",
+          "originValue": "id_1647485267192_88",
+          "uuid": "",
+          "emptyValue": "0",
+          "formItemWidth": ""
+        },
+        "__slot__": {
+          "options": []
+        },
+        "placeholder": "请选择HDMI-DET脚",
+        "style": {
+          "width": "70%"
+        },
+        "clearable": true,
+        "disabled": false,
+        "filterable": false,
+        "multiple": false,
+        "id": "id_1680073924892_14",
+        "__vModel__": "field170",
+        "searchSource": true
+      }, {
+        "__config__": {
+          "label": "HDMI-CEC",
+          "showLabel": true,
+          "labelWidth": 100,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 6,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": ["16", "string"],
+          "formId": 161,
+          "renderKey": "1611680072548380",
+          "eventField": ["device", "gpio"],
+          "saveWay": "bin",
+          "defaultValue": "id_1647485267192_85",
+          "originValue": "id_1647485267192_85",
+          "uuid": "",
+          "emptyValue": "0",
+          "formItemWidth": ""
+        },
+        "__slot__": {
+          "options": []
+        },
+        "placeholder": "请选择HDMI-CEC",
+        "style": {
+          "width": "70%"
+        },
+        "clearable": true,
+        "disabled": false,
+        "filterable": false,
+        "multiple": false,
+        "id": "id_1680072548380_5",
+        "__vModel__": "field161",
+        "searchSource": true
+      }, {
+        "__config__": {
+          "label": "HDMI_IIC_SCL",
+          "showLabel": true,
+          "labelWidth": 100,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 6,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": ["16", "string"],
+          "formId": 166,
+          "renderKey": "1661680072921764",
+          "saveWay": "bin",
+          "eventField": ["device", "gpio"],
+          "emptyValue": "0",
+          "originValue": "id_1647485267192_86",
+          "defaultValue": "id_1647485267192_86",
+          "formItemWidth": ""
+        },
+        "__slot__": {
+          "options": [{
+            "label": "选项一",
+            "value": 1
+          }, {
+            "label": "选项二",
+            "value": 2
+          }]
+        },
+        "placeholder": "SCL_PORTHDMI_IIC_SCL",
+        "style": {
+          "width": "70%"
+        },
+        "clearable": true,
+        "disabled": false,
+        "filterable": false,
+        "multiple": false,
+        "id": "id_1680072921764_10",
+        "__vModel__": "field166",
+        "searchSource": true
+      }, {
+        "__config__": {
+          "label": "HDMI_IIC_SDA",
+          "showLabel": true,
+          "labelWidth": 100,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 6,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": ["16", "string"],
+          "formId": 167,
+          "renderKey": "1671680072927475",
+          "saveWay": "bin",
+          "eventField": ["device", "gpio"],
+          "emptyValue": "0",
+          "originValue": "id_1647485267192_89",
+          "defaultValue": "id_1647485267192_89",
+          "formItemWidth": ""
+        },
+        "__slot__": {
+          "options": [{
+            "label": "选项一",
+            "value": 1
+          }, {
+            "label": "选项二",
+            "value": 2
+          }]
+        },
+        "placeholder": "SDA_PORTHDMI_IIC_SDA",
+        "style": {
+          "width": "70%"
+        },
+        "clearable": true,
+        "disabled": false,
+        "filterable": false,
+        "multiple": false,
+        "id": "id_1680072927475_11",
+        "__vModel__": "field167",
+        "searchSource": true
+      }, {
+        "__config__": {
+          "label": "IIC NUM",
+          "showLabel": true,
+          "labelWidth": 100,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 6,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": ["8", "1"],
+          "formId": 168,
+          "renderKey": "1681680072953639",
+          "originValue": 0,
+          "defaultValue": 0,
+          "emptyValue": "0",
+          "saveWay": "bin",
+          "formItemWidth": ""
+        },
+        "__slot__": {
+          "options": [{
+            "label": "IIC0",
+            "value": 0
+          }, {
+            "label": "IIC1",
+            "value": 1
+          }, {
+            "label": "IIC2",
+            "value": 2
+          }]
+        },
+        "placeholder": "请选择IIC NUM",
+        "style": {
+          "width": "70%"
+        },
+        "clearable": true,
+        "disabled": false,
+        "filterable": false,
+        "multiple": false,
+        "id": "id_1680072953639_12",
+        "__vModel__": "field168"
+      }],
+      "eventField": [],
+      "saveWay": "bin",
+      "uuid": "547"
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "100px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1680072902892_9",
+    "show-text": false
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "COALXIAL配置",
+      "enableUuid": "",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "template": "",
+      "span": 24,
+      "formId": 164,
+      "renderKey": "1641681800847248",
+      "children": [{
+        "__config__": {
+          "label": "源选择-模拟",
+          "showLabel": true,
+          "labelWidth": 100,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 7,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": ["16", "string"],
+          "formId": 165,
+          "renderKey": "1651681800847248",
+          "tip": "自带内部放大",
+          "saveWay": "bin",
+          "eventField": ["device", "gpio", "spdif"],
+          "emptyValue": "0",
+          "originValue": "id_1647485267192_72",
+          "defaultValue": "id_1647485267192_72"
+        },
+        "__slot__": {
+          "options": [{
+            "label": "选项一",
+            "value": 1
+          }, {
+            "label": "选项二",
+            "value": 2
+          }]
+        },
+        "placeholder": "请选择源选择-模拟源选择-模拟源选择-模拟",
+        "style": {
+          "width": "70%"
+        },
+        "clearable": true,
+        "disabled": false,
+        "filterable": false,
+        "multiple": false,
+        "id": "id_1681800847248_4",
+        "__vModel__": "field165",
+        "searchSource": true
+      }, {
+        "__config__": {
+          "label": "源选择-数字",
+          "showLabel": true,
+          "labelWidth": 100,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 7,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": ["16", "string"],
+          "formId": 166,
+          "renderKey": "1661681800847248",
+          "eventField": ["device", "gpio"],
+          "saveWay": "bin",
+          "defaultValue": "",
+          "originValue": "",
+          "uuid": "",
+          "emptyValue": "0",
+          "tip": "需外围放大"
+        },
+        "__slot__": {
+          "options": []
+        },
+        "placeholder": "IO选择源选择-数字",
+        "style": {
+          "width": "70%"
+        },
+        "clearable": true,
+        "disabled": true,
+        "filterable": false,
+        "multiple": false,
+        "id": "id_1681800847248_5",
+        "__vModel__": "field166",
+        "searchSource": true
+      }],
+      "eventField": [],
+      "saveWay": "bin",
+      "uuid": "547"
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "80px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1681800847248_3",
+    "show-text": false
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "OPTIAL配置",
+      "enableUuid": "",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "template": "",
+      "span": 24,
+      "formId": 161,
+      "renderKey": "1611681800818831",
+      "children": [{
+        "__config__": {
+          "label": "源选择-模拟",
+          "showLabel": true,
+          "labelWidth": 100,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 7,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": ["16", "string"],
+          "formId": 162,
+          "renderKey": "1621681800818831",
+          "tip": "自带内部放大",
+          "saveWay": "bin",
+          "eventField": ["device", "gpio", "spdif"],
+          "emptyValue": "0",
+          "originValue": "id_1647485267192_82",
+          "defaultValue": "id_1647485267192_82"
+        },
+        "__slot__": {
+          "options": [{
+            "label": "选项一",
+            "value": 1
+          }, {
+            "label": "选项二",
+            "value": 2
+          }]
+        },
+        "placeholder": "请选择源选择-模拟",
+        "style": {
+          "width": "70%"
+        },
+        "clearable": true,
+        "disabled": false,
+        "filterable": false,
+        "multiple": false,
+        "id": "id_1681800818831_1",
+        "__vModel__": "field162",
+        "searchSource": true
+      }, {
+        "__config__": {
+          "label": "源选择-数字",
+          "showLabel": true,
+          "labelWidth": 100,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 7,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": ["16", "string"],
+          "formId": 163,
+          "renderKey": "1631681800818831",
+          "eventField": ["device", "gpio"],
+          "saveWay": "bin",
+          "defaultValue": "",
+          "originValue": "",
+          "uuid": "",
+          "emptyValue": "0",
+          "tip": "需外围放大"
+        },
+        "__slot__": {
+          "options": []
+        },
+        "placeholder": "IO选择源选择-数字",
+        "style": {
+          "width": "70%"
+        },
+        "clearable": true,
+        "disabled": true,
+        "filterable": false,
+        "multiple": false,
+        "id": "id_1681800818831_2",
+        "__vModel__": "field163",
+        "searchSource": true
+      }],
+      "eventField": [],
+      "saveWay": "bin",
+      "uuid": "547"
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "80px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1681800818831_0",
+    "show-text": false
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "LINEIN配置",
+      "enableUuid": "",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "template": "",
+      "span": 24,
+      "formId": 175,
+      "renderKey": "1751680075839128",
+      "children": [{
+        "__config__": {
+          "layout": "rowFormItem",
+          "tag": "group",
+          "tagIcon": "row",
+          "layoutTree": true,
+          "componentName": "LINEIN检测配置",
+          "enableUuid": "",
+          "showComponentName": true,
+          "dataType": [],
+          "template": "",
+          "span": 24,
+          "formId": 161,
+          "renderKey": "1611681800990227",
+          "children": [{
+            "__config__": {
+              "label": "检测使能",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 1,
+              "span": 24,
+              "showLabel": true,
+              "labelWidth": null,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "dataType": ["8", "1"],
+              "formId": 162,
+              "renderKey": "1621681800990227",
+              "originValue": 1,
+              "eventField": [],
+              "saveWay": "bin"
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1681800990227_9",
+            "__vModel__": "field162"
+          }, {
+            "__config__": {
+              "label": "检测IO选择",
+              "showLabel": true,
+              "labelWidth": null,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 8,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["16", "string"],
+              "formId": 163,
+              "renderKey": "1631681800990227",
+              "eventField": ["device", "gpio"],
+              "saveWay": "bin",
+              "originValue": "id_1647485267192_74",
+              "defaultValue": "id_1647485267192_74",
+              "emptyValue": "0"
+            },
+            "__slot__": {
+              "options": []
+            },
+            "placeholder": "请选择检测IO选择检测IO选择检测IO选择检测IO选择",
+            "style": {
+              "width": "60%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1681800990227_10",
+            "__vModel__": "field163",
+            "searchSource": true
+          }, {
+            "__config__": {
+              "label": "检测IO上拉使能",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 1,
+              "span": 8,
+              "showLabel": true,
+              "labelWidth": null,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "dataType": ["8", "1"],
+              "formId": 164,
+              "renderKey": "1641681800990227",
+              "originValue": 1,
+              "emptyValue": "0",
+              "saveWay": "bin"
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1681800990227_11",
+            "__vModel__": "field164"
+          }, {
+            "__config__": {
+              "label": "检测IO下拉使能",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 0,
+              "span": 8,
+              "showLabel": true,
+              "labelWidth": null,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "dataType": ["8", "1"],
+              "formId": 165,
+              "renderKey": "1651681800990227",
+              "saveWay": "bin"
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1681800990227_12",
+            "__vModel__": "field165"
+          }, {
+            "__config__": {
+              "label": "使能AD检测",
+              "tag": "el-switch",
+              "tagIcon": "switch",
+              "defaultValue": 0,
+              "span": 8,
+              "showLabel": true,
+              "labelWidth": null,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "dataType": ["8", "1"],
+              "formId": 166,
+              "renderKey": "1661681800990227",
+              "eventField": [],
+              "saveWay": "bin",
+              "tip": "使能时确保检测IO具有AD功能",
+              "tipAlways": true
+            },
+            "style": {},
+            "disabled": false,
+            "active-text": "",
+            "inactive-text": "",
+            "active-color": null,
+            "inactive-color": null,
+            "active-value": 1,
+            "inactive-value": 0,
+            "id": "id_1681800990227_13",
+            "__vModel__": "field166"
+          }, {
+            "__config__": {
+              "label": "AD检测时阈值",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": null,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 0,
+              "span": 8,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "dataType": ["1", "16"],
+              "formId": 167,
+              "renderKey": "1671681800990227",
+              "originValue": 0,
+              "tip": "1=0.01V",
+              "tipAlways": true,
+              "saveWay": "bin"
+            },
+            "placeholder": "AD检测时阈值",
+            "min": 0,
+            "max": 330,
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1681800990227_14",
+            "__vModel__": "field167"
+          }],
+          "eventField": [],
+          "saveWay": "bin",
+          "tipAlways": true
+        },
+        "type": "default",
+        "justify": "start",
+        "align": "top",
+        "style": {
+          "height": "150px",
+          "paddingLeft": "0px"
+        },
+        "id": "id_1681800990227_8"
+      }, {
+        "__config__": {
+          "layout": "rowFormItem",
+          "tag": "group",
+          "tagIcon": "row",
+          "layoutTree": true,
+          "componentName": "LINEIN 使能配置",
+          "showComponentName": true,
+          "dataType": [],
+          "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+          "template": "",
+          "span": 24,
+          "formId": 161,
+          "renderKey": "1611681800954568",
+          "children": [{
+            "__config__": {
+              "label": "LINEIN 使能",
+              "tag": "el-checkbox-group",
+              "tagIcon": "checkbox",
+              "defaultValue": [1, 2],
+              "span": 24,
+              "showLabel": true,
+              "labelWidth": null,
+              "layout": "colFormItem",
+              "optionType": "default",
+              "required": true,
+              "regList": [],
+              "changeTag": true,
+              "border": false,
+              "dataType": ["32", "1"],
+              "formId": 162,
+              "renderKey": "1621681800954568",
+              "eventField": [],
+              "saveWay": "bin",
+              "originValue": [1, 2]
+            },
+            "__slot__": {
+              "options": [{
+                "label": "LINEIN 0",
+                "value": 1
+              }, {
+                "label": "LINEIN 1",
+                "value": 2
+              }, {
+                "label": "LINEIN 2",
+                "value": 4
+              }, {
+                "label": "LINEIN 3",
+                "value": 8
+              }]
+            },
+            "style": {
+              "width": "100%"
+            },
+            "size": "medium",
+            "disabled": false,
+            "id": "id_1681800954568_7",
+            "__vModel__": "field162",
+            "min": 1,
+            "max": 4
+          }],
+          "saveWay": "bin",
+          "uuid": "112",
+          "eventField": []
+        },
+        "type": "default",
+        "justify": "start",
+        "align": "top",
+        "style": {
+          "height": "100px",
+          "paddingLeft": "0px"
+        },
+        "id": "id_1681800954568_6"
+      }, {
+        "__config__": {
+          "layout": "rowFormItem",
+          "tag": "group",
+          "tagIcon": "row",
+          "layoutTree": true,
+          "componentName": "LINEIN 0 配置",
+          "showComponentName": true,
+          "dataType": [],
+          "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+          "template": "",
+          "span": 24,
+          "formId": 161,
+          "renderKey": "1611681801028344",
+          "children": [{
+            "__config__": {
+              "label": "LINEIN 模式",
+              "showLabel": true,
+              "labelWidth": 100,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 6,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["8", "1"],
+              "formId": 162,
+              "renderKey": "1621681801028344",
+              "eventField": [],
+              "defaultValue": 0,
+              "formItemWidth": "300px",
+              "saveWay": "bin"
+            },
+            "__slot__": {
+              "options": [{
+                "label": "单端隔直电容模式",
+                "value": 0
+              }]
+            },
+            "placeholder": "请选择LINEIN 模式",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1681801028344_16",
+            "__vModel__": "field162"
+          }, {
+            "__config__": {
+              "label": "增益",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 100,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 10,
+              "span": 6,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "dataType": ["8", "1"],
+              "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+              "formId": 163,
+              "renderKey": "1631681801028344",
+              "saveWay": "bin",
+              "tipAlways": true,
+              "eventField": [],
+              "formItemWidth": "250px"
+            },
+            "placeholder": "增益",
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1681801028344_17",
+            "__vModel__": "field163",
+            "min": 0,
+            "max": 19,
+            "precision": 0
+          }, {
+            "__config__": {
+              "label": "前级增益",
+              "showLabel": true,
+              "labelWidth": 100,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 6,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["8", "1"],
+              "formId": 164,
+              "renderKey": "1641681801028344",
+              "eventField": [],
+              "defaultValue": 0,
+              "formItemWidth": "250px",
+              "saveWay": "bin"
+            },
+            "__slot__": {
+              "options": [{
+                "label": "0dB",
+                "value": 0
+              }, {
+                "label": "6dB",
+                "value": 1
+              }]
+            },
+            "placeholder": "请选择前级增益",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1681801028344_18",
+            "__vModel__": "field164"
+          }, {
+            "__config__": {
+              "label": "输入选择",
+              "showLabel": true,
+              "labelWidth": 100,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 6,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["8", "1"],
+              "formId": 165,
+              "renderKey": "1651681801028344",
+              "eventField": [],
+              "saveWay": "bin",
+              "defaultValue": 1,
+              "formItemWidth": "250px"
+            },
+            "__slot__": {
+              "options": [{
+                "label": "PB9",
+                "value": 1
+              }, {
+                "label": "PB7",
+                "value": 2
+              }, {
+                "label": "PA0",
+                "value": 4
+              }]
+            },
+            "placeholder": "请选择输入选择输入选择输入选择",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1681801028344_19",
+            "__vModel__": "field165"
+          }, {
+            "__config__": {
+              "label": "DCC 档位",
+              "showLabel": true,
+              "labelWidth": 100,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 6,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["8", "1"],
+              "formId": 166,
+              "renderKey": "1661681801028344",
+              "eventField": [],
+              "saveWay": "bin",
+              "formItemWidth": "300px",
+              "defaultValue": 14
+            },
+            "__slot__": {
+              "options": [{
+                "label": "关闭",
+                "value": 0
+              }, {
+                "label": "8",
+                "value": 8
+              }, {
+                "label": "9",
+                "value": 9
+              }, {
+                "label": "10",
+                "value": 10
+              }, {
+                "label": "11",
+                "value": 11
+              }, {
+                "label": "12",
+                "value": 12
+              }, {
+                "label": "13",
+                "value": 13
+              }, {
+                "label": "14",
+                "value": 14
+              }, {
+                "label": "15",
+                "value": 15
+              }]
+            },
+            "placeholder": "请选择下拉选择DCC 档位DCC 档位DCC 档位",
+            "style": {
+              "width": "80%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1681801028344_20",
+            "__vModel__": "field166"
+          }],
+          "saveWay": "bin",
+          "uuid": "112",
+          "eventField": []
+        },
+        "type": "default",
+        "justify": "start",
+        "align": "top",
+        "style": {
+          "height": "100px",
+          "paddingLeft": "0px"
+        },
+        "id": "id_1681801028344_15"
+      }, {
+        "__config__": {
+          "layout": "rowFormItem",
+          "tag": "group",
+          "tagIcon": "row",
+          "layoutTree": true,
+          "componentName": "LINEIN 1 配置",
+          "showComponentName": true,
+          "dataType": [],
+          "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+          "template": "",
+          "span": 24,
+          "formId": 161,
+          "renderKey": "1611681801064831",
+          "children": [{
+            "__config__": {
+              "label": "LINEIN 模式",
+              "showLabel": true,
+              "labelWidth": 100,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 6,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["8", "1"],
+              "formId": 162,
+              "renderKey": "1621681801064831",
+              "eventField": [],
+              "defaultValue": 0,
+              "formItemWidth": "300px",
+              "saveWay": "bin"
+            },
+            "__slot__": {
+              "options": [{
+                "label": "单端隔直电容模式",
+                "value": 0
+              }]
+            },
+            "placeholder": "请选择LINEIN 模式",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1681801064831_22",
+            "__vModel__": "field162"
+          }, {
+            "__config__": {
+              "label": "增益",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 100,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 10,
+              "span": 6,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "dataType": ["8", "1"],
+              "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+              "formId": 163,
+              "renderKey": "1631681801064831",
+              "saveWay": "bin",
+              "tipAlways": true,
+              "eventField": [],
+              "formItemWidth": "250px"
+            },
+            "placeholder": "增益",
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1681801064831_23",
+            "__vModel__": "field163",
+            "min": 0,
+            "max": 19,
+            "precision": 0
+          }, {
+            "__config__": {
+              "label": "前级增益",
+              "showLabel": true,
+              "labelWidth": 100,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 6,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["8", "1"],
+              "formId": 164,
+              "renderKey": "1641681801064831",
+              "eventField": [],
+              "defaultValue": 0,
+              "formItemWidth": "250px",
+              "saveWay": "bin"
+            },
+            "__slot__": {
+              "options": [{
+                "label": "0dB",
+                "value": 0
+              }, {
+                "label": "6dB",
+                "value": 1
+              }]
+            },
+            "placeholder": "请选择前级增益",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1681801064831_24",
+            "__vModel__": "field164"
+          }, {
+            "__config__": {
+              "label": "输入选择",
+              "showLabel": true,
+              "labelWidth": 100,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 6,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["8", "1"],
+              "formId": 165,
+              "renderKey": "1651681801064831",
+              "eventField": [],
+              "saveWay": "bin",
+              "defaultValue": 1,
+              "formItemWidth": "250px"
+            },
+            "__slot__": {
+              "options": [{
+                "label": "PB10",
+                "value": 1
+              }, {
+                "label": "PB8",
+                "value": 2
+              }, {
+                "label": "PA1",
+                "value": 4
+              }]
+            },
+            "placeholder": "请选择输入选择输入选择",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1681801064831_25",
+            "__vModel__": "field165"
+          }, {
+            "__config__": {
+              "label": "DCC 档位",
+              "showLabel": true,
+              "labelWidth": 100,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 6,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["8", "1"],
+              "formId": 166,
+              "renderKey": "1661681801064831",
+              "eventField": [],
+              "saveWay": "bin",
+              "formItemWidth": "300px",
+              "defaultValue": 14
+            },
+            "__slot__": {
+              "options": [{
+                "label": "关闭",
+                "value": 0
+              }, {
+                "label": "8",
+                "value": 8
+              }, {
+                "label": "9",
+                "value": 9
+              }, {
+                "label": "10",
+                "value": 10
+              }, {
+                "label": "11",
+                "value": 11
+              }, {
+                "label": "12",
+                "value": 12
+              }, {
+                "label": "13",
+                "value": 13
+              }, {
+                "label": "14",
+                "value": 14
+              }, {
+                "label": "15",
+                "value": 15
+              }]
+            },
+            "placeholder": "请选择下拉选择DCC 档位",
+            "style": {
+              "width": "80%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1681801064831_26",
+            "__vModel__": "field166"
+          }],
+          "saveWay": "bin",
+          "uuid": "112",
+          "eventField": []
+        },
+        "type": "default",
+        "justify": "start",
+        "align": "top",
+        "style": {
+          "height": "100px",
+          "paddingLeft": "0px"
+        },
+        "id": "id_1681801064831_21"
+      }, {
+        "__config__": {
+          "layout": "rowFormItem",
+          "tag": "group",
+          "tagIcon": "row",
+          "layoutTree": true,
+          "componentName": "LINEIN 2 配置",
+          "showComponentName": true,
+          "dataType": [],
+          "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+          "template": "",
+          "span": 24,
+          "formId": 161,
+          "renderKey": "1611681801123141",
+          "children": [{
+            "__config__": {
+              "label": "LINEIN 模式",
+              "showLabel": true,
+              "labelWidth": 100,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 6,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["8", "1"],
+              "formId": 162,
+              "renderKey": "1621681801123141",
+              "eventField": [],
+              "defaultValue": 0,
+              "formItemWidth": "300px",
+              "saveWay": "bin"
+            },
+            "__slot__": {
+              "options": [{
+                "label": "单端隔直电容模式",
+                "value": 0
+              }]
+            },
+            "placeholder": "请选择LINEIN 模式",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1681801123141_28",
+            "__vModel__": "field162"
+          }, {
+            "__config__": {
+              "label": "增益",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 100,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 10,
+              "span": 6,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "dataType": ["8", "1"],
+              "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+              "formId": 163,
+              "renderKey": "1631681801123141",
+              "saveWay": "bin",
+              "tipAlways": true,
+              "eventField": [],
+              "formItemWidth": "250px"
+            },
+            "placeholder": "增益",
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1681801123141_29",
+            "__vModel__": "field163",
+            "min": 0,
+            "max": 19,
+            "precision": 0
+          }, {
+            "__config__": {
+              "label": "前级增益",
+              "showLabel": true,
+              "labelWidth": 100,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 6,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["8", "1"],
+              "formId": 164,
+              "renderKey": "1641681801123141",
+              "eventField": [],
+              "defaultValue": 0,
+              "formItemWidth": "250px",
+              "saveWay": "bin"
+            },
+            "__slot__": {
+              "options": [{
+                "label": "0dB",
+                "value": 0
+              }, {
+                "label": "6dB",
+                "value": 1
+              }]
+            },
+            "placeholder": "请选择前级增益",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1681801123141_30",
+            "__vModel__": "field164"
+          }, {
+            "__config__": {
+              "label": "输入选择",
+              "showLabel": true,
+              "labelWidth": 100,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 6,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["8", "1"],
+              "formId": 165,
+              "renderKey": "1651681801123141",
+              "eventField": [],
+              "saveWay": "bin",
+              "defaultValue": 1,
+              "formItemWidth": "250px"
+            },
+            "__slot__": {
+              "options": [{
+                "label": "PC9",
+                "value": 1
+              }, {
+                "label": "PC10",
+                "value": 2
+              }]
+            },
+            "placeholder": "请选择输入选择输入选择",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1681801123141_31",
+            "__vModel__": "field165"
+          }, {
+            "__config__": {
+              "label": "DCC 档位",
+              "showLabel": true,
+              "labelWidth": 100,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 6,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["8", "1"],
+              "formId": 166,
+              "renderKey": "1661681801123141",
+              "eventField": [],
+              "saveWay": "bin",
+              "formItemWidth": "300px",
+              "defaultValue": 14
+            },
+            "__slot__": {
+              "options": [{
+                "label": "关闭",
+                "value": 0
+              }, {
+                "label": "8",
+                "value": 8
+              }, {
+                "label": "9",
+                "value": 9
+              }, {
+                "label": "10",
+                "value": 10
+              }, {
+                "label": "11",
+                "value": 11
+              }, {
+                "label": "12",
+                "value": 12
+              }, {
+                "label": "13",
+                "value": 13
+              }, {
+                "label": "14",
+                "value": 14
+              }, {
+                "label": "15",
+                "value": 15
+              }]
+            },
+            "placeholder": "请选择下拉选择DCC 档位",
+            "style": {
+              "width": "80%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1681801123141_32",
+            "__vModel__": "field166"
+          }],
+          "saveWay": "bin",
+          "uuid": "112",
+          "eventField": []
+        },
+        "type": "default",
+        "justify": "start",
+        "align": "top",
+        "style": {
+          "height": "100px",
+          "paddingLeft": "0px"
+        },
+        "id": "id_1681801123141_27"
+      }, {
+        "__config__": {
+          "layout": "rowFormItem",
+          "tag": "group",
+          "tagIcon": "row",
+          "layoutTree": true,
+          "componentName": "LINEIN 3 配置",
+          "showComponentName": true,
+          "dataType": [],
+          "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+          "template": "",
+          "span": 24,
+          "formId": 161,
+          "renderKey": "1611681801157553",
+          "children": [{
+            "__config__": {
+              "label": "LINEIN 模式",
+              "showLabel": true,
+              "labelWidth": 100,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 6,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["8", "1"],
+              "formId": 162,
+              "renderKey": "1621681801157553",
+              "eventField": [],
+              "defaultValue": 0,
+              "formItemWidth": "300px",
+              "saveWay": "bin"
+            },
+            "__slot__": {
+              "options": [{
+                "label": "单端隔直电容模式",
+                "value": 0
+              }]
+            },
+            "placeholder": "请选择LINEIN 模式",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1681801157553_34",
+            "__vModel__": "field162"
+          }, {
+            "__config__": {
+              "label": "增益",
+              "showLabel": true,
+              "changeTag": true,
+              "labelWidth": 100,
+              "tag": "el-input-number",
+              "tagIcon": "number",
+              "defaultValue": 10,
+              "span": 6,
+              "layout": "colFormItem",
+              "required": false,
+              "regList": [],
+              "dataType": ["8", "1"],
+              "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+              "formId": 163,
+              "renderKey": "1631681801157553",
+              "saveWay": "bin",
+              "tipAlways": true,
+              "eventField": [],
+              "formItemWidth": "250px"
+            },
+            "placeholder": "增益",
+            "step": 1,
+            "step-strictly": false,
+            "controls-position": "",
+            "disabled": false,
+            "id": "id_1681801157553_35",
+            "__vModel__": "field163",
+            "min": 0,
+            "max": 19,
+            "precision": 0
+          }, {
+            "__config__": {
+              "label": "前级增益",
+              "showLabel": true,
+              "labelWidth": 100,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 6,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["8", "1"],
+              "formId": 164,
+              "renderKey": "1641681801157553",
+              "eventField": [],
+              "defaultValue": 0,
+              "formItemWidth": "250px",
+              "saveWay": "bin"
+            },
+            "__slot__": {
+              "options": [{
+                "label": "0dB",
+                "value": 0
+              }, {
+                "label": "6dB",
+                "value": 1
+              }]
+            },
+            "placeholder": "请选择前级增益",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1681801157553_36",
+            "__vModel__": "field164"
+          }, {
+            "__config__": {
+              "label": "输入选择",
+              "showLabel": true,
+              "labelWidth": 100,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 6,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["8", "1"],
+              "formId": 165,
+              "renderKey": "1651681801157553",
+              "eventField": [],
+              "saveWay": "bin",
+              "defaultValue": 1,
+              "formItemWidth": "250px"
+            },
+            "__slot__": {
+              "options": [{
+                "label": "PA2",
+                "value": 1
+              }, {
+                "label": "PA3",
+                "value": 2
+              }]
+            },
+            "placeholder": "请选择输入选择输入选择",
+            "style": {
+              "width": "100%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1681801157553_37",
+            "__vModel__": "field165"
+          }, {
+            "__config__": {
+              "label": "DCC 档位",
+              "showLabel": true,
+              "labelWidth": 100,
+              "tag": "el-select",
+              "tagIcon": "select",
+              "layout": "colFormItem",
+              "span": 6,
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "searchSource": false,
+              "dataType": ["8", "1"],
+              "formId": 166,
+              "renderKey": "1661681801157553",
+              "eventField": [],
+              "saveWay": "bin",
+              "formItemWidth": "300px",
+              "defaultValue": 14,
+              "originValue": 14
+            },
+            "__slot__": {
+              "options": [{
+                "label": "关闭",
+                "value": 0
+              }, {
+                "label": "8",
+                "value": 8
+              }, {
+                "label": "9",
+                "value": 9
+              }, {
+                "label": "10",
+                "value": 10
+              }, {
+                "label": "11",
+                "value": 11
+              }, {
+                "label": "12",
+                "value": 12
+              }, {
+                "label": "13",
+                "value": 13
+              }, {
+                "label": "14",
+                "value": 14
+              }, {
+                "label": "15",
+                "value": 15
+              }]
+            },
+            "placeholder": "请选择下拉选择DCC 档位",
+            "style": {
+              "width": "80%"
+            },
+            "clearable": true,
+            "disabled": false,
+            "filterable": false,
+            "multiple": false,
+            "id": "id_1681801157553_38",
+            "__vModel__": "field166"
+          }],
+          "saveWay": "bin",
+          "uuid": "112",
+          "eventField": []
+        },
+        "type": "default",
+        "justify": "start",
+        "align": "top",
+        "style": {
+          "height": "100px",
+          "paddingLeft": "0px"
+        },
+        "id": "id_1681801157553_33"
+      }],
+      "eventField": [],
+      "saveWay": "bin",
+      "uuid": "548"
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "100px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1680075839128_19"
+  }, {
+    "__config__": {
+      "layout": "rowFormItem",
+      "tag": "group",
+      "tagIcon": "row",
+      "layoutTree": true,
+      "componentName": "FM配置",
+      "enableUuid": "",
+      "showComponentName": true,
+      "dataType": ["8", "1"],
+      "template": "",
+      "span": 24,
+      "formId": 161,
+      "renderKey": "1611681806421866",
+      "children": [{
+        "__config__": {
+          "label": "FM选择",
+          "labelWidth": null,
+          "showLabel": true,
+          "tag": "el-radio-group",
+          "tagIcon": "radio",
+          "changeTag": true,
+          "defaultValue": 1,
+          "layout": "colFormItem",
+          "span": 24,
+          "optionType": "default",
+          "regList": [],
+          "required": true,
+          "border": false,
+          "dataType": ["8", "1"],
+          "formId": 162,
+          "renderKey": "1621681806461166",
+          "originValue": 1,
+          "emptyValue": "1",
+          "saveWay": "bin",
+          "uuid": "",
+          "eventField": [],
+          "tip": "外置FM流程未通"
+        },
+        "__slot__": {
+          "options": [{
+            "label": "FM_INSIDE",
+            "value": 1
+          }, {
+            "label": "FM_EXTERN",
+            "value": 2
+          }]
+        },
+        "style": {
+          "width": "100%"
+        },
+        "size": "medium",
+        "disabled": true,
+        "id": "id_1681806461166_2",
+        "__vModel__": "field162"
+      }, {
+        "__config__": {
+          "layout": "rowFormItem",
+          "tag": "group",
+          "tagIcon": "row",
+          "layoutTree": true,
+          "componentName": "外置FM选项",
+          "showComponentName": true,
+          "dataType": [],
+          "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+          "template": "",
+          "span": 24,
+          "formId": 161,
+          "renderKey": "1611681806480367",
+          "children": [{
+            "__config__": {
+              "label": "输入通道",
+              "tag": "el-checkbox-group",
+              "tagIcon": "checkbox",
+              "defaultValue": [8],
+              "span": 24,
+              "showLabel": true,
+              "labelWidth": null,
+              "layout": "colFormItem",
+              "optionType": "default",
+              "required": false,
+              "regList": [],
+              "changeTag": true,
+              "border": false,
+              "dataType": ["32", "1"],
+              "formId": 162,
+              "renderKey": "1621681806480367",
+              "originValue": [8],
+              "emptyValue": "8",
+              "saveWay": "bin",
+              "eventField": []
+            },
+            "__slot__": {
+              "options": [{
+                "label": "LINEIN1",
+                "value": 1
+              }, {
+                "label": "LINEIN2",
+                "value": 2
+              }, {
+                "label": "LINEIN3",
+                "value": 4
+              }, {
+                "label": "LINEIN4",
+                "value": 8
+              }]
+            },
+            "style": {
+              "width": "100%"
+            },
+            "size": "medium",
+            "min": 1,
+            "max": 2,
+            "disabled": false,
+            "id": "id_1681806480367_4",
+            "__vModel__": "field162"
+          }, {
+            "__config__": {
+              "label": "FM 输入方式",
+              "labelWidth": null,
+              "showLabel": true,
+              "tag": "el-radio-group",
+              "tagIcon": "radio",
+              "changeTag": true,
+              "defaultValue": 1,
+              "layout": "colFormItem",
+              "span": 9,
+              "optionType": "default",
+              "regList": [],
+              "required": false,
+              "border": false,
+              "dataType": ["8", "1"],
+              "formId": 164,
+              "renderKey": "1641681806480367",
+              "originValue": 1,
+              "emptyValue": "1",
+              "tip": "",
+              "saveWay": "bin",
+              "eventField": []
+            },
+            "__slot__": {
+              "options": [{
+                "label": "AD",
+                "value": 1
+              }, {
+                "label": "DA",
+                "value": 2
+              }]
+            },
+            "style": {
+              "width": "100%"
+            },
+            "size": "medium",
+            "disabled": true,
+            "id": "id_1681806480367_6",
+            "__vModel__": "field164"
+          }],
+          "saveWay": "bin",
+          "uuid": "",
+          "eventField": []
+        },
+        "type": "default",
+        "justify": "start",
+        "align": "top",
+        "style": {
+          "height": "80px",
+          "paddingLeft": "0px"
+        },
+        "id": "id_1681806480367_3"
+      }],
+      "eventField": [],
+      "saveWay": "bin",
+      "uuid": "549"
+    },
+    "type": "default",
+    "justify": "start",
+    "align": "top",
+    "style": {
+      "height": "300px",
+      "paddingLeft": "0px"
+    },
+    "id": "id_1681806421866_0"
+  }],
+  "formName": "选项卡名称",
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "mini",
+  "labelPosition": "right",
+  "labelWidth": 150,
+  "formRules": "rules",
+  "gutter": 10,
+  "disabled": false,
+  "span": 6,
+  "formBtns": false
+}
