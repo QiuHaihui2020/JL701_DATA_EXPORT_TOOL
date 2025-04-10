@@ -166,7 +166,7 @@ const int FATFS_TIMESORT_NUM = 128; //按时间排序,记录文件数量, 每个
 const int FILE_TIME_HIDDEN_ENABLE = 0; //创建文件是否隐藏时间
 const int FILE_TIME_USER_DEFINE_ENABLE = 1;//用户自定义时间，每次创建文件前设置，如果置0 需要确定芯片是否有RTC功能。
 
-const int FATFS_SUPPORT_WRITE_SAVE_MEANTIME = 0; //每次写同步目录项使能，会降低连续写速度。
+const int FATFS_SUPPORT_WRITE_SAVE_MEANTIME = 1; //每次写同步目录项使能，会降低连续写速度。
 
 const int FATFS_SUPPORT_WRITE_CUTOFF = 1; //支持fseek截断文件。 打开后fseek后指针位置会决定文件大小
 const int FATFS_RW_MAX_CACHE = 64 * 1024; //设置读写申请的最大cache大小 .note: 小于512会被默认不生效

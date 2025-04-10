@@ -35,7 +35,7 @@ if %UI_RESOURCE_EN%A==1A (
 )
 
 @echo on
-..\..\isd_download.exe ..\..\isd_config.ini -tonorflash -dev br28 -boot 0x120000 -div8 -wait 300 -uboot ..\..\uboot.boot -app ..\..\app.bin  -tone %TONE_FILES% -res %UI_RESOURCE_FILE% cfg_tool.bin ..\..\p11_code.bin stream.bin %CONFIG_DATA% %KEY_FILE% -uboot_compress %FORMAT% -output-fw jl_isd.fw -output-ufw update.ufw
+..\..\isd_download.exe ..\..\isd_config.ini -tonorflash -dev br28 -boot 0x120000 -div8 -wait 300 -uboot ..\..\uboot.boot -app ..\..\app.bin -res %UI_RESOURCE_FILE% cfg_tool.bin ..\..\p11_code.bin stream.bin %CONFIG_DATA% %KEY_FILE% -uboot_compress %FORMAT% -output-fw jl_isd.fw -output-ufw update.ufw
 @echo off
 
 
@@ -45,7 +45,7 @@ if %UI_RESOURCE_EN%A==1A (
 :: -format all
 ::-reboot 2500
 
-@rem É¾³ýÁÙÊ±ÎÄ¼þ-format all
+@rem É¾ï¿½ï¿½ï¿½ï¿½Ê±ï¿½Ä¼ï¿½-format all
 if exist *.mp3 del *.mp3 
 if exist *.PIX del *.PIX
 if exist *.TAB del *.TAB
@@ -56,10 +56,10 @@ copy update.ufw %PROJ_DOWNLOAD_PATH%\update.ufw
 copy jl_isd.bin %PROJ_DOWNLOAD_PATH%\jl_isd.bin
 copy jl_isd.fw %PROJ_DOWNLOAD_PATH%\jl_isd.fw
 
-@rem ³£ÓÃÃüÁîËµÃ÷
-@rem -format vm        //²Á³ýVM ÇøÓò
-@rem -format cfg       //²Á³ýBT CFG ÇøÓò
-@rem -format 0x3f0-2   //±íÊ¾´ÓµÚ 0x3f0 ¸ö sector ¿ªÊ¼Á¬Ðø²Á³ý 2 ¸ö sector(µÚÒ»¸ö²ÎÊýÎª16½øÖÆ»ò10½øÖÆ¶¼¿É£¬µÚ¶þ¸ö²ÎÊý±ØÐëÊÇ10½øÖÆ)
+@rem ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½
+@rem -format vm        //ï¿½ï¿½ï¿½ï¿½VM ï¿½ï¿½ï¿½ï¿½
+@rem -format cfg       //ï¿½ï¿½ï¿½ï¿½BT CFG ï¿½ï¿½ï¿½ï¿½
+@rem -format 0x3f0-2   //ï¿½ï¿½Ê¾ï¿½Óµï¿½ 0x3f0 ï¿½ï¿½ sector ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2 ï¿½ï¿½ sector(ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª16ï¿½ï¿½ï¿½Æ»ï¿½10ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½É£ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½10ï¿½ï¿½ï¿½ï¿½)
 
 ping /n 2 127.1>null
 IF EXIST null del null

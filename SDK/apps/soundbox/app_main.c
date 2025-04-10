@@ -187,6 +187,8 @@ const struct task_info task_info_table[] = {
     {"periph_demo",       3,     0,   512,   0 },
     {"CVP_RefTask",	        4,	   0,   256,   128	},
     {"trim_task",	        4,	   0,   256,   128	},
+    {"a_uart_rec",	        3,	   0,   512,   128	},
+    {"a_sd_write",	        2,	   0,   512,   128	},
     {0, 0},
 };
 
@@ -387,7 +389,9 @@ static struct app_mode *app_task_init()
         msg[2] = APP_MODE_IDLE;
         msg[3] = IDLE_MODE_CHARGE;
     } else {
-        msg[2] = APP_MODE_POWERON;
+        //开机跑idle
+        msg[2] = APP_MODE_IDLE;
+        //msg[2] = APP_MODE_POWERON;
         check_power_on_voltage();
         app_poweron_check(update);
         app_send_message(APP_MSG_POWER_ON, 0);

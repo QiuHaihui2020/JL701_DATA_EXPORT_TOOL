@@ -499,13 +499,18 @@ struct app_mode *app_enter_idle_mode(int arg)
 
         switch (msg[0]) {
         case MSG_FROM_APP:
+            printf("[idle] MSG_FROM_APP");
             idle_app_msg_handler(msg + 1);
             break;
         case MSG_FROM_DEVICE:
+            printf("[idle] MSG_FROM_DEVICE");
+            idle_app_device_event_handler(msg + 1);//没有跑进来
+            break;
+        default:
+            printf("[idle] default msg %d", msg[0]);
+            app_default_msg_handler(msg);
             break;
         }
-
-        app_default_msg_handler(msg);
     }
 
     app_idle_exit();

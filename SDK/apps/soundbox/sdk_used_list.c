@@ -3,6 +3,26 @@
 
 source_node_adapter
 
+
+music_file_plug
+
+clk_sync_node_adapter
+decoder_node_adapter
+resample_node_adapter
+bt_audio_sync_node_adapter
+
+tone_file_plug
+ring_file_plug
+key_tone_file_plug
+
+sbc_hwaccel
+sbc_decoder_plug
+msbc_decoder_plug
+
+sine_dec_plug
+cvsd_decoder_plug
+pcm_dec_plug
+
 #if TCFG_MIXER_NODE_ENABLE
 mixer_node_adapter
 #endif
@@ -11,25 +31,14 @@ mixer_node_adapter
 dac_node_adapter
 #endif
 
-clk_sync_node_adapter
-decoder_node_adapter
-resample_node_adapter
-bt_audio_sync_node_adapter
 
 #if TCFG_ADC_NODE_ENABLE
 adc_file_plug
 #endif
 
-tone_file_plug
-ring_file_plug
-key_tone_file_plug
 #if TCFG_FILEPLAY_NODE_ENABLE
 file_play_plug
 #endif
-
-sbc_hwaccel
-sbc_decoder_plug
-msbc_decoder_plug
 
 #if TCFG_PDM_NODE_ENABLE
 pdm_mic_file_plug
@@ -39,9 +48,6 @@ pdm_mic_file_plug
 aac_dec_plug
 #endif
 
-sine_dec_plug
-cvsd_decoder_plug
-pcm_dec_plug
 
 #if TCFG_ZERO_ACTIVE_NODE_ENABLE
 zero_file_plug
@@ -111,8 +117,6 @@ linein_file_plug
 #if TCFG_AUDIO_FM_ENABLE
 fm_file_plug
 #endif
-
-music_file_plug
 
 #if TCFG_ENERGY_DETECT_NODE_ENABLE
 energy_detect_node_adapter

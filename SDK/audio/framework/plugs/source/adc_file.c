@@ -225,9 +225,11 @@ void audio_adc_file_init(void)  //通话的ADC节点配置
             printf("esco_adc_file read cfg data err !!!\n");
             /* while (1); */
         }
+#if TCFG_AUDIO_ADC_ENABLE
         memcpy(&esco_adc_f.platform_cfg, adc_platform_cfg_table, sizeof(struct adc_platform_cfg) * AUDIO_ADC_MAX_NUM);
 
         adc_file_log(" %s len %d, sizeof(cfg) %d\n", __func__,  len, (int)sizeof(struct adc_file_cfg));
+#endif
 
 #if 0
         adc_file_log(" esco_adc_f.cfg.mic_en_map = %x\n", esco_adc_f.cfg.mic_en_map);
@@ -276,8 +278,10 @@ void audio_adc_cfg_init(struct adc_file_common *adc_f)  //通话外其他ADC节�
         if (len != sizeof(struct adc_file_cfg)) {
             printf("adc_file read cfg data err !!!\n");
         }
+#if TCFG_AUDIO_ADC_ENABLE
         memcpy(&adc_f->platform_cfg, adc_platform_cfg_table, sizeof(struct adc_platform_cfg) * AUDIO_ADC_MAX_NUM);
         adc_file_log(" %s len %d, sizeof(cfg) %d\n", __func__,  len, (int)sizeof(struct adc_file_cfg));
+#endif
         u32 i;
 #if 0
         adc_file_log(" adc_f->cfg.mic_en_map = %x\n", adc_f->cfg.mic_en_map);

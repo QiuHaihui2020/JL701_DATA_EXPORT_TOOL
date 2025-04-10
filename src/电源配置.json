@@ -747,7 +747,8 @@
         "saveWay": "",
         "uuid": "",
         "eventField": [],
-        "enableUuid": "TCFG_SYS_LVD_EN"
+        "enableUuid": "TCFG_SYS_LVD_EN",
+        "disable": true
       },
       "type": "default",
       "justify": "start",
@@ -1321,7 +1322,7 @@
                     "label": "拔出开机",
                     "tag": "el-switch",
                     "tagIcon": "switch",
-                    "defaultValue": 1,
+                    "defaultValue": 0,
                     "span": 4,
                     "showLabel": true,
                     "labelWidth": null,
@@ -1387,7 +1388,7 @@
                     "label": "下拉电阻开关",
                     "tag": "el-switch",
                     "tagIcon": "switch",
-                    "defaultValue": 1,
+                    "defaultValue": 0,
                     "span": 4,
                     "showLabel": true,
                     "labelWidth": 100,
@@ -1658,7 +1659,8 @@
         ],
         "saveWay": "",
         "uuid": "",
-        "enableUuid": "TCFG_CHARGE_ENABLE"
+        "enableUuid": "TCFG_CHARGE_ENABLE",
+        "disable": true
       },
       "type": "default",
       "justify": "start",
@@ -2899,7 +2901,7 @@
         ],
         "saveWay": "code",
         "uuid": "",
-        "disable": false,
+        "disable": true,
         "enableUuid": "TCFG_BATTERY_CURVE_ENABLE",
         "eventField": [],
         "structDef": "const struct battery_curve g_battery_curve_table"

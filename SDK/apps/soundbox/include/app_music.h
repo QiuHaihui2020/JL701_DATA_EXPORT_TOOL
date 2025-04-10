@@ -9,7 +9,7 @@
 #if (TCFG_USB_DM_MULTIPLEX_WITH_SD_DAT0)
 #define MUSIC_DEV_ONLINE_START_AFTER_MOUNT_EN			0//如果是u盘和SD卡复用， 这里必须为0， 保证usb枚举的时候解码是停止的
 #else
-#define MUSIC_DEV_ONLINE_START_AFTER_MOUNT_EN			1
+#define MUSIC_DEV_ONLINE_START_AFTER_MOUNT_EN			0
 #endif
 
 ///模式参数结构体

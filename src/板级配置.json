@@ -2295,7 +2295,8 @@
         "saveWay": "",
         "uuid": "",
         "eventField": [],
-        "enableUuid": "TCFG_PWMLED_ENABLE"
+        "enableUuid": "TCFG_PWMLED_ENABLE",
+        "disable": true
       },
       "type": "default",
       "justify": "start",
@@ -3067,7 +3068,7 @@
                       "gpio"
                     ],
                     "emptyValue": "NO_CONFIG_PORT",
-                    "defaultValue": "id_1651200755336_11"
+                    "defaultValue": "id_1647485267192_86"
                   },
                   "__slot__": {
                     "options": [
@@ -3362,7 +3363,7 @@
                       "gpio"
                     ],
                     "emptyValue": "NO_CONFIG_PORT",
-                    "defaultValue": "id_1651200759198_12"
+                    "defaultValue": "id_1647485267192_87"
                   },
                   "__slot__": {
                     "options": [
@@ -3657,7 +3658,7 @@
                       "gpio"
                     ],
                     "emptyValue": "IO_PORTG_01",
-                    "defaultValue": "id_1651200719084_10",
+                    "defaultValue": "id_1647485267192_85",
                     "originValue": "IO_PORTG_01"
                   },
                   "__slot__": {
@@ -10787,7 +10788,7 @@
         "eventField": [],
         "saveWay": "macro",
         "tipAlways": true,
-        "disable": false
+        "disable": true
       },
       "type": "default",
       "justify": "start",
@@ -12635,7 +12636,7 @@
                     "tag": "el-switch",
                     "tagIcon": "switch",
                     "changeTag": true,
-                    "defaultValue": 1,
+                    "defaultValue": 0,
                     "layout": "colFormItem",
                     "span": 24,
                     "optionType": "default",

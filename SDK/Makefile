@@ -279,6 +279,7 @@ INCLUDES := \
 	-Iinterface/media/cvp \
 	-Iinterface/system/math/cpu/br28 \
 	-Iinterface/media/effects \
+	-Iapps/soundbox/audio_debug_tool/ \
 	-I$(SYS_INC_DIR) \
 
 
@@ -882,6 +883,7 @@ c_SRC_FILES := \
 	cpu/periph_demo/spi_test.c \
 	cpu/periph_demo/two_io_led_test.c \
 	cpu/periph_demo/uart_test.c \
+	apps/soundbox/audio_debug_tool/audio_uart_receive.c \
 
 
 # 需要编译的 .S 文件

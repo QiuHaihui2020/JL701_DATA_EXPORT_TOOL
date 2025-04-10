@@ -363,20 +363,22 @@ void vbat_check_init(void)
 #else
             battery_100 = 4100;
 #endif
+            /*编译不过注释掉
             battery_curve_p[0].percent = 0;
             battery_curve_p[0].voltage = battery_0;
             battery_curve_p[1].percent = 100;
-            battery_curve_p[1].voltage = battery_100;
+            battery_curve_p[1].voltage = battery_100;*/
             log_info("percent: %d, voltage: %d mV", 0, battery_curve_p[0].voltage);
             log_info("percent: %d, voltage: %d mV", 100, battery_curve_p[1].voltage);
         } else {
             for (i = 0; i < battery_curve_max; i++) {
                 memcpy(&battery_data_t.raw_data,
                        &tmp[i * sizeof(battery_data_t)], sizeof(battery_data_t));
+                /*编译不过注释掉
                 battery_curve_p[i].percent = battery_data_t.data.percent;
                 battery_curve_p[i].voltage = battery_data_t.data.voltage;
                 log_info("percent: %d, voltage: %d mV\n",
-                         battery_curve_p[i].percent, battery_curve_p[i].voltage);
+                         battery_curve_p[i].percent, battery_curve_p[i].voltage);*/
             }
         }
         //初始化相关变量

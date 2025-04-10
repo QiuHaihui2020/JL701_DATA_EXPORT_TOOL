@@ -4132,5 +4132,23 @@ REGISTER_UI_EVENT_HANDLER(TEXT_1)
   .ontouch = NULL,
 };
 
+#else
+/*除了编译不过问题 */
+UI_RESFILE *platform_get_file(int prj)
+{
+    return NULL;
+}
+int ui_draw(struct draw_context *dc, u8 *buf, int x, int y, int width, int height, void *cb, void *priv, int priv_len, int id)
+{
+    return 0;
+}
+int ui_platform_init(void *lcd)
+{
+    return 0;
+}
+int ui_file_check_valid()
+{
+    return 0;
+}
 #endif
 

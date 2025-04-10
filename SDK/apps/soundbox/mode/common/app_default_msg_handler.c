@@ -380,16 +380,19 @@ void app_common_device_event_handler(int *msg)
     case DRIVER_EVENT_FROM_SD1:
     case DRIVER_EVENT_FROM_SD2:
     case DEVICE_EVENT_FROM_USB_HOST:
-#if TCFG_APP_MUSIC_EN
-        if (true == app_in_mode(APP_MODE_MUSIC)) {
+#if 1//TCFG_APP_MUSIC_EN
+        /*if (true == app_in_mode(APP_MODE_MUSIC)) {
             music_device_msg_handler(msg);
-        }
+        }*/
         ret = dev_status_event_filter(msg);///解码设备上下线， 设备挂载等处理
         if (ret == true) {
+            if (true == app_in_mode(APP_MODE_IDLE)) {
+                idle_app_msg_handler(msg);
+            }
             if (msg[1] == DEVICE_EVENT_IN) {
                 ///设备上线， 非解码模式切换到解码模式播放
-                if (true != app_in_mode(APP_MODE_MUSIC)) {
-                    app = APP_MODE_MUSIC;
+                if (true != app_in_mode(APP_MODE_IDLE)) {
+                    app = APP_MODE_IDLE;
                 }
             }
         }

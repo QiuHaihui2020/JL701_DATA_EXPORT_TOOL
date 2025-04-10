@@ -196,6 +196,7 @@ void audio_fast_mode_test()
 
 }
 
+#if TCFG_AUDIO_ADC_ENABLE
 struct audio_adc_private_param adc_private_param = {
     .mic_ldo_vsel   = TCFG_AUDIO_MIC_LDO_VSEL,
     .mic_ldo_isel   = TCFG_AUDIO_MIC_LDO_ISEL,
@@ -203,6 +204,7 @@ struct audio_adc_private_param adc_private_param = {
     .adcb_reserved0 = 0,
     .lowpower_lvl = 0,
 };
+#endif
 
 #if TCFG_AUDIO_ADC_ENABLE
 const struct adc_platform_cfg adc_platform_cfg_table[AUDIO_ADC_MAX_NUM] = {
@@ -308,8 +310,10 @@ void audio_input_initcall(void)
     }
 #endif
 
+#if TCFG_AUDIO_ADC_ENABLE
     audio_adc_init(&adc_hdl, &adc_private_param);
     audio_adc_file_init();
+#endif
 
 #if TCFG_APP_FM_EN
     audio_fm_file_init();

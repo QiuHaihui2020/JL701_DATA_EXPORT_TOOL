@@ -152,7 +152,7 @@
                     "label": "从机关闭EDR",
                     "tag": "el-switch",
                     "tagIcon": "switch",
-                    "defaultValue": 1,
+                    "defaultValue": 0,
                     "span": 6,
                     "showLabel": true,
                     "labelWidth": null,
