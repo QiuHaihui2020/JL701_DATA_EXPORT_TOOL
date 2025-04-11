@@ -81,8 +81,8 @@
 #define MIC_AUDIO_RATE_NUM 1 // MIC采样率列表
 #define MIC_AUDIO_RES 16 // MIC位宽1
 #define MIC_AUDIO_RES_2 0 // MIC位宽2
-#define TCFG_SW_I2C0_CLK_PORT IO_PORTA_09 // 软件iic CLK脚
-#define TCFG_SW_I2C0_DAT_PORT IO_PORTA_10 // 软件iic DATA脚
+#define TCFG_SW_I2C0_CLK_PORT IO_PORTA_02 // 软件iic CLK脚
+#define TCFG_SW_I2C0_DAT_PORT IO_PORTA_03 // 软件iic DATA脚
 #define TCFG_SW_I2C0_DELAY_CNT 50 // iic 延时
 #define TCFG_HW_I2C0_CLK_PORT IO_PORTC_04 // 硬件iic CLK脚
 #define TCFG_HW_I2C0_DAT_PORT IO_PORTC_05 // 硬件iic DATA脚
@@ -209,7 +209,7 @@
 // ------------电源配置.json------------
 
 // ------------UI配置.json------------
-#define TCFG_UI_ENABLE 1 // UI配置
+#define TCFG_UI_ENABLE 0 // UI配置
 #if TCFG_UI_ENABLE
 #define CONFIG_UI_STYLE STYLE_JL_SOUNDBAR // UI类型
 #define TCFG_LED7_RUN_RAM 0 // LED屏驱动跑RAM
@@ -217,8 +217,8 @@
 #define TCFG_TFT_LCD_DEV_SPI_HW_NUM 1 // LCD SPI口选择
 #define TCFG_LRC_LYRICS_ENABLE 0 // 歌词显示
 #define LRC_ENABLE_SAVE_LABEL_TO_FLASH 0 // 保存歌词时间标签到flash
-#define TCFG_LCD_OLED_ENABLE 1 // OLED屏使能
-#define TCFG_OLED_SPI_SSD1306_ENABLE 1 // SSD1306
+#define TCFG_LCD_OLED_ENABLE 0 // OLED屏使能
+#define TCFG_OLED_SPI_SSD1306_ENABLE 0 // SSD1306
 #define TCFG_SPI_LCD_ENABLE 0 // LCD彩屏使能
 #define TCFG_LCD_SPI_ST7789V_ENABLE 0 // ST7789V
 #define TCFG_LED7_PIN0 IO_PORTA_04 // LED引脚0

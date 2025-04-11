@@ -1,6 +1,6 @@
 #include "app_config.h"
 
-
+/*
 source_node_adapter
 
 
@@ -22,6 +22,7 @@ msbc_decoder_plug
 sine_dec_plug
 cvsd_decoder_plug
 pcm_dec_plug
+*/
 
 #if TCFG_MIXER_NODE_ENABLE
 mixer_node_adapter

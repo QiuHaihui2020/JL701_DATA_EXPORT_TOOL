@@ -84,3 +84,9 @@ int idle_app_device_event_handler(int *msg)
 
     return ret;
 }
+
+int idle_key_event_handler(int *msg)
+{
+
+    return 0;
+}

@@ -446,7 +446,7 @@
                                 "label": "OLED屏使能",
                                 "tag": "el-switch",
                                 "tagIcon": "switch",
-                                "defaultValue": 1,
+                                "defaultValue": 0,
                                 "span": 12,
                                 "showLabel": true,
                                 "labelWidth": null,
@@ -482,7 +482,7 @@
                                 "label": "SSD1306",
                                 "tag": "el-switch",
                                 "tagIcon": "switch",
-                                "defaultValue": 1,
+                                "defaultValue": 0,
                                 "span": 12,
                                 "showLabel": true,
                                 "labelWidth": null,
@@ -4676,7 +4676,7 @@
           }
         ],
         "eventField": [],
-        "disable": false
+        "disable": true
       },
       "type": "default",
       "justify": "start",

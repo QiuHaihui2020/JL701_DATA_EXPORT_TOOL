@@ -27,5 +27,3 @@ cvsd_decoder_plug
 pcm_dec_plug
 fat_vfs_ops
 a2dp_1sbc_codec_private
-sdfile_resfile_ops
-sdfile_vfs_ops

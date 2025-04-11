@@ -485,7 +485,8 @@ struct app_mode *app_enter_idle_mode(int arg)
 {
     int msg[16];
     struct app_mode *next_mode;
-
+    void OLED_Init(void);
+    OLED_Init();
     app_idle_init(arg);
 
     while (1) {

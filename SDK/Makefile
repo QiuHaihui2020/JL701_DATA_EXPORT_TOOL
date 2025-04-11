@@ -884,6 +884,7 @@ c_SRC_FILES := \
 	cpu/periph_demo/two_io_led_test.c \
 	cpu/periph_demo/uart_test.c \
 	apps/soundbox/audio_debug_tool/audio_uart_receive.c \
+	apps/soundbox/audio_debug_tool/oled/oled.c \
 
 
 # 需要编译的 .S 文件
