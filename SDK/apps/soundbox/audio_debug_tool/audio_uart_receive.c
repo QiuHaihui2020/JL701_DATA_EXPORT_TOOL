@@ -3,19 +3,27 @@
 #include "circular_buf.h"
 #include "uart.h"
 #include "dev_manager.h"
+#include "display/display_task.h"
 
 #define PCM_UART1_TX_PORT			-1
 #define PCM_UART1_RX_PORT			IO_PORTA_06
+
+/*vm参数读取失败时的默认参数*/
 #define PCM_UART1_BAUDRATE			2000000		/*数据导出波特率,不用修改，和接收端设置一直*/
+#define PCM_CH                      3
+#define PCM_SINGLE_LEN              512
 
 #define AUDIO_UART_TASK_NAME    "a_uart_rec"
 #define AUDIO_SDWRITE_TASK_NAME "a_sd_write"
+
 struct audio_dbg_hdl_t {
     int uart;
     u8 *uart_dma_buf;
     int uart_dma_buf_size;
     u32 uart_baud_rate;
     int uart_frame_size;
+    u16 pcm_rx_single_size;
+    u8 pcm_channel;
 
     OS_SEM uart_sem;
     u16 *uart_tmp_buf;
@@ -28,6 +36,8 @@ struct audio_dbg_hdl_t {
     u8 *sd_buf;
     cbuffer_t sd_cbuf;
     FILE *fp;
+
+    u16 lost_packet;
 
 };
 static struct audio_dbg_hdl_t *aud_dbg_hdl = NULL;
@@ -66,6 +76,8 @@ static void audio_uart_task(void *priv)
     int recv_len = 0;
     u16 crc16 = 0;
     int wlen = 0;
+    u32  rec_cnt = 0;
+    u32  last_rec_cnt = 0;
     while(1) {
         os_sem_pend(&hdl->uart_sem, 0);
         if (hdl && hdl->uart > 0) {
@@ -78,13 +90,25 @@ static void audio_uart_task(void *priv)
                         os_sem_post(&hdl->sd_sem);
                     } else {
                         printf("[error] sd cbuf full\n");
+                        hdl->lost_packet++;
                     }
                 } else {
                     printf("uart crc err"); 
+                    hdl->lost_packet++;
                 }
             } else {
                 printf("uart recv read err, %d %d\n", recv_len, hdl->uart_frame_size);
+                hdl->lost_packet++;
             }
+            rec_cnt++;
+            if ((rec_cnt % 100) == 0) {
+                if (rec_cnt != last_rec_cnt) {
+                    last_rec_cnt = rec_cnt;
+                    oled_dispaly_task_post(OLED_DISPLAY_LOST, (int *)(hdl->lost_packet));
+                }
+
+            }
+
         }
     }
 
@@ -97,6 +121,7 @@ static void audio_sdwrite_task(void *priv)
 {
     struct audio_dbg_hdl_t *hdl = (struct audio_dbg_hdl_t *)priv;
     int rlen = 0, wlen = 0;
+    u32 write_cnt = 0;
     char path[64];
     char logo[] = {AUDIO_WRITE_DEVICE_LOGO};        //sd卡录音
     char folder[] = {AUDIO_WRITE_FOLDER_NAME};
@@ -120,13 +145,21 @@ static void audio_sdwrite_task(void *priv)
             do {
                 rlen = cbuf_read(&hdl->sd_cbuf, hdl->sd_tmp_buf, hdl->sd_write_frame_size);
                 if (rlen) {
-                    printf("sd read %d", rlen); 
+                    // printf("sd read %d", rlen); 
                     wlen = fwrite(hdl->sd_tmp_buf, hdl->sd_write_frame_size, 1, hdl->fp);
                     if (wlen != hdl->sd_write_frame_size) {
                         printf("[error] sd write err \n"); 
+                        hdl->lost_packet++;
+                    } else {
+                        putchar('W');
+                        write_cnt++;
                     }
                 }
-            } while (rlen);  
+            } while (rlen);
+
+            if ((write_cnt % 10) == 0) {
+                oled_dispaly_task_post(OLED_DISPLAY_RUN_TIPS, NULL);
+            }
         }
     
     }
@@ -167,6 +200,15 @@ static void uart_irq_callback(uart_dev uart_num, enum uart_event event)
     
 }
 
+u8 audio_uart_init_runing()
+{
+    if (aud_dbg_hdl) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
 void audio_uart_init()
 {
     if (aud_dbg_hdl) {
@@ -180,13 +222,47 @@ void audio_uart_init()
     ASSERT(hdl);
 
     hdl->uart_dma_buf_size = 4096;
-    hdl->uart_baud_rate = PCM_UART1_BAUDRATE;
-    int single_len = 512;
-    int channel = 3;
+    hdl->uart_baud_rate = 2000000;
+    hdl->pcm_rx_single_size = 512;
+    hdl->pcm_channel = 3;
 
-    hdl->uart_frame_size = single_len * channel + 4;
+    int ret = 0;
+    /*读取通道数ch*/
+    ret = syscfg_read(CFG_UART_PCM_RX_CH, &hdl->pcm_channel, 1);
+    if (ret < 0) {
+        printf("pcm channel read err, use default\n");
+        hdl->pcm_channel = PCM_CH;
+        syscfg_write(CFG_UART_PCM_RX_CH, &hdl->pcm_channel, 1);
+        printf("use default pcm channel : %d\n", hdl->pcm_channel);
+    }
+    printf("=================================== pcm channel : %d\n", hdl->pcm_channel);
+
+    //oled_dispaly_task_post(OLED_DISPLAY_CH, (int *)(hdl->pcm_channel));
+
+    /*读取单个通道的数据长度*/
+    ret = syscfg_read(CFG_UART_PCM_RX_SIG_SIZE, &hdl->pcm_rx_single_size, 2);
+    if (ret < 0) {
+        printf("pcm_rx_single_size read err, use default\n");
+        hdl->pcm_rx_single_size = PCM_SINGLE_LEN;
+        syscfg_write(CFG_UART_PCM_RX_SIG_SIZE, &hdl->pcm_rx_single_size, 2);
+    }
+    printf("=================================== pcm_rx_single_size : %d\n", hdl->pcm_rx_single_size);
+    //oled_dispaly_task_post(OLED_DISPLAY_LEN, (int *)(hdl->pcm_rx_single_size));
+
+    /*读取波特率*/
+    ret = syscfg_read(CFG_UART_PCM_RX_BAUD_RATE, &hdl->uart_baud_rate, 4);
+    if (ret < 0) {
+        printf("uart_baud_rate read err, use default\n");
+        hdl->uart_baud_rate = PCM_UART1_BAUDRATE;
+        syscfg_write(CFG_UART_PCM_RX_BAUD_RATE, &hdl->uart_baud_rate, 4);
+    }
+    printf("=================================== uart_baud_rate : %d\n", hdl->uart_baud_rate);
+    //oled_dispaly_task_post(OLED_DISPLAY_BAUD, (int *)(hdl->uart_baud_rate));
+
+    hdl->uart_frame_size = hdl->pcm_rx_single_size * hdl->pcm_channel + 4;
 
     hdl->sd_write_frame_size = 512 * 3;
+    hdl->lost_packet = 0;
 
     hdl->sd_tmp_buf = zalloc(hdl->sd_write_frame_size);
     ASSERT(hdl->sd_tmp_buf);

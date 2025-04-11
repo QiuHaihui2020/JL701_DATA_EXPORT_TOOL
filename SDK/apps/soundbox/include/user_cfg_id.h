@@ -49,6 +49,10 @@
 #define     CFG_WIRELESS_MIC0_VOLUME         29
 #define     CFG_WIRELESS_MIC1_VOLUME         30
 
+#define 	CFG_UART_PCM_RX_CH			     35
+#define 	CFG_UART_PCM_RX_SIG_SIZE	     36
+#define 	CFG_UART_PCM_RX_BAUD_RATE	     37
+
 #define     CFG_RCSP_ADV_EQ_DATA_SETTING     48
 #define     CFG_RCSP_ADV_EQ_MODE_SETTING     49
 #define     CFG_RCSP_ADV_HIGH_LOW_VOL        50

@@ -1,8 +1,8 @@
 {
   "activeFile": {
     "type": 1,
-    "fileName": "src\\按键配置.json",
-    "binName": "keycfg.bin",
-    "showName": "按键配置"
+    "fileName": "src\\板级配置.json",
+    "binName": "boardcfg.bin",
+    "showName": "板级配置"
   }
 }

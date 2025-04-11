@@ -6,10 +6,10 @@
 #include "classic/hci_lmp.h"
 
 
-#define AUD_CFG_DUMP_ENABLE				1	//音频配置跟踪使能
+#define AUD_CFG_DUMP_ENABLE				0	//音频配置跟踪使能
 #define AUD_REG_DUMP_ENABLE				0	//音频寄存器跟踪使能
 #define AUD_CACHE_INFO_DUMP_ENABLE		0 	//cache信息跟踪使能
-#define AUD_TASK_INFO_DUMP_ENABLE		0	//任务运行信息跟踪使能
+#define AUD_TASK_INFO_DUMP_ENABLE		1	//任务运行信息跟踪使能
 #define AUD_JLSTREAM_MEM_DUMP_ENABLE	0	//jlstream内存跟踪
 #define AUD_BT_INFO_DUMP_ENABLE			0	//蓝牙音频流跟踪
 

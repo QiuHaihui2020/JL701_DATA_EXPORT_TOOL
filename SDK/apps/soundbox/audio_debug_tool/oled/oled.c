@@ -1,7 +1,7 @@
 #if 1
 
 #include "oled.h"
-#include "oledbmp.h"
+//#include "oledbmp.h"
 #include "oledfont.h"
 #include "clock.h"
 
@@ -207,13 +207,6 @@ void OLED_Init(void)
     
 	OLED_Fill(0x00); //初始清屏
 	OLED_Set_Pos(0,0);
-
-    OLED_32x32_Chinese(1,48,&JL_LOGO[0][0]);
-    OLED_P16x16Ch(30,5,1);//`显示杰理科技
-	OLED_P16x16Ch(48,5,2);
-	OLED_P16x16Ch(66,5,3);
-	OLED_P16x16Ch(84,5,4);
-
 }
 
 

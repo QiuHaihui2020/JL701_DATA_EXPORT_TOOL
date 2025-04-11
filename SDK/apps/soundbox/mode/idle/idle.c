@@ -40,6 +40,7 @@
 #define LOG_CLI_ENABLE
 #include "debug.h"
 #include "bt_tws.h"
+#include "display/display_task.h"
 
 static int app_idle_init(int param);
 void app_idle_exit();
@@ -485,8 +486,6 @@ struct app_mode *app_enter_idle_mode(int arg)
 {
     int msg[16];
     struct app_mode *next_mode;
-    void OLED_Init(void);
-    OLED_Init();
     app_idle_init(arg);
 
     while (1) {
@@ -507,6 +506,10 @@ struct app_mode *app_enter_idle_mode(int arg)
             printf("[idle] MSG_FROM_DEVICE");
             idle_app_device_event_handler(msg + 1);//没有跑进来
             break;
+        case MSG_FROM_KEY:
+            printf("[idle] MSG_FROM_KEY");
+            idle_key_event_handler(msg + 1);
+            break;
         default:
             printf("[idle] default msg %d", msg[0]);
             app_default_msg_handler(msg);
@@ -515,6 +518,7 @@ struct app_mode *app_enter_idle_mode(int arg)
     }
 
     app_idle_exit();
+    oled_display_exit();
 
     return next_mode;
 }

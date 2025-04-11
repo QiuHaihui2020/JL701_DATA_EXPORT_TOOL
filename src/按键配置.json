@@ -3618,7 +3618,7 @@
                     "formId": 835,
                     "renderKey": "8351724406423957",
                     "saveWay": "code",
-                    "defaultValue": 30,
+                    "defaultValue": 62,
                     "tip": "例：6.8k电阻请填写68，22k请填写220",
                     "originValue": 0,
                     "eventField": [],
@@ -3810,7 +3810,7 @@
                     "formId": 838,
                     "renderKey": "8381724406431053",
                     "saveWay": "code",
-                    "defaultValue": 91,
+                    "defaultValue": 150,
                     "tip": "例：6.8k电阻请填写68，22k请填写220",
                     "originValue": 91,
                     "eventField": [],
@@ -4002,7 +4002,7 @@
                     "formId": 841,
                     "renderKey": "8411724406444083",
                     "saveWay": "code",
-                    "defaultValue": 180,
+                    "defaultValue": 220,
                     "tip": "例：6.8k电阻请填写68，22k请填写220",
                     "originValue": 180,
                     "eventField": [],
@@ -9941,5 +9941,5 @@
   "disabled": false,
   "span": 11,
   "formBtns": false,
-  "maxFormId": 940
+  "maxFormId": 943
 }

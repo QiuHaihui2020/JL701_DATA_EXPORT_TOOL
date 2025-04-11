@@ -189,6 +189,7 @@ const struct task_info task_info_table[] = {
     {"trim_task",	        4,	   0,   256,   128	},
     {"a_uart_rec",	        3,	   0,   512,   128	},
     {"a_sd_write",	        2,	   0,   512,   128	},
+    {"od_dispaly",	    2,	   1,   512,   128	},
     {0, 0},
 };
 
@@ -358,6 +359,9 @@ static struct app_mode *app_task_init()
     do_initcall();
     do_module_initcall();
     do_late_initcall();
+
+    extern int oled_display_init();
+    oled_display_init();
 
     dev_manager_init();
 
