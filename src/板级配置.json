@@ -1544,7 +1544,7 @@
                       "gpio"
                     ],
                     "saveWay": "macro",
-                    "defaultValue": "id_1647485267192_76",
+                    "defaultValue": "id_1647485267192_66",
                     "uuid": "TCFG_LED_RED_GPIO",
                     "originValue": ""
                   },
@@ -1955,7 +1955,7 @@
                       "gpio"
                     ],
                     "saveWay": "macro",
-                    "defaultValue": "id_1647485267192_76",
+                    "defaultValue": "id_1647485267192_66",
                     "uuid": "TCFG_LED_BLUE_GPIO",
                     "originValue": ""
                   },
@@ -2296,7 +2296,7 @@
         "uuid": "",
         "eventField": [],
         "enableUuid": "TCFG_PWMLED_ENABLE",
-        "disable": true
+        "disable": false
       },
       "type": "default",
       "justify": "start",

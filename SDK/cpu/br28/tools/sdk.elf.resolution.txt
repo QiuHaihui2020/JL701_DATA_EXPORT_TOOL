@@ -5715,6 +5715,7 @@ objs/apps/soundbox/audio_debug_tool/display/display_task.c.o
 -r=objs/apps/soundbox/audio_debug_tool/display/display_task.c.o,audio_uart_init_runing,l
 -r=objs/apps/soundbox/audio_debug_tool/display/display_task.c.o,audio_uart_exit,l
 -r=objs/apps/soundbox/audio_debug_tool/display/display_task.c.o,audio_uart_init,l
+-r=objs/apps/soundbox/audio_debug_tool/display/display_task.c.o,gpio_set_mode,l
 -r=objs/apps/soundbox/audio_debug_tool/display/display_task.c.o,os_taskq_post_msg,l
 -r=objs/apps/soundbox/audio_debug_tool/display/display_task.c.o,oled_display_init,pl
 -r=objs/apps/soundbox/audio_debug_tool/display/display_task.c.o,OLED_Init,l

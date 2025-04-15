@@ -3,6 +3,7 @@
 #include "oled/oledbmp.h"
 #include "system/includes.h"
 #include "user_cfg_id.h"
+#include "app_config.h"
 
 #define OLED_DISPLAY_TASK_NAME    "od_dispaly"
 /*vm参数读取失败时的默认参数*/
@@ -159,9 +160,15 @@ void oled_display_task(void *priv)
         case OLED_DISPLAY_RUN_TIPS:
             if (run_tips_flag) {
                 run_tips_flag = 0;
+#ifdef TCFG_LED_RED_GPIO
+                gpio_set_mode(IO_PORT_SPILT(TCFG_LED_RED_GPIO), PORT_OUTPUT_LOW);
+#endif
                 OLED_P8x16Str(112, 0, "  ");
             } else {
                 run_tips_flag = 1;
+#ifdef TCFG_LED_RED_GPIO
+                gpio_set_mode(IO_PORT_SPILT(TCFG_LED_RED_GPIO), PORT_OUTPUT_HIGH);
+#endif
                 OLED_P8x16Str(112, 0, "w+");
             }
          
