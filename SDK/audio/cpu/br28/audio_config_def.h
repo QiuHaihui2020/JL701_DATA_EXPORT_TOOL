@@ -27,17 +27,17 @@
 // 			音频模块链接配置
 //**************************************
 /*音效处理链接配置*/
-#define AFx_VBASS_AT_RAM				    1	//虚拟低音
-#define AFx_REVERB_AT_RAM				    1	//混响
-#define AFx_ECHO_AT_RAM				        1	//回声
-#define AFx_VOICECHANGER_AT_RAM			    1	//变声
-#define AFx_DRC_AT_RAM 					    1	//DRC
-#define AFx_HARMONIC_EXCITER_AT_RAM 	    1	//谐波激励
-#define AFx_DYN_EQ_AT_RAM 				    1	//动态EQ
-#define AFx_NOTCH_HOWLING_AT_RAM 		    1	//啸叫抑制：陷波
-#define AFx_FREQ_SHIFT_AT_RAM	 		    1	//啸叫抑制：移频
-#define AFx_NOISEGATE_AT_RAM	 		    1	//噪声门
-#define AFx_ADVAUDIO_PLC_AT_RAM	    	    1
+#define AFx_VBASS_AT_RAM				    0	//虚拟低音
+#define AFx_REVERB_AT_RAM				    0	//混响
+#define AFx_ECHO_AT_RAM				        0	//回声
+#define AFx_VOICECHANGER_AT_RAM			    0	//变声
+#define AFx_DRC_AT_RAM 					    0	//DRC
+#define AFx_HARMONIC_EXCITER_AT_RAM 	    0	//谐波激励
+#define AFx_DYN_EQ_AT_RAM 				    0	//动态EQ
+#define AFx_NOTCH_HOWLING_AT_RAM 		    0	//啸叫抑制：陷波
+#define AFx_FREQ_SHIFT_AT_RAM	 		    0	//啸叫抑制：移频
+#define AFx_NOISEGATE_AT_RAM	 		    0	//噪声门
+#define AFx_ADVAUDIO_PLC_AT_RAM	    	    0
 #define AFX_AUDIO_LINK_AT_RAM               0   //iis驱动
 #define AFX_AUDIO_SYNC_AT_RAM               0   //sync
 #define AFx_EQ_AT_RAM                       0	//eq
@@ -50,7 +50,7 @@
 #define AFX_MULTIBAND_DRC_AT_RAM            0   //多带drc
 #define AFX_VIRTUAL_SURRUOUND_PRO_AT_RAM    0   //虚拟环绕声pro/2t4/2t5
 #define AFX_SW_EQ_AT_RAM                    0   //软件EQ
-#define AFx_SPATIAL_EFFECT_AT_RAM           1   //空间音效
+#define AFx_SPATIAL_EFFECT_AT_RAM           0   //空间音效
 
 /*通话语音处理算法*/
 #define AUDIO_CVP_TEXT_AT_RAM	    	0	//COMMON TEXT
@@ -67,19 +67,19 @@
 #define AUDIO_CVP_THIRD_AT_RAM		    0	//3MIC
 
 /*编解码编译链接配置*/
-#define AUD_AAC_DEC_AT_RAM		        1   //AAC解码
-#define AUDIO_LDAC_AT_RAM			    1	//LDAC解码
+#define AUD_AAC_DEC_AT_RAM		        0   //AAC解码
+#define AUDIO_LDAC_AT_RAM			    0	//LDAC解码
 #define AUDIO_MSBC_CODEC_AT_RAM		    0	//MSBC 编解码
 #define AUDIO_CVSD_CODEC_AT_RAM		    0	//CVSD 编解码
-#define AUDIO_JLA_CODEC_AT_RAM			1	//JLA 编解码
+#define AUDIO_JLA_CODEC_AT_RAM			0	//JLA 编解码
 #define AUDIO_LC3_CODEC_AT_RAM			0	//LC3 编解码
 
 /*语音识别算法编译链接配置*/
 #define AUDIO_KWS_COMMON_AT_RAM             0   //kws公共部分 ，0:放flash，1:放ram
 #define AUDIO_KWS_YES_NO_AT_RAM             0   //yes/no识别 ， 0:放flash，1:放ram
-#define AUDIO_KWS_CHINESE_AT_RAM            2   //近场中文识别，0:放flash，1:放ram，2:一部分放ram，一部分放flash
+#define AUDIO_KWS_CHINESE_AT_RAM            0   //近场中文识别，0:放flash，1:放ram，2:一部分放ram，一部分放flash
 #define AUDIO_KWS_INDIA_ENGLISH_AT_RAM      0   //印度英语识别，0:放flash，1:放ram
-#define AUDIO_KWS_CHINESE_FAR_AT_RAM        1   //远场中文识别，0:放flash，1:放ram
+#define AUDIO_KWS_CHINESE_FAR_AT_RAM        0   //远场中文识别，0:放flash，1:放ram
 
 
 //**************************************
@@ -146,7 +146,7 @@
 #endif
 #endif
 
-#define TCFG_AUDIO_DAC_NOISEGATE_ENABLE     1
+#define TCFG_AUDIO_DAC_NOISEGATE_ENABLE     0
 
 /*
  *该配置适用于没有音量按键的产品，防止打开音量同步之后
@@ -202,8 +202,8 @@
  */
 #define TCFG_MC_DTB_FIXED				0
 
-#define TCFG_ESCO_PLC					1  	//通话丢包修复(1T2已修改为节点)
-#define TCFG_AEC_ENABLE					1	//通话回音消除使能
+#define TCFG_ESCO_PLC					0  	//通话丢包修复(1T2已修改为节点)
+#define TCFG_AEC_ENABLE					0	//通话回音消除使能
 
 #define MAX_ANA_VOL               (3)	// 系统最大模拟音量,范围: 0 ~ 3
 //#define MAX_COM_VOL             (16)    // 数值应该大于等于16，具体数值应小于联合音量等级的数组大小 (combined_vol_list)

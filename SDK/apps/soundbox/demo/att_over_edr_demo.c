@@ -291,7 +291,7 @@ static void att_packet_handler(u8 packet_type, u16 channel, u8 *packet, u16 size
 
 void att_profile_init()
 {
-    bredr_adt_init();
+    //bredr_adt_init();
 #if 0
     printf("------------------------------tag30\n");
     printf("[Y]%s\n", __FUNCTION__);

@@ -279,7 +279,7 @@ CODE_BEG = 0x6000100;
 
 MEMORY
 {
- code0(rx) : ORIGIN = CODE_BEG, LENGTH = 1048576
+ code0(rx) : ORIGIN = CODE_BEG, LENGTH = 524288
  ram0(rwx) : ORIGIN = RAM0_BEG, LENGTH = RAM0_SIZE
 
 
@@ -401,34 +401,6 @@ SECTIONS
 
     media_data_code_start = .;
     . = ALIGN(4);
-    *(.kws_common_data_multi_26k)
-    *(.jlsp_kws_music_code)
-    *(.jlsp_kws_music_const)
-    *(.jlsp_far_keyword_const)
-    *(.jlsp_far_keyword_code)
-    *(.jlsp_far_front_code)
-    *(.jlsp_far_front_const)
-    aac_dec_code_begin = .;
-    *(.bt_aac_dec_code)
-    *(.bt_aac_dec_sparse_code)
-    *(.bt_aac_dec.text.cache.L2.run)
-    aac_dec_code_end = .;
-    aac_dec_code_size = aac_dec_code_end - aac_dec_code_begin ;
-
-    . = ALIGN(4);
-    bt_aac_dec_const_begin = .;
-    *(.bt_aac_dec_const)
-    *(.bt_aac_dec_sparse_const)
-*(.bt_aac_dec.text.cache.L2.const)
-    bt_aac_dec_const_end = .;
-    bt_aac_dec_const_size = bt_aac_dec_const_end - bt_aac_dec_const_begin ;
-
-    . = ALIGN(4);
-    *(.aac_mem)
-    *(.aac_ctrl_mem)
-
-
-
     . = ALIGN(4);
     *(.pSOUND360TD_cal_sparse_code)
     *(.pSOUND360TD_cal_code)
@@ -436,89 +408,7 @@ SECTIONS
     *(.spatial_mem)
     *(.TDSpatial.text)
     *(.TDSpatial.text.cache.L2)
-    *(.ldac_dec.text)
-    *(.ldac_dec.text.const)
-    *(.ldac.text)
-    *(.ldac.text.const)
-    *(.ldac_dec.text.cache.L2.run)
-    *(.ldac_dec.text.cache.L2.const)
-
     . = ALIGN(4);
-    *(.jla_dec.text.const)
-    *(.jla_dec.text)
-    *(.jla_enc.text.const)
-    *(.jla_enc.text)
-    *(.jla_codec_c_const)
-    *(.jla_codec_c_code)
-    *(.jla_codec_c_sparse_code)
-    *(.jla_codec_d_code)
-    *(.jla_codec_e_code)
-    . = ALIGN(4);
-
-
-
- *(.jl_codec_c_const)
- *(.jl_codec_c_code)
- *(.jl_codec_ari_c_const)
- *(.jl_codec_ari_c_code)
- *(.jl_codec_c_sparse_code)
- *(.jl_codec_d_code)
- *(.jl_codec_e_code)
- *(.jl_codec_t8k_code)
- *(.jl_codec_t16k_code)
- *(.jl_codec_t24k_code)
- *(.jl_codec_t32k_code)
- *(.jl_codec_t441k_code)
- *(.jl_codec_const)
-
-
-
-    *(.vbss.text.cache.L2.code)
-
-
-
-    *(.reverb_cal.text.cache.L2.run)
-    *(.plateReverb_adv.text.cache.L2.run)
-    *(.plate_reverb.text)
-
-
-
-    *(.echo.text)
- *(.voiceChanger.text.cache.L2.run)
- *(.voiceChanger.text.const)
- *(.voiceChanger.text)
-
-
-
-  *(.advaudio_plc.text.cache.L2.run)
-
-
-
- *(.wdrc.text)
- *(.drc.text.cache.L2.code)
- *(.crossover.text.cache.L2.code)
- *(.BandMerge.text.cache.L2.code)
- *(.multiband_drc.text)
-
-
-
- *(.HarmonicExciter.text.cache.L2.run)
- *(.HarmonicExciter.text.const)
-
-
-
- *(.dynamiceq.text.cache.L2.code)
- *(.notchhowling.text.cache.L2.code)
-  *(.notchhowling.text.cache.L2.const)
-
-
-
- *(.FrequencyShift.text.cache.L2.run)
- *(.FrequencyShift.text.const)
-
-
-
- *(.noisegate.text.cache.L2.code)
  *(.mixer.text.cache.L2)
  *(.dac.text.cache.L2)
  *(.convert.text.cache.L2.code)
@@ -1638,9 +1528,19 @@ SECTIONS {
 
     *(.jlsp_kws_yesno_code)
     *(.jlsp_kws_yesno_const)
+
+
+
+    *(.kws_common_data_multi_26k)
     *(.kws_common_data_multi_57k)
+    *(.jlsp_kws_music_code)
+    *(.jlsp_kws_music_const)
     *(.jlsp_kws_phone_call_code)
     *(.jlsp_kws_phone_call_const)
+
+
+
+
 
 
 
@@ -1648,6 +1548,17 @@ SECTIONS {
     *(.jlsp_kws_india_english_music_const)
     *(.jlsp_kws_india_english_phone_call_code)
     *(.jlsp_kws_india_english_phone_call_const)
+
+
+
+    *(.jlsp_far_keyword_const)
+    *(.jlsp_far_keyword_code)
+    *(.jlsp_far_front_code)
+    *(.jlsp_far_front_const)
+
+
+
+
     *(.msbc_enc)
     *(.msbc_code)
     *(.msbc_const)
@@ -1658,6 +1569,26 @@ SECTIONS {
     *(.cvsd_codec)
     *(.cvsd_code)
     *(.cvsd_const)
+
+
+    aac_dec_code_begin = .;
+    *(.bt_aac_dec_code)
+    *(.bt_aac_dec_sparse_code)
+    aac_dec_code_end = .;
+    aac_dec_code_size = aac_dec_code_end - aac_dec_code_begin ;
+
+    . = ALIGN(4);
+    bt_aac_dec_const_begin = .;
+    *(.bt_aac_dec_const)
+    *(.bt_aac_dec_sparse_const)
+    bt_aac_dec_const_end = .;
+    bt_aac_dec_const_size = bt_aac_dec_const_end - bt_aac_dec_const_begin ;
+
+    . = ALIGN(4);
+    *(.aac_mem)
+    *(.aac_ctrl_mem)
+
+
     . = ALIGN(4);
     *(.bt_audioplc_code)
     *(.bt_audioplc_sparse_code)
@@ -1682,10 +1613,10 @@ SECTIONS {
     *(.lhdcv5decode.const)
 
 
-
-
-
-
+    *(.ldac_dec.text)
+    *(.ldac_dec.text.const)
+    *(.ldac.text)
+    *(.ldac.text.const)
 
     *(.ldac_enc.text)
     *(.ldac_enc.text.const)
@@ -1884,6 +1815,34 @@ SECTIONS {
     *(.lc3_codec_d_code)
     *(.lc3_codec_e_code)
     . = ALIGN(4);
+
+
+    *(.jla_dec.text.const)
+    *(.jla_dec.text)
+    *(.jla_enc.text.const)
+    *(.jla_enc.text)
+    *(.jla_codec_c_const)
+    *(.jla_codec_c_code)
+    *(.jla_codec_c_sparse_code)
+    *(.jla_codec_d_code)
+    *(.jla_codec_e_code)
+    . = ALIGN(4);
+
+
+ *(.jl_codec_c_const)
+ *(.jl_codec_c_code)
+ *(.jl_codec_ari_c_const)
+ *(.jl_codec_ari_c_code)
+ *(.jl_codec_c_sparse_code)
+ *(.jl_codec_d_code)
+ *(.jl_codec_e_code)
+ *(.jl_codec_t8k_code)
+ *(.jl_codec_t16k_code)
+ *(.jl_codec_t24k_code)
+ *(.jl_codec_t32k_code)
+ *(.jl_codec_t441k_code)
+ *(.jl_codec_const)
+
  *(.jla_lw_codec_const)
  *(.jla_lw_codec_code)
  *(.jla_lw.const)
@@ -2575,7 +2534,7 @@ psr_data_code_begin = data_code_begin + data_code_size;
 
 psr_data_code_addr = ADDR(.psr_data_code);
 psr_data_code_size = SIZEOF(.psr_data_code);
-ASSERT(1048576 > text_size,"check sdk_config.h CONFIG_FLASH_SIZE < text_size");
+ASSERT(524288 > text_size,"check sdk_config.h CONFIG_FLASH_SIZE < text_size");
 ASSERT(_HEAP_BEGIN > bss_begin,"_HEAP_BEGIN < bss_begin");
 ASSERT(_HEAP_BEGIN > data_addr,"_HEAP_BEGIN < data_addr");
 ASSERT(_HEAP_BEGIN > data_code_addr,"_HEAP_BEGIN < data_code_addr");

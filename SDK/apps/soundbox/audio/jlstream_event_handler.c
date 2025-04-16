@@ -381,7 +381,7 @@ static void unload_encoder_handler(struct stream_encoder_info *info)
 static int get_node_parm(int arg)
 {
     int ret = 0;
-    ret = get_eff_default_param(arg);
+    //ret = get_eff_default_param(arg);
     return ret ;
 }
 /*

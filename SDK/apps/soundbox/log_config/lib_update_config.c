@@ -71,7 +71,7 @@ const int CONFIG_UPDATE_BT_LMP_EN  = 0;
 #endif
 
 const char log_tag_const_v_UPDATE  = LIB_DEBUG &  FALSE;
-const char log_tag_const_i_UPDATE  = LIB_DEBUG &  TRUE;
+const char log_tag_const_i_UPDATE  = LIB_DEBUG &  0;
 const char log_tag_const_d_UPDATE  = LIB_DEBUG &  FALSE;
-const char log_tag_const_w_UPDATE  = LIB_DEBUG &  TRUE;
-const char log_tag_const_e_UPDATE  = LIB_DEBUG &  TRUE;
+const char log_tag_const_w_UPDATE  = LIB_DEBUG &  0;
+const char log_tag_const_e_UPDATE  = LIB_DEBUG &  0;

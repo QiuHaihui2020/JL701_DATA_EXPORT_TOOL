@@ -29,7 +29,7 @@
 
 #define CONFIG_SPI_DATA_WIDTH 2 // flash通信
 #define CONFIG_SPI_MODE 0 // flash模式
-#define CONFIG_FLASH_SIZE 1048576 // flash容量
+#define CONFIG_FLASH_SIZE 524288 // flash容量
 #define TCFG_VM_SIZE 32 // VM大小（K）
 
 #define TCFG_PWMLED_ENABLE 1 // LED配置
@@ -47,7 +47,7 @@
 #if TCFG_SD0_ENABLE
 #define TCFG_SD0_DAT_MODE 1 // 线数设置
 #define TCFG_SD0_DET_MODE SD_CMD_DECT // 检测方式
-#define TCFG_SD0_CLK 48000000 // SD时钟频率
+#define TCFG_SD0_CLK 12000000 // SD时钟频率
 #define TCFG_SD0_DET_IO NO_CONFIG_PORT // 检测IO
 #define TCFG_SD0_DET_IO_LEVEL 0 // IO检测方式
 #define TCFG_SD0_POWER_SEL SD_PWR_SDPG // SD卡电源

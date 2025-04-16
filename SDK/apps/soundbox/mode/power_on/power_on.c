@@ -62,7 +62,7 @@ static int app_poweron_init()
 #endif
 
     if (app_var.play_poweron_tone) {
-        int ret = play_tone_file_callback(get_tone_files()->power_on, NULL, poweron_tone_play_end_callback);
+        int ret = -1;// play_tone_file_callback(get_tone_files()->power_on, NULL, poweron_tone_play_end_callback);
         if (ret) {
             log_error("power on tone play err!!!");
         }

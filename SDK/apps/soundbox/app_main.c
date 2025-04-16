@@ -187,9 +187,10 @@ const struct task_info task_info_table[] = {
     {"periph_demo",       3,     0,   512,   0 },
     {"CVP_RefTask",	        4,	   0,   256,   128	},
     {"trim_task",	        4,	   0,   256,   128	},
-    {"a_uart_rec",	        3,	   0,   512,   128	},
-    {"a_sd_write",	        3,	   1,   512,   128	},
+    {"a_uart_rec",	        3,	   1,   512,   128	},
+    {"a_sd_write",	        4,	   1,   512,   128	},
     {"od_dispaly",	        2,	   1,   1024,  1024	},
+
     {0, 0},
 };
 
@@ -208,7 +209,9 @@ int eSystemConfirmStopStatus(void)
      *   0:100 ms wakeup
      *   other: x ms wakeup
      */
-    if (get_charge_full_flag()) {
+    //if (get_charge_full_flag())
+    if (0) 
+    {
         power_set_soft_poweroff();
         return 1;
     } else {
@@ -396,7 +399,7 @@ static struct app_mode *app_task_init()
         //开机跑idle
         msg[2] = APP_MODE_IDLE;
         //msg[2] = APP_MODE_POWERON;
-        check_power_on_voltage();
+        // check_power_on_voltage();
         app_poweron_check(update);
         app_send_message(APP_MSG_POWER_ON, 0);
     }
@@ -718,4 +721,17 @@ void app_main()
         asm("idle");
     }
 }
+
+
+int bt_updata_clr_flag(int a){return 0;}
+int lmp_update_init(int a){return 0;}
+int lmp_update_exit(int a){return 0;}
+int reg_revic_buf_addr(int a){return 0;}
+int bt_updata_control(int a){return 0;}
+int bt_updata_get_flag(int a){return 0;}
+int RF_analog_recover(int a){return 0;}
+u8 get_ldo5v_pulldown_en(void){return 0;}
+u8 get_ldo5v_pulldown_res(void){return 0;}
+u32 lpctmu_is_sf_keep(void){return 0;}
+void lp_touch_key_event_irq_handler(){}
 

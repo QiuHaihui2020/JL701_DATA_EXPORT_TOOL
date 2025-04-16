@@ -32,8 +32,8 @@
  */
 
 #if OS_CPU_CORE > 1
-const int CONFIG_JLSTREAM_MULTI_THREAD_ENABLE = 1; //音频流多线程使能
-const int CONFIG_MULTI_THREAD_SELF_ADAPTION_ENABLE = 1;
+const int CONFIG_JLSTREAM_MULTI_THREAD_ENABLE = 0; //音频流多线程使能
+const int CONFIG_MULTI_THREAD_SELF_ADAPTION_ENABLE = 0;
 #else
 const int CONFIG_JLSTREAM_MULTI_THREAD_ENABLE = 0;
 const int CONFIG_MULTI_THREAD_SELF_ADAPTION_ENABLE = 0;
@@ -48,7 +48,7 @@ const int CONFIG_STREAM_FRAME_DEBUG = 0;
 #endif
 const int config_media_24bit_enable = MEDIA_24BIT_ENABLE;
 
-const int CONFIG_SEAMLESS_RECORDER_ENABLE = 1;
+const int CONFIG_SEAMLESS_RECORDER_ENABLE = 0;
 
 #if TCFG_JLSTREAM_TURBO_ENABLE
 const int CONFIG_JLSTREAM_TURBO_ENABLE = 1;
@@ -83,7 +83,7 @@ const float const_out_dev_pns_time_ms = 1.0f;
 #endif/*TCFG_SUPPORT_MIC_CAPLESS*/
 const u8 const_mic_capless_en = 0;//TCFG_SUPPORT_MIC_CAPLESS;
 /*是否支持多个ADC 异步打开功能*/
-const u8 const_adc_async_en = 1;
+const u8 const_adc_async_en = 0;
 
 //***********************
 //*		Audio DAC       *
@@ -112,7 +112,7 @@ const int config_audio_dac_mix_enable = 0;
 */
 
 //
-const unsigned char config_audio_dac_underrun_protect = 1;
+const unsigned char config_audio_dac_underrun_protect = 0;
 
 //<DAC trim>
 #if ((SYS_VOL_TYPE == VOL_TYPE_DIGITAL_HW) || (SYS_VOL_TYPE == VOL_TYPE_DIGITAL))
@@ -175,7 +175,7 @@ const char config_audio_mixer_ch_highlight_enable = 0;
 // tws音频解码自动设置输出声道。
 // 单声道：AUDIO_CH_L/AUDIO_CH_R。双声道：AUDIO_CH_DUAL_L/AUDIO_CH_DUAL_R
 // 关闭后，按照output_ch_num和output_ch_type/ch_type设置输出声道
-const int audio_tws_auto_channel = 1;
+const int audio_tws_auto_channel = 0;
 
 // mixer在单独任务中输出
 #if TCFG_MIXER_CYCLIC_TASK_EN
@@ -202,15 +202,15 @@ const int audio_dec_app_mix_en = 0;
 #else
 
 // mixer模块使能。不使能将关闭大部分功能，mix为直通
-const int config_mixer_en = 1;
+const int config_mixer_en = 0;
 // mixer变采样使能
-const int config_mixer_src_en = 1;
+const int config_mixer_src_en = 0;
 
 // audio解码资源叠加功能使能。不使能，如果配置了叠加方式，将改成抢占方式
-const int config_audio_dec_wait_protect_en = 1;
+const int config_audio_dec_wait_protect_en = 0;
 
 // audio数据流分支功能使能。
-const int config_audio_stream_frame_copy_en = 1;
+const int config_audio_stream_frame_copy_en = 0;
 
 // audio dec app调用mixer相关函数控制。关闭后需上层设置数据流的输出节点
 const int audio_dec_app_mix_en = 1;
@@ -266,13 +266,13 @@ const int CONFIG_DEC_SUPPORT_DAB_AAC = 0; //AAC 文件的dab+ 类 解码支持�
 //*		MP3 Codec       *
 //***********************
 const int MP3_SEARCH_MAX = 200; //本地解码设成200， 网络解码可以设成3
-const int MP3_TGF_TWS_EN = 1;   //tws解码使能
-const int MP3_TGF_POSPLAY_EN = 1; //定点播放 获取ms级别时间 接口使能
-const int MP3_TGF_AB_EN = 1;   //AB点复读使能
+const int MP3_TGF_TWS_EN = 0;   //tws解码使能
+const int MP3_TGF_POSPLAY_EN = 0; //定点播放 获取ms级别时间 接口使能
+const int MP3_TGF_AB_EN = 0;   //AB点复读使能
 const int MP3_TGF_FASTMO = 0;  //快速解码使能【默认关闭，之前给一个sdk单独加的，配置是否解高频，解双声道等】
 // 解码一次输出点数，1代表32对点，n就是n*32对点
 // 超过1时，解码需要使用malloc，如config_mp3_dec_use_malloc=1
-const int MP3_OUTPUT_LEN = 1;
+const int MP3_OUTPUT_LEN = 0;
 
 #define FAST_FREQ_restrict				0x01 //限制超过16k的频率不解【一般超出人耳听力范围，但是仪器会测出来】
 #define FAST_FILTER_restrict			0x02 //限制滤波器长度【子带滤波器旁瓣加大，边缘不够陡】
@@ -304,11 +304,11 @@ int wav_mem_ext[(1336  + 3) / 4] SEC(.wav_mem); //超过128要增加这个数组
 //1:无论声道数是多少，限制解码输出前面2个声道,多声道的文件可能跑不过来;
 const int WAV_DECODER_OUTPUT_CHANNEL_LIMIT = 0;
 
-const  int  const_audio_codec_wav_checkdst_enable = 1;       //如果wav解码前面有经过dts解码库做过格式检查，就把这个设成0
+const  int  const_audio_codec_wav_checkdst_enable = 0;       //如果wav解码前面有经过dts解码库做过格式检查，就把这个设成0
 const  int  const_audio_codec_wav_dec_support_aiff = 0;      //是否支持aif，因为get_aif_ops跟 wav解码 是 共用run函数（有分叉），所以需要通过const才能优化掉
 const  int  const_audio_codec_wav_dec_support_24bit = MEDIA_24BIT_ENABLE;  //24bit开关
-const  int 	const_audio_codec_wav_dec_support_AB_Repeat_en = 1;   //是否支持AB点跟循环
-const  int  const_audio_codec_wav_dec_supoort_POS_play = 1;  //是否支持指定位置播放
+const  int 	const_audio_codec_wav_dec_support_AB_Repeat_en = 0;   //是否支持AB点跟循环
+const  int  const_audio_codec_wav_dec_supoort_POS_play = 0;  //是否支持指定位置播放
 
 //<ADPCM Type>
 const int const_sel_adpcm_type = TCFG_ENC_ADPCM_TYPE;//1：使用imaen_adpcm,  0:msen_adpcm
@@ -322,10 +322,10 @@ const int const_audio_m4a_dec16_fifo_precision = 16;  //  24 或者 16
 //*		WMA Codec       *
 //***********************
 const int WMA_TWSDEC_EN = 0;   // wma tws 解码控制
-const int WMA_ABpoint_EN = 1;   //是否支持AB点以及AB点循
+const int WMA_ABpoint_EN = 0;   //是否支持AB点以及AB点循
 // 解码一次输出点数，1代表32对点，n就是n*32对点
 // 超过1时，解码需要使用malloc，如config_mp3_dec_use_malloc=1
-const int WMA_OUTPUT_LEN = 1;
+const int WMA_OUTPUT_LEN = 0;
 
 const int const_audio_codec_wma_dec_support_24bit = MEDIA_24BIT_ENABLE;
 const int const_audio_wma_dec16_fifo_precision = 16;  //  24 或者 16  控制16bit输出的时候fifo精度，影响16bit输出的申请的buf大小
@@ -372,16 +372,16 @@ const int LC3_HW_FFT = 0;
 #endif
 
 //LC3帧长使能配置
-const char  LC3_FRAME_LEN_SUPPORT_25_DMS = 1;	  //2.5ms的帧长使能
-const char  LC3_FRAME_LEN_SUPPORT_50_DMS = 1; 	//5ms的帧长使能
-const char  LC3_FRAME_LEN_SUPPORT_75_DMS = 1; 	//7.5ms的帧长使能
-const char  LC3_FRAME_LEN_SUPPORT_100_DMS = 1; 	//10ms的帧长使能
+const char  LC3_FRAME_LEN_SUPPORT_25_DMS = 0;	  //2.5ms的帧长使能
+const char  LC3_FRAME_LEN_SUPPORT_50_DMS = 0; 	//5ms的帧长使能
+const char  LC3_FRAME_LEN_SUPPORT_75_DMS = 0; 	//7.5ms的帧长使能
+const char  LC3_FRAME_LEN_SUPPORT_100_DMS = 0; 	//10ms的帧长使能
 //LC3采样率使能配置
-const char  LC3_SAMPLE_RATE_SUPPORT_8K = 1;   	//8K采样率使能
-const char  LC3_SAMPLE_RATE_SUPPORT_16K = 1;  	//16K采样率使能
-const char  LC3_SAMPLE_RATE_SUPPORT_24K = 1;  	//24K采样率使能
-const char  LC3_SAMPLE_RATE_SUPPORT_32K = 1;  	//32K采样率使能
-const char  LC3_SAMPLE_RATE_SUPPORT_48K = 1;  	//48K/44.1K采样率使能
+const char  LC3_SAMPLE_RATE_SUPPORT_8K = 0;   	//8K采样率使能
+const char  LC3_SAMPLE_RATE_SUPPORT_16K = 0;  	//16K采样率使能
+const char  LC3_SAMPLE_RATE_SUPPORT_24K = 0;  	//24K采样率使能
+const char  LC3_SAMPLE_RATE_SUPPORT_32K = 0;  	//32K采样率使能
+const char  LC3_SAMPLE_RATE_SUPPORT_48K = 0;  	//48K/44.1K采样率使能
 
 //LC3 编解码  24bit使能控制常量:
 const int LC3_ENCODE_I24bit_ENABLE = MEDIA_24BIT_ENABLE;   //编码输入pcm数据位宽24比特,符号扩展到S32.   1使能，结合if_s24=1生效.
@@ -389,9 +389,9 @@ const int LC3_DECODE_O24bit_ENABLE = MEDIA_24BIT_ENABLE;   //解码输出pcm数�
 //***********************
 //* 	JLA Codec      *
 //***********************
-const  int  JLA_PLC_EN = 1;           //0_fade,1_时域,2_频域,3静音;
+const  int  JLA_PLC_EN = 0;           //0_fade,1_时域,2_频域,3静音;
 #if(HW_FFT_VERSION == FFT_EXT) 			//支持非2的指数次幂点数的fft 时 置1
-const  int  JLA_HW_FFT = 1;           //br27/br28置1，其他芯片置0
+const  int  JLA_HW_FFT = 0;           //br27/br28置1，其他芯片置0
 #else
 const  int  JLA_HW_FFT = 0;           //br27/br28置1，其他芯片置0
 #endif
@@ -577,21 +577,21 @@ const int config_decoder_ff_fr_end_return_event_end = 0;
 //***********************
 //* 	 EQ             *
 //***********************
-const int config_audio_eq_hp_enable = 1;		//High Pass
-const int config_audio_eq_lp_enable = 1;		//Low Pass
-const int config_audio_eq_bp_enable = 1;		//Band Pass(Peaking)
-const int config_audio_eq_hs_enable = 1;		//High Shelf
-const int config_audio_eq_ls_enable = 1;		//Low Shelf
+const int config_audio_eq_hp_enable = 0;		//High Pass
+const int config_audio_eq_lp_enable = 0;		//Low Pass
+const int config_audio_eq_bp_enable = 0;		//Band Pass(Peaking)
+const int config_audio_eq_hs_enable = 0;		//High Shelf
+const int config_audio_eq_ls_enable = 0;		//Low Shelf
 #ifdef CONFIG_256K_FLASH
 const int config_audio_eq_hs_q_enable = 0;		//High Shelf Q
 const int config_audio_eq_ls_q_enable = 0;		//Low Shelf Q
 const int config_audio_eq_hp_adv_enable = 0;	//High Pass Advance：对应工具上阶数可选的Hp
 const int config_audio_eq_lp_adv_enable = 0;	//Low Pass Advance：对应工具上阶数可选的Lp
 #else
-const int config_audio_eq_hs_q_enable = 1;		//High Shelf Q
-const int config_audio_eq_ls_q_enable = 1;		//Low Shelf Q
-const int config_audio_eq_hp_adv_enable = 1;	//High Pass Advance：对应工具上阶数可选的Hp
-const int config_audio_eq_lp_adv_enable = 1;	//Low Pass Advance：对应工具上阶数可选的Lp
+const int config_audio_eq_hs_q_enable = 0;		//High Shelf Q
+const int config_audio_eq_ls_q_enable = 0;		//Low Shelf Q
+const int config_audio_eq_hp_adv_enable = 0;	//High Pass Advance：对应工具上阶数可选的Hp
+const int config_audio_eq_lp_adv_enable = 0;	//Low Pass Advance：对应工具上阶数可选的Lp
 #endif
 
 #if TCFG_SPEAKER_EQ_NODE_ENABLE
@@ -662,7 +662,7 @@ const int audio_notch_howling_enable           = 0;
 //***********************
 //*   Voice Changer     *
 //***********************
-const int vc_pitchshift_fastmode_flag        = 1; //变声快速模式使能
+const int vc_pitchshift_fastmode_flag        = 0; //变声快速模式使能
 const int vc_pitchshift_only = 0;
 /* //变声库数学函数版本配置，br23/br25/br30/br34/br40是PLATFORM_VOICECHANGE_CORDIC，br27/br28/br36是PLATFORM_VOICECHANGE_CORDICV2 */
 const int voicechange_mathfun_PLATFORM = PLATFORM_PARM_SEL;
@@ -720,15 +720,15 @@ const int audio_effect_nsgate_pro_enable = 0;
 //***********************
 //*   	Vocal Remover   *
 //***********************
-const int audio_vocal_remover_low_cut_enable = 1;
-const int audio_vocal_remover_high_cut_enable = 1;
+const int audio_vocal_remover_low_cut_enable = 0;
+const int audio_vocal_remover_high_cut_enable = 0;
 const int audio_vocal_remover_preset_mode = 0; //预设参数模式
 
 //***********************
 //*   	Others          *
 //***********************
 const int RS_FAST_MODE_QUALITY = 2;	//软件变采样 滤波阶数配置，范围2到8， 8代表16阶的变采样模式 ,速度跟它的大小呈正相关
-const int TWS_TONE_PLAYER_REFERENCE_CLOCK = 1; // 0 - 默认使用经典蓝牙时钟，1 - 使用经典蓝牙网络转为本地参考时钟(避免时钟域的冲突)
+const int TWS_TONE_PLAYER_REFERENCE_CLOCK = 0; // 0 - 默认使用经典蓝牙时钟，1 - 使用经典蓝牙网络转为本地参考时钟(避免时钟域的冲突)
 /*
  *******************************************************************
  *						Audio Smart Voice Config
@@ -869,7 +869,7 @@ const int config_ogg_dec_use_malloc     = 0;
  */
 
 const char log_tag_const_v_EQ  = CONFIG_DEBUG_LIB(0);
-const char log_tag_const_i_EQ  = CONFIG_DEBUG_LIB(const_eq_debug);
+const char log_tag_const_i_EQ  = CONFIG_DEBUG_LIB(0);
 const char log_tag_const_d_EQ  = CONFIG_DEBUG_LIB(0);
 const char log_tag_const_w_EQ  = CONFIG_DEBUG_LIB(0);
 const char log_tag_const_e_EQ  = CONFIG_DEBUG_LIB(TRUE);
@@ -901,52 +901,52 @@ const char log_tag_const_e_AUD_AUX  = CONFIG_DEBUG_LIB(0);
 const char log_tag_const_v_MIXER  = CONFIG_DEBUG_LIB(0);
 const char log_tag_const_c_MIXER  = CONFIG_DEBUG_LIB(0);
 const char log_tag_const_i_MIXER  = CONFIG_DEBUG_LIB(0);
-const char log_tag_const_d_MIXER  = CONFIG_DEBUG_LIB(TRUE);
-const char log_tag_const_e_MIXER  = CONFIG_DEBUG_LIB(TRUE);
+const char log_tag_const_d_MIXER  = CONFIG_DEBUG_LIB(0);
+const char log_tag_const_e_MIXER  = CONFIG_DEBUG_LIB(0);
 
 const char log_tag_const_v_AUDIO_STREAM  = CONFIG_DEBUG_LIB(0);
 const char log_tag_const_c_AUDIO_STREAM  = CONFIG_DEBUG_LIB(0);
 const char log_tag_const_i_AUDIO_STREAM  = CONFIG_DEBUG_LIB(0);
-const char log_tag_const_d_AUDIO_STREAM  = CONFIG_DEBUG_LIB(TRUE);
-const char log_tag_const_e_AUDIO_STREAM  = CONFIG_DEBUG_LIB(TRUE);
+const char log_tag_const_d_AUDIO_STREAM  = CONFIG_DEBUG_LIB(0);
+const char log_tag_const_e_AUDIO_STREAM  = CONFIG_DEBUG_LIB(0);
 
 const char log_tag_const_v_AUDIO_DECODER  = CONFIG_DEBUG_LIB(0);
 const char log_tag_const_c_AUDIO_DECODER  = CONFIG_DEBUG_LIB(0);
 const char log_tag_const_i_AUDIO_DECODER  = CONFIG_DEBUG_LIB(0);
-const char log_tag_const_d_AUDIO_DECODER  = CONFIG_DEBUG_LIB(TRUE);
-const char log_tag_const_e_AUDIO_DECODER  = CONFIG_DEBUG_LIB(TRUE);
+const char log_tag_const_d_AUDIO_DECODER  = CONFIG_DEBUG_LIB(0);
+const char log_tag_const_e_AUDIO_DECODER  = CONFIG_DEBUG_LIB(0);
 
 const char log_tag_const_v_AUDIO_ENCODER  = CONFIG_DEBUG_LIB(0);
 const char log_tag_const_c_AUDIO_ENCODER  = CONFIG_DEBUG_LIB(0);
 const char log_tag_const_i_AUDIO_ENCODER  = CONFIG_DEBUG_LIB(0);
-const char log_tag_const_d_AUDIO_ENCODER  = CONFIG_DEBUG_LIB(TRUE);
-const char log_tag_const_e_AUDIO_ENCODER  = CONFIG_DEBUG_LIB(TRUE);
+const char log_tag_const_d_AUDIO_ENCODER  = CONFIG_DEBUG_LIB(0);
+const char log_tag_const_e_AUDIO_ENCODER  = CONFIG_DEBUG_LIB(0);
 
 
 const char log_tag_const_v_SYNCTS  = CONFIG_DEBUG_LIB(0);
 const char log_tag_const_c_SYNCTS  = CONFIG_DEBUG_LIB(0);
 const char log_tag_const_i_SYNCTS  = CONFIG_DEBUG_LIB(0);
-const char log_tag_const_d_SYNCTS  = CONFIG_DEBUG_LIB(TRUE);
-const char log_tag_const_e_SYNCTS  = CONFIG_DEBUG_LIB(TRUE);
+const char log_tag_const_d_SYNCTS  = CONFIG_DEBUG_LIB(0);
+const char log_tag_const_e_SYNCTS  = CONFIG_DEBUG_LIB(0);
 
 
 const char log_tag_const_v_EFFECTS  = CONFIG_DEBUG_LIB(0);
 const char log_tag_const_c_EFFECTS  = CONFIG_DEBUG_LIB(0);
 const char log_tag_const_i_EFFECTS  = CONFIG_DEBUG_LIB(0);
 const char log_tag_const_d_EFFECTS  = CONFIG_DEBUG_LIB(0);
-const char log_tag_const_e_EFFECTS  = CONFIG_DEBUG_LIB(TRUE);
+const char log_tag_const_e_EFFECTS  = CONFIG_DEBUG_LIB(0);
 
 const char log_tag_const_v_JLSTREAM  = CONFIG_DEBUG_LIB(0);
 const char log_tag_const_c_JLSTREAM  = CONFIG_DEBUG_LIB(0);
-const char log_tag_const_i_JLSTREAM  = CONFIG_DEBUG_LIB(1);
-const char log_tag_const_d_JLSTREAM  = CONFIG_DEBUG_LIB(1);
-const char log_tag_const_e_JLSTREAM  = CONFIG_DEBUG_LIB(TRUE);
+const char log_tag_const_i_JLSTREAM  = CONFIG_DEBUG_LIB(0);
+const char log_tag_const_d_JLSTREAM  = CONFIG_DEBUG_LIB(0);
+const char log_tag_const_e_JLSTREAM  = CONFIG_DEBUG_LIB(0);
 
 const char log_tag_const_v_CVP = CONFIG_DEBUG_LIB(0);
 const char log_tag_const_c_CVP = CONFIG_DEBUG_LIB(0);
-const char log_tag_const_i_CVP = CONFIG_DEBUG_LIB(TRUE);
+const char log_tag_const_i_CVP = CONFIG_DEBUG_LIB(0);
 const char log_tag_const_d_CVP = CONFIG_DEBUG_LIB(0);
-const char log_tag_const_e_CVP = CONFIG_DEBUG_LIB(TRUE);
+const char log_tag_const_e_CVP = CONFIG_DEBUG_LIB(0);
 
 /*
  *******************************************************************
@@ -1006,5 +1006,5 @@ void audio_encoder_test_run_after(struct audio_encoder *enc, int err) {} ;
 /*
  *接到同个分流器下的多设备同步
  * */
-const int config_dev_sync_enable = 1;
+const int config_dev_sync_enable = 0;
 /*********************Audio Config End************************/

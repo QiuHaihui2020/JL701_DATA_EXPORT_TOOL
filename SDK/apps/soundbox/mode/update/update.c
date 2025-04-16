@@ -29,7 +29,7 @@ struct app_mode *app_enter_update_mode(int arg)
 #if TCFG_MIC_EFFECT_ENABLE
     mic_effect_player_pause(1);
 #endif
-    jlstream_global_lock();
+    // jlstream_global_lock();
 
 
     while (1) {
@@ -55,7 +55,7 @@ struct app_mode *app_enter_update_mode(int arg)
 
     r_printf("app_exit_update_mode\n");
 
-    jlstream_global_unlock();
+    // jlstream_global_unlock();
 
 #if TCFG_MIC_EFFECT_ENABLE
     mic_effect_player_pause(0);

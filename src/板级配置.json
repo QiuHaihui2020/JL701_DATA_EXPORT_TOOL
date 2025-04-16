@@ -1277,7 +1277,7 @@
               "saveWay": "macro",
               "uuid": "CONFIG_FLASH_SIZE",
               "originValue": "0x100000",
-              "defaultValue": "0x100000"
+              "defaultValue": "0x80000"
             },
             "__slot__": {
               "options": [
@@ -2448,7 +2448,7 @@
                     "changeTag": true,
                     "tag": "el-input-number",
                     "tagIcon": "number",
-                    "defaultValue": 48000000,
+                    "defaultValue": 12000000,
                     "required": false,
                     "layout": "colFormItem",
                     "span": 8,

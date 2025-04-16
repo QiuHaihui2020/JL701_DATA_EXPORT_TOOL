@@ -209,7 +209,7 @@ void cfg_file_parse(u8 idx)
 #ifdef TCFG_BT_BLE_TX_POWER
     ble_power = TCFG_BT_BLE_TX_POWER;
 #endif
-    bt_max_pwr_set(app_var.rf_power, 5, 8, ble_power);//last is ble tx_pwer(0~9)
+    // bt_max_pwr_set(app_var.rf_power, 5, 8, ble_power);//last is ble tx_pwer(0~9)
     /* g_printf("rf config:%d\n", app_var.rf_power); */
     log_info("rf config:%d\n", app_var.rf_power);
 
@@ -266,11 +266,11 @@ void cfg_file_parse(u8 idx)
     struct volume_cfg ktone_vol_cfg;
     struct volume_cfg ring_vol_cfg;
     //赋予相关变量初值
-    volume_ioc_get_cfg("Vol_BtmMusic", &music_vol_cfg);
-    volume_ioc_get_cfg("Vol_BtcCall", &call_vol_cfg);
-    volume_ioc_get_cfg("Vol_SysTone", &tone_vol_cfg);
-    volume_ioc_get_cfg("Vol_SysKTone", &ktone_vol_cfg);
-    volume_ioc_get_cfg("Vol_SysRing", &ring_vol_cfg);
+    // volume_ioc_get_cfg("Vol_BtmMusic", &music_vol_cfg);
+    // volume_ioc_get_cfg("Vol_BtcCall", &call_vol_cfg);
+    // volume_ioc_get_cfg("Vol_SysTone", &tone_vol_cfg);
+    // volume_ioc_get_cfg("Vol_SysKTone", &ktone_vol_cfg);
+    // volume_ioc_get_cfg("Vol_SysRing", &ring_vol_cfg);
 
     ret = syscfg_read(CFG_SYS_VOL, &default_volume, 2);
     if (ret < 0) {
@@ -341,14 +341,14 @@ void cfg_file_parse(u8 idx)
     if (ret < 0) {
         scene_num = 0;
     }
-    set_default_scene(scene_num);
+    // set_default_scene(scene_num);
     log_info("\n default scene %d \n", scene_num);
     u8 eq0_cfg_num;
     ret = syscfg_read(CFG_EQ0_INDEX, &eq0_cfg_num, 1);
     if (ret < 0) {
         eq0_cfg_num = 0;
     }
-    set_music_eq_preset_index(eq0_cfg_num);
+    // set_music_eq_preset_index(eq0_cfg_num);
     log_info("\n default eq0 cfg %d \n", eq0_cfg_num);
 
 
@@ -376,7 +376,7 @@ void cfg_file_parse(u8 idx)
         do {
             ret = syscfg_read(CFG_BT_MAC_ADDR, mac_buf, 6);
             if ((ret != 6) || !memcmp(mac_buf, mac_buf_tmp, 6) || !memcmp(mac_buf, mac_buf_tmp2, 6)) {
-                get_random_number(mac_buf, 6);
+                //get_random_number(mac_buf, 6);
                 syscfg_write(CFG_BT_MAC_ADDR, mac_buf, 6);
             }
         } while (0);
@@ -384,7 +384,7 @@ void cfg_file_parse(u8 idx)
 
     syscfg_read(CFG_BT_MAC_ADDR, bt_mac_addr_for_testbox, 6);
     if (!memcmp(bt_mac_addr_for_testbox, mac_buf_tmp, 6)) {
-        get_random_number(bt_mac_addr_for_testbox, 6);
+        //get_random_number(bt_mac_addr_for_testbox, 6);
         syscfg_write(CFG_BT_MAC_ADDR, bt_mac_addr_for_testbox, 6);
         log_info(">>>init mac addr!!!\n");
     }

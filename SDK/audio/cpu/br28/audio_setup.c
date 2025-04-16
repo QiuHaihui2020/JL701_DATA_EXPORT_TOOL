@@ -325,7 +325,7 @@ void audio_input_initcall(void)
     if (const_adc_async_en) {
         //ICSD ADT启动时不可注册所有ADC_CH
 #if !((defined TCFG_AUDIO_ANC_ACOUSTIC_DETECTOR_EN) && TCFG_AUDIO_ANC_ACOUSTIC_DETECTOR_EN)
-        audio_all_adc_file_init();
+        // audio_all_adc_file_init();
 #endif
     }
 }

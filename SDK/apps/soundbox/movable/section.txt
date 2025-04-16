@@ -11,51 +11,19 @@
 
 
 1:
-
-.fm.text.cache.L2
-
-.eq.text
-.wdrc.text
-.hw_eq.text
-.surcal.text
-.gain.text
-.bass_treble.text
-.crossover.text
-.band_merge.text
-.vocal_track_synthesis.text
-.vocal_track_separation.text
-.mixer.text
-
-
-
 2:
 
-.classic.text.cache.L2.irq
+
 
 
 
 3:
 
-.bt_aac_dec_code
-.bt_aac_dec_sparse_code
-. = ALIGN(4)
-.bt_aac_dec_data
+
+
+
+
 
 
 4:
-
-.cvp.text.cache.L2.cpp
-.aec_code
-.res_code
-.ns_code
-.fft_code
-.nlp_code
-.der_code
-.qmf_code
-.dms_code
-.agc_code
-.opcore_maskrom
-
-
-
 5:

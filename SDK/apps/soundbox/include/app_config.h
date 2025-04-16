@@ -301,7 +301,7 @@
 #define TCFG_USER_TWS_ENABLE                      0     //tws功能使能
 
 #undef  TCFG_USER_BLE_ENABLE
-#define TCFG_USER_BLE_ENABLE                      1     //BLE功能使能
+#define TCFG_USER_BLE_ENABLE                      0     //BLE功能使能
 
 #undef TCFG_BT_BLE_BREDR_SAME_ADDR
 #define  TCFG_BT_BLE_BREDR_SAME_ADDR     0
@@ -334,7 +334,7 @@
 #define TCFG_TEST_BOX_ENABLE			    0
 
 #undef TCFG_AUTO_POWERON_ENABLE
-#define TCFG_AUTO_POWERON_ENABLE    1
+#define TCFG_AUTO_POWERON_ENABLE    0
 
 #undef TCFG_CFG_TOOL_ENABLE
 #define TCFG_CFG_TOOL_ENABLE 0
@@ -493,7 +493,7 @@
 //升级LED显示使能
 #define UPDATE_LED_REMIND
 //升级提示音使能
-#define UPDATE_VOICE_REMIND
+//#define UPDATE_VOICE_REMIND
 
 
 // #undef CONFIG_UPDATE_JUMP_TO_MASK
@@ -716,8 +716,8 @@
  * 比如关闭A2DP播放器，则手机播歌的时候，蓝牙数据传输是正常的，但是因为没有使能解码器，
  * 所以没有声音
  */
-#define TCFG_BT_A2DP_PLAYER_ENABLE		1
-#define TCFG_BT_ESCO_PLAYER_ENABLE		1
+#define TCFG_BT_A2DP_PLAYER_ENABLE		0
+#define TCFG_BT_ESCO_PLAYER_ENABLE		0
 
 #if (TCFG_SMART_VOICE_ENABLE && TCFG_SMART_VOICE_USE_AEC)
 #if (TCFG_AUDIO_GLOBAL_SAMPLE_RATE == 0) || (TCFG_AUDIO_GLOBAL_SAMPLE_RATE % 16000)
@@ -822,20 +822,20 @@
 #define TCFG_USER_RSSI_TEST_EN   0   //通过spp获取耳机RSSI值，需要使能USER_SUPPORT_PROFILE_SPP
 
 //FM 一部分代码动态加载到ram
-#define TCFG_CODE_RUN_RAM_FM_CODE            1
+#define TCFG_CODE_RUN_RAM_FM_CODE            0
 //BT 一部分代码加载到ram
-#define TCFG_CODE_RUN_RAM_BT_CODE            1
+#define TCFG_CODE_RUN_RAM_BT_CODE            0
 
 //AAC 一部分代码加载到ram
-#define TCFG_CODE_RUN_RAM_AAC_CODE           1
+#define TCFG_CODE_RUN_RAM_AAC_CODE           0
 
 //AEC 一部分代码加载到ram
-#define TCFG_CODE_RUN_RAM_AEC_CODE           1
+#define TCFG_CODE_RUN_RAM_AEC_CODE           0
 
 #ifdef CONFIG_CPU_BR27
 #define TCFG_CODE_RUN_RAM_MIC_EFF_CODE       0
 #else
-#define TCFG_CODE_RUN_RAM_MIC_EFF_CODE       1
+#define TCFG_CODE_RUN_RAM_MIC_EFF_CODE       0
 #endif
 
 #ifndef TCFG_LP_TOUCH_KEY_ENABLE

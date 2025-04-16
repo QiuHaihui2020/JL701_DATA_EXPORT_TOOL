@@ -477,7 +477,7 @@ static void app_idle_enter_softoff(void)
 #endif
 
     //关机前先关dac
-    dac_power_off();
+    // dac_power_off();
 
     power_set_soft_poweroff();
 }
@@ -505,10 +505,6 @@ struct app_mode *app_enter_idle_mode(int arg)
         case MSG_FROM_DEVICE:
             printf("[idle] MSG_FROM_DEVICE");
             idle_app_device_event_handler(msg + 1);//没有跑进来
-            break;
-        case MSG_FROM_KEY:
-            printf("[idle] MSG_FROM_KEY");
-            idle_key_event_handler(msg + 1);
             break;
         default:
             printf("[idle] default msg %d", msg[0]);
@@ -538,8 +534,8 @@ static int app_power_off_tone_cb(void *priv, enum stream_event event)
 
 static void device_online_timeout(void *priv)
 {
-    int ret = play_tone_file_callback(get_tone_files()->power_off, NULL,
-                                      app_power_off_tone_cb);
+    int ret = -1;//play_tone_file_callback(get_tone_files()->power_off, NULL,
+                                      //app_power_off_tone_cb);
     wait_device_online_timer = 0;
     printf("power_off tone play ret:%d", ret);
     if (ret) {
@@ -570,8 +566,8 @@ static int app_idle_init(int param)
                 vm_flush2flash(1);
             }
             os_taskq_flush();
-            int ret = play_tone_file_callback(get_tone_files()->power_off, NULL,
-                                              app_power_off_tone_cb);
+            int ret = -1;//play_tone_file_callback(get_tone_files()->power_off, NULL,
+                                              // app_power_off_tone_cb);
             printf("power_off tone play ret:%d", ret);
             if (ret) {
                 if (app_var.goto_poweroff_flag) {

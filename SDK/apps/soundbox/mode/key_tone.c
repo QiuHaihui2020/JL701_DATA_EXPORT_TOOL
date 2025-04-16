@@ -22,7 +22,7 @@ static int key_tone_msg_handler(int *msg)
     if (g_have_key_tone_file == 0) {
         char file_path[48];
         strcpy(file_path, FLASH_RES_PATH);
-        strcpy(file_path + strlen(FLASH_RES_PATH), get_tone_files()->key_tone);
+        // strcpy(file_path + strlen(FLASH_RES_PATH), get_tone_files()->key_tone);
         void *file = resfile_open(file_path);
         if (file) {
             g_have_key_tone_file = 1;
@@ -41,7 +41,7 @@ static int key_tone_msg_handler(int *msg)
         break;
     default:
         if (g_have_key_tone_file == 1) {
-            play_key_tone_file(get_tone_files()->key_tone);
+            // play_key_tone_file(get_tone_files()->key_tone);
         }
         break;
     }
