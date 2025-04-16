@@ -79,9 +79,15 @@ void oled_display_task(void *priv)
 
         switch (msg[1]) {
         case OLED_DISPLAY_SD_ON:
+#ifdef TCFG_LED_RED_GPIO
+        gpio_set_mode(IO_PORT_SPILT(TCFG_LED_RED_GPIO), PORT_OUTPUT_HIGH);
+#endif
             OLED_P8x16Str(32, 2, "on ");
             break;
         case OLED_DISPLAY_SD_OFF:
+#ifdef TCFG_LED_RED_GPIO
+        gpio_set_mode(IO_PORT_SPILT(TCFG_LED_RED_GPIO), PORT_OUTPUT_LOW);
+#endif
             OLED_P8x16Str(32, 2, "off");
             break;
         case OLED_DISPLAY_CH:

@@ -188,8 +188,8 @@ const struct task_info task_info_table[] = {
     {"CVP_RefTask",	        4,	   0,   256,   128	},
     {"trim_task",	        4,	   0,   256,   128	},
     {"a_uart_rec",	        3,	   0,   512,   128	},
-    {"a_sd_write",	        2,	   0,   512,   128	},
-    {"od_dispaly",	    2,	   1,   512,   128	},
+    {"a_sd_write",	        3,	   1,   512,   128	},
+    {"od_dispaly",	        2,	   1,   1024,  1024	},
     {0, 0},
 };
 

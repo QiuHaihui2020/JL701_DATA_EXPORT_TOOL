@@ -171,7 +171,7 @@ const int FATFS_SUPPORT_WRITE_SAVE_MEANTIME = 1; //每次写同步目录项使�
 const int FATFS_SUPPORT_WRITE_CUTOFF = 1; //支持fseek截断文件。 打开后fseek后指针位置会决定文件大小
 const int FATFS_RW_MAX_CACHE = 64 * 1024; //设置读写申请的最大cache大小 .note: 小于512会被默认不生效
 
-const int FATFS_GET_SPACE_USE_RAM = 0;//32 * 1024;  //获取剩余容量使用大Buf缓存,加快速度, 必须512倍数
+const int FATFS_GET_SPACE_USE_RAM = 32 * 1024;  //获取剩余容量使用大Buf缓存,加快速度, 必须512倍数
 
 const int FATFS_DEBUG_FAT_TABLE_DIR_ENTRY = 0; //设置debugfat表和目录项写数据
 

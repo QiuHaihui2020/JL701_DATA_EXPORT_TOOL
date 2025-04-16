@@ -13,6 +13,8 @@
 #define PCM_CH                      3
 #define PCM_SINGLE_LEN              512
 
+#define SD_CBUF_CNT     20 //cbuf大小为SD_CBUF_CNT * 1.5k byte
+
 #define AUDIO_UART_TASK_NAME    "a_uart_rec"
 #define AUDIO_SDWRITE_TASK_NAME "a_sd_write"
 
@@ -236,7 +238,6 @@ void audio_uart_init()
         printf("use default pcm channel : %d\n", hdl->pcm_channel);
     }
     printf("=================================== pcm channel : %d\n", hdl->pcm_channel);
-
     //oled_dispaly_task_post(OLED_DISPLAY_CH, (int *)(hdl->pcm_channel));
 
     /*读取单个通道的数据长度*/
@@ -266,12 +267,11 @@ void audio_uart_init()
 
     hdl->sd_tmp_buf = zalloc(hdl->sd_write_frame_size);
     ASSERT(hdl->sd_tmp_buf);
-    hdl->sd_buf = zalloc(hdl->uart_frame_size * 5);
+    hdl->sd_buf = zalloc(hdl->uart_frame_size * SD_CBUF_CNT);
     ASSERT(hdl->sd_buf);
-    cbuf_init(&hdl->sd_cbuf, hdl->sd_buf, hdl->uart_frame_size * 5);
+    cbuf_init(&hdl->sd_cbuf, hdl->sd_buf, hdl->uart_frame_size * SD_CBUF_CNT);
     os_sem_create(&hdl->sd_sem, 0);
     task_create(audio_sdwrite_task, hdl, AUDIO_SDWRITE_TASK_NAME);
-
 
     hdl->uart_tmp_buf = zalloc(hdl->uart_frame_size);
     ASSERT(hdl->uart_tmp_buf);
@@ -279,10 +279,8 @@ void audio_uart_init()
     ASSERT(hdl->uart_buf);
     cbuf_init(&hdl->uart_cbuf, hdl->uart_buf, hdl->uart_frame_size * 3);
 
-
     os_sem_create(&hdl->uart_sem, 0);
     task_create(audio_uart_task, hdl, AUDIO_UART_TASK_NAME);
-
 
     hdl->uart_dma_buf = dma_malloc(hdl->uart_dma_buf_size);
     ASSERT(hdl->uart_dma_buf);

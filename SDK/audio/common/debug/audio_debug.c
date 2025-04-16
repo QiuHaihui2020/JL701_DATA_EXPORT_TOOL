@@ -15,7 +15,7 @@
 
 static void audio_config_trace(void *priv)
 {
-    printf(">>Audio_Config_Trace:\n");
+   // printf(">>Audio_Config_Trace:\n");
 #if AUD_CFG_DUMP_ENABLE
     audio_config_dump();
 #endif
@@ -30,7 +30,17 @@ static void audio_config_trace(void *priv)
 #endif
 
 #if AUD_TASK_INFO_DUMP_ENABLE
-    task_info_output(0);
+    //task_info_output(0);
+    int usage[3] = { 0, 0, 0 };
+    int a = os_cpu_usage(NULL, usage);
+    task_info_reset();
+    if (a < 0) {
+        return;
+    }
+    int usage_max = MAX(usage[0], usage[1]);
+    int curr_clk = clk_get("sys");
+
+    printf("cpu0: %d , cpu0: %d , clk:%d\n", usage[0], usage[1], curr_clk);
 #endif
 
 #if AUD_JLSTREAM_MEM_DUMP_ENABLE

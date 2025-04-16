@@ -6,8 +6,8 @@
 /*定时打印音频配置参数开关，默认3s打印一次
  *量产版本应该关闭，仅作debug调试使用
  */
-#define TCFG_AUDIO_CONFIG_TRACE     		0	//跟踪使能配置
-#define TCFG_AUDIO_CONFIG_TRACE_INTERVAL    3000//跟踪频率配置unit:ms
+#define TCFG_AUDIO_CONFIG_TRACE     		1	//跟踪使能配置
+#define TCFG_AUDIO_CONFIG_TRACE_INTERVAL    5000//跟踪频率配置unit:ms
 
 /*
 **************************************************************

@@ -3371,6 +3371,7 @@ objs/audio/common/audio_general.c.o
 -r=objs/audio/common/audio_general.c.o,audio_general_out_dev_bit_width,pl
 -r=objs/audio/common/audio_general.c.o,audio_general_in_dev_bit_width,pl
 -r=objs/audio/common/audio_general.c.o,audio_general_init,pl
+-r=objs/audio/common/audio_general.c.o,audio_config_trace_setup,l
 -r=objs/audio/common/audio_general.c.o,audio_general_set_global_sample_rate,pl
 -r=objs/audio/common/audio_general.c.o,local_irq_disable,l
 -r=objs/audio/common/audio_general.c.o,local_irq_enable,l
@@ -3561,8 +3562,10 @@ objs/audio/common/bt_audio_energy_detection.c.o
 objs/audio/common/debug/audio_debug.c.o
 -r=objs/audio/common/debug/audio_debug.c.o,audio_config_trace_setup,pl
 -r=objs/audio/common/debug/audio_debug.c.o,sys_timer_add,l
--r=objs/audio/common/debug/audio_debug.c.o,task_info_output,l
--r=objs/audio/common/debug/audio_debug.c.o,puts,l
+-r=objs/audio/common/debug/audio_debug.c.o,os_cpu_usage,l
+-r=objs/audio/common/debug/audio_debug.c.o,task_info_reset,l
+-r=objs/audio/common/debug/audio_debug.c.o,clk_get,l
+-r=objs/audio/common/debug/audio_debug.c.o,printf,l
 objs/audio/common/demo/audio_eq_demo.c.o
 -r=objs/audio/common/demo/audio_eq_demo.c.o,audio_hw_eq_process_demo,pl
 -r=objs/audio/common/demo/audio_eq_demo.c.o,audio_eq_coeff_open,l
@@ -5257,6 +5260,7 @@ objs/cpu/br28/setup.c.o
 -r=objs/cpu/br28/setup.c.o,code_movable_init,l
 -r=objs/cpu/br28/setup.c.o,__crc16_mutex_init,l
 -r=objs/cpu/br28/setup.c.o,config_asser,l
+-r=objs/cpu/br28/setup.c.o,OS_Affinity_Enable,l
 objs/cpu/br28/ui_driver/interface/ui_platform.c.o
 -r=objs/cpu/br28/ui_driver/interface/ui_platform.c.o,platform_get_file,pl
 -r=objs/cpu/br28/ui_driver/interface/ui_platform.c.o,ui_draw,pl
@@ -5711,11 +5715,11 @@ objs/apps/soundbox/audio_debug_tool/display/display_task.c.o
 -r=objs/apps/soundbox/audio_debug_tool/display/display_task.c.o,syscfg_write,l
 -r=objs/apps/soundbox/audio_debug_tool/display/display_task.c.o,oled_dispaly_task_post,pl
 -r=objs/apps/soundbox/audio_debug_tool/display/display_task.c.o,os_taskq_pend,l
+-r=objs/apps/soundbox/audio_debug_tool/display/display_task.c.o,gpio_set_mode,l
 -r=objs/apps/soundbox/audio_debug_tool/display/display_task.c.o,sprintf,l
 -r=objs/apps/soundbox/audio_debug_tool/display/display_task.c.o,audio_uart_init_runing,l
 -r=objs/apps/soundbox/audio_debug_tool/display/display_task.c.o,audio_uart_exit,l
 -r=objs/apps/soundbox/audio_debug_tool/display/display_task.c.o,audio_uart_init,l
--r=objs/apps/soundbox/audio_debug_tool/display/display_task.c.o,gpio_set_mode,l
 -r=objs/apps/soundbox/audio_debug_tool/display/display_task.c.o,os_taskq_post_msg,l
 -r=objs/apps/soundbox/audio_debug_tool/display/display_task.c.o,oled_display_init,pl
 -r=objs/apps/soundbox/audio_debug_tool/display/display_task.c.o,OLED_Init,l

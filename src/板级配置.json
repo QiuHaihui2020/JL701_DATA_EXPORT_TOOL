@@ -2448,7 +2448,7 @@
                     "changeTag": true,
                     "tag": "el-input-number",
                     "tagIcon": "number",
-                    "defaultValue": 12000000,
+                    "defaultValue": 48000000,
                     "required": false,
                     "layout": "colFormItem",
                     "span": 8,
