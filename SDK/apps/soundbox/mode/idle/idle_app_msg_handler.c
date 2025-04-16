@@ -118,7 +118,7 @@ int idle_key_event_handler(int key_msg)
         }
         
         printf("ch_len_switch: %d\n", ch_len_switch);
-        oled_dispaly_task_post(OLED_DISPLAY_SET_NEXT, (int *)(ch_len_switch));
+        oled_dispaly_task_post(OLED_DISPLAY_SET_NEXT, (int *)((int)ch_len_switch));
 #if 0
         if (ch_len_switch == 0) {
             //sec
@@ -169,7 +169,7 @@ int idle_key_event_handler(int key_msg)
             }
             printf("pcm channel : %02d\n", ch);
             syscfg_write(CFG_UART_PCM_RX_CH, &ch, 1);
-            oled_dispaly_task_post(OLED_DISPLAY_CH, (int *)(ch));
+            oled_dispaly_task_post(OLED_DISPLAY_CH, (int *)((int)ch));
 
         } else if (ch_len_switch == 2) {
 
@@ -184,7 +184,7 @@ int idle_key_event_handler(int key_msg)
             }
             printf("pcm_rx_single_size : %04d\n", len);
             syscfg_write(CFG_UART_PCM_RX_SIG_SIZE, &len, 2);
-            oled_dispaly_task_post(OLED_DISPLAY_LEN, (int *)(len));
+            oled_dispaly_task_post(OLED_DISPLAY_LEN, (int *)((int)len));
 
         } else if (ch_len_switch == 3) {
             ret = syscfg_read(CFG_UART_PCM_RX_BAUD_RATE, &baud, 4);
@@ -214,7 +214,7 @@ int idle_key_event_handler(int key_msg)
             ch += 1;
             printf("pcm channel : %02d\n", ch);
             syscfg_write(CFG_UART_PCM_RX_CH, &ch, 1);
-            oled_dispaly_task_post(OLED_DISPLAY_CH, (int *)(ch));
+            oled_dispaly_task_post(OLED_DISPLAY_CH, (int *)((int)ch));
 
         } else if (ch_len_switch == 2) {
 
@@ -226,7 +226,7 @@ int idle_key_event_handler(int key_msg)
             len += 4;
             printf("pcm_rx_single_size : %04d\n", len);
             syscfg_write(CFG_UART_PCM_RX_SIG_SIZE, &len, 2);
-            oled_dispaly_task_post(OLED_DISPLAY_LEN, (int *)(len));
+            oled_dispaly_task_post(OLED_DISPLAY_LEN, (int *)((int)len));
 
         } else if (ch_len_switch == 3) {
             ret = syscfg_read(CFG_UART_PCM_RX_BAUD_RATE, &baud, 4);

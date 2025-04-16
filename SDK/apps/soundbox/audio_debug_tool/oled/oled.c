@@ -212,7 +212,7 @@ void OLED_Init(void)
 
 
 /***************功能描述：显示6*8一组标准ASCII字符串	显示的坐标（x,y），y为页范围0～7****************/
-void OLED_P6x8Str(unsigned char x, unsigned char y, unsigned char ch[])
+void OLED_P6x8Str(unsigned char x, unsigned char y, char ch[])
 {
 	unsigned char c=0,i=0,j=0;
 	while (ch[j]!='\0')
@@ -227,7 +227,7 @@ void OLED_P6x8Str(unsigned char x, unsigned char y, unsigned char ch[])
 	}
 }
 /*******************功能描述：显示8*16一组标准ASCII字符串	 显示的坐标（x,y），y为页范围0～7****************/
-void OLED_P8x16Str(unsigned char x, unsigned char y, unsigned char ch[])
+void OLED_P8x16Str(unsigned char x, unsigned char y, char ch[])
 {
 	unsigned char c=0,i=0,j=0;
 	while (ch[j]!='\0')
@@ -264,7 +264,7 @@ void OLED_P16x16Ch(unsigned char x, unsigned char y, unsigned char N)
 }
 
 // Parameters     : x0,y0 -- 起始点坐标(x0:0~127, y0:0~7); x1,y1 -- 起点对角线(结束点)的坐标(x1:1~128,y1:1~8)
-void Draw_BMP(unsigned char x0, unsigned char y0, unsigned char x1, unsigned char y1,unsigned char BMP[])
+void Draw_BMP(unsigned char x0, unsigned char y0, unsigned char x1, unsigned char y1, char BMP[])
 {
 	unsigned int j=0;
 	unsigned char x,y;

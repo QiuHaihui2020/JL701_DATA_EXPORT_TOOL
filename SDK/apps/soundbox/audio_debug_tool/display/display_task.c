@@ -15,7 +15,7 @@ void oled_display_task(void *priv)
 {
     int ret = 0;
     int msg[16];
-    u8 strnum[16];
+    char strnum[16];
     u8 set_switch = 0;
     u8 run_tips_flag = 0;
 
@@ -49,7 +49,7 @@ void oled_display_task(void *priv)
         printf("use default pcm channel : %d\n", pcm_channel);
     }
     printf("=================================== pcm channel : %d\n", pcm_channel);
-    oled_dispaly_task_post(OLED_DISPLAY_CH, (int *)(pcm_channel));
+    oled_dispaly_task_post(OLED_DISPLAY_CH, (int *)((int)pcm_channel));
 
     /*读取单个通道的数据长度*/
     ret = syscfg_read(CFG_UART_PCM_RX_SIG_SIZE, &pcm_rx_single_size, 2);
@@ -59,7 +59,7 @@ void oled_display_task(void *priv)
         syscfg_write(CFG_UART_PCM_RX_SIG_SIZE, &pcm_rx_single_size, 2);
     }
     printf("=================================== pcm_rx_single_size : %d\n", pcm_rx_single_size);
-    oled_dispaly_task_post(OLED_DISPLAY_LEN, (int *)(pcm_rx_single_size));
+    oled_dispaly_task_post(OLED_DISPLAY_LEN, (int *)((int)pcm_rx_single_size));
 
     /*读取波特率*/
     ret = syscfg_read(CFG_UART_PCM_RX_BAUD_RATE, &uart_baud_rate, 4);

@@ -13,7 +13,7 @@
 #define PCM_CH                      3
 #define PCM_SINGLE_LEN              512
 
-#define SD_CBUF_CNT     20 //cbuf大小为SD_CBUF_CNT * 1.5k byte
+#define SD_CBUF_CNT     30 //cbuf大小为SD_CBUF_CNT * 1.5k byte
 
 #define AUDIO_UART_TASK_NAME    "a_uart_rec"
 #define AUDIO_SDWRITE_TASK_NAME "a_sd_write"
@@ -91,7 +91,7 @@ static void audio_uart_task(void *priv)
                     if (wlen == (recv_len - 4)) {
                         os_sem_post(&hdl->sd_sem);
                     } else {
-                        printf("[error] sd cbuf full\n");
+                        printf("[error] sd cbuf full, cbuf data len %d\n", hdl->sd_cbuf.data_len);
                         hdl->lost_packet++;
                     }
                 } else {
@@ -106,7 +106,7 @@ static void audio_uart_task(void *priv)
             if ((rec_cnt % 100) == 0) {
                 if (rec_cnt != last_rec_cnt) {
                     last_rec_cnt = rec_cnt;
-                    oled_dispaly_task_post(OLED_DISPLAY_LOST, (int *)(hdl->lost_packet));
+                    oled_dispaly_task_post(OLED_DISPLAY_LOST, (int *)((int)hdl->lost_packet));
                 }
 
             }
@@ -138,6 +138,7 @@ static void audio_sdwrite_task(void *priv)
             printf("file open fail, %s", path);
         } else {
             printf("file open %s", path);
+            //fwrite(hdl->sd_tmp_buf, hdl->sd_write_frame_size, 1, hdl->fp); //提前写一包数据，处理第一次写数据慢的问题
         }
     }
 
@@ -211,6 +212,37 @@ u8 audio_uart_init_runing()
     }
 }
 
+static u32 printf_timer = 0;
+static void sys_info_trace(void *priv)
+{
+    //task_info_output(0);
+
+    int cbuf_data_len = 0;
+    if (aud_dbg_hdl) {
+        cbuf_data_len = aud_dbg_hdl->sd_cbuf.data_len;
+    }
+    int usage[3] = { 0, 0, 0 };
+    int a = os_cpu_usage(NULL, usage);
+    
+    if (a < 0) {
+        return;
+    }
+    int usage_max = MAX(usage[0], usage[1]);
+    int curr_clk = clk_get("sys");
+    
+    printf("cpu0: %d , cpu1: %d , clk:%d, cbuf data_len: %d\n", usage[0], usage[1], curr_clk, cbuf_data_len);
+
+    a = os_cpu_usage(AUDIO_UART_TASK_NAME, NULL);
+    printf("task : %s: %d\n", AUDIO_UART_TASK_NAME, a);
+    a = os_cpu_usage(AUDIO_SDWRITE_TASK_NAME, NULL);
+    printf("task : %s: %d\n", AUDIO_SDWRITE_TASK_NAME, a);
+    a = os_cpu_usage("od_dispaly", NULL);
+    printf("task : %s: %d\n", "od_dispaly", a);
+    
+    task_info_reset();
+
+}
+
 void audio_uart_init()
 {
     if (aud_dbg_hdl) {
@@ -222,6 +254,8 @@ void audio_uart_init()
 
     struct audio_dbg_hdl_t *hdl = zalloc(sizeof(*hdl));
     ASSERT(hdl);
+
+    printf_timer = sys_timer_add(NULL, sys_info_trace, 5000);
 
     hdl->uart_dma_buf_size = 4096;
     hdl->uart_baud_rate = 2000000;
@@ -267,9 +301,9 @@ void audio_uart_init()
 
     hdl->sd_tmp_buf = zalloc(hdl->sd_write_frame_size);
     ASSERT(hdl->sd_tmp_buf);
-    hdl->sd_buf = zalloc(hdl->uart_frame_size * SD_CBUF_CNT);
+    hdl->sd_buf = zalloc(hdl->sd_write_frame_size * SD_CBUF_CNT);
     ASSERT(hdl->sd_buf);
-    cbuf_init(&hdl->sd_cbuf, hdl->sd_buf, hdl->uart_frame_size * SD_CBUF_CNT);
+    cbuf_init(&hdl->sd_cbuf, hdl->sd_buf, hdl->sd_write_frame_size * SD_CBUF_CNT);
     os_sem_create(&hdl->sd_sem, 0);
     task_create(audio_sdwrite_task, hdl, AUDIO_SDWRITE_TASK_NAME);
 
@@ -320,6 +354,10 @@ void audio_uart_exit()
         }
         task_kill(AUDIO_UART_TASK_NAME);
         task_kill(AUDIO_SDWRITE_TASK_NAME);
+
+        if (printf_timer) {
+            sys_timer_del(printf_timer);
+        }
         if (hdl->fp) {
             fclose(hdl->fp); 
             hdl->fp = NULL;

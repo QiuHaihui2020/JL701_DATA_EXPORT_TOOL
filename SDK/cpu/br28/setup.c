@@ -197,9 +197,10 @@ void setup_arch()
 #else
     clk_early_init(PLL_REF_XOSC_DIFF, TCFG_CLOCK_OSC_HZ, 192 * MHz);
 #endif
+
     /*0:随机核，1：固定核 */
     extern u8 OS_Affinity_Enable;
-    OS_Affinity_Enable = 1;
+    OS_Affinity_Enable = 0;
 
     os_init();
     tick_timer_init();
