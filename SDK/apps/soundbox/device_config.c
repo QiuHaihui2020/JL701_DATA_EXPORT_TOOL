@@ -192,7 +192,7 @@ const struct spi_platform_data spix_p_data[HW_SPI_MAX_NUM] = {
         .irq_priority = 3,
         .spi_isr_callback = NULL,  //spi isr callback
     },
-#if SUPPORT_SPI2
+#if SUPPORT_SPI2 && TCFG_HW_SPI2_ENABLE
     {
         //spi2
         .port = {

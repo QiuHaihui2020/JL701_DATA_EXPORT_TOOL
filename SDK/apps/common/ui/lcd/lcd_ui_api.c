@@ -46,13 +46,14 @@ enum {
 #if TCFG_UI_ENABLE
 #if (TCFG_SPI_LCD_ENABLE || TCFG_LCD_OLED_ENABLE)
 LCD_SPI_PLATFORM_DATA_BEGIN(lcd_spi_data)
-.pin_reset	= TCFG_LCD_PIN_RESET,
-  .pin_cs		= TCFG_LCD_PIN_CS,
-      .pin_bl		= TCFG_LCD_PIN_BL,
-          .pin_dc		= TCFG_LCD_PIN_DC,
-              .pin_en		= TCFG_LCD_PIN_EN,
-                  .pin_te		= TCFG_LCD_PIN_TE,
-                      LCD_SPI__PLATFORM_DATA_END()
+    .pin_reset	= TCFG_LCD_PIN_RESET,
+    .pin_cs		= TCFG_LCD_PIN_CS,
+    .pin_bl		= TCFG_LCD_PIN_BL,
+    .pin_dc		= TCFG_LCD_PIN_DC,
+    .pin_en		= TCFG_LCD_PIN_EN,
+    .pin_te		= TCFG_LCD_PIN_TE,
+    .spi_cfg    = TCFG_TFT_LCD_DEV_SPI_HW_NUM,
+LCD_SPI__PLATFORM_DATA_END()
 
 const struct ui_devices_cfg ui_cfg_data = {
     .type = TFT_LCD,

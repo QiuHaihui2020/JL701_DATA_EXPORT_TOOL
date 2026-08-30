@@ -1,846 +1,850 @@
 {
-  "fields": [
-    {
+ "fields": [
+  {
+   "__config__": {
+    "layout": "rowFormItem",
+    "tag": "group",
+    "tagIcon": "row",
+    "layoutTree": true,
+    "componentName": "产测配置",
+    "enableUuid": "",
+    "showComponentName": true,
+    "dataType": [
+     "8",
+     "1"
+    ],
+    "status": 0,
+    "template": "",
+    "hideAddTemplate": false,
+    "span": 24,
+    "formId": 138,
+    "renderKey": "1381692347574273",
+    "children": [
+     {
       "__config__": {
-        "layout": "rowFormItem",
-        "tag": "group",
-        "tagIcon": "row",
-        "layoutTree": true,
-        "componentName": "产测配置",
-        "enableUuid": "",
-        "showComponentName": true,
-        "dataType": [
-          "8",
-          "1"
-        ],
-        "status": 0,
-        "template": "",
-        "hideAddTemplate": false,
-        "span": 24,
-        "formId": 138,
-        "renderKey": "1381692347574273",
-        "children": [
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_140",
-              "enableUuid": "",
-              "showComponentName": false,
-              "dataType": [
-                "8",
-                "1"
-              ],
-              "status": 0,
-              "template": "",
-              "hideAddTemplate": false,
-              "span": 24,
-              "formId": 140,
-              "renderKey": "1401692348392749",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "产测使能",
-                    "tag": "el-switch",
-                    "tagIcon": "switch",
-                    "defaultValue": 0,
-                    "span": 6,
-                    "showLabel": true,
-                    "labelWidth": null,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "changeTag": true,
-                    "status": 0,
-                    "dataType": [
-                      "8",
-                      "1"
-                    ],
-                    "formId": 138,
-                    "renderKey": "1381692349472142",
-                    "eventField": [],
-                    "saveWay": "const",
-                    "uuid": "CONFIG_LEA_PRODUCT_TEST_EN"
-                  },
-                  "style": {},
-                  "disabled": false,
-                  "active-text": "",
-                  "inactive-text": "",
-                  "active-color": null,
-                  "inactive-color": null,
-                  "active-value": 1,
-                  "inactive-value": 0,
-                  "id": "id_1692349472142_5",
-                  "__vModel__": "field138"
-                },
-                {
-                  "__config__": {
-                    "label": "信号强度控制",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": null,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "defaultValue": 50,
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "status": 0,
-                    "dataType": [
-                      "32",
-                      "1"
-                    ],
-                    "formId": 138,
-                    "renderKey": "1381692348132052",
-                    "originValue": 50,
-                    "tip": "产测监听信号强度控制，值越小可配对范围越小",
-                    "saveWay": "const",
-                    "uuid": "CONFIG_LEA_PRODUCT_TEST_RSSI",
-                    "eventField": []
-                  },
-                  "placeholder": "计数器信号强度控制信号强度控制信号强度控制信号强度控制信号强度控制信号强度控制",
-                  "step": 1,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1692348132051_2",
-                  "__vModel__": "field138"
-                }
-              ],
-              "eventField": []
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "70px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1692348392749_4"
-          },
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_139",
-              "enableUuid": "",
-              "showComponentName": false,
-              "dataType": [
-                "8",
-                "1"
-              ],
-              "status": 0,
-              "template": "",
-              "hideAddTemplate": false,
-              "span": 24,
-              "formId": 139,
-              "renderKey": "1391692348377135",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "产测名",
-                    "labelWidth": null,
-                    "showLabel": true,
-                    "changeTag": true,
-                    "tag": "el-input",
-                    "tagIcon": "input",
-                    "defaultValue": "product_fast_test",
-                    "required": false,
-                    "layout": "colFormItem",
-                    "span": 24,
-                    "regList": [],
-                    "status": 0,
-                    "dataType": [
-                      "string"
-                    ],
-                    "formId": 139,
-                    "renderKey": "1391692347589082",
-                    "dataAlignLen": "28",
-                    "saveWay": "bin",
-                    "uuid": "633",
-                    "eventField": [],
-                    "originValue": "product_fast_test"
-                  },
-                  "__slot__": {
-                    "prepend": "",
-                    "append": ""
-                  },
-                  "placeholder": "请输入产测名",
-                  "style": {
-                    "width": "100%"
-                  },
-                  "clearable": true,
-                  "prefix-icon": "",
-                  "suffix-icon": "",
-                  "maxlength": null,
-                  "show-word-limit": false,
-                  "readonly": false,
-                  "disabled": false,
-                  "id": "id_1692347589082_1",
-                  "__vModel__": "field139"
-                }
-              ],
-              "eventField": []
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "70px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1692348377135_3"
-          }
-        ],
-        "eventField": [],
-        "saveWay": "",
-        "disable": true
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_140",
+       "enableUuid": "",
+       "showComponentName": false,
+       "dataType": [
+        "8",
+        "1"
+       ],
+       "status": 0,
+       "template": "",
+       "hideAddTemplate": false,
+       "span": 24,
+       "formId": 140,
+       "renderKey": "1401692348392749",
+       "children": [
+        {
+         "__config__": {
+          "label": "产测使能",
+          "tag": "el-switch",
+          "tagIcon": "switch",
+          "defaultValue": 0,
+          "span": 6,
+          "showLabel": true,
+          "labelWidth": null,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "status": 0,
+          "dataType": [
+           "8",
+           "1"
+          ],
+          "formId": 138,
+          "renderKey": "1381692349472142",
+          "eventField": [],
+          "saveWay": "const",
+          "uuid": "CONFIG_LEA_PRODUCT_TEST_EN"
+         },
+         "style": {},
+         "disabled": false,
+         "active-text": "",
+         "inactive-text": "",
+         "active-color": null,
+         "inactive-color": null,
+         "active-value": 1,
+         "inactive-value": 0,
+         "id": "id_1692349472142_5",
+         "__vModel__": "field138"
+        },
+        {
+         "__config__": {
+          "label": "信号强度控制",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": null,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "defaultValue": 50,
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "status": 0,
+          "dataType": [
+           "32",
+           "1"
+          ],
+          "formId": 138,
+          "renderKey": "1381692348132052",
+          "originValue": 50,
+          "tip": "产测监听信号强度控制，值越小可配对范围越小",
+          "saveWay": "const",
+          "uuid": "CONFIG_LEA_PRODUCT_TEST_RSSI",
+          "eventField": []
+         },
+         "placeholder": "计数器信号强度控制信号强度控制信号强度控制信号强度控制信号强度控制信号强度控制",
+         "step": 1,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1692348132051_2",
+         "__vModel__": "field138"
+        }
+       ],
+       "eventField": []
       },
       "type": "default",
       "justify": "start",
       "align": "top",
       "style": {
-        "height": "150px",
-        "paddingLeft": "0px"
+       "height": "70px",
+       "paddingLeft": "0px"
       },
-      "id": "id_1692347574273_0"
-    },
-    {
+      "id": "id_1692348392749_4"
+     },
+     {
       "__config__": {
-        "layout": "rowFormItem",
-        "tag": "group",
-        "tagIcon": "row",
-        "layoutTree": true,
-        "componentName": "公共配置",
-        "enableUuid": "",
-        "showComponentName": true,
-        "dataType": [
-          "8",
-          "1"
-        ],
-        "status": 0,
-        "template": "",
-        "hideAddTemplate": false,
-        "span": 24,
-        "formId": 176,
-        "renderKey": "1761694502159558",
-        "children": [
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_177",
-              "enableUuid": "",
-              "showComponentName": false,
-              "dataType": [
-                "8",
-                "1"
-              ],
-              "status": 0,
-              "template": "",
-              "hideAddTemplate": false,
-              "span": 24,
-              "formId": 177,
-              "renderKey": "1771694502209698",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "配对名",
-                    "labelWidth": null,
-                    "showLabel": true,
-                    "changeTag": true,
-                    "tag": "el-input",
-                    "tagIcon": "input",
-                    "defaultValue": "le_audio_soundbar",
-                    "required": false,
-                    "layout": "colFormItem",
-                    "span": 24,
-                    "regList": [],
-                    "status": 0,
-                    "dataType": [
-                      "string"
-                    ],
-                    "formId": 101,
-                    "renderKey": "1011692091647709",
-                    "eventField": [],
-                    "originValue": "le_audio_soundbar",
-                    "saveWay": "bin",
-                    "dataAlignLen": "28",
-                    "uuid": "634"
-                  },
-                  "__slot__": {
-                    "prepend": "",
-                    "append": ""
-                  },
-                  "placeholder": "请输入配对名",
-                  "style": {
-                    "width": "100%"
-                  },
-                  "clearable": true,
-                  "prefix-icon": "",
-                  "suffix-icon": "",
-                  "maxlength": null,
-                  "show-word-limit": false,
-                  "readonly": false,
-                  "disabled": false,
-                  "id": "id_1692091647709_1",
-                  "__vModel__": "field101"
-                }
-              ],
-              "saveWay": "",
-              "uuid": "",
-              "eventField": []
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "70px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1694502209698_1"
-          },
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_142",
-              "enableUuid": "",
-              "showComponentName": false,
-              "dataType": [
-                "8",
-                "1"
-              ],
-              "status": 0,
-              "template": "",
-              "hideAddTemplate": false,
-              "span": 24,
-              "formId": 142,
-              "renderKey": "1421692692091703",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "编解码格式",
-                    "showLabel": true,
-                    "labelWidth": null,
-                    "tag": "el-select",
-                    "tagIcon": "select",
-                    "layout": "colFormItem",
-                    "span": 6,
-                    "required": false,
-                    "defaultValue": "0x20000000",
-                    "regList": [],
-                    "changeTag": true,
-                    "searchSource": false,
-                    "status": 0,
-                    "dataType": [
-                      "32",
-                      "1",
-                      "o16"
-                    ],
-                    "formId": 137,
-                    "renderKey": "1371692263983299",
-                    "originValue": "0x20000000",
-                    "eventField": [],
-                    "saveWay": "macro",
-                    "uuid": "LE_AUDIO_CODEC_TYPE",
-                    "emptyValue": "0x20000000"
-                  },
-                  "__slot__": {
-                    "options": [
-                      {
-                        "label": "JLA",
-                        "value": "0x20000000",
-                        "hide": false,
-                        "disabled": false
-                      },
-                      {
-                        "label": "JLA_V2",
-                        "value": "0xA000000",
-                        "hide": false,
-                        "disabled": false
-                      }
-                    ]
-                  },
-                  "placeholder": "请选择编解码格式",
-                  "style": {
-                    "width": "70%"
-                  },
-                  "clearable": true,
-                  "disabled": false,
-                  "filterable": false,
-                  "multiple": false,
-                  "id": "id_1692263983299_0",
-                  "__vModel__": "field137"
-                },
-                {
-                  "__config__": {
-                    "label": "编解码声道数",
-                    "showLabel": true,
-                    "labelWidth": null,
-                    "tag": "el-select",
-                    "tagIcon": "select",
-                    "layout": "colFormItem",
-                    "span": 6,
-                    "required": false,
-                    "defaultValue": 2,
-                    "regList": [],
-                    "changeTag": true,
-                    "searchSource": false,
-                    "status": 0,
-                    "dataType": [
-                      "8",
-                      "1"
-                    ],
-                    "formId": 103,
-                    "renderKey": "1031692096576011",
-                    "originValue": 2,
-                    "eventField": [],
-                    "saveWay": "macro",
-                    "uuid": "LE_AUDIO_CODEC_CHANNEL",
-                    "emptyValue": "2"
-                  },
-                  "__slot__": {
-                    "options": [
-                      {
-                        "label": "单声道",
-                        "value": 1,
-                        "hide": false,
-                        "disabled": false
-                      },
-                      {
-                        "label": "双声道",
-                        "value": 2,
-                        "hide": false,
-                        "disabled": false
-                      }
-                    ]
-                  },
-                  "placeholder": "请选择编解码声道数",
-                  "style": {
-                    "width": "60%"
-                  },
-                  "clearable": true,
-                  "disabled": false,
-                  "filterable": false,
-                  "multiple": false,
-                  "id": "id_1692096576011_6",
-                  "__vModel__": "field103"
-                },
-                {
-                  "__config__": {
-                    "label": "帧持续时间",
-                    "showLabel": true,
-                    "labelWidth": "",
-                    "tag": "el-select",
-                    "tagIcon": "select",
-                    "layout": "colFormItem",
-                    "span": 6,
-                    "required": false,
-                    "defaultValue": 100,
-                    "regList": [],
-                    "changeTag": true,
-                    "searchSource": false,
-                    "status": 0,
-                    "dataType": [
-                      "8",
-                      "1"
-                    ],
-                    "formId": 102,
-                    "renderKey": "1021692096244058",
-                    "tip": "编解码帧长",
-                    "originValue": 100,
-                    "saveWay": "macro",
-                    "uuid": "LE_AUDIO_CODEC_FRAME_LEN",
-                    "emptyValue": "100"
-                  },
-                  "__slot__": {
-                    "options": [
-                      {
-                        "label": "2.5ms",
-                        "value": 25,
-                        "hide": false,
-                        "disabled": false
-                      },
-                      {
-                        "label": "5ms",
-                        "value": 50,
-                        "hide": false,
-                        "disabled": false
-                      },
-                      {
-                        "label": "7.5ms",
-                        "value": 75,
-                        "hide": false,
-                        "disabled": false
-                      },
-                      {
-                        "label": "10ms",
-                        "value": 100,
-                        "hide": false,
-                        "disabled": false
-                      }
-                    ]
-                  },
-                  "placeholder": "请选择帧持续时间帧持续时间帧持续时间帧持续时间帧持续时间帧持续时间帧持续时间帧持续时间帧持续时间帧持续时间",
-                  "style": {
-                    "width": "50%"
-                  },
-                  "clearable": true,
-                  "disabled": false,
-                  "filterable": false,
-                  "multiple": false,
-                  "id": "id_1692096244058_4",
-                  "__vModel__": "field102"
-                },
-                {
-                  "__config__": {
-                    "label": "采样率",
-                    "showLabel": true,
-                    "labelWidth": null,
-                    "tag": "el-select",
-                    "tagIcon": "select",
-                    "layout": "colFormItem",
-                    "span": 6,
-                    "required": false,
-                    "defaultValue": 48000,
-                    "regList": [],
-                    "changeTag": true,
-                    "searchSource": false,
-                    "status": 0,
-                    "dataType": [
-                      "32",
-                      "1"
-                    ],
-                    "formId": 174,
-                    "renderKey": "1741693904149993",
-                    "eventField": [],
-                    "saveWay": "macro",
-                    "uuid": "LE_AUDIO_CODEC_SAMPLERATE",
-                    "originValue": 48000,
-                    "emptyValue": "48000"
-                  },
-                  "__slot__": {
-                    "options": [
-                      {
-                        "label": "48000",
-                        "value": 48000,
-                        "hide": false,
-                        "disabled": false
-                      },
-                      {
-                        "label": "32000",
-                        "value": 32000,
-                        "hide": false,
-                        "disabled": false
-                      }
-                    ]
-                  },
-                  "placeholder": "请选择采样率",
-                  "style": {
-                    "width": "60%"
-                  },
-                  "clearable": true,
-                  "disabled": false,
-                  "filterable": false,
-                  "multiple": false,
-                  "id": "id_1693904149993_1",
-                  "__vModel__": "field174"
-                },
-                {
-                  "__config__": {
-                    "label": "发送端解码输出",
-                    "showLabel": true,
-                    "labelWidth": 0,
-                    "tag": "el-select",
-                    "tagIcon": "select",
-                    "layout": "colFormItem",
-                    "span": 6,
-                    "required": false,
-                    "defaultValue": 37,
-                    "regList": [],
-                    "changeTag": true,
-                    "searchSource": false,
-                    "status": 0,
-                    "dataType": [
-                      "32",
-                      "1"
-                    ],
-                    "formId": 207,
-                    "renderKey": "2071699498339312",
-                    "eventField": [],
-                    "saveWay": "macro",
-                    "uuid": "LEA_TX_DEC_OUTPUT_CHANNEL",
-                    "originValue": 37,
-                    "paddingLeft": "",
-                    "formItemWidth": ""
-                  },
-                  "__slot__": {
-                    "options": [
-                      {
-                        "label": "左声道",
-                        "value": 17,
-                        "hide": false,
-                        "disabled": false
-                      },
-                      {
-                        "label": "右声道",
-                        "value": 18,
-                        "hide": false,
-                        "disabled": false
-                      },
-                      {
-                        "label": "立体声",
-                        "value": 37,
-                        "hide": false,
-                        "disabled": false
-                      }
-                    ]
-                  },
-                  "placeholder": "请选择输出声道",
-                  "style": {
-                    "width": "60%"
-                  },
-                  "clearable": true,
-                  "disabled": false,
-                  "filterable": false,
-                  "multiple": false,
-                  "id": "id_1699498339312_5",
-                  "__vModel__": "field207"
-                },
-                {
-                  "__config__": {
-                    "label": "接收端解码输出",
-                    "showLabel": true,
-                    "labelWidth": 0,
-                    "tag": "el-select",
-                    "tagIcon": "select",
-                    "layout": "colFormItem",
-                    "span": 6,
-                    "required": false,
-                    "defaultValue": 37,
-                    "regList": [],
-                    "changeTag": true,
-                    "searchSource": false,
-                    "status": 0,
-                    "dataType": [
-                      "32",
-                      "1"
-                    ],
-                    "formId": 208,
-                    "renderKey": "2081702974712074",
-                    "eventField": [],
-                    "saveWay": "macro",
-                    "uuid": "LEA_RX_DEC_OUTPUT_CHANNEL",
-                    "originValue": 37,
-                    "paddingLeft": "",
-                    "formItemWidth": ""
-                  },
-                  "__slot__": {
-                    "options": [
-                      {
-                        "label": "左声道",
-                        "value": 17,
-                        "hide": false,
-                        "disabled": false
-                      },
-                      {
-                        "label": "右声道",
-                        "value": 18,
-                        "hide": false,
-                        "disabled": false
-                      },
-                      {
-                        "label": "立体声",
-                        "value": 37,
-                        "hide": false,
-                        "disabled": false
-                      }
-                    ]
-                  },
-                  "placeholder": "请选择输出声道",
-                  "style": {
-                    "width": "60%"
-                  },
-                  "clearable": true,
-                  "disabled": false,
-                  "filterable": false,
-                  "multiple": false,
-                  "id": "id_1702974712074_0",
-                  "__vModel__": "field208"
-                }
-              ],
-              "eventField": []
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "70px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1692692091703_3"
-          }
-        ],
-        "eventField": []
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_139",
+       "enableUuid": "",
+       "showComponentName": false,
+       "dataType": [
+        "8",
+        "1"
+       ],
+       "status": 0,
+       "template": "",
+       "hideAddTemplate": false,
+       "span": 24,
+       "formId": 139,
+       "renderKey": "1391692348377135",
+       "children": [
+        {
+         "__config__": {
+          "label": "产测名",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "product_fast_test",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "regList": [],
+          "status": 0,
+          "dataType": [
+           "string"
+          ],
+          "formId": 139,
+          "renderKey": "1391692347589082",
+          "dataAlignLen": "28",
+          "saveWay": "bin",
+          "uuid": "633",
+          "eventField": [],
+          "originValue": "product_fast_test"
+         },
+         "__slot__": {
+          "prepend": "",
+          "append": ""
+         },
+         "placeholder": "请输入产测名",
+         "style": {
+          "width": "100%"
+         },
+         "clearable": true,
+         "prefix-icon": "",
+         "suffix-icon": "",
+         "maxlength": null,
+         "show-word-limit": false,
+         "readonly": false,
+         "disabled": false,
+         "id": "id_1692347589082_1",
+         "__vModel__": "field139"
+        }
+       ],
+       "eventField": []
       },
       "type": "default",
       "justify": "start",
       "align": "top",
       "style": {
-        "height": "160px",
-        "paddingLeft": "0px"
+       "height": "70px",
+       "paddingLeft": "0px"
       },
-      "id": "id_1694502159558_0"
-    },
-    {
+      "id": "id_1692348377135_3"
+     }
+    ],
+    "eventField": [],
+    "saveWay": "",
+    "disable": true
+   },
+   "type": "default",
+   "justify": "start",
+   "align": "top",
+   "style": {
+    "height": "150px",
+    "paddingLeft": "0px"
+   },
+   "id": "id_1692347574273_0"
+  },
+  {
+   "__config__": {
+    "layout": "rowFormItem",
+    "tag": "group",
+    "tagIcon": "row",
+    "layoutTree": true,
+    "componentName": "公共配置",
+    "enableUuid": "",
+    "showComponentName": true,
+    "dataType": [
+     "8",
+     "1"
+    ],
+    "status": 0,
+    "template": "",
+    "hideAddTemplate": false,
+    "span": 24,
+    "formId": 176,
+    "renderKey": "1761694502159558",
+    "children": [
+     {
       "__config__": {
-        "layout": "rowFormItem",
-        "tag": "group",
-        "tagIcon": "row",
-        "layoutTree": true,
-        "componentName": "1T3配置",
-        "enableUuid": "",
-        "showComponentName": true,
-        "dataType": [
-          "8",
-          "1"
-        ],
-        "status": 0,
-        "template": "",
-        "hideAddTemplate": false,
-        "span": 24,
-        "formId": 207,
-        "renderKey": "2071699497969782",
-        "children": [
-          {
-            "__config__": {
-              "label": "1T3使能",
-              "tag": "el-switch",
-              "tagIcon": "switch",
-              "defaultValue": 0,
-              "span": 6,
-              "showLabel": true,
-              "labelWidth": null,
-              "layout": "colFormItem",
-              "required": false,
-              "regList": [],
-              "changeTag": true,
-              "status": 0,
-              "dataType": [
-                "8",
-                "1"
-              ],
-              "formId": 208,
-              "renderKey": "2081699498021561",
-              "saveWay": "macro",
-              "eventField": [],
-              "uuid": "TCFG_KBOX_1T3_MODE_EN",
-              "originValue": 0
-            },
-            "style": {},
-            "disabled": false,
-            "active-text": "",
-            "inactive-text": "",
-            "active-color": null,
-            "inactive-color": null,
-            "active-value": 1,
-            "inactive-value": 0,
-            "id": "id_1699498021561_4",
-            "__vModel__": "field208"
-          },
-          {
-            "__config__": {
-              "label": "TWS+MIC连接方式",
-              "showLabel": true,
-              "labelWidth": 131,
-              "tag": "el-select",
-              "tagIcon": "select",
-              "layout": "colFormItem",
-              "span": 8,
-              "required": false,
-              "defaultValue": 3,
-              "regList": [],
-              "changeTag": true,
-              "searchSource": false,
-              "status": 0,
-              "dataType": [
-                "32",
-                "-1"
-              ],
-              "formId": 101,
-              "renderKey": "1011734333600351",
-              "formItemWidth": "",
-              "originValue": 3,
-              "saveWay": "macro",
-              "uuid": "TCFG_KBOX_1T3_WITH_TWS_MODE",
-              "eventField": []
-            },
-            "__slot__": {
-              "options": [
-                {
-                  "label": "只在主箱或副箱连话筒",
-                  "value": 1,
-                  "hide": false,
-                  "disabled": false
-                },
-                {
-                  "label": "主箱和副箱各自连话筒",
-                  "value": 2,
-                  "hide": false,
-                  "disabled": false
-                },
-                {
-                  "label": "主箱和副箱连接相同话筒",
-                  "value": 3,
-                  "hide": false,
-                  "disabled": false
-                }
-              ]
-            },
-            "placeholder": "请选择TWS+MIC连接方式",
-            "style": {
-              "width": "80%"
-            },
-            "clearable": false,
-            "disabled": false,
-            "filterable": false,
-            "multiple": false,
-            "id": "id_1734333600351_0",
-            "__vModel__": "field101"
-          }
-        ],
-        "eventField": []
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_177",
+       "enableUuid": "",
+       "showComponentName": false,
+       "dataType": [
+        "8",
+        "1"
+       ],
+       "status": 0,
+       "template": "",
+       "hideAddTemplate": false,
+       "span": 24,
+       "formId": 177,
+       "renderKey": "1771694502209698",
+       "children": [
+        {
+         "__config__": {
+          "label": "配对名",
+          "labelWidth": null,
+          "showLabel": true,
+          "changeTag": true,
+          "tag": "el-input",
+          "tagIcon": "input",
+          "defaultValue": "le_audio_soundbar",
+          "required": false,
+          "layout": "colFormItem",
+          "span": 24,
+          "regList": [],
+          "status": 0,
+          "dataType": [
+           "string"
+          ],
+          "formId": 101,
+          "renderKey": "1011692091647709",
+          "eventField": [],
+          "originValue": "le_audio_soundbar",
+          "saveWay": "bin",
+          "dataAlignLen": "28",
+          "uuid": "634"
+         },
+         "__slot__": {
+          "prepend": "",
+          "append": ""
+         },
+         "placeholder": "请输入配对名",
+         "style": {
+          "width": "100%"
+         },
+         "clearable": true,
+         "prefix-icon": "",
+         "suffix-icon": "",
+         "maxlength": null,
+         "show-word-limit": false,
+         "readonly": false,
+         "disabled": false,
+         "id": "id_1692091647709_1",
+         "__vModel__": "field101"
+        }
+       ],
+       "saveWay": "",
+       "uuid": "",
+       "eventField": []
       },
       "type": "default",
       "justify": "start",
       "align": "top",
       "style": {
-        "height": "70px",
-        "paddingLeft": "0px"
+       "height": "70px",
+       "paddingLeft": "0px"
       },
-      "id": "id_1699497969782_2"
-    }
-  ],
-  "formName": "LE_AUDIO配置",
-  "formRef": "elForm",
-  "formModel": "formData",
-  "size": "small",
-  "labelPosition": "right",
-  "labelWidth": 110,
-  "formRules": "rules",
-  "gutter": 0,
-  "disabled": false,
-  "span": 8,
-  "formBtns": false,
-  "maxFormId": 300
+      "id": "id_1694502209698_1"
+     },
+     {
+      "__config__": {
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_142",
+       "enableUuid": "",
+       "showComponentName": false,
+       "dataType": [
+        "8",
+        "1"
+       ],
+       "status": 0,
+       "template": "",
+       "hideAddTemplate": false,
+       "span": 24,
+       "formId": 142,
+       "renderKey": "1421692692091703",
+       "children": [
+        {
+         "__config__": {
+          "label": "编解码格式",
+          "showLabel": true,
+          "labelWidth": null,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 6,
+          "required": false,
+          "defaultValue": "0x20000000",
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "status": 0,
+          "dataType": [
+           "32",
+           "1",
+           "o16"
+          ],
+          "formId": 137,
+          "renderKey": "1371692263983299",
+          "originValue": "0x20000000",
+          "eventField": [],
+          "saveWay": "macro",
+          "uuid": "LE_AUDIO_CODEC_TYPE",
+          "emptyValue": "0x20000000"
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "JLA",
+            "value": "0x20000000",
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "JLA_V2",
+            "value": "0xA000000",
+            "hide": false,
+            "disabled": false
+           }
+          ]
+         },
+         "placeholder": "请选择编解码格式",
+         "style": {
+          "width": "70%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "id": "id_1692263983299_0",
+         "__vModel__": "field137"
+        },
+        {
+         "__config__": {
+          "label": "编解码声道数",
+          "showLabel": true,
+          "labelWidth": null,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 6,
+          "required": false,
+          "defaultValue": 2,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "status": 0,
+          "dataType": [
+           "8",
+           "1"
+          ],
+          "formId": 103,
+          "renderKey": "1031692096576011",
+          "originValue": 2,
+          "eventField": [],
+          "saveWay": "macro",
+          "uuid": "LE_AUDIO_CODEC_CHANNEL",
+          "emptyValue": "2"
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "单声道",
+            "value": 1,
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "双声道",
+            "value": 2,
+            "hide": false,
+            "disabled": false
+           }
+          ]
+         },
+         "placeholder": "请选择编解码声道数",
+         "style": {
+          "width": "60%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "id": "id_1692096576011_6",
+         "__vModel__": "field103"
+        },
+        {
+         "__config__": {
+          "label": "帧持续时间",
+          "showLabel": true,
+          "labelWidth": "",
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 6,
+          "required": false,
+          "defaultValue": 100,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "status": 0,
+          "dataType": [
+           "8",
+           "1"
+          ],
+          "formId": 102,
+          "renderKey": "1021692096244058",
+          "tip": "编解码帧长",
+          "originValue": 100,
+          "saveWay": "macro",
+          "uuid": "LE_AUDIO_CODEC_FRAME_LEN",
+          "emptyValue": "100"
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "2.5ms",
+            "value": 25,
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "5ms",
+            "value": 50,
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "7.5ms",
+            "value": 75,
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "10ms",
+            "value": 100,
+            "hide": false,
+            "disabled": false
+           }
+          ]
+         },
+         "placeholder": "请选择帧持续时间帧持续时间帧持续时间帧持续时间帧持续时间帧持续时间帧持续时间帧持续时间帧持续时间帧持续时间",
+         "style": {
+          "width": "50%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "id": "id_1692096244058_4",
+         "__vModel__": "field102"
+        },
+        {
+         "__config__": {
+          "label": "采样率",
+          "showLabel": true,
+          "labelWidth": null,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 6,
+          "required": false,
+          "defaultValue": 48000,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "status": 0,
+          "dataType": [
+           "32",
+           "1"
+          ],
+          "formId": 174,
+          "renderKey": "1741693904149993",
+          "eventField": [],
+          "saveWay": "macro",
+          "uuid": "LE_AUDIO_CODEC_SAMPLERATE",
+          "originValue": 48000,
+          "emptyValue": "48000"
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "48000",
+            "value": 48000,
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "32000",
+            "value": 32000,
+            "hide": false,
+            "disabled": false
+           }
+          ]
+         },
+         "placeholder": "请选择采样率",
+         "style": {
+          "width": "60%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "id": "id_1693904149993_1",
+         "__vModel__": "field174"
+        },
+        {
+         "__config__": {
+          "label": "发送端解码输出",
+          "showLabel": true,
+          "labelWidth": 0,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 6,
+          "required": false,
+          "defaultValue": 37,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "status": 0,
+          "dataType": [
+           "32",
+           "1"
+          ],
+          "formId": 207,
+          "renderKey": "2071699498339312",
+          "eventField": [],
+          "saveWay": "macro",
+          "uuid": "LEA_TX_DEC_OUTPUT_CHANNEL",
+          "originValue": 37,
+          "paddingLeft": "",
+          "formItemWidth": ""
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "左声道",
+            "value": 17,
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "右声道",
+            "value": 18,
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "立体声",
+            "value": 37,
+            "hide": false,
+            "disabled": false
+           }
+          ]
+         },
+         "placeholder": "请选择输出声道",
+         "style": {
+          "width": "60%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "id": "id_1699498339312_5",
+         "__vModel__": "field207"
+        },
+        {
+         "__config__": {
+          "label": "接收端解码输出",
+          "showLabel": true,
+          "labelWidth": 0,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 6,
+          "required": false,
+          "defaultValue": 37,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "status": 0,
+          "dataType": [
+           "32",
+           "1"
+          ],
+          "formId": 208,
+          "renderKey": "2081702974712074",
+          "eventField": [],
+          "saveWay": "macro",
+          "uuid": "LEA_RX_DEC_OUTPUT_CHANNEL",
+          "originValue": 37,
+          "paddingLeft": "",
+          "formItemWidth": ""
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "左声道",
+            "value": 17,
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "右声道",
+            "value": 18,
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "立体声",
+            "value": 37,
+            "hide": false,
+            "disabled": false
+           }
+          ]
+         },
+         "placeholder": "请选择输出声道",
+         "style": {
+          "width": "60%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "id": "id_1702974712074_0",
+         "__vModel__": "field208"
+        }
+       ],
+       "eventField": []
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+       "height": "70px",
+       "paddingLeft": "0px"
+      },
+      "id": "id_1692692091703_3"
+     }
+    ],
+    "eventField": []
+   },
+   "type": "default",
+   "justify": "start",
+   "align": "top",
+   "style": {
+    "height": "160px",
+    "paddingLeft": "0px"
+   },
+   "id": "id_1694502159558_0"
+  },
+  {
+   "__config__": {
+    "layout": "rowFormItem",
+    "tag": "group",
+    "tagIcon": "row",
+    "layoutTree": true,
+    "componentName": "1T3配置",
+    "enableUuid": "",
+    "showComponentName": true,
+    "dataType": [
+     "8",
+     "1"
+    ],
+    "status": 0,
+    "template": "",
+    "hideAddTemplate": false,
+    "span": 24,
+    "formId": 207,
+    "renderKey": "2071699497969782",
+    "children": [
+     {
+      "__config__": {
+       "label": "1T3使能",
+       "tag": "el-switch",
+       "tagIcon": "switch",
+       "defaultValue": 0,
+       "span": 6,
+       "showLabel": true,
+       "labelWidth": null,
+       "layout": "colFormItem",
+       "required": false,
+       "regList": [],
+       "changeTag": true,
+       "status": 0,
+       "dataType": [
+        "8",
+        "1"
+       ],
+       "formId": 208,
+       "renderKey": "2081699498021561",
+       "saveWay": "macro",
+       "eventField": [],
+       "uuid": "TCFG_KBOX_1T3_MODE_EN",
+       "originValue": 0
+      },
+      "style": {},
+      "disabled": false,
+      "active-text": "",
+      "inactive-text": "",
+      "active-color": null,
+      "inactive-color": null,
+      "active-value": 1,
+      "inactive-value": 0,
+      "id": "id_1699498021561_4",
+      "__vModel__": "field208"
+     },
+     {
+      "__config__": {
+       "label": "TWS+MIC连接方式",
+       "showLabel": true,
+       "labelWidth": 131,
+       "tag": "el-select",
+       "tagIcon": "select",
+       "layout": "colFormItem",
+       "span": 8,
+       "required": false,
+       "defaultValue": 3,
+       "regList": [],
+       "changeTag": true,
+       "searchSource": false,
+       "status": 0,
+       "dataType": [
+        "32",
+        "-1"
+       ],
+       "formId": 101,
+       "renderKey": "1011734333600351",
+       "formItemWidth": "",
+       "originValue": 3,
+       "saveWay": "macro",
+       "uuid": "TCFG_KBOX_1T3_WITH_TWS_MODE",
+       "eventField": []
+      },
+      "__slot__": {
+       "options": [
+        {
+         "label": "只在主箱或副箱连话筒",
+         "value": 1,
+         "hide": false,
+         "disabled": false
+        },
+        {
+         "label": "主箱和副箱各自连话筒",
+         "value": 2,
+         "hide": false,
+         "disabled": false
+        },
+        {
+         "label": "主箱和副箱连接相同话筒",
+         "value": 3,
+         "hide": false,
+         "disabled": false
+        }
+       ]
+      },
+      "placeholder": "请选择TWS+MIC连接方式",
+      "style": {
+       "width": "80%"
+      },
+      "clearable": false,
+      "disabled": false,
+      "filterable": false,
+      "multiple": false,
+      "id": "id_1734333600351_0",
+      "__vModel__": "field101"
+     }
+    ],
+    "eventField": []
+   },
+   "type": "default",
+   "justify": "start",
+   "align": "top",
+   "style": {
+    "height": "70px",
+    "paddingLeft": "0px"
+   },
+   "id": "id_1699497969782_2"
+  }
+ ],
+ "formName": "LE_AUDIO配置",
+ "formRef": "elForm",
+ "formModel": "formData",
+ "size": "small",
+ "labelPosition": "right",
+ "labelWidth": 110,
+ "formRules": "rules",
+ "gutter": 0,
+ "disabled": false,
+ "span": 8,
+ "formBtns": false,
+ "maxFormId": 300,
+ "version": {
+  "code": 1,
+  "tool": "4.4.0"
+ }
 }

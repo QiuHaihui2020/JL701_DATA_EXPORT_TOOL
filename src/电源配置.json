@@ -1,2931 +1,2935 @@
 {
-  "fields": [
-    {
+ "fields": [
+  {
+   "__config__": {
+    "layout": "rowFormItem",
+    "tag": "group",
+    "tagIcon": "row",
+    "layoutTree": true,
+    "componentName": "时钟&电源",
+    "showComponentName": true,
+    "dataType": [],
+    "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+    "template": "",
+    "span": 24,
+    "formId": 166,
+    "renderKey": "1661654068165621",
+    "children": [
+     {
       "__config__": {
-        "layout": "rowFormItem",
-        "tag": "group",
-        "tagIcon": "row",
-        "layoutTree": true,
-        "componentName": "时钟&电源",
-        "showComponentName": true,
-        "dataType": [],
-        "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-        "template": "",
-        "span": 24,
-        "formId": 166,
-        "renderKey": "1661654068165621",
-        "children": [
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_173",
-              "showComponentName": false,
-              "dataType": [
-                "8",
-                "1"
-              ],
-              "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-              "template": "",
-              "span": 24,
-              "formId": 173,
-              "renderKey": "1731654071670980",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "晶振频率",
-                    "showLabel": true,
-                    "labelWidth": 80,
-                    "tag": "el-select",
-                    "tagIcon": "select",
-                    "layout": "colFormItem",
-                    "span": 5,
-                    "required": false,
-                    "regList": [],
-                    "changeTag": true,
-                    "searchSource": false,
-                    "dataType": [
-                      "32"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/select",
-                    "formId": 138,
-                    "renderKey": "1381646372957244",
-                    "defaultValue": 24000000,
-                    "saveWay": "macro",
-                    "uuid": "TCFG_CLOCK_OSC_HZ",
-                    "eventField": []
-                  },
-                  "__slot__": {
-                    "options": [
-                      {
-                        "label": "24M",
-                        "value": 24000000
-                      }
-                    ]
-                  },
-                  "placeholder": "请选择晶振频率",
-                  "style": {
-                    "width": "100%"
-                  },
-                  "clearable": true,
-                  "disabled": false,
-                  "filterable": false,
-                  "multiple": false,
-                  "__vModel__": "field138",
-                  "id": "id_1647484466450_33"
-                },
-                {
-                  "__config__": {
-                    "label": "电源模式",
-                    "showLabel": true,
-                    "labelWidth": 80,
-                    "tag": "el-select",
-                    "tagIcon": "select",
-                    "layout": "colFormItem",
-                    "span": 7,
-                    "required": false,
-                    "regList": [],
-                    "changeTag": true,
-                    "searchSource": false,
-                    "dataType": [
-                      "macro"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/select",
-                    "formId": 167,
-                    "renderKey": "1671654068165621",
-                    "defaultValue": "PWR_LDO15",
-                    "saveWay": "macro",
-                    "uuid": "TCFG_LOWPOWER_POWER_SEL",
-                    "originValue": "PWR_LDO15",
-                    "eventField": [],
-                    "tipAlways": true,
-                    "tip": "有FM功能的方案不能选择DCDC"
-                  },
-                  "__slot__": {
-                    "options": [
-                      {
-                        "label": "DCDC",
-                        "value": "PWR_DCDC15"
-                      },
-                      {
-                        "label": "LDO",
-                        "value": "PWR_LDO15"
-                      }
-                    ]
-                  },
-                  "placeholder": "",
-                  "style": {
-                    "width": "100%"
-                  },
-                  "clearable": true,
-                  "disabled": false,
-                  "filterable": false,
-                  "multiple": false,
-                  "__vModel__": "field167",
-                  "id": "id_1654068165621_18"
-                },
-                {
-                  "__config__": {
-                    "label": "低功耗时钟源",
-                    "showLabel": true,
-                    "labelWidth": 120,
-                    "tag": "el-select",
-                    "tagIcon": "select",
-                    "layout": "colFormItem",
-                    "span": 6,
-                    "required": false,
-                    "regList": [],
-                    "changeTag": true,
-                    "searchSource": false,
-                    "dataType": [
-                      "macro"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/select",
-                    "formId": 172,
-                    "renderKey": "1721654071360228",
-                    "saveWay": "macro",
-                    "uuid": "TCFG_LOWPOWER_OSC_TYPE",
-                    "defaultValue": "OSC_TYPE_LRC"
-                  },
-                  "__slot__": {
-                    "options": [
-                      {
-                        "label": "LRC",
-                        "value": "OSC_TYPE_LRC"
-                      },
-                      {
-                        "label": "BT_OSC",
-                        "value": "OSC_TYPE_BT_OSC"
-                      }
-                    ]
-                  },
-                  "placeholder": "请选择低功耗时钟源",
-                  "style": {
-                    "width": "100%"
-                  },
-                  "clearable": true,
-                  "disabled": false,
-                  "filterable": false,
-                  "multiple": false,
-                  "__vModel__": "field172",
-                  "id": "id_1654071360228_1"
-                },
-                {
-                  "__config__": {
-                    "label": "时钟模式",
-                    "showLabel": true,
-                    "labelWidth": 120,
-                    "tag": "el-select",
-                    "tagIcon": "select",
-                    "layout": "colFormItem",
-                    "span": 6,
-                    "required": false,
-                    "regList": [],
-                    "changeTag": true,
-                    "searchSource": false,
-                    "dataType": [
-                      "macro"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/select",
-                    "formId": 659,
-                    "renderKey": "6591677159707061",
-                    "saveWay": "macro",
-                    "uuid": "TCFG_CLOCK_MODE",
-                    "defaultValue": "CLOCK_MODE_ADAPTIVE",
-                    "originValue": "CLOCK_MODE_ADAPTIVE"
-                  },
-                  "__slot__": {
-                    "options": [
-                      {
-                        "label": "ADAPTIVE",
-                        "value": "CLOCK_MODE_ADAPTIVE"
-                      },
-                      {
-                        "label": "USR",
-                        "value": "CLOCK_MODE_USR"
-                      }
-                    ]
-                  },
-                  "placeholder": "请选择时钟模式",
-                  "style": {
-                    "width": "100%"
-                  },
-                  "clearable": true,
-                  "disabled": false,
-                  "filterable": false,
-                  "multiple": false,
-                  "__vModel__": "field659",
-                  "id": "id_1677159707061_0"
-                }
-              ],
-              "eventField": []
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "60px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1654071670980_2"
-          },
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_174",
-              "showComponentName": false,
-              "dataType": [
-                "8",
-                "1"
-              ],
-              "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-              "template": "",
-              "span": 24,
-              "formId": 174,
-              "renderKey": "1741654071695906",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "IOVDD",
-                    "showLabel": true,
-                    "labelWidth": 80,
-                    "tag": "el-select",
-                    "tagIcon": "select",
-                    "layout": "colFormItem",
-                    "span": 7,
-                    "required": false,
-                    "regList": [],
-                    "changeTag": true,
-                    "searchSource": false,
-                    "dataType": [
-                      "macro"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/select",
-                    "formId": 168,
-                    "renderKey": "1681654068165621",
-                    "saveWay": "macro",
-                    "uuid": "TCFG_LOWPOWER_VDDIOM_LEVEL",
-                    "defaultValue": "VDDIOM_VOL_34V",
-                    "eventField": [],
-                    "originValue": "VDDIOM_VOL_34V",
-                    "tip": "IOVDD配置小于3.3V会影响设备兼容性",
-                    "tipAlways": true
-                  },
-                  "__slot__": {
-                    "options": [
-                      {
-                        "label": "2.0V",
-                        "value": "VDDIOM_VOL_20V"
-                      },
-                      {
-                        "label": "2.2V",
-                        "value": "VDDIOM_VOL_22V"
-                      },
-                      {
-                        "label": "2.4V",
-                        "value": "VDDIOM_VOL_24V"
-                      },
-                      {
-                        "label": "2.6V",
-                        "value": "VDDIOM_VOL_26V"
-                      },
-                      {
-                        "label": "2.8V",
-                        "value": "VDDIOM_VOL_28V"
-                      },
-                      {
-                        "label": "3.0V",
-                        "value": "VDDIOM_VOL_30V"
-                      },
-                      {
-                        "label": "3.2V",
-                        "value": "VDDIOM_VOL_32V"
-                      },
-                      {
-                        "label": "3.4V",
-                        "value": "VDDIOM_VOL_34V"
-                      }
-                    ]
-                  },
-                  "placeholder": "IOVDD",
-                  "style": {
-                    "width": "100%"
-                  },
-                  "clearable": true,
-                  "disabled": false,
-                  "filterable": false,
-                  "multiple": false,
-                  "__vModel__": "field168",
-                  "id": "id_1654068165621_19"
-                },
-                {
-                  "__config__": {
-                    "label": "弱IOVDD",
-                    "showLabel": true,
-                    "labelWidth": 80,
-                    "tag": "el-select",
-                    "tagIcon": "select",
-                    "layout": "colFormItem",
-                    "span": 5,
-                    "required": false,
-                    "regList": [],
-                    "changeTag": true,
-                    "searchSource": false,
-                    "dataType": [
-                      "macro"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/select",
-                    "formId": 792,
-                    "renderKey": "7921678844947727",
-                    "saveWay": "macro",
-                    "uuid": "TCFG_LOWPOWER_VDDIOW_LEVEL",
-                    "defaultValue": "VDDIOM_VOL_26V",
-                    "eventField": [],
-                    "originValue": "VDDIOM_VOL_26V"
-                  },
-                  "__slot__": {
-                    "options": [
-                      {
-                        "label": "2.0V",
-                        "value": "VDDIOM_VOL_20V"
-                      },
-                      {
-                        "label": "2.2V",
-                        "value": "VDDIOM_VOL_22V"
-                      },
-                      {
-                        "label": "2.4V",
-                        "value": "VDDIOM_VOL_24V"
-                      },
-                      {
-                        "label": "2.6V",
-                        "value": "VDDIOM_VOL_26V"
-                      },
-                      {
-                        "label": "2.8V",
-                        "value": "VDDIOM_VOL_28V"
-                      },
-                      {
-                        "label": "3.2V",
-                        "value": "VDDIOM_VOL_32V"
-                      },
-                      {
-                        "label": "3.4V",
-                        "value": "VDDIOM_VOL_34V"
-                      }
-                    ]
-                  },
-                  "placeholder": "弱IOVDD",
-                  "style": {
-                    "width": "100%"
-                  },
-                  "clearable": true,
-                  "disabled": false,
-                  "filterable": false,
-                  "multiple": false,
-                  "__vModel__": "field792",
-                  "id": "id_1678844947727_0"
-                },
-                {
-                  "__config__": {
-                    "label": "LVD档位",
-                    "showLabel": true,
-                    "labelWidth": null,
-                    "tag": "el-select",
-                    "tagIcon": "select",
-                    "layout": "colFormItem",
-                    "span": 5,
-                    "required": false,
-                    "regList": [],
-                    "changeTag": true,
-                    "searchSource": false,
-                    "dataType": [
-                      "macro"
-                    ],
-                    "formId": 136,
-                    "renderKey": "1361679724418892",
-                    "eventField": [],
-                    "defaultValue": "2.7v",
-                    "originValue": "2.7v",
-                    "emptyValue": "2.6v",
-                    "saveWay": "macro",
-                    "uuid": "CONFIG_LVD_LEVEL"
-                  },
-                  "__slot__": {
-                    "options": [
-                      {
-                        "label": "2.2V",
-                        "value": "2.2v"
-                      },
-                      {
-                        "label": "2.3V",
-                        "value": "2.3v"
-                      },
-                      {
-                        "label": "2.4V",
-                        "value": "2.4v",
-                        "hide": false,
-                        "disabled": false
-                      },
-                      {
-                        "label": "2.5V",
-                        "value": "2.5v",
-                        "hide": false,
-                        "disabled": false
-                      },
-                      {
-                        "label": "2.6V",
-                        "value": "2.6v",
-                        "hide": false,
-                        "disabled": false
-                      },
-                      {
-                        "label": "2.7V",
-                        "value": "2.7v",
-                        "hide": false,
-                        "disabled": false
-                      },
-                      {
-                        "label": "2.8V",
-                        "value": "2.8v",
-                        "hide": false,
-                        "disabled": false
-                      },
-                      {
-                        "label": "2.9V",
-                        "value": "2.9v",
-                        "hide": false,
-                        "disabled": false
-                      },
-                      {
-                        "label": "3.0V",
-                        "value": "3.0v",
-                        "hide": false,
-                        "disabled": false
-                      }
-                    ]
-                  },
-                  "placeholder": "请选择LVD档位",
-                  "style": {
-                    "width": "100%"
-                  },
-                  "clearable": true,
-                  "disabled": false,
-                  "filterable": false,
-                  "multiple": false,
-                  "id": "id_1679724418892_0",
-                  "__vModel__": "field136"
-                },
-                {
-                  "__config__": {
-                    "label": "上限时钟设置",
-                    "showLabel": true,
-                    "labelWidth": 100,
-                    "tag": "el-select",
-                    "tagIcon": "select",
-                    "layout": "colFormItem",
-                    "span": 5,
-                    "required": false,
-                    "regList": [],
-                    "changeTag": true,
-                    "searchSource": false,
-                    "dataType": [
-                      "macro"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/select",
-                    "formId": 125,
-                    "renderKey": "1251667888542809",
-                    "saveWay": "macro",
-                    "uuid": "TCFG_MAX_LIMIT_SYS_CLOCK",
-                    "defaultValue": 128000000,
-                    "eventField": []
-                  },
-                  "__slot__": {
-                    "options": [
-                      {
-                        "label": "128M",
-                        "value": 128000000
-                      },
-                      {
-                        "label": "160M",
-                        "value": 160000000
-                      }
-                    ]
-                  },
-                  "placeholder": "上限时钟设置",
-                  "style": {
-                    "width": "100%"
-                  },
-                  "clearable": true,
-                  "disabled": false,
-                  "filterable": false,
-                  "multiple": false,
-                  "__vModel__": "field125",
-                  "id": "id_1667888542809_0"
-                }
-              ],
-              "eventField": []
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "60px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1654071695906_3"
-          },
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_175",
-              "showComponentName": false,
-              "dataType": [
-                "8",
-                "1"
-              ],
-              "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-              "template": "",
-              "span": 24,
-              "formId": 175,
-              "renderKey": "1751654071811324",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "低功耗模式",
-                    "tag": "el-switch",
-                    "tagIcon": "switch",
-                    "defaultValue": 0,
-                    "span": 5,
-                    "showLabel": true,
-                    "labelWidth": "",
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "changeTag": true,
-                    "dataType": [
-                      "8"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/switch",
-                    "formId": 179,
-                    "renderKey": "1791654071811324",
-                    "saveWay": "macro",
-                    "uuid": "TCFG_LOWPOWER_LOWPOWER_SEL",
-                    "eventField": [],
-                    "originValue": 0,
-                    "tip": "注意打开之后系统也可能无法进入低功耗，目前已知打开UI、IRKEY会限制进入低功耗，其他的需要通过代码添加调试信息分析"
-                  },
-                  "style": {},
-                  "disabled": false,
-                  "active-text": "",
-                  "inactive-text": "",
-                  "active-color": null,
-                  "inactive-color": null,
-                  "active-value": 1,
-                  "inactive-value": 0,
-                  "__vModel__": "field179",
-                  "id": "id_1654071811324_8"
-                },
-                {
-                  "__config__": {
-                    "label": "上电自动开机",
-                    "tag": "el-switch",
-                    "tagIcon": "switch",
-                    "defaultValue": 1,
-                    "span": 5,
-                    "showLabel": true,
-                    "labelWidth": "",
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "changeTag": true,
-                    "dataType": [
-                      "8"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/switch",
-                    "formId": 111,
-                    "renderKey": "1111665459905865",
-                    "saveWay": "macro",
-                    "uuid": "TCFG_AUTO_POWERON_ENABLE",
-                    "eventField": [],
-                    "tip": "第一次上电是否需要自动开机，关闭后需要长按按键开机"
-                  },
-                  "style": {},
-                  "disabled": false,
-                  "active-text": "",
-                  "inactive-text": "",
-                  "active-color": null,
-                  "inactive-color": null,
-                  "active-value": 1,
-                  "inactive-value": 0,
-                  "__vModel__": "field111",
-                  "id": "id_1665459905865_1"
-                }
-              ],
-              "eventField": []
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "60px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1654071811324_4"
-          }
-        ],
-        "eventField": []
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_173",
+       "showComponentName": false,
+       "dataType": [
+        "8",
+        "1"
+       ],
+       "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+       "template": "",
+       "span": 24,
+       "formId": 173,
+       "renderKey": "1731654071670980",
+       "children": [
+        {
+         "__config__": {
+          "label": "晶振频率",
+          "showLabel": true,
+          "labelWidth": 80,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 5,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": [
+           "32"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/select",
+          "formId": 138,
+          "renderKey": "1381646372957244",
+          "defaultValue": 24000000,
+          "saveWay": "macro",
+          "uuid": "TCFG_CLOCK_OSC_HZ",
+          "eventField": []
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "24M",
+            "value": 24000000
+           }
+          ]
+         },
+         "placeholder": "请选择晶振频率",
+         "style": {
+          "width": "100%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "__vModel__": "field138",
+         "id": "id_1647484466450_33"
+        },
+        {
+         "__config__": {
+          "label": "电源模式",
+          "showLabel": true,
+          "labelWidth": 80,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 7,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": [
+           "macro"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/select",
+          "formId": 167,
+          "renderKey": "1671654068165621",
+          "defaultValue": "PWR_LDO15",
+          "saveWay": "macro",
+          "uuid": "TCFG_LOWPOWER_POWER_SEL",
+          "originValue": "PWR_LDO15",
+          "eventField": [],
+          "tipAlways": true,
+          "tip": "有FM功能的方案不能选择DCDC"
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "DCDC",
+            "value": "PWR_DCDC15"
+           },
+           {
+            "label": "LDO",
+            "value": "PWR_LDO15"
+           }
+          ]
+         },
+         "placeholder": "",
+         "style": {
+          "width": "100%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "__vModel__": "field167",
+         "id": "id_1654068165621_18"
+        },
+        {
+         "__config__": {
+          "label": "低功耗时钟源",
+          "showLabel": true,
+          "labelWidth": 120,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 6,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": [
+           "macro"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/select",
+          "formId": 172,
+          "renderKey": "1721654071360228",
+          "saveWay": "macro",
+          "uuid": "TCFG_LOWPOWER_OSC_TYPE",
+          "defaultValue": "OSC_TYPE_LRC"
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "LRC",
+            "value": "OSC_TYPE_LRC"
+           },
+           {
+            "label": "BT_OSC",
+            "value": "OSC_TYPE_BT_OSC"
+           }
+          ]
+         },
+         "placeholder": "请选择低功耗时钟源",
+         "style": {
+          "width": "100%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "__vModel__": "field172",
+         "id": "id_1654071360228_1"
+        },
+        {
+         "__config__": {
+          "label": "时钟模式",
+          "showLabel": true,
+          "labelWidth": 120,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 6,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": [
+           "macro"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/select",
+          "formId": 659,
+          "renderKey": "6591677159707061",
+          "saveWay": "macro",
+          "uuid": "TCFG_CLOCK_MODE",
+          "defaultValue": "CLOCK_MODE_ADAPTIVE",
+          "originValue": "CLOCK_MODE_ADAPTIVE"
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "ADAPTIVE",
+            "value": "CLOCK_MODE_ADAPTIVE"
+           },
+           {
+            "label": "USR",
+            "value": "CLOCK_MODE_USR"
+           }
+          ]
+         },
+         "placeholder": "请选择时钟模式",
+         "style": {
+          "width": "100%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "__vModel__": "field659",
+         "id": "id_1677159707061_0"
+        }
+       ],
+       "eventField": []
       },
       "type": "default",
       "justify": "start",
       "align": "top",
       "style": {
-        "height": "300px",
-        "paddingLeft": "0px"
+       "height": "60px",
+       "paddingLeft": "0px"
       },
-      "id": "id_1654068165621_17"
-    },
-    {
+      "id": "id_1654071670980_2"
+     },
+     {
       "__config__": {
-        "layout": "rowFormItem",
-        "tag": "group",
-        "tagIcon": "row",
-        "layoutTree": true,
-        "componentName": "电池电量检测",
-        "showComponentName": true,
-        "dataType": [],
-        "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-        "template": "",
-        "span": 24,
-        "formId": 107,
-        "renderKey": "1071652442788268",
-        "children": [
-          {
-            "__config__": {
-              "label": "关机电压(mV)",
-              "showLabel": true,
-              "labelWidth": 130,
-              "tag": "el-input-number",
-              "tagIcon": "number",
-              "layout": "colFormItem",
-              "span": 6,
-              "required": false,
-              "regList": [],
-              "changeTag": true,
-              "searchSource": false,
-              "dataType": [
-                "32",
-                "-1"
-              ],
-              "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-              "formId": 132,
-              "renderKey": "1321652520757196",
-              "saveWay": "macro",
-              "defaultValue": 3600,
-              "uuid": "TCFG_POWER_OFF_VOLTAGE",
-              "formItemWidth": "320px",
-              "paddingLeft": "10px",
-              "originValue": 3600,
-              "eventField": []
-            },
-            "placeholder": "请选择关机电压",
-            "min": 1500,
-            "max": 4200,
-            "step": 10,
-            "step-strictly": false,
-            "controls-position": "",
-            "disabled": false,
-            "id": "id_1652520757196_1",
-            "__vModel__": "field132"
-          },
-          {
-            "__config__": {
-              "label": "低电电压(mV)",
-              "showLabel": true,
-              "labelWidth": 130,
-              "tag": "el-input-number",
-              "tagIcon": "number",
-              "layout": "colFormItem",
-              "span": 6,
-              "required": false,
-              "regList": [],
-              "changeTag": true,
-              "searchSource": false,
-              "dataType": [
-                "32",
-                "-1"
-              ],
-              "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-              "formId": 113,
-              "renderKey": "1131652442788268",
-              "saveWay": "macro",
-              "defaultValue": 3700,
-              "uuid": "TCFG_POWER_WARN_VOLTAGE",
-              "formItemWidth": "320px",
-              "paddingLeft": "10px",
-              "originValue": 3700
-            },
-            "placeholder": "请选择低电电压",
-            "min": 1500,
-            "max": 4200,
-            "step": 10,
-            "step-strictly": false,
-            "controls-position": "",
-            "disabled": false,
-            "id": "id_1652442788268_8",
-            "__vModel__": "field113"
-          }
-        ],
-        "saveWay": "",
-        "uuid": "",
-        "eventField": [],
-        "enableUuid": "TCFG_SYS_LVD_EN",
-        "disable": true
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_174",
+       "showComponentName": false,
+       "dataType": [
+        "8",
+        "1"
+       ],
+       "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+       "template": "",
+       "span": 24,
+       "formId": 174,
+       "renderKey": "1741654071695906",
+       "children": [
+        {
+         "__config__": {
+          "label": "IOVDD",
+          "showLabel": true,
+          "labelWidth": 80,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 7,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": [
+           "macro"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/select",
+          "formId": 168,
+          "renderKey": "1681654068165621",
+          "saveWay": "macro",
+          "uuid": "TCFG_LOWPOWER_VDDIOM_LEVEL",
+          "defaultValue": "VDDIOM_VOL_34V",
+          "eventField": [],
+          "originValue": "VDDIOM_VOL_34V",
+          "tip": "IOVDD配置小于3.3V会影响设备兼容性",
+          "tipAlways": true
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "2.0V",
+            "value": "VDDIOM_VOL_20V"
+           },
+           {
+            "label": "2.2V",
+            "value": "VDDIOM_VOL_22V"
+           },
+           {
+            "label": "2.4V",
+            "value": "VDDIOM_VOL_24V"
+           },
+           {
+            "label": "2.6V",
+            "value": "VDDIOM_VOL_26V"
+           },
+           {
+            "label": "2.8V",
+            "value": "VDDIOM_VOL_28V"
+           },
+           {
+            "label": "3.0V",
+            "value": "VDDIOM_VOL_30V"
+           },
+           {
+            "label": "3.2V",
+            "value": "VDDIOM_VOL_32V"
+           },
+           {
+            "label": "3.4V",
+            "value": "VDDIOM_VOL_34V"
+           }
+          ]
+         },
+         "placeholder": "IOVDD",
+         "style": {
+          "width": "100%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "__vModel__": "field168",
+         "id": "id_1654068165621_19"
+        },
+        {
+         "__config__": {
+          "label": "弱IOVDD",
+          "showLabel": true,
+          "labelWidth": 80,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 5,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": [
+           "macro"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/select",
+          "formId": 792,
+          "renderKey": "7921678844947727",
+          "saveWay": "macro",
+          "uuid": "TCFG_LOWPOWER_VDDIOW_LEVEL",
+          "defaultValue": "VDDIOM_VOL_26V",
+          "eventField": [],
+          "originValue": "VDDIOM_VOL_26V"
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "2.0V",
+            "value": "VDDIOM_VOL_20V"
+           },
+           {
+            "label": "2.2V",
+            "value": "VDDIOM_VOL_22V"
+           },
+           {
+            "label": "2.4V",
+            "value": "VDDIOM_VOL_24V"
+           },
+           {
+            "label": "2.6V",
+            "value": "VDDIOM_VOL_26V"
+           },
+           {
+            "label": "2.8V",
+            "value": "VDDIOM_VOL_28V"
+           },
+           {
+            "label": "3.2V",
+            "value": "VDDIOM_VOL_32V"
+           },
+           {
+            "label": "3.4V",
+            "value": "VDDIOM_VOL_34V"
+           }
+          ]
+         },
+         "placeholder": "弱IOVDD",
+         "style": {
+          "width": "100%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "__vModel__": "field792",
+         "id": "id_1678844947727_0"
+        },
+        {
+         "__config__": {
+          "label": "LVD档位",
+          "showLabel": true,
+          "labelWidth": null,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 5,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": [
+           "macro"
+          ],
+          "formId": 136,
+          "renderKey": "1361679724418892",
+          "eventField": [],
+          "defaultValue": "2.7v",
+          "originValue": "2.7v",
+          "emptyValue": "2.6v",
+          "saveWay": "macro",
+          "uuid": "CONFIG_LVD_LEVEL"
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "2.2V",
+            "value": "2.2v"
+           },
+           {
+            "label": "2.3V",
+            "value": "2.3v"
+           },
+           {
+            "label": "2.4V",
+            "value": "2.4v",
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "2.5V",
+            "value": "2.5v",
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "2.6V",
+            "value": "2.6v",
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "2.7V",
+            "value": "2.7v",
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "2.8V",
+            "value": "2.8v",
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "2.9V",
+            "value": "2.9v",
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "3.0V",
+            "value": "3.0v",
+            "hide": false,
+            "disabled": false
+           }
+          ]
+         },
+         "placeholder": "请选择LVD档位",
+         "style": {
+          "width": "100%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "id": "id_1679724418892_0",
+         "__vModel__": "field136"
+        },
+        {
+         "__config__": {
+          "label": "上限时钟设置",
+          "showLabel": true,
+          "labelWidth": 100,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 5,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": [
+           "macro"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/select",
+          "formId": 125,
+          "renderKey": "1251667888542809",
+          "saveWay": "macro",
+          "uuid": "TCFG_MAX_LIMIT_SYS_CLOCK",
+          "defaultValue": 128000000,
+          "eventField": []
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "128M",
+            "value": 128000000
+           },
+           {
+            "label": "160M",
+            "value": 160000000
+           }
+          ]
+         },
+         "placeholder": "上限时钟设置",
+         "style": {
+          "width": "100%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "__vModel__": "field125",
+         "id": "id_1667888542809_0"
+        }
+       ],
+       "eventField": []
       },
       "type": "default",
       "justify": "start",
       "align": "top",
       "style": {
-        "height": "60px",
-        "paddingLeft": "0px"
+       "height": "60px",
+       "paddingLeft": "0px"
       },
-      "id": "id_1652442788268_2"
-    },
-    {
+      "id": "id_1654071695906_3"
+     },
+     {
       "__config__": {
-        "layout": "rowFormItem",
-        "tag": "group",
-        "tagIcon": "row",
-        "layoutTree": true,
-        "componentName": "充电配置",
-        "showComponentName": true,
-        "dataType": [],
-        "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-        "template": "",
-        "span": 24,
-        "formId": 102,
-        "renderKey": "1021646287760262",
-        "children": [
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_102",
-              "showComponentName": false,
-              "dataType": [
-                "8",
-                "1"
-              ],
-              "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-              "template": "",
-              "span": 24,
-              "formId": 102,
-              "renderKey": "1021652952528963",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "涓流电流",
-                    "showLabel": true,
-                    "labelWidth": null,
-                    "tag": "el-select",
-                    "tagIcon": "select",
-                    "layout": "colFormItem",
-                    "span": 5,
-                    "required": false,
-                    "regList": [],
-                    "changeTag": true,
-                    "searchSource": false,
-                    "dataType": [
-                      "32",
-                      "-1"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/select",
-                    "formId": 139,
-                    "renderKey": "1391646373066401",
-                    "defaultValue": 1,
-                    "saveWay": "macro",
-                    "uuid": "TCFG_CHARGE_TRICKLE_MA",
-                    "tip": "",
-                    "originValue": 1,
-                    "eventField": []
-                  },
-                  "__slot__": {
-                    "options": [
-                      {
-                        "label": "1.5mA",
-                        "value": 16
-                      },
-                      {
-                        "label": "2mA",
-                        "value": 17
-                      },
-                      {
-                        "label": "2.5mA",
-                        "value": 18
-                      },
-                      {
-                        "label": "3mA",
-                        "value": 19
-                      },
-                      {
-                        "label": "3.5mA",
-                        "value": 20
-                      },
-                      {
-                        "label": "4mA",
-                        "value": 21
-                      },
-                      {
-                        "label": "5mA",
-                        "value": 22
-                      },
-                      {
-                        "label": "6mA",
-                        "value": 23
-                      },
-                      {
-                        "label": "8mA",
-                        "value": 24
-                      },
-                      {
-                        "label": "10mA",
-                        "value": 25
-                      },
-                      {
-                        "label": "12mA",
-                        "value": 26
-                      },
-                      {
-                        "label": "14mA",
-                        "value": 27
-                      },
-                      {
-                        "label": "16mA",
-                        "value": 28
-                      },
-                      {
-                        "label": "20mA",
-                        "value": 1
-                      },
-                      {
-                        "label": "25mA",
-                        "value": 2
-                      },
-                      {
-                        "label": "30mA",
-                        "value": 3
-                      }
-                    ]
-                  },
-                  "placeholder": "请选择涓流电流",
-                  "style": {
-                    "width": "100%"
-                  },
-                  "clearable": true,
-                  "disabled": false,
-                  "filterable": false,
-                  "multiple": false,
-                  "__vModel__": "field139",
-                  "id": "id_1647484466450_45"
-                },
-                {
-                  "__config__": {
-                    "label": "恒流电流",
-                    "showLabel": true,
-                    "labelWidth": null,
-                    "tag": "el-select",
-                    "tagIcon": "select",
-                    "layout": "colFormItem",
-                    "span": 5,
-                    "required": false,
-                    "regList": [],
-                    "changeTag": true,
-                    "searchSource": false,
-                    "dataType": [
-                      "32",
-                      "-1"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/select",
-                    "formId": 135,
-                    "renderKey": "1351646372710118",
-                    "defaultValue": 13,
-                    "saveWay": "macro",
-                    "uuid": "TCFG_CHARGE_MA",
-                    "originValue": 13
-                  },
-                  "__slot__": {
-                    "options": [
-                      {
-                        "label": "15mA",
-                        "value": 0
-                      },
-                      {
-                        "label": "20mA",
-                        "value": 1
-                      },
-                      {
-                        "label": "25mA",
-                        "value": 2
-                      },
-                      {
-                        "label": "30mA",
-                        "value": 3
-                      },
-                      {
-                        "label": "35mA",
-                        "value": 4
-                      },
-                      {
-                        "label": "40mA",
-                        "value": 5
-                      },
-                      {
-                        "label": "50mA",
-                        "value": 6
-                      },
-                      {
-                        "label": "60mA",
-                        "value": 7
-                      },
-                      {
-                        "label": "80mA",
-                        "value": 8
-                      },
-                      {
-                        "label": "100mA",
-                        "value": 9
-                      },
-                      {
-                        "label": "120mA",
-                        "value": 10
-                      },
-                      {
-                        "label": "140mA",
-                        "value": 11
-                      },
-                      {
-                        "label": "160mA",
-                        "value": 12
-                      },
-                      {
-                        "label": "200mA",
-                        "value": 13
-                      },
-                      {
-                        "label": "250mA",
-                        "value": 14
-                      },
-                      {
-                        "label": "300mA",
-                        "value": 15
-                      }
-                    ]
-                  },
-                  "placeholder": "请选择恒流电流",
-                  "style": {
-                    "width": "100%"
-                  },
-                  "clearable": true,
-                  "disabled": false,
-                  "filterable": false,
-                  "multiple": false,
-                  "__vModel__": "field135",
-                  "id": "id_1647484466450_44"
-                },
-                {
-                  "__config__": {
-                    "label": "截止电流",
-                    "showLabel": true,
-                    "labelWidth": null,
-                    "tag": "el-select",
-                    "tagIcon": "select",
-                    "layout": "colFormItem",
-                    "span": 5,
-                    "required": false,
-                    "regList": [],
-                    "changeTag": true,
-                    "searchSource": false,
-                    "dataType": [
-                      "32",
-                      "-1"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/select",
-                    "formId": 134,
-                    "renderKey": "1341646372633727",
-                    "defaultValue": 3,
-                    "saveWay": "macro",
-                    "uuid": "TCFG_CHARGE_FULL_MA",
-                    "originValue": 3
-                  },
-                  "__slot__": {
-                    "options": [
-                      {
-                        "label": "2mA",
-                        "value": 0
-                      },
-                      {
-                        "label": "5mA",
-                        "value": 1
-                      },
-                      {
-                        "label": "7mA",
-                        "value": 2
-                      },
-                      {
-                        "label": "10mA",
-                        "value": 3
-                      },
-                      {
-                        "label": "15mA",
-                        "value": 4,
-                        "hide": false,
-                        "disabled": false
-                      },
-                      {
-                        "label": "20mA",
-                        "value": 5,
-                        "hide": false,
-                        "disabled": false
-                      },
-                      {
-                        "label": "25mA",
-                        "value": 6,
-                        "hide": false,
-                        "disabled": false
-                      },
-                      {
-                        "label": "30mA",
-                        "value": 7,
-                        "hide": false,
-                        "disabled": false
-                      }
-                    ]
-                  },
-                  "placeholder": "请选择截止电流",
-                  "style": {
-                    "width": "100%"
-                  },
-                  "clearable": true,
-                  "disabled": false,
-                  "filterable": false,
-                  "multiple": false,
-                  "__vModel__": "field134",
-                  "id": "id_1647484466450_43"
-                },
-                {
-                  "__config__": {
-                    "label": "截止电压",
-                    "showLabel": true,
-                    "labelWidth": "",
-                    "tag": "el-select",
-                    "tagIcon": "select",
-                    "layout": "colFormItem",
-                    "span": 7,
-                    "required": false,
-                    "regList": [],
-                    "changeTag": true,
-                    "searchSource": false,
-                    "dataType": [
-                      "32",
-                      "-1"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/select",
-                    "formId": 133,
-                    "renderKey": "1331646372512197",
-                    "saveWay": "macro",
-                    "defaultValue": 8,
-                    "uuid": "TCFG_CHARGE_FULL_V",
-                    "tip": "4.2V电池选择低压档电压，4.35V电池选择高压挡电压",
-                    "eventField": [],
-                    "tipAlways": false,
-                    "formItemWidth": ""
-                  },
-                  "__slot__": {
-                    "options": [
-                      {
-                        "label": "低压电池4.041V",
-                        "value": 0
-                      },
-                      {
-                        "label": "低压电池4.061V",
-                        "value": 1
-                      },
-                      {
-                        "label": "低压电池4.081V",
-                        "value": 2
-                      },
-                      {
-                        "label": "低压电池4.101V",
-                        "value": 3
-                      },
-                      {
-                        "label": "低压电池4.119V",
-                        "value": 4
-                      },
-                      {
-                        "label": "低压电池4.139V",
-                        "value": 5
-                      },
-                      {
-                        "label": "低压电池4.159V",
-                        "value": 6
-                      },
-                      {
-                        "label": "低压电池4.179V",
-                        "value": 7
-                      },
-                      {
-                        "label": "低压电池4.199V",
-                        "value": 8
-                      },
-                      {
-                        "label": "低压电池4.219V",
-                        "value": 9
-                      },
-                      {
-                        "label": "低压电池4.238V",
-                        "value": 10
-                      },
-                      {
-                        "label": "低压电池4.258V",
-                        "value": 11
-                      },
-                      {
-                        "label": "低压电池4.278V",
-                        "value": 12
-                      },
-                      {
-                        "label": "低压电池4.298V",
-                        "value": 13
-                      },
-                      {
-                        "label": "低压电池4.318V",
-                        "value": 14
-                      },
-                      {
-                        "label": "低压电池4.338V",
-                        "value": 15
-                      },
-                      {
-                        "label": "高压电池4.237V",
-                        "value": 16
-                      },
-                      {
-                        "label": "高压电池4.257V",
-                        "value": 17
-                      },
-                      {
-                        "label": "高压电池4.275V",
-                        "value": 18
-                      },
-                      {
-                        "label": "高压电池4.295V",
-                        "value": 19
-                      },
-                      {
-                        "label": "高压电池4.315V",
-                        "value": 20
-                      },
-                      {
-                        "label": "高压电池4.335V",
-                        "value": 21
-                      },
-                      {
-                        "label": "高压电池4.354V",
-                        "value": 22
-                      },
-                      {
-                        "label": "高压电池4.374V",
-                        "value": 23
-                      },
-                      {
-                        "label": "高压电池4.394V",
-                        "value": 24
-                      },
-                      {
-                        "label": "高压电池4.414V",
-                        "value": 25
-                      },
-                      {
-                        "label": "高压电池4.434V",
-                        "value": 26
-                      },
-                      {
-                        "label": "高压电池4.454V",
-                        "value": 27
-                      },
-                      {
-                        "label": "高压电池4.474V",
-                        "value": 28
-                      },
-                      {
-                        "label": "高压电池4.494V",
-                        "value": 29
-                      },
-                      {
-                        "label": "高压电池4.514V",
-                        "value": 30
-                      },
-                      {
-                        "label": "高压电池4.534V",
-                        "value": 31
-                      }
-                    ]
-                  },
-                  "placeholder": "请选择截止电压",
-                  "style": {
-                    "width": "80%"
-                  },
-                  "clearable": true,
-                  "disabled": false,
-                  "filterable": false,
-                  "multiple": false,
-                  "__vModel__": "field133",
-                  "id": "id_1647484466450_42"
-                }
-              ]
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "60px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1652952528963_0"
-          },
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_103",
-              "showComponentName": false,
-              "dataType": [
-                "8",
-                "1"
-              ],
-              "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-              "template": "",
-              "span": 24,
-              "formId": 103,
-              "renderKey": "1031652952553745",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "开机充电",
-                    "tag": "el-switch",
-                    "tagIcon": "switch",
-                    "defaultValue": 0,
-                    "span": 4,
-                    "showLabel": true,
-                    "labelWidth": null,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "changeTag": true,
-                    "dataType": [
-                      "8",
-                      "-1"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/switch",
-                    "formId": 115,
-                    "renderKey": "1151652429521410",
-                    "uuid": "TCFG_CHARGE_POWERON_ENABLE",
-                    "saveWay": "macro",
-                    "formItemWidth": "200px"
-                  },
-                  "style": {},
-                  "disabled": false,
-                  "active-text": "",
-                  "inactive-text": "",
-                  "active-color": null,
-                  "inactive-color": null,
-                  "active-value": 1,
-                  "inactive-value": 0,
-                  "id": "id_1652429521410_10",
-                  "__vModel__": "field115"
-                },
-                {
-                  "__config__": {
-                    "label": "拔出开机",
-                    "tag": "el-switch",
-                    "tagIcon": "switch",
-                    "defaultValue": 0,
-                    "span": 4,
-                    "showLabel": true,
-                    "labelWidth": null,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "changeTag": true,
-                    "dataType": [
-                      "8",
-                      "-1"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/switch",
-                    "formId": 116,
-                    "renderKey": "1161652429608051",
-                    "uuid": "TCFG_CHARGE_OFF_POWERON_EN",
-                    "tipAlways": false,
-                    "saveWay": "macro",
-                    "formItemWidth": "200px"
-                  },
-                  "style": {},
-                  "disabled": false,
-                  "active-text": "",
-                  "inactive-text": "",
-                  "active-color": null,
-                  "inactive-color": null,
-                  "active-value": 1,
-                  "inactive-value": 0,
-                  "id": "id_1652429608051_11",
-                  "__vModel__": "field116"
-                }
-              ],
-              "eventField": []
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "60px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1652952553745_1"
-          },
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_104",
-              "showComponentName": false,
-              "dataType": [
-                "8",
-                "1"
-              ],
-              "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-              "template": "",
-              "span": 24,
-              "formId": 104,
-              "renderKey": "1041652952585197",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "下拉电阻开关",
-                    "tag": "el-switch",
-                    "tagIcon": "switch",
-                    "defaultValue": 0,
-                    "span": 4,
-                    "showLabel": true,
-                    "labelWidth": 100,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "changeTag": true,
-                    "dataType": [
-                      "8",
-                      "-1"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/switch",
-                    "formId": 116,
-                    "renderKey": "1161652443281105",
-                    "uuid": "TCFG_LDOIN_PULLDOWN_EN",
-                    "tipAlways": false,
-                    "saveWay": "macro",
-                    "tip": "",
-                    "formItemWidth": "200px"
-                  },
-                  "style": {},
-                  "disabled": false,
-                  "active-text": "",
-                  "inactive-text": "",
-                  "active-color": null,
-                  "inactive-color": null,
-                  "active-value": 1,
-                  "inactive-value": 0,
-                  "id": "id_1652443281105_11",
-                  "__vModel__": "field116"
-                },
-                {
-                  "__config__": {
-                    "label": "下拉电阻档位",
-                    "showLabel": true,
-                    "labelWidth": null,
-                    "tag": "el-select",
-                    "tagIcon": "select",
-                    "layout": "colFormItem",
-                    "span": 5,
-                    "required": false,
-                    "regList": [],
-                    "changeTag": true,
-                    "searchSource": false,
-                    "dataType": [
-                      "8",
-                      "-1"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/select",
-                    "formId": 118,
-                    "renderKey": "1181652443451045",
-                    "saveWay": "macro",
-                    "defaultValue": 3,
-                    "uuid": "TCFG_LDOIN_PULLDOWN_LEV",
-                    "tip": "",
-                    "formItemWidth": "220px"
-                  },
-                  "__slot__": {
-                    "options": [
-                      {
-                        "label": "50K",
-                        "value": 0
-                      },
-                      {
-                        "label": "100K",
-                        "value": 1
-                      },
-                      {
-                        "label": "150K",
-                        "value": 2
-                      },
-                      {
-                        "label": "200K",
-                        "value": 3
-                      }
-                    ]
-                  },
-                  "placeholder": "请选择下拉电阻档位",
-                  "style": {
-                    "width": "100%"
-                  },
-                  "clearable": true,
-                  "disabled": false,
-                  "filterable": false,
-                  "multiple": false,
-                  "__vModel__": "field118",
-                  "id": "id_1652443451045_13"
-                },
-                {
-                  "__config__": {
-                    "label": "下拉电阻保持开关",
-                    "tag": "el-switch",
-                    "tagIcon": "switch",
-                    "defaultValue": 0,
-                    "span": 6,
-                    "showLabel": true,
-                    "labelWidth": 140,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "changeTag": true,
-                    "dataType": [
-                      "8",
-                      "-1"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/switch",
-                    "formId": 117,
-                    "renderKey": "1171652443281833",
-                    "uuid": "TCFG_LDOIN_PULLDOWN_KEEP",
-                    "tipAlways": false,
-                    "saveWay": "macro",
-                    "tip": "在仓关机是否保持下拉电阻，下拉电阻使能开启才有效",
-                    "formItemWidth": "250px"
-                  },
-                  "style": {},
-                  "disabled": false,
-                  "active-text": "",
-                  "inactive-text": "",
-                  "active-color": null,
-                  "inactive-color": null,
-                  "active-value": 1,
-                  "inactive-value": 0,
-                  "id": "id_1652443281833_12",
-                  "__vModel__": "field117"
-                }
-              ]
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "60px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1652952585197_2"
-          },
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_107",
-              "showComponentName": false,
-              "dataType": [
-                "8",
-                "1"
-              ],
-              "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-              "template": "",
-              "span": 24,
-              "formId": 107,
-              "renderKey": "1071652952735686",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "入舱滤波时间(ms)",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 130,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "defaultValue": 100,
-                    "span": 8,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "16"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 124,
-                    "renderKey": "1241652444817648",
-                    "saveWay": "macro",
-                    "uuid": "TCFG_LDOIN_ON_FILTER_TIME",
-                    "tip": "VPWR电压大于VBAT电压",
-                    "formItemWidth": "320px"
-                  },
-                  "placeholder": "入舱滤波时间(ms)",
-                  "min": 10,
-                  "max": 65535,
-                  "step": 2,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1652444817648_0",
-                  "__vModel__": "field124"
-                },
-                {
-                  "__config__": {
-                    "label": "出舱滤波时间(ms)",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 130,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "defaultValue": 200,
-                    "span": 8,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "16"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 126,
-                    "renderKey": "1261652445140553",
-                    "saveWay": "macro",
-                    "uuid": "TCFG_LDOIN_OFF_FILTER_TIME",
-                    "formItemWidth": "320px",
-                    "tip": "VPWR电压小于出舱电压(约0.65V)"
-                  },
-                  "placeholder": "出舱滤波时间出舱滤波时间(ms)",
-                  "min": 0,
-                  "max": 65535,
-                  "step": 2,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1652445140553_2",
-                  "__vModel__": "field126"
-                },
-                {
-                  "__config__": {
-                    "label": "维持电压滤波时间(ms)",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 160,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "defaultValue": 440,
-                    "span": 8,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "16"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 127,
-                    "renderKey": "1271652445141161",
-                    "saveWay": "macro",
-                    "uuid": "TCFG_LDOIN_KEEP_FILTER_TIME",
-                    "tip": "VPWR电压处于入舱电压与VBAT电压之间",
-                    "formItemWidth": "340px"
-                  },
-                  "placeholder": "维持电压滤波时间(ms)",
-                  "min": 10,
-                  "max": 65535,
-                  "step": 2,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1652445141161_3",
-                  "__vModel__": "field127"
-                }
-              ]
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "60px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1652952735686_5"
-          }
-        ],
-        "saveWay": "",
-        "uuid": "",
-        "enableUuid": "TCFG_CHARGE_ENABLE",
-        "disable": true
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_175",
+       "showComponentName": false,
+       "dataType": [
+        "8",
+        "1"
+       ],
+       "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+       "template": "",
+       "span": 24,
+       "formId": 175,
+       "renderKey": "1751654071811324",
+       "children": [
+        {
+         "__config__": {
+          "label": "低功耗模式",
+          "tag": "el-switch",
+          "tagIcon": "switch",
+          "defaultValue": 0,
+          "span": 5,
+          "showLabel": true,
+          "labelWidth": "",
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "dataType": [
+           "8"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/switch",
+          "formId": 179,
+          "renderKey": "1791654071811324",
+          "saveWay": "macro",
+          "uuid": "TCFG_LOWPOWER_LOWPOWER_SEL",
+          "eventField": [],
+          "originValue": 0,
+          "tip": "注意打开之后系统也可能无法进入低功耗，目前已知打开UI、IRKEY会限制进入低功耗，其他的需要通过代码添加调试信息分析"
+         },
+         "style": {},
+         "disabled": false,
+         "active-text": "",
+         "inactive-text": "",
+         "active-color": null,
+         "inactive-color": null,
+         "active-value": 1,
+         "inactive-value": 0,
+         "__vModel__": "field179",
+         "id": "id_1654071811324_8"
+        },
+        {
+         "__config__": {
+          "label": "上电自动开机",
+          "tag": "el-switch",
+          "tagIcon": "switch",
+          "defaultValue": 1,
+          "span": 5,
+          "showLabel": true,
+          "labelWidth": "",
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "dataType": [
+           "8"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/switch",
+          "formId": 111,
+          "renderKey": "1111665459905865",
+          "saveWay": "macro",
+          "uuid": "TCFG_AUTO_POWERON_ENABLE",
+          "eventField": [],
+          "tip": "第一次上电是否需要自动开机，关闭后需要长按按键开机"
+         },
+         "style": {},
+         "disabled": false,
+         "active-text": "",
+         "inactive-text": "",
+         "active-color": null,
+         "inactive-color": null,
+         "active-value": 1,
+         "inactive-value": 0,
+         "__vModel__": "field111",
+         "id": "id_1665459905865_1"
+        }
+       ],
+       "eventField": []
       },
       "type": "default",
       "justify": "start",
       "align": "top",
       "style": {
-        "height": "60px",
-        "paddingLeft": "0px"
+       "height": "60px",
+       "paddingLeft": "0px"
       },
-      "id": "id_1647484466450_48"
-    },
-    {
+      "id": "id_1654071811324_4"
+     }
+    ],
+    "eventField": []
+   },
+   "type": "default",
+   "justify": "start",
+   "align": "top",
+   "style": {
+    "height": "300px",
+    "paddingLeft": "0px"
+   },
+   "id": "id_1654068165621_17"
+  },
+  {
+   "__config__": {
+    "layout": "rowFormItem",
+    "tag": "group",
+    "tagIcon": "row",
+    "layoutTree": true,
+    "componentName": "电池电量检测",
+    "showComponentName": true,
+    "dataType": [],
+    "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+    "template": "",
+    "span": 24,
+    "formId": 107,
+    "renderKey": "1071652442788268",
+    "children": [
+     {
       "__config__": {
-        "layout": "rowFormItem",
-        "tag": "group",
-        "tagIcon": "row",
-        "layoutTree": true,
-        "componentName": "电池曲线配置",
-        "showComponentName": true,
-        "dataType": [],
-        "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-        "template": "{\"__config__\":{\"layout\":\"rowFormItem\",\"tag\":\"group\",\"tagIcon\":\"row\",\"layoutTree\":true,\"componentName\":\"row_307\",\"showComponentName\":false,\"dataType\":[],\"document\":\"https://element.eleme.cn/#/zh-CN/component/layout#row-attributes\",\"template\":\"\",\"span\":12,\"formId\":307,\"renderKey\":\"3071652251710063\",\"children\":[{\"__config__\":{\"label\":\"电压(mv)\",\"showLabel\":true,\"changeTag\":true,\"labelWidth\":80,\"tag\":\"el-input-number\",\"tagIcon\":\"number\",\"span\":6,\"layout\":\"colFormItem\",\"required\":false,\"regList\":[],\"dataType\":[\"-1\",\"16\"],\"document\":\"https://element.eleme.cn/#/zh-CN/component/input-number\",\"formId\":308,\"renderKey\":\"3081652251710063\",\"defaultValue\":3300,\"formItemWidth\":\"240px\",\"eventField\":[],\"saveWay\":\"code\",\"structProp\":\"voltage\"},\"placeholder\":\"电压(mv)\",\"min\":3000,\"max\":4500,\"step\":10,\"step-strictly\":false,\"controls-position\":\"\",\"disabled\":false,\"id\":\"id_1652251710063_12\",\"__vModel__\":\"field308\"},{\"__config__\":{\"label\":\"电量\",\"showLabel\":true,\"changeTag\":true,\"labelWidth\":80,\"tag\":\"el-input-number\",\"tagIcon\":\"number\",\"defaultValue\":0,\"span\":6,\"layout\":\"colFormItem\",\"required\":false,\"regList\":[],\"dataType\":[\"8\",\"-1\"],\"document\":\"https://element.eleme.cn/#/zh-CN/component/input-number\",\"formId\":309,\"renderKey\":\"3091652251710063\",\"formItemWidth\":\"240px\",\"paddingLeft\":\"\",\"saveWay\":\"code\",\"structProp\":\"percent\"},\"placeholder\":\"电量\",\"min\":0,\"max\":100,\"step\":5,\"step-strictly\":false,\"controls-position\":\"\",\"disabled\":false,\"id\":\"id_1652251710063_13\",\"__vModel__\":\"field309\"}],\"paddingLeft\":\"\",\"saveWay\":\"code\",\"eventField\":[],\"structDef\":\"\"},\"type\":\"default\",\"justify\":\"start\",\"align\":\"top\",\"style\":{\"height\":\"60px\",\"paddingLeft\":\"0px\"},\"id\":\"id_1652251710063_11\",\"fromTemplate\":true}",
-        "span": 24,
-        "formId": 112,
-        "renderKey": "1121652164485588",
-        "children": [
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_346",
-              "showComponentName": false,
-              "dataType": [],
-              "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-              "template": "",
-              "span": 12,
-              "formId": 346,
-              "renderKey": "3461719228217097",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "电压(mv)",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "-1",
-                      "16"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 347,
-                    "renderKey": "3471719228217097",
-                    "defaultValue": 3300,
-                    "formItemWidth": "240px",
-                    "eventField": [],
-                    "saveWay": "code",
-                    "structProp": "voltage"
-                  },
-                  "placeholder": "电压(mv)",
-                  "min": 3000,
-                  "max": 4500,
-                  "step": 10,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228217097_1",
-                  "__vModel__": "field347"
-                },
-                {
-                  "__config__": {
-                    "label": "电量",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "defaultValue": 0,
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "8",
-                      "-1"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 348,
-                    "renderKey": "3481719228217097",
-                    "formItemWidth": "240px",
-                    "paddingLeft": "",
-                    "saveWay": "code",
-                    "structProp": "percent"
-                  },
-                  "placeholder": "电量",
-                  "min": 0,
-                  "max": 100,
-                  "step": 5,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228217097_2",
-                  "__vModel__": "field348"
-                }
-              ],
-              "paddingLeft": "",
-              "saveWay": "code",
-              "eventField": [],
-              "structDef": "const struct battery_curve g_battery_curve_table"
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "60px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1719228217097_0",
-            "fromTemplate": true
-          },
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_307",
-              "showComponentName": false,
-              "dataType": [],
-              "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-              "template": "",
-              "span": 12,
-              "formId": 307,
-              "renderKey": "3071652251710063",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "电压(mv)",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "-1",
-                      "16"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 308,
-                    "renderKey": "3081652251710063",
-                    "defaultValue": 3450,
-                    "formItemWidth": "240px",
-                    "eventField": [],
-                    "saveWay": "code",
-                    "structProp": "voltage"
-                  },
-                  "placeholder": "电压(mv)",
-                  "min": 3000,
-                  "max": 4500,
-                  "step": 10,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228238221_1",
-                  "__vModel__": "field308"
-                },
-                {
-                  "__config__": {
-                    "label": "电量",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "defaultValue": 5,
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "8",
-                      "-1"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 309,
-                    "renderKey": "3091652251710063",
-                    "formItemWidth": "240px",
-                    "paddingLeft": "",
-                    "saveWay": "code",
-                    "structProp": "percent"
-                  },
-                  "placeholder": "电量",
-                  "min": 0,
-                  "max": 100,
-                  "step": 5,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228238221_2",
-                  "__vModel__": "field309"
-                }
-              ],
-              "paddingLeft": "",
-              "saveWay": "code",
-              "eventField": [],
-              "structDef": "const struct battery_curve g_battery_curve_table"
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "60px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1719228238221_0",
-            "fromTemplate": true
-          },
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_307",
-              "showComponentName": false,
-              "dataType": [],
-              "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-              "template": "",
-              "span": 12,
-              "formId": 307,
-              "renderKey": "3071652251710063",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "电压(mv)",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "-1",
-                      "16"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 308,
-                    "renderKey": "3081652251710063",
-                    "defaultValue": 3680,
-                    "formItemWidth": "240px",
-                    "eventField": [],
-                    "saveWay": "code",
-                    "structProp": "voltage"
-                  },
-                  "placeholder": "电压(mv)",
-                  "min": 3000,
-                  "max": 4500,
-                  "step": 10,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228238221_4",
-                  "__vModel__": "field308"
-                },
-                {
-                  "__config__": {
-                    "label": "电量",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "defaultValue": 10,
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "8",
-                      "-1"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 309,
-                    "renderKey": "3091652251710063",
-                    "formItemWidth": "240px",
-                    "paddingLeft": "",
-                    "saveWay": "code",
-                    "structProp": "percent"
-                  },
-                  "placeholder": "电量",
-                  "min": 0,
-                  "max": 100,
-                  "step": 5,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228238221_5",
-                  "__vModel__": "field309"
-                }
-              ],
-              "paddingLeft": "",
-              "saveWay": "code",
-              "eventField": [],
-              "structDef": "const struct battery_curve g_battery_curve_table"
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "60px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1719228238221_3",
-            "fromTemplate": true
-          },
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_307",
-              "showComponentName": false,
-              "dataType": [],
-              "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-              "template": "",
-              "span": 12,
-              "formId": 307,
-              "renderKey": "3071652251710063",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "电压(mv)",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "-1",
-                      "16"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 308,
-                    "renderKey": "3081652251710063",
-                    "defaultValue": 3740,
-                    "formItemWidth": "240px",
-                    "eventField": [],
-                    "saveWay": "code",
-                    "structProp": "voltage"
-                  },
-                  "placeholder": "电压(mv)",
-                  "min": 3000,
-                  "max": 4500,
-                  "step": 10,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228238221_7",
-                  "__vModel__": "field308"
-                },
-                {
-                  "__config__": {
-                    "label": "电量",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "defaultValue": 20,
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "8",
-                      "-1"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 309,
-                    "renderKey": "3091652251710063",
-                    "formItemWidth": "240px",
-                    "paddingLeft": "",
-                    "saveWay": "code",
-                    "structProp": "percent"
-                  },
-                  "placeholder": "电量",
-                  "min": 0,
-                  "max": 100,
-                  "step": 5,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228238221_8",
-                  "__vModel__": "field309"
-                }
-              ],
-              "paddingLeft": "",
-              "saveWay": "code",
-              "eventField": [],
-              "structDef": "const struct battery_curve g_battery_curve_table"
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "60px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1719228238221_6",
-            "fromTemplate": true
-          },
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_307",
-              "showComponentName": false,
-              "dataType": [],
-              "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-              "template": "",
-              "span": 12,
-              "formId": 307,
-              "renderKey": "3071652251710063",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "电压(mv)",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "-1",
-                      "16"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 308,
-                    "renderKey": "3081652251710063",
-                    "defaultValue": 3770,
-                    "formItemWidth": "240px",
-                    "eventField": [],
-                    "saveWay": "code",
-                    "structProp": "voltage"
-                  },
-                  "placeholder": "电压(mv)",
-                  "min": 3000,
-                  "max": 4500,
-                  "step": 10,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228238221_10",
-                  "__vModel__": "field308"
-                },
-                {
-                  "__config__": {
-                    "label": "电量",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "defaultValue": 30,
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "8",
-                      "-1"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 309,
-                    "renderKey": "3091652251710063",
-                    "formItemWidth": "240px",
-                    "paddingLeft": "",
-                    "saveWay": "code",
-                    "structProp": "percent"
-                  },
-                  "placeholder": "电量",
-                  "min": 0,
-                  "max": 100,
-                  "step": 5,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228238221_11",
-                  "__vModel__": "field309"
-                }
-              ],
-              "paddingLeft": "",
-              "saveWay": "code",
-              "eventField": [],
-              "structDef": "const struct battery_curve g_battery_curve_table"
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "60px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1719228238221_9",
-            "fromTemplate": true
-          },
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_307",
-              "showComponentName": false,
-              "dataType": [],
-              "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-              "template": "",
-              "span": 12,
-              "formId": 307,
-              "renderKey": "3071652251710063",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "电压(mv)",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "-1",
-                      "16"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 308,
-                    "renderKey": "3081652251710063",
-                    "defaultValue": 3790,
-                    "formItemWidth": "240px",
-                    "eventField": [],
-                    "saveWay": "code",
-                    "structProp": "voltage"
-                  },
-                  "placeholder": "电压(mv)",
-                  "min": 3000,
-                  "max": 4500,
-                  "step": 10,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228238221_13",
-                  "__vModel__": "field308"
-                },
-                {
-                  "__config__": {
-                    "label": "电量",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "defaultValue": 40,
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "8",
-                      "-1"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 309,
-                    "renderKey": "3091652251710063",
-                    "formItemWidth": "240px",
-                    "paddingLeft": "",
-                    "saveWay": "code",
-                    "structProp": "percent"
-                  },
-                  "placeholder": "电量",
-                  "min": 0,
-                  "max": 100,
-                  "step": 5,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228238221_14",
-                  "__vModel__": "field309"
-                }
-              ],
-              "paddingLeft": "",
-              "saveWay": "code",
-              "eventField": [],
-              "structDef": "const struct battery_curve g_battery_curve_table"
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "60px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1719228238221_12",
-            "fromTemplate": true
-          },
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_307",
-              "showComponentName": false,
-              "dataType": [],
-              "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-              "template": "",
-              "span": 12,
-              "formId": 307,
-              "renderKey": "3071652251710063",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "电压(mv)",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "-1",
-                      "16"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 308,
-                    "renderKey": "3081652251710063",
-                    "defaultValue": 3820,
-                    "formItemWidth": "240px",
-                    "eventField": [],
-                    "saveWay": "code",
-                    "structProp": "voltage"
-                  },
-                  "placeholder": "电压(mv)",
-                  "min": 3000,
-                  "max": 4500,
-                  "step": 10,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228238221_16",
-                  "__vModel__": "field308"
-                },
-                {
-                  "__config__": {
-                    "label": "电量",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "defaultValue": 50,
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "8",
-                      "-1"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 309,
-                    "renderKey": "3091652251710063",
-                    "formItemWidth": "240px",
-                    "paddingLeft": "",
-                    "saveWay": "code",
-                    "structProp": "percent"
-                  },
-                  "placeholder": "电量",
-                  "min": 0,
-                  "max": 100,
-                  "step": 5,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228238221_17",
-                  "__vModel__": "field309"
-                }
-              ],
-              "paddingLeft": "",
-              "saveWay": "code",
-              "eventField": [],
-              "structDef": "const struct battery_curve g_battery_curve_table"
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "60px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1719228238221_15",
-            "fromTemplate": true
-          },
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_307",
-              "showComponentName": false,
-              "dataType": [],
-              "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-              "template": "",
-              "span": 12,
-              "formId": 307,
-              "renderKey": "3071652251710063",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "电压(mv)",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "-1",
-                      "16"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 308,
-                    "renderKey": "3081652251710063",
-                    "defaultValue": 3870,
-                    "formItemWidth": "240px",
-                    "eventField": [],
-                    "saveWay": "code",
-                    "structProp": "voltage"
-                  },
-                  "placeholder": "电压(mv)",
-                  "min": 3000,
-                  "max": 4500,
-                  "step": 10,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228238221_19",
-                  "__vModel__": "field308"
-                },
-                {
-                  "__config__": {
-                    "label": "电量",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "defaultValue": 60,
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "8",
-                      "-1"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 309,
-                    "renderKey": "3091652251710063",
-                    "formItemWidth": "240px",
-                    "paddingLeft": "",
-                    "saveWay": "code",
-                    "structProp": "percent"
-                  },
-                  "placeholder": "电量",
-                  "min": 0,
-                  "max": 100,
-                  "step": 5,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228238221_20",
-                  "__vModel__": "field309"
-                }
-              ],
-              "paddingLeft": "",
-              "saveWay": "code",
-              "eventField": [],
-              "structDef": "const struct battery_curve g_battery_curve_table"
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "60px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1719228238221_18",
-            "fromTemplate": true
-          },
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_307",
-              "showComponentName": false,
-              "dataType": [],
-              "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-              "template": "",
-              "span": 12,
-              "formId": 307,
-              "renderKey": "3071652251710063",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "电压(mv)",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "-1",
-                      "16"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 308,
-                    "renderKey": "3081652251710063",
-                    "defaultValue": 3920,
-                    "formItemWidth": "240px",
-                    "eventField": [],
-                    "saveWay": "code",
-                    "structProp": "voltage"
-                  },
-                  "placeholder": "电压(mv)",
-                  "min": 3000,
-                  "max": 4500,
-                  "step": 10,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228238221_22",
-                  "__vModel__": "field308"
-                },
-                {
-                  "__config__": {
-                    "label": "电量",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "defaultValue": 70,
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "8",
-                      "-1"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 309,
-                    "renderKey": "3091652251710063",
-                    "formItemWidth": "240px",
-                    "paddingLeft": "",
-                    "saveWay": "code",
-                    "structProp": "percent"
-                  },
-                  "placeholder": "电量",
-                  "min": 0,
-                  "max": 100,
-                  "step": 5,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228238221_23",
-                  "__vModel__": "field309"
-                }
-              ],
-              "paddingLeft": "",
-              "saveWay": "code",
-              "eventField": [],
-              "structDef": "const struct battery_curve g_battery_curve_table"
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "60px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1719228238221_21",
-            "fromTemplate": true
-          },
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_307",
-              "showComponentName": false,
-              "dataType": [],
-              "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-              "template": "",
-              "span": 12,
-              "formId": 307,
-              "renderKey": "3071652251710063",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "电压(mv)",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "-1",
-                      "16"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 308,
-                    "renderKey": "3081652251710063",
-                    "defaultValue": 3980,
-                    "formItemWidth": "240px",
-                    "eventField": [],
-                    "saveWay": "code",
-                    "structProp": "voltage"
-                  },
-                  "placeholder": "电压(mv)",
-                  "min": 3000,
-                  "max": 4500,
-                  "step": 10,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228238221_25",
-                  "__vModel__": "field308"
-                },
-                {
-                  "__config__": {
-                    "label": "电量",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "defaultValue": 80,
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "8",
-                      "-1"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 309,
-                    "renderKey": "3091652251710063",
-                    "formItemWidth": "240px",
-                    "paddingLeft": "",
-                    "saveWay": "code",
-                    "structProp": "percent"
-                  },
-                  "placeholder": "电量",
-                  "min": 0,
-                  "max": 100,
-                  "step": 5,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228238221_26",
-                  "__vModel__": "field309"
-                }
-              ],
-              "paddingLeft": "",
-              "saveWay": "code",
-              "eventField": [],
-              "structDef": "const struct battery_curve g_battery_curve_table"
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "60px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1719228238221_24",
-            "fromTemplate": true
-          },
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_307",
-              "showComponentName": false,
-              "dataType": [],
-              "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-              "template": "",
-              "span": 12,
-              "formId": 307,
-              "renderKey": "3071652251710063",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "电压(mv)",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "-1",
-                      "16"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 308,
-                    "renderKey": "3081652251710063",
-                    "defaultValue": 4060,
-                    "formItemWidth": "240px",
-                    "eventField": [],
-                    "saveWay": "code",
-                    "structProp": "voltage"
-                  },
-                  "placeholder": "电压(mv)",
-                  "min": 3000,
-                  "max": 4500,
-                  "step": 10,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228238221_28",
-                  "__vModel__": "field308"
-                },
-                {
-                  "__config__": {
-                    "label": "电量",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "defaultValue": 90,
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "8",
-                      "-1"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 309,
-                    "renderKey": "3091652251710063",
-                    "formItemWidth": "240px",
-                    "paddingLeft": "",
-                    "saveWay": "code",
-                    "structProp": "percent"
-                  },
-                  "placeholder": "电量",
-                  "min": 0,
-                  "max": 100,
-                  "step": 5,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228238221_29",
-                  "__vModel__": "field309"
-                }
-              ],
-              "paddingLeft": "",
-              "saveWay": "code",
-              "eventField": [],
-              "structDef": "const struct battery_curve g_battery_curve_table"
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "60px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1719228238221_27",
-            "fromTemplate": true
-          },
-          {
-            "__config__": {
-              "layout": "rowFormItem",
-              "tag": "group",
-              "tagIcon": "row",
-              "layoutTree": true,
-              "componentName": "row_307",
-              "showComponentName": false,
-              "dataType": [],
-              "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
-              "template": "",
-              "span": 12,
-              "formId": 307,
-              "renderKey": "3071652251710063",
-              "children": [
-                {
-                  "__config__": {
-                    "label": "电压(mv)",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "-1",
-                      "16"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 308,
-                    "renderKey": "3081652251710063",
-                    "defaultValue": 4120,
-                    "formItemWidth": "240px",
-                    "eventField": [],
-                    "saveWay": "code",
-                    "structProp": "voltage"
-                  },
-                  "placeholder": "电压(mv)",
-                  "min": 3000,
-                  "max": 4500,
-                  "step": 10,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228392146_1",
-                  "__vModel__": "field308"
-                },
-                {
-                  "__config__": {
-                    "label": "电量",
-                    "showLabel": true,
-                    "changeTag": true,
-                    "labelWidth": 80,
-                    "tag": "el-input-number",
-                    "tagIcon": "number",
-                    "defaultValue": 100,
-                    "span": 6,
-                    "layout": "colFormItem",
-                    "required": false,
-                    "regList": [],
-                    "dataType": [
-                      "8",
-                      "-1"
-                    ],
-                    "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
-                    "formId": 309,
-                    "renderKey": "3091652251710063",
-                    "formItemWidth": "240px",
-                    "paddingLeft": "",
-                    "saveWay": "code",
-                    "structProp": "percent"
-                  },
-                  "placeholder": "电量",
-                  "min": 0,
-                  "max": 100,
-                  "step": 5,
-                  "step-strictly": false,
-                  "controls-position": "",
-                  "disabled": false,
-                  "id": "id_1719228392146_2",
-                  "__vModel__": "field309"
-                }
-              ],
-              "paddingLeft": "",
-              "saveWay": "code",
-              "eventField": [],
-              "structDef": "const struct battery_curve g_battery_curve_table"
-            },
-            "type": "default",
-            "justify": "start",
-            "align": "top",
-            "style": {
-              "height": "60px",
-              "paddingLeft": "0px"
-            },
-            "id": "id_1719228392146_0",
-            "fromTemplate": true
-          }
-        ],
-        "saveWay": "code",
-        "uuid": "",
-        "disable": true,
-        "enableUuid": "TCFG_BATTERY_CURVE_ENABLE",
-        "eventField": [],
-        "structDef": "const struct battery_curve g_battery_curve_table"
+       "label": "关机电压(mV)",
+       "showLabel": true,
+       "labelWidth": 130,
+       "tag": "el-input-number",
+       "tagIcon": "number",
+       "layout": "colFormItem",
+       "span": 6,
+       "required": false,
+       "regList": [],
+       "changeTag": true,
+       "searchSource": false,
+       "dataType": [
+        "32",
+        "-1"
+       ],
+       "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+       "formId": 132,
+       "renderKey": "1321652520757196",
+       "saveWay": "macro",
+       "defaultValue": 3600,
+       "uuid": "TCFG_POWER_OFF_VOLTAGE",
+       "formItemWidth": "320px",
+       "paddingLeft": "10px",
+       "originValue": 3600,
+       "eventField": []
+      },
+      "placeholder": "请选择关机电压",
+      "min": 1500,
+      "max": 4200,
+      "step": 10,
+      "step-strictly": false,
+      "controls-position": "",
+      "disabled": false,
+      "id": "id_1652520757196_1",
+      "__vModel__": "field132"
+     },
+     {
+      "__config__": {
+       "label": "低电电压(mV)",
+       "showLabel": true,
+       "labelWidth": 130,
+       "tag": "el-input-number",
+       "tagIcon": "number",
+       "layout": "colFormItem",
+       "span": 6,
+       "required": false,
+       "regList": [],
+       "changeTag": true,
+       "searchSource": false,
+       "dataType": [
+        "32",
+        "-1"
+       ],
+       "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+       "formId": 113,
+       "renderKey": "1131652442788268",
+       "saveWay": "macro",
+       "defaultValue": 3700,
+       "uuid": "TCFG_POWER_WARN_VOLTAGE",
+       "formItemWidth": "320px",
+       "paddingLeft": "10px",
+       "originValue": 3700
+      },
+      "placeholder": "请选择低电电压",
+      "min": 1500,
+      "max": 4200,
+      "step": 10,
+      "step-strictly": false,
+      "controls-position": "",
+      "disabled": false,
+      "id": "id_1652442788268_8",
+      "__vModel__": "field113"
+     }
+    ],
+    "saveWay": "",
+    "uuid": "",
+    "eventField": [],
+    "enableUuid": "TCFG_SYS_LVD_EN",
+    "disable": true
+   },
+   "type": "default",
+   "justify": "start",
+   "align": "top",
+   "style": {
+    "height": "60px",
+    "paddingLeft": "0px"
+   },
+   "id": "id_1652442788268_2"
+  },
+  {
+   "__config__": {
+    "layout": "rowFormItem",
+    "tag": "group",
+    "tagIcon": "row",
+    "layoutTree": true,
+    "componentName": "充电配置",
+    "showComponentName": true,
+    "dataType": [],
+    "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+    "template": "",
+    "span": 24,
+    "formId": 102,
+    "renderKey": "1021646287760262",
+    "children": [
+     {
+      "__config__": {
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_102",
+       "showComponentName": false,
+       "dataType": [
+        "8",
+        "1"
+       ],
+       "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+       "template": "",
+       "span": 24,
+       "formId": 102,
+       "renderKey": "1021652952528963",
+       "children": [
+        {
+         "__config__": {
+          "label": "涓流电流",
+          "showLabel": true,
+          "labelWidth": null,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 5,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": [
+           "32",
+           "-1"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/select",
+          "formId": 139,
+          "renderKey": "1391646373066401",
+          "defaultValue": 1,
+          "saveWay": "macro",
+          "uuid": "TCFG_CHARGE_TRICKLE_MA",
+          "tip": "",
+          "originValue": 1,
+          "eventField": []
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "1.5mA",
+            "value": 16
+           },
+           {
+            "label": "2mA",
+            "value": 17
+           },
+           {
+            "label": "2.5mA",
+            "value": 18
+           },
+           {
+            "label": "3mA",
+            "value": 19
+           },
+           {
+            "label": "3.5mA",
+            "value": 20
+           },
+           {
+            "label": "4mA",
+            "value": 21
+           },
+           {
+            "label": "5mA",
+            "value": 22
+           },
+           {
+            "label": "6mA",
+            "value": 23
+           },
+           {
+            "label": "8mA",
+            "value": 24
+           },
+           {
+            "label": "10mA",
+            "value": 25
+           },
+           {
+            "label": "12mA",
+            "value": 26
+           },
+           {
+            "label": "14mA",
+            "value": 27
+           },
+           {
+            "label": "16mA",
+            "value": 28
+           },
+           {
+            "label": "20mA",
+            "value": 1
+           },
+           {
+            "label": "25mA",
+            "value": 2
+           },
+           {
+            "label": "30mA",
+            "value": 3
+           }
+          ]
+         },
+         "placeholder": "请选择涓流电流",
+         "style": {
+          "width": "100%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "__vModel__": "field139",
+         "id": "id_1647484466450_45"
+        },
+        {
+         "__config__": {
+          "label": "恒流电流",
+          "showLabel": true,
+          "labelWidth": null,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 5,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": [
+           "32",
+           "-1"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/select",
+          "formId": 135,
+          "renderKey": "1351646372710118",
+          "defaultValue": 13,
+          "saveWay": "macro",
+          "uuid": "TCFG_CHARGE_MA",
+          "originValue": 13
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "15mA",
+            "value": 0
+           },
+           {
+            "label": "20mA",
+            "value": 1
+           },
+           {
+            "label": "25mA",
+            "value": 2
+           },
+           {
+            "label": "30mA",
+            "value": 3
+           },
+           {
+            "label": "35mA",
+            "value": 4
+           },
+           {
+            "label": "40mA",
+            "value": 5
+           },
+           {
+            "label": "50mA",
+            "value": 6
+           },
+           {
+            "label": "60mA",
+            "value": 7
+           },
+           {
+            "label": "80mA",
+            "value": 8
+           },
+           {
+            "label": "100mA",
+            "value": 9
+           },
+           {
+            "label": "120mA",
+            "value": 10
+           },
+           {
+            "label": "140mA",
+            "value": 11
+           },
+           {
+            "label": "160mA",
+            "value": 12
+           },
+           {
+            "label": "200mA",
+            "value": 13
+           },
+           {
+            "label": "250mA",
+            "value": 14
+           },
+           {
+            "label": "300mA",
+            "value": 15
+           }
+          ]
+         },
+         "placeholder": "请选择恒流电流",
+         "style": {
+          "width": "100%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "__vModel__": "field135",
+         "id": "id_1647484466450_44"
+        },
+        {
+         "__config__": {
+          "label": "截止电流",
+          "showLabel": true,
+          "labelWidth": null,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 5,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": [
+           "32",
+           "-1"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/select",
+          "formId": 134,
+          "renderKey": "1341646372633727",
+          "defaultValue": 3,
+          "saveWay": "macro",
+          "uuid": "TCFG_CHARGE_FULL_MA",
+          "originValue": 3
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "2mA",
+            "value": 0
+           },
+           {
+            "label": "5mA",
+            "value": 1
+           },
+           {
+            "label": "7mA",
+            "value": 2
+           },
+           {
+            "label": "10mA",
+            "value": 3
+           },
+           {
+            "label": "15mA",
+            "value": 4,
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "20mA",
+            "value": 5,
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "25mA",
+            "value": 6,
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "30mA",
+            "value": 7,
+            "hide": false,
+            "disabled": false
+           }
+          ]
+         },
+         "placeholder": "请选择截止电流",
+         "style": {
+          "width": "100%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "__vModel__": "field134",
+         "id": "id_1647484466450_43"
+        },
+        {
+         "__config__": {
+          "label": "截止电压",
+          "showLabel": true,
+          "labelWidth": "",
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 7,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": [
+           "32",
+           "-1"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/select",
+          "formId": 133,
+          "renderKey": "1331646372512197",
+          "saveWay": "macro",
+          "defaultValue": 8,
+          "uuid": "TCFG_CHARGE_FULL_V",
+          "tip": "4.2V电池选择低压档电压，4.35V电池选择高压挡电压",
+          "eventField": [],
+          "tipAlways": false,
+          "formItemWidth": ""
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "低压电池4.041V",
+            "value": 0
+           },
+           {
+            "label": "低压电池4.061V",
+            "value": 1
+           },
+           {
+            "label": "低压电池4.081V",
+            "value": 2
+           },
+           {
+            "label": "低压电池4.101V",
+            "value": 3
+           },
+           {
+            "label": "低压电池4.119V",
+            "value": 4
+           },
+           {
+            "label": "低压电池4.139V",
+            "value": 5
+           },
+           {
+            "label": "低压电池4.159V",
+            "value": 6
+           },
+           {
+            "label": "低压电池4.179V",
+            "value": 7
+           },
+           {
+            "label": "低压电池4.199V",
+            "value": 8
+           },
+           {
+            "label": "低压电池4.219V",
+            "value": 9
+           },
+           {
+            "label": "低压电池4.238V",
+            "value": 10
+           },
+           {
+            "label": "低压电池4.258V",
+            "value": 11
+           },
+           {
+            "label": "低压电池4.278V",
+            "value": 12
+           },
+           {
+            "label": "低压电池4.298V",
+            "value": 13
+           },
+           {
+            "label": "低压电池4.318V",
+            "value": 14
+           },
+           {
+            "label": "低压电池4.338V",
+            "value": 15
+           },
+           {
+            "label": "高压电池4.237V",
+            "value": 16
+           },
+           {
+            "label": "高压电池4.257V",
+            "value": 17
+           },
+           {
+            "label": "高压电池4.275V",
+            "value": 18
+           },
+           {
+            "label": "高压电池4.295V",
+            "value": 19
+           },
+           {
+            "label": "高压电池4.315V",
+            "value": 20
+           },
+           {
+            "label": "高压电池4.335V",
+            "value": 21
+           },
+           {
+            "label": "高压电池4.354V",
+            "value": 22
+           },
+           {
+            "label": "高压电池4.374V",
+            "value": 23
+           },
+           {
+            "label": "高压电池4.394V",
+            "value": 24
+           },
+           {
+            "label": "高压电池4.414V",
+            "value": 25
+           },
+           {
+            "label": "高压电池4.434V",
+            "value": 26
+           },
+           {
+            "label": "高压电池4.454V",
+            "value": 27
+           },
+           {
+            "label": "高压电池4.474V",
+            "value": 28
+           },
+           {
+            "label": "高压电池4.494V",
+            "value": 29
+           },
+           {
+            "label": "高压电池4.514V",
+            "value": 30
+           },
+           {
+            "label": "高压电池4.534V",
+            "value": 31
+           }
+          ]
+         },
+         "placeholder": "请选择截止电压",
+         "style": {
+          "width": "80%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "__vModel__": "field133",
+         "id": "id_1647484466450_42"
+        }
+       ]
       },
       "type": "default",
       "justify": "start",
       "align": "top",
       "style": {
-        "height": "100px",
-        "paddingLeft": "0px"
+       "height": "60px",
+       "paddingLeft": "0px"
       },
-      "id": "id_1652164485588_6"
-    }
-  ],
-  "formName": "选项卡名称",
-  "formRef": "elForm",
-  "formModel": "formData",
-  "size": "small",
-  "labelPosition": "right",
-  "labelWidth": 100,
-  "formRules": "rules",
-  "gutter": 15,
-  "disabled": false,
-  "span": 5,
-  "formBtns": false,
-  "maxFormId": 342
+      "id": "id_1652952528963_0"
+     },
+     {
+      "__config__": {
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_103",
+       "showComponentName": false,
+       "dataType": [
+        "8",
+        "1"
+       ],
+       "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+       "template": "",
+       "span": 24,
+       "formId": 103,
+       "renderKey": "1031652952553745",
+       "children": [
+        {
+         "__config__": {
+          "label": "开机充电",
+          "tag": "el-switch",
+          "tagIcon": "switch",
+          "defaultValue": 0,
+          "span": 4,
+          "showLabel": true,
+          "labelWidth": null,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "dataType": [
+           "8",
+           "-1"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/switch",
+          "formId": 115,
+          "renderKey": "1151652429521410",
+          "uuid": "TCFG_CHARGE_POWERON_ENABLE",
+          "saveWay": "macro",
+          "formItemWidth": "200px"
+         },
+         "style": {},
+         "disabled": false,
+         "active-text": "",
+         "inactive-text": "",
+         "active-color": null,
+         "inactive-color": null,
+         "active-value": 1,
+         "inactive-value": 0,
+         "id": "id_1652429521410_10",
+         "__vModel__": "field115"
+        },
+        {
+         "__config__": {
+          "label": "拔出开机",
+          "tag": "el-switch",
+          "tagIcon": "switch",
+          "defaultValue": 0,
+          "span": 4,
+          "showLabel": true,
+          "labelWidth": null,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "dataType": [
+           "8",
+           "-1"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/switch",
+          "formId": 116,
+          "renderKey": "1161652429608051",
+          "uuid": "TCFG_CHARGE_OFF_POWERON_EN",
+          "tipAlways": false,
+          "saveWay": "macro",
+          "formItemWidth": "200px"
+         },
+         "style": {},
+         "disabled": false,
+         "active-text": "",
+         "inactive-text": "",
+         "active-color": null,
+         "inactive-color": null,
+         "active-value": 1,
+         "inactive-value": 0,
+         "id": "id_1652429608051_11",
+         "__vModel__": "field116"
+        }
+       ],
+       "eventField": []
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+       "height": "60px",
+       "paddingLeft": "0px"
+      },
+      "id": "id_1652952553745_1"
+     },
+     {
+      "__config__": {
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_104",
+       "showComponentName": false,
+       "dataType": [
+        "8",
+        "1"
+       ],
+       "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+       "template": "",
+       "span": 24,
+       "formId": 104,
+       "renderKey": "1041652952585197",
+       "children": [
+        {
+         "__config__": {
+          "label": "下拉电阻开关",
+          "tag": "el-switch",
+          "tagIcon": "switch",
+          "defaultValue": 0,
+          "span": 4,
+          "showLabel": true,
+          "labelWidth": 100,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "dataType": [
+           "8",
+           "-1"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/switch",
+          "formId": 116,
+          "renderKey": "1161652443281105",
+          "uuid": "TCFG_LDOIN_PULLDOWN_EN",
+          "tipAlways": false,
+          "saveWay": "macro",
+          "tip": "",
+          "formItemWidth": "200px"
+         },
+         "style": {},
+         "disabled": false,
+         "active-text": "",
+         "inactive-text": "",
+         "active-color": null,
+         "inactive-color": null,
+         "active-value": 1,
+         "inactive-value": 0,
+         "id": "id_1652443281105_11",
+         "__vModel__": "field116"
+        },
+        {
+         "__config__": {
+          "label": "下拉电阻档位",
+          "showLabel": true,
+          "labelWidth": null,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 5,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": [
+           "8",
+           "-1"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/select",
+          "formId": 118,
+          "renderKey": "1181652443451045",
+          "saveWay": "macro",
+          "defaultValue": 3,
+          "uuid": "TCFG_LDOIN_PULLDOWN_LEV",
+          "tip": "",
+          "formItemWidth": "220px"
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "50K",
+            "value": 0
+           },
+           {
+            "label": "100K",
+            "value": 1
+           },
+           {
+            "label": "150K",
+            "value": 2
+           },
+           {
+            "label": "200K",
+            "value": 3
+           }
+          ]
+         },
+         "placeholder": "请选择下拉电阻档位",
+         "style": {
+          "width": "100%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "__vModel__": "field118",
+         "id": "id_1652443451045_13"
+        },
+        {
+         "__config__": {
+          "label": "下拉电阻保持开关",
+          "tag": "el-switch",
+          "tagIcon": "switch",
+          "defaultValue": 0,
+          "span": 6,
+          "showLabel": true,
+          "labelWidth": 140,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "dataType": [
+           "8",
+           "-1"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/switch",
+          "formId": 117,
+          "renderKey": "1171652443281833",
+          "uuid": "TCFG_LDOIN_PULLDOWN_KEEP",
+          "tipAlways": false,
+          "saveWay": "macro",
+          "tip": "在仓关机是否保持下拉电阻，下拉电阻使能开启才有效",
+          "formItemWidth": "250px"
+         },
+         "style": {},
+         "disabled": false,
+         "active-text": "",
+         "inactive-text": "",
+         "active-color": null,
+         "inactive-color": null,
+         "active-value": 1,
+         "inactive-value": 0,
+         "id": "id_1652443281833_12",
+         "__vModel__": "field117"
+        }
+       ]
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+       "height": "60px",
+       "paddingLeft": "0px"
+      },
+      "id": "id_1652952585197_2"
+     },
+     {
+      "__config__": {
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_107",
+       "showComponentName": false,
+       "dataType": [
+        "8",
+        "1"
+       ],
+       "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+       "template": "",
+       "span": 24,
+       "formId": 107,
+       "renderKey": "1071652952735686",
+       "children": [
+        {
+         "__config__": {
+          "label": "入舱滤波时间(ms)",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 130,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "defaultValue": 100,
+          "span": 8,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "16"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 124,
+          "renderKey": "1241652444817648",
+          "saveWay": "macro",
+          "uuid": "TCFG_LDOIN_ON_FILTER_TIME",
+          "tip": "VPWR电压大于VBAT电压",
+          "formItemWidth": "320px"
+         },
+         "placeholder": "入舱滤波时间(ms)",
+         "min": 10,
+         "max": 65535,
+         "step": 2,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1652444817648_0",
+         "__vModel__": "field124"
+        },
+        {
+         "__config__": {
+          "label": "出舱滤波时间(ms)",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 130,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "defaultValue": 200,
+          "span": 8,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "16"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 126,
+          "renderKey": "1261652445140553",
+          "saveWay": "macro",
+          "uuid": "TCFG_LDOIN_OFF_FILTER_TIME",
+          "formItemWidth": "320px",
+          "tip": "VPWR电压小于出舱电压(约0.65V)"
+         },
+         "placeholder": "出舱滤波时间出舱滤波时间(ms)",
+         "min": 0,
+         "max": 65535,
+         "step": 2,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1652445140553_2",
+         "__vModel__": "field126"
+        },
+        {
+         "__config__": {
+          "label": "维持电压滤波时间(ms)",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 160,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "defaultValue": 440,
+          "span": 8,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "16"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 127,
+          "renderKey": "1271652445141161",
+          "saveWay": "macro",
+          "uuid": "TCFG_LDOIN_KEEP_FILTER_TIME",
+          "tip": "VPWR电压处于入舱电压与VBAT电压之间",
+          "formItemWidth": "340px"
+         },
+         "placeholder": "维持电压滤波时间(ms)",
+         "min": 10,
+         "max": 65535,
+         "step": 2,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1652445141161_3",
+         "__vModel__": "field127"
+        }
+       ]
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+       "height": "60px",
+       "paddingLeft": "0px"
+      },
+      "id": "id_1652952735686_5"
+     }
+    ],
+    "saveWay": "",
+    "uuid": "",
+    "enableUuid": "TCFG_CHARGE_ENABLE",
+    "disable": true
+   },
+   "type": "default",
+   "justify": "start",
+   "align": "top",
+   "style": {
+    "height": "60px",
+    "paddingLeft": "0px"
+   },
+   "id": "id_1647484466450_48"
+  },
+  {
+   "__config__": {
+    "layout": "rowFormItem",
+    "tag": "group",
+    "tagIcon": "row",
+    "layoutTree": true,
+    "componentName": "电池曲线配置",
+    "showComponentName": true,
+    "dataType": [],
+    "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+    "template": "{\"__config__\":{\"layout\":\"rowFormItem\",\"tag\":\"group\",\"tagIcon\":\"row\",\"layoutTree\":true,\"componentName\":\"row_307\",\"showComponentName\":false,\"dataType\":[],\"document\":\"https://element.eleme.cn/#/zh-CN/component/layout#row-attributes\",\"template\":\"\",\"span\":12,\"formId\":307,\"renderKey\":\"3071652251710063\",\"children\":[{\"__config__\":{\"label\":\"电压(mv)\",\"showLabel\":true,\"changeTag\":true,\"labelWidth\":80,\"tag\":\"el-input-number\",\"tagIcon\":\"number\",\"span\":6,\"layout\":\"colFormItem\",\"required\":false,\"regList\":[],\"dataType\":[\"-1\",\"16\"],\"document\":\"https://element.eleme.cn/#/zh-CN/component/input-number\",\"formId\":308,\"renderKey\":\"3081652251710063\",\"defaultValue\":3300,\"formItemWidth\":\"240px\",\"eventField\":[],\"saveWay\":\"code\",\"structProp\":\"voltage\"},\"placeholder\":\"电压(mv)\",\"min\":3000,\"max\":4500,\"step\":10,\"step-strictly\":false,\"controls-position\":\"\",\"disabled\":false,\"id\":\"id_1652251710063_12\",\"__vModel__\":\"field308\"},{\"__config__\":{\"label\":\"电量\",\"showLabel\":true,\"changeTag\":true,\"labelWidth\":80,\"tag\":\"el-input-number\",\"tagIcon\":\"number\",\"defaultValue\":0,\"span\":6,\"layout\":\"colFormItem\",\"required\":false,\"regList\":[],\"dataType\":[\"8\",\"-1\"],\"document\":\"https://element.eleme.cn/#/zh-CN/component/input-number\",\"formId\":309,\"renderKey\":\"3091652251710063\",\"formItemWidth\":\"240px\",\"paddingLeft\":\"\",\"saveWay\":\"code\",\"structProp\":\"percent\"},\"placeholder\":\"电量\",\"min\":0,\"max\":100,\"step\":5,\"step-strictly\":false,\"controls-position\":\"\",\"disabled\":false,\"id\":\"id_1652251710063_13\",\"__vModel__\":\"field309\"}],\"paddingLeft\":\"\",\"saveWay\":\"code\",\"eventField\":[],\"structDef\":\"\"},\"type\":\"default\",\"justify\":\"start\",\"align\":\"top\",\"style\":{\"height\":\"60px\",\"paddingLeft\":\"0px\"},\"id\":\"id_1652251710063_11\",\"fromTemplate\":true}",
+    "span": 24,
+    "formId": 112,
+    "renderKey": "1121652164485588",
+    "children": [
+     {
+      "__config__": {
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_346",
+       "showComponentName": false,
+       "dataType": [],
+       "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+       "template": "",
+       "span": 12,
+       "formId": 346,
+       "renderKey": "3461719228217097",
+       "children": [
+        {
+         "__config__": {
+          "label": "电压(mv)",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "-1",
+           "16"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 347,
+          "renderKey": "3471719228217097",
+          "defaultValue": 3300,
+          "formItemWidth": "240px",
+          "eventField": [],
+          "saveWay": "code",
+          "structProp": "voltage"
+         },
+         "placeholder": "电压(mv)",
+         "min": 3000,
+         "max": 4500,
+         "step": 10,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228217097_1",
+         "__vModel__": "field347"
+        },
+        {
+         "__config__": {
+          "label": "电量",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "defaultValue": 0,
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "8",
+           "-1"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 348,
+          "renderKey": "3481719228217097",
+          "formItemWidth": "240px",
+          "paddingLeft": "",
+          "saveWay": "code",
+          "structProp": "percent"
+         },
+         "placeholder": "电量",
+         "min": 0,
+         "max": 100,
+         "step": 5,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228217097_2",
+         "__vModel__": "field348"
+        }
+       ],
+       "paddingLeft": "",
+       "saveWay": "code",
+       "eventField": [],
+       "structDef": "const struct battery_curve g_battery_curve_table"
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+       "height": "60px",
+       "paddingLeft": "0px"
+      },
+      "id": "id_1719228217097_0",
+      "fromTemplate": true
+     },
+     {
+      "__config__": {
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_307",
+       "showComponentName": false,
+       "dataType": [],
+       "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+       "template": "",
+       "span": 12,
+       "formId": 307,
+       "renderKey": "3071652251710063",
+       "children": [
+        {
+         "__config__": {
+          "label": "电压(mv)",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "-1",
+           "16"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 308,
+          "renderKey": "3081652251710063",
+          "defaultValue": 3450,
+          "formItemWidth": "240px",
+          "eventField": [],
+          "saveWay": "code",
+          "structProp": "voltage"
+         },
+         "placeholder": "电压(mv)",
+         "min": 3000,
+         "max": 4500,
+         "step": 10,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228238221_1",
+         "__vModel__": "field308"
+        },
+        {
+         "__config__": {
+          "label": "电量",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "defaultValue": 5,
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "8",
+           "-1"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 309,
+          "renderKey": "3091652251710063",
+          "formItemWidth": "240px",
+          "paddingLeft": "",
+          "saveWay": "code",
+          "structProp": "percent"
+         },
+         "placeholder": "电量",
+         "min": 0,
+         "max": 100,
+         "step": 5,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228238221_2",
+         "__vModel__": "field309"
+        }
+       ],
+       "paddingLeft": "",
+       "saveWay": "code",
+       "eventField": [],
+       "structDef": "const struct battery_curve g_battery_curve_table"
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+       "height": "60px",
+       "paddingLeft": "0px"
+      },
+      "id": "id_1719228238221_0",
+      "fromTemplate": true
+     },
+     {
+      "__config__": {
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_307",
+       "showComponentName": false,
+       "dataType": [],
+       "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+       "template": "",
+       "span": 12,
+       "formId": 307,
+       "renderKey": "3071652251710063",
+       "children": [
+        {
+         "__config__": {
+          "label": "电压(mv)",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "-1",
+           "16"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 308,
+          "renderKey": "3081652251710063",
+          "defaultValue": 3680,
+          "formItemWidth": "240px",
+          "eventField": [],
+          "saveWay": "code",
+          "structProp": "voltage"
+         },
+         "placeholder": "电压(mv)",
+         "min": 3000,
+         "max": 4500,
+         "step": 10,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228238221_4",
+         "__vModel__": "field308"
+        },
+        {
+         "__config__": {
+          "label": "电量",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "defaultValue": 10,
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "8",
+           "-1"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 309,
+          "renderKey": "3091652251710063",
+          "formItemWidth": "240px",
+          "paddingLeft": "",
+          "saveWay": "code",
+          "structProp": "percent"
+         },
+         "placeholder": "电量",
+         "min": 0,
+         "max": 100,
+         "step": 5,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228238221_5",
+         "__vModel__": "field309"
+        }
+       ],
+       "paddingLeft": "",
+       "saveWay": "code",
+       "eventField": [],
+       "structDef": "const struct battery_curve g_battery_curve_table"
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+       "height": "60px",
+       "paddingLeft": "0px"
+      },
+      "id": "id_1719228238221_3",
+      "fromTemplate": true
+     },
+     {
+      "__config__": {
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_307",
+       "showComponentName": false,
+       "dataType": [],
+       "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+       "template": "",
+       "span": 12,
+       "formId": 307,
+       "renderKey": "3071652251710063",
+       "children": [
+        {
+         "__config__": {
+          "label": "电压(mv)",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "-1",
+           "16"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 308,
+          "renderKey": "3081652251710063",
+          "defaultValue": 3740,
+          "formItemWidth": "240px",
+          "eventField": [],
+          "saveWay": "code",
+          "structProp": "voltage"
+         },
+         "placeholder": "电压(mv)",
+         "min": 3000,
+         "max": 4500,
+         "step": 10,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228238221_7",
+         "__vModel__": "field308"
+        },
+        {
+         "__config__": {
+          "label": "电量",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "defaultValue": 20,
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "8",
+           "-1"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 309,
+          "renderKey": "3091652251710063",
+          "formItemWidth": "240px",
+          "paddingLeft": "",
+          "saveWay": "code",
+          "structProp": "percent"
+         },
+         "placeholder": "电量",
+         "min": 0,
+         "max": 100,
+         "step": 5,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228238221_8",
+         "__vModel__": "field309"
+        }
+       ],
+       "paddingLeft": "",
+       "saveWay": "code",
+       "eventField": [],
+       "structDef": "const struct battery_curve g_battery_curve_table"
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+       "height": "60px",
+       "paddingLeft": "0px"
+      },
+      "id": "id_1719228238221_6",
+      "fromTemplate": true
+     },
+     {
+      "__config__": {
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_307",
+       "showComponentName": false,
+       "dataType": [],
+       "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+       "template": "",
+       "span": 12,
+       "formId": 307,
+       "renderKey": "3071652251710063",
+       "children": [
+        {
+         "__config__": {
+          "label": "电压(mv)",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "-1",
+           "16"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 308,
+          "renderKey": "3081652251710063",
+          "defaultValue": 3770,
+          "formItemWidth": "240px",
+          "eventField": [],
+          "saveWay": "code",
+          "structProp": "voltage"
+         },
+         "placeholder": "电压(mv)",
+         "min": 3000,
+         "max": 4500,
+         "step": 10,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228238221_10",
+         "__vModel__": "field308"
+        },
+        {
+         "__config__": {
+          "label": "电量",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "defaultValue": 30,
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "8",
+           "-1"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 309,
+          "renderKey": "3091652251710063",
+          "formItemWidth": "240px",
+          "paddingLeft": "",
+          "saveWay": "code",
+          "structProp": "percent"
+         },
+         "placeholder": "电量",
+         "min": 0,
+         "max": 100,
+         "step": 5,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228238221_11",
+         "__vModel__": "field309"
+        }
+       ],
+       "paddingLeft": "",
+       "saveWay": "code",
+       "eventField": [],
+       "structDef": "const struct battery_curve g_battery_curve_table"
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+       "height": "60px",
+       "paddingLeft": "0px"
+      },
+      "id": "id_1719228238221_9",
+      "fromTemplate": true
+     },
+     {
+      "__config__": {
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_307",
+       "showComponentName": false,
+       "dataType": [],
+       "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+       "template": "",
+       "span": 12,
+       "formId": 307,
+       "renderKey": "3071652251710063",
+       "children": [
+        {
+         "__config__": {
+          "label": "电压(mv)",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "-1",
+           "16"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 308,
+          "renderKey": "3081652251710063",
+          "defaultValue": 3790,
+          "formItemWidth": "240px",
+          "eventField": [],
+          "saveWay": "code",
+          "structProp": "voltage"
+         },
+         "placeholder": "电压(mv)",
+         "min": 3000,
+         "max": 4500,
+         "step": 10,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228238221_13",
+         "__vModel__": "field308"
+        },
+        {
+         "__config__": {
+          "label": "电量",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "defaultValue": 40,
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "8",
+           "-1"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 309,
+          "renderKey": "3091652251710063",
+          "formItemWidth": "240px",
+          "paddingLeft": "",
+          "saveWay": "code",
+          "structProp": "percent"
+         },
+         "placeholder": "电量",
+         "min": 0,
+         "max": 100,
+         "step": 5,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228238221_14",
+         "__vModel__": "field309"
+        }
+       ],
+       "paddingLeft": "",
+       "saveWay": "code",
+       "eventField": [],
+       "structDef": "const struct battery_curve g_battery_curve_table"
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+       "height": "60px",
+       "paddingLeft": "0px"
+      },
+      "id": "id_1719228238221_12",
+      "fromTemplate": true
+     },
+     {
+      "__config__": {
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_307",
+       "showComponentName": false,
+       "dataType": [],
+       "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+       "template": "",
+       "span": 12,
+       "formId": 307,
+       "renderKey": "3071652251710063",
+       "children": [
+        {
+         "__config__": {
+          "label": "电压(mv)",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "-1",
+           "16"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 308,
+          "renderKey": "3081652251710063",
+          "defaultValue": 3820,
+          "formItemWidth": "240px",
+          "eventField": [],
+          "saveWay": "code",
+          "structProp": "voltage"
+         },
+         "placeholder": "电压(mv)",
+         "min": 3000,
+         "max": 4500,
+         "step": 10,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228238221_16",
+         "__vModel__": "field308"
+        },
+        {
+         "__config__": {
+          "label": "电量",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "defaultValue": 50,
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "8",
+           "-1"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 309,
+          "renderKey": "3091652251710063",
+          "formItemWidth": "240px",
+          "paddingLeft": "",
+          "saveWay": "code",
+          "structProp": "percent"
+         },
+         "placeholder": "电量",
+         "min": 0,
+         "max": 100,
+         "step": 5,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228238221_17",
+         "__vModel__": "field309"
+        }
+       ],
+       "paddingLeft": "",
+       "saveWay": "code",
+       "eventField": [],
+       "structDef": "const struct battery_curve g_battery_curve_table"
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+       "height": "60px",
+       "paddingLeft": "0px"
+      },
+      "id": "id_1719228238221_15",
+      "fromTemplate": true
+     },
+     {
+      "__config__": {
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_307",
+       "showComponentName": false,
+       "dataType": [],
+       "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+       "template": "",
+       "span": 12,
+       "formId": 307,
+       "renderKey": "3071652251710063",
+       "children": [
+        {
+         "__config__": {
+          "label": "电压(mv)",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "-1",
+           "16"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 308,
+          "renderKey": "3081652251710063",
+          "defaultValue": 3870,
+          "formItemWidth": "240px",
+          "eventField": [],
+          "saveWay": "code",
+          "structProp": "voltage"
+         },
+         "placeholder": "电压(mv)",
+         "min": 3000,
+         "max": 4500,
+         "step": 10,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228238221_19",
+         "__vModel__": "field308"
+        },
+        {
+         "__config__": {
+          "label": "电量",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "defaultValue": 60,
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "8",
+           "-1"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 309,
+          "renderKey": "3091652251710063",
+          "formItemWidth": "240px",
+          "paddingLeft": "",
+          "saveWay": "code",
+          "structProp": "percent"
+         },
+         "placeholder": "电量",
+         "min": 0,
+         "max": 100,
+         "step": 5,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228238221_20",
+         "__vModel__": "field309"
+        }
+       ],
+       "paddingLeft": "",
+       "saveWay": "code",
+       "eventField": [],
+       "structDef": "const struct battery_curve g_battery_curve_table"
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+       "height": "60px",
+       "paddingLeft": "0px"
+      },
+      "id": "id_1719228238221_18",
+      "fromTemplate": true
+     },
+     {
+      "__config__": {
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_307",
+       "showComponentName": false,
+       "dataType": [],
+       "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+       "template": "",
+       "span": 12,
+       "formId": 307,
+       "renderKey": "3071652251710063",
+       "children": [
+        {
+         "__config__": {
+          "label": "电压(mv)",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "-1",
+           "16"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 308,
+          "renderKey": "3081652251710063",
+          "defaultValue": 3920,
+          "formItemWidth": "240px",
+          "eventField": [],
+          "saveWay": "code",
+          "structProp": "voltage"
+         },
+         "placeholder": "电压(mv)",
+         "min": 3000,
+         "max": 4500,
+         "step": 10,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228238221_22",
+         "__vModel__": "field308"
+        },
+        {
+         "__config__": {
+          "label": "电量",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "defaultValue": 70,
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "8",
+           "-1"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 309,
+          "renderKey": "3091652251710063",
+          "formItemWidth": "240px",
+          "paddingLeft": "",
+          "saveWay": "code",
+          "structProp": "percent"
+         },
+         "placeholder": "电量",
+         "min": 0,
+         "max": 100,
+         "step": 5,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228238221_23",
+         "__vModel__": "field309"
+        }
+       ],
+       "paddingLeft": "",
+       "saveWay": "code",
+       "eventField": [],
+       "structDef": "const struct battery_curve g_battery_curve_table"
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+       "height": "60px",
+       "paddingLeft": "0px"
+      },
+      "id": "id_1719228238221_21",
+      "fromTemplate": true
+     },
+     {
+      "__config__": {
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_307",
+       "showComponentName": false,
+       "dataType": [],
+       "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+       "template": "",
+       "span": 12,
+       "formId": 307,
+       "renderKey": "3071652251710063",
+       "children": [
+        {
+         "__config__": {
+          "label": "电压(mv)",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "-1",
+           "16"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 308,
+          "renderKey": "3081652251710063",
+          "defaultValue": 3980,
+          "formItemWidth": "240px",
+          "eventField": [],
+          "saveWay": "code",
+          "structProp": "voltage"
+         },
+         "placeholder": "电压(mv)",
+         "min": 3000,
+         "max": 4500,
+         "step": 10,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228238221_25",
+         "__vModel__": "field308"
+        },
+        {
+         "__config__": {
+          "label": "电量",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "defaultValue": 80,
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "8",
+           "-1"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 309,
+          "renderKey": "3091652251710063",
+          "formItemWidth": "240px",
+          "paddingLeft": "",
+          "saveWay": "code",
+          "structProp": "percent"
+         },
+         "placeholder": "电量",
+         "min": 0,
+         "max": 100,
+         "step": 5,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228238221_26",
+         "__vModel__": "field309"
+        }
+       ],
+       "paddingLeft": "",
+       "saveWay": "code",
+       "eventField": [],
+       "structDef": "const struct battery_curve g_battery_curve_table"
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+       "height": "60px",
+       "paddingLeft": "0px"
+      },
+      "id": "id_1719228238221_24",
+      "fromTemplate": true
+     },
+     {
+      "__config__": {
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_307",
+       "showComponentName": false,
+       "dataType": [],
+       "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+       "template": "",
+       "span": 12,
+       "formId": 307,
+       "renderKey": "3071652251710063",
+       "children": [
+        {
+         "__config__": {
+          "label": "电压(mv)",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "-1",
+           "16"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 308,
+          "renderKey": "3081652251710063",
+          "defaultValue": 4060,
+          "formItemWidth": "240px",
+          "eventField": [],
+          "saveWay": "code",
+          "structProp": "voltage"
+         },
+         "placeholder": "电压(mv)",
+         "min": 3000,
+         "max": 4500,
+         "step": 10,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228238221_28",
+         "__vModel__": "field308"
+        },
+        {
+         "__config__": {
+          "label": "电量",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "defaultValue": 90,
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "8",
+           "-1"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 309,
+          "renderKey": "3091652251710063",
+          "formItemWidth": "240px",
+          "paddingLeft": "",
+          "saveWay": "code",
+          "structProp": "percent"
+         },
+         "placeholder": "电量",
+         "min": 0,
+         "max": 100,
+         "step": 5,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228238221_29",
+         "__vModel__": "field309"
+        }
+       ],
+       "paddingLeft": "",
+       "saveWay": "code",
+       "eventField": [],
+       "structDef": "const struct battery_curve g_battery_curve_table"
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+       "height": "60px",
+       "paddingLeft": "0px"
+      },
+      "id": "id_1719228238221_27",
+      "fromTemplate": true
+     },
+     {
+      "__config__": {
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_307",
+       "showComponentName": false,
+       "dataType": [],
+       "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+       "template": "",
+       "span": 12,
+       "formId": 307,
+       "renderKey": "3071652251710063",
+       "children": [
+        {
+         "__config__": {
+          "label": "电压(mv)",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "-1",
+           "16"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 308,
+          "renderKey": "3081652251710063",
+          "defaultValue": 4120,
+          "formItemWidth": "240px",
+          "eventField": [],
+          "saveWay": "code",
+          "structProp": "voltage"
+         },
+         "placeholder": "电压(mv)",
+         "min": 3000,
+         "max": 4500,
+         "step": 10,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228392146_1",
+         "__vModel__": "field308"
+        },
+        {
+         "__config__": {
+          "label": "电量",
+          "showLabel": true,
+          "changeTag": true,
+          "labelWidth": 80,
+          "tag": "el-input-number",
+          "tagIcon": "number",
+          "defaultValue": 100,
+          "span": 6,
+          "layout": "colFormItem",
+          "required": false,
+          "regList": [],
+          "dataType": [
+           "8",
+           "-1"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+          "formId": 309,
+          "renderKey": "3091652251710063",
+          "formItemWidth": "240px",
+          "paddingLeft": "",
+          "saveWay": "code",
+          "structProp": "percent"
+         },
+         "placeholder": "电量",
+         "min": 0,
+         "max": 100,
+         "step": 5,
+         "step-strictly": false,
+         "controls-position": "",
+         "disabled": false,
+         "id": "id_1719228392146_2",
+         "__vModel__": "field309"
+        }
+       ],
+       "paddingLeft": "",
+       "saveWay": "code",
+       "eventField": [],
+       "structDef": "const struct battery_curve g_battery_curve_table"
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+       "height": "60px",
+       "paddingLeft": "0px"
+      },
+      "id": "id_1719228392146_0",
+      "fromTemplate": true
+     }
+    ],
+    "saveWay": "code",
+    "uuid": "",
+    "disable": true,
+    "enableUuid": "TCFG_BATTERY_CURVE_ENABLE",
+    "eventField": [],
+    "structDef": "const struct battery_curve g_battery_curve_table"
+   },
+   "type": "default",
+   "justify": "start",
+   "align": "top",
+   "style": {
+    "height": "100px",
+    "paddingLeft": "0px"
+   },
+   "id": "id_1652164485588_6"
+  }
+ ],
+ "formName": "选项卡名称",
+ "formRef": "elForm",
+ "formModel": "formData",
+ "size": "small",
+ "labelPosition": "right",
+ "labelWidth": 100,
+ "formRules": "rules",
+ "gutter": 15,
+ "disabled": false,
+ "span": 5,
+ "formBtns": false,
+ "maxFormId": 342,
+ "version": {
+  "code": 1,
+  "tool": "4.4.0"
+ }
 }

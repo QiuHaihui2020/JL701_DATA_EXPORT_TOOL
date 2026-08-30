@@ -378,6 +378,7 @@ c_SRC_FILES := \
 	cpu/config/lib_power_config.c \
 	apps/soundbox/audio_debug_tool/audio_uart_receive.c \
 	apps/soundbox/audio_debug_tool/oled/oled.c \
+	apps/soundbox/audio_debug_tool/oled/oled_spi.c \
 	apps/soundbox/audio_debug_tool/display/display_task.c \
 
 # cpu/br28/periph/touch/lp_touch_key.c \
