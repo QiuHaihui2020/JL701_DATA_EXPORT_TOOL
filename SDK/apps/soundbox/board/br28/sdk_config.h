@@ -150,7 +150,7 @@
 #define MUSIC_PLAYER_CYCLE_ALL_DEV_EN             0                // 循环播放模式是否循环所有设备
 #define MUSIC_PLAYER_PLAY_FOLDER_PREV_FIRST_FILE_EN 0                // 切换文件夹播放时从第一首歌开始
 #define TWFG_APP_POWERON_IGNORE_DEV               0                // 设备忽略时间（单位：ms）
-#define TCFG_FIX_CLOCK_FREQ                       192000000        // 固定时钟频率
+#define TCFG_FIX_CLOCK_FREQ                       240000000        // 固定时钟频率
 // ------------功能配置.json------------
 
 // ------------按键配置.json------------

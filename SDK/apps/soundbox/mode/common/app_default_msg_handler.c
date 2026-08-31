@@ -33,6 +33,7 @@
 #include "rcsp_device_status.h"
 #include "btstack_rcsp_user.h"
 #include "bt_key_func.h"
+#include "pc.h"
 
 static u32 input_number = 0;
 static u16 input_number_timer = 0;
@@ -373,6 +374,14 @@ void app_common_device_event_handler(int *msg)
         usb_msg = (const char *)msg[2];
         if (usb_msg[0] == 's') {
 #if TCFG_USB_SLAVE_ENABLE
+#if TCFG_APP_PC_EN
+            // idle 模式下直接管理 MSC，不切换到 PC 模式
+            if (msg[1] == DEVICE_EVENT_IN) {
+                pc_task_start();
+            } else if (msg[1] == DEVICE_EVENT_OUT) {
+                pc_task_stop();
+            }
+#else
             ret = pc_device_event_handler(msg);
             if (ret == 1) {
                 if (true != app_in_mode(APP_MODE_PC)) {
@@ -381,6 +390,7 @@ void app_common_device_event_handler(int *msg)
             } else if (ret == 2) {
                 app_send_message(APP_MSG_GOTO_NEXT_MODE, 0);
             }
+#endif
 #endif
             break;
         } else if (usb_msg[0] == 'h') {

@@ -78,7 +78,7 @@ static int app_pc_check(void)
   @note
  */
 /*----------------------------------------------------------------------------*/
-static void pc_task_start(void)
+void pc_task_start(void)
 {
     if (__this->onoff) {
         log_info("PC is start ");
@@ -107,7 +107,7 @@ static void pc_task_start(void)
   @note
  */
 /*----------------------------------------------------------------------------*/
-static void pc_task_stop(void)
+void pc_task_stop(void)
 {
     if (!__this->onoff) {
         log_info("PC is stop ");

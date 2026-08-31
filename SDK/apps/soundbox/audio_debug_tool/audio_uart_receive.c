@@ -6,10 +6,10 @@
 #include "display/display_task.h"
 
 #define PCM_UART1_TX_PORT			-1
-#define PCM_UART1_RX_PORT			IO_PORTA_06
+#define PCM_UART1_RX_PORT			IO_PORTA_02
 
 /*vm参数读取失败时的默认参数*/
-#define PCM_UART1_BAUDRATE			2000000		/*数据导出波特率,不用修改，和接收端设置一直*/
+#define PCM_UART1_BAUDRATE			4000000		/*数据导出波特率,不用修改，和接收端设置一直*/
 #define PCM_CH                      3
 #define PCM_SINGLE_LEN              512
 
@@ -82,7 +82,7 @@ static void audio_uart_task(void *priv)
     u32  last_rec_cnt = 0;
     while(1) {
         os_sem_pend(&hdl->uart_sem, 0);
-        if (hdl && hdl->uart > 0) {
+        if (hdl && hdl->uart >= 0) {	//uart句柄>=0即有效(0也是合法句柄),不能用>0否则会漏掉句柄0导致收不到数据
             recv_len = uart_recv_bytes(hdl->uart, hdl->uart_tmp_buf, hdl->uart_frame_size); 
             if (recv_len == hdl->uart_frame_size) {
                 crc16 = CRC16(hdl->uart_tmp_buf, hdl->uart_frame_size - 4);
@@ -119,6 +119,34 @@ static void audio_uart_task(void *priv)
 #define AUDIO_WRITE_FOLDER_NAME "JL_DEBUG"
 #define AUDIO_WRITE_FILE_NAME	"dbg_***.bin"			//录音文件前缀名
 
+//打开录音文件：优先复用目录下已存在的大小为0的空文件，避免空文件占用序号；否则按 dbg_***.bin 序号新建
+//直接按序号探测 dbg_000.bin..dbg_999.bin，绕开 fscan 的类型过滤（-tALL 不匹配 .bin 会返回 NULL）
+static FILE *audio_dbg_file_open(char *path, const char *root_path, const char *folder, const char *file_name)
+{
+    int miss_cnt = 0;
+    for (int i = 0; i < 1000; i++) {
+        sprintf(path, "%s%s/dbg_%03d.bin", root_path, folder, i);
+        FILE *f = fopen(path, "r");
+        if (!f) {
+            if (++miss_cnt >= 3) {
+                break;  //连续3个序号不存在，认为后续无文件
+            }
+            continue;
+        }
+        miss_cnt = 0;
+        if (flen(f) == 0) {
+            fclose(f);
+            printf("reuse empty file %s\n", path);
+            return fopen(path, "w+");
+        }
+        fclose(f);
+    }
+    //没有0大小文件可复用，按通配符新建
+    sprintf(path, "%s%s/%s", root_path, folder, file_name);
+    printf("create new file %s\n", path);
+    return fopen(path, "w+");
+}
+
 static void audio_sdwrite_task(void *priv)
 {
     struct audio_dbg_hdl_t *hdl = (struct audio_dbg_hdl_t *)priv;
@@ -129,16 +157,19 @@ static void audio_sdwrite_task(void *priv)
     char folder[] = {AUDIO_WRITE_FOLDER_NAME};
     char file_name[] = {AUDIO_WRITE_FILE_NAME};
     char *root_path = dev_manager_get_root_path_by_logo(logo);
-    sprintf(path, "%s%s%s%s", root_path, folder, "/", file_name);
-    printf("sd write path %s \n", path);
 
     if (hdl) {
-        hdl->fp = fopen(path, "w+");
-        if (!hdl->fp) {
-            printf("file open fail, %s", path);
+        if (!root_path) {
+            printf("sd dev not found, skip file open\n");
         } else {
-            printf("file open %s", path);
-            //fwrite(hdl->sd_tmp_buf, hdl->sd_write_frame_size, 1, hdl->fp); //提前写一包数据，处理第一次写数据慢的问题
+            hdl->fp = audio_dbg_file_open(path, root_path, folder, file_name);
+            printf("sd write path %s \n", path);
+            if (!hdl->fp) {
+                printf("file open fail, %s", path);
+            } else {
+                printf("file open %s", path);
+                //fwrite(hdl->sd_tmp_buf, hdl->sd_write_frame_size, 1, hdl->fp); //提前写一包数据，处理第一次写数据慢的问题
+            }
         }
     }
 
@@ -250,7 +281,8 @@ void audio_uart_init()
     }
 
     int clock_lock(const char *name, u32 clk);
-    clock_lock("sys", 160 * 1000000L);
+    printf("======================== max clk: %d\n", clk_get_max_frequency());
+    clock_lock("sys", clk_get_max_frequency());
 
     struct audio_dbg_hdl_t *hdl = zalloc(sizeof(*hdl));
     ASSERT(hdl);

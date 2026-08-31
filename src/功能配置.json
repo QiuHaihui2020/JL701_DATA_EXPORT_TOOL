@@ -902,7 +902,7 @@
        "layout": "colFormItem",
        "span": 8,
        "required": false,
-       "defaultValue": 192000000,
+       "defaultValue": 240000000,
        "regList": [],
        "changeTag": true,
        "searchSource": false,

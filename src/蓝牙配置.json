@@ -63,72 +63,7 @@
           "defaultValue": ""
          },
          "__slot__": {
-          "options": [
-           {
-            "label": "IO_PORTA_00",
-            "value": "id_1647485267192_66"
-           },
-           {
-            "label": "IO_PORTA_05",
-            "value": "id_1647485267192_71"
-           },
-           {
-            "label": "IO_PORTA_06",
-            "value": "id_1647485267192_72"
-           },
-           {
-            "label": "IO_PORTA_08",
-            "value": "id_1653449701350_0"
-           },
-           {
-            "label": "IO_PORTB_01",
-            "value": "id_1647485267192_75"
-           },
-           {
-            "label": "IO_PORTB_02",
-            "value": "id_1647485267192_76"
-           },
-           {
-            "label": "IO_PORTB_05",
-            "value": "id_1647485267192_79"
-           },
-           {
-            "label": "IO_PORTB_09",
-            "value": "id_1659942416666_18"
-           },
-           {
-            "label": "IO_PORTC_04",
-            "value": "id_1647485267192_86"
-           },
-           {
-            "label": "IO_PORTC_05",
-            "value": "id_1647485267192_87"
-           },
-           {
-            "label": "IO_PORTG_00",
-            "value": "id_1651200719084_10"
-           },
-           {
-            "label": "IO_PORTG_01",
-            "value": "id_1651200755336_11"
-           },
-           {
-            "label": "IO_PORTG_05",
-            "value": "id_1651200763262_15"
-           },
-           {
-            "label": "IO_PORTG_07",
-            "value": "id_1651200765594_17"
-           },
-           {
-            "label": "IO_PORT_DM",
-            "value": "id_1651200854573_20"
-           },
-           {
-            "label": "IO_PORT_DP",
-            "value": "id_1651200840445_19"
-           }
-          ]
+          "options": []
          },
          "placeholder": "请选择采样IO",
          "style": {

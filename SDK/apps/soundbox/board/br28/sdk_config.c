@@ -65,15 +65,15 @@ const struct adkey_res_value adkey_res_table [] =  {
     },
     {
         .key_value = KEY_AD_NUM1,
-        .res_value = 62
+        .res_value = 330
     },
     {
         .key_value = KEY_AD_NUM2,
-        .res_value = 150
+        .res_value = 510
     },
     {
         .key_value = KEY_AD_NUM3,
-        .res_value = 220
+        .res_value = 1000
     }
 };
 
