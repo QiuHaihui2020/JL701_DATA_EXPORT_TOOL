@@ -380,6 +380,24 @@ c_SRC_FILES := \
 	apps/soundbox/audio_debug_tool/oled/oled.c \
 	apps/soundbox/audio_debug_tool/oled/oled_spi.c \
 	apps/soundbox/audio_debug_tool/display/display_task.c \
+	apps/soundbox/mode/pc/pc.c \
+	apps/soundbox/mode/pc/pc_app_msg_handler.c \
+	apps/soundbox/mode/pc/pc_key_msg_table.c \
+	audio/interface/player/pc_spk_player.c \
+	audio/interface/recoder/pc_mic_recoder.c \
+	apps/common/device/usb/usb_task.c \
+	apps/common/device/usb/usb_config.c \
+	apps/common/device/usb/usb_epbuf_manager.c \
+	apps/common/device/usb/device/task_pc.c \
+	apps/common/device/usb/device/usb_device.c \
+	apps/common/device/usb/device/descriptor.c \
+	apps/common/device/usb/device/hid.c \
+	apps/common/device/usb/device/msd.c \
+	apps/common/device/usb/device/uac1.c \
+	apps/common/device/usb/device/uac2.c \
+	apps/common/device/usb/device/uac_stream.c \
+	apps/common/device/usb/device/user_setup.c \
+	apps/common/device/usb/device/msd_upgrade.c \
 
 # cpu/br28/periph/touch/lp_touch_key.c \
 # cpu/br28/periph/touch/lp_touch_key_range_algo.c \

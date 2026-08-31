@@ -169,13 +169,16 @@ static void app_pc_init()
     int ret = -1;
     pc_idle_flag = 0;
     /* ui_update_status(STATUS_PC_MODE); */
+#if TCFG_AUDIO_FUNC_ENABLE
     __this->volume =  app_audio_get_volume(APP_AUDIO_STATE_MUSIC);//记录下当前音量
     tone_player_stop();
+#endif
 
 #if TCFG_LOCAL_TWS_ENABLE
     ret = local_tws_enter_mode(get_tone_files()->pc_mode, NULL);
 #endif //TCFG_LOCAL_TWS_ENABLE
 
+#if TCFG_AUDIO_FUNC_ENABLE
     if (ret != 0) {
         ret = play_tone_file_callback(get_tone_files()->pc_mode, NULL, pc_tone_play_end_callback);
         if (ret) {
@@ -184,6 +187,10 @@ static void app_pc_init()
             app_send_message(APP_MSG_PC_START, 0);
         }
     }
+#else
+    pc_task_start();
+    app_send_message(APP_MSG_PC_START, 0);
+#endif
 
 #if (LEA_BIG_CTRLER_TX_EN || LEA_BIG_CTRLER_RX_EN || LEA_CIG_CENTRAL_EN || LEA_CIG_PERIPHERAL_EN) || \
     (TCFG_LE_AUDIO_APP_CONFIG & (LE_AUDIO_AURACAST_SOURCE_EN | LE_AUDIO_JL_AURACAST_SOURCE_EN)) || \
@@ -206,7 +213,9 @@ static void app_pc_init()
 static void app_pc_exit()
 {
     pc_task_stop();
+#if TCFG_AUDIO_FUNC_ENABLE
     app_audio_set_volume(APP_AUDIO_STATE_MUSIC, __this->volume, 1);
+#endif
 #if TCFG_LOCAL_TWS_ENABLE
     local_tws_exit_mode();
 #endif

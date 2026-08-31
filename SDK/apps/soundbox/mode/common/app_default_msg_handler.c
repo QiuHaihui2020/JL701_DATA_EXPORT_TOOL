@@ -68,7 +68,11 @@ static u8 sys_audio_mute_statu = 0;//记录 audio dac mute
 
 u8 get_sys_aduio_mute_statu(void)
 {
+#if TCFG_AUDIO_FUNC_ENABLE
     return 	app_audio_get_dac_digital_mute();
+#else
+    return 0;
+#endif
 }
 void app_common_key_msg_handler(int *msg)
 {
@@ -77,12 +81,15 @@ void app_common_key_msg_handler(int *msg)
     int from_tws = msg[1];
 
     switch (msg[0]) {
+#if TCFG_APP_BT_EN
     case APP_MSG_BT_WORK_MODE_CHANGE:
         if (msg[1] == APP_KEY_MSG_FROM_TWS) { //非后台不响应来自tws的切换模式消息
             return;
         }
         bt_work_mode_switch_to_next();
         break;
+#endif
+#if TCFG_AUDIO_FUNC_ENABLE
     case APP_MSG_VOL_UP:
 #if (THIRD_PARTY_PROTOCOLS_SEL & (RCSP_MODE_EN))
         if (bt_rcsp_device_conn_num() && JL_rcsp_get_auth_flag() && (app_get_current_mode()->name != APP_MODE_BT)) {
@@ -117,6 +124,7 @@ void app_common_key_msg_handler(int *msg)
 #endif
         app_send_message(APP_MSG_VOL_CHANGED, app_audio_get_volume(APP_AUDIO_STATE_MUSIC));
         break;
+#endif
 #if TCFG_KBOX_1T3_MODE_EN
 #if TCFG_MIC_EFFECT_ENABLE && (LEA_CIG_CENTRAL_EN || LEA_CIG_PERIPHERAL_EN || LEA_BIG_CTRLER_TX_EN || LEA_BIG_CTRLER_RX_EN)
     case APP_MSG_SW_WIRED_MIC_OR_WIRELESS_MIC:
@@ -197,9 +205,11 @@ void app_common_key_msg_handler(int *msg)
         break;
 #endif
 
+#if TCFG_AUDIO_FUNC_ENABLE
     case APP_MSG_SWITCH_SOUND_EFFECT:
         effect_scene_switch();
         break;
+#endif
 #if TCFG_MIC_EFFECT_ENABLE
     case APP_MSG_MIC_EFFECT_ON_OFF://混响开关
 
@@ -246,6 +256,7 @@ void app_common_key_msg_handler(int *msg)
         break;
 #endif // TCFG_BASS_TREBLE_NODE_ENABLE
 #endif
+#if TCFG_AUDIO_FUNC_ENABLE
     case APP_MSG_VOCAL_REMOVE:
 #if TCFG_APP_BT_EN
         if (bt_get_call_status() != BT_CALL_HANGUP) {//通话中
@@ -277,6 +288,7 @@ void app_common_key_msg_handler(int *msg)
         }
         app_send_message(APP_MSG_MUTE_CHANGED, sys_audio_mute_statu);
         break;
+#endif
     case APP_MSG_REC_PP:
 #if TCFG_MIX_RECORD_ENABLE
         if (app_get_current_mode()->name == APP_MODE_MUSIC) {

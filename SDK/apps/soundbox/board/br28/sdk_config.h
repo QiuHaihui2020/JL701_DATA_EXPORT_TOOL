@@ -136,7 +136,7 @@
 #define TCFG_APP_MUSIC_EN                         0                // 音乐模式
 #define TCFG_APP_LINEIN_EN                        0                // LINEIN模式
 #define TCFG_APP_FM_EN                            0                // FM模式
-#define TCFG_APP_PC_EN                            0                // PC模式
+#define TCFG_APP_PC_EN                            1                // PC模式
 #define TCFG_APP_RTC_EN                           0                // RTC模式
 #define TCFG_APP_IIS_EN                           0                // IIS模式
 #define TCFG_MIC_EFFECT_ENABLE                    0                // 混响使能

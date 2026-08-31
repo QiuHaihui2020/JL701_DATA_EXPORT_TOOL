@@ -57,9 +57,11 @@ int pc_app_msg_handler(int *msg)
         break;
     case APP_MSG_PC_START:
         printf("app msg pc start\n");
+#if TCFG_AUDIO_FUNC_ENABLE
         if (le_audio_scene_deal(LE_AUDIO_APP_MODE_ENTER) > 0) {
             break;
         }
+#endif
         break;
 #if TCFG_USB_SLAVE_HID_ENABLE
     case APP_MSG_MUSIC_PP:

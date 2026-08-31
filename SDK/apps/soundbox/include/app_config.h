@@ -166,6 +166,11 @@
 #define TCFG_AUDIO_FM_ENABLE     TCFG_APP_FM_EN
 #endif
 
+// 音频功能开关：任一音频相关模式启用时为1，仅PC模式MSC场景下为0
+#ifndef TCFG_AUDIO_FUNC_ENABLE
+#define TCFG_AUDIO_FUNC_ENABLE  (TCFG_APP_BT_EN || TCFG_APP_MUSIC_EN || TCFG_APP_LINEIN_EN || TCFG_APP_FM_EN || TCFG_APP_RTC_EN || TCFG_APP_IIS_EN)
+#endif
+
 
 /* ------------------rule check------------------ */
 #ifndef TCFG_APP_MUSIC_EN

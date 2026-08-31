@@ -163,7 +163,7 @@
        "label": "PC模式",
        "tag": "el-switch",
        "tagIcon": "switch",
-       "defaultValue": 0,
+       "defaultValue": 1,
        "span": 4,
        "showLabel": true,
        "labelWidth": null,
