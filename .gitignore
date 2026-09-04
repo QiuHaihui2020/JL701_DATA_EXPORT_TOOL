@@ -10,6 +10,7 @@ patch/
 *.o
 /output
 /ABPoints
+/cache/ABPoints
 activeFile.txt
 /cache/backup
 *.bc

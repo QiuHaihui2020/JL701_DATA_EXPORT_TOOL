@@ -14,7 +14,16 @@ const int CONFIG_LEA_PRODUCT_TEST_RSSI = 50; // 信号强度控制
 
 #if TCFG_IO_CFG_AT_POWER_ON
 const struct gpio_cfg_item g_io_cfg_at_poweron [] =  {
-    
+    {
+        .gpio = IO_PORTA_06,
+        .mode = PORT_OUTPUT_LOW,
+        .hd = PORT_DRIVE_STRENGT_64p0mA
+    },
+    {
+        .gpio = IO_PORTA_07,
+        .mode = PORT_OUTPUT_HIGH,
+        .hd = PORT_DRIVE_STRENGT_64p0mA
+    }
 };
 #endif // TCFG_IO_CFG_AT_POWER_ON
 

@@ -4,6 +4,7 @@
 #include "uart.h"
 #include "dev_manager.h"
 #include "display/display_task.h"
+#include "audio_raw_writer.h"
 
 #define PCM_UART1_TX_PORT			-1
 #define PCM_UART1_RX_PORT			IO_PORTA_02
@@ -37,7 +38,12 @@ struct audio_dbg_hdl_t {
     u16 *sd_tmp_buf;
     u8 *sd_buf;
     cbuffer_t sd_cbuf;
-    FILE *fp;
+    u8 raw_ready;              /*分通道 raw 输出是否就绪*/
+    /*
+     * 定时落盘请求。由定时器回调置位、sd 任务清零，volatile 保证可见性。
+     * 这里不需要临界区: 单字节标志，且漏掉一次只是把落盘推后一个周期，无副作用。
+     */
+    volatile u8 flush_req;
 
     u16 lost_packet;
 
@@ -72,6 +78,22 @@ void uartSendData(void *buf, u16 len) 			//发送数据的接口。
 }
 #endif
 
+/*
+ * 丢帧时往 cbuf 补一帧零，保持交给 raw_writer 的字节流长度连续。
+ * V1 靠字节在交织块内的位置判断通道归属，少一帧会让后续所有通道整体错位；
+ * V2 有包头可精确定位，多出的这帧零会因找不到同步头而被自然丢弃。
+ * 补零只在本任务里做，raw_writer 依然是单生产者单消费者，无需加锁。
+ */
+static void audio_dbg_pad_lost_frame(struct audio_dbg_hdl_t *hdl)
+{
+    u32 payload = (u32)hdl->uart_frame_size - 4;
+
+    memset(hdl->uart_tmp_buf, 0, payload);
+    if (cbuf_write(&hdl->sd_cbuf, hdl->uart_tmp_buf, payload) == payload) {
+        os_sem_post(&hdl->sd_sem);
+    }
+}
+
 static void audio_uart_task(void *priv)
 {
     struct audio_dbg_hdl_t *hdl = (struct audio_dbg_hdl_t *)priv;
@@ -95,12 +117,14 @@ static void audio_uart_task(void *priv)
                         hdl->lost_packet++;
                     }
                 } else {
-                    printf("uart crc err"); 
+                    printf("uart crc err");
                     hdl->lost_packet++;
+                    audio_dbg_pad_lost_frame(hdl);
                 }
             } else {
                 printf("uart recv read err, %d %d\n", recv_len, hdl->uart_frame_size);
                 hdl->lost_packet++;
+                audio_dbg_pad_lost_frame(hdl);
             }
             rec_cnt++;
             if ((rec_cnt % 100) == 0) {
@@ -117,85 +141,85 @@ static void audio_uart_task(void *priv)
 }
 #define AUDIO_WRITE_DEVICE_LOGO "sd0"
 #define AUDIO_WRITE_FOLDER_NAME "JL_DEBUG"
-#define AUDIO_WRITE_FILE_NAME	"dbg_***.bin"			//录音文件前缀名
 
-//打开录音文件：优先复用目录下已存在的大小为0的空文件，避免空文件占用序号；否则按 dbg_***.bin 序号新建
-//直接按序号探测 dbg_000.bin..dbg_999.bin，绕开 fscan 的类型过滤（-tALL 不匹配 .bin 会返回 NULL）
-static FILE *audio_dbg_file_open(char *path, const char *root_path, const char *folder, const char *file_name)
+#define AUDIO_SD_FLUSH_INTERVAL 2000            /*定时落盘间隔，单位ms*/
+
+static u32 flush_timer = 0;
+
+/*
+ * 定时落盘: 每通道要攒满一个块才写盘，数据率低或录制刚开始时块可能长时间攒不满，
+ * 此时断电/拔卡就会丢掉缓冲里的全部内容。这里周期性地强制落一次盘缩小该窗口。
+ * 回调里只置标志并唤醒 sd 任务，真正的落盘必须回到 sd 任务上下文执行:
+ * raw_writer 内部无锁，且 fwrite 是阻塞操作，都不适合在定时器回调里做。
+ */
+static void audio_dbg_flush_timer(void *priv)
 {
-    int miss_cnt = 0;
-    for (int i = 0; i < 1000; i++) {
-        sprintf(path, "%s%s/dbg_%03d.bin", root_path, folder, i);
-        FILE *f = fopen(path, "r");
-        if (!f) {
-            if (++miss_cnt >= 3) {
-                break;  //连续3个序号不存在，认为后续无文件
-            }
-            continue;
-        }
-        miss_cnt = 0;
-        if (flen(f) == 0) {
-            fclose(f);
-            printf("reuse empty file %s\n", path);
-            return fopen(path, "w+");
-        }
-        fclose(f);
+    struct audio_dbg_hdl_t *hdl = (struct audio_dbg_hdl_t *)priv;
+
+    if (!hdl || !hdl->raw_ready) {
+        return;
     }
-    //没有0大小文件可复用，按通配符新建
-    sprintf(path, "%s%s/%s", root_path, folder, file_name);
-    printf("create new file %s\n", path);
-    return fopen(path, "w+");
+    hdl->flush_req = 1;
+    os_sem_post(&hdl->sd_sem);
 }
 
 static void audio_sdwrite_task(void *priv)
 {
     struct audio_dbg_hdl_t *hdl = (struct audio_dbg_hdl_t *)priv;
-    int rlen = 0, wlen = 0;
+    u32 rlen = 0, dlen = 0;
     u32 write_cnt = 0;
-    char path[64];
+    u8  moved;                          /*本轮是否真的搬到了数据*/
     char logo[] = {AUDIO_WRITE_DEVICE_LOGO};        //sd卡录音
     char folder[] = {AUDIO_WRITE_FOLDER_NAME};
-    char file_name[] = {AUDIO_WRITE_FILE_NAME};
     char *root_path = dev_manager_get_root_path_by_logo(logo);
 
-    if (hdl) {
-        if (!root_path) {
-            printf("sd dev not found, skip file open\n");
-        } else {
-            hdl->fp = audio_dbg_file_open(path, root_path, folder, file_name);
-            printf("sd write path %s \n", path);
-            if (!hdl->fp) {
-                printf("file open fail, %s", path);
-            } else {
-                printf("file open %s", path);
-                //fwrite(hdl->sd_tmp_buf, hdl->sd_write_frame_size, 1, hdl->fp); //提前写一包数据，处理第一次写数据慢的问题
-            }
-        }
+    if (!root_path) {
+        printf("sd dev not found, skip raw writer open\n");
+    } else if (raw_writer_open(root_path, folder,
+                               hdl->pcm_channel, hdl->pcm_rx_single_size) < 0) {
+        printf("raw writer open fail\n");
+    } else {
+        hdl->raw_ready = 1;
     }
 
     while(1) {
         os_sem_pend(&hdl->sd_sem, 0);
-        if (hdl && hdl->fp) {
-            do {
-                rlen = cbuf_read(&hdl->sd_cbuf, hdl->sd_tmp_buf, hdl->sd_write_frame_size);
-                if (rlen) {
-                    // printf("sd read %d", rlen); 
-                    wlen = fwrite(hdl->sd_tmp_buf, hdl->sd_write_frame_size, 1, hdl->fp);
-                    if (wlen != hdl->sd_write_frame_size) {
-                        printf("[error] sd write err \n"); 
-                        hdl->lost_packet++;
-                    } else {
-                        putchar('W');
-                        write_cnt++;
-                    }
-                }
-            } while (rlen);
-
-            if ((write_cnt % 10) == 0) {
-                oled_dispaly_task_post(OLED_DISPLAY_RUN_TIPS, NULL);
-            }
+        if (!hdl->raw_ready) {
+            continue;
         }
-    
+        /*
+         * 有多少搬多少。原先固定按整块长度读，不足一块的尾部数据
+         * 会一直卡在 cbuf 里出不来，录音末尾必然缺一截。
+         */
+        moved = 0;
+        do {
+            dlen = cbuf_get_data_len(&hdl->sd_cbuf);
+            if (dlen > (u32)hdl->sd_write_frame_size) {
+                dlen = (u32)hdl->sd_write_frame_size;
+            }
+            rlen = dlen ? cbuf_read(&hdl->sd_cbuf, hdl->sd_tmp_buf, dlen) : 0;
+            if (rlen) {
+                raw_writer_input((u8 *)hdl->sd_tmp_buf, rlen);
+                putchar('W');
+                write_cnt++;
+                moved = 1;
+            }
+        } while (rlen);
+
+        /*搬完 cbuf 再处理定时落盘，保证落下去的是当前最全的数据*/
+        if (hdl->flush_req) {
+            hdl->flush_req = 0;
+            raw_writer_flush();
+        }
+
+        /*
+         * w+ 和红灯只在真正搬到数据时才闪。
+         * sd_sem 除了收到数据，还会被定时落盘唤醒，
+         * 少了 moved 这个前置条件的话空转唤醒也会让它闪，就不再表示"正在收数据"了。
+         */
+        if (moved && ((write_cnt % 10) == 0)) {
+            oled_dispaly_task_post(OLED_DISPLAY_RUN_TIPS, NULL);
+        }
     }
 }
 
@@ -271,7 +295,7 @@ static void sys_info_trace(void *priv)
     printf("task : %s: %d\n", "od_dispaly", a);
     
     task_info_reset();
-
+    mem_stats();
 }
 
 void audio_uart_init()
@@ -373,6 +397,9 @@ void audio_uart_init()
     };
     uart_dma_init(hdl->uart, &dma_config);
 
+    /*回调内会先检查 raw_ready，此时 sd 任务尚未打开文件也是安全的*/
+    flush_timer = sys_timer_add(hdl, audio_dbg_flush_timer, AUDIO_SD_FLUSH_INTERVAL);
+
     aud_dbg_hdl = hdl;
 }
 
@@ -390,9 +417,15 @@ void audio_uart_exit()
         if (printf_timer) {
             sys_timer_del(printf_timer);
         }
-        if (hdl->fp) {
-            fclose(hdl->fp); 
-            hdl->fp = NULL;
+        /*必须在 free(hdl) 之前删掉，否则回调会访问已释放的 hdl*/
+        if (flush_timer) {
+            sys_timer_del(flush_timer);
+            flush_timer = 0;
+        }
+        /*务必在 sd 写任务被 kill 之后再关，里面会把残留数据落盘*/
+        if (hdl->raw_ready) {
+            raw_writer_close();
+            hdl->raw_ready = 0;
         }
 
         if (hdl->uart_dma_buf) {

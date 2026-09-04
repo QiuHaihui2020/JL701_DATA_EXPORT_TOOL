@@ -1,45 +1,53 @@
 @echo off
 setlocal enabledelayedexpansion
 
+:: ä¿å­˜å½“å‰æ§åˆ¶å°ä»£ç é¡µï¼Œè„šæœ¬ç»“æŸæ—¶æ¢å¤ï¼Œé¿å…æ±¡æŸ“è°ƒç”¨è€…çš„ cmd çª—å£
+for /f "tokens=2 delims=:" %%a in ('chcp') do set "OLD_CP=%%a"
+set "OLD_CP=%OLD_CP: =%"
+:: æœ¬æ–‡ä»¶ä»¥ UTF-8(æ—  BOM) ä¿å­˜ï¼Œåˆ‡åˆ° 65001 æ‰èƒ½æ­£å¸¸æ˜¾ç¤ºä¸­æ–‡æç¤º
+chcp 65001 >nul
+
 cd /d %~dp0
 
-set /p USER_DEV=ÇëÊäÈëT¿¨ÅÌ·û£¨ÈçH£©:
+set /p "USER_DEV=è¯·è¾“å…¥Tå¡ç›˜ç¬¦ï¼ˆå¦‚Hï¼‰ï¼š"
 
-set /p "FILE_NUM=ÇëÊäÈë%USER_DEV%:\JL_DEBUG\dbg_xxx.binÎÄ¼şĞòºÅ£¨Èç002£©£º"
+set /p "FILE_NUM=è¯·è¾“å…¥%USER_DEV%:\JL_DEBUG\dbg_xxx.binæ–‡ä»¶åºå·ï¼ˆå¦‚002ï¼‰ï¼š"
 
 set "FILE_NAME=dbg_%FILE_NUM%.bin"
 
 set "FILE_PATH=%USER_DEV%:\JL_DEBUG\%FILE_NAME%"
-echo ÎÄ¼şÍêÕûÂ·¾¶£º%FILE_PATH%
+echo æ–‡ä»¶å®Œæ•´è·¯å¾„ï¼š%FILE_PATH%
 
-:: ¼ì²éÎÄ¼şÊÇ·ñ´æÔÚ
+:: æ£€æŸ¥æ–‡ä»¶æ˜¯å¦å­˜åœ¨
 if exist "%FILE_PATH%" (
-    echo ÎÄ¼ş´æÔÚ£¬ÕıÔÚ½âÎö...
+    echo æ–‡ä»¶å­˜åœ¨ï¼Œæ­£åœ¨è§£æ...
 ) else (
-    echo ´íÎó£ºÎÄ¼ş²»´æÔÚ£¡
-    pause
-    exit
+    echo é”™è¯¯ï¼šæ–‡ä»¶ä¸å­˜åœ¨ï¼
+    goto :END
 )
 
-:: Êı¾İÍ¨µÀÊı
+:: æ•°æ®é€šé“æ•°
 set  CH_NUM=1
-:: Ã¿Í¨µÀµÄÊı¾İÖ¡³¤£¬µ¥Î»byte
+:: æ¯é€šé“çš„æ•°æ®å¸§é•¿ï¼Œå•ä½byte
 set  FRAME_LEN=512
 
-:: ¶¯Ì¬Éú³É unpack.exe µÄ²ÎÊı£¨ÖØ¸´ CH_NUM ´Î FRAME_LEN£©
+:: åŠ¨æ€ç”Ÿæˆ unpack.exe çš„å‚æ•°ï¼ˆé‡å¤ CH_NUM æ¬¡ FRAME_LENï¼‰
 set ARGS=
 for /l %%i in (1,1,%CH_NUM%) do (
     set ARGS=!ARGS! %FRAME_LEN%
 )
 
-echo ÕıÔÚÖ´ĞĞ£ºunpack.exe %FILE_PATH% %CH_NUM%!ARGS!
-:: ½âÎöÊı¾İ
+echo æ­£åœ¨æ‰§è¡Œï¼šunpack.exe %FILE_PATH% %CH_NUM%!ARGS!
+:: è§£ææ•°æ®
 unpack.exe %FILE_PATH% %CH_NUM%!ARGS!
 
-:: ½âÎöÊı¾İ
+:: äºŒçº§è§£æï¼šæŒ‰åŒ…å¤´æ‹†åˆ†å‡ºå„é€šé“ raw
 copy 0.raw out.raw
 JL_DataInterpreter_iterator_v2.exe --i out.raw --exit_when_error 0 --v 1
 
 del out.raw
 
+:END
+:: æ¢å¤è¿›å…¥è„šæœ¬å‰çš„ä»£ç é¡µ
+chcp %OLD_CP% >nul
 pause

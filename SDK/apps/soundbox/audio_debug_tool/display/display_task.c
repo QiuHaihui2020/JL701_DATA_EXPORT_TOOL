@@ -3,6 +3,7 @@
 #include "oled/oledbmp.h"
 #include "system/includes.h"
 #include "user_cfg_id.h"
+#include "audio_raw_writer.h"
 #include "app_config.h"
 
 #define OLED_DISPLAY_TASK_NAME    "od_dispaly"
@@ -28,6 +29,7 @@ void oled_display_task(void *priv)
     os_time_dly(100);
     OLED_Fill(0x00); //清屏
 
+    OLED_P8x16Str(0, 0, "--");
     OLED_P8x16Str(28, 0, "PcmRxTool");
     OLED_P8x16Str(112, 0, "w+");
     OLED_P8x16Str(8, 2, "sd:off");
@@ -159,6 +161,17 @@ void oled_display_task(void *priv)
                 OLED_P8x16Str(40, 4, "_");
             }
             break;
+        case OLED_DISPLAY_FMT:
+            /*嗅探未完成时保持 "--"，判定后固定显示 V1/V2*/
+            if ((u8)msg[2] == RAW_FMT_V1) {
+                OLED_P8x16Str(0, 0, "V1");
+            } else if ((u8)msg[2] == RAW_FMT_V2) {
+                OLED_P8x16Str(0, 0, "V2");
+            } else {
+                OLED_P8x16Str(0, 0, "--");
+            }
+            printf("=================================== display fmt : %d\n", (u8)msg[2]);
+            break;
         case OLED_DISPLAY_LOST:
             sprintf(strnum, "%04d", ((u32)msg[2]) % 9999);
             OLED_P8x16Str(96, 2, strnum);
@@ -205,4 +218,4 @@ int oled_display_exit()
 {
     task_kill(OLED_DISPLAY_TASK_NAME);
     return 0;
-}
+}

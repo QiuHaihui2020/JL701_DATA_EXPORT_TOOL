@@ -183,6 +183,148 @@ SECTIONS
         *(.ui_ram)
         *(.math_fast_funtion_code)
 
+        /*
+         * ==== 把工程用到的代码搬到 RAM 执行，消除 flash 取指抖动 ====
+         *
+         * 全部显式列举，刻意不用 *(.*.text) 通配。通配会连带抢走下面三个
+         * 必须留在 flash 的段，而且范围不可控、以后加库时会悄悄出事。
+         *
+         * 必须留在 flash 的段(改这里前务必看懂 startup.S 的时序):
+         *   .startup.text  芯片从 code0 起始取第一条指令，RAM 代码靠它搬运
+         *   .clock_hw.text 含 boot_clk_init
+         *   .boot.text     含 boot_info_init
+         * 后两个由 startup.S 在"搬运 data_code 之前"调用:
+         *   0x6000110 call boot_clk_init
+         *   0x600011a call boot_info_init
+         *   0x6000152 才开始把 data_code 从 flash 搬到 RAM
+         * 把它们放进 RAM 等于让 CPU 去执行一片还没填内容的 RAM，直接不开机。
+         * (update_result_get / maskrom_init 是在搬运之后才调用的，可以搬。)
+         *
+         * 下面的清单来自 sdk.map 里 .text 输出段的实际内容，即链接器
+         * 依赖解析后真正进入固件的段，天然覆盖"库a调库b"的间接依赖。
+         * 新增模块后若想一并搬入，按同样方式追加一行即可。
+         */
+        /*
+         * 本工程自己的应用代码。没开 -ffunction-sections，凡是未指定
+         * section 属性的函数都落在这一个 .text 输入段里。
+         * 它精确匹配段名 .text，不会碰到 .startup.text。
+         */
+        *(.text)
+
+        /*以下是本工程用到的库模块代码段*/
+        *(.adkey.text)
+        *(.adkey_config.text)
+        *(.app_default_msg_handler.text)
+        *(.app_main.text)
+        *(.app_mode_manager.text)
+        *(.app_msg.text)
+        *(.ASCII_lib.text)
+        *(.cache.text)
+        *(.cfg_bin.text)
+        *(.cfg_btif.text)
+        *(.cfg_otp.text)
+        *(.circular_buf.text)
+        *(.clock.text)
+        *(.clock_manager.text)
+        *(.common.text)
+        *(.crc16.text)
+        *(.debug_uart_config.text)
+        *(.dev_manager.text)
+        *(.dev_status.text)
+        *(.dev_update.text)
+        *(.device_api.text)
+        *(.driver.text)
+        *(.dtemp_pll_trim.text)
+        *(.efuse.text)
+        *(.fat_compact.text)
+        *(.ff_opr.text)
+        *(.ffunicode.text)
+        *(.gpadc.text)
+        *(.gpadc_utils.text)
+        *(.gpio.text)
+        *(.gpio_func.text)
+        *(.gpio_hw.text)
+        *(.gptimer.text)
+        *(.heap_mmu.text)
+        *(.idle.text)
+        *(.idle_app_msg_handler.text)
+        *(.inside_flash.text)
+        *(.irkey_config.text)
+        *(.key.text)
+        *(.key_driver.text)
+        *(.key_wakeup.text)
+        *(.key0_decode.text)
+        *(.lbuf.text)
+        *(.log.text)
+        *(.mbr.text)
+        *(.mcpwm.text)
+        *(.memory.text)
+        *(.movable.text)
+        *(.pc.text)
+        *(.pc_app_msg_handler.text)
+        *(.pc_spk_player.text)
+        *(.peripherials.text)
+        *(.pmalloc.text)
+        *(.pmalloc_continue.text)
+        *(.power_app.text)
+        *(.power_config.text)
+        *(.power_driver.text)
+        *(.power_on.text)
+        *(.power_port.text)
+        *(.puthex.text)
+        *(.rtc.text)
+        *(.sd.text)
+        *(.sdfile.text)
+        *(.sdfile_resfile_compact.text)
+        *(.sdx_dev.text)
+        *(.sdx_driver.text)
+        *(.sdx_source.text)
+        *(.setup.text)
+        *(.spi.text)
+        *(.sys_pll.text)
+        *(.syscfg_api.text)
+        *(.task.text)
+        *(.testbox_update.text)
+        *(.tff.text)
+        *(.timer.text)
+        *(.uart.text)
+        *(.update.text)
+        *(.usb.text)
+        *(.user_cfg.text)
+        *(.UTF8Unicode_conversion.text)
+        *(.vfs.text)
+        *(.vm_commom.text)
+        *(.vm_sfc.text)
+        *(.vm_write_ram.text)
+        *(.vmalloc.text)
+        *(.wdt.text)
+        *(.xosc.text)
+
+        /*对应的只读常量段，一并搬入以加快访问*/
+        *(.app_main.text.const)
+        *(.cfg_bin.text.const)
+        *(.clock.text.const)
+        *(.dev_reg.text.const)
+        *(.device_config.text.const)
+        *(.fat_compact.text.const)
+        *(.ffunicode.text.const)
+        *(.gpio_hw.text.const)
+        *(.idle.text.const)
+        *(.idle_key_msg_table.text.const)
+        *(.pc.text.const)
+        *(.pc_key_msg_table.text.const)
+        *(.power_driver.text.const)
+        *(.power_on.text.const)
+        *(.sdk_board_config.text.const)
+        *(.sdx_dev.text.const)
+        *(.tff.text.const)
+        *(.timer.text.const)
+        *(.uart.text.const)
+        *(.update.text.const)
+        *(.usb.text.const)
+        *(.user_cfg.text.const)
+        *(.wdt.text.const)
+
          . = ALIGN(4);
          __fm_movable_slot_start = .;
          *(.movable.slot.1);

@@ -1,0 +1,76 @@
+#ifndef _AUDIO_RAW_WRITER_H_
+#define _AUDIO_RAW_WRITER_H_
+
+#include "typedef.h"
+
+/*
+ * 分通道 raw 文件输出模块
+ *
+ * 把串口收到的净载荷直接解复用成每通道一个 .raw 文件写入 SD 卡，
+ * 取代原先"先写多通道 bin、再用 PC 工具解析"的两步流程。
+ *
+ * 支持两种载荷格式，开机后由数据内容自动嗅探判定：
+ *   V1: 定长交织  [ch0 single_size][ch1 single_size]...[chN single_size] 循环
+ *   V2: 包流      [20字节包头][len字节数据] 串接，通道号在包头里
+ *
+ * 注意: 嗅探只决定"载荷如何解复用"，不决定串口帧长。
+ *       syscfg 里的 ch/len 仍必须与发送端匹配，否则连帧都收不到。
+ */
+
+/*载荷格式*/
+enum {
+    RAW_FMT_SNIFFING = 0,   /*嗅探中，数据暂存在嗅探缓冲里*/
+    RAW_FMT_V1,             /*定长交织*/
+    RAW_FMT_V2,             /*带包头的包流*/
+};
+
+/* --------------------------------------------------------------------------*/
+/**
+ * @brief 打开分通道 raw 输出，自动选用一个新的 rec_NNN 子目录
+ *
+ * @param root_path 设备根路径，如 dev_manager_get_root_path_by_logo("sd0") 的返回值
+ * @param folder    根路径下的一级目录名，如 "JL_DEBUG"
+ * @param v1_channel     V1 格式的通道数(来自 syscfg)
+ * @param v1_single_size V1 格式单通道数据长度(来自 syscfg)
+ *
+ * @return 0 成功，其他 失败
+ * @note V1 参数在判定为 V2 时不使用；V2 的通道数与数据长度由包头自描述。
+ */
+/* ----------------------------------------------------------------------------*/
+int raw_writer_open(const char *root_path, const char *folder,
+                    u8 v1_channel, u16 v1_single_size);
+
+/* --------------------------------------------------------------------------*/
+/**
+ * @brief 喂入一帧串口净载荷(已剥掉尾部 CRC)
+ *
+ * @param data 数据地址
+ * @param len  数据长度
+ * @note 必须在同一个任务上下文中串行调用，内部无锁。
+ */
+/* ----------------------------------------------------------------------------*/
+void raw_writer_input(const u8 *data, u32 len);
+
+/* --------------------------------------------------------------------------*/
+/**
+ * @brief 把各通道块缓冲里的残留数据立即落盘，文件保持打开
+ *
+ * @note 供定时落盘用: 块缓冲攒不满时也定期写下去，缩小断电/拔卡的丢失窗口。
+ *       必须和 raw_writer_input() 在同一个任务上下文中调用，内部无锁。
+ */
+/* ----------------------------------------------------------------------------*/
+void raw_writer_flush(void);
+
+/*把各通道残留在块缓冲里的数据落盘并关闭文件*/
+void raw_writer_close(void);
+
+/*当前判定的载荷格式，取值见 RAW_FMT_xxx*/
+u8 raw_writer_get_fmt(void);
+
+/*已实际产生文件的通道数*/
+u8 raw_writer_get_ch_cnt(void);
+
+/*累计异常次数(丢帧、坏包、写盘失败)*/
+u32 raw_writer_get_err(void);
+
+#endif/*_AUDIO_RAW_WRITER_H_*/

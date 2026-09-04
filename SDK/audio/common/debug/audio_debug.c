@@ -42,6 +42,7 @@ static void audio_config_trace(void *priv)
 
     printf("cpu0: %d , cpu0: %d , clk:%d\n", usage[0], usage[1], curr_clk);
 #endif
+    mem_stats();
 
 #if AUD_JLSTREAM_MEM_DUMP_ENABLE
     stream_mem_unfree_dump();

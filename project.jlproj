@@ -1,5 +1,5 @@
 {
- "name": "JL701_DATA_EXPORT_20250416",
+ "name": "JL701_DATA_EXPORT_TOOL",
  "type": "音箱",
  "sdk": "le_audio",
  "chip": "JL701N",
@@ -158,10 +158,10 @@
   }
  ],
  "create_time": "2025-04-10T01:40:34.058Z",
- "update_time": "2026-08-31T14:16:45.453Z",
+ "update_time": "2026-09-03T08:10:33.864Z",
  "standardPatch": "",
- "lastOpenToolVersion": "4.9.1",
- "lastStencilFlowTime": "2025-04-10T09:40:50.0314637+08:00",
+ "lastOpenToolVersion": "4.11.2",
+ "lastStencilFlowTime": "20260903153748",
  "proxyRepoid": null,
  "versionName": "2.0.0",
  "provider": "杰理",

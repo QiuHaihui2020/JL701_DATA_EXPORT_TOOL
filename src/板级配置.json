@@ -1183,7 +1183,7 @@
           "changeTag": true,
           "tag": "el-input-number",
           "tagIcon": "number",
-          "defaultValue": 12000000,
+          "defaultValue": 48000000,
           "required": false,
           "layout": "colFormItem",
           "span": 8,
@@ -4743,13 +4743,442 @@
     "span": 24,
     "formId": 101,
     "renderKey": "1011646361489499",
-    "children": [],
+    "children": [
+     {
+      "__config__": {
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_473",
+       "showComponentName": false,
+       "dataType": [],
+       "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+       "template": "",
+       "span": 23,
+       "formId": 473,
+       "renderKey": "4731788422960249",
+       "children": [
+        {
+         "__config__": {
+          "label": "IO",
+          "showLabel": true,
+          "labelWidth": 40,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 6,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": [
+           "macro"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/select",
+          "formId": 474,
+          "renderKey": "4741788422960249",
+          "saveWay": "code",
+          "eventField": [
+           "device",
+           "gpio"
+          ],
+          "defaultValue": "IO_PORTA_06",
+          "structProp": "gpio"
+         },
+         "__slot__": {
+          "options": []
+         },
+         "placeholder": "请选择IO",
+         "style": {
+          "width": "100%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "__vModel__": "field474",
+         "searchSource": true,
+         "id": "id_1788422960249_1"
+        },
+        {
+         "__config__": {
+          "label": "输入输出",
+          "showLabel": true,
+          "labelWidth": 80,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 5,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": [
+           "macro"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/select",
+          "formId": 475,
+          "renderKey": "4751788422960249",
+          "defaultValue": "PORT_OUTPUT_LOW",
+          "eventField": [],
+          "saveWay": "code",
+          "structProp": "mode"
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "输出0",
+            "value": "PORT_OUTPUT_LOW"
+           },
+           {
+            "label": "输出1 ",
+            "value": "PORT_OUTPUT_HIGH"
+           },
+           {
+            "label": "高阻 ",
+            "value": "PORT_HIGHZ"
+           },
+           {
+            "label": "浮空输入",
+            "value": "PORT_INPUT_FLOATING"
+           },
+           {
+            "label": "上拉10K输入",
+            "value": "PORT_INPUT_PULLUP_10K"
+           },
+           {
+            "label": "上拉100K输入",
+            "value": "PORT_INPUT_PULLUP_100K"
+           },
+           {
+            "label": "上拉1M输入",
+            "value": "PORT_INPUT_PULLUP_1M",
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "下拉10K输入",
+            "value": "PORT_INPUT_PULLDOWN_10K",
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "下拉100K输入",
+            "value": "PORT_INPUT_PULLDOWN_100K",
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "下拉1M输入",
+            "value": "PORT_INPUT_PULLDOWN_1M",
+            "hide": false,
+            "disabled": false
+           }
+          ]
+         },
+         "placeholder": "请选择输入输出",
+         "style": {
+          "width": "100%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "__vModel__": "field475",
+         "id": "id_1788422960249_2"
+        },
+        {
+         "__config__": {
+          "label": "驱动力",
+          "showLabel": true,
+          "labelWidth": 60,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 5,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": [
+           "macro"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/select",
+          "formId": 476,
+          "renderKey": "4761788422960249",
+          "defaultValue": "PORT_DRIVE_STRENGT_64p0mA",
+          "saveWay": "code",
+          "structProp": "hd"
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "2.4mA + mos",
+            "value": "PORT_DRIVE_STRENGT_2p4mA"
+           },
+           {
+            "label": "8mA + mos",
+            "value": "PORT_DRIVE_STRENGT_8p0mA"
+           },
+           {
+            "label": "26.4mA",
+            "value": "PORT_DRIVE_STRENGT_24p0mA"
+           },
+           {
+            "label": "64mA",
+            "value": "PORT_DRIVE_STRENGT_64p0mA"
+           }
+          ]
+         },
+         "placeholder": "请选择驱动力",
+         "style": {
+          "width": ""
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "__vModel__": "field476",
+         "id": "id_1788422960249_3"
+        }
+       ],
+       "paddingLeft": "",
+       "saveWay": "code",
+       "uuid": "",
+       "eventField": []
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+       "height": "60px",
+       "paddingLeft": "0px"
+      },
+      "id": "id_1788422960249_0",
+      "fromTemplate": true
+     },
+     {
+      "__config__": {
+       "layout": "rowFormItem",
+       "tag": "group",
+       "tagIcon": "row",
+       "layoutTree": true,
+       "componentName": "row_477",
+       "showComponentName": false,
+       "dataType": [],
+       "document": "https://element.eleme.cn/#/zh-CN/component/layout#row-attributes",
+       "template": "",
+       "span": 23,
+       "formId": 477,
+       "renderKey": "4771788422970356",
+       "children": [
+        {
+         "__config__": {
+          "label": "IO",
+          "showLabel": true,
+          "labelWidth": 40,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 6,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": [
+           "macro"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/select",
+          "formId": 478,
+          "renderKey": "4781788422970356",
+          "saveWay": "code",
+          "eventField": [
+           "device",
+           "gpio"
+          ],
+          "defaultValue": "IO_PORTA_07",
+          "structProp": "gpio"
+         },
+         "__slot__": {
+          "options": []
+         },
+         "placeholder": "请选择IO",
+         "style": {
+          "width": "100%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "__vModel__": "field478",
+         "searchSource": true,
+         "id": "id_1788422970356_5"
+        },
+        {
+         "__config__": {
+          "label": "输入输出",
+          "showLabel": true,
+          "labelWidth": 80,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 5,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": [
+           "macro"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/select",
+          "formId": 479,
+          "renderKey": "4791788422970356",
+          "defaultValue": "PORT_OUTPUT_HIGH",
+          "eventField": [],
+          "saveWay": "code",
+          "structProp": "mode"
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "输出0",
+            "value": "PORT_OUTPUT_LOW"
+           },
+           {
+            "label": "输出1 ",
+            "value": "PORT_OUTPUT_HIGH"
+           },
+           {
+            "label": "高阻 ",
+            "value": "PORT_HIGHZ"
+           },
+           {
+            "label": "浮空输入",
+            "value": "PORT_INPUT_FLOATING"
+           },
+           {
+            "label": "上拉10K输入",
+            "value": "PORT_INPUT_PULLUP_10K"
+           },
+           {
+            "label": "上拉100K输入",
+            "value": "PORT_INPUT_PULLUP_100K"
+           },
+           {
+            "label": "上拉1M输入",
+            "value": "PORT_INPUT_PULLUP_1M",
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "下拉10K输入",
+            "value": "PORT_INPUT_PULLDOWN_10K",
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "下拉100K输入",
+            "value": "PORT_INPUT_PULLDOWN_100K",
+            "hide": false,
+            "disabled": false
+           },
+           {
+            "label": "下拉1M输入",
+            "value": "PORT_INPUT_PULLDOWN_1M",
+            "hide": false,
+            "disabled": false
+           }
+          ]
+         },
+         "placeholder": "请选择输入输出",
+         "style": {
+          "width": "100%"
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "__vModel__": "field479",
+         "id": "id_1788422970356_6"
+        },
+        {
+         "__config__": {
+          "label": "驱动力",
+          "showLabel": true,
+          "labelWidth": 60,
+          "tag": "el-select",
+          "tagIcon": "select",
+          "layout": "colFormItem",
+          "span": 5,
+          "required": false,
+          "regList": [],
+          "changeTag": true,
+          "searchSource": false,
+          "dataType": [
+           "macro"
+          ],
+          "document": "https://element.eleme.cn/#/zh-CN/component/select",
+          "formId": 480,
+          "renderKey": "4801788422970356",
+          "defaultValue": "PORT_DRIVE_STRENGT_64p0mA",
+          "saveWay": "code",
+          "structProp": "hd"
+         },
+         "__slot__": {
+          "options": [
+           {
+            "label": "2.4mA + mos",
+            "value": "PORT_DRIVE_STRENGT_2p4mA"
+           },
+           {
+            "label": "8mA + mos",
+            "value": "PORT_DRIVE_STRENGT_8p0mA"
+           },
+           {
+            "label": "26.4mA",
+            "value": "PORT_DRIVE_STRENGT_24p0mA"
+           },
+           {
+            "label": "64mA",
+            "value": "PORT_DRIVE_STRENGT_64p0mA"
+           }
+          ]
+         },
+         "placeholder": "请选择驱动力",
+         "style": {
+          "width": ""
+         },
+         "clearable": true,
+         "disabled": false,
+         "filterable": false,
+         "multiple": false,
+         "__vModel__": "field480",
+         "id": "id_1788422970356_7"
+        }
+       ],
+       "paddingLeft": "",
+       "saveWay": "code",
+       "uuid": "",
+       "eventField": []
+      },
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "style": {
+       "height": "60px",
+       "paddingLeft": "0px"
+      },
+      "id": "id_1788422970356_4",
+      "fromTemplate": true
+     }
+    ],
     "saveWay": "code",
     "uuid": "",
     "enableUuid": "TCFG_IO_CFG_AT_POWER_ON",
     "eventField": [],
     "structDef": "const struct gpio_cfg_item g_io_cfg_at_poweron",
-    "disable": true
+    "disable": false
    },
    "type": "default",
    "justify": "start",
@@ -5789,7 +6218,7 @@
  "disabled": false,
  "span": 24,
  "formBtns": false,
- "maxFormId": 472,
+ "maxFormId": 480,
  "version": {
   "code": 1,
   "tool": "4.4.0"
