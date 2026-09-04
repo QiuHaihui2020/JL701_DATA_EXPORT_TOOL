@@ -15,13 +15,26 @@
 #define PCM_SINGLE_LEN              512
 
 /*
- * cbuf 大小为 SD_CBUF_CNT * 1.5k byte，决定能容忍多长的 SD 写入停顿
- * (2M 波特率下约 200KB/s，30 块 46KB 约合 0.23 秒)。
- * 这块内存来自 heap，不宜开太大 —— 占多了会压缩物理内存池，
- * 反而让 SD 驱动拿不到 DMA 缓冲。真要抗更长的停顿，
- * 优先加大 RAW_BLK_SIZE 去减少写盘次数，比堆 cbuf 有效得多。
+ * cbuf 大小为 SD_CBUF_CNT * 1.5k byte，决定能容忍多长的 SD 写入停顿。
+ *
+ * 余量按实测码流算，不能按波特率线速算: 3ch x 16kHz x 16bit = 96KB/s，
+ * 2M 波特率的链路只用了不到一半。96 块 = 144KB，约合 1.53 秒。
+ *
+ * 这个值是实测定下来的，不是拍脑袋: raw_ch_flush() 里的耗时统计抓到过
+ * 一次单次 fwrite 耗时 909ms(见 RAW_SLOW_IO_MS 的说明)，而同期其余写盘
+ * 都在 30~80ms。那次停顿既不在簇边界上，也只发生在单个通道，是 TF 卡
+ * 内部的擦除/垃圾回收，软件无法规避 —— 唯一的办法就是把 cbuf 开到能扛住。
+ * 原来的 30 块只有 480ms 余量，必被打穿，屏上 lost 会跳几十。
+ *
+ * 注意别再听信"加大 RAW_BLK_SIZE 减少写盘次数"那套: 实测 5461 字节的写
+ * 和 16384 字节的写都是 60ms 上下，单次成本几乎全在目录项同步的固定开销上，
+ * 而卡的擦除停顿跟写盘次数无关，减少次数对这个失效模式没有帮助。
+ *
+ * 代价是多占约 100KB heap。这块内存开机一次性申请、永不释放，不会像
+ * 反复 alloc/free 那样把物理内存池切碎。若日后 physics memory 吃紧、
+ * MSC 那条路又开始报 DMA 缓冲断言，回退到 64 块(1.02 秒)。
  */
-#define SD_CBUF_CNT     30
+#define SD_CBUF_CNT     96
 
 #define AUDIO_UART_TASK_NAME    "a_uart_rec"
 #define AUDIO_SDWRITE_TASK_NAME "a_sd_write"

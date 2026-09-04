@@ -66,6 +66,15 @@ _Static_assert(sizeof(struct raw_v2_hdr_t) == 20, "v2 header must be 20 bytes");
 #define RAW_SNIFF_BUF_SIZE      (RAW_SNIFF_NEED_PKT * RAW_V2_PKT_MAX + RAW_UART_FRAME_MAX)
 /*典型包长下凑够连击所需的量，用于尽早判定，不必等缓冲填满*/
 #define RAW_SNIFF_MIN_LEN       (RAW_SNIFF_NEED_PKT * RAW_V2_PKT_TYP)
+/*
+ * 断定"不是 V2"所需的最小观察量。
+ * 嗅探是从数据流的任意一点切进去的，开头最坏会有近一个最大包的残片，
+ * 因此要攒够两个最大包，才能保证缓冲里完整地含有至少一个包。到了这个
+ * 量仍然一个合法包都没命中，就可以断定不是 V2，不必再等缓冲填满。
+ * 这条把 V1 场景憋在嗅探缓冲里的数据从 42KB 降到 20KB —— 判定瞬间要
+ * 一次性倾泻的积压直接减半，那正是开机首批数据撑爆上游 cbuf 的主因之一。
+ */
+#define RAW_SNIFF_V1_MIN        (2 * RAW_V2_PKT_MAX)
 
 /*派生量已保证下面几条恒成立，留着是防止有人把它们改回硬编码值*/
 _Static_assert(RAW_PARSE_BUF_SIZE >= RAW_V2_PKT_MAX + RAW_UART_FRAME_MAX,
@@ -74,13 +83,26 @@ _Static_assert(RAW_SNIFF_BUF_SIZE >= RAW_SNIFF_NEED_PKT * RAW_V2_PKT_MAX,
                "sniff buf too small to detect large packets");
 _Static_assert(RAW_SNIFF_MIN_LEN <= RAW_SNIFF_BUF_SIZE,
                "sniff min len exceeds buf size");
+_Static_assert(RAW_SNIFF_V1_MIN <= RAW_SNIFF_BUF_SIZE,
+               "sniff v1 min len exceeds buf size");
 
 #define V2_CHK_INCOMPLETE       (-1)            /*数据不足，无法判定*/
+
+/*
+ * 写盘耗时诊断门限(ms)。只有超过它才打印，正常一次 16KB 落盘远低于此值，
+ * 不会占用串口带宽，可以长期开着。
+ *
+ * 开机首批数据把上游 cbuf 撑爆的根因只能靠实测区分: 是三个文件同时跨簇
+ * 边界触发 FAT 分配，还是 SD 卡自身的内部擦除停顿，抑或录制途中又插了一次
+ * sd io init。打印里的"通道累计字节数"正好用来判定是不是卡在簇边界上。
+ */
+#define RAW_SLOW_IO_MS          30
 
 struct raw_ch_t {
     FILE *fp;
     u8   *blk;              /*块缓冲*/
     u32   blk_used;
+    u32   flush_th;         /*本次落盘门限，见 raw_ch_stagger_th()*/
     u32   written;          /*已提交的字节数(含补零)，V2 对齐用*/
 };
 
@@ -129,12 +151,34 @@ static u8 *s_ch_blk[RAW_MAX_CH] = { NULL };
 
 /*----------------------------------- 通道文件 -----------------------------------*/
 
+/*
+ * 通道首次落盘的门限。
+ *
+ * 各通道数据率相同，门限若一律取整块，它们就会在同一时刻同时攒满，
+ * N 次写盘被挤成一串背靠背的突发。开机第一批数据尤其致命: 那时还叠着
+ * SD 上电初始化、目录项分配和首簇分配，一串写下来远超上游 cbuf 的
+ * 232ms 余量，必然刷屏 "sd cbuf full"。稳定期虽勉强撑得住，余量也很薄。
+ *
+ * 这里给第 k 个通道一个 RAW_BLK_SIZE/n*(k+1) 的首次门限，把落盘时刻均匀
+ * 错开，之后各通道恢复整块周期，相位差就一直保持住了。
+ * n 取 syscfg 配置的通道数; V2 的通道号不保证连续，取模保证结果落在
+ * (0, RAW_BLK_SIZE] 内 —— 门限为 0 会让 raw_ch_put() 原地死循环。
+ */
+static u32 raw_ch_stagger_th(u8 idx)
+{
+    struct raw_writer_t *rw = s_rw;
+    u32 n = rw->v1_ch ? rw->v1_ch : 1;
+
+    return (RAW_BLK_SIZE / n) * (u32)((idx % n) + 1);
+}
+
 /*按需建立通道文件与块缓冲。V2 的通道数由包头决定，只能用到才建*/
 static struct raw_ch_t *raw_ch_get(u8 idx)
 {
     struct raw_writer_t *rw = s_rw;
     struct raw_ch_t *c;
     char path[80];
+    u32 t0;
 
     if (!rw || (idx >= RAW_MAX_CH)) {
         return NULL;
@@ -154,7 +198,9 @@ static struct raw_ch_t *raw_ch_get(u8 idx)
     }
     c->blk = s_ch_blk[idx];
     c->blk_used = 0;
+    c->flush_th = raw_ch_stagger_th(idx);
     sprintf(path, "%s/%d.raw", rw->dir, idx);
+    t0 = jiffies_msec();
     c->fp = fopen(path, "w+");
     if (!c->fp) {
         printf("[raw] open %s fail\n", path);
@@ -162,18 +208,27 @@ static struct raw_ch_t *raw_ch_get(u8 idx)
         return NULL;
     }
     rw->ch_cnt++;
-    printf("[raw] create %s\n", path);
+    printf("[raw] create %s (%dms)\n", path,
+           jiffies_msec2offset(t0, jiffies_msec()));
     return c;
 }
 
 static void raw_ch_flush(struct raw_ch_t *c)
 {
-    int wlen;
+    int wlen, ms;
+    u32 t0;
 
     if (!c->fp || !c->blk || (c->blk_used == 0)) {
         return;
     }
+    t0 = jiffies_msec();
     wlen = fwrite(c->blk, c->blk_used, 1, c->fp);
+    ms = jiffies_msec2offset(t0, jiffies_msec());
+    if (ms >= RAW_SLOW_IO_MS) {
+        printf("[raw] slow w ch%d %dms len %d tot %d\n",
+               s_rw ? (int)(c - s_rw->ch) : -1, ms,
+               (int)c->blk_used, (int)c->written);
+    }
     if (wlen != (int)c->blk_used) {
         printf("[raw] sd write err %d/%d\n", wlen, c->blk_used);
         if (s_rw) {
@@ -181,6 +236,7 @@ static void raw_ch_flush(struct raw_ch_t *c)
         }
     }
     c->blk_used = 0;
+    c->flush_th = RAW_BLK_SIZE;         /*错开只作用于首次，之后回到整块周期*/
 }
 
 /*
@@ -195,8 +251,12 @@ static void raw_ch_put(u8 idx, const u8 *data, u32 len, u8 pad)
     if (!c) {
         return;
     }
+    /*门限为 0 说明通道状态被破坏，兜底成整块，否则下面会原地死循环*/
+    if (c->flush_th == 0) {
+        c->flush_th = RAW_BLK_SIZE;
+    }
     while (len) {
-        space = RAW_BLK_SIZE - c->blk_used;
+        space = c->flush_th - c->blk_used;
         n = (len < space) ? len : space;
         if (pad) {
             memset(&c->blk[c->blk_used], 0, n);
@@ -207,7 +267,7 @@ static void raw_ch_put(u8 idx, const u8 *data, u32 len, u8 pad)
         c->blk_used += n;
         c->written  += n;
         len -= n;
-        if (c->blk_used >= RAW_BLK_SIZE) {
+        if (c->blk_used >= c->flush_th) {
             raw_ch_flush(c);
         }
     }
@@ -406,18 +466,25 @@ static void raw_sniff_input(const u8 *data, u32 len)
     run = raw_sniff_max_run();
     if (run >= RAW_SNIFF_NEED_PKT) {
         rw->fmt = RAW_FMT_V2;
+    } else if (run == 0) {
+        /*
+         * 一个合法包都没命中。攒够 RAW_SNIFF_V1_MIN 就足以断定不是 V2，
+         * 不必再等缓冲填满 —— 早一点判定，判定瞬间要倾泻的积压就少一点。
+         */
+        if (rw->sniff_len < RAW_SNIFF_V1_MIN) {
+            return;
+        }
+        rw->fmt = RAW_FMT_V1;
+        printf("[raw] sniff: V1 assumed, ch %d len %d\n", rw->v1_ch, rw->v1_single);
     } else if (rw->sniff_len < RAW_SNIFF_BUF_SIZE) {
-        return;                         /*还没满，再多攒一点看能不能凑够连击*/
-    } else if (run) {
+        return;                         /*命中了但没凑够连击，再多攒一点*/
+    } else {
         /*
          * 缓冲已满却凑不够连击，说明单包很大、装不下更多个。
          * 此时哪怕只命中一个包，其 CRC 正确也已是够强的证据。
          */
         rw->fmt = RAW_FMT_V2;
         printf("[raw] sniff: V2 by short run %d\n", run);
-    } else {
-        rw->fmt = RAW_FMT_V1;
-        printf("[raw] sniff: V1 assumed, ch %d len %d\n", rw->v1_ch, rw->v1_single);
     }
     oled_dispaly_task_post(OLED_DISPLAY_FMT, (int *)((int)rw->fmt));
 
@@ -576,6 +643,13 @@ void raw_writer_flush(void)
     /*raw_ch_flush 内部会跳过没有残留数据的通道，不会产生多余的写盘*/
     for (i = 0; i < RAW_MAX_CH; i++) {
         raw_ch_flush(&rw->ch[i]);
+        /*
+         * 定时落盘把所有通道一起清零，相位又对齐了，这里必须重新错开。
+         * 否则第一次定时落盘之后就退回"同时攒满、背靠背写"的老样子。
+         */
+        if (rw->ch[i].fp) {
+            rw->ch[i].flush_th = raw_ch_stagger_th(i);
+        }
     }
 }
 
