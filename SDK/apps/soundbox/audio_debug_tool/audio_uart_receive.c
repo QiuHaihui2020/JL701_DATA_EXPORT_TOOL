@@ -34,7 +34,7 @@
  * 反复 alloc/free 那样把物理内存池切碎。若日后 physics memory 吃紧、
  * MSC 那条路又开始报 DMA 缓冲断言，回退到 64 块(1.02 秒)。
  */
-#define SD_CBUF_CNT     96
+#define SD_CBUF_CNT     160
 
 #define AUDIO_UART_TASK_NAME    "a_uart_rec"
 #define AUDIO_SDWRITE_TASK_NAME "a_sd_write"
@@ -377,7 +377,14 @@ void audio_uart_init()
 
     printf_timer = sys_timer_add(NULL, sys_info_trace, 5000);
 
-    hdl->uart_dma_buf_size = 4096;
+    /*
+     * UART DMA 环形缓冲。收帧长度 = len * ch + 4，这一整帧必须装得进来，
+     * 且环里至少要容得下两帧，才不会在 a_uart_rec 搬运本帧时被下一帧覆盖。
+     * 支持到 8ch x 512(帧长 4100)，两帧 8200，故取 16384。
+     * 改这个值必须同步改 idle_app_msg_handler.c 的 UART_DMA_BUF_SIZE，
+     * 那边按它反算按键可调的 ch / len 上限。
+     */
+    hdl->uart_dma_buf_size = 16384;
     hdl->uart_baud_rate = 2000000;
     hdl->pcm_rx_single_size = 512;
     hdl->pcm_channel = 3;

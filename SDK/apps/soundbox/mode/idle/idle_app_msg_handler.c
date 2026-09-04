@@ -98,6 +98,26 @@ int idle_app_device_event_handler(int *msg)
     return ret;
 }
 
+/*
+ * ch / len 的上限约束。
+ *
+ * 串口收帧长度 = len * ch + 4(帧尾 CRC)，这一整帧必须装得进 uart_dma_buf,
+ * 见 audio_uart_init() 里固定 4096 字节的 uart_dma_buf_size。DMA 环形缓冲
+ * 至少要容得下两帧才不会在任务搬运期间被覆盖，所以上限取它的一半。
+ * 要放宽的话，UART_DMA_BUF_SIZE 和 audio_uart_init() 里那个值必须一起改。
+ *
+ * 短按一次只加 4(len)或 1(ch)，手动很难按越界; 但 2/3 号键支持长按连调之后
+ * 几秒就能冲过头 —— 一旦帧装不下，UART 收不到完整帧、接收直接失效，而屏上
+ * 还显示着刚设的值，现象很像"设了不生效"，极难定位。连调和上限必须一起加。
+ */
+#define UART_DMA_BUF_SIZE       16384   /*须与 audio_uart_init() 保持一致*/
+#define UART_FRAME_LIMIT        (UART_DMA_BUF_SIZE / 2)
+#define UART_FRAME_CRC_LEN      4       /*帧尾 CRC，与 audio_uart_init() 一致*/
+#define PCM_RX_CH_MAX           8       /*与 audio_raw_writer.c 的 RAW_MAX_CH 一致*/
+#define PCM_RX_CH_DEF           3
+#define PCM_RX_LEN_STEP         4       /*len 的调节步长*/
+#define PCM_RX_LEN_DEF          512
+
 static u8 ch_len_switch = 0;
 int idle_key_event_handler(int key_msg)
 {
@@ -106,6 +126,7 @@ int idle_key_event_handler(int key_msg)
     u8 ch = 3;
     u16 len = 512;
     u32 baud = 2000000;
+    u32 max_v = 0;              /*由另一项配置反算出的上限*/
     u8 strnum[2];
     u8 strnum_1[4];
     u8 strnum_2[7];
@@ -162,10 +183,12 @@ int idle_key_event_handler(int key_msg)
             ret = syscfg_read(CFG_UART_PCM_RX_CH, &ch, 1);
             if (ret < 0) {
                 printf("pcm channel read err\n");
-                ch = 3;
+                ch = PCM_RX_CH_DEF;
             }
-            ch -= 1;
-            if (ch < 1) {
+            /*先判后减: ch 是 u8，减到 0 再减会绕成 255，减完再比较拦不住*/
+            if (ch > 1) {
+                ch -= 1;
+            } else {
                 ch = 1;
             }
             printf("pcm channel : %02d\n", ch);
@@ -176,12 +199,14 @@ int idle_key_event_handler(int key_msg)
 
             ret = syscfg_read(CFG_UART_PCM_RX_SIG_SIZE, &len, 2);
             if (ret < 0) {
-                printf("pcm channel read err\n");
-                len = 512;
+                printf("pcm_rx_single_size read err\n");
+                len = PCM_RX_LEN_DEF;
             }
-            len -= 4;
-            if (len < 4) {
-                len = 4;
+            /*同上，u16 减过头会绕成大数，必须先判后减*/
+            if (len > PCM_RX_LEN_STEP) {
+                len -= PCM_RX_LEN_STEP;
+            } else {
+                len = PCM_RX_LEN_STEP;
             }
             printf("pcm_rx_single_size : %04d\n", len);
             syscfg_write(CFG_UART_PCM_RX_SIG_SIZE, &len, 2);
@@ -210,10 +235,25 @@ int idle_key_event_handler(int key_msg)
             ret = syscfg_read(CFG_UART_PCM_RX_CH, &ch, 1);
             if (ret < 0) {
                 printf("pcm channel read err\n");
-                ch = 3;
+                ch = PCM_RX_CH_DEF;
             }
-            ch += 1;
-            printf("pcm channel : %02d\n", ch);
+            /*上限由当前 len 反算，保证 len * ch + 4 仍装得进 uart_dma_buf*/
+            if ((syscfg_read(CFG_UART_PCM_RX_SIG_SIZE, &len, 2) < 0) || (len == 0)) {
+                len = PCM_RX_LEN_DEF;
+            }
+            max_v = (UART_FRAME_LIMIT - UART_FRAME_CRC_LEN) / len;
+            if (max_v > PCM_RX_CH_MAX) {
+                max_v = PCM_RX_CH_MAX;
+            }
+            if (max_v < 1) {
+                max_v = 1;
+            }
+            if (ch > max_v) {
+                ch = (u8)max_v;             /*旧配置已经越界，先拉回来*/
+            } else if (ch < max_v) {
+                ch += 1;
+            }
+            printf("pcm channel : %02d (max %d)\n", ch, max_v);
             syscfg_write(CFG_UART_PCM_RX_CH, &ch, 1);
             oled_dispaly_task_post(OLED_DISPLAY_CH, (int *)((int)ch));
 
@@ -222,10 +262,23 @@ int idle_key_event_handler(int key_msg)
             ret = syscfg_read(CFG_UART_PCM_RX_SIG_SIZE, &len, 2);
             if (ret < 0) {
                 printf("pcm_rx_single_size read err\n");
-                len = 512;
+                len = PCM_RX_LEN_DEF;
             }
-            len += 4;
-            printf("pcm_rx_single_size : %04d\n", len);
+            /*上限由当前 ch 反算，并向下取整到步长的整数倍*/
+            if ((syscfg_read(CFG_UART_PCM_RX_CH, &ch, 1) < 0) || (ch == 0)) {
+                ch = PCM_RX_CH_DEF;
+            }
+            max_v = (UART_FRAME_LIMIT - UART_FRAME_CRC_LEN) / ch;
+            max_v -= (max_v % PCM_RX_LEN_STEP);
+            if (max_v < PCM_RX_LEN_STEP) {
+                max_v = PCM_RX_LEN_STEP;
+            }
+            if (len > max_v) {
+                len = (u16)max_v;           /*旧配置已经越界，先拉回来*/
+            } else if ((len + PCM_RX_LEN_STEP) <= max_v) {
+                len += PCM_RX_LEN_STEP;
+            }
+            printf("pcm_rx_single_size : %04d (max %d)\n", len, max_v);
             syscfg_write(CFG_UART_PCM_RX_SIG_SIZE, &len, 2);
             oled_dispaly_task_post(OLED_DISPLAY_LEN, (int *)((int)len));
 
