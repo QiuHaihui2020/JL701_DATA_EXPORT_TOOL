@@ -10,11 +10,18 @@
 #define PCM_UART1_RX_PORT			IO_PORTA_02
 
 /*vm参数读取失败时的默认参数*/
-#define PCM_UART1_BAUDRATE			4000000		/*数据导出波特率,不用修改，和接收端设置一直*/
+#define PCM_UART1_BAUDRATE			2000000		/*数据导出波特率,不用修改，和接收端设置一直*/
 #define PCM_CH                      3
 #define PCM_SINGLE_LEN              512
 
-#define SD_CBUF_CNT     30 //cbuf大小为SD_CBUF_CNT * 1.5k byte
+/*
+ * cbuf 大小为 SD_CBUF_CNT * 1.5k byte，决定能容忍多长的 SD 写入停顿
+ * (2M 波特率下约 200KB/s，30 块 46KB 约合 0.23 秒)。
+ * 这块内存来自 heap，不宜开太大 —— 占多了会压缩物理内存池，
+ * 反而让 SD 驱动拿不到 DMA 缓冲。真要抗更长的停顿，
+ * 优先加大 RAW_BLK_SIZE 去减少写盘次数，比堆 cbuf 有效得多。
+ */
+#define SD_CBUF_CNT     30
 
 #define AUDIO_UART_TASK_NAME    "a_uart_rec"
 #define AUDIO_SDWRITE_TASK_NAME "a_sd_write"
@@ -49,6 +56,38 @@ struct audio_dbg_hdl_t {
 
 };
 static struct audio_dbg_hdl_t *aud_dbg_hdl = NULL;
+/*
+ * UART DMA 接收缓冲。大小恒定，一次分配后跨插拔一直复用、不再释放，
+ * 避免反复 dma_malloc/dma_free 把物理连续内存切碎。
+ */
+static u8 *s_uart_dma_buf = NULL;
+
+/*
+ * SD 写入缓冲: 只申请一次，之后跨插拔复用、永不释放。
+ *
+ * 原先每次插拔都 zalloc/free，插着 USB 进 MSC 时尤其致命 —— MSC 自己也在
+ * 反复申请释放 DMA 缓冲，两边叠加把内存切碎，SD 驱动就拿不到物理连续的
+ * DMA 缓冲，在 sdx_source.c 断言 "sdx dat dma memory not in phy_memory"。
+ *
+ * 注意不能改成静态数组: 那样占的是 .bss，而 .bss 排在 data_code 之前，
+ * 变大会把整个 RAM 布局往后推、挤掉物理内存池，SD 驱动同样拿不到 DMA 缓冲。
+ */
+#define SD_WRITE_FRAME_SIZE     (512 * 3)
+#define SD_BUF_TOTAL_SIZE       (SD_WRITE_FRAME_SIZE * SD_CBUF_CNT)
+static u8 *s_sd_tmp_buf = NULL;
+static u8 *s_sd_buf = NULL;
+
+/*句柄本身也静态化，避免每次插拔 zalloc/free*/
+static struct audio_dbg_hdl_t s_hdl_inst;
+
+/*
+ * UART 收帧缓冲。长度取决于运行时配置的 ch/len，没法编译期定死，
+ * 所以按"配置没变就复用"处理: 只有 ch/len 被按键改过才重新申请。
+ * 正常插拔配置不变，这里一次都不会重新分配。
+ */
+static u8 *s_uart_tmp_buf = NULL;
+static u8 *s_uart_buf = NULL;
+static int s_uart_frame_size = 0;
 
 #if 0
 void uartSendData(void *buf, u16 len) 			//发送数据的接口。
@@ -270,6 +309,12 @@ u8 audio_uart_init_runing()
 static u32 printf_timer = 0;
 static void sys_info_trace(void *priv)
 {
+    /*
+     * 需要定位 CPU 被谁吃掉时打开这行，它会输出全部任务的占用和堆栈水位。
+     * 下面只统计自家三个任务，看不到系统任务 —— 排查 timer_no_response 时
+     * 就是靠它发现 usb_stack 占了 66% CPU 把 app_core 饿死的。
+     * 平时保持关闭: 每次会刷一屏，抓数据时白占串口带宽。
+     */
     //task_info_output(0);
 
     int cbuf_data_len = 0;
@@ -308,8 +353,8 @@ void audio_uart_init()
     printf("======================== max clk: %d\n", clk_get_max_frequency());
     clock_lock("sys", clk_get_max_frequency());
 
-    struct audio_dbg_hdl_t *hdl = zalloc(sizeof(*hdl));
-    ASSERT(hdl);
+    struct audio_dbg_hdl_t *hdl = &s_hdl_inst;
+    memset(hdl, 0, sizeof(*hdl));
 
     printf_timer = sys_timer_add(NULL, sys_info_trace, 5000);
 
@@ -354,25 +399,66 @@ void audio_uart_init()
 
     hdl->sd_write_frame_size = 512 * 3;
     hdl->lost_packet = 0;
+    /*
+     * 换卡后计数是从零重新统计的，这里要主动刷一次屏。
+     * 否则屏上会一直留着上一张卡的数字 —— 接收任务只在每收满 100 帧时
+     * 才推送一次 LOST，重新插卡后若没有数据进来就永远不刷新。
+     */
+    oled_dispaly_task_post(OLED_DISPLAY_LOST, (int *)0);
 
-    hdl->sd_tmp_buf = zalloc(hdl->sd_write_frame_size);
-    ASSERT(hdl->sd_tmp_buf);
-    hdl->sd_buf = zalloc(hdl->sd_write_frame_size * SD_CBUF_CNT);
-    ASSERT(hdl->sd_buf);
-    cbuf_init(&hdl->sd_cbuf, hdl->sd_buf, hdl->sd_write_frame_size * SD_CBUF_CNT);
+    /*只在首次进来时申请，之后跨插拔复用，插拔过程不再动 heap，详见上方说明*/
+    if (!s_sd_tmp_buf) {
+        s_sd_tmp_buf = zalloc(SD_WRITE_FRAME_SIZE);
+    }
+    if (!s_sd_buf) {
+        s_sd_buf = zalloc(SD_BUF_TOTAL_SIZE);
+    }
+    ASSERT(s_sd_tmp_buf && s_sd_buf);
+    hdl->sd_tmp_buf = (u16 *)s_sd_tmp_buf;
+    hdl->sd_buf = s_sd_buf;
+    cbuf_init(&hdl->sd_cbuf, hdl->sd_buf, SD_BUF_TOTAL_SIZE);
     os_sem_create(&hdl->sd_sem, 0);
     task_create(audio_sdwrite_task, hdl, AUDIO_SDWRITE_TASK_NAME);
 
-    hdl->uart_tmp_buf = zalloc(hdl->uart_frame_size);
+    /*配置没变就沿用上次的缓冲，插拔过程中不产生任何申请释放*/
+    if (s_uart_frame_size != hdl->uart_frame_size) {
+        if (s_uart_tmp_buf) {
+            free(s_uart_tmp_buf);
+            s_uart_tmp_buf = NULL;
+        }
+        if (s_uart_buf) {
+            free(s_uart_buf);
+            s_uart_buf = NULL;
+        }
+        s_uart_frame_size = hdl->uart_frame_size;
+    }
+    if (!s_uart_tmp_buf) {
+        s_uart_tmp_buf = zalloc(s_uart_frame_size);
+    }
+    if (!s_uart_buf) {
+        s_uart_buf = zalloc(s_uart_frame_size * 3);
+    }
+    hdl->uart_tmp_buf = (u16 *)s_uart_tmp_buf;
     ASSERT(hdl->uart_tmp_buf);
-    hdl->uart_buf = zalloc(hdl->uart_frame_size * 3);
+    hdl->uart_buf = s_uart_buf;
     ASSERT(hdl->uart_buf);
     cbuf_init(&hdl->uart_cbuf, hdl->uart_buf, hdl->uart_frame_size * 3);
 
     os_sem_create(&hdl->uart_sem, 0);
     task_create(audio_uart_task, hdl, AUDIO_UART_TASK_NAME);
 
-    hdl->uart_dma_buf = dma_malloc(hdl->uart_dma_buf_size);
+    /*
+     * DMA 接收缓冲一次分配、跨插拔复用，之后不再释放。
+     *
+     * dma_malloc 拿的是物理连续内存(__pmalloc_continue)，而这块缓冲大小恒定。
+     * 若跟着每次插卡分配、拔卡释放，反复申请会把连续内存切碎，插拔几次后
+     * SD 驱动就拿不到连续的 DMA 缓冲，在 sdx_source.c 里断言
+     * "sdx dat dma memory not in phy_memory" 直接死机。
+     */
+    if (!s_uart_dma_buf) {
+        s_uart_dma_buf = dma_malloc(hdl->uart_dma_buf_size);
+    }
+    hdl->uart_dma_buf = s_uart_dma_buf;
     ASSERT(hdl->uart_dma_buf);
 
     struct uart_config ut = {
@@ -403,7 +489,12 @@ void audio_uart_init()
     aud_dbg_hdl = hdl;
 }
 
-void audio_uart_exit()
+/*
+ * @param sd_present 调用时 SD 卡是否仍在位。
+ *                   拔卡事件走的这条路要传 0，此时挂载点已失效，
+ *                   不能再把块缓冲往卡上写；按键重启配置时传 1，正常落盘。
+ */
+void audio_uart_exit(u8 sd_present)
 {
     struct audio_dbg_hdl_t *hdl = aud_dbg_hdl;
     if (hdl) {
@@ -416,6 +507,7 @@ void audio_uart_exit()
 
         if (printf_timer) {
             sys_timer_del(printf_timer);
+            printf_timer = 0;
         }
         /*必须在 free(hdl) 之前删掉，否则回调会访问已释放的 hdl*/
         if (flush_timer) {
@@ -424,35 +516,29 @@ void audio_uart_exit()
         }
         /*务必在 sd 写任务被 kill 之后再关，里面会把残留数据落盘*/
         if (hdl->raw_ready) {
-            raw_writer_close();
+            raw_writer_close(sd_present);
             hdl->raw_ready = 0;
         }
 
+        /*
+         * 这里刻意不 dma_free: 缓冲由 s_uart_dma_buf 长期持有，下次 init 直接复用。
+         * 详见 audio_uart_init() 里的说明 —— 反复申请释放连续内存会导致碎片，
+         * 最终让 SD 驱动拿不到 DMA 缓冲而断言死机。
+         */
         if (hdl->uart_dma_buf) {
-            dma_free(hdl->uart_dma_buf);
             hdl->uart_dma_buf = NULL;
         }
 
-        if (hdl->uart_tmp_buf) {
-            free(hdl->uart_tmp_buf);
-            hdl->uart_tmp_buf = NULL;
-        }
-        if (hdl->uart_buf) {
-            free(hdl->uart_buf);
-            hdl->uart_buf = NULL;
-        }
+        /*
+         * 以下缓冲要么是静态数组、要么由 s_uart_xxx 长期持有，
+         * 这里一律只解除引用。插拔过程中不做任何 free，
+         * 避免把内存切碎导致 SD 驱动拿不到连续 DMA 缓冲。
+         */
+        hdl->uart_tmp_buf = NULL;
+        hdl->uart_buf = NULL;
+        hdl->sd_tmp_buf = NULL;
+        hdl->sd_buf = NULL;
 
-        if (hdl->sd_tmp_buf) {
-            free(hdl->sd_tmp_buf);
-            hdl->sd_tmp_buf = NULL;
-        }
-        if (hdl->sd_buf) {
-            free(hdl->sd_buf);
-            hdl->sd_buf = NULL;
-        }
-
-        free(hdl);
-        hdl = NULL;
         aud_dbg_hdl = NULL;
     }
 }

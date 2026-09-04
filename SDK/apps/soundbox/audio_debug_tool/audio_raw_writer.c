@@ -3,7 +3,11 @@
 #include "display/display_task.h"
 
 #define RAW_MAX_CH              8               /*支持的最大通道数*/
-#define RAW_BLK_SIZE            (16 * 1024)     /*每通道块缓冲，攒满才写盘*/
+/*
+ * 每通道块缓冲，攒满才写盘。块越大写盘次数越少、越不容易在 SD 停顿时
+ * 把上游 cbuf 撑爆。缓冲是按需申请且只申请一次，不占 .bss，可以放心用大块。
+ */
+#define RAW_BLK_SIZE            (16 * 1024)
 #define RAW_MAX_REC_DIR         1000            /*rec_NNN 目录序号上限*/
 
 /*
@@ -101,6 +105,28 @@ struct raw_writer_t {
 
 static struct raw_writer_t *s_rw = NULL;
 
+/*
+ * 句柄与两个大缓冲一律静态分配，不走 zalloc/free。
+ *
+ * 它们的大小都是编译期固定的，却会随每次插拔反复申请释放。SD 卡插拔频繁时
+ * 这会把内存切碎，之后 SD 驱动申请 DMA 缓冲就可能落到非物理连续区，
+ * 在 sdx_source.c 里断言 "sdx dat dma memory not in phy_memory" 直接死机
+ * (实测连续插拔数次必现)。静态分配后内存布局恒定，不再产生碎片。
+ */
+static struct raw_writer_t s_rw_inst;
+
+/*
+ * 大缓冲仍从 heap 申请，但只申请一次、之后永不释放。
+ *
+ * 不能改成静态数组: 静态数组占的是 .bss，而 .bss 排在 data_code 之前，
+ * 一旦变大会把整个 RAM 布局往后推、挤掉物理内存池，SD 驱动就拿不到
+ * 位于 phy 区的 DMA 缓冲，照样断言 "sdx dat dma memory not in phy_memory"。
+ * 而"只申请一次"同样能消除插拔反复 zalloc/free 造成的碎片。
+ */
+static u8 *s_sniff_buf = NULL;
+static u8 *s_parse_buf = NULL;
+static u8 *s_ch_blk[RAW_MAX_CH] = { NULL };
+
 /*----------------------------------- 通道文件 -----------------------------------*/
 
 /*按需建立通道文件与块缓冲。V2 的通道数由包头决定，只能用到才建*/
@@ -118,16 +144,20 @@ static struct raw_ch_t *raw_ch_get(u8 idx)
         return c;
     }
 
-    c->blk = zalloc(RAW_BLK_SIZE);
-    if (!c->blk) {
-        printf("[raw] ch%d blk alloc fail\n", idx);
-        return NULL;
+    /*首次用到该通道时申请，之后跨插拔一直复用，不再释放*/
+    if (!s_ch_blk[idx]) {
+        s_ch_blk[idx] = zalloc(RAW_BLK_SIZE);
+        if (!s_ch_blk[idx]) {
+            printf("[raw] ch%d blk alloc fail\n", idx);
+            return NULL;
+        }
     }
+    c->blk = s_ch_blk[idx];
+    c->blk_used = 0;
     sprintf(path, "%s/%d.raw", rw->dir, idx);
     c->fp = fopen(path, "w+");
     if (!c->fp) {
         printf("[raw] open %s fail\n", path);
-        free(c->blk);
         c->blk = NULL;
         return NULL;
     }
@@ -401,7 +431,7 @@ static void raw_sniff_input(const u8 *data, u32 len)
     } else {
         raw_v1_input(buf, blen);
     }
-    free(buf);
+    /*sniff_buf 是静态数组，回灌完只解除引用，不能 free*/
 
     /*本帧没能塞进嗅探缓冲的尾巴，此时格式已定，按新路径直接处理*/
     if (n < len) {
@@ -486,25 +516,27 @@ int raw_writer_open(const char *root_path, const char *folder,
         return -1;
     }
 
-    rw = zalloc(sizeof(*rw));
-    if (!rw) {
+    /*两个大缓冲只在首次 open 时申请，之后跨插拔复用，插拔过程不再动 heap*/
+    if (!s_sniff_buf) {
+        s_sniff_buf = zalloc(RAW_SNIFF_BUF_SIZE);
+    }
+    if (!s_parse_buf) {
+        s_parse_buf = zalloc(RAW_PARSE_BUF_SIZE);
+    }
+    if (!s_sniff_buf || !s_parse_buf) {
+        printf("[raw] buf alloc fail\n");
         return -1;
     }
+
+    rw = &s_rw_inst;
+    memset(rw, 0, sizeof(*rw));
     rw->fmt       = RAW_FMT_SNIFFING;
     rw->v1_ch     = v1_channel;
     rw->v1_single = v1_single_size;
-    rw->sniff_buf = zalloc(RAW_SNIFF_BUF_SIZE);
-    rw->parse_buf = zalloc(RAW_PARSE_BUF_SIZE);
+    rw->sniff_buf = s_sniff_buf;
+    rw->parse_buf = s_parse_buf;
 
-    if (!rw->sniff_buf || !rw->parse_buf ||
-        (raw_pick_dir(rw, root_path, folder) < 0)) {
-        if (rw->sniff_buf) {
-            free(rw->sniff_buf);
-        }
-        if (rw->parse_buf) {
-            free(rw->parse_buf);
-        }
-        free(rw);
+    if (raw_pick_dir(rw, root_path, folder) < 0) {
         return -1;
     }
     s_rw = rw;
@@ -547,7 +579,7 @@ void raw_writer_flush(void)
     }
 }
 
-void raw_writer_close(void)
+void raw_writer_close(u8 flush)
 {
     struct raw_writer_t *rw = s_rw;
     struct raw_ch_t *c;
@@ -559,25 +591,23 @@ void raw_writer_close(void)
     for (i = 0; i < RAW_MAX_CH; i++) {
         c = &rw->ch[i];
         if (c->fp) {
-            raw_ch_flush(c);            /*落盘残留，否则尾部数据会丢*/
+            /*
+             * 卡被拔掉时调用方会传 flush=0: 挂载点已经失效，
+             * 这一整块 fwrite 写不进去，还可能卡在 SD 驱动里。
+             * fclose 仍要调用，否则 FILE 句柄泄漏。
+             */
+            if (flush) {
+                raw_ch_flush(c);        /*落盘残留，否则尾部数据会丢*/
+            }
             fclose(c->fp);
             c->fp = NULL;
         }
-        if (c->blk) {
-            free(c->blk);
-            c->blk = NULL;
-        }
+        c->blk = NULL;      /*静态数组，只解除引用*/
     }
-    if (rw->sniff_buf) {
-        free(rw->sniff_buf);
-        rw->sniff_buf = NULL;
-    }
-    if (rw->parse_buf) {
-        free(rw->parse_buf);
-        rw->parse_buf = NULL;
-    }
+    /*句柄与这两个缓冲都是静态的，只解除引用，不能 free*/
+    rw->sniff_buf = NULL;
+    rw->parse_buf = NULL;
     s_rw = NULL;
-    free(rw);
     printf("[raw] closed\n");
 }
 

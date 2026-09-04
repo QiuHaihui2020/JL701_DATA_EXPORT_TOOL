@@ -43,8 +43,9 @@ int idle_app_msg_handler(int *msg)
             ///下线处理,设备管理卸载
             printf("[idle]DEVICE_EVENT_OUT\n");
             oled_dispaly_task_post(OLED_DISPLAY_SD_OFF, NULL);
-            extern void audio_uart_exit();
-            audio_uart_exit();
+            /*卡已经拔了，传 0 告诉它别再往失效的挂载点上落盘*/
+            extern void audio_uart_exit(u8 sd_present);
+            audio_uart_exit(0);
         } else {
             ///上线处理, 设备管理挂载
             printf("[idle]OLED_DISPLAY_SD_ON\n");

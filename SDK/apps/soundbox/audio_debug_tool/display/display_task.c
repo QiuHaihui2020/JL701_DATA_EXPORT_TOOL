@@ -121,11 +121,12 @@ void oled_display_task(void *priv)
                 OLED_P8x16Str(24, 6, ":");
                 //len
                 OLED_P8x16Str(88, 6, ":");
-                extern void audio_uart_exit();
+                extern void audio_uart_exit(u8 sd_present);
                 extern u8 audio_uart_init_runing();
                 extern void audio_uart_init();
                 if (audio_uart_init_runing()) {
-                    audio_uart_exit();
+                    /*改参数后重启，卡还在位，正常把残留数据落盘*/
+                    audio_uart_exit(1);
                     audio_uart_init();
                 }
 
