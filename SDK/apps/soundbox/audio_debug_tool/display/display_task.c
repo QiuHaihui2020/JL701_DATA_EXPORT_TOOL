@@ -29,14 +29,25 @@ void oled_display_task(void *priv)
     os_time_dly(100);
     OLED_Fill(0x00); //清屏
 
+    /*
+     * 屏幕 128x64，8x16 字体，每字符 8 像素，每行占 2 个 page。
+     * 各行一律从 x=0 起排，一行 16 个字符位:
+     *   page0  V1(0-15)              PcmRxTool(24-95)        w+(112-127)
+     *   page2  sd:(0-23) on(24-47)   lost:(56-95)  %04d(96-127)
+     *   page4  bd:(0-23) %luM(24-39) w:(56-71)     %6luK(72-127)
+     *   page6  ch:(0-23) %02d(24-39) len:(56-87)   %04d(88-119)
+     * page2/page4/page6 的第二组标签左边缘都落在 x=56，数值都右贴到边缘。
+     * 其中 x=16/16/80 三处冒号兼作按键设置时的光标(冒号变下划线)。
+     */
     OLED_P8x16Str(0, 0, "--");
-    OLED_P8x16Str(28, 0, "PcmRxTool");
+    OLED_P8x16Str(24, 0, "PcmRxTool");
     OLED_P8x16Str(112, 0, "w+");
-    OLED_P8x16Str(8, 2, "sd:off");
-    OLED_P8x16Str(64, 2, "err:0");
-    OLED_P8x16Str(8, 4, "baud:");
-    OLED_P8x16Str(8, 6, "ch:");
-    OLED_P8x16Str(64, 6, "len:");
+    OLED_P8x16Str(0, 2, "sd:off");
+    OLED_P8x16Str(56, 2, "lost:0000");
+    OLED_P8x16Str(0, 4, "bd:");
+    OLED_P8x16Str(56, 4, "w:");
+    OLED_P8x16Str(0, 6, "ch:");
+    OLED_P8x16Str(56, 6, "len:");
 
     u32 uart_baud_rate = 2000000;
     u16 pcm_rx_single_size = 512;
@@ -84,28 +95,43 @@ void oled_display_task(void *priv)
 #ifdef TCFG_LED_RED_GPIO
         gpio_set_mode(IO_PORT_SPILT(TCFG_LED_RED_GPIO), PORT_OUTPUT_HIGH);
 #endif
-            OLED_P8x16Str(32, 2, "on ");
+            OLED_P8x16Str(24, 2, "on ");
             break;
         case OLED_DISPLAY_SD_OFF:
 #ifdef TCFG_LED_RED_GPIO
         gpio_set_mode(IO_PORT_SPILT(TCFG_LED_RED_GPIO), PORT_OUTPUT_LOW);
 #endif
-            OLED_P8x16Str(32, 2, "off");
+            OLED_P8x16Str(24, 2, "off");
             break;
         case OLED_DISPLAY_CH:
             printf("=================================== display ch : %d\n", (u8)msg[2]);
             sprintf(strnum, "%02d", (u8)msg[2]);
-            OLED_P8x16Str(40, 6, strnum);
+            OLED_P8x16Str(24, 6, strnum);
             break;
         case OLED_DISPLAY_LEN:
             printf("=================================== display len : %d\n", (u16)msg[2]);
             sprintf(strnum, "%04d", (u16)msg[2]);
-            OLED_P8x16Str(96, 6, strnum);
+            OLED_P8x16Str(88, 6, strnum);
             break;
         case OLED_DISPLAY_BAUD:
             printf("=================================== display baud : %d\n", (u32)msg[2]);
-            sprintf(strnum, "%07d", (u32)msg[2]);
-            OLED_P8x16Str(56, 4, strnum);
+            /*按 M 显示，屏上放不下 7 位数字，按键调节本来也是以 M 为单位*/
+            sprintf(strnum, "%dM", (u32)msg[2] / 1000000);
+            OLED_P8x16Str(24, 4, strnum);
+            break;
+        case OLED_DISPLAY_WRITTEN:
+            /*
+             * 固定 7 字符宽(6 位数字 + 单位)，右对齐 —— 数字增长时右边界不动，
+             * 宽度也正好和上一行的 lost 数值对齐。
+             * 超过 6 位就换 MB，否则 2M 波特率下录约 1.4 小时就撑破版面。
+             * 换算后可显示到 999999M，够用了。
+             */
+            if ((u32)msg[2] < 1000000) {
+                sprintf(strnum, "%6dK", (u32)msg[2]);
+            } else {
+                sprintf(strnum, "%6dM", (u32)msg[2] / 1024);
+            }
+            OLED_P8x16Str(72, 4, strnum);
             break;
 
         case OLED_DISPLAY_SET_NEXT:
@@ -114,13 +140,12 @@ void oled_display_task(void *priv)
             if (set_switch == 0) {
                 printf("=================================== over change");
                 //baud
-                //OLED_P8x16Str(8, 4, "sec:");
-                //OLED_P8x16Str(40, 4, "0         ");
-                OLED_P8x16Str(40, 4, ":");
+                //baud
+                OLED_P8x16Str(16, 4, ":");
                 //ch
-                OLED_P8x16Str(24, 6, ":");
+                OLED_P8x16Str(16, 6, ":");
                 //len
-                OLED_P8x16Str(88, 6, ":");
+                OLED_P8x16Str(80, 6, ":");
                 extern void audio_uart_exit(u8 sd_present);
                 extern u8 audio_uart_init_runing();
                 extern void audio_uart_init();
@@ -133,33 +158,28 @@ void oled_display_task(void *priv)
             } else if (set_switch == 1) {
                 printf("=================================== selete change ch\n");
                 //ch
-                OLED_P8x16Str(24, 6, "_");
+                OLED_P8x16Str(16, 6, "_");
                 //len
-                OLED_P8x16Str(88, 6, ":");
+                OLED_P8x16Str(80, 6, ":");
                 //baud
                 u32 baud;
                 syscfg_read(CFG_UART_PCM_RX_BAUD_RATE, &baud, 4);
-                sprintf(strnum, "%07d", baud);
-                OLED_P8x16Str(8, 4, "baud:");
-                OLED_P8x16Str(56, 4, strnum);
-                /* OLED_P8x16Str(48, 4, ":"); */
+                sprintf(strnum, "%dM", baud / 1000000);
+                OLED_P8x16Str(0, 4, "bd:");
+                OLED_P8x16Str(24, 4, strnum);
             } else if (set_switch == 2) {
                 printf("=================================== selete change len\n");
 
-                OLED_P8x16Str(24, 6, ":");
-                OLED_P8x16Str(88, 6, "_");
-                OLED_P8x16Str(40, 4, ":");
-                //baud
-                /* syscfg_read(CFG_UART_PCM_RX_BAUD_RATE, &baud, 4); */
-                /* sprintf(strnum_2, "%07d", baud); */
-                /* OLED_P8x16Str(8, 4, "baud:"); */
-                /* OLED_P8x16Str(56, 4, strnum_2); */
+                OLED_P8x16Str(16, 6, ":");
+                OLED_P8x16Str(80, 6, "_");
+                OLED_P8x16Str(16, 4, ":");
+                /*baud 不在本档位调节，保持原样显示即可*/
             } else if (set_switch == 3) {
                 printf("=================================== selete change baud\n");
 
-                OLED_P8x16Str(24, 6, ":");
-                OLED_P8x16Str(88, 6, ":");
-                OLED_P8x16Str(40, 4, "_");
+                OLED_P8x16Str(16, 6, ":");
+                OLED_P8x16Str(80, 6, ":");
+                OLED_P8x16Str(16, 4, "_");
             }
             break;
         case OLED_DISPLAY_FMT:

@@ -81,4 +81,7 @@ u8 raw_writer_get_ch_cnt(void);
 /*累计异常次数(丢帧、坏包、写盘失败)*/
 u32 raw_writer_get_err(void);
 
+/*各通道累计写入字节数之和(含丢包补零)，用于在屏上显示已采集的数据量*/
+u32 raw_writer_get_written(void);
+
 #endif/*_AUDIO_RAW_WRITER_H_*/

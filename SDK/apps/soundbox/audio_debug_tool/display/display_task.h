@@ -17,6 +17,7 @@ enum {
     OLED_DISPLAY_LOST,
     OLED_DISPLAY_SET_NEXT,
     OLED_DISPLAY_FMT,       /*自动嗅探出的载荷格式，取值见 RAW_FMT_xxx*/
+    OLED_DISPLAY_WRITTEN,   /*已采集的数据量，参数单位为 KB*/
 
 
 

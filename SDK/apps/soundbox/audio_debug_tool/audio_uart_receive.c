@@ -249,6 +249,12 @@ static void audio_sdwrite_task(void *priv)
         if (hdl->flush_req) {
             hdl->flush_req = 0;
             raw_writer_flush();
+            /*
+             * 顺带刷新屏上的已采集数据量。搭定时落盘的车，
+             * 2 秒更新一次，既够看又不会频繁占用显示任务。
+             */
+            oled_dispaly_task_post(OLED_DISPLAY_WRITTEN,
+                                   (int *)(raw_writer_get_written() / 1024));
         }
 
         /*

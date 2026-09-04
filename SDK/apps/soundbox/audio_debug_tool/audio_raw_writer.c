@@ -625,3 +625,18 @@ u32 raw_writer_get_err(void)
 {
     return s_rw ? s_rw->err_cnt : 0;
 }
+
+u32 raw_writer_get_written(void)
+{
+    struct raw_writer_t *rw = s_rw;
+    u32 total = 0;
+    u8 i;
+
+    if (!rw) {
+        return 0;
+    }
+    for (i = 0; i < RAW_MAX_CH; i++) {
+        total += rw->ch[i].written;
+    }
+    return total;
+}
