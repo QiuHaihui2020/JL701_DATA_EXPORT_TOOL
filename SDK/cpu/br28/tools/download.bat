@@ -19,7 +19,7 @@ set ELFFILE=sdk.elf
 set bankfiles=
 set LZ4_PACKET=.\lz4_packet.exe
 
-REM %OBJDUMP% -D -address-mask=0x1ffffff -print-dbg $1.elf > $1.lst
+%OBJDUMP% -D -address-mask=0x1ffffff -print-dbg sdk.elf > sdk.lst
 %OBJCOPY% -O binary -j .text %ELFFILE% text.bin
 %OBJCOPY% -O binary -j .data %ELFFILE% data.bin
 %OBJCOPY% -O binary -j .data_code %ELFFILE% data_code.bin

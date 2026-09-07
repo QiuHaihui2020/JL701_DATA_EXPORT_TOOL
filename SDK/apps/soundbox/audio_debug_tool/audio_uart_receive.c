@@ -4,16 +4,37 @@
 #include "uart.h"
 #include "dev_manager.h"
 #include "display/display_task.h"
+#include "audio_raw_writer.h"
 
 #define PCM_UART1_TX_PORT			-1
 #define PCM_UART1_RX_PORT			IO_PORTA_02
 
 /*vm参数读取失败时的默认参数*/
-#define PCM_UART1_BAUDRATE			4000000		/*数据导出波特率,不用修改，和接收端设置一直*/
+#define PCM_UART1_BAUDRATE			2000000		/*数据导出波特率,不用修改，和接收端设置一直*/
 #define PCM_CH                      3
 #define PCM_SINGLE_LEN              512
 
-#define SD_CBUF_CNT     30 //cbuf大小为SD_CBUF_CNT * 1.5k byte
+/*
+ * cbuf 大小为 SD_CBUF_CNT * 1.5k byte，决定能容忍多长的 SD 写入停顿。
+ *
+ * 余量按实测码流算，不能按波特率线速算: 3ch x 16kHz x 16bit = 96KB/s，
+ * 2M 波特率的链路只用了不到一半。96 块 = 144KB，约合 1.53 秒。
+ *
+ * 这个值是实测定下来的，不是拍脑袋: raw_ch_flush() 里的耗时统计抓到过
+ * 一次单次 fwrite 耗时 909ms(见 RAW_SLOW_IO_MS 的说明)，而同期其余写盘
+ * 都在 30~80ms。那次停顿既不在簇边界上，也只发生在单个通道，是 TF 卡
+ * 内部的擦除/垃圾回收，软件无法规避 —— 唯一的办法就是把 cbuf 开到能扛住。
+ * 原来的 30 块只有 480ms 余量，必被打穿，屏上 lost 会跳几十。
+ *
+ * 注意别再听信"加大 RAW_BLK_SIZE 减少写盘次数"那套: 实测 5461 字节的写
+ * 和 16384 字节的写都是 60ms 上下，单次成本几乎全在目录项同步的固定开销上，
+ * 而卡的擦除停顿跟写盘次数无关，减少次数对这个失效模式没有帮助。
+ *
+ * 代价是多占约 100KB heap。这块内存开机一次性申请、永不释放，不会像
+ * 反复 alloc/free 那样把物理内存池切碎。若日后 physics memory 吃紧、
+ * MSC 那条路又开始报 DMA 缓冲断言，回退到 64 块(1.02 秒)。
+ */
+#define SD_CBUF_CNT     160
 
 #define AUDIO_UART_TASK_NAME    "a_uart_rec"
 #define AUDIO_SDWRITE_TASK_NAME "a_sd_write"
@@ -37,12 +58,49 @@ struct audio_dbg_hdl_t {
     u16 *sd_tmp_buf;
     u8 *sd_buf;
     cbuffer_t sd_cbuf;
-    FILE *fp;
+    u8 raw_ready;              /*分通道 raw 输出是否就绪*/
+    /*
+     * 定时落盘请求。由定时器回调置位、sd 任务清零，volatile 保证可见性。
+     * 这里不需要临界区: 单字节标志，且漏掉一次只是把落盘推后一个周期，无副作用。
+     */
+    volatile u8 flush_req;
 
     u16 lost_packet;
 
 };
 static struct audio_dbg_hdl_t *aud_dbg_hdl = NULL;
+/*
+ * UART DMA 接收缓冲。大小恒定，一次分配后跨插拔一直复用、不再释放，
+ * 避免反复 dma_malloc/dma_free 把物理连续内存切碎。
+ */
+static u8 *s_uart_dma_buf = NULL;
+
+/*
+ * SD 写入缓冲: 只申请一次，之后跨插拔复用、永不释放。
+ *
+ * 原先每次插拔都 zalloc/free，插着 USB 进 MSC 时尤其致命 —— MSC 自己也在
+ * 反复申请释放 DMA 缓冲，两边叠加把内存切碎，SD 驱动就拿不到物理连续的
+ * DMA 缓冲，在 sdx_source.c 断言 "sdx dat dma memory not in phy_memory"。
+ *
+ * 注意不能改成静态数组: 那样占的是 .bss，而 .bss 排在 data_code 之前，
+ * 变大会把整个 RAM 布局往后推、挤掉物理内存池，SD 驱动同样拿不到 DMA 缓冲。
+ */
+#define SD_WRITE_FRAME_SIZE     (512 * 3)
+#define SD_BUF_TOTAL_SIZE       (SD_WRITE_FRAME_SIZE * SD_CBUF_CNT)
+static u8 *s_sd_tmp_buf = NULL;
+static u8 *s_sd_buf = NULL;
+
+/*句柄本身也静态化，避免每次插拔 zalloc/free*/
+static struct audio_dbg_hdl_t s_hdl_inst;
+
+/*
+ * UART 收帧缓冲。长度取决于运行时配置的 ch/len，没法编译期定死，
+ * 所以按"配置没变就复用"处理: 只有 ch/len 被按键改过才重新申请。
+ * 正常插拔配置不变，这里一次都不会重新分配。
+ */
+static u8 *s_uart_tmp_buf = NULL;
+static u8 *s_uart_buf = NULL;
+static int s_uart_frame_size = 0;
 
 #if 0
 void uartSendData(void *buf, u16 len) 			//发送数据的接口。
@@ -72,6 +130,22 @@ void uartSendData(void *buf, u16 len) 			//发送数据的接口。
 }
 #endif
 
+/*
+ * 丢帧时往 cbuf 补一帧零，保持交给 raw_writer 的字节流长度连续。
+ * V1 靠字节在交织块内的位置判断通道归属，少一帧会让后续所有通道整体错位；
+ * V2 有包头可精确定位，多出的这帧零会因找不到同步头而被自然丢弃。
+ * 补零只在本任务里做，raw_writer 依然是单生产者单消费者，无需加锁。
+ */
+static void audio_dbg_pad_lost_frame(struct audio_dbg_hdl_t *hdl)
+{
+    u32 payload = (u32)hdl->uart_frame_size - 4;
+
+    memset(hdl->uart_tmp_buf, 0, payload);
+    if (cbuf_write(&hdl->sd_cbuf, hdl->uart_tmp_buf, payload) == payload) {
+        os_sem_post(&hdl->sd_sem);
+    }
+}
+
 static void audio_uart_task(void *priv)
 {
     struct audio_dbg_hdl_t *hdl = (struct audio_dbg_hdl_t *)priv;
@@ -95,12 +169,14 @@ static void audio_uart_task(void *priv)
                         hdl->lost_packet++;
                     }
                 } else {
-                    printf("uart crc err"); 
+                    printf("uart crc err");
                     hdl->lost_packet++;
+                    audio_dbg_pad_lost_frame(hdl);
                 }
             } else {
                 printf("uart recv read err, %d %d\n", recv_len, hdl->uart_frame_size);
                 hdl->lost_packet++;
+                audio_dbg_pad_lost_frame(hdl);
             }
             rec_cnt++;
             if ((rec_cnt % 100) == 0) {
@@ -117,85 +193,91 @@ static void audio_uart_task(void *priv)
 }
 #define AUDIO_WRITE_DEVICE_LOGO "sd0"
 #define AUDIO_WRITE_FOLDER_NAME "JL_DEBUG"
-#define AUDIO_WRITE_FILE_NAME	"dbg_***.bin"			//录音文件前缀名
 
-//打开录音文件：优先复用目录下已存在的大小为0的空文件，避免空文件占用序号；否则按 dbg_***.bin 序号新建
-//直接按序号探测 dbg_000.bin..dbg_999.bin，绕开 fscan 的类型过滤（-tALL 不匹配 .bin 会返回 NULL）
-static FILE *audio_dbg_file_open(char *path, const char *root_path, const char *folder, const char *file_name)
+#define AUDIO_SD_FLUSH_INTERVAL 2000            /*定时落盘间隔，单位ms*/
+
+static u32 flush_timer = 0;
+
+/*
+ * 定时落盘: 每通道要攒满一个块才写盘，数据率低或录制刚开始时块可能长时间攒不满，
+ * 此时断电/拔卡就会丢掉缓冲里的全部内容。这里周期性地强制落一次盘缩小该窗口。
+ * 回调里只置标志并唤醒 sd 任务，真正的落盘必须回到 sd 任务上下文执行:
+ * raw_writer 内部无锁，且 fwrite 是阻塞操作，都不适合在定时器回调里做。
+ */
+static void audio_dbg_flush_timer(void *priv)
 {
-    int miss_cnt = 0;
-    for (int i = 0; i < 1000; i++) {
-        sprintf(path, "%s%s/dbg_%03d.bin", root_path, folder, i);
-        FILE *f = fopen(path, "r");
-        if (!f) {
-            if (++miss_cnt >= 3) {
-                break;  //连续3个序号不存在，认为后续无文件
-            }
-            continue;
-        }
-        miss_cnt = 0;
-        if (flen(f) == 0) {
-            fclose(f);
-            printf("reuse empty file %s\n", path);
-            return fopen(path, "w+");
-        }
-        fclose(f);
+    struct audio_dbg_hdl_t *hdl = (struct audio_dbg_hdl_t *)priv;
+
+    if (!hdl || !hdl->raw_ready) {
+        return;
     }
-    //没有0大小文件可复用，按通配符新建
-    sprintf(path, "%s%s/%s", root_path, folder, file_name);
-    printf("create new file %s\n", path);
-    return fopen(path, "w+");
+    hdl->flush_req = 1;
+    os_sem_post(&hdl->sd_sem);
 }
 
 static void audio_sdwrite_task(void *priv)
 {
     struct audio_dbg_hdl_t *hdl = (struct audio_dbg_hdl_t *)priv;
-    int rlen = 0, wlen = 0;
+    u32 rlen = 0, dlen = 0;
     u32 write_cnt = 0;
-    char path[64];
+    u8  moved;                          /*本轮是否真的搬到了数据*/
     char logo[] = {AUDIO_WRITE_DEVICE_LOGO};        //sd卡录音
     char folder[] = {AUDIO_WRITE_FOLDER_NAME};
-    char file_name[] = {AUDIO_WRITE_FILE_NAME};
     char *root_path = dev_manager_get_root_path_by_logo(logo);
 
-    if (hdl) {
-        if (!root_path) {
-            printf("sd dev not found, skip file open\n");
-        } else {
-            hdl->fp = audio_dbg_file_open(path, root_path, folder, file_name);
-            printf("sd write path %s \n", path);
-            if (!hdl->fp) {
-                printf("file open fail, %s", path);
-            } else {
-                printf("file open %s", path);
-                //fwrite(hdl->sd_tmp_buf, hdl->sd_write_frame_size, 1, hdl->fp); //提前写一包数据，处理第一次写数据慢的问题
-            }
-        }
+    if (!root_path) {
+        printf("sd dev not found, skip raw writer open\n");
+    } else if (raw_writer_open(root_path, folder,
+                               hdl->pcm_channel, hdl->pcm_rx_single_size) < 0) {
+        printf("raw writer open fail\n");
+    } else {
+        hdl->raw_ready = 1;
     }
 
     while(1) {
         os_sem_pend(&hdl->sd_sem, 0);
-        if (hdl && hdl->fp) {
-            do {
-                rlen = cbuf_read(&hdl->sd_cbuf, hdl->sd_tmp_buf, hdl->sd_write_frame_size);
-                if (rlen) {
-                    // printf("sd read %d", rlen); 
-                    wlen = fwrite(hdl->sd_tmp_buf, hdl->sd_write_frame_size, 1, hdl->fp);
-                    if (wlen != hdl->sd_write_frame_size) {
-                        printf("[error] sd write err \n"); 
-                        hdl->lost_packet++;
-                    } else {
-                        putchar('W');
-                        write_cnt++;
-                    }
-                }
-            } while (rlen);
-
-            if ((write_cnt % 10) == 0) {
-                oled_dispaly_task_post(OLED_DISPLAY_RUN_TIPS, NULL);
-            }
+        if (!hdl->raw_ready) {
+            continue;
         }
-    
+        /*
+         * 有多少搬多少。原先固定按整块长度读，不足一块的尾部数据
+         * 会一直卡在 cbuf 里出不来，录音末尾必然缺一截。
+         */
+        moved = 0;
+        do {
+            dlen = cbuf_get_data_len(&hdl->sd_cbuf);
+            if (dlen > (u32)hdl->sd_write_frame_size) {
+                dlen = (u32)hdl->sd_write_frame_size;
+            }
+            rlen = dlen ? cbuf_read(&hdl->sd_cbuf, hdl->sd_tmp_buf, dlen) : 0;
+            if (rlen) {
+                raw_writer_input((u8 *)hdl->sd_tmp_buf, rlen);
+                putchar('W');
+                write_cnt++;
+                moved = 1;
+            }
+        } while (rlen);
+
+        /*搬完 cbuf 再处理定时落盘，保证落下去的是当前最全的数据*/
+        if (hdl->flush_req) {
+            hdl->flush_req = 0;
+            raw_writer_flush();
+            /*
+             * 顺带刷新屏上的已采集数据量。搭定时落盘的车，
+             * 2 秒更新一次，既够看又不会频繁占用显示任务。
+             */
+            oled_dispaly_task_post(OLED_DISPLAY_WRITTEN,
+                                   (int *)(raw_writer_get_written() / 1024));
+        }
+
+        /*
+         * w+ 和红灯只在真正搬到数据时才闪。
+         * sd_sem 除了收到数据，还会被定时落盘唤醒，
+         * 少了 moved 这个前置条件的话空转唤醒也会让它闪，就不再表示"正在收数据"了。
+         */
+        if (moved && ((write_cnt % 10) == 0)) {
+            oled_dispaly_task_post(OLED_DISPLAY_RUN_TIPS, NULL);
+        }
     }
 }
 
@@ -246,6 +328,12 @@ u8 audio_uart_init_runing()
 static u32 printf_timer = 0;
 static void sys_info_trace(void *priv)
 {
+    /*
+     * 需要定位 CPU 被谁吃掉时打开这行，它会输出全部任务的占用和堆栈水位。
+     * 下面只统计自家三个任务，看不到系统任务 —— 排查 timer_no_response 时
+     * 就是靠它发现 usb_stack 占了 66% CPU 把 app_core 饿死的。
+     * 平时保持关闭: 每次会刷一屏，抓数据时白占串口带宽。
+     */
     //task_info_output(0);
 
     int cbuf_data_len = 0;
@@ -271,7 +359,7 @@ static void sys_info_trace(void *priv)
     printf("task : %s: %d\n", "od_dispaly", a);
     
     task_info_reset();
-
+    mem_stats();
 }
 
 void audio_uart_init()
@@ -284,12 +372,19 @@ void audio_uart_init()
     printf("======================== max clk: %d\n", clk_get_max_frequency());
     clock_lock("sys", clk_get_max_frequency());
 
-    struct audio_dbg_hdl_t *hdl = zalloc(sizeof(*hdl));
-    ASSERT(hdl);
+    struct audio_dbg_hdl_t *hdl = &s_hdl_inst;
+    memset(hdl, 0, sizeof(*hdl));
 
     printf_timer = sys_timer_add(NULL, sys_info_trace, 5000);
 
-    hdl->uart_dma_buf_size = 4096;
+    /*
+     * UART DMA 环形缓冲。收帧长度 = len * ch + 4，这一整帧必须装得进来，
+     * 且环里至少要容得下两帧，才不会在 a_uart_rec 搬运本帧时被下一帧覆盖。
+     * 支持到 8ch x 512(帧长 4100)，两帧 8200，故取 16384。
+     * 改这个值必须同步改 idle_app_msg_handler.c 的 UART_DMA_BUF_SIZE，
+     * 那边按它反算按键可调的 ch / len 上限。
+     */
+    hdl->uart_dma_buf_size = 16384;
     hdl->uart_baud_rate = 2000000;
     hdl->pcm_rx_single_size = 512;
     hdl->pcm_channel = 3;
@@ -330,25 +425,66 @@ void audio_uart_init()
 
     hdl->sd_write_frame_size = 512 * 3;
     hdl->lost_packet = 0;
+    /*
+     * 换卡后计数是从零重新统计的，这里要主动刷一次屏。
+     * 否则屏上会一直留着上一张卡的数字 —— 接收任务只在每收满 100 帧时
+     * 才推送一次 LOST，重新插卡后若没有数据进来就永远不刷新。
+     */
+    oled_dispaly_task_post(OLED_DISPLAY_LOST, (int *)0);
 
-    hdl->sd_tmp_buf = zalloc(hdl->sd_write_frame_size);
-    ASSERT(hdl->sd_tmp_buf);
-    hdl->sd_buf = zalloc(hdl->sd_write_frame_size * SD_CBUF_CNT);
-    ASSERT(hdl->sd_buf);
-    cbuf_init(&hdl->sd_cbuf, hdl->sd_buf, hdl->sd_write_frame_size * SD_CBUF_CNT);
+    /*只在首次进来时申请，之后跨插拔复用，插拔过程不再动 heap，详见上方说明*/
+    if (!s_sd_tmp_buf) {
+        s_sd_tmp_buf = zalloc(SD_WRITE_FRAME_SIZE);
+    }
+    if (!s_sd_buf) {
+        s_sd_buf = zalloc(SD_BUF_TOTAL_SIZE);
+    }
+    ASSERT(s_sd_tmp_buf && s_sd_buf);
+    hdl->sd_tmp_buf = (u16 *)s_sd_tmp_buf;
+    hdl->sd_buf = s_sd_buf;
+    cbuf_init(&hdl->sd_cbuf, hdl->sd_buf, SD_BUF_TOTAL_SIZE);
     os_sem_create(&hdl->sd_sem, 0);
     task_create(audio_sdwrite_task, hdl, AUDIO_SDWRITE_TASK_NAME);
 
-    hdl->uart_tmp_buf = zalloc(hdl->uart_frame_size);
+    /*配置没变就沿用上次的缓冲，插拔过程中不产生任何申请释放*/
+    if (s_uart_frame_size != hdl->uart_frame_size) {
+        if (s_uart_tmp_buf) {
+            free(s_uart_tmp_buf);
+            s_uart_tmp_buf = NULL;
+        }
+        if (s_uart_buf) {
+            free(s_uart_buf);
+            s_uart_buf = NULL;
+        }
+        s_uart_frame_size = hdl->uart_frame_size;
+    }
+    if (!s_uart_tmp_buf) {
+        s_uart_tmp_buf = zalloc(s_uart_frame_size);
+    }
+    if (!s_uart_buf) {
+        s_uart_buf = zalloc(s_uart_frame_size * 3);
+    }
+    hdl->uart_tmp_buf = (u16 *)s_uart_tmp_buf;
     ASSERT(hdl->uart_tmp_buf);
-    hdl->uart_buf = zalloc(hdl->uart_frame_size * 3);
+    hdl->uart_buf = s_uart_buf;
     ASSERT(hdl->uart_buf);
     cbuf_init(&hdl->uart_cbuf, hdl->uart_buf, hdl->uart_frame_size * 3);
 
     os_sem_create(&hdl->uart_sem, 0);
     task_create(audio_uart_task, hdl, AUDIO_UART_TASK_NAME);
 
-    hdl->uart_dma_buf = dma_malloc(hdl->uart_dma_buf_size);
+    /*
+     * DMA 接收缓冲一次分配、跨插拔复用，之后不再释放。
+     *
+     * dma_malloc 拿的是物理连续内存(__pmalloc_continue)，而这块缓冲大小恒定。
+     * 若跟着每次插卡分配、拔卡释放，反复申请会把连续内存切碎，插拔几次后
+     * SD 驱动就拿不到连续的 DMA 缓冲，在 sdx_source.c 里断言
+     * "sdx dat dma memory not in phy_memory" 直接死机。
+     */
+    if (!s_uart_dma_buf) {
+        s_uart_dma_buf = dma_malloc(hdl->uart_dma_buf_size);
+    }
+    hdl->uart_dma_buf = s_uart_dma_buf;
     ASSERT(hdl->uart_dma_buf);
 
     struct uart_config ut = {
@@ -373,10 +509,18 @@ void audio_uart_init()
     };
     uart_dma_init(hdl->uart, &dma_config);
 
+    /*回调内会先检查 raw_ready，此时 sd 任务尚未打开文件也是安全的*/
+    flush_timer = sys_timer_add(hdl, audio_dbg_flush_timer, AUDIO_SD_FLUSH_INTERVAL);
+
     aud_dbg_hdl = hdl;
 }
 
-void audio_uart_exit()
+/*
+ * @param sd_present 调用时 SD 卡是否仍在位。
+ *                   拔卡事件走的这条路要传 0，此时挂载点已失效，
+ *                   不能再把块缓冲往卡上写；按键重启配置时传 1，正常落盘。
+ */
+void audio_uart_exit(u8 sd_present)
 {
     struct audio_dbg_hdl_t *hdl = aud_dbg_hdl;
     if (hdl) {
@@ -389,37 +533,38 @@ void audio_uart_exit()
 
         if (printf_timer) {
             sys_timer_del(printf_timer);
+            printf_timer = 0;
         }
-        if (hdl->fp) {
-            fclose(hdl->fp); 
-            hdl->fp = NULL;
+        /*必须在 free(hdl) 之前删掉，否则回调会访问已释放的 hdl*/
+        if (flush_timer) {
+            sys_timer_del(flush_timer);
+            flush_timer = 0;
+        }
+        /*务必在 sd 写任务被 kill 之后再关，里面会把残留数据落盘*/
+        if (hdl->raw_ready) {
+            raw_writer_close(sd_present);
+            hdl->raw_ready = 0;
         }
 
+        /*
+         * 这里刻意不 dma_free: 缓冲由 s_uart_dma_buf 长期持有，下次 init 直接复用。
+         * 详见 audio_uart_init() 里的说明 —— 反复申请释放连续内存会导致碎片，
+         * 最终让 SD 驱动拿不到 DMA 缓冲而断言死机。
+         */
         if (hdl->uart_dma_buf) {
-            dma_free(hdl->uart_dma_buf);
             hdl->uart_dma_buf = NULL;
         }
 
-        if (hdl->uart_tmp_buf) {
-            free(hdl->uart_tmp_buf);
-            hdl->uart_tmp_buf = NULL;
-        }
-        if (hdl->uart_buf) {
-            free(hdl->uart_buf);
-            hdl->uart_buf = NULL;
-        }
+        /*
+         * 以下缓冲要么是静态数组、要么由 s_uart_xxx 长期持有，
+         * 这里一律只解除引用。插拔过程中不做任何 free，
+         * 避免把内存切碎导致 SD 驱动拿不到连续 DMA 缓冲。
+         */
+        hdl->uart_tmp_buf = NULL;
+        hdl->uart_buf = NULL;
+        hdl->sd_tmp_buf = NULL;
+        hdl->sd_buf = NULL;
 
-        if (hdl->sd_tmp_buf) {
-            free(hdl->sd_tmp_buf);
-            hdl->sd_tmp_buf = NULL;
-        }
-        if (hdl->sd_buf) {
-            free(hdl->sd_buf);
-            hdl->sd_buf = NULL;
-        }
-
-        free(hdl);
-        hdl = NULL;
         aud_dbg_hdl = NULL;
     }
 }

@@ -377,6 +377,7 @@ c_SRC_FILES := \
 	cpu/config/gpio_file_parse.c \
 	cpu/config/lib_power_config.c \
 	apps/soundbox/audio_debug_tool/audio_uart_receive.c \
+	apps/soundbox/audio_debug_tool/audio_raw_writer.c \
 	apps/soundbox/audio_debug_tool/oled/oled.c \
 	apps/soundbox/audio_debug_tool/oled/oled_spi.c \
 	apps/soundbox/audio_debug_tool/display/display_task.c \
